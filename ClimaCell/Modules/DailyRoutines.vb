@@ -75,8 +75,6 @@ Friend Module DailyRoutines
         Dim dlyStr As String = GetDailyString()
         Dim unitStr As String = uArr(My.Settings.Units)
         Dim url = $"https://api.climacell.co/v3/weather/forecast/daily?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system={unitStr}&start_time=now&fields={dlyStr}&apikey={My.Settings.ApiKey}"
-        'PrintLog($"{vbLf}dlyStr: {dlyStr}{vbLf}unitStr: {unitStr}{vbLf}Url: {url}{vbLf}")
-        'Dim url = $"https://api.climacell.co/v3/weather/forecast/daily?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system=us&start_time=now&fields=precipitation%2Ctemp%2Cfeels_like%2Chumidity%2Cwind_speed%2Cwind_direction%2Csunrise%2Csunset%2Cmoon_phase%2Cbaro_pressure%2Cprecipitation%2Cprecipitation_probability%2Cprecipitation_accumulation%2Cvisibility%2Cweather_code&apikey={My.Settings.ApiKey}"
 
         Try
             Dim request = CType(WebRequest.Create(New Uri(url)), HttpWebRequest)
