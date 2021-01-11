@@ -23,17 +23,12 @@ Partial Class FrmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TmrUpdate = New System.Timers.Timer()
         Me.TmrClock = New System.Timers.Timer()
         Me.TC = New System.Windows.Forms.TabControl()
         Me.TpForecast = New System.Windows.Forms.TabPage()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.TsslVer = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.TsslNextUpdate = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.TsslCpy = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.TsslClock = New System.Windows.Forms.ToolStripStatusLabel()
         Me.DgvDaily = New System.Windows.Forms.DataGridView()
         Me.TpLogs = New System.Windows.Forms.TabPage()
         Me.TcLogs = New System.Windows.Forms.TabControl()
@@ -45,9 +40,13 @@ Partial Class FrmMain
         Me.RtbError = New System.Windows.Forms.RichTextBox()
         Me.TpSettings = New System.Windows.Forms.TabPage()
         Me.PnlSettings = New System.Windows.Forms.Panel()
+        Me.PnlAbout = New System.Windows.Forms.Panel()
+        Me.LblAbout = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.ChkFetchHourly = New System.Windows.Forms.CheckBox()
         Me.ChkFetchDaily = New System.Windows.Forms.CheckBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.NumUpdateInterval = New System.Windows.Forms.NumericUpDown()
         Me.PnlHourlyForecast = New System.Windows.Forms.Panel()
         Me.ChkAllHourly = New System.Windows.Forms.CheckBox()
         Me.GbHourlyFields = New System.Windows.Forms.GroupBox()
@@ -138,8 +137,6 @@ Partial Class FrmMain
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.RbUnitSI = New System.Windows.Forms.RadioButton()
         Me.RbUnitUS = New System.Windows.Forms.RadioButton()
-        Me.NumUpdateInterval = New System.Windows.Forms.NumericUpDown()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TxtApiKey = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -151,13 +148,15 @@ Partial Class FrmMain
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PnlAbout = New System.Windows.Forms.Panel()
-        Me.LblAbout = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.TsslVer = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TsslNextUpdate = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TsslClock = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TsslCpy = New System.Windows.Forms.ToolStripStatusLabel()
         CType(Me.TmrUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TmrClock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TC.SuspendLayout()
         Me.TpForecast.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
         CType(Me.DgvDaily, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TpLogs.SuspendLayout()
         Me.TcLogs.SuspendLayout()
@@ -166,18 +165,19 @@ Partial Class FrmMain
         Me.TpLogError.SuspendLayout()
         Me.TpSettings.SuspendLayout()
         Me.PnlSettings.SuspendLayout()
+        Me.PnlAbout.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.NumUpdateInterval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlHourlyForecast.SuspendLayout()
         Me.GbHourlyFields.SuspendLayout()
         Me.PnlDailyForecast.SuspendLayout()
         Me.GbDailyFields.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.NumUpdateInterval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumLongitude, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumLatiutude, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PnlAbout.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TmrUpdate
@@ -194,67 +194,23 @@ Partial Class FrmMain
         Me.TC.Controls.Add(Me.TpForecast)
         Me.TC.Controls.Add(Me.TpLogs)
         Me.TC.Controls.Add(Me.TpSettings)
-        Me.TC.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TC.Dock = System.Windows.Forms.DockStyle.Top
         Me.TC.Location = New System.Drawing.Point(0, 0)
         Me.TC.Name = "TC"
         Me.TC.SelectedIndex = 0
-        Me.TC.Size = New System.Drawing.Size(1580, 1073)
+        Me.TC.Size = New System.Drawing.Size(1580, 1047)
         Me.TC.TabIndex = 5
         '
         'TpForecast
         '
-        Me.TpForecast.Controls.Add(Me.StatusStrip1)
         Me.TpForecast.Controls.Add(Me.DgvDaily)
         Me.TpForecast.Location = New System.Drawing.Point(4, 29)
         Me.TpForecast.Name = "TpForecast"
         Me.TpForecast.Padding = New System.Windows.Forms.Padding(3)
-        Me.TpForecast.Size = New System.Drawing.Size(1572, 1040)
+        Me.TpForecast.Size = New System.Drawing.Size(1572, 1014)
         Me.TpForecast.TabIndex = 0
         Me.TpForecast.Text = "Forecast"
         Me.TpForecast.UseVisualStyleBackColor = True
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.GripMargin = New System.Windows.Forms.Padding(0)
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsslVer, Me.TsslNextUpdate, Me.TsslCpy, Me.TsslClock})
-        Me.StatusStrip1.Location = New System.Drawing.Point(3, 1005)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1566, 32)
-        Me.StatusStrip1.SizingGrip = False
-        Me.StatusStrip1.TabIndex = 6
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'TsslVer
-        '
-        Me.TsslVer.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.TsslVer.ForeColor = System.Drawing.Color.Navy
-        Me.TsslVer.Name = "TsslVer"
-        Me.TsslVer.Size = New System.Drawing.Size(18, 25)
-        Me.TsslVer.Text = "v"
-        Me.TsslVer.ToolTipText = "Application version"
-        '
-        'TsslNextUpdate
-        '
-        Me.TsslNextUpdate.Name = "TsslNextUpdate"
-        Me.TsslNextUpdate.Size = New System.Drawing.Size(32, 25)
-        Me.TsslNextUpdate.Text = "nu"
-        Me.TsslNextUpdate.ToolTipText = "Time to next update"
-        '
-        'TsslCpy
-        '
-        Me.TsslCpy.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Italic)
-        Me.TsslCpy.ForeColor = System.Drawing.Color.Maroon
-        Me.TsslCpy.Name = "TsslCpy"
-        Me.TsslCpy.Size = New System.Drawing.Size(1443, 25)
-        Me.TsslCpy.Spring = True
-        Me.TsslCpy.Text = "cpy"
-        '
-        'TsslClock
-        '
-        Me.TsslClock.Name = "TsslClock"
-        Me.TsslClock.Size = New System.Drawing.Size(58, 25)
-        Me.TsslClock.Text = "h:mm"
         '
         'DgvDaily
         '
@@ -266,23 +222,23 @@ Partial Class FrmMain
         Me.DgvDaily.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.DgvDaily.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DgvDaily.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.DgvDaily.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.DgvDaily.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvDaily.ColumnHeadersVisible = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvDaily.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvDaily.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvDaily.Dock = System.Windows.Forms.DockStyle.Top
         Me.DgvDaily.Enabled = False
         Me.DgvDaily.EnableHeadersVisualStyles = False
@@ -309,7 +265,7 @@ Partial Class FrmMain
         Me.TpLogs.Location = New System.Drawing.Point(4, 29)
         Me.TpLogs.Name = "TpLogs"
         Me.TpLogs.Padding = New System.Windows.Forms.Padding(3)
-        Me.TpLogs.Size = New System.Drawing.Size(1572, 1040)
+        Me.TpLogs.Size = New System.Drawing.Size(1572, 1014)
         Me.TpLogs.TabIndex = 1
         Me.TpLogs.Text = "Logs"
         Me.TpLogs.UseVisualStyleBackColor = True
@@ -325,7 +281,7 @@ Partial Class FrmMain
         Me.TcLogs.Multiline = True
         Me.TcLogs.Name = "TcLogs"
         Me.TcLogs.SelectedIndex = 0
-        Me.TcLogs.Size = New System.Drawing.Size(1566, 1034)
+        Me.TcLogs.Size = New System.Drawing.Size(1566, 1008)
         Me.TcLogs.TabIndex = 0
         '
         'TpLogLog
@@ -334,7 +290,7 @@ Partial Class FrmMain
         Me.TpLogLog.Location = New System.Drawing.Point(4, 4)
         Me.TpLogLog.Name = "TpLogLog"
         Me.TpLogLog.Padding = New System.Windows.Forms.Padding(3)
-        Me.TpLogLog.Size = New System.Drawing.Size(1534, 1026)
+        Me.TpLogLog.Size = New System.Drawing.Size(1534, 1000)
         Me.TpLogLog.TabIndex = 0
         Me.TpLogLog.Text = "Log"
         Me.TpLogLog.UseVisualStyleBackColor = True
@@ -347,7 +303,7 @@ Partial Class FrmMain
         Me.RtbLog.Name = "RtbLog"
         Me.RtbLog.ReadOnly = True
         Me.RtbLog.ShowSelectionMargin = True
-        Me.RtbLog.Size = New System.Drawing.Size(1528, 1020)
+        Me.RtbLog.Size = New System.Drawing.Size(1528, 994)
         Me.RtbLog.TabIndex = 0
         Me.RtbLog.Text = ""
         '
@@ -357,7 +313,7 @@ Partial Class FrmMain
         Me.TpLogData.Location = New System.Drawing.Point(4, 4)
         Me.TpLogData.Name = "TpLogData"
         Me.TpLogData.Padding = New System.Windows.Forms.Padding(3)
-        Me.TpLogData.Size = New System.Drawing.Size(1534, 1001)
+        Me.TpLogData.Size = New System.Drawing.Size(1534, 1026)
         Me.TpLogData.TabIndex = 1
         Me.TpLogData.Text = "Data"
         Me.TpLogData.UseVisualStyleBackColor = True
@@ -370,7 +326,7 @@ Partial Class FrmMain
         Me.RtbData.Name = "RtbData"
         Me.RtbData.ReadOnly = True
         Me.RtbData.ShowSelectionMargin = True
-        Me.RtbData.Size = New System.Drawing.Size(1528, 995)
+        Me.RtbData.Size = New System.Drawing.Size(1528, 1020)
         Me.RtbData.TabIndex = 1
         Me.RtbData.Text = ""
         '
@@ -379,7 +335,7 @@ Partial Class FrmMain
         Me.TpLogError.Controls.Add(Me.RtbError)
         Me.TpLogError.Location = New System.Drawing.Point(4, 4)
         Me.TpLogError.Name = "TpLogError"
-        Me.TpLogError.Size = New System.Drawing.Size(1534, 1001)
+        Me.TpLogError.Size = New System.Drawing.Size(1534, 1026)
         Me.TpLogError.TabIndex = 2
         Me.TpLogError.Text = "Error"
         Me.TpLogError.UseVisualStyleBackColor = True
@@ -392,7 +348,7 @@ Partial Class FrmMain
         Me.RtbError.Name = "RtbError"
         Me.RtbError.ReadOnly = True
         Me.RtbError.ShowSelectionMargin = True
-        Me.RtbError.Size = New System.Drawing.Size(1534, 1001)
+        Me.RtbError.Size = New System.Drawing.Size(1534, 1026)
         Me.RtbError.TabIndex = 1
         Me.RtbError.Text = ""
         '
@@ -401,7 +357,7 @@ Partial Class FrmMain
         Me.TpSettings.Controls.Add(Me.PnlSettings)
         Me.TpSettings.Location = New System.Drawing.Point(4, 29)
         Me.TpSettings.Name = "TpSettings"
-        Me.TpSettings.Size = New System.Drawing.Size(1572, 1040)
+        Me.TpSettings.Size = New System.Drawing.Size(1572, 1014)
         Me.TpSettings.TabIndex = 2
         Me.TpSettings.Text = "Settings"
         Me.TpSettings.UseVisualStyleBackColor = True
@@ -422,8 +378,27 @@ Partial Class FrmMain
         Me.PnlSettings.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PnlSettings.Location = New System.Drawing.Point(0, 0)
         Me.PnlSettings.Name = "PnlSettings"
-        Me.PnlSettings.Size = New System.Drawing.Size(1572, 1040)
+        Me.PnlSettings.Size = New System.Drawing.Size(1572, 1014)
         Me.PnlSettings.TabIndex = 0
+        '
+        'PnlAbout
+        '
+        Me.PnlAbout.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PnlAbout.Controls.Add(Me.LblAbout)
+        Me.PnlAbout.ForeColor = System.Drawing.SystemColors.Info
+        Me.PnlAbout.Location = New System.Drawing.Point(28, 872)
+        Me.PnlAbout.Name = "PnlAbout"
+        Me.PnlAbout.Size = New System.Drawing.Size(397, 142)
+        Me.PnlAbout.TabIndex = 23
+        '
+        'LblAbout
+        '
+        Me.LblAbout.Location = New System.Drawing.Point(17, 19)
+        Me.LblAbout.Name = "LblAbout"
+        Me.LblAbout.Size = New System.Drawing.Size(362, 104)
+        Me.LblAbout.TabIndex = 0
+        Me.LblAbout.Text = "-"
+        Me.LblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox4
         '
@@ -460,6 +435,24 @@ Partial Class FrmMain
         Me.ChkFetchDaily.Tag = "0"
         Me.ChkFetchDaily.Text = "Daily"
         Me.ChkFetchDaily.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(205, 27)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(188, 20)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Update Interval (minutes)"
+        '
+        'NumUpdateInterval
+        '
+        Me.NumUpdateInterval.Location = New System.Drawing.Point(401, 24)
+        Me.NumUpdateInterval.Maximum = New Decimal(New Integer() {240, 0, 0, 0})
+        Me.NumUpdateInterval.Name = "NumUpdateInterval"
+        Me.NumUpdateInterval.Size = New System.Drawing.Size(88, 26)
+        Me.NumUpdateInterval.TabIndex = 3
+        Me.NumUpdateInterval.Tag = "2"
         '
         'PnlHourlyForecast
         '
@@ -1529,24 +1522,6 @@ Partial Class FrmMain
         Me.RbUnitUS.Text = "US"
         Me.RbUnitUS.UseVisualStyleBackColor = True
         '
-        'NumUpdateInterval
-        '
-        Me.NumUpdateInterval.Location = New System.Drawing.Point(401, 24)
-        Me.NumUpdateInterval.Maximum = New Decimal(New Integer() {240, 0, 0, 0})
-        Me.NumUpdateInterval.Name = "NumUpdateInterval"
-        Me.NumUpdateInterval.Size = New System.Drawing.Size(88, 26)
-        Me.NumUpdateInterval.TabIndex = 3
-        Me.NumUpdateInterval.Tag = "2"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(205, 27)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(188, 20)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Update Interval (minutes)"
-        '
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -1657,30 +1632,53 @@ Partial Class FrmMain
         Me.TTip.IsBalloon = True
         Me.TTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'PnlAbout
+        'StatusStrip1
         '
-        Me.PnlAbout.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.PnlAbout.Controls.Add(Me.LblAbout)
-        Me.PnlAbout.ForeColor = System.Drawing.SystemColors.Info
-        Me.PnlAbout.Location = New System.Drawing.Point(28, 872)
-        Me.PnlAbout.Name = "PnlAbout"
-        Me.PnlAbout.Size = New System.Drawing.Size(397, 142)
-        Me.PnlAbout.TabIndex = 23
+        Me.StatusStrip1.GripMargin = New System.Windows.Forms.Padding(0)
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsslVer, Me.TsslNextUpdate, Me.TsslCpy, Me.TsslClock})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 1057)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1580, 32)
+        Me.StatusStrip1.SizingGrip = False
+        Me.StatusStrip1.TabIndex = 7
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'LblAbout
+        'TsslVer
         '
-        Me.LblAbout.Location = New System.Drawing.Point(17, 19)
-        Me.LblAbout.Name = "LblAbout"
-        Me.LblAbout.Size = New System.Drawing.Size(362, 104)
-        Me.LblAbout.TabIndex = 0
-        Me.LblAbout.Text = "-"
-        Me.LblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.TsslVer.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.TsslVer.ForeColor = System.Drawing.Color.Navy
+        Me.TsslVer.Name = "TsslVer"
+        Me.TsslVer.Size = New System.Drawing.Size(18, 25)
+        Me.TsslVer.Text = "v"
+        Me.TsslVer.ToolTipText = "Application version"
+        '
+        'TsslNextUpdate
+        '
+        Me.TsslNextUpdate.Name = "TsslNextUpdate"
+        Me.TsslNextUpdate.Size = New System.Drawing.Size(32, 25)
+        Me.TsslNextUpdate.Text = "nu"
+        Me.TsslNextUpdate.ToolTipText = "Time to next update"
+        '
+        'TsslClock
+        '
+        Me.TsslClock.Name = "TsslClock"
+        Me.TsslClock.Size = New System.Drawing.Size(58, 25)
+        Me.TsslClock.Text = "h:mm"
+        '
+        'TsslCpy
+        '
+        Me.TsslCpy.Name = "TsslCpy"
+        Me.TsslCpy.Size = New System.Drawing.Size(1411, 25)
+        Me.TsslCpy.Spring = True
+        Me.TsslCpy.Text = "cpy"
         '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1580, 1073)
+        Me.ClientSize = New System.Drawing.Size(1580, 1089)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TC)
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.ClimaCell.My.MySettings.Default, "MainFormLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -1693,9 +1691,6 @@ Partial Class FrmMain
         CType(Me.TmrClock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TC.ResumeLayout(False)
         Me.TpForecast.ResumeLayout(False)
-        Me.TpForecast.PerformLayout()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         CType(Me.DgvDaily, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TpLogs.ResumeLayout(False)
         Me.TcLogs.ResumeLayout(False)
@@ -1704,8 +1699,10 @@ Partial Class FrmMain
         Me.TpLogError.ResumeLayout(False)
         Me.TpSettings.ResumeLayout(False)
         Me.PnlSettings.ResumeLayout(False)
+        Me.PnlAbout.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.NumUpdateInterval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlHourlyForecast.ResumeLayout(False)
         Me.PnlHourlyForecast.PerformLayout()
         Me.GbHourlyFields.ResumeLayout(False)
@@ -1716,15 +1713,16 @@ Partial Class FrmMain
         Me.GbDailyFields.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.NumUpdateInterval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.NumLongitude, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumLatiutude, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PnlAbout.ResumeLayout(False)
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TmrUpdate As Timers.Timer
@@ -1847,12 +1845,12 @@ Partial Class FrmMain
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents ChkFetchHourly As CheckBox
     Friend WithEvents ChkFetchDaily As CheckBox
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents TsslVer As ToolStripStatusLabel
-    Friend WithEvents TsslCpy As ToolStripStatusLabel
-    Friend WithEvents TsslClock As ToolStripStatusLabel
-    Friend WithEvents TsslNextUpdate As ToolStripStatusLabel
     Friend WithEvents TTip As ToolTip
     Friend WithEvents PnlAbout As Panel
     Friend WithEvents LblAbout As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents TsslVer As ToolStripStatusLabel
+    Friend WithEvents TsslNextUpdate As ToolStripStatusLabel
+    Friend WithEvents TsslClock As ToolStripStatusLabel
+    Friend WithEvents TsslCpy As ToolStripStatusLabel
 End Class
