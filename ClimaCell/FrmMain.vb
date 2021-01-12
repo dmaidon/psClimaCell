@@ -80,10 +80,10 @@ Public Class FrmMain
         NumDailyInterval.Value = My.Settings.UpdateInterval_Daily
         NumHourlyInterval.Value = My.Settings.UpdateInterval_Hourly
         NumNowcastInterval.Value = My.Settings.UpdateInterval_Nowcast
-        NumNcTimeStep.Value = My.Settings.Nc_TimeStep
         TmrInt(0) = My.Settings.UpdateInterval_Daily
         TmrInt(1) = My.Settings.UpdateInterval_Hourly
         TmrInt(2) = My.Settings.UpdateInterval_Nowcast
+        NumNcTimeStep.Value = CDec(My.Settings.Nc_TimeStep)
 
         TxtApiKey.Text = My.Settings.ApiKey
 
@@ -304,7 +304,7 @@ Public Class FrmMain
         End With
     End Sub
 
-    Private Sub Latiutude_Value(sender As Object, e As EventArgs) Handles NumLatiutude.ValueChanged, NumLongitude.ValueChanged
+    Private Sub LocationData(sender As Object, e As EventArgs) Handles NumLatiutude.ValueChanged, NumLongitude.ValueChanged
         With DirectCast(sender, NumericUpDown)
             Select Case CInt(.Tag)
                 Case 0
@@ -380,8 +380,18 @@ Public Class FrmMain
     End Sub
 
     Private Sub DailyCheckAll(sender As Object, e As EventArgs) Handles ChkAllDaily.CheckedChanged
-        For Each c As CheckBox In GbDailyFields.Controls.OfType(Of CheckBox)()
-            c.Checked = Not c.Checked
+        For Each c As CheckBox In TlpDaily.Controls.OfType(Of CheckBox)()
+            If Not c.Checked Then
+                c.Checked = True
+            End If
+        Next
+    End Sub
+
+    Private Sub ChkUncheckAllDaily_CheckedChanged(sender As Object, e As EventArgs) Handles ChkUncheckAllDaily.CheckedChanged
+        For Each c As CheckBox In TlpDaily.Controls.OfType(Of CheckBox)()
+            If c.Checked Then
+                c.Checked = False
+            End If
         Next
     End Sub
 
@@ -390,9 +400,17 @@ Public Class FrmMain
 #Region "Hourly Forecast"
 
     Private Sub HourlyCheckAll(sender As Object, e As EventArgs) Handles ChkAllHourly.CheckedChanged
-        For Each c As CheckBox In GbHourlyFields.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In TlpHourly.Controls.OfType(Of CheckBox)()
             If Not c.Checked Then
                 c.Checked = True
+            End If
+        Next
+    End Sub
+
+    Private Sub ChkUncheckAllHr_CheckedChanged(sender As Object, e As EventArgs) Handles ChkUncheckAllHr.CheckedChanged
+        For Each c As CheckBox In TlpHourly.Controls.OfType(Of CheckBox)()
+            If c.Checked Then
+                c.Checked = False
             End If
         Next
     End Sub
@@ -673,7 +691,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub NowcastCheckAll(sender As Object, e As EventArgs) Handles ChkAllNowcast.CheckedChanged
-        For Each c As CheckBox In GbNowcast.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In TlpNowcast.Controls.OfType(Of CheckBox)()
             If Not c.Checked Then
                 c.Checked = True
             End If
@@ -682,7 +700,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub ChkUncheckAllNowcast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkUncheckAllNowcast.CheckedChanged
-        For Each c As CheckBox In GbNowcast.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In TlpNowcast.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 c.Checked = False
             End If
@@ -691,40 +709,39 @@ Public Class FrmMain
     End Sub
 
     Private Sub NumNcTimeStep_ValueChanged(sender As Object, e As EventArgs) Handles NumNcTimeStep.ValueChanged
-        Dim ct = DirectCast(sender, NumericUpDown)
-        My.Settings.Nc_TimeStep = CInt(ct.Value)
+        My.Settings.Nc_TimeStep = CInt(NumNcTimeStep.Value)
+        My.Settings.Save()
     End Sub
 
-
-
 #End Region
 
 #End Region
 
-#Region "Timer Clock"
+#Region "Timers & Clock"
+
     Private Sub TmrUpdateDaily_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateDaily.Elapsed
         PrintLog($"Daily Update timer elapsed @ {Now:T}.{vbLf}")
-        DlyDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Daily, 0)
-        DlyNextUp = Date.Now + DlyDuration
         If My.Settings.Fetch_Daily Then
+            DlyDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Daily, 0)
+            DlyNextUp = Date.Now + DlyDuration
             FetchDailyData()
         End If
     End Sub
 
     Private Sub TmrUpdateHourly_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateHourly.Elapsed
         PrintLog($"Hourly Update timer elapsed @ {Now:T}.{vbLf}")
-        HrDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
-        HrNextUp = Date.Now + HrDuration
         If My.Settings.Fetch_Hourly Then
+            HrDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
+            HrNextUp = Date.Now + HrDuration
             FetchHourData()
         End If
     End Sub
 
     Private Sub TmrUpdateNowcast_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateNowcast.Elapsed
         PrintLog($"Nowcast Update timer elapsed @ {Now:T}.{vbLf}")
-        NcDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
-        NcNextUp = Date.Now + NcDuration
         If My.Settings.Fetch_Nowcast Then
+            NcDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
+            NcNextUp = Date.Now + NcDuration
             FetchNowcastData()
         End If
     End Sub
@@ -750,7 +767,6 @@ Public Class FrmMain
     $"Nc: {DateDiff(DateInterval.Minute, Date.Now, NcNextUp):N0}")
         End If
     End Sub
-
 
 #End Region
 

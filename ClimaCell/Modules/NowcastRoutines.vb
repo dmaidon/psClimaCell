@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Globalization
+Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Text.Json
@@ -59,7 +60,9 @@ Friend Module NowcastRoutines
                         Dim resp As String = Await reader.ReadToEndAsync()
                         File.WriteAllText(fn, resp)
                         ncNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
-                        PrintData($"ClimaCell Nowcast Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}", resp)
+                        'Using aTxt As StreamWriter = File.AppendText(DataFile)
+                        '    Await aTxt.WriteLineAsync($"ClimaCell Nowcast Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}")
+                        'End Using
                         WriteDgvNowcast()
                     End Using
                 Else
@@ -79,6 +82,9 @@ Friend Module NowcastRoutines
         Try
             Using reader = New StreamReader(fn)
                 Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
+                'Using aTxt As StreamWriter = File.AppendText(DataFile)
+                '    Await aTxt.WriteLineAsync($"Parsed ClimaCell Nowcast Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}")
+                'End Using
                 ncNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
                 PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
             End Using
@@ -93,7 +99,7 @@ Friend Module NowcastRoutines
     Private Function GetNowcastString() As String
 
         Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMain.GbNowcast.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FrmMain.TlpNowcast.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 Select Case CInt(c.Tag)
                     Case 0
@@ -240,7 +246,7 @@ Friend Module NowcastRoutines
                 For j = 0 To ncNfo.Length - 1
                     .Rows.Add()
                     Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{ncNfo(j).WxCode.Value}.png")
-                    PrintLog($"{j}. {icn}{vbLf}")
+                    PrintLog($"{j}. Nc: {icn}{vbLf}")
                     Using bmp1 As New Bitmap(icn)
                         Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
                             .Rows(j).Cells(2).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
@@ -256,7 +262,8 @@ Friend Module NowcastRoutines
                     sb.Append($"Wind {Deg2Compass(CDbl(ncNfo(j).WindDir.Value))} @ {Math.Ceiling(CDec(ncNfo(j).WindSpeed.Value))} mph, gusting to {Math.Round(CDbl(ncNfo(j).WindGust.Value)):N0} {ncNfo(j).WindGust.Units}{vbLf}")
                     sb.Append($"AQI: {Math.Ceiling(CDbl(ncNfo(j).EpaAqi.Value))}{vbLf}")
                     sb.Append($"Primary Pollutant: {ncNfo(j).EpaPrimaryPollutant.Value}{vbLf}")
-                    sb.Append($"Forecast: {ncNfo(j).WxCode.Value.Replace("_", " ")}{vbLf}")
+                    Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
+                    sb.Append($"Forecast: {myTI.ToTitleCase(ncNfo(j).WxCode.Value.Replace("_", " "))}{vbLf}")
                     .Rows(j).Cells(3).Value = sb.ToString
                     sb.Clear()
                     Application.DoEvents()

@@ -26,7 +26,7 @@ Friend Module DailyRoutines
 
     Private Function GetDailyString() As String
         Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMain.GbDailyFields.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FrmMain.TlpDaily.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 Select Case CInt(c.Tag)
                     Case 0
@@ -99,7 +99,9 @@ Friend Module DailyRoutines
                         Dim resp As String = Await reader.ReadToEndAsync()
                         File.WriteAllText(fn, resp)
                         dNfo = JsonSerializer.Deserialize(Of DailyData())(resp)
-                        PrintData($"ClimaCell Daily Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}", resp)
+                        Using aTxt As StreamWriter = File.AppendText(DataFile)
+                            Await aTxt.WriteLineAsync($"ClimaCell Daily Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}")
+                        End Using
                         WriteDgvDaily()
                     End Using
                 Else
@@ -119,10 +121,13 @@ Friend Module DailyRoutines
         Try
             Using reader = New StreamReader(fn)
                 Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
+                Using aTxt As StreamWriter = File.AppendText(DataFile)
+                    Await aTxt.WriteLineAsync($"Parsed ClimaCell Daily Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}")
+                End Using
                 dNfo = JsonSerializer.Deserialize(Of DailyData())(resp)
-                PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
-            End Using
-            WriteDgvDaily()
+                    PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
+                End Using
+                WriteDgvDaily()
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
@@ -161,7 +166,7 @@ Friend Module DailyRoutines
                 For j = 0 To dNfo.Length - 1
                     Dim sb As New StringBuilder()
                     sb.Append($"Hi: {dNfo(j).Temp(1).Max.Value:N0}°F   Lo: {dNfo(j).Temp(0).Min.Value:N0}°F{vbLf}")
-                    sb.Append($"Winds {Deg2Compass(CDbl(dNfo(j).WindDirection(1).Max.Value))} @ {Math.Ceiling(CDec(dNfo(j).WindSpeed(1).Max.Value))} mph{vbLf}")
+                    sb.Append($"Wind {Deg2Compass(CDbl(dNfo(j).WindDirection(1).Max.Value))} @ {Math.Ceiling(CDec(dNfo(j).WindSpeed(1).Max.Value))} mph{vbLf}")
                     sb.Append($"Precip: {dNfo(j).PrecipitationProbability.Value}%{vbLf}")
                     sb.Append($"Accum: {dNfo(j).PrecipitationAccumulation.Value} in.{vbLf}")
                     sb.Append($"Bp: {dNfo(j).BaroPressure(0).Min.Value} - {dNfo(j).BaroPressure(1).Max.Value} inHg{vbLf}")
@@ -172,29 +177,33 @@ Friend Module DailyRoutines
                     sb.Append($"{myTI.ToTitleCase(dNfo(j).MoonPhase.Value).Replace("_", " ")}{vbLf}")
                     sb.Append($"Vis: {dNfo(j).Visibility(0).Min.Value} mi{vbLf}")
                     sb.Append($"{myTI.ToTitleCase(dNfo(j).WeatherCode.Value).Replace("_", " ")}{vbLf}")
-                    Dim icn As String = dNfo(j).WeatherCode.Value
-                    PrintLog($"{Path.Combine(IconDir, "PNG", "Color", $"{icn}.png")} --> Bitmap{vbLf}")
-                    Using bmp1 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"{icn}.png"))
-                        Dim bgClr As Color = Color.LightSkyBlue
-                        If j <= 7 Then
-                            .Rows(0).Cells(j).Style.BackColor = bgClr
-                            .Rows(0).Cells(j).Value = Transparent2Color(bmp1, bgClr)
-                            .Rows(1).Cells(j).Value = sb.ToString
-                            .Rows(2).Cells(j).Value = $"{dNfo(j).ObservationTime.Value:dddd}"
-                            .Rows(2).Cells(j).Style.BackColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Bg
-                            .Rows(2).Cells(j).Style.ForeColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Fg
-                            .Rows(3).Cells(j).Value = $"{dNfo(j).ObservationTime.Value:MMM d}"
-                        ElseIf j >= 8 Then
-                            .Rows(4).Cells(j - 8).Value = Transparent2Color(bmp1, bgClr)
-                            .Rows(4).Cells(j - 8).Style.BackColor = bgClr
-                            .Rows(5).Cells(j - 8).Value = sb.ToString
-                            .Rows(6).Cells(j - 8).Value = $"{dNfo(j).ObservationTime.Value:dddd}"
-                            .Rows(6).Cells(j - 8).Style.BackColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Bg
-                            .Rows(6).Cells(j - 8).Style.ForeColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Fg
-                            .Rows(7).Cells(j - 8).Value = $"{dNfo(j).ObservationTime.Value:MMM d}"
-                        End If
+                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{dNfo(j).WeatherCode.Value}.png")
+                    PrintLog($"{j}. Dly: {icn} --> Bitmap{vbLf}")
+                    Using bmp1 As New Bitmap(icn)
+                        Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
+                            Dim bgClr As Color = Color.LightSkyBlue
+                            If j <= 7 Then
+                                .Rows(0).Cells(j).Style.BackColor = bgClr
+                                '.Rows(0).Cells(j).Value = Transparent2Color(bmp1, bgClr)
+                                .Rows(0).Cells(j).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
+                                .Rows(1).Cells(j).Value = sb.ToString
+                                .Rows(2).Cells(j).Value = $"{dNfo(j).ObservationTime.Value:dddd}"
+                                .Rows(2).Cells(j).Style.BackColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Bg
+                                .Rows(2).Cells(j).Style.ForeColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Fg
+                                .Rows(3).Cells(j).Value = $"{dNfo(j).ObservationTime.Value:MMM d}"
+                            ElseIf j >= 8 Then
+                                '.Rows(4).Cells(j - 8).Value = Transparent2Color(bmp1, bgClr)
+                                .Rows(4).Cells(j - 8).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
+                                .Rows(4).Cells(j - 8).Style.BackColor = bgClr
+                                .Rows(5).Cells(j - 8).Value = sb.ToString
+                                .Rows(6).Cells(j - 8).Value = $"{dNfo(j).ObservationTime.Value:dddd}"
+                                .Rows(6).Cells(j - 8).Style.BackColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Bg
+                                .Rows(6).Cells(j - 8).Style.ForeColor = DgvColorDay(CDbl(dNfo(j).Temp(1).Max.Value), CDbl(dNfo(j).Temp(0).Min.Value)).Fg
+                                .Rows(7).Cells(j - 8).Value = $"{dNfo(j).ObservationTime.Value:MMM d}"
+                            End If
+                        End Using
                     End Using
-                    sb.Clear()
+                        sb.Clear()
                     Application.DoEvents()
                 Next
 

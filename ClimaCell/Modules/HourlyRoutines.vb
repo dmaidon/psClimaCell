@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Globalization
+Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Text.Json
@@ -7,6 +8,7 @@ Imports ClimaCell.Models
 Friend Module HourlyRoutines
 
     Dim hNfo As HourNum()
+
     Friend Sub FetchHourData()
         Dim hFile As String = Path.Combine(TempDir, $"hourly-{Now:Mdyy_HH}.json")
         If File.Exists(hFile) Then
@@ -50,9 +52,12 @@ Friend Module HourlyRoutines
                     Dim dStr = response.GetResponseStream()
                     Using reader = New StreamReader(dStr)
                         Dim resp As String = Await reader.ReadToEndAsync()
+                        'Using aTxt As StreamWriter = File.AppendText(DataFile)
+                        '    aTxt.WriteLine($"ClimaCell Hourly Forecast Data @ {Now:T}")
+                        '    aTxt.WriteLine($"ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}")
+                        'End Using
                         File.WriteAllText(fn, resp)
                         hNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
-                        PrintData($"ClimaCell Hourly Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}", resp)
                         WriteHourData()
                     End Using
                 Else
@@ -72,6 +77,10 @@ Friend Module HourlyRoutines
         Try
             Using reader = New StreamReader(fn)
                 Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
+                'Using aTxt As StreamWriter = File.AppendText(DataFile)
+                '    aTxt.WriteLine($"Parsed ClimaCell Hourly Forecast Data @ {Now:T}")
+                '    aTxt.WriteLine("{resp}{vbLf}")
+                'End Using
                 hNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
                 PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
             End Using
@@ -85,7 +94,7 @@ Friend Module HourlyRoutines
 
     Private Function GetHourString() As String
         Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMain.GbHourlyFields.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FrmMain.TlpHourly.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 Select Case CInt(c.Tag)
                     Case 0
@@ -226,23 +235,6 @@ Friend Module HourlyRoutines
     End Function
 
     Private Sub WriteHourData()
-        'With FrmMain
-        '    For j = 0 To hNfo.Length - 1
-        '        .RtbLog.AppendText($"Day: {CDate(hNfo(j).ObservationTime.Value):MMM d}   Hour: {CDate(hNfo(j).ObservationTime.Value):h tt}{vbLf}")
-        '        .RtbLog.AppendText($"Temp: {hNfo(j).Temp.Value:N1}°{hNfo(j).Temp.Units}{vbLf}")
-        '        .RtbLog.AppendText($"Cloud Base: {hNfo(j).CloudBase.Value} {hNfo(j).CloudBase.Units}{vbLf}")
-        '        .RtbLog.AppendText($"Cloud Cover: {hNfo(j).CloudCover.Value:N2} {hNfo(j).CloudCover.Units}{vbLf}")
-        '        .RtbLog.AppendText($"Wind {Deg2Compass(CDbl(hNfo(j).WindDir.Value))} @ {Math.Round(CDbl(hNfo(j).WindSpeed.Value)):N0} {hNfo(j).WindSpeed.Units}, gusting to {Math.Round(CDbl(hNfo(j).WindGust.Value)):N0} {hNfo(j).WindGust.Units}{vbLf}")
-        '        .RtbLog.AppendText($"Weather: {hNfo(j).WxCode.Value.Replace("_", " ")}{vbLf}")
-        '        .RtbLog.AppendText($"Precipitation: {hNfo(j).PrecipiProb.Value}{hNfo(j).PrecipiProb.Units} chance of {hNfo(j).PrecipType.Value.Replace("none", "precipitation")}{vbLf} ")
-        '        'If My.Settings.Hour_HailRisk AndAlso (hNfo(j).HailRisk.Value = 0 OrElse hNfo(j).HailRisk.Value = 1) Then
-        '        '    .RtbLog.AppendText($"Hail Risk: {CBool(hNfo(j).HailRisk.Value)}{vbLf}")
-        '        'End If
-        '        .RtbLog.AppendText($"{vbLf}")
-        '        Application.DoEvents()
-        '    Next
-        'End With
-
         With FrmMain.DgvHourly
             .Rows.Clear()
             Dim bgClr As Color = Color.LightSkyBlue
@@ -250,7 +242,7 @@ Friend Module HourlyRoutines
 
                 .Rows.Add()
                 Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{hNfo(j).WxCode.Value}.png")
-                PrintLog($"{j}. {Icn}{vbLf}")
+                PrintLog($"{j}. Hr: {Icn}{vbLf}")
                 Using bmp1 As New Bitmap(Icn)
                     Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
                         .Rows(j).Cells(2).Value = If(File.Exists(Icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
@@ -266,7 +258,8 @@ Friend Module HourlyRoutines
                 sb.Append($"Cloud Base: {hNfo(j).CloudBase.Value} {hNfo(j).CloudBase.Units}{vbLf}")
                 sb.Append($"Cloud Cover: {hNfo(j).CloudCover.Value:N2} {hNfo(j).CloudCover.Units}{vbLf}")
                 sb.Append($"Wind {Deg2Compass(CDbl(hNfo(j).WindDir.Value))} @ {Math.Round(CDbl(hNfo(j).WindSpeed.Value)):N0} {hNfo(j).WindSpeed.Units}, gusting to {Math.Round(CDbl(hNfo(j).WindGust.Value)):N0} {hNfo(j).WindGust.Units}{vbLf}")
-                sb.Append($"Weather: {hNfo(j).WxCode.Value.Replace("_", " ")}{vbLf}")
+                Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
+                sb.Append($"Weather: {myTI.ToTitleCase(hNfo(j).WxCode.Value.Replace("_", " "))}{vbLf}")
                 sb.Append($"Precipitation: {hNfo(j).PrecipiProb.Value}{hNfo(j).PrecipiProb.Units} chance of {hNfo(j).PrecipType.Value.Replace("none", "precipitation")}{vbLf} ")
                 'If My.Settings.Hour_HailRisk AndAlso (hNfo(j).HailRisk.Value = 0 OrElse hNfo(j).HailRisk.Value = 1) Then
                 '   sb.append($"Hail Risk: {CBool(hNfo(j).HailRisk.Value)}{vbLf}")
@@ -275,9 +268,8 @@ Friend Module HourlyRoutines
                 sb.Clear()
                 Application.DoEvents()
             Next
+            .ClearSelection()
         End With
     End Sub
-
-
 
 End Module

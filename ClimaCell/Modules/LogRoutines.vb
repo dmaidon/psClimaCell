@@ -32,9 +32,9 @@ Friend Module LogRoutines
         End With
     End Sub
 
-    Friend Sub PrintData(t As String, m As String)
-        FrmMain.RtbData.AppendText($"{Separator}{vbLf}{t}{vbLf}{m}{vbLf}{Separator}{vbLf}")
-    End Sub
+    'Friend Sub PrintData(t As String, m As String)
+    '    FrmMain.RtbData.AppendText($"{Separator}{vbLf}{t}{vbLf}{m}{vbLf}{Separator}{vbLf}")
+    'End Sub
 
     Friend Sub PrintErr(msg As String, trg As String, stk As String, src As String, Optional gbe As String = "- Empty -")
         'ResetError()
@@ -72,7 +72,7 @@ Friend Module LogRoutines
             PrintLog($"¥{vbLf}")
             With FrmMain
                 .RtbLog.SaveFile(LogFile, RichTextBoxStreamType.PlainText)
-                .RtbData.SaveFile(DataFile, RichTextBoxStreamType.PlainText)
+                '.RtbData.SaveFile(DataFile, RichTextBoxStreamType.PlainText)
                 .RtbError.SaveFile(ErrFile, RichTextBoxStreamType.PlainText)
             End With
         Catch ex As IOException
@@ -83,35 +83,51 @@ Friend Module LogRoutines
     End Sub
 
     Public Sub StartLogfile()
-        Timesrun = My.Settings.TimesRun + 1
-        My.Settings.TimesRun = Timesrun
-        My.Settings.Save()
-        LogFile = Path.Combine(LogDir, $"ccell{Now:Mdyyyy}_{Timesrun}.log")
-        DataFile = Path.Combine(LogDir, $"data{Now:Mdyyyy}_{Timesrun}.log")
-        ErrFile = Path.Combine(LogDir, $"err{Now:Mdyyyy}_{Timesrun}.log")
+        Try
+            Timesrun = My.Settings.TimesRun + 1
+            My.Settings.TimesRun = Timesrun
+            My.Settings.Save()
+            LogFile = Path.Combine(LogDir, $"ccell{Now:Mdyyyy}_{Timesrun}.log")
+            DataFile = Path.Combine(LogDir, $"data{Now:Mdyyyy}_{Timesrun}.log")
+            ErrFile = Path.Combine(LogDir, $"err{Now:Mdyyyy}_{Timesrun}.log")
 
-        PrintLog(GetLogHeader())
-        PrintErrLog(GetLogHeader())
-        PrintData(GetLogHeader(), "")
+            PrintLog(GetLogHeader())
+            PrintErrLog(GetLogHeader())
+            'Using aTxt As StreamWriter = File.CreateText(DataFile)
+            '    aTxt.WriteLine(GetLogHeader())
+            'End Using
+        Catch ex As Exception When _
+              TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            ''trap error
+        End Try
     End Sub
 
     Private Function GetLogHeader() As String
-        Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}")
-        sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
-        sb.Append($"Log file: {LogFile}{vbLf}")
-        sb.Append($"Data file: {DataFile}{vbLf}")
-        sb.Append($"Error file: {ErrFile}{vbLf}")
-        sb.Append($"Times run: {Timesrun}{vbLf}")
-        sb.Append($"Controls: {NumControls(FrmMain)}{vbLf}")
-        sb.Append($"Daily Update interval: {My.Settings.UpdateInterval_Daily} minutes{vbLf}")
-        sb.Append($"Hourly Update interval: {My.Settings.UpdateInterval_Hourly} minutes{vbLf}")
-        sb.Append($"Nowcast Update interval: {My.Settings.UpdateInterval_Nowcast} minutes{vbLf}")
-        'sb.Append($"Location-> Latitude: {CLatitude}     Longitude: {CLongitude}{vbLf}")
-        sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
-        sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
+        Try
+            Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}")
+            sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
+            sb.Append($"Log file: {LogFile}{vbLf}")
+            sb.Append($"Data file: {DataFile}{vbLf}")
+            sb.Append($"Error file: {ErrFile}{vbLf}")
+            sb.Append($"Times run: {Timesrun}{vbLf}")
+            sb.Append($"Controls: {NumControls(FrmMain)}{vbLf}")
+            sb.Append($"Daily Update interval: {My.Settings.UpdateInterval_Daily} minutes{vbLf}")
+            sb.Append($"Hourly Update interval: {My.Settings.UpdateInterval_Hourly} minutes{vbLf}")
+            sb.Append($"Nowcast Update interval: {My.Settings.UpdateInterval_Nowcast} minutes{vbLf}")
+            'sb.Append($"Location-> Latitude: {CLatitude}     Longitude: {CLongitude}{vbLf}")
+            sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
+            sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
 
-        Return sb.ToString()
-        'End Using
+            Return sb.ToString()
+        Catch ex As Exception When _
+                  TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            ''trap error
+        End Try
+        Return $"- Invalid Log Header -{vbLf}"
     End Function
 
     Private Function NumControls(parent As Control) As Integer
@@ -123,46 +139,53 @@ Friend Module LogRoutines
     End Sub
 
     Public Sub PerformLogMaintenance()
-        With FrmMain
-            PrintLog($"<{Separator}{vbLf}")
+        Try
+            With FrmMain
+                PrintLog($"<{Separator}{vbLf}")
 
-            Dim intDays As Double = 3
-            If intDays <= 0 Then
-                PrintLog($"Logs set to keep all.{vbLf}")
-                Return
-            End If
+                Dim intDays As Double = 3
+                If intDays <= 0 Then
+                    PrintLog($"Logs set to keep all.{vbLf}")
+                    Return
+                End If
 
-            Dim fc As Integer
+                Dim fc As Integer
 
-            Try
-                For Each file In From file1 In New DirectoryInfo(LogDir).GetFiles() Where (Now - file1.LastWriteTime).Days >= intDays
-                    fc += 1
-                    file.Delete()
-                    PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
-                Next
+                Try
+                    For Each file In From file1 In New DirectoryInfo(LogDir).GetFiles() Where (Now - file1.LastWriteTime).Days >= intDays
+                        fc += 1
+                        file.Delete()
+                        PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
+                    Next
 
-                For Each file In From file1 In New DirectoryInfo(TempDir).GetFiles() Where (Now - file1.LastWriteTime).Days >= intDays
-                    fc += 1
-                    file.Delete()
-                    PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
-                Next
+                    For Each file In From file1 In New DirectoryInfo(TempDir).GetFiles() Where (Now - file1.LastWriteTime).Days >= intDays
+                        fc += 1
+                        file.Delete()
+                        PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
+                    Next
 
-                For Each file In From file1 In New DirectoryInfo(DataDir).GetFiles("*.*", SearchOption.AllDirectories) Where (Now - file1.LastWriteTime).Days >= intDays
-                    fc += 1
-                    file.Delete()
-                    PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
-                Next
+                    For Each file In From file1 In New DirectoryInfo(DataDir).GetFiles("*.*", SearchOption.AllDirectories) Where (Now - file1.LastWriteTime).Days >= intDays
+                        fc += 1
+                        file.Delete()
+                        PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
+                    Next
 
-            Catch ex As Exception When _
+                Catch ex As Exception When _
                     TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
-            Finally
-                ''trap error
-            End Try
+                    PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+                Finally
+                    ''trap error
+                End Try
 
-            PrintLog($"Log Maintenance performed.{vbLf}Files over {intDays} days old deleted.{vbLf}{fc} files deleted.{vbLf}{Separator}>{vbLf}")
+                PrintLog($"Log Maintenance performed.{vbLf}Files over {intDays} days old deleted.{vbLf}{fc} files deleted.{vbLf}{Separator}>{vbLf}")
 
-        End With
+            End With
+        Catch ex As Exception When _
+              TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            ''trap error
+        End Try
         SaveLogs()
     End Sub
 
