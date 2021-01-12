@@ -1,5 +1,5 @@
 # ClimaCell
-Utilizes Climacell 15-day forecast and hourly forecast.
+Utilizes Climacell 15-day daily forecast, nowcast and hourly forecast.
 
 Requires an API Key from http://climacell.co.
 
