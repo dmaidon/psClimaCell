@@ -129,12 +129,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
-        Public Property UpdateInterval() As Integer
+        Public Property UpdateInterval_Daily() As Integer
             Get
-                Return CType(Me("UpdateInterval"),Integer)
+                Return CType(Me("UpdateInterval_Daily"),Integer)
             End Get
             Set
-                Me("UpdateInterval") = value
+                Me("UpdateInterval_Daily") = value
             End Set
         End Property
         
@@ -1107,6 +1107,786 @@ Namespace My
             End Get
             Set
                 Me("Fetch_Hourly") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Bp() As Boolean
+            Get
+                Return CType(Me("Nc_Bp"),Boolean)
+            End Get
+            Set
+                Me("Nc_Bp") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Dewpoint() As Boolean
+            Get
+                Return CType(Me("Nc_Dewpoint"),Boolean)
+            End Get
+            Set
+                Me("Nc_Dewpoint") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_FeelsLike() As Boolean
+            Get
+                Return CType(Me("Nc_FeelsLike"),Boolean)
+            End Get
+            Set
+                Me("Nc_FeelsLike") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_RH() As Boolean
+            Get
+                Return CType(Me("Nc_RH"),Boolean)
+            End Get
+            Set
+                Me("Nc_RH") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Precip() As Boolean
+            Get
+                Return CType(Me("Nc_Precip"),Boolean)
+            End Get
+            Set
+                Me("Nc_Precip") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_PrecipType() As Boolean
+            Get
+                Return CType(Me("Nc_PrecipType"),Boolean)
+            End Get
+            Set
+                Me("Nc_PrecipType") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Sunrise() As Boolean
+            Get
+                Return CType(Me("Nc_Sunrise"),Boolean)
+            End Get
+            Set
+                Me("Nc_Sunrise") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Sunset() As Boolean
+            Get
+                Return CType(Me("Nc_Sunset"),Boolean)
+            End Get
+            Set
+                Me("Nc_Sunset") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Temp() As Boolean
+            Get
+                Return CType(Me("Nc_Temp"),Boolean)
+            End Get
+            Set
+                Me("Nc_Temp") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Vis() As Boolean
+            Get
+                Return CType(Me("Nc_Vis"),Boolean)
+            End Get
+            Set
+                Me("Nc_Vis") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_WindSpeed() As Boolean
+            Get
+                Return CType(Me("Nc_WindSpeed"),Boolean)
+            End Get
+            Set
+                Me("Nc_WindSpeed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_WindDir() As Boolean
+            Get
+                Return CType(Me("Nc_WindDir"),Boolean)
+            End Get
+            Set
+                Me("Nc_WindDir") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_WindGust() As Boolean
+            Get
+                Return CType(Me("Nc_WindGust"),Boolean)
+            End Get
+            Set
+                Me("Nc_WindGust") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_WxCode() As Boolean
+            Get
+                Return CType(Me("Nc_WxCode"),Boolean)
+            End Get
+            Set
+                Me("Nc_WxCode") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_SSR() As Boolean
+            Get
+                Return CType(Me("Nc_SSR"),Boolean)
+            End Get
+            Set
+                Me("Nc_SSR") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_CloudBase() As Boolean
+            Get
+                Return CType(Me("Nc_CloudBase"),Boolean)
+            End Get
+            Set
+                Me("Nc_CloudBase") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_CloudCeil() As Boolean
+            Get
+                Return CType(Me("Nc_CloudCeil"),Boolean)
+            End Get
+            Set
+                Me("Nc_CloudCeil") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_CloudCover() As Boolean
+            Get
+                Return CType(Me("Nc_CloudCover"),Boolean)
+            End Get
+            Set
+                Me("Nc_CloudCover") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_TreePollen() As Boolean
+            Get
+                Return CType(Me("Nc_TreePollen"),Boolean)
+            End Get
+            Set
+                Me("Nc_TreePollen") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_WeedPollen() As Boolean
+            Get
+                Return CType(Me("Nc_WeedPollen"),Boolean)
+            End Get
+            Set
+                Me("Nc_WeedPollen") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_GrassPollen() As Boolean
+            Get
+                Return CType(Me("Nc_GrassPollen"),Boolean)
+            End Get
+            Set
+                Me("Nc_GrassPollen") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Acacia() As Boolean
+            Get
+                Return CType(Me("Nc_Acacia"),Boolean)
+            End Get
+            Set
+                Me("Nc_Acacia") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Ash() As Boolean
+            Get
+                Return CType(Me("Nc_Ash"),Boolean)
+            End Get
+            Set
+                Me("Nc_Ash") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Beech() As Boolean
+            Get
+                Return CType(Me("Nc_Beech"),Boolean)
+            End Get
+            Set
+                Me("Nc_Beech") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Birch() As Boolean
+            Get
+                Return CType(Me("Nc_Birch"),Boolean)
+            End Get
+            Set
+                Me("Nc_Birch") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Cedar() As Boolean
+            Get
+                Return CType(Me("Nc_Cedar"),Boolean)
+            End Get
+            Set
+                Me("Nc_Cedar") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Cottonwood() As Boolean
+            Get
+                Return CType(Me("Nc_Cottonwood"),Boolean)
+            End Get
+            Set
+                Me("Nc_Cottonwood") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Cypress() As Boolean
+            Get
+                Return CType(Me("Nc_Cypress"),Boolean)
+            End Get
+            Set
+                Me("Nc_Cypress") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Elder() As Boolean
+            Get
+                Return CType(Me("Nc_Elder"),Boolean)
+            End Get
+            Set
+                Me("Nc_Elder") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Elm() As Boolean
+            Get
+                Return CType(Me("Nc_Elm"),Boolean)
+            End Get
+            Set
+                Me("Nc_Elm") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Grass() As Boolean
+            Get
+                Return CType(Me("Nc_Grass"),Boolean)
+            End Get
+            Set
+                Me("Nc_Grass") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Hemlock() As Boolean
+            Get
+                Return CType(Me("Nc_Hemlock"),Boolean)
+            End Get
+            Set
+                Me("Nc_Hemlock") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Hickory() As Boolean
+            Get
+                Return CType(Me("Nc_Hickory"),Boolean)
+            End Get
+            Set
+                Me("Nc_Hickory") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Juniper() As Boolean
+            Get
+                Return CType(Me("Nc_Juniper"),Boolean)
+            End Get
+            Set
+                Me("Nc_Juniper") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Mahogany() As Boolean
+            Get
+                Return CType(Me("Nc_Mahogany"),Boolean)
+            End Get
+            Set
+                Me("Nc_Mahogany") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Maple() As Boolean
+            Get
+                Return CType(Me("Nc_Maple"),Boolean)
+            End Get
+            Set
+                Me("Nc_Maple") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Mulberry() As Boolean
+            Get
+                Return CType(Me("Nc_Mulberry"),Boolean)
+            End Get
+            Set
+                Me("Nc_Mulberry") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Oak() As Boolean
+            Get
+                Return CType(Me("Nc_Oak"),Boolean)
+            End Get
+            Set
+                Me("Nc_Oak") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Pine() As Boolean
+            Get
+                Return CType(Me("Nc_Pine"),Boolean)
+            End Get
+            Set
+                Me("Nc_Pine") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Ragweed() As Boolean
+            Get
+                Return CType(Me("Nc_Ragweed"),Boolean)
+            End Get
+            Set
+                Me("Nc_Ragweed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Spruce() As Boolean
+            Get
+                Return CType(Me("Nc_Spruce"),Boolean)
+            End Get
+            Set
+                Me("Nc_Spruce") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Sycamore() As Boolean
+            Get
+                Return CType(Me("Nc_Sycamore"),Boolean)
+            End Get
+            Set
+                Me("Nc_Sycamore") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Walnut() As Boolean
+            Get
+                Return CType(Me("Nc_Walnut"),Boolean)
+            End Get
+            Set
+                Me("Nc_Walnut") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Willow() As Boolean
+            Get
+                Return CType(Me("Nc_Willow"),Boolean)
+            End Get
+            Set
+                Me("Nc_Willow") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Pm10() As Boolean
+            Get
+                Return CType(Me("Nc_Pm10"),Boolean)
+            End Get
+            Set
+                Me("Nc_Pm10") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Pm25() As Boolean
+            Get
+                Return CType(Me("Nc_Pm25"),Boolean)
+            End Get
+            Set
+                Me("Nc_Pm25") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property NC_O3() As Boolean
+            Get
+                Return CType(Me("NC_O3"),Boolean)
+            End Get
+            Set
+                Me("NC_O3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_Co() As Boolean
+            Get
+                Return CType(Me("Nc_Co"),Boolean)
+            End Get
+            Set
+                Me("Nc_Co") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property NC_No2() As Boolean
+            Get
+                Return CType(Me("NC_No2"),Boolean)
+            End Get
+            Set
+                Me("NC_No2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_So2() As Boolean
+            Get
+                Return CType(Me("Nc_So2"),Boolean)
+            End Get
+            Set
+                Me("Nc_So2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_EpaAqi() As Boolean
+            Get
+                Return CType(Me("Nc_EpaAqi"),Boolean)
+            End Get
+            Set
+                Me("Nc_EpaAqi") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_EpaHealthConcern() As Boolean
+            Get
+                Return CType(Me("Nc_EpaHealthConcern"),Boolean)
+            End Get
+            Set
+                Me("Nc_EpaHealthConcern") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property NC_EpaPrimaryPollutant() As Boolean
+            Get
+                Return CType(Me("NC_EpaPrimaryPollutant"),Boolean)
+            End Get
+            Set
+                Me("NC_EpaPrimaryPollutant") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property NC_ChinaAqi() As Boolean
+            Get
+                Return CType(Me("NC_ChinaAqi"),Boolean)
+            End Get
+            Set
+                Me("NC_ChinaAqi") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_ChinaHealthConcern() As Boolean
+            Get
+                Return CType(Me("Nc_ChinaHealthConcern"),Boolean)
+            End Get
+            Set
+                Me("Nc_ChinaHealthConcern") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_ChinaPrimaryPollutant() As Boolean
+            Get
+                Return CType(Me("Nc_ChinaPrimaryPollutant"),Boolean)
+            End Get
+            Set
+                Me("Nc_ChinaPrimaryPollutant") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_RoadRisk() As Boolean
+            Get
+                Return CType(Me("Nc_RoadRisk"),Boolean)
+            End Get
+            Set
+                Me("Nc_RoadRisk") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_RiskScore() As Boolean
+            Get
+                Return CType(Me("Nc_RiskScore"),Boolean)
+            End Get
+            Set
+                Me("Nc_RiskScore") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_RiskConfidence() As Boolean
+            Get
+                Return CType(Me("Nc_RiskConfidence"),Boolean)
+            End Get
+            Set
+                Me("Nc_RiskConfidence") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_RiskCondition() As Boolean
+            Get
+                Return CType(Me("Nc_RiskCondition"),Boolean)
+            End Get
+            Set
+                Me("Nc_RiskCondition") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Nc_HailRisk() As Boolean
+            Get
+                Return CType(Me("Nc_HailRisk"),Boolean)
+            End Get
+            Set
+                Me("Nc_HailRisk") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
+        Public Property UpdateInterval_Hourly() As Integer
+            Get
+                Return CType(Me("UpdateInterval_Hourly"),Integer)
+            End Get
+            Set
+                Me("UpdateInterval_Hourly") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
+        Public Property UpdateInterval_Nowcast() As Integer
+            Get
+                Return CType(Me("UpdateInterval_Nowcast"),Integer)
+            End Get
+            Set
+                Me("UpdateInterval_Nowcast") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Fetch_Nowcast() As Boolean
+            Get
+                Return CType(Me("Fetch_Nowcast"),Boolean)
+            End Get
+            Set
+                Me("Fetch_Nowcast") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property Nc_TimeStep() As Integer
+            Get
+                Return CType(Me("Nc_TimeStep"),Integer)
+            End Get
+            Set
+                Me("Nc_TimeStep") = value
             End Set
         End Property
     End Class

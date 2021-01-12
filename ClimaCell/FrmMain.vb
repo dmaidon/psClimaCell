@@ -1,8 +1,7 @@
 ﻿Imports System.IO
-Imports System.Net.Http
-Imports System.Net.Http.Headers
 
 Public Class FrmMain
+
     'C:\Users\dmaid\AppData\Local\PAROLE_Software\ClimaCell.exe_Url_2dgbsvwgjqedz0grtx5rs15dcfk2xfjp
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpgradeMySettings()
@@ -17,13 +16,16 @@ Public Class FrmMain
         LblAbout.Text = $"Written by: Dennis N Maidon{vbLf}PAROLE Software{vbLf}VB.Net{vbLf}.Net Framework 4.8{vbLf}Compiled: {ParseVersion()}"
 
         If String.IsNullOrEmpty(My.Settings.ApiKey) Then
-            TC.SelectedTab = TpSettings
+            TcOpt.SelectedTab = TpOptMain
         Else
             If My.Settings.Fetch_Daily Then
                 FetchDailyData()
             End If
             If My.Settings.Fetch_Hourly Then
                 FetchHourData()
+            End If
+            If My.Settings.Fetch_Nowcast Then
+                FetchNowcastData()
             End If
         End If
 
@@ -66,67 +68,49 @@ Public Class FrmMain
         Next
     End Sub
 
-    Private Sub TmrUpdate_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdate.Elapsed
-        PrintLog($"Update timer elapsed @ {Now:T}.{vbLf}")
-        Duration = New TimeSpan(0, 0, tSpan, 0)
-        NextUp = Date.Now + Duration
-        FetchDailyData()
-        FetchHourData()
-    End Sub
-
-    Private Sub TmrClock_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrClock.Elapsed
-        TsslClock.Text = Now.ToLongTimeString
-        If TmrUpdate.Enabled Then
-            With DgvDaily
-                TsslNextUpdate.Text = If(DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, NextUp) < 1,
-                    $"{DateDiff(DateInterval.Second, Date.Now, NextUp):N0} sec",
-                    $"{DateDiff(DateInterval.Minute, Date.Now, NextUp):N0} min")
-            End With
-        End If
-    End Sub
-
     Private Sub FrmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         My.Settings.Save()
         PrintLog($"Program closed @ {Now:F}.{vbLf}")
         SaveLogs()
     End Sub
 
-    Private Sub NumLatiutude_ValueChanged(sender As Object, e As EventArgs) Handles NumLatiutude.ValueChanged, NumLongitude.ValueChanged, NumUpdateInterval.ValueChanged
-        With DirectCast(sender, NumericUpDown)
-            Select Case CInt(.Tag)
-                Case 0
-                    My.Settings.cLatitude = .Value
-                Case 1
-                    My.Settings.cLongitude = .Value
-                Case 2
-                    My.Settings.UpdateInterval = CInt(.Value)
-                Case Else
-                    Exit Select
-            End Select
-        End With
-        My.Settings.Save()
-    End Sub
-
-    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLatiutude.Enter, NumLongitude.Enter, NumUpdateInterval.Enter
-        Dim ct = DirectCast(sender, NumericUpDown)
-        ct.Select(0, ct.Text.Length)
-    End Sub
-
     Private Sub LoadProgramSettings()
         NumLatiutude.Value = CDec(My.Settings.cLatitude)
         NumLongitude.Value = CDec(My.Settings.cLongitude)
-        NumUpdateInterval.Value = My.Settings.UpdateInterval
+        NumDailyInterval.Value = My.Settings.UpdateInterval_Daily
+        NumHourlyInterval.Value = My.Settings.UpdateInterval_Hourly
+        NumNowcastInterval.Value = My.Settings.UpdateInterval_Nowcast
+        NumNcTimeStep.Value = My.Settings.Nc_TimeStep
+        TmrInt(0) = My.Settings.UpdateInterval_Daily
+        TmrInt(1) = My.Settings.UpdateInterval_Hourly
+        TmrInt(2) = My.Settings.UpdateInterval_Nowcast
+
         TxtApiKey.Text = My.Settings.ApiKey
-        tSpan = My.Settings.UpdateInterval
-        If tSpan > 0 Then
-            TmrUpdate.Interval = TimeSpan.FromMinutes(tSpan).TotalMilliseconds
-            Duration = New TimeSpan(0, 0, tSpan, 0)
-            NextUp = Date.Now + Duration
-            TmrUpdate.Start()
-        End If
+
+        For j = 0 To TmrArr.Count - 1
+            If TmrInt(j) > 0 Then
+                TmrArr(j).Interval = TimeSpan.FromMinutes(TmrInt(j)).TotalMilliseconds
+                Select Case j
+                    Case 0
+                        DlyDuration = New TimeSpan(0, 0, TmrInt(j), 0)
+                        DlyNextUp = Date.Now + DlyDuration
+                    Case 1
+                        HrDuration = New TimeSpan(0, 0, TmrInt(j), 0)
+                        HrNextUp = Date.Now + HrDuration
+                    Case 2
+                        NcDuration = New TimeSpan(0, 0, TmrInt(j), 0)
+                        NcNextUp = Date.Now + NcDuration
+                    Case Else
+                        Exit Select
+                End Select
+                TmrArr(j).Start()
+                Application.DoEvents()
+            End If
+        Next
 
         ChkFetchDaily.Checked = My.Settings.Fetch_Daily
         ChkFetchHourly.Checked = My.Settings.Fetch_Hourly
+        ChkFetchNowcast.Checked = My.Settings.Fetch_Nowcast
 
         ChkBP.Checked = My.Settings.Daily_Bp
         ChkDewpoint.Checked = My.Settings.Daily_Dewpoint
@@ -144,6 +128,7 @@ Public Class FrmMain
         ChkWxCode.Checked = My.Settings.Daily_WxCode
         ChkMoonPhase.Checked = My.Settings.Daily_MoonPhase
 
+        'Hour settings
         ChkHourBP.Checked = My.Settings.Hour_Bp
         ChkHourDewpoint.Checked = My.Settings.Hour_Dewpoint
         ChkHourFeelsLike.Checked = My.Settings.Hour_FeelsLike
@@ -190,7 +175,6 @@ Public Class FrmMain
         ChkHourTreeSycamore.Checked = My.Settings.Hour_TreeSycamore
         ChkHourTreeWalnut.Checked = My.Settings.Hour_TreeWalnut
         ChkHourTreeWillow.Checked = My.Settings.Hour_TreeWillow
-
         ChkHourAqiPm10.Checked = My.Settings.Hour_Pm10
         ChkHourAqiPm25.Checked = My.Settings.Hour_Pm25
         ChkHourAqiO3.Checked = My.Settings.Hour_O3
@@ -203,11 +187,75 @@ Public Class FrmMain
         ChkHourChinaAqi.Checked = My.Settings.Hour_ChinaAqi
         ChkHourChinaConcern.Checked = My.Settings.Hour_ChinaHealthConcern
         ChkHourChinaPollutant.Checked = My.Settings.Hour_ChinaPrimaryPollutant
-        ChkRoadRisk.Checked = My.Settings.Hour_RoadRisk
-        ChkRiskScore.Checked = My.Settings.Hour_RiskScore
-        ChkRiskConfidence.Checked = My.Settings.Hour_RiskConfidence
-        ChkRiskCondition.Checked = My.Settings.Hour_RiskCondition
-        ChkHailRisk.Checked = My.Settings.Hour_HailRisk
+        ChkHrRoadRisk.Checked = My.Settings.Hour_RoadRisk
+        ChkHrRiskScore.Checked = My.Settings.Hour_RiskScore
+        ChkHrRiskConfidence.Checked = My.Settings.Hour_RiskConfidence
+        ChkHrRiskCondition.Checked = My.Settings.Hour_RiskCondition
+        ChkHrHailRisk.Checked = My.Settings.Hour_HailRisk
+
+        'Nowcast settings
+
+        ChkNcBP.Checked = My.Settings.Nc_Bp
+        ChkNcDewpoint.Checked = My.Settings.Nc_Dewpoint
+        ChkNcFeelsLike.Checked = My.Settings.Nc_FeelsLike
+        ChkNcRH.Checked = My.Settings.Nc_RH
+        ChkNcPrecip.Checked = My.Settings.Nc_Precip
+        ChkNcPrecipType.Checked = My.Settings.Nc_PrecipType
+        ChkNcSunrise.Checked = My.Settings.Nc_Sunrise
+        ChkNcSunset.Checked = My.Settings.Nc_Sunset
+        ChkNcTemp.Checked = My.Settings.Nc_Temp
+        ChkNcVis.Checked = My.Settings.Nc_Vis
+        ChkNcWindDir.Checked = My.Settings.Nc_WindDir
+        ChkNcWindSpeed.Checked = My.Settings.Nc_WindSpeed
+        ChkNcWindGust.Checked = My.Settings.Nc_WindGust
+        ChkNcWxCode.Checked = My.Settings.Nc_WxCode
+        ChkNcSSR.Checked = My.Settings.Nc_SSR
+        ChkNcCloudBase.Checked = My.Settings.Nc_CloudBase
+        ChkNcCloudCeil.Checked = My.Settings.Nc_CloudCeil
+        ChkNcCloudCover.Checked = My.Settings.Nc_CloudCover
+        ChkNcTreePollen.Checked = My.Settings.Nc_TreePollen
+        ChkNcWeedPollen.Checked = My.Settings.Nc_WeedPollen
+        ChkNcGrassPollen.Checked = My.Settings.Nc_GrassPollen
+        ChkNcAcacia.Checked = My.Settings.Nc_Acacia
+        ChkNcAsh.Checked = My.Settings.Nc_Ash
+        ChkNcBeech.Checked = My.Settings.Nc_Beech
+        ChkNcBirch.Checked = My.Settings.Nc_Birch
+        ChkNcCedar.Checked = My.Settings.Nc_Cedar
+        ChkNcCottonwood.Checked = My.Settings.Nc_Cottonwood
+        ChkNcCypress.Checked = My.Settings.Nc_Cypress
+        ChkNcElder.Checked = My.Settings.Nc_Elder
+        ChkNcElm.Checked = My.Settings.Nc_Elm
+        ChkNcGrass.Checked = My.Settings.Nc_Grass
+        ChkNcHemlock.Checked = My.Settings.Nc_Hemlock
+        ChkNcHickory.Checked = My.Settings.Nc_Hickory
+        ChkNcJuniper.Checked = My.Settings.Nc_Juniper
+        ChkNcMahogany.Checked = My.Settings.Nc_Mahogany
+        ChkNcMaple.Checked = My.Settings.Nc_Maple
+        ChkNcMulberry.Checked = My.Settings.Nc_Mulberry
+        ChkNcOak.Checked = My.Settings.Nc_Oak
+        ChkNcPine.Checked = My.Settings.Nc_Pine
+        ChkNcRagweed.Checked = My.Settings.Nc_Ragweed
+        ChkNcSpruce.Checked = My.Settings.Nc_Spruce
+        ChkNcSycamore.Checked = My.Settings.Nc_Sycamore
+        ChkNcWalnut.Checked = My.Settings.Nc_Walnut
+        ChkNcWillow.Checked = My.Settings.Nc_Willow
+        ChkNcPm10.Checked = My.Settings.Nc_Pm10
+        ChkNcPm25.Checked = My.Settings.Nc_Pm25
+        ChkNcO3.Checked = My.Settings.NC_O3
+        ChkNcNo2.Checked = My.Settings.NC_No2
+        ChkNcCo.Checked = My.Settings.Nc_Co
+        ChkNcSo2.Checked = My.Settings.Nc_So2
+        ChkNcEpaAqi.Checked = My.Settings.Nc_EpaAqi
+        ChkNcEpaConcern.Checked = My.Settings.Nc_EpaHealthConcern
+        ChkNcEpaPollutant.Checked = My.Settings.NC_EpaPrimaryPollutant
+        ChkNcChinaAqi.Checked = My.Settings.NC_ChinaAqi
+        ChkNcChinaConcern.Checked = My.Settings.Nc_ChinaHealthConcern
+        ChkNcChinaPollutant.Checked = My.Settings.Nc_ChinaPrimaryPollutant
+        ChkNcRoadRisk.Checked = My.Settings.Nc_RoadRisk
+        ChkNcRiskScore.Checked = My.Settings.Nc_RiskScore
+        ChkNcRiskConfidence.Checked = My.Settings.Nc_RiskConfidence
+        ChkNcRiskCondition.Checked = My.Settings.Nc_RiskCondition
+        ChkNcHailRisk.Checked = My.Settings.Nc_HailRisk
 
         Select Case My.Settings.Units
             Case 0
@@ -218,6 +266,10 @@ Public Class FrmMain
                 RbUnitUS.Checked = True
         End Select
     End Sub
+
+#Region "Options"
+
+#Region "Main "
 
     Private Sub TxtApiKey_TextChanged(sender As Object, e As EventArgs) Handles TxtApiKey.TextChanged
         My.Settings.ApiKey = TxtApiKey.Text
@@ -230,28 +282,63 @@ Public Class FrmMain
         My.Settings.Save()
     End Sub
 
-    'Private Shared Async Sub FetchLocationID()
-    '    Using client As New HttpClient()
-    '        Using request = New HttpRequestMessage(New HttpMethod("POST"), $"https://api.climacell.co/v3/locations?apikey={My.Settings.ApiKey}")
-    '            request.Content = New StringContent("{""point"": {""lat"":35.625556,""lon"":-78.328611},""name"":""Wilsons Mills, NC""}")
-    '            request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json")
+    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLatiutude.Enter, NumLongitude.Enter, NumDailyInterval.Enter, NumHourlyInterval.Enter, NumNowcastInterval.Enter, NumNcTimeStep.Enter
+        Dim ct = DirectCast(sender, NumericUpDown)
+        ct.Select(0, ct.Text.Length)
+    End Sub
 
-    '            Using response = Await client.SendAsync(request)
-    '                ' Dim dStr = response
-    '                'Using reader = New StreamReader(dStr)
-    '                '    Dim resp As String = Await reader.ReadToEndAsync()
-    '                '    File.WriteAllText(Path.Combine(Application.StartupPath, TempDir, "location.json"), resp)
-    '                'End Using
-    '                MsgBox(response.ToString)
-    '            End Using
-    '        End Using
-    '    End Using
+    Private Sub UpdateIntervals(sender As Object, e As EventArgs) Handles NumDailyInterval.ValueChanged, NumHourlyInterval.ValueChanged, NumNowcastInterval.ValueChanged
+        With DirectCast(sender, NumericUpDown)
+            Select Case CInt(.Tag)
+                Case 0
+                    My.Settings.UpdateInterval_Daily = CInt(.Value)
+                    TmrInt(0) = CInt(.Value)
+                Case 1
+                    My.Settings.UpdateInterval_Hourly = CInt(.Value)
+                    TmrInt(1) = CInt(.Value)
+                Case 2
+                    My.Settings.UpdateInterval_Nowcast = CInt(.Value)
+                    TmrInt(2) = CInt(.Value)
+                Case Else
+            End Select
+        End With
+    End Sub
 
-    'End Sub
+    Private Sub Latiutude_Value(sender As Object, e As EventArgs) Handles NumLatiutude.ValueChanged, NumLongitude.ValueChanged
+        With DirectCast(sender, NumericUpDown)
+            Select Case CInt(.Tag)
+                Case 0
+                    My.Settings.cLatitude = .Value
+                Case 1
+                    My.Settings.cLongitude = .Value
+                Case Else
+                    Exit Select
+            End Select
+        End With
+        My.Settings.Save()
+    End Sub
+
+    Private Sub FetchData(sender As Object, e As EventArgs) Handles ChkFetchDaily.CheckedChanged, ChkFetchHourly.CheckedChanged, ChkFetchNowcast.CheckedChanged
+        With DirectCast(sender, CheckBox)
+            Select Case CInt(.Tag)
+                Case 0
+                    My.Settings.Fetch_Daily = .Checked
+                Case 1
+                    My.Settings.Fetch_Hourly = .Checked
+                Case 2
+                    My.Settings.Fetch_Nowcast = .Checked
+                Case Else
+                    Exit Select
+            End Select
+        End With
+    End Sub
+
+#End Region
 
 #Region "Daily Forecast"
 
     Private Sub DailyForecast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkTemp.CheckedChanged, ChkBP.CheckedChanged, ChkDewpoint.CheckedChanged, ChkFeelsLike.CheckedChanged, ChkHumidity.CheckedChanged, ChkPrecipAcc.CheckedChanged, ChkPrecip.CheckedChanged, ChkPrecipProb.CheckedChanged, ChkSunrise.CheckedChanged, ChkSunset.CheckedChanged, ChkSunset.CheckedChanged, ChkVis.CheckedChanged, ChkWindDir.CheckedChanged, ChkWindSpeed.CheckedChanged, ChkWxCode.CheckedChanged, ChkMoonPhase.CheckedChanged
+
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -310,7 +397,7 @@ Public Class FrmMain
         Next
     End Sub
 
-    Private Sub HourlyForecast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkHourBP.CheckedChanged, ChkHourCloudBase.CheckedChanged, ChkHourCloudCeil.CheckedChanged, ChkHourCloudCover.CheckedChanged, ChkHourDewpoint.CheckedChanged, ChkHourMoonPhase.CheckedChanged, ChkHourPrecip.CheckedChanged, ChkHourPrecipProb.CheckedChanged, ChkHourPrecipType.CheckedChanged, ChkHourRH.CheckedChanged, ChkHourSSR.CheckedChanged, ChkHourSunrise.CheckedChanged, ChkHourSunset.CheckedChanged, ChkHourTemp.CheckedChanged, ChkHourVis.CheckedChanged, ChkHourWindDir.CheckedChanged, ChkHourWindGust.CheckedChanged, ChkHourWindSpeed.CheckedChanged, ChkHourWxCode.CheckedChanged, ChkHourFeelsLike.CheckedChanged, ChkHourTreePollen.CheckedChanged, ChkHourWeedPollen.CheckedChanged, ChkHourGrassPollen.CheckedChanged, ChkHourTreeAcacia.CheckedChanged, ChkHourTreeAsh.CheckedChanged, ChkHourTreeBeech.CheckedChanged, ChkHourTreeBirch.CheckedChanged, ChkHourTreeCedar.CheckedChanged, ChkHourTreeCottonwood.CheckedChanged, ChkHourTreeCypress.CheckedChanged, ChkHourTreeElder.CheckedChanged, ChkHourTreeElm.CheckedChanged, ChkHourGrass.CheckedChanged, ChkHourTreeHemlock.CheckedChanged, ChkHourTreeHickory.CheckedChanged, ChkHourTreeJuniper.CheckedChanged, ChkHourTreeMahogany.CheckedChanged, ChkHourTreeMaple.CheckedChanged, ChkHourTreeMulberry.CheckedChanged, ChkHourTreePine.CheckedChanged, ChkHourRagweed.CheckedChanged, ChkHourTreeSpruce.CheckedChanged, ChkHourTreeSycamore.CheckedChanged, ChkHourTreeWalnut.CheckedChanged, ChkHourTreeWillow.CheckedChanged, ChkHourTreeOak.CheckedChanged, ChkHourAqiPm10.CheckedChanged, ChkHourAqiPm25.CheckedChanged, ChkHourAqiO3.CheckedChanged, ChkHourAqiNo2.CheckedChanged, ChkHourAqiCo.CheckedChanged, ChkHourAqiSo2.CheckedChanged, ChkHourEpaAqi.CheckedChanged, ChkHourEpaConcern.CheckedChanged, ChkHourEpaPollutant.CheckedChanged, ChkHourChinaAqi.CheckedChanged, ChkHourChinaConcern.CheckedChanged, ChkHourChinaPollutant.CheckedChanged, ChkRiskCondition.CheckedChanged, ChkRiskConfidence.CheckedChanged, ChkRoadRisk.CheckedChanged, ChkRiskScore.CheckedChanged, ChkHailRisk.CheckedChanged
+    Private Sub HourlyForecast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkHourBP.CheckedChanged, ChkHourCloudBase.CheckedChanged, ChkHourCloudCeil.CheckedChanged, ChkHourCloudCover.CheckedChanged, ChkHourDewpoint.CheckedChanged, ChkHourMoonPhase.CheckedChanged, ChkHourPrecip.CheckedChanged, ChkHourPrecipProb.CheckedChanged, ChkHourPrecipType.CheckedChanged, ChkHourRH.CheckedChanged, ChkHourSSR.CheckedChanged, ChkHourSunrise.CheckedChanged, ChkHourSunset.CheckedChanged, ChkHourTemp.CheckedChanged, ChkHourVis.CheckedChanged, ChkHourWindDir.CheckedChanged, ChkHourWindGust.CheckedChanged, ChkHourWindSpeed.CheckedChanged, ChkHourWxCode.CheckedChanged, ChkHourFeelsLike.CheckedChanged, ChkHourTreePollen.CheckedChanged, ChkHourWeedPollen.CheckedChanged, ChkHourGrassPollen.CheckedChanged, ChkHourTreeAcacia.CheckedChanged, ChkHourTreeAsh.CheckedChanged, ChkHourTreeBeech.CheckedChanged, ChkHourTreeBirch.CheckedChanged, ChkHourTreeCedar.CheckedChanged, ChkHourTreeCottonwood.CheckedChanged, ChkHourTreeCypress.CheckedChanged, ChkHourTreeElder.CheckedChanged, ChkHourTreeElm.CheckedChanged, ChkHourGrass.CheckedChanged, ChkHourTreeHemlock.CheckedChanged, ChkHourTreeHickory.CheckedChanged, ChkHourTreeJuniper.CheckedChanged, ChkHourTreeMahogany.CheckedChanged, ChkHourTreeMaple.CheckedChanged, ChkHourTreeMulberry.CheckedChanged, ChkHourTreePine.CheckedChanged, ChkHourRagweed.CheckedChanged, ChkHourTreeSpruce.CheckedChanged, ChkHourTreeSycamore.CheckedChanged, ChkHourTreeWalnut.CheckedChanged, ChkHourTreeWillow.CheckedChanged, ChkHourTreeOak.CheckedChanged, ChkHourAqiPm10.CheckedChanged, ChkHourAqiPm25.CheckedChanged, ChkHourAqiO3.CheckedChanged, ChkHourAqiNo2.CheckedChanged, ChkHourAqiCo.CheckedChanged, ChkHourAqiSo2.CheckedChanged, ChkHourEpaAqi.CheckedChanged, ChkHourEpaConcern.CheckedChanged, ChkHourEpaPollutant.CheckedChanged, ChkHourChinaAqi.CheckedChanged, ChkHourChinaConcern.CheckedChanged, ChkHourChinaPollutant.CheckedChanged, ChkHrRiskCondition.CheckedChanged, ChkHrRiskConfidence.CheckedChanged, ChkHrRoadRisk.CheckedChanged, ChkHrRiskScore.CheckedChanged, ChkHrHailRisk.CheckedChanged
 
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
@@ -448,18 +535,222 @@ Public Class FrmMain
 
     End Sub
 
-    Private Sub FetchData(sender As Object, e As EventArgs) Handles ChkFetchDaily.CheckedChanged, ChkFetchHourly.CheckedChanged
+#End Region
+
+#Region "Nowcast"
+
+    Private Sub Nowcast_Data(sender As Object, e As EventArgs) Handles ChkNcBP.CheckedChanged, ChkNcCloudBase.CheckedChanged, ChkNcCloudCeil.CheckedChanged, ChkNcCloudCover.CheckedChanged, ChkNcDewpoint.CheckedChanged, ChkNcPrecip.CheckedChanged, ChkNcPrecipType.CheckedChanged, ChkNcRH.CheckedChanged, ChkNcSSR.CheckedChanged, ChkNcSunrise.CheckedChanged, ChkNcSunset.CheckedChanged, ChkNcTemp.CheckedChanged, ChkNcVis.CheckedChanged, ChkNcWindDir.CheckedChanged, ChkNcWindGust.CheckedChanged, ChkNcWindSpeed.CheckedChanged, ChkNcWxCode.CheckedChanged, ChkNcFeelsLike.CheckedChanged, ChkNcTreePollen.CheckedChanged, ChkNcWeedPollen.CheckedChanged, ChkNcGrassPollen.CheckedChanged, ChkNcAcacia.CheckedChanged, ChkNcAsh.CheckedChanged, ChkNcBeech.CheckedChanged, ChkNcBirch.CheckedChanged, ChkNcCedar.CheckedChanged, ChkNcCottonwood.CheckedChanged, ChkNcCypress.CheckedChanged, ChkNcElder.CheckedChanged, ChkNcElm.CheckedChanged, ChkNcGrass.CheckedChanged, ChkNcHemlock.CheckedChanged, ChkNcHickory.CheckedChanged, ChkNcJuniper.CheckedChanged, ChkNcMahogany.CheckedChanged, ChkNcMaple.CheckedChanged, ChkNcMulberry.CheckedChanged, ChkNcPine.CheckedChanged, ChkNcRagweed.CheckedChanged, ChkNcSpruce.CheckedChanged, ChkNcSycamore.CheckedChanged, ChkNcWalnut.CheckedChanged, ChkNcWillow.CheckedChanged, ChkNcOak.CheckedChanged, ChkNcPm10.CheckedChanged, ChkNcPm25.CheckedChanged, ChkNcO3.CheckedChanged, ChkNcNo2.CheckedChanged, ChkNcCo.CheckedChanged, ChkNcSo2.CheckedChanged, ChkNcEpaAqi.CheckedChanged, ChkNcEpaConcern.CheckedChanged, ChkNcEpaPollutant.CheckedChanged, ChkNcChinaAqi.CheckedChanged, ChkNcChinaConcern.CheckedChanged, ChkNcChinaPollutant.CheckedChanged, ChkNcRiskCondition.CheckedChanged, ChkNcRiskConfidence.CheckedChanged, ChkNcRoadRisk.CheckedChanged, ChkNcRiskScore.CheckedChanged, ChkNcHailRisk.CheckedChanged
+
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
-                    My.Settings.Fetch_Daily = .Checked
+                    My.Settings.Nc_Temp = .Checked
                 Case 1
-                    My.Settings.Fetch_Hourly = .Checked
+                    My.Settings.Nc_FeelsLike = .Checked
+                Case 2
+                    My.Settings.Nc_RH = .Checked
+                Case 3
+                    My.Settings.Nc_WindDir = .Checked
+                Case 4
+                    My.Settings.Nc_WindGust = .Checked
+                Case 5
+                    My.Settings.Nc_Precip = .Checked
+                Case 6
+                    My.Settings.Nc_PrecipType = .Checked
+                Case 7
+                    My.Settings.Nc_Sunrise = .Checked
+                Case 8
+                    My.Settings.Nc_Vis = .Checked
+                Case 9
+                    My.Settings.Nc_CloudCover = .Checked
+                Case 10
+                    My.Settings.Nc_CloudCeil = .Checked
+                Case 11
+                    My.Settings.Nc_WxCode = .Checked
+                Case 12
+                    My.Settings.Nc_Sunset = .Checked
+                Case 13
+                    My.Settings.Nc_Dewpoint = .Checked
+                Case 14
+                    My.Settings.Nc_WindSpeed = .Checked
+                Case 15
+                    My.Settings.Nc_CloudBase = .Checked
+                Case 16
+                    My.Settings.Nc_Bp = .Checked
+                Case 17
+                    My.Settings.Nc_SSR = .Checked
+                Case 18
+                    My.Settings.Nc_HailRisk = .Checked
+                Case 19
+                    My.Settings.Nc_TreePollen = .Checked
+                Case 20
+                    My.Settings.Nc_WeedPollen = .Checked
+                Case 21
+                    My.Settings.Nc_GrassPollen = .Checked
+                Case 22
+                    My.Settings.Nc_Acacia = .Checked
+                Case 23
+                    My.Settings.Nc_Birch = .Checked
+                Case 24
+                    My.Settings.Nc_Elder = .Checked
+                Case 25
+                    My.Settings.Nc_Hickory = .Checked
+                Case 26
+                    My.Settings.Nc_Maple = .Checked
+                Case 27
+                    My.Settings.Nc_Willow = .Checked
+                Case 28
+                    My.Settings.Nc_Ash = .Checked
+                Case 29
+                    My.Settings.Nc_Cedar = .Checked
+                Case 30
+                    My.Settings.Nc_Elm = .Checked
+                Case 31
+                    My.Settings.Nc_Juniper = .Checked
+                Case 32
+                    My.Settings.Nc_Mulberry = .Checked
+                Case 33
+                    My.Settings.Nc_Ragweed = .Checked
+                Case 34
+                    My.Settings.Nc_Beech = .Checked
+                Case 35
+                    My.Settings.Nc_Cypress = .Checked
+                Case 36
+                    My.Settings.Nc_Hemlock = .Checked
+                Case 37
+                    My.Settings.Nc_Mahogany = .Checked
+                Case 38
+                    My.Settings.Nc_Oak = .Checked
+                Case 39
+                    My.Settings.Nc_Grass = .Checked
+                Case 40
+                    My.Settings.Nc_Pine = .Checked
+                Case 41
+                    My.Settings.Nc_Cottonwood = .Checked
+                Case 42
+                    My.Settings.Nc_Spruce = .Checked
+                Case 43
+                    My.Settings.Nc_Sycamore = .Checked
+                Case 44
+                    My.Settings.Nc_Walnut = .Checked
+                Case 45
+                    My.Settings.Nc_Pm10 = .Checked
+                Case 46
+                    My.Settings.Nc_Pm25 = .Checked
+                Case 47
+                    My.Settings.NC_O3 = .Checked
+                Case 48
+                    My.Settings.Nc_Co = .Checked
+                Case 49
+                    My.Settings.Nc_So2 = .Checked
+                Case 50
+                    My.Settings.NC_No2 = .Checked
+                Case 51
+                    My.Settings.Nc_EpaAqi = .Checked
+                Case 52
+                    My.Settings.Nc_EpaHealthConcern = .Checked
+                Case 53
+                    My.Settings.NC_EpaPrimaryPollutant = .Checked
+                Case 54
+                    My.Settings.NC_ChinaAqi = .Checked
+                Case 55
+                    My.Settings.Nc_ChinaHealthConcern = .Checked
+                Case 56
+                    My.Settings.Nc_ChinaPrimaryPollutant = .Checked
+                Case 57
+                    My.Settings.Nc_RoadRisk = .Checked
+                Case 58
+                    My.Settings.Nc_RiskScore = .Checked
+                Case 59
+                    My.Settings.Nc_RiskConfidence = .Checked
+                Case 60
+                    My.Settings.Nc_RiskCondition = .Checked
                 Case Else
                     Exit Select
             End Select
+            My.Settings.Save()
         End With
     End Sub
+
+    Private Sub NowcastCheckAll(sender As Object, e As EventArgs) Handles ChkAllNowcast.CheckedChanged
+        For Each c As CheckBox In GbNowcast.Controls.OfType(Of CheckBox)()
+            If Not c.Checked Then
+                c.Checked = True
+            End If
+        Next
+        My.Settings.Save()
+    End Sub
+
+    Private Sub ChkUncheckAllNowcast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkUncheckAllNowcast.CheckedChanged
+        For Each c As CheckBox In GbNowcast.Controls.OfType(Of CheckBox)()
+            If c.Checked Then
+                c.Checked = False
+            End If
+        Next
+        My.Settings.Save()
+    End Sub
+
+    Private Sub NumNcTimeStep_ValueChanged(sender As Object, e As EventArgs) Handles NumNcTimeStep.ValueChanged
+        Dim ct = DirectCast(sender, NumericUpDown)
+        My.Settings.Nc_TimeStep = CInt(ct.Value)
+    End Sub
+
+
+
+#End Region
+
+#End Region
+
+#Region "Timer Clock"
+    Private Sub TmrUpdateDaily_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateDaily.Elapsed
+        PrintLog($"Daily Update timer elapsed @ {Now:T}.{vbLf}")
+        DlyDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Daily, 0)
+        DlyNextUp = Date.Now + DlyDuration
+        If My.Settings.Fetch_Daily Then
+            FetchDailyData()
+        End If
+    End Sub
+
+    Private Sub TmrUpdateHourly_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateHourly.Elapsed
+        PrintLog($"Hourly Update timer elapsed @ {Now:T}.{vbLf}")
+        HrDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
+        HrNextUp = Date.Now + HrDuration
+        If My.Settings.Fetch_Hourly Then
+            FetchHourData()
+        End If
+    End Sub
+
+    Private Sub TmrUpdateNowcast_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateNowcast.Elapsed
+        PrintLog($"Nowcast Update timer elapsed @ {Now:T}.{vbLf}")
+        NcDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
+        NcNextUp = Date.Now + NcDuration
+        If My.Settings.Fetch_Nowcast Then
+            FetchNowcastData()
+        End If
+    End Sub
+
+    Private Sub TmrClock_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrClock.Elapsed
+        TsslClock.Text = Now.ToLongTimeString
+
+        If TmrUpdateDaily.Enabled Then
+            TsslNextDaily.Text = If(DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, DlyNextUp) < 1,
+     $"Dly: {DateDiff(DateInterval.Second, Date.Now, DlyNextUp):N0}",
+     $"Dly: {DateDiff(DateInterval.Minute, Date.Now, DlyNextUp):N0}")
+        End If
+
+        If TmrUpdateHourly.Enabled Then
+            TsslNextHourly.Text = If(DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, HrNextUp) < 1,
+     $"Hr: {DateDiff(DateInterval.Second, Date.Now, HrNextUp):N0}",
+     $"Hr: {DateDiff(DateInterval.Minute, Date.Now, HrNextUp):N0}")
+        End If
+
+        If TmrUpdateNowcast.Enabled Then
+            TsslNextNowcast.Text = If(DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, NcNextUp) < 1,
+    $"Nc: {DateDiff(DateInterval.Second, Date.Now, NcNextUp):N0}",
+    $"Nc: {DateDiff(DateInterval.Minute, Date.Now, NcNextUp):N0}")
+        End If
+    End Sub
+
 
 #End Region
 

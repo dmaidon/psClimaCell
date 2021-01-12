@@ -14,7 +14,7 @@ Friend Module DailyRoutines
         Dim pFile As String = Path.Combine(TempDir, $"daily-{Now:Mdyy_HH}.json")
         If File.Exists(pFile) Then
             Dim ab = (Date2Unix(Now) - Date2Unix(File.GetLastWriteTime(pFile))) / 60
-            If ab >= tSpan - 1 Then
+            If ab >= My.Settings.UpdateInterval_Daily - 1 Then
                 DownloadDailyData(pFile)
             Else
                 ParseDailyData(ab, pFile)
@@ -71,12 +71,9 @@ Friend Module DailyRoutines
     End Function
 
     Public Async Sub DownloadDailyData(fn As String)
-
-        Dim dlyStr As String = GetDailyString()
-        Dim unitStr As String = uArr(My.Settings.Units)
-        Dim url = $"https://api.climacell.co/v3/weather/forecast/daily?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system={unitStr}&start_time=now&fields={dlyStr}&apikey={My.Settings.ApiKey}"
-
         Try
+            Dim url = $"https://api.climacell.co/v3/weather/forecast/daily?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system={uArr(My.Settings.Units)}&start_time=now&fields={GetDailyString()}&apikey={My.Settings.ApiKey}"
+            PrintLog($"Daily Url: {url}{vbLf}")
             Dim request = CType(WebRequest.Create(New Uri(url)), HttpWebRequest)
             With request
                 .AutomaticDecompression = DecompressionMethods.GZip Or DecompressionMethods.Deflate

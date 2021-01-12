@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.1.11.359</AssemblyVersion>
+    <AssemblyVersion>21.1.12.451</AssemblyVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
@@ -129,13 +129,14 @@
     </Compile>
     <Compile Include="Globals.vb" />
     <Compile Include="GlobalSuppressions.vb" />
-    <Compile Include="Models\DailyModel.vb" />
     <Compile Include="Models\HourlyModel.vb" />
+    <Compile Include="Models\DailyModel.vb" />
     <Compile Include="Modules\DailyRoutines.vb" />
     <Compile Include="Modules\DateRoutines.vb" />
     <Compile Include="Modules\DayColors.vb" />
     <Compile Include="Modules\HourlyRoutines.vb" />
     <Compile Include="Modules\LogRoutines.vb" />
+    <Compile Include="Modules\NowcastRoutines.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -152,6 +153,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmMain.resx">
@@ -315,6 +317,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\PNG\Color\mostly_cloudy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\PNG\Color\na.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\PNG\Color\partly_cloudy.png">
