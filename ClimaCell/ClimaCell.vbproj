@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.1.12.497</AssemblyVersion>
+    <AssemblyVersion>21.1.13.508</AssemblyVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
@@ -508,6 +508,7 @@
     <Content Include="Icons\SVG\Color\tstorm.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Data_Layers.gif" />
     <None Include="Resources\powered_by_climacell_halo.png" />
     <None Include="packages.config" />
     <None Include="Resources\PS_LOGO-transparent-190x150.png" />

@@ -459,7 +459,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Nc_TimeStep" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>
