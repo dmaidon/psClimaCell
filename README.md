@@ -1,5 +1,5 @@
 # ClimaCell
-Utilizes Climacell 15-day daily forecast, nowcast and hourly forecast.
+Utilizes [ClimaCell API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast, Realtime and Hourly forecasts.
 
 ### What's Included: ###
 - [ ] [Daily](https://developer.climacell.co/v3/reference#get-daily)
@@ -14,5 +14,8 @@ Utilizes System.Text.Json instead of Newtonsoft.Json
 VB.Net 4.8 .Net Framework
 
 Configurable as to what data you wish to download.
+
+### License ###
+Licensed under the MIT license.
 
 Powered by Climacell
