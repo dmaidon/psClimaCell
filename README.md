@@ -1,5 +1,5 @@
 # ClimaCell
-Utilizes [ClimaCell API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast,Realtime and Hourly forecasts.
+Utilizes [ClimaCell API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast, Realtime and Hourly forecasts.
 
 ### What's Included: ###
 - [ ] [Daily](https://developer.climacell.co/v3/reference#get-daily)
