@@ -15,4 +15,7 @@ VB.Net 4.8 .Net Framework
 
 Configurable as to what data you wish to download.
 
+### License ###
+Licensed under the MIT license.
+
 Powered by Climacell
