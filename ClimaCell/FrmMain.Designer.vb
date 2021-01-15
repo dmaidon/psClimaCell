@@ -267,38 +267,38 @@ Partial Class FrmMain
         Me.ChkRtCore18 = New System.Windows.Forms.CheckBox()
         Me.ChkRtCore19 = New System.Windows.Forms.CheckBox()
         Me.ChkRtCore20 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol0 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol1 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol2 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol3 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol4 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol5 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol6 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol7 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol8 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol9 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol10 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol11 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol12 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol13 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol14 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol15 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol16 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol17 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol18 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol19 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol20 = New System.Windows.Forms.CheckBox()
         Me.ChkRtPol21 = New System.Windows.Forms.CheckBox()
         Me.ChkRtPol22 = New System.Windows.Forms.CheckBox()
         Me.ChkRtPol23 = New System.Windows.Forms.CheckBox()
         Me.ChkRtPol24 = New System.Windows.Forms.CheckBox()
         Me.ChkRtPol25 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol26 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol27 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol28 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol29 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol30 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol31 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol32 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol33 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol34 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol35 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol36 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol37 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol38 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol39 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol40 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol41 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol42 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol43 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol44 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol45 = New System.Windows.Forms.CheckBox()
-        Me.ChkRtPol46 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox48 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox49 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox50 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox51 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox52 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox53 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtRoad0 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtRoad1 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtRoad2 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtRoad3 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtFire0 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtHail0 = New System.Windows.Forms.CheckBox()
         Me.CheckBox54 = New System.Windows.Forms.CheckBox()
         Me.CheckBox55 = New System.Windows.Forms.CheckBox()
         Me.CheckBox56 = New System.Windows.Forms.CheckBox()
@@ -3844,38 +3844,38 @@ Partial Class FrmMain
         Me.FlpRtOpt.Controls.Add(Me.ChkRtCore18)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtCore19)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtCore20)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol0)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol1)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol2)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol3)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol4)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol5)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol6)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol7)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol8)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol9)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol10)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol11)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol12)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol13)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol14)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol15)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol16)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol17)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol18)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol19)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol20)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtPol21)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtPol22)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtPol23)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtPol24)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtPol25)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol26)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol27)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol28)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol29)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol30)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol31)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol32)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol33)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol34)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol35)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol36)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol37)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol38)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol39)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol40)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol41)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol42)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol43)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol44)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol45)
-        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol46)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox48)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox49)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox50)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox51)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox52)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox53)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtRoad0)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtRoad1)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtRoad2)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtRoad3)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtFire0)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtHail0)
         Me.FlpRtOpt.Controls.Add(Me.CheckBox54)
         Me.FlpRtOpt.Controls.Add(Me.CheckBox55)
         Me.FlpRtOpt.Controls.Add(Me.CheckBox56)
@@ -4256,21 +4256,378 @@ Partial Class FrmMain
         Me.ChkRtCore20.Text = "Weather Code"
         Me.ChkRtCore20.UseVisualStyleBackColor = False
         '
+        'ChkRtPol0
+        '
+        Me.ChkRtPol0.AutoSize = True
+        Me.ChkRtPol0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol0.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol0.Location = New System.Drawing.Point(243, 110)
+        Me.ChkRtPol0.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol0.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol0.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol0.Name = "ChkRtPol0"
+        Me.ChkRtPol0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol0.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol0.TabIndex = 21
+        Me.ChkRtPol0.Tag = "21"
+        Me.ChkRtPol0.Text = "Tree Pollen"
+        Me.ChkRtPol0.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol1
+        '
+        Me.ChkRtPol1.AutoSize = True
+        Me.ChkRtPol1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol1.Location = New System.Drawing.Point(480, 110)
+        Me.ChkRtPol1.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol1.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol1.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol1.Name = "ChkRtPol1"
+        Me.ChkRtPol1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol1.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol1.TabIndex = 22
+        Me.ChkRtPol1.Tag = "22"
+        Me.ChkRtPol1.Text = "Weed Pollen"
+        Me.ChkRtPol1.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol2
+        '
+        Me.ChkRtPol2.AutoSize = True
+        Me.ChkRtPol2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol2.Location = New System.Drawing.Point(717, 110)
+        Me.ChkRtPol2.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol2.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol2.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol2.Name = "ChkRtPol2"
+        Me.ChkRtPol2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol2.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol2.TabIndex = 23
+        Me.ChkRtPol2.Tag = "23"
+        Me.ChkRtPol2.Text = "Grass Pollen"
+        Me.ChkRtPol2.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol3
+        '
+        Me.ChkRtPol3.AutoSize = True
+        Me.ChkRtPol3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol3.Location = New System.Drawing.Point(954, 110)
+        Me.ChkRtPol3.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol3.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol3.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol3.Name = "ChkRtPol3"
+        Me.ChkRtPol3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol3.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol3.TabIndex = 24
+        Me.ChkRtPol3.Tag = "24"
+        Me.ChkRtPol3.Text = "Ragweed"
+        Me.ChkRtPol3.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol4
+        '
+        Me.ChkRtPol4.AutoSize = True
+        Me.ChkRtPol4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol4.Location = New System.Drawing.Point(6, 136)
+        Me.ChkRtPol4.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol4.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol4.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol4.Name = "ChkRtPol4"
+        Me.ChkRtPol4.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol4.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol4.TabIndex = 25
+        Me.ChkRtPol4.Tag = "25"
+        Me.ChkRtPol4.Text = "Grass"
+        Me.ChkRtPol4.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol5
+        '
+        Me.ChkRtPol5.AutoSize = True
+        Me.ChkRtPol5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol5.Location = New System.Drawing.Point(243, 136)
+        Me.ChkRtPol5.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol5.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol5.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol5.Name = "ChkRtPol5"
+        Me.ChkRtPol5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol5.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol5.TabIndex = 26
+        Me.ChkRtPol5.Tag = "26"
+        Me.ChkRtPol5.Text = "Acacia"
+        Me.ChkRtPol5.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol6
+        '
+        Me.ChkRtPol6.AutoSize = True
+        Me.ChkRtPol6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol6.Location = New System.Drawing.Point(480, 136)
+        Me.ChkRtPol6.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol6.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol6.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol6.Name = "ChkRtPol6"
+        Me.ChkRtPol6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol6.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol6.TabIndex = 27
+        Me.ChkRtPol6.Tag = "27"
+        Me.ChkRtPol6.Text = "Ash"
+        Me.ChkRtPol6.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol7
+        '
+        Me.ChkRtPol7.AutoSize = True
+        Me.ChkRtPol7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol7.Location = New System.Drawing.Point(717, 136)
+        Me.ChkRtPol7.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol7.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol7.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol7.Name = "ChkRtPol7"
+        Me.ChkRtPol7.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol7.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol7.TabIndex = 28
+        Me.ChkRtPol7.Tag = "28"
+        Me.ChkRtPol7.Text = "Beech"
+        Me.ChkRtPol7.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol8
+        '
+        Me.ChkRtPol8.AutoSize = True
+        Me.ChkRtPol8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol8.Location = New System.Drawing.Point(954, 136)
+        Me.ChkRtPol8.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol8.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol8.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol8.Name = "ChkRtPol8"
+        Me.ChkRtPol8.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol8.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol8.TabIndex = 29
+        Me.ChkRtPol8.Tag = "29"
+        Me.ChkRtPol8.Text = "Birch"
+        Me.ChkRtPol8.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol9
+        '
+        Me.ChkRtPol9.AutoSize = True
+        Me.ChkRtPol9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol9.Location = New System.Drawing.Point(6, 162)
+        Me.ChkRtPol9.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol9.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol9.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol9.Name = "ChkRtPol9"
+        Me.ChkRtPol9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol9.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol9.TabIndex = 30
+        Me.ChkRtPol9.Tag = "30"
+        Me.ChkRtPol9.Text = "Cedar"
+        Me.ChkRtPol9.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol10
+        '
+        Me.ChkRtPol10.AutoSize = True
+        Me.ChkRtPol10.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol10.Location = New System.Drawing.Point(243, 162)
+        Me.ChkRtPol10.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol10.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol10.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol10.Name = "ChkRtPol10"
+        Me.ChkRtPol10.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol10.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol10.TabIndex = 31
+        Me.ChkRtPol10.Tag = "31"
+        Me.ChkRtPol10.Text = "Cypress"
+        Me.ChkRtPol10.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol11
+        '
+        Me.ChkRtPol11.AutoSize = True
+        Me.ChkRtPol11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol11.Location = New System.Drawing.Point(480, 162)
+        Me.ChkRtPol11.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol11.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol11.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol11.Name = "ChkRtPol11"
+        Me.ChkRtPol11.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol11.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol11.TabIndex = 32
+        Me.ChkRtPol11.Tag = "32"
+        Me.ChkRtPol11.Text = "Elder"
+        Me.ChkRtPol11.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol12
+        '
+        Me.ChkRtPol12.AutoSize = True
+        Me.ChkRtPol12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol12.Location = New System.Drawing.Point(717, 162)
+        Me.ChkRtPol12.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol12.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol12.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol12.Name = "ChkRtPol12"
+        Me.ChkRtPol12.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol12.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol12.TabIndex = 33
+        Me.ChkRtPol12.Tag = "33"
+        Me.ChkRtPol12.Text = "Elm"
+        Me.ChkRtPol12.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol13
+        '
+        Me.ChkRtPol13.AutoSize = True
+        Me.ChkRtPol13.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol13.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol13.Location = New System.Drawing.Point(954, 162)
+        Me.ChkRtPol13.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol13.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol13.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol13.Name = "ChkRtPol13"
+        Me.ChkRtPol13.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol13.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol13.TabIndex = 34
+        Me.ChkRtPol13.Tag = "34"
+        Me.ChkRtPol13.Text = "Hemlock"
+        Me.ChkRtPol13.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol14
+        '
+        Me.ChkRtPol14.AutoSize = True
+        Me.ChkRtPol14.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol14.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol14.Location = New System.Drawing.Point(6, 188)
+        Me.ChkRtPol14.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol14.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol14.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol14.Name = "ChkRtPol14"
+        Me.ChkRtPol14.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol14.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol14.TabIndex = 35
+        Me.ChkRtPol14.Tag = "35"
+        Me.ChkRtPol14.Text = "Hickory"
+        Me.ChkRtPol14.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol15
+        '
+        Me.ChkRtPol15.AutoSize = True
+        Me.ChkRtPol15.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol15.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol15.Location = New System.Drawing.Point(243, 188)
+        Me.ChkRtPol15.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol15.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol15.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol15.Name = "ChkRtPol15"
+        Me.ChkRtPol15.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol15.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol15.TabIndex = 36
+        Me.ChkRtPol15.Tag = "36"
+        Me.ChkRtPol15.Text = "Juniper"
+        Me.ChkRtPol15.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol16
+        '
+        Me.ChkRtPol16.AutoSize = True
+        Me.ChkRtPol16.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol16.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol16.Location = New System.Drawing.Point(480, 188)
+        Me.ChkRtPol16.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol16.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol16.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol16.Name = "ChkRtPol16"
+        Me.ChkRtPol16.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol16.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol16.TabIndex = 37
+        Me.ChkRtPol16.Tag = "37"
+        Me.ChkRtPol16.Text = "Mahogany"
+        Me.ChkRtPol16.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol17
+        '
+        Me.ChkRtPol17.AutoSize = True
+        Me.ChkRtPol17.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol17.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol17.Location = New System.Drawing.Point(717, 188)
+        Me.ChkRtPol17.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol17.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol17.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol17.Name = "ChkRtPol17"
+        Me.ChkRtPol17.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol17.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol17.TabIndex = 38
+        Me.ChkRtPol17.Tag = "38"
+        Me.ChkRtPol17.Text = "Maple"
+        Me.ChkRtPol17.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol18
+        '
+        Me.ChkRtPol18.AutoSize = True
+        Me.ChkRtPol18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol18.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol18.Location = New System.Drawing.Point(954, 188)
+        Me.ChkRtPol18.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol18.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol18.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol18.Name = "ChkRtPol18"
+        Me.ChkRtPol18.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol18.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol18.TabIndex = 39
+        Me.ChkRtPol18.Tag = "39"
+        Me.ChkRtPol18.Text = "Mulberry"
+        Me.ChkRtPol18.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol19
+        '
+        Me.ChkRtPol19.AutoSize = True
+        Me.ChkRtPol19.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol19.Location = New System.Drawing.Point(6, 214)
+        Me.ChkRtPol19.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol19.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol19.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol19.Name = "ChkRtPol19"
+        Me.ChkRtPol19.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol19.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol19.TabIndex = 40
+        Me.ChkRtPol19.Tag = "40"
+        Me.ChkRtPol19.Text = "Oak"
+        Me.ChkRtPol19.UseVisualStyleBackColor = False
+        '
+        'ChkRtPol20
+        '
+        Me.ChkRtPol20.AutoSize = True
+        Me.ChkRtPol20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol20.Location = New System.Drawing.Point(243, 214)
+        Me.ChkRtPol20.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol20.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol20.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol20.Name = "ChkRtPol20"
+        Me.ChkRtPol20.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol20.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol20.TabIndex = 41
+        Me.ChkRtPol20.Tag = "41"
+        Me.ChkRtPol20.Text = "Pine"
+        Me.ChkRtPol20.UseVisualStyleBackColor = False
+        '
         'ChkRtPol21
         '
         Me.ChkRtPol21.AutoSize = True
         Me.ChkRtPol21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkRtPol21.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol21.Location = New System.Drawing.Point(243, 110)
+        Me.ChkRtPol21.Location = New System.Drawing.Point(480, 214)
         Me.ChkRtPol21.Margin = New System.Windows.Forms.Padding(1)
         Me.ChkRtPol21.MaximumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol21.MinimumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol21.Name = "ChkRtPol21"
         Me.ChkRtPol21.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.ChkRtPol21.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol21.TabIndex = 21
-        Me.ChkRtPol21.Tag = "21"
-        Me.ChkRtPol21.Text = "Tree Pollen"
+        Me.ChkRtPol21.TabIndex = 42
+        Me.ChkRtPol21.Tag = "42"
+        Me.ChkRtPol21.Text = "Cottonwood"
         Me.ChkRtPol21.UseVisualStyleBackColor = False
         '
         'ChkRtPol22
@@ -4278,16 +4635,16 @@ Partial Class FrmMain
         Me.ChkRtPol22.AutoSize = True
         Me.ChkRtPol22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkRtPol22.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol22.Location = New System.Drawing.Point(480, 110)
+        Me.ChkRtPol22.Location = New System.Drawing.Point(717, 214)
         Me.ChkRtPol22.Margin = New System.Windows.Forms.Padding(1)
         Me.ChkRtPol22.MaximumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol22.MinimumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol22.Name = "ChkRtPol22"
         Me.ChkRtPol22.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.ChkRtPol22.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol22.TabIndex = 22
-        Me.ChkRtPol22.Tag = "22"
-        Me.ChkRtPol22.Text = "Weed Pollen"
+        Me.ChkRtPol22.TabIndex = 43
+        Me.ChkRtPol22.Tag = "43"
+        Me.ChkRtPol22.Text = "Spruce"
         Me.ChkRtPol22.UseVisualStyleBackColor = False
         '
         'ChkRtPol23
@@ -4295,16 +4652,16 @@ Partial Class FrmMain
         Me.ChkRtPol23.AutoSize = True
         Me.ChkRtPol23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkRtPol23.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol23.Location = New System.Drawing.Point(717, 110)
+        Me.ChkRtPol23.Location = New System.Drawing.Point(954, 214)
         Me.ChkRtPol23.Margin = New System.Windows.Forms.Padding(1)
         Me.ChkRtPol23.MaximumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol23.MinimumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol23.Name = "ChkRtPol23"
         Me.ChkRtPol23.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.ChkRtPol23.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol23.TabIndex = 23
-        Me.ChkRtPol23.Tag = "23"
-        Me.ChkRtPol23.Text = "Grass Pollen"
+        Me.ChkRtPol23.TabIndex = 44
+        Me.ChkRtPol23.Tag = "44"
+        Me.ChkRtPol23.Text = "Sycamore"
         Me.ChkRtPol23.UseVisualStyleBackColor = False
         '
         'ChkRtPol24
@@ -4312,16 +4669,16 @@ Partial Class FrmMain
         Me.ChkRtPol24.AutoSize = True
         Me.ChkRtPol24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkRtPol24.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol24.Location = New System.Drawing.Point(954, 110)
+        Me.ChkRtPol24.Location = New System.Drawing.Point(6, 240)
         Me.ChkRtPol24.Margin = New System.Windows.Forms.Padding(1)
         Me.ChkRtPol24.MaximumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol24.MinimumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol24.Name = "ChkRtPol24"
         Me.ChkRtPol24.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.ChkRtPol24.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol24.TabIndex = 24
-        Me.ChkRtPol24.Tag = "24"
-        Me.ChkRtPol24.Text = "Ragweed"
+        Me.ChkRtPol24.TabIndex = 45
+        Me.ChkRtPol24.Tag = "45"
+        Me.ChkRtPol24.Text = "Walnut"
         Me.ChkRtPol24.UseVisualStyleBackColor = False
         '
         'ChkRtPol25
@@ -4329,476 +4686,119 @@ Partial Class FrmMain
         Me.ChkRtPol25.AutoSize = True
         Me.ChkRtPol25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkRtPol25.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol25.Location = New System.Drawing.Point(6, 136)
+        Me.ChkRtPol25.Location = New System.Drawing.Point(243, 240)
         Me.ChkRtPol25.Margin = New System.Windows.Forms.Padding(1)
         Me.ChkRtPol25.MaximumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol25.MinimumSize = New System.Drawing.Size(235, 24)
         Me.ChkRtPol25.Name = "ChkRtPol25"
         Me.ChkRtPol25.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.ChkRtPol25.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol25.TabIndex = 25
-        Me.ChkRtPol25.Tag = "25"
-        Me.ChkRtPol25.Text = "Grass"
+        Me.ChkRtPol25.TabIndex = 46
+        Me.ChkRtPol25.Tag = "46"
+        Me.ChkRtPol25.Text = "Willow"
         Me.ChkRtPol25.UseVisualStyleBackColor = False
         '
-        'ChkRtPol26
+        'ChkRtRoad0
         '
-        Me.ChkRtPol26.AutoSize = True
-        Me.ChkRtPol26.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol26.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol26.Location = New System.Drawing.Point(243, 136)
-        Me.ChkRtPol26.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol26.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol26.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol26.Name = "ChkRtPol26"
-        Me.ChkRtPol26.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol26.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol26.TabIndex = 26
-        Me.ChkRtPol26.Tag = "26"
-        Me.ChkRtPol26.Text = "Acacia"
-        Me.ChkRtPol26.UseVisualStyleBackColor = False
+        Me.ChkRtRoad0.AutoSize = True
+        Me.ChkRtRoad0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtRoad0.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtRoad0.Location = New System.Drawing.Point(480, 240)
+        Me.ChkRtRoad0.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtRoad0.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad0.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad0.Name = "ChkRtRoad0"
+        Me.ChkRtRoad0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtRoad0.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad0.TabIndex = 47
+        Me.ChkRtRoad0.Tag = "47"
+        Me.ChkRtRoad0.Text = "Road Risk Score"
+        Me.ChkRtRoad0.UseVisualStyleBackColor = False
         '
-        'ChkRtPol27
+        'ChkRtRoad1
         '
-        Me.ChkRtPol27.AutoSize = True
-        Me.ChkRtPol27.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol27.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol27.Location = New System.Drawing.Point(480, 136)
-        Me.ChkRtPol27.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol27.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol27.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol27.Name = "ChkRtPol27"
-        Me.ChkRtPol27.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol27.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol27.TabIndex = 27
-        Me.ChkRtPol27.Tag = "27"
-        Me.ChkRtPol27.Text = "Ash"
-        Me.ChkRtPol27.UseVisualStyleBackColor = False
+        Me.ChkRtRoad1.AutoSize = True
+        Me.ChkRtRoad1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtRoad1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtRoad1.Location = New System.Drawing.Point(717, 240)
+        Me.ChkRtRoad1.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtRoad1.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad1.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad1.Name = "ChkRtRoad1"
+        Me.ChkRtRoad1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtRoad1.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad1.TabIndex = 48
+        Me.ChkRtRoad1.Tag = "48"
+        Me.ChkRtRoad1.Text = "Road Risk"
+        Me.ChkRtRoad1.UseVisualStyleBackColor = False
         '
-        'ChkRtPol28
+        'ChkRtRoad2
         '
-        Me.ChkRtPol28.AutoSize = True
-        Me.ChkRtPol28.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol28.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol28.Location = New System.Drawing.Point(717, 136)
-        Me.ChkRtPol28.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol28.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol28.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol28.Name = "ChkRtPol28"
-        Me.ChkRtPol28.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol28.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol28.TabIndex = 28
-        Me.ChkRtPol28.Tag = "28"
-        Me.ChkRtPol28.Text = "Beech"
-        Me.ChkRtPol28.UseVisualStyleBackColor = False
+        Me.ChkRtRoad2.AutoSize = True
+        Me.ChkRtRoad2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtRoad2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtRoad2.Location = New System.Drawing.Point(954, 240)
+        Me.ChkRtRoad2.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtRoad2.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad2.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad2.Name = "ChkRtRoad2"
+        Me.ChkRtRoad2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtRoad2.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad2.TabIndex = 49
+        Me.ChkRtRoad2.Tag = "49"
+        Me.ChkRtRoad2.Text = "Road Risk Confidence"
+        Me.ChkRtRoad2.UseVisualStyleBackColor = False
         '
-        'ChkRtPol29
+        'ChkRtRoad3
         '
-        Me.ChkRtPol29.AutoSize = True
-        Me.ChkRtPol29.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol29.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol29.Location = New System.Drawing.Point(954, 136)
-        Me.ChkRtPol29.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol29.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol29.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol29.Name = "ChkRtPol29"
-        Me.ChkRtPol29.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol29.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol29.TabIndex = 29
-        Me.ChkRtPol29.Tag = "29"
-        Me.ChkRtPol29.Text = "Birch"
-        Me.ChkRtPol29.UseVisualStyleBackColor = False
+        Me.ChkRtRoad3.AutoSize = True
+        Me.ChkRtRoad3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtRoad3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtRoad3.Location = New System.Drawing.Point(6, 266)
+        Me.ChkRtRoad3.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtRoad3.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad3.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad3.Name = "ChkRtRoad3"
+        Me.ChkRtRoad3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtRoad3.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtRoad3.TabIndex = 50
+        Me.ChkRtRoad3.Tag = "50"
+        Me.ChkRtRoad3.Text = "Road Risk Conditions"
+        Me.ChkRtRoad3.UseVisualStyleBackColor = False
         '
-        'ChkRtPol30
+        'ChkRtFire0
         '
-        Me.ChkRtPol30.AutoSize = True
-        Me.ChkRtPol30.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol30.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol30.Location = New System.Drawing.Point(6, 162)
-        Me.ChkRtPol30.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol30.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol30.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol30.Name = "ChkRtPol30"
-        Me.ChkRtPol30.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol30.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol30.TabIndex = 30
-        Me.ChkRtPol30.Tag = "30"
-        Me.ChkRtPol30.Text = "Cedar"
-        Me.ChkRtPol30.UseVisualStyleBackColor = False
+        Me.ChkRtFire0.AutoSize = True
+        Me.ChkRtFire0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtFire0.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtFire0.Location = New System.Drawing.Point(243, 266)
+        Me.ChkRtFire0.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtFire0.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtFire0.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtFire0.Name = "ChkRtFire0"
+        Me.ChkRtFire0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtFire0.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtFire0.TabIndex = 51
+        Me.ChkRtFire0.Tag = "51"
+        Me.ChkRtFire0.Text = "Fire Index"
+        Me.ChkRtFire0.UseVisualStyleBackColor = False
         '
-        'ChkRtPol31
+        'ChkRtHail0
         '
-        Me.ChkRtPol31.AutoSize = True
-        Me.ChkRtPol31.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol31.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol31.Location = New System.Drawing.Point(243, 162)
-        Me.ChkRtPol31.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol31.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol31.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol31.Name = "ChkRtPol31"
-        Me.ChkRtPol31.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol31.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol31.TabIndex = 31
-        Me.ChkRtPol31.Tag = "31"
-        Me.ChkRtPol31.Text = "Cypress"
-        Me.ChkRtPol31.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol32
-        '
-        Me.ChkRtPol32.AutoSize = True
-        Me.ChkRtPol32.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol32.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol32.Location = New System.Drawing.Point(480, 162)
-        Me.ChkRtPol32.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol32.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol32.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol32.Name = "ChkRtPol32"
-        Me.ChkRtPol32.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol32.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol32.TabIndex = 32
-        Me.ChkRtPol32.Tag = "32"
-        Me.ChkRtPol32.Text = "Elder"
-        Me.ChkRtPol32.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol33
-        '
-        Me.ChkRtPol33.AutoSize = True
-        Me.ChkRtPol33.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol33.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol33.Location = New System.Drawing.Point(717, 162)
-        Me.ChkRtPol33.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol33.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol33.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol33.Name = "ChkRtPol33"
-        Me.ChkRtPol33.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol33.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol33.TabIndex = 33
-        Me.ChkRtPol33.Tag = "33"
-        Me.ChkRtPol33.Text = "Elm"
-        Me.ChkRtPol33.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol34
-        '
-        Me.ChkRtPol34.AutoSize = True
-        Me.ChkRtPol34.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol34.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol34.Location = New System.Drawing.Point(954, 162)
-        Me.ChkRtPol34.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol34.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol34.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol34.Name = "ChkRtPol34"
-        Me.ChkRtPol34.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol34.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol34.TabIndex = 34
-        Me.ChkRtPol34.Tag = "34"
-        Me.ChkRtPol34.Text = "Hemlock"
-        Me.ChkRtPol34.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol35
-        '
-        Me.ChkRtPol35.AutoSize = True
-        Me.ChkRtPol35.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol35.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol35.Location = New System.Drawing.Point(6, 188)
-        Me.ChkRtPol35.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol35.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol35.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol35.Name = "ChkRtPol35"
-        Me.ChkRtPol35.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol35.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol35.TabIndex = 35
-        Me.ChkRtPol35.Tag = "35"
-        Me.ChkRtPol35.Text = "Hickory"
-        Me.ChkRtPol35.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol36
-        '
-        Me.ChkRtPol36.AutoSize = True
-        Me.ChkRtPol36.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol36.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol36.Location = New System.Drawing.Point(243, 188)
-        Me.ChkRtPol36.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol36.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol36.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol36.Name = "ChkRtPol36"
-        Me.ChkRtPol36.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol36.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol36.TabIndex = 36
-        Me.ChkRtPol36.Tag = "36"
-        Me.ChkRtPol36.Text = "Juniper"
-        Me.ChkRtPol36.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol37
-        '
-        Me.ChkRtPol37.AutoSize = True
-        Me.ChkRtPol37.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol37.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol37.Location = New System.Drawing.Point(480, 188)
-        Me.ChkRtPol37.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol37.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol37.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol37.Name = "ChkRtPol37"
-        Me.ChkRtPol37.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol37.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol37.TabIndex = 37
-        Me.ChkRtPol37.Tag = "37"
-        Me.ChkRtPol37.Text = "Mahogany"
-        Me.ChkRtPol37.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol38
-        '
-        Me.ChkRtPol38.AutoSize = True
-        Me.ChkRtPol38.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol38.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol38.Location = New System.Drawing.Point(717, 188)
-        Me.ChkRtPol38.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol38.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol38.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol38.Name = "ChkRtPol38"
-        Me.ChkRtPol38.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol38.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol38.TabIndex = 38
-        Me.ChkRtPol38.Tag = "38"
-        Me.ChkRtPol38.Text = "Maple"
-        Me.ChkRtPol38.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol39
-        '
-        Me.ChkRtPol39.AutoSize = True
-        Me.ChkRtPol39.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol39.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol39.Location = New System.Drawing.Point(954, 188)
-        Me.ChkRtPol39.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol39.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol39.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol39.Name = "ChkRtPol39"
-        Me.ChkRtPol39.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol39.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol39.TabIndex = 39
-        Me.ChkRtPol39.Tag = "39"
-        Me.ChkRtPol39.Text = "Mulberry"
-        Me.ChkRtPol39.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol40
-        '
-        Me.ChkRtPol40.AutoSize = True
-        Me.ChkRtPol40.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol40.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol40.Location = New System.Drawing.Point(6, 214)
-        Me.ChkRtPol40.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol40.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol40.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol40.Name = "ChkRtPol40"
-        Me.ChkRtPol40.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol40.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol40.TabIndex = 40
-        Me.ChkRtPol40.Tag = "40"
-        Me.ChkRtPol40.Text = "Oak"
-        Me.ChkRtPol40.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol41
-        '
-        Me.ChkRtPol41.AutoSize = True
-        Me.ChkRtPol41.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol41.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol41.Location = New System.Drawing.Point(243, 214)
-        Me.ChkRtPol41.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol41.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol41.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol41.Name = "ChkRtPol41"
-        Me.ChkRtPol41.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol41.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol41.TabIndex = 41
-        Me.ChkRtPol41.Tag = "41"
-        Me.ChkRtPol41.Text = "Pine"
-        Me.ChkRtPol41.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol42
-        '
-        Me.ChkRtPol42.AutoSize = True
-        Me.ChkRtPol42.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol42.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol42.Location = New System.Drawing.Point(480, 214)
-        Me.ChkRtPol42.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol42.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol42.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol42.Name = "ChkRtPol42"
-        Me.ChkRtPol42.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol42.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol42.TabIndex = 42
-        Me.ChkRtPol42.Tag = "42"
-        Me.ChkRtPol42.Text = "Cottonwood"
-        Me.ChkRtPol42.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol43
-        '
-        Me.ChkRtPol43.AutoSize = True
-        Me.ChkRtPol43.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol43.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol43.Location = New System.Drawing.Point(717, 214)
-        Me.ChkRtPol43.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol43.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol43.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol43.Name = "ChkRtPol43"
-        Me.ChkRtPol43.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol43.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol43.TabIndex = 43
-        Me.ChkRtPol43.Tag = "43"
-        Me.ChkRtPol43.Text = "Spruce"
-        Me.ChkRtPol43.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol44
-        '
-        Me.ChkRtPol44.AutoSize = True
-        Me.ChkRtPol44.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol44.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol44.Location = New System.Drawing.Point(954, 214)
-        Me.ChkRtPol44.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol44.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol44.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol44.Name = "ChkRtPol44"
-        Me.ChkRtPol44.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol44.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol44.TabIndex = 44
-        Me.ChkRtPol44.Tag = "44"
-        Me.ChkRtPol44.Text = "Sycamore"
-        Me.ChkRtPol44.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol45
-        '
-        Me.ChkRtPol45.AutoSize = True
-        Me.ChkRtPol45.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol45.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol45.Location = New System.Drawing.Point(6, 240)
-        Me.ChkRtPol45.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol45.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol45.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol45.Name = "ChkRtPol45"
-        Me.ChkRtPol45.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol45.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol45.TabIndex = 45
-        Me.ChkRtPol45.Tag = "45"
-        Me.ChkRtPol45.Text = "Walnut"
-        Me.ChkRtPol45.UseVisualStyleBackColor = False
-        '
-        'ChkRtPol46
-        '
-        Me.ChkRtPol46.AutoSize = True
-        Me.ChkRtPol46.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkRtPol46.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkRtPol46.Location = New System.Drawing.Point(243, 240)
-        Me.ChkRtPol46.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkRtPol46.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol46.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol46.Name = "ChkRtPol46"
-        Me.ChkRtPol46.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkRtPol46.Size = New System.Drawing.Size(235, 24)
-        Me.ChkRtPol46.TabIndex = 46
-        Me.ChkRtPol46.Tag = "46"
-        Me.ChkRtPol46.Text = "Willow"
-        Me.ChkRtPol46.UseVisualStyleBackColor = False
-        '
-        'CheckBox48
-        '
-        Me.CheckBox48.AutoSize = True
-        Me.CheckBox48.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox48.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox48.Location = New System.Drawing.Point(480, 240)
-        Me.CheckBox48.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox48.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox48.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox48.Name = "CheckBox48"
-        Me.CheckBox48.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox48.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox48.TabIndex = 47
-        Me.CheckBox48.Tag = "47"
-        Me.CheckBox48.Text = "Road Risk Score"
-        Me.CheckBox48.UseVisualStyleBackColor = False
-        '
-        'CheckBox49
-        '
-        Me.CheckBox49.AutoSize = True
-        Me.CheckBox49.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox49.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox49.Location = New System.Drawing.Point(717, 240)
-        Me.CheckBox49.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox49.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox49.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox49.Name = "CheckBox49"
-        Me.CheckBox49.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox49.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox49.TabIndex = 48
-        Me.CheckBox49.Tag = "48"
-        Me.CheckBox49.Text = "Road Risk"
-        Me.CheckBox49.UseVisualStyleBackColor = False
-        '
-        'CheckBox50
-        '
-        Me.CheckBox50.AutoSize = True
-        Me.CheckBox50.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox50.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox50.Location = New System.Drawing.Point(954, 240)
-        Me.CheckBox50.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox50.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox50.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox50.Name = "CheckBox50"
-        Me.CheckBox50.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox50.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox50.TabIndex = 49
-        Me.CheckBox50.Tag = "49"
-        Me.CheckBox50.Text = "Road Risk Confidence"
-        Me.CheckBox50.UseVisualStyleBackColor = False
-        '
-        'CheckBox51
-        '
-        Me.CheckBox51.AutoSize = True
-        Me.CheckBox51.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox51.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox51.Location = New System.Drawing.Point(6, 266)
-        Me.CheckBox51.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox51.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox51.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox51.Name = "CheckBox51"
-        Me.CheckBox51.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox51.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox51.TabIndex = 50
-        Me.CheckBox51.Tag = "50"
-        Me.CheckBox51.Text = "Road Risk Conditions"
-        Me.CheckBox51.UseVisualStyleBackColor = False
-        '
-        'CheckBox52
-        '
-        Me.CheckBox52.AutoSize = True
-        Me.CheckBox52.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox52.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox52.Location = New System.Drawing.Point(243, 266)
-        Me.CheckBox52.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox52.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox52.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox52.Name = "CheckBox52"
-        Me.CheckBox52.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox52.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox52.TabIndex = 51
-        Me.CheckBox52.Tag = "51"
-        Me.CheckBox52.Text = "Fire Index"
-        Me.CheckBox52.UseVisualStyleBackColor = False
-        '
-        'CheckBox53
-        '
-        Me.CheckBox53.AutoSize = True
-        Me.CheckBox53.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox53.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox53.Location = New System.Drawing.Point(480, 266)
-        Me.CheckBox53.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox53.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox53.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox53.Name = "CheckBox53"
-        Me.CheckBox53.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox53.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox53.TabIndex = 52
-        Me.CheckBox53.Tag = "52"
-        Me.CheckBox53.Text = "Hail Risk"
-        Me.CheckBox53.UseVisualStyleBackColor = False
+        Me.ChkRtHail0.AutoSize = True
+        Me.ChkRtHail0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtHail0.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtHail0.Location = New System.Drawing.Point(480, 266)
+        Me.ChkRtHail0.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtHail0.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtHail0.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtHail0.Name = "ChkRtHail0"
+        Me.ChkRtHail0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtHail0.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtHail0.TabIndex = 52
+        Me.ChkRtHail0.Tag = "52"
+        Me.ChkRtHail0.Text = "Hail Risk"
+        Me.ChkRtHail0.UseVisualStyleBackColor = False
         '
         'CheckBox54
         '
@@ -5747,38 +5747,38 @@ Partial Class FrmMain
     Friend WithEvents ChkRtCore18 As CheckBox
     Friend WithEvents ChkRtCore19 As CheckBox
     Friend WithEvents ChkRtCore20 As CheckBox
+    Friend WithEvents ChkRtPol0 As CheckBox
+    Friend WithEvents ChkRtPol1 As CheckBox
+    Friend WithEvents ChkRtPol2 As CheckBox
+    Friend WithEvents ChkRtPol3 As CheckBox
+    Friend WithEvents ChkRtPol4 As CheckBox
+    Friend WithEvents ChkRtPol5 As CheckBox
+    Friend WithEvents ChkRtPol6 As CheckBox
+    Friend WithEvents ChkRtPol7 As CheckBox
+    Friend WithEvents ChkRtPol8 As CheckBox
+    Friend WithEvents ChkRtPol9 As CheckBox
+    Friend WithEvents ChkRtPol10 As CheckBox
+    Friend WithEvents ChkRtPol11 As CheckBox
+    Friend WithEvents ChkRtPol12 As CheckBox
+    Friend WithEvents ChkRtPol13 As CheckBox
+    Friend WithEvents ChkRtPol14 As CheckBox
+    Friend WithEvents ChkRtPol15 As CheckBox
+    Friend WithEvents ChkRtPol16 As CheckBox
+    Friend WithEvents ChkRtPol17 As CheckBox
+    Friend WithEvents ChkRtPol18 As CheckBox
+    Friend WithEvents ChkRtPol19 As CheckBox
+    Friend WithEvents ChkRtPol20 As CheckBox
     Friend WithEvents ChkRtPol21 As CheckBox
     Friend WithEvents ChkRtPol22 As CheckBox
     Friend WithEvents ChkRtPol23 As CheckBox
     Friend WithEvents ChkRtPol24 As CheckBox
     Friend WithEvents ChkRtPol25 As CheckBox
-    Friend WithEvents ChkRtPol26 As CheckBox
-    Friend WithEvents ChkRtPol27 As CheckBox
-    Friend WithEvents ChkRtPol28 As CheckBox
-    Friend WithEvents ChkRtPol29 As CheckBox
-    Friend WithEvents ChkRtPol30 As CheckBox
-    Friend WithEvents ChkRtPol31 As CheckBox
-    Friend WithEvents ChkRtPol32 As CheckBox
-    Friend WithEvents ChkRtPol33 As CheckBox
-    Friend WithEvents ChkRtPol34 As CheckBox
-    Friend WithEvents ChkRtPol35 As CheckBox
-    Friend WithEvents ChkRtPol36 As CheckBox
-    Friend WithEvents ChkRtPol37 As CheckBox
-    Friend WithEvents ChkRtPol38 As CheckBox
-    Friend WithEvents ChkRtPol39 As CheckBox
-    Friend WithEvents ChkRtPol40 As CheckBox
-    Friend WithEvents ChkRtPol41 As CheckBox
-    Friend WithEvents ChkRtPol42 As CheckBox
-    Friend WithEvents ChkRtPol43 As CheckBox
-    Friend WithEvents ChkRtPol44 As CheckBox
-    Friend WithEvents ChkRtPol45 As CheckBox
-    Friend WithEvents ChkRtPol46 As CheckBox
-    Friend WithEvents CheckBox48 As CheckBox
-    Friend WithEvents CheckBox49 As CheckBox
-    Friend WithEvents CheckBox50 As CheckBox
-    Friend WithEvents CheckBox51 As CheckBox
-    Friend WithEvents CheckBox52 As CheckBox
-    Friend WithEvents CheckBox53 As CheckBox
+    Friend WithEvents ChkRtRoad0 As CheckBox
+    Friend WithEvents ChkRtRoad1 As CheckBox
+    Friend WithEvents ChkRtRoad2 As CheckBox
+    Friend WithEvents ChkRtRoad3 As CheckBox
+    Friend WithEvents ChkRtFire0 As CheckBox
+    Friend WithEvents ChkRtHail0 As CheckBox
     Friend WithEvents CheckBox54 As CheckBox
     Friend WithEvents CheckBox55 As CheckBox
     Friend WithEvents CheckBox56 As CheckBox

@@ -71,12 +71,39 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Dly: 0.
+        '''</summary>
+        Friend ReadOnly Property daily_stop() As String
+            Get
+                Return ResourceManager.GetString("daily_stop", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property data_layers_6() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("data_layers_6", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hr: 0.
+        '''</summary>
+        Friend ReadOnly Property hourly_stop() As String
+            Get
+                Return ResourceManager.GetString("hourly_stop", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nc: 0.
+        '''</summary>
+        Friend ReadOnly Property nowcast_stop() As String
+            Get
+                Return ResourceManager.GetString("nowcast_stop", resourceCulture)
             End Get
         End Property
         
@@ -107,6 +134,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("PS_LOGO_transparent_190x150", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Rt: 0.
+        '''</summary>
+        Friend ReadOnly Property realtime_stop() As String
+            Get
+                Return ResourceManager.GetString("realtime_stop", resourceCulture)
             End Get
         End Property
     End Module

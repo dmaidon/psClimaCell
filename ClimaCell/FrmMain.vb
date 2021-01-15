@@ -619,6 +619,10 @@ Public Class FrmMain
             DlyNextUp = Date.Now + DlyDuration
             PrintLog($"Next Daily Update @ {DlyNextUp:T}.{vbLf}")
             FetchDailyData()
+        Else
+            TmrUpdateDaily.Stop()
+            PrintLog($"Daily update timer stopped.{vbLf}")
+            TsslNextDaily.Text = My.Resources.daily_stop
         End If
     End Sub
 
@@ -629,6 +633,10 @@ Public Class FrmMain
             HrNextUp = Date.Now + HrDuration
             PrintLog($"Next Hourly Update @ {HrNextUp:T}.{vbLf}")
             FetchHourData()
+        Else
+            TmrUpdateHourly.Stop()
+            PrintLog($"Hourly update timer stopped.{vbLf}")
+            TsslNextHourly.Text = My.Resources.hourly_stop
         End If
     End Sub
 
@@ -639,6 +647,10 @@ Public Class FrmMain
             NcNextUp = Date.Now + NcDuration
             PrintLog($"Next Nowcast Update @ {NcNextUp:T}.{vbLf}")
             FetchNowcastData()
+        Else
+            TmrUpdateNowcast.Stop()
+            PrintLog($"Nowcast update timer stopped.{vbLf}")
+            TsslNextNowcast.Text = My.Resources.nowcast_stop
         End If
     End Sub
 
@@ -649,6 +661,10 @@ Public Class FrmMain
             RtNextUp = Date.Now + RtDuration
             PrintLog($"Next Realtime Update @ {RtNextUp:T}.{vbLf}")
             FetchRealtimeData()
+        Else
+            TmrUpdateRt.Stop()
+            PrintLog($"Realtime update timer stopped.{vbLf}")
+            TsslNextRt.Text = My.Resources.realtime_stop
         End If
     End Sub
 
@@ -723,7 +739,7 @@ Public Class FrmMain
         My.Settings.Save()
     End Sub
 
-    Private Sub RtData(sender As Object, e As EventArgs) Handles ChkRtCore0.CheckedChanged, ChkRtCore1.CheckedChanged, ChkRtCore2.CheckedChanged, ChkRtCore3.CheckedChanged, ChkRtCore4.CheckedChanged, ChkRtCore5.CheckedChanged, ChkRtCore6.CheckedChanged, ChkRtCore7.CheckedChanged, ChkRtCore8.CheckedChanged, ChkRtCore9.CheckedChanged, ChkRtCore10.CheckedChanged, ChkRtCore11.CheckedChanged, ChkRtCore12.CheckedChanged, ChkRtCore13.CheckedChanged, ChkRtCore14.CheckedChanged, ChkRtCore15.CheckedChanged, ChkRtCore16.CheckedChanged, ChkRtCore17.CheckedChanged, ChkRtCore18.CheckedChanged, ChkRtCore19.CheckedChanged, ChkRtCore20.CheckedChanged, ChkRtPol21.CheckedChanged, ChkRtPol22.CheckedChanged, ChkRtPol23.CheckedChanged, ChkRtPol24.CheckedChanged, ChkRtPol25.CheckedChanged, ChkRtPol26.CheckedChanged, ChkRtPol27.CheckedChanged, ChkRtPol28.CheckedChanged, ChkRtPol29.CheckedChanged, ChkRtPol30.CheckedChanged, ChkRtPol31.CheckedChanged, ChkRtPol32.CheckedChanged, ChkRtPol33.CheckedChanged, ChkRtPol34.CheckedChanged, ChkRtPol35.CheckedChanged, ChkRtPol36.CheckedChanged, ChkRtPol37.CheckedChanged, ChkRtPol38.CheckedChanged, ChkRtPol39.CheckedChanged, ChkRtPol40.CheckedChanged, ChkRtPol41.CheckedChanged, ChkRtPol42.CheckedChanged, ChkRtPol43.CheckedChanged, ChkRtPol45.CheckedChanged, ChkRtPol44.CheckedChanged, ChkRtPol46.CheckedChanged
+    Private Sub RtData(sender As Object, e As EventArgs) Handles ChkRtCore0.CheckedChanged, ChkRtCore1.CheckedChanged, ChkRtCore2.CheckedChanged, ChkRtCore3.CheckedChanged, ChkRtCore4.CheckedChanged, ChkRtCore5.CheckedChanged, ChkRtCore6.CheckedChanged, ChkRtCore7.CheckedChanged, ChkRtCore8.CheckedChanged, ChkRtCore9.CheckedChanged, ChkRtCore10.CheckedChanged, ChkRtCore11.CheckedChanged, ChkRtCore12.CheckedChanged, ChkRtCore13.CheckedChanged, ChkRtCore14.CheckedChanged, ChkRtCore15.CheckedChanged, ChkRtCore16.CheckedChanged, ChkRtCore17.CheckedChanged, ChkRtCore18.CheckedChanged, ChkRtCore19.CheckedChanged, ChkRtCore20.CheckedChanged, ChkRtPol0.CheckedChanged, ChkRtPol1.CheckedChanged, ChkRtPol2.CheckedChanged, ChkRtPol3.CheckedChanged, ChkRtPol4.CheckedChanged, ChkRtPol5.CheckedChanged, ChkRtPol6.CheckedChanged, ChkRtPol7.CheckedChanged, ChkRtPol8.CheckedChanged, ChkRtPol9.CheckedChanged, ChkRtPol10.CheckedChanged, ChkRtPol11.CheckedChanged, ChkRtPol12.CheckedChanged, ChkRtPol13.CheckedChanged, ChkRtPol14.CheckedChanged, ChkRtPol15.CheckedChanged, ChkRtPol16.CheckedChanged, ChkRtPol17.CheckedChanged, ChkRtPol18.CheckedChanged, ChkRtPol19.CheckedChanged, ChkRtPol20.CheckedChanged, ChkRtPol21.CheckedChanged, ChkRtPol22.CheckedChanged, ChkRtPol24.CheckedChanged, ChkRtPol23.CheckedChanged, ChkRtPol25.CheckedChanged, ChkRtRoad0.CheckedChanged, ChkRtRoad1.CheckedChanged, ChkRtRoad2.CheckedChanged, ChkRtRoad3.CheckedChanged, ChkRtFire0.CheckedChanged, ChkRtHail0.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -820,6 +836,18 @@ Public Class FrmMain
                     My.Settings.Rt_Pol24 = .Checked
                 Case 46
                     My.Settings.Rt_Pol25 = .Checked
+                Case 47
+                    My.Settings.Rt_Road0 = .Checked
+                Case 48
+                    My.Settings.Rt_Road1 = .Checked
+                Case 49
+                    My.Settings.Rt_Road2 = .Checked
+                Case 50
+                    My.Settings.Rt_Road3 = .Checked
+                Case 51
+                    My.Settings.Rt_Fire0 = .Checked
+                Case 52
+                    My.Settings.Rt_Hail0 = .Checked
                 Case Else
                     Exit Select
             End Select

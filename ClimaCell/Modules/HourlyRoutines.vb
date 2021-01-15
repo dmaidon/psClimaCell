@@ -239,12 +239,20 @@ Friend Module HourlyRoutines
     Private Sub WriteHourData()
         With FrmMain.DgvHourly
             .Rows.Clear()
-            Dim bgClr As Color = Color.LightSkyBlue
             For j = 0 To hNfo.Length - 1
 
                 .Rows.Add()
                 Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{hNfo(j).WxCode.Value}.png")
                 PrintLog($"{j}. Hr: {Icn}{vbLf}")
+                Dim isDay As Boolean
+                Dim bgClr As Color
+                If Date2Unix(CDate(hNfo(j).ObservationTime.Value)) >= Date2Unix(CDate(hNfo(j).Sunrise.Value)) And Date2Unix(CDate(hNfo(j).ObservationTime.Value)) <= Date2Unix(CDate(hNfo(j).Sunset.Value)) Then
+                    isDay = True
+                    bgClr = Color.LightSkyBlue
+                Else
+                    isDay = False
+                    bgClr = Color.Gray
+                End If
                 Using bmp1 As New Bitmap(Icn)
                     Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
                         .Rows(j).Cells(2).Value = If(File.Exists(Icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))

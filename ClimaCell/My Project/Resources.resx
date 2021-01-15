@@ -121,8 +121,17 @@
   <data name="climacell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\climacell.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="daily_stop" xml:space="preserve">
+    <value>Dly: 0</value>
+  </data>
   <data name="data_layers_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_layers_6.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hourly_stop" xml:space="preserve">
+    <value>Hr: 0</value>
+  </data>
+  <data name="nowcast_stop" xml:space="preserve">
+    <value>Nc: 0</value>
   </data>
   <data name="powered_by_climacell_halo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\powered_by_climacell_halo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -132,5 +141,8 @@
   </data>
   <data name="PS_LOGO_transparent_190x150" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PS_LOGO-transparent-190x150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="realtime_stop" xml:space="preserve">
+    <value>Rt: 0</value>
   </data>
 </root>

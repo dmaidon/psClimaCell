@@ -186,8 +186,17 @@ Friend Module RealtimeRoutines
                         sb.Append("pollen_tree_walnut")
                     Case 46
                         sb.Append("pollen_tree_willow")
-
-
+                    Case 47
+                        sb.Append("road_risk_score")
+                    Case 48
+                        sb.Append("road_risk")
+                    Case 49
+                        sb.Append("road_risk_confidence")
+                    Case 50
+                        sb.Append("fire_index")
+                    Case 51
+                        sb.Append("hail_binary")
+                    Case 52
                     Case Else
                         sb.Append("")
                 End Select
@@ -225,13 +234,23 @@ Friend Module RealtimeRoutines
         Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
         Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{rtNfo.WxCode.Value}.png")
         FrmMain.TpRealtime.BackgroundImageLayout = ImageLayout.None
+        Dim isDay As Boolean
+        Dim bgClr As Color
+        If Date2Unix(CDate(rtNfo.ObservationTime.Value)) >= Date2Unix(CDate(rtNfo.Sunrise.Value)) And Date2Unix(CDate(rtNfo.ObservationTime.Value)) <= Date2Unix(CDate(rtNfo.Sunset.Value)) Then
+            isDay = True
+            bgClr = Color.LightSkyBlue
+        Else
+            isDay = False
+            bgClr = Color.Gray
+        End If
         Using bmp1 As New Bitmap(Icn)
             Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
                 If File.Exists(Icn) Then
-                    FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp1, Color.LightSkyBlue)
+                    FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp1, bgClr)
                 Else
-                    FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp2, Color.LightSkyBlue)
+                    FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp2, bgClr)
                 End If
+                FrmMain.TpRealtime.BackColor = bgClr
             End Using
         End Using
 

@@ -2477,6 +2477,78 @@ Namespace My
                 Me("Rt_Pol25") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Road0() As Boolean
+            Get
+                Return CType(Me("Rt_Road0"),Boolean)
+            End Get
+            Set
+                Me("Rt_Road0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Road1() As Boolean
+            Get
+                Return CType(Me("Rt_Road1"),Boolean)
+            End Get
+            Set
+                Me("Rt_Road1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Road2() As Boolean
+            Get
+                Return CType(Me("Rt_Road2"),Boolean)
+            End Get
+            Set
+                Me("Rt_Road2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Road3() As Boolean
+            Get
+                Return CType(Me("Rt_Road3"),Boolean)
+            End Get
+            Set
+                Me("Rt_Road3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Fire0() As Boolean
+            Get
+                Return CType(Me("Rt_Fire0"),Boolean)
+            End Get
+            Set
+                Me("Rt_Fire0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Hail0() As Boolean
+            Get
+                Return CType(Me("Rt_Hail0"),Boolean)
+            End Get
+            Set
+                Me("Rt_Hail0") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
