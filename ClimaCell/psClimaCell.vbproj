@@ -511,6 +511,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Wiki_Images\daily_forecast.png" />
+    <Content Include="Wiki_Images\main_settings_tab.png" />
     <None Include="Resources\climacell.ico" />
     <None Include="Resources\PS_LOGO-transparent-190x150.png" />
     <None Include="Resources\data_layers_6.gif" />
