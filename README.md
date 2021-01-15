@@ -5,6 +5,7 @@ Utilizes Climacell 15-day daily forecast, nowcast and hourly forecast.
 - [ ] [Daily](https://developer.climacell.co/v3/reference#get-daily)
 - [ ] [Hourly](https://developer.climacell.co/v3/reference#get-hourly)
 - [ ] [Nowcast](https://developer.climacell.co/v3/reference#get-nowcast)
+- [ ] [Realtime](https://developer.climacell.co/v3/reference#get-realtime)
 
 Requires an API Key from http://climacell.co.
 
