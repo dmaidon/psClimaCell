@@ -7,15 +7,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C8866363-D907-4654-9F5E-225FF2B081BD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ClimaCell.My.MyApplication</StartupObject>
-    <RootNamespace>ClimaCell</RootNamespace>
-    <AssemblyName>ClimaCell</AssemblyName>
+    <StartupObject>psClimaCell.My.MyApplication</StartupObject>
+    <RootNamespace>psClimaCell</RootNamespace>
+    <AssemblyName>psClimaCell</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.1.15.664</AssemblyVersion>
+    <AssemblyVersion>21.1.15.685</AssemblyVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
@@ -40,8 +40,8 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>..\..\Release\ClimaCell\</OutputPath>
-    <DocumentationFile>ClimaCell.xml</DocumentationFile>
+    <OutputPath>..\..\Release\psClimaCell\</OutputPath>
+    <DocumentationFile>psClimaCell.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -51,7 +51,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ClimaCell.xml</DocumentationFile>
+    <DocumentationFile>psClimaCell.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -510,6 +510,7 @@
     <Content Include="Icons\SVG\Color\tstorm.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Wiki_Images\daily_forecast.png" />
     <None Include="Resources\climacell.ico" />
     <None Include="Resources\PS_LOGO-transparent-190x150.png" />
     <None Include="Resources\data_layers_6.gif" />

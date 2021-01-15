@@ -207,6 +207,19 @@
             .ChkRtRoad3.Checked = My.Settings.Rt_Road3
             .ChkRtFire0.Checked = My.Settings.Rt_Fire0
             .ChkRtHail0.Checked = My.Settings.Rt_Hail0
+            .ChkRtAqi0.Checked = My.Settings.Rt_Aqi0
+            .ChkRtAqi1.Checked = My.Settings.Rt_Aqi1
+            .ChkRtAqi2.Checked = My.Settings.Rt_Aqi2
+            .ChkRtAqi3.Checked = My.Settings.Rt_Aqi3
+            .ChkRtAqi4.Checked = My.Settings.Rt_Aqi4
+            .ChkRtAqi5.Checked = My.Settings.Rt_Aqi5
+            .ChkRtAqi6.Checked = My.Settings.Rt_Aqi6
+            .ChkRtAqi7.Checked = My.Settings.Rt_Aqi7
+            .ChkRtAqi8.Checked = My.Settings.Rt_Aqi8
+            .ChkRtAqi9.Checked = My.Settings.Rt_Aqi9
+            .ChkRtAqi10.Checked = My.Settings.Rt_Aqi10
+            .ChkRtAqi11.Checked = My.Settings.Rt_Aqi11
+
         End With
     End Sub
 

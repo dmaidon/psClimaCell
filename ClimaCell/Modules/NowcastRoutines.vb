@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Text.Json
-Imports ClimaCell.Models
+Imports psClimaCell.Models
 
 Friend Module NowcastRoutines
 
@@ -247,15 +247,10 @@ Friend Module NowcastRoutines
                     .Rows.Add()
                     Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{ncNfo(j).WxCode.Value}.png")
                     PrintLog($"{j}. Nc: {icn}{vbLf}")
-                    Dim isDay As Boolean
-                    Dim bgClr As Color
-                    If Date2Unix(CDate(ncNfo(j).ObservationTime.Value)) >= Date2Unix(CDate(ncNfo(j).Sunrise.Value)) And Date2Unix(CDate(ncNfo(j).ObservationTime.Value)) <= Date2Unix(CDate(ncNfo(j).Sunset.Value)) Then
-                        isDay = True
-                        bgClr = Color.LightSkyBlue
-                    Else
-                        isDay = False
-                        bgClr = Color.Gray
-                    End If
+                    Dim bgClr = If(Date2Unix(CDate(ncNfo(j).ObservationTime.Value).ToLocalTime) >= Date2Unix(CDate(ncNfo(j).Sunrise.Value).ToLocalTime) And Date2Unix(CDate(ncNfo(j).ObservationTime.Value).ToLocalTime) <= Date2Unix(CDate(ncNfo(j).Sunset.Value).ToLocalTime),
+                        Color.LightSkyBlue,
+                        Color.Gray)
+
                     Using bmp1 As New Bitmap(icn)
                         Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
                             .Rows(j).Cells(2).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))

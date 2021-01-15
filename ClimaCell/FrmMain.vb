@@ -10,14 +10,14 @@ Public Class FrmMain
         StartLogfile()
         PerformLogMaintenance()
 
-        Text = $"ClimaCell 15-Day Weather Forecast - Tr: {My.Settings.TimesRun}"
+        Text = $"psClimaCell 15-Day Weather Forecast - Tr: {My.Settings.TimesRun}"
         TsslCpy.Text = Cpy
         TsslVer.Text = Application.ProductVersion
         LblAbout.Text = $"Written by: Dennis N Maidon{vbLf}PAROLE Software{vbLf}VB.Net{vbLf}.Net Framework 4.8{vbLf}Compiled: {ParseVersion()}"
 
         SetMidnightRollover()
 
-        If String.IsNullOrEmpty(My.Settings.ApiKey) Then
+        If String.IsNullOrEmpty(My.Settings.ApiKey.Trim) Then
             TcOpt.SelectedTab = TpOptMain
         Else
             If My.Settings.Fetch_Daily Then
@@ -739,7 +739,7 @@ Public Class FrmMain
         My.Settings.Save()
     End Sub
 
-    Private Sub RtData(sender As Object, e As EventArgs) Handles ChkRtCore0.CheckedChanged, ChkRtCore1.CheckedChanged, ChkRtCore2.CheckedChanged, ChkRtCore3.CheckedChanged, ChkRtCore4.CheckedChanged, ChkRtCore5.CheckedChanged, ChkRtCore6.CheckedChanged, ChkRtCore7.CheckedChanged, ChkRtCore8.CheckedChanged, ChkRtCore9.CheckedChanged, ChkRtCore10.CheckedChanged, ChkRtCore11.CheckedChanged, ChkRtCore12.CheckedChanged, ChkRtCore13.CheckedChanged, ChkRtCore14.CheckedChanged, ChkRtCore15.CheckedChanged, ChkRtCore16.CheckedChanged, ChkRtCore17.CheckedChanged, ChkRtCore18.CheckedChanged, ChkRtCore19.CheckedChanged, ChkRtCore20.CheckedChanged, ChkRtPol0.CheckedChanged, ChkRtPol1.CheckedChanged, ChkRtPol2.CheckedChanged, ChkRtPol3.CheckedChanged, ChkRtPol4.CheckedChanged, ChkRtPol5.CheckedChanged, ChkRtPol6.CheckedChanged, ChkRtPol7.CheckedChanged, ChkRtPol8.CheckedChanged, ChkRtPol9.CheckedChanged, ChkRtPol10.CheckedChanged, ChkRtPol11.CheckedChanged, ChkRtPol12.CheckedChanged, ChkRtPol13.CheckedChanged, ChkRtPol14.CheckedChanged, ChkRtPol15.CheckedChanged, ChkRtPol16.CheckedChanged, ChkRtPol17.CheckedChanged, ChkRtPol18.CheckedChanged, ChkRtPol19.CheckedChanged, ChkRtPol20.CheckedChanged, ChkRtPol21.CheckedChanged, ChkRtPol22.CheckedChanged, ChkRtPol24.CheckedChanged, ChkRtPol23.CheckedChanged, ChkRtPol25.CheckedChanged, ChkRtRoad0.CheckedChanged, ChkRtRoad1.CheckedChanged, ChkRtRoad2.CheckedChanged, ChkRtRoad3.CheckedChanged, ChkRtFire0.CheckedChanged, ChkRtHail0.CheckedChanged
+    Private Sub RtData(sender As Object, e As EventArgs) Handles ChkRtCore0.CheckedChanged, ChkRtCore1.CheckedChanged, ChkRtCore2.CheckedChanged, ChkRtCore3.CheckedChanged, ChkRtCore4.CheckedChanged, ChkRtCore5.CheckedChanged, ChkRtCore6.CheckedChanged, ChkRtCore7.CheckedChanged, ChkRtCore8.CheckedChanged, ChkRtCore9.CheckedChanged, ChkRtCore10.CheckedChanged, ChkRtCore11.CheckedChanged, ChkRtCore12.CheckedChanged, ChkRtCore13.CheckedChanged, ChkRtCore14.CheckedChanged, ChkRtCore15.CheckedChanged, ChkRtCore16.CheckedChanged, ChkRtCore17.CheckedChanged, ChkRtCore18.CheckedChanged, ChkRtCore19.CheckedChanged, ChkRtCore20.CheckedChanged, ChkRtPol0.CheckedChanged, ChkRtPol1.CheckedChanged, ChkRtPol2.CheckedChanged, ChkRtPol3.CheckedChanged, ChkRtPol4.CheckedChanged, ChkRtPol5.CheckedChanged, ChkRtPol6.CheckedChanged, ChkRtPol7.CheckedChanged, ChkRtPol8.CheckedChanged, ChkRtPol9.CheckedChanged, ChkRtPol10.CheckedChanged, ChkRtPol11.CheckedChanged, ChkRtPol12.CheckedChanged, ChkRtPol13.CheckedChanged, ChkRtPol14.CheckedChanged, ChkRtPol15.CheckedChanged, ChkRtPol16.CheckedChanged, ChkRtPol17.CheckedChanged, ChkRtPol18.CheckedChanged, ChkRtPol19.CheckedChanged, ChkRtPol20.CheckedChanged, ChkRtPol21.CheckedChanged, ChkRtPol22.CheckedChanged, ChkRtPol24.CheckedChanged, ChkRtPol23.CheckedChanged, ChkRtPol25.CheckedChanged, ChkRtRoad0.CheckedChanged, ChkRtRoad1.CheckedChanged, ChkRtRoad2.CheckedChanged, ChkRtRoad3.CheckedChanged, ChkRtFire0.CheckedChanged, ChkRtHail0.CheckedChanged, ChkRtAqi0.CheckedChanged, ChkRtAqi1.CheckedChanged, ChkRtAqi2.CheckedChanged, ChkRtAqi3.CheckedChanged, ChkRtAqi4.CheckedChanged, ChkRtAqi5.CheckedChanged, ChkRtAqi6.CheckedChanged, ChkRtAqi7.CheckedChanged, ChkRtAqi8.CheckedChanged, ChkRtAqi9.CheckedChanged, ChkRtAqi10.CheckedChanged, ChkRtAqi11.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -848,6 +848,30 @@ Public Class FrmMain
                     My.Settings.Rt_Fire0 = .Checked
                 Case 52
                     My.Settings.Rt_Hail0 = .Checked
+                Case 53
+                    My.Settings.Rt_aqi0 = .Checked
+                Case 54
+                    My.Settings.Rt_aqi1 = .Checked
+                Case 55
+                    My.Settings.Rt_aqi2 = .Checked
+                Case 56
+                    My.Settings.Rt_aqi3 = .Checked
+                Case 57
+                    My.Settings.Rt_aqi4 = .Checked
+                Case 58
+                    My.Settings.Rt_aqi5 = .Checked
+                Case 59
+                    My.Settings.Rt_aqi6 = .Checked
+                Case 60
+                    My.Settings.Rt_aqi7 = .Checked
+                Case 61
+                    My.Settings.Rt_aqi8 = .Checked
+                Case 62
+                    My.Settings.Rt_aqi9 = .Checked
+                Case 63
+                    My.Settings.Rt_aqi10 = .Checked
+                Case 64
+                    My.Settings.Rt_aqi11 = .Checked
                 Case Else
                     Exit Select
             End Select

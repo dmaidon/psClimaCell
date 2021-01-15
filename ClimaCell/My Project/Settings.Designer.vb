@@ -2549,6 +2549,150 @@ Namespace My
                 Me("Rt_Hail0") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi0() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi0"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi1() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi1"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi2() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi2"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi3() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi3"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi4() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi4"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi5() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi5"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi6() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi6"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi7() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi7"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi8() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi8"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi9() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi9"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi9") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi10() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi10"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi10") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Aqi11() As Boolean
+            Get
+                Return CType(Me("Rt_Aqi11"),Boolean)
+            End Get
+            Set
+                Me("Rt_Aqi11") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
@@ -2560,9 +2704,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.ClimaCell.My.MySettings
+        Friend ReadOnly Property Settings() As Global.psClimaCell.My.MySettings
             Get
-                Return Global.ClimaCell.My.MySettings.Default
+                Return Global.psClimaCell.My.MySettings.Default
             End Get
         End Property
     End Module

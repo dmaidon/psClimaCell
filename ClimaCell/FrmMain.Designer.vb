@@ -299,18 +299,18 @@ Partial Class FrmMain
         Me.ChkRtRoad3 = New System.Windows.Forms.CheckBox()
         Me.ChkRtFire0 = New System.Windows.Forms.CheckBox()
         Me.ChkRtHail0 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox54 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox55 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox56 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox57 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox58 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox60 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox61 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox62 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox63 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox64 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox65 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi0 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi1 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi2 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi3 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi4 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi5 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi6 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi7 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi8 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi9 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi10 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtAqi11 = New System.Windows.Forms.CheckBox()
         Me.TpLogs = New System.Windows.Forms.TabPage()
         Me.TcLogs = New System.Windows.Forms.TabControl()
         Me.TpLogLog = New System.Windows.Forms.TabPage()
@@ -489,7 +489,7 @@ Partial Class FrmMain
         'PnlAbout
         '
         Me.PnlAbout.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.PnlAbout.BackgroundImage = Global.ClimaCell.My.Resources.Resources.powered_by_climacell_halo
+        Me.PnlAbout.BackgroundImage = Global.psClimaCell.My.Resources.Resources.powered_by_climacell_halo
         Me.PnlAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.PnlAbout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PnlAbout.Controls.Add(Me.LblAbout)
@@ -548,7 +548,7 @@ Partial Class FrmMain
         'PnlSettings
         '
         Me.PnlSettings.BackColor = System.Drawing.Color.Linen
-        Me.PnlSettings.BackgroundImage = Global.ClimaCell.My.Resources.Resources.powered_by_climacell_halo_sml
+        Me.PnlSettings.BackgroundImage = Global.psClimaCell.My.Resources.Resources.powered_by_climacell_halo_sml
         Me.PnlSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.PnlSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PnlSettings.Controls.Add(Me.PnlMainOpt)
@@ -983,7 +983,7 @@ Partial Class FrmMain
         'TpOptDaily
         '
         Me.TpOptDaily.BackColor = System.Drawing.Color.Linen
-        Me.TpOptDaily.BackgroundImage = Global.ClimaCell.My.Resources.Resources.data_layers_6
+        Me.TpOptDaily.BackgroundImage = Global.psClimaCell.My.Resources.Resources.data_layers_6
         Me.TpOptDaily.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpOptDaily.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TpOptDaily.Controls.Add(Me.PnlDailyForecast)
@@ -1338,7 +1338,7 @@ Partial Class FrmMain
         'TpOptHourly
         '
         Me.TpOptHourly.BackColor = System.Drawing.Color.Linen
-        Me.TpOptHourly.BackgroundImage = Global.ClimaCell.My.Resources.Resources.data_layers_6
+        Me.TpOptHourly.BackgroundImage = Global.psClimaCell.My.Resources.Resources.data_layers_6
         Me.TpOptHourly.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpOptHourly.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TpOptHourly.Controls.Add(Me.PnlHourlyForecast)
@@ -2563,7 +2563,7 @@ Partial Class FrmMain
         'TpOptNowCast
         '
         Me.TpOptNowCast.BackColor = System.Drawing.Color.Linen
-        Me.TpOptNowCast.BackgroundImage = Global.ClimaCell.My.Resources.Resources.data_layers_6
+        Me.TpOptNowCast.BackgroundImage = Global.psClimaCell.My.Resources.Resources.data_layers_6
         Me.TpOptNowCast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpOptNowCast.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TpOptNowCast.Controls.Add(Me.Panel1)
@@ -3776,7 +3776,7 @@ Partial Class FrmMain
         'TpOptRealtime
         '
         Me.TpOptRealtime.BackColor = System.Drawing.Color.Linen
-        Me.TpOptRealtime.BackgroundImage = Global.ClimaCell.My.Resources.Resources.data_layers_6
+        Me.TpOptRealtime.BackgroundImage = Global.psClimaCell.My.Resources.Resources.data_layers_6
         Me.TpOptRealtime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpOptRealtime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TpOptRealtime.Controls.Add(Me.PnlOptRealtime)
@@ -3876,18 +3876,18 @@ Partial Class FrmMain
         Me.FlpRtOpt.Controls.Add(Me.ChkRtRoad3)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtFire0)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtHail0)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox54)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox55)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox56)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox57)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox58)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox59)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox60)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox61)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox62)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox63)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox64)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox65)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi0)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi1)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi2)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi3)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi4)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi5)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi6)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi7)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi8)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi9)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi10)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtAqi11)
         Me.FlpRtOpt.Location = New System.Drawing.Point(29, 23)
         Me.FlpRtOpt.MaximumSize = New System.Drawing.Size(1200, 370)
         Me.FlpRtOpt.MinimumSize = New System.Drawing.Size(1200, 370)
@@ -4800,209 +4800,209 @@ Partial Class FrmMain
         Me.ChkRtHail0.Text = "Hail Risk"
         Me.ChkRtHail0.UseVisualStyleBackColor = False
         '
-        'CheckBox54
+        'ChkRtAqi0
         '
-        Me.CheckBox54.AutoSize = True
-        Me.CheckBox54.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox54.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox54.Location = New System.Drawing.Point(717, 266)
-        Me.CheckBox54.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox54.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox54.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox54.Name = "CheckBox54"
-        Me.CheckBox54.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox54.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox54.TabIndex = 53
-        Me.CheckBox54.Tag = "53"
-        Me.CheckBox54.Text = "pm25"
-        Me.CheckBox54.UseVisualStyleBackColor = False
+        Me.ChkRtAqi0.AutoSize = True
+        Me.ChkRtAqi0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi0.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi0.Location = New System.Drawing.Point(717, 266)
+        Me.ChkRtAqi0.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi0.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi0.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi0.Name = "ChkRtAqi0"
+        Me.ChkRtAqi0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi0.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi0.TabIndex = 53
+        Me.ChkRtAqi0.Tag = "53"
+        Me.ChkRtAqi0.Text = "PM25"
+        Me.ChkRtAqi0.UseVisualStyleBackColor = False
         '
-        'CheckBox55
+        'ChkRtAqi1
         '
-        Me.CheckBox55.AutoSize = True
-        Me.CheckBox55.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox55.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox55.Location = New System.Drawing.Point(954, 266)
-        Me.CheckBox55.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox55.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox55.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox55.Name = "CheckBox55"
-        Me.CheckBox55.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox55.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox55.TabIndex = 54
-        Me.CheckBox55.Tag = "54"
-        Me.CheckBox55.Text = "pm10"
-        Me.CheckBox55.UseVisualStyleBackColor = False
+        Me.ChkRtAqi1.AutoSize = True
+        Me.ChkRtAqi1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi1.Location = New System.Drawing.Point(954, 266)
+        Me.ChkRtAqi1.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi1.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi1.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi1.Name = "ChkRtAqi1"
+        Me.ChkRtAqi1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi1.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi1.TabIndex = 54
+        Me.ChkRtAqi1.Tag = "54"
+        Me.ChkRtAqi1.Text = "PM10"
+        Me.ChkRtAqi1.UseVisualStyleBackColor = False
         '
-        'CheckBox56
+        'ChkRtAqi2
         '
-        Me.CheckBox56.AutoSize = True
-        Me.CheckBox56.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox56.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox56.Location = New System.Drawing.Point(6, 292)
-        Me.CheckBox56.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox56.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox56.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox56.Name = "CheckBox56"
-        Me.CheckBox56.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox56.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox56.TabIndex = 55
-        Me.CheckBox56.Tag = "55"
-        Me.CheckBox56.Text = "O3"
-        Me.CheckBox56.UseVisualStyleBackColor = False
+        Me.ChkRtAqi2.AutoSize = True
+        Me.ChkRtAqi2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi2.Location = New System.Drawing.Point(6, 292)
+        Me.ChkRtAqi2.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi2.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi2.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi2.Name = "ChkRtAqi2"
+        Me.ChkRtAqi2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi2.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi2.TabIndex = 55
+        Me.ChkRtAqi2.Tag = "55"
+        Me.ChkRtAqi2.Text = "O3"
+        Me.ChkRtAqi2.UseVisualStyleBackColor = False
         '
-        'CheckBox57
+        'ChkRtAqi3
         '
-        Me.CheckBox57.AutoSize = True
-        Me.CheckBox57.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox57.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox57.Location = New System.Drawing.Point(243, 292)
-        Me.CheckBox57.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox57.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox57.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox57.Name = "CheckBox57"
-        Me.CheckBox57.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox57.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox57.TabIndex = 56
-        Me.CheckBox57.Tag = "56"
-        Me.CheckBox57.Text = "NO2"
-        Me.CheckBox57.UseVisualStyleBackColor = False
+        Me.ChkRtAqi3.AutoSize = True
+        Me.ChkRtAqi3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi3.Location = New System.Drawing.Point(243, 292)
+        Me.ChkRtAqi3.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi3.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi3.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi3.Name = "ChkRtAqi3"
+        Me.ChkRtAqi3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi3.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi3.TabIndex = 56
+        Me.ChkRtAqi3.Tag = "56"
+        Me.ChkRtAqi3.Text = "NO2"
+        Me.ChkRtAqi3.UseVisualStyleBackColor = False
         '
-        'CheckBox58
+        'ChkRtAqi4
         '
-        Me.CheckBox58.AutoSize = True
-        Me.CheckBox58.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox58.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox58.Location = New System.Drawing.Point(480, 292)
-        Me.CheckBox58.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox58.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox58.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox58.Name = "CheckBox58"
-        Me.CheckBox58.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox58.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox58.TabIndex = 57
-        Me.CheckBox58.Tag = "57"
-        Me.CheckBox58.Text = "CO"
-        Me.CheckBox58.UseVisualStyleBackColor = False
+        Me.ChkRtAqi4.AutoSize = True
+        Me.ChkRtAqi4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi4.Location = New System.Drawing.Point(480, 292)
+        Me.ChkRtAqi4.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi4.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi4.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi4.Name = "ChkRtAqi4"
+        Me.ChkRtAqi4.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi4.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi4.TabIndex = 57
+        Me.ChkRtAqi4.Tag = "57"
+        Me.ChkRtAqi4.Text = "CO"
+        Me.ChkRtAqi4.UseVisualStyleBackColor = False
         '
-        'CheckBox59
+        'ChkRtAqi5
         '
-        Me.CheckBox59.AutoSize = True
-        Me.CheckBox59.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox59.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox59.Location = New System.Drawing.Point(717, 292)
-        Me.CheckBox59.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox59.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox59.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox59.Name = "CheckBox59"
-        Me.CheckBox59.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox59.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox59.TabIndex = 58
-        Me.CheckBox59.Tag = "58"
-        Me.CheckBox59.Text = "SO2"
-        Me.CheckBox59.UseVisualStyleBackColor = False
+        Me.ChkRtAqi5.AutoSize = True
+        Me.ChkRtAqi5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi5.Location = New System.Drawing.Point(717, 292)
+        Me.ChkRtAqi5.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi5.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi5.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi5.Name = "ChkRtAqi5"
+        Me.ChkRtAqi5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi5.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi5.TabIndex = 58
+        Me.ChkRtAqi5.Tag = "58"
+        Me.ChkRtAqi5.Text = "SO2"
+        Me.ChkRtAqi5.UseVisualStyleBackColor = False
         '
-        'CheckBox60
+        'ChkRtAqi6
         '
-        Me.CheckBox60.AutoSize = True
-        Me.CheckBox60.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox60.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox60.Location = New System.Drawing.Point(954, 292)
-        Me.CheckBox60.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox60.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox60.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox60.Name = "CheckBox60"
-        Me.CheckBox60.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox60.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox60.TabIndex = 59
-        Me.CheckBox60.Tag = "59"
-        Me.CheckBox60.Text = "Epa Aqi"
-        Me.CheckBox60.UseVisualStyleBackColor = False
+        Me.ChkRtAqi6.AutoSize = True
+        Me.ChkRtAqi6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi6.Location = New System.Drawing.Point(954, 292)
+        Me.ChkRtAqi6.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi6.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi6.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi6.Name = "ChkRtAqi6"
+        Me.ChkRtAqi6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi6.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi6.TabIndex = 59
+        Me.ChkRtAqi6.Tag = "59"
+        Me.ChkRtAqi6.Text = "Epa Aqi"
+        Me.ChkRtAqi6.UseVisualStyleBackColor = False
         '
-        'CheckBox61
+        'ChkRtAqi7
         '
-        Me.CheckBox61.AutoSize = True
-        Me.CheckBox61.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox61.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox61.Location = New System.Drawing.Point(6, 318)
-        Me.CheckBox61.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox61.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox61.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox61.Name = "CheckBox61"
-        Me.CheckBox61.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox61.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox61.TabIndex = 60
-        Me.CheckBox61.Tag = "60"
-        Me.CheckBox61.Text = "Epa Primary Pollutant"
-        Me.CheckBox61.UseVisualStyleBackColor = False
+        Me.ChkRtAqi7.AutoSize = True
+        Me.ChkRtAqi7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi7.Location = New System.Drawing.Point(6, 318)
+        Me.ChkRtAqi7.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi7.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi7.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi7.Name = "ChkRtAqi7"
+        Me.ChkRtAqi7.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi7.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi7.TabIndex = 60
+        Me.ChkRtAqi7.Tag = "60"
+        Me.ChkRtAqi7.Text = "Epa Primary Pollutant"
+        Me.ChkRtAqi7.UseVisualStyleBackColor = False
         '
-        'CheckBox62
+        'ChkRtAqi8
         '
-        Me.CheckBox62.AutoSize = True
-        Me.CheckBox62.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox62.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox62.Location = New System.Drawing.Point(243, 318)
-        Me.CheckBox62.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox62.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox62.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox62.Name = "CheckBox62"
-        Me.CheckBox62.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox62.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox62.TabIndex = 61
-        Me.CheckBox62.Tag = "61"
-        Me.CheckBox62.Text = "Epa Health Concern"
-        Me.CheckBox62.UseVisualStyleBackColor = False
+        Me.ChkRtAqi8.AutoSize = True
+        Me.ChkRtAqi8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi8.Location = New System.Drawing.Point(243, 318)
+        Me.ChkRtAqi8.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi8.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi8.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi8.Name = "ChkRtAqi8"
+        Me.ChkRtAqi8.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi8.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi8.TabIndex = 61
+        Me.ChkRtAqi8.Tag = "61"
+        Me.ChkRtAqi8.Text = "Epa Health Concern"
+        Me.ChkRtAqi8.UseVisualStyleBackColor = False
         '
-        'CheckBox63
+        'ChkRtAqi9
         '
-        Me.CheckBox63.AutoSize = True
-        Me.CheckBox63.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox63.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox63.Location = New System.Drawing.Point(480, 318)
-        Me.CheckBox63.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox63.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox63.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox63.Name = "CheckBox63"
-        Me.CheckBox63.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox63.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox63.TabIndex = 62
-        Me.CheckBox63.Tag = "62"
-        Me.CheckBox63.Text = "China Aqi"
-        Me.CheckBox63.UseVisualStyleBackColor = False
+        Me.ChkRtAqi9.AutoSize = True
+        Me.ChkRtAqi9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi9.Location = New System.Drawing.Point(480, 318)
+        Me.ChkRtAqi9.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi9.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi9.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi9.Name = "ChkRtAqi9"
+        Me.ChkRtAqi9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi9.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi9.TabIndex = 62
+        Me.ChkRtAqi9.Tag = "62"
+        Me.ChkRtAqi9.Text = "China Aqi"
+        Me.ChkRtAqi9.UseVisualStyleBackColor = False
         '
-        'CheckBox64
+        'ChkRtAqi10
         '
-        Me.CheckBox64.AutoSize = True
-        Me.CheckBox64.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox64.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox64.Location = New System.Drawing.Point(717, 318)
-        Me.CheckBox64.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox64.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox64.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox64.Name = "CheckBox64"
-        Me.CheckBox64.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox64.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox64.TabIndex = 63
-        Me.CheckBox64.Tag = "63"
-        Me.CheckBox64.Text = "China Primary Pollutant"
-        Me.CheckBox64.UseVisualStyleBackColor = False
+        Me.ChkRtAqi10.AutoSize = True
+        Me.ChkRtAqi10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi10.Location = New System.Drawing.Point(717, 318)
+        Me.ChkRtAqi10.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi10.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi10.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi10.Name = "ChkRtAqi10"
+        Me.ChkRtAqi10.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi10.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi10.TabIndex = 63
+        Me.ChkRtAqi10.Tag = "63"
+        Me.ChkRtAqi10.Text = "China Primary Pollutant"
+        Me.ChkRtAqi10.UseVisualStyleBackColor = False
         '
-        'CheckBox65
+        'ChkRtAqi11
         '
-        Me.CheckBox65.AutoSize = True
-        Me.CheckBox65.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.CheckBox65.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox65.Location = New System.Drawing.Point(954, 318)
-        Me.CheckBox65.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox65.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox65.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox65.Name = "CheckBox65"
-        Me.CheckBox65.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox65.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox65.TabIndex = 64
-        Me.CheckBox65.Tag = "64"
-        Me.CheckBox65.Text = "China Health Concern"
-        Me.CheckBox65.UseVisualStyleBackColor = False
+        Me.ChkRtAqi11.AutoSize = True
+        Me.ChkRtAqi11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkRtAqi11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtAqi11.Location = New System.Drawing.Point(954, 318)
+        Me.ChkRtAqi11.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtAqi11.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi11.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi11.Name = "ChkRtAqi11"
+        Me.ChkRtAqi11.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtAqi11.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtAqi11.TabIndex = 64
+        Me.ChkRtAqi11.Tag = "64"
+        Me.ChkRtAqi11.Text = "China Health Concern"
+        Me.ChkRtAqi11.UseVisualStyleBackColor = False
         '
         'TpLogs
         '
@@ -5369,14 +5369,14 @@ Partial Class FrmMain
         DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvRt.DefaultCellStyle = DataGridViewCellStyle13
-        Me.DgvRt.Location = New System.Drawing.Point(314, 83)
+        Me.DgvRt.Location = New System.Drawing.Point(314, 42)
         Me.DgvRt.Name = "DgvRt"
         Me.DgvRt.RowHeadersVisible = False
         Me.DgvRt.RowHeadersWidth = 62
         Me.DgvRt.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.DgvRt.RowTemplate.Height = 28
         Me.DgvRt.RowTemplate.ReadOnly = True
-        Me.DgvRt.Size = New System.Drawing.Size(760, 866)
+        Me.DgvRt.Size = New System.Drawing.Size(760, 948)
         Me.DgvRt.TabIndex = 0
         '
         'rt0
@@ -5427,10 +5427,10 @@ Partial Class FrmMain
         Me.ClientSize = New System.Drawing.Size(1400, 1070)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TC)
-        Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.ClimaCell.My.MySettings.Default, "MainFormLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.psClimaCell.My.MySettings.Default, "MainFormLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Location = Global.ClimaCell.My.MySettings.Default.MainFormLocation
+        Me.Location = Global.psClimaCell.My.MySettings.Default.MainFormLocation
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1422, 1126)
         Me.MinimumSize = New System.Drawing.Size(1422, 1126)
@@ -5779,18 +5779,18 @@ Partial Class FrmMain
     Friend WithEvents ChkRtRoad3 As CheckBox
     Friend WithEvents ChkRtFire0 As CheckBox
     Friend WithEvents ChkRtHail0 As CheckBox
-    Friend WithEvents CheckBox54 As CheckBox
-    Friend WithEvents CheckBox55 As CheckBox
-    Friend WithEvents CheckBox56 As CheckBox
-    Friend WithEvents CheckBox57 As CheckBox
-    Friend WithEvents CheckBox58 As CheckBox
-    Friend WithEvents CheckBox59 As CheckBox
-    Friend WithEvents CheckBox60 As CheckBox
-    Friend WithEvents CheckBox61 As CheckBox
-    Friend WithEvents CheckBox62 As CheckBox
-    Friend WithEvents CheckBox63 As CheckBox
-    Friend WithEvents CheckBox64 As CheckBox
-    Friend WithEvents CheckBox65 As CheckBox
+    Friend WithEvents ChkRtAqi0 As CheckBox
+    Friend WithEvents ChkRtAqi1 As CheckBox
+    Friend WithEvents ChkRtAqi2 As CheckBox
+    Friend WithEvents ChkRtAqi3 As CheckBox
+    Friend WithEvents ChkRtAqi4 As CheckBox
+    Friend WithEvents ChkRtAqi5 As CheckBox
+    Friend WithEvents ChkRtAqi6 As CheckBox
+    Friend WithEvents ChkRtAqi7 As CheckBox
+    Friend WithEvents ChkRtAqi8 As CheckBox
+    Friend WithEvents ChkRtAqi9 As CheckBox
+    Friend WithEvents ChkRtAqi10 As CheckBox
+    Friend WithEvents ChkRtAqi11 As CheckBox
     Friend WithEvents Label16 As Label
     Friend WithEvents NumRtInterval As NumericUpDown
     Friend WithEvents ChkFetchRt As CheckBox

@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("ClimaCell")>
+<Assembly: AssemblyTitle("psClimaCell")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("PAROLE Software")>
-<Assembly: AssemblyProduct("ClimaCell")>
+<Assembly: AssemblyProduct("psClimaCell")>
 <Assembly: AssemblyCopyright("Copyright ©  2021")>
 <Assembly: AssemblyTrademark("")>
 
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("21.1.15.664")>
-<Assembly: AssemblyFileVersion("21.1.15.664")>
+<Assembly: AssemblyVersion("21.1.15.685")>
+<Assembly: AssemblyFileVersion("21.1.15.685")>
 <Assembly: NeutralResourcesLanguage("en-US")>

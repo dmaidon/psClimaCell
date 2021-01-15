@@ -3,8 +3,8 @@ Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Text.Json
-Imports ClimaCell.Models
-Imports ClimaCell.Modules
+Imports psClimaCell.Models
+Imports psClimaCell.Modules
 
 Friend Module DailyRoutines
 
@@ -181,15 +181,10 @@ Friend Module DailyRoutines
                     Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{dNfo(j).WeatherCode.Value}.png")
                     PrintLog($"{j}. Dly: {icn} --> Bitmap{vbLf}")
 
-                    Dim isDay As Boolean
-                    Dim bgClr As Color
-                    If Date2Unix(CDate(dNfo(j).ObservationTime.Value)) >= Date2Unix(CDate(dNfo(j).Sunrise.Value)) And Date2Unix(CDate(dNfo(j).ObservationTime.Value)) <= Date2Unix(CDate(dNfo(j).Sunset.Value)) Then
-                        isDay = True
-                        bgClr = Color.LightSkyBlue
-                    Else
-                        isDay = False
-                        bgClr = Color.Gray
-                    End If
+                    Dim bgClr = If(Date2Unix(Now) >= Date2Unix(dNfo(0).Sunrise.Value.ToLocalTime) And Date2Unix(Now) <= Date2Unix(dNfo(0).Sunset.Value.ToLocalTime),
+                        Color.LightSkyBlue,
+                        Color.Gray)
+
                     Using bmp1 As New Bitmap(icn)
                         Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
                             If j <= 7 Then

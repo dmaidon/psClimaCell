@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Text.Json
-Imports ClimaCell.Models
+Imports psClimaCell.Models
 
 Friend Module RealtimeRoutines
     Private rtNfo As HourNum
@@ -193,10 +193,35 @@ Friend Module RealtimeRoutines
                     Case 49
                         sb.Append("road_risk_confidence")
                     Case 50
-                        sb.Append("fire_index")
+                        sb.Append("road_risk_conditions")
                     Case 51
-                        sb.Append("hail_binary")
+                        sb.Append("fire_index")
                     Case 52
+                        sb.Append("hail_binary")
+                    Case 53
+                        sb.Append("pm25")
+                    Case 54
+                        sb.Append("pm10")
+                    Case 55
+                        sb.Append("o3")
+                    Case 56
+                        sb.Append("no2")
+                    Case 57
+                        sb.Append("co")
+                    Case 58
+                        sb.Append("so2")
+                    Case 59
+                        sb.Append("epa_aqi")
+                    Case 60
+                        sb.Append("epa_primary_pollutant")
+                    Case 61
+                        sb.Append("epa_health_concern")
+                    Case 62
+                        sb.Append("china_aqi")
+                    Case 63
+                        sb.Append("china_primary_pollutant")
+                    Case 64
+                        sb.Append("china_health_concern")
                     Case Else
                         sb.Append("")
                 End Select
@@ -228,63 +253,64 @@ Friend Module RealtimeRoutines
     End Sub
 
     Private Sub WriteRtData()
+        Try
+            Dim RtArr As New List(Of String)({"Temperature", "Feels Like", "Dewpoint", "Humidity", "Wind Speed", "Wind Gust", "Wind Direction", "Visibility", "Precipitation", "Precipitation Type", "Cloud Cover", "Cloud Ceiling", "Cloud Base", "Solar Radiation", "Sunrise", "Sunset", "Moon Phase", "Weather", "Observation Time", "Air Quality"})
 
-        Dim RtArr As New List(Of String)({"Temperature", "Feels Like", "Dewpoint", "Humidity", "Wind Speed", "Wind Gust", "Wind Direction", "Visibility", "Precipitation", "Precipitation Type", "Cloud Cover", "Cloud Ceiling", "Cloud Base", "Solar Radiation", "Sunrise", "Sunset", "Moon Phase", "Weather", "Observation Time"})
+            Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
+            Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{rtNfo.WxCode.Value}.png")
+            FrmMain.TpRealtime.BackgroundImageLayout = ImageLayout.None
+            Dim bgClr = If(Date2Unix(CDate(rtNfo.ObservationTime.Value).ToLocalTime) >= Date2Unix(CDate(rtNfo.Sunrise.Value).ToLocalTime) And Date2Unix(CDate(rtNfo.ObservationTime.Value).ToLocalTime) <= Date2Unix(CDate(rtNfo.Sunset.Value).ToLocalTime),
+                Color.LightSkyBlue,
+                Color.Gray)
 
-        Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
-        Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{rtNfo.WxCode.Value}.png")
-        FrmMain.TpRealtime.BackgroundImageLayout = ImageLayout.None
-        Dim isDay As Boolean
-        Dim bgClr As Color
-        If Date2Unix(CDate(rtNfo.ObservationTime.Value)) >= Date2Unix(CDate(rtNfo.Sunrise.Value)) And Date2Unix(CDate(rtNfo.ObservationTime.Value)) <= Date2Unix(CDate(rtNfo.Sunset.Value)) Then
-            isDay = True
-            bgClr = Color.LightSkyBlue
-        Else
-            isDay = False
-            bgClr = Color.Gray
-        End If
-        Using bmp1 As New Bitmap(Icn)
-            Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
-                If File.Exists(Icn) Then
-                    FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp1, bgClr)
-                Else
-                    FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp2, bgClr)
-                End If
-                FrmMain.TpRealtime.BackColor = bgClr
+            Using bmp1 As New Bitmap(Icn)
+                Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
+                    If File.Exists(Icn) Then
+                        FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp1, bgClr)
+                    Else
+                        FrmMain.TpRealtime.BackgroundImage = Transparent2Color(bmp2, bgClr)
+                    End If
+                    FrmMain.TpRealtime.BackColor = bgClr
+                End Using
             End Using
-        End Using
 
-        With FrmMain.DgvRt
-            .Rows.Clear()
-
-            For j = 0 To RtArr.Count - 1
-                .Rows.Add(RtArr(j), "")
-                .Rows(j).Cells(0).Style.Font = New Font("", 10, FontStyle.Bold)
-                .Rows(j).Cells(0).Style.Alignment = DataGridViewContentAlignment.MiddleRight
-                .Rows(j).Cells(1).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-            Next
-            .Rows(0).Cells(1).Value = $"{rtNfo.Temp.Value}°{rtNfo.Temp.Units}"
-            .Rows(1).Cells(1).Value = $"{rtNfo.FeelsLike.Value}°{rtNfo.FeelsLike.Units}"
-            .Rows(2).Cells(1).Value = $"{rtNfo.Dewpoint.Value}°{rtNfo.Dewpoint.Units}"
-            .Rows(3).Cells(1).Value = $"{rtNfo.RH.Value}{rtNfo.RH.Units}"
-            .Rows(4).Cells(1).Value = $"{rtNfo.WindSpeed.Value} {rtNfo.WindSpeed.Units}"
-            .Rows(5).Cells(1).Value = $"{rtNfo.WindGust.Value} {rtNfo.WindGust.Units}"
-            .Rows(6).Cells(1).Value = $"{Deg2Compass(CDbl(rtNfo.WindDir.Value))}"
-            .Rows(7).Cells(1).Value = $"{rtNfo.Visibility.Value} {rtNfo.Visibility.Units}"
-            .Rows(8).Cells(1).Value = $"{rtNfo.Precip.Value} {rtNfo.Precip.Units}"
-            .Rows(9).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.PrecipType.Value).Replace("_", " ")}"
-            .Rows(10).Cells(1).Value = $"{rtNfo.CloudCover.Value}{rtNfo.CloudCover.Units}"
-            .Rows(11).Cells(1).Value = $"{rtNfo.CloudCeiling.Value} {rtNfo.CloudCeiling.Units}"
-            .Rows(12).Cells(1).Value = $"{rtNfo.CloudBase.Value} {rtNfo.CloudBase.Units}"
-            .Rows(13).Cells(1).Value = $"{rtNfo.SSR.Value:N1} {rtNfo.SSR.Units}"
-            .Rows(14).Cells(1).Value = $"{CDate(rtNfo.Sunrise.Value):T}"
-            .Rows(15).Cells(1).Value = $"{CDate(rtNfo.Sunset.Value):T}"
-            .Rows(16).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.MoonPhase.Value).Replace("_", " ")}"
-            .Rows(17).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.WxCode.Value).Replace("_", " ")}"
-            .Rows(18).Cells(1).Value = $"{CDate(rtNfo.ObservationTime.Value):F}"
-            .ClearSelection()
-        End With
-        RtArr.Clear()
+            With FrmMain.DgvRt
+                .Rows.Clear()
+                .BackgroundColor = bgClr
+                For j = 0 To RtArr.Count - 1
+                    .Rows.Add(RtArr(j), "")
+                    .Rows(j).Cells(0).Style.Font = New Font("", 10, FontStyle.Bold)
+                    .Rows(j).Cells(0).Style.Alignment = DataGridViewContentAlignment.MiddleRight
+                    .Rows(j).Cells(1).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                Next
+                .Rows(0).Cells(1).Value = $"{rtNfo.Temp.Value}°{rtNfo.Temp.Units}"
+                .Rows(1).Cells(1).Value = $"{rtNfo.FeelsLike.Value}°{rtNfo.FeelsLike.Units}"
+                .Rows(2).Cells(1).Value = $"{rtNfo.Dewpoint.Value}°{rtNfo.Dewpoint.Units}"
+                .Rows(3).Cells(1).Value = $"{rtNfo.RH.Value}{rtNfo.RH.Units}"
+                .Rows(4).Cells(1).Value = $"{rtNfo.WindSpeed.Value} {rtNfo.WindSpeed.Units}"
+                .Rows(5).Cells(1).Value = $"{rtNfo.WindGust.Value} {rtNfo.WindGust.Units}"
+                .Rows(6).Cells(1).Value = $"{Deg2Compass(CDbl(rtNfo.WindDir.Value))}"
+                .Rows(7).Cells(1).Value = $"{rtNfo.Visibility.Value} {rtNfo.Visibility.Units}"
+                .Rows(8).Cells(1).Value = $"{rtNfo.Precip.Value} {rtNfo.Precip.Units}"
+                .Rows(9).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.PrecipType.Value).Replace("_", " ")}"
+                .Rows(10).Cells(1).Value = $"{rtNfo.CloudCover.Value}{rtNfo.CloudCover.Units}"
+                .Rows(11).Cells(1).Value = $"{rtNfo.CloudCeiling.Value} {rtNfo.CloudCeiling.Units}"
+                .Rows(12).Cells(1).Value = $"{rtNfo.CloudBase.Value} {rtNfo.CloudBase.Units}"
+                .Rows(13).Cells(1).Value = $"{rtNfo.SSR.Value:N1} {rtNfo.SSR.Units}"
+                .Rows(14).Cells(1).Value = $"{CDate(rtNfo.Sunrise.Value):T}"
+                .Rows(15).Cells(1).Value = $"{CDate(rtNfo.Sunset.Value):T}"
+                .Rows(16).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.MoonPhase.Value).Replace("_", " ")}"
+                .Rows(17).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.WxCode.Value).Replace("_", " ")}"
+                .Rows(18).Cells(1).Value = $"{CDate(rtNfo.ObservationTime.Value):F}"
+                .Rows(19).Cells(1).Value = $"AQI: {rtNfo.EpaAqi.Value:N0}  ->  Primary Pollutant: {rtNfo.EpaPrimaryPollutant.Value}"
+                .ClearSelection()
+            End With
+            RtArr.Clear()
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            ''
+        End Try
     End Sub
 
 End Module

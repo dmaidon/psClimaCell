@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Text.Json
-Imports ClimaCell.Models
+Imports psClimaCell.Models
 
 Friend Module HourlyRoutines
 
@@ -237,49 +237,50 @@ Friend Module HourlyRoutines
         End Try
     End Sub
     Private Sub WriteHourData()
-        With FrmMain.DgvHourly
-            .Rows.Clear()
-            For j = 0 To hNfo.Length - 1
+        Try
+            With FrmMain.DgvHourly
+                .Rows.Clear()
+                For j = 0 To hNfo.Length - 1
 
-                .Rows.Add()
-                Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{hNfo(j).WxCode.Value}.png")
-                PrintLog($"{j}. Hr: {Icn}{vbLf}")
-                Dim isDay As Boolean
-                Dim bgClr As Color
-                If Date2Unix(CDate(hNfo(j).ObservationTime.Value)) >= Date2Unix(CDate(hNfo(j).Sunrise.Value)) And Date2Unix(CDate(hNfo(j).ObservationTime.Value)) <= Date2Unix(CDate(hNfo(j).Sunset.Value)) Then
-                    isDay = True
-                    bgClr = Color.LightSkyBlue
-                Else
-                    isDay = False
-                    bgClr = Color.Gray
-                End If
-                Using bmp1 As New Bitmap(Icn)
-                    Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
-                        .Rows(j).Cells(2).Value = If(File.Exists(Icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
+                    .Rows.Add()
+                    Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{hNfo(j).WxCode.Value}.png")
+                    PrintLog($"{j}. Hr: {Icn}{vbLf}")
+                    Dim bgClr = If(Date2Unix(CDate(hNfo(j).ObservationTime.Value).ToLocalTime) >= Date2Unix(CDate(hNfo(j).Sunrise.Value).ToLocalTime) And Date2Unix(CDate(hNfo(j).ObservationTime.Value).ToLocalTime) <= Date2Unix(CDate(hNfo(j).Sunset.Value).ToLocalTime),
+                        Color.LightSkyBlue,
+                        Color.Gray)
+
+                    Using bmp1 As New Bitmap(Icn)
+                        Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
+                            .Rows(j).Cells(2).Value = If(File.Exists(Icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
+                        End Using
                     End Using
-                End Using
-                .Rows(j).Cells(2).Style.BackColor = bgClr
-                .Rows(j).Cells(0).Value = $"{CDate(hNfo(j).ObservationTime.Value):MMM d}"
-                .Rows(j).Cells(1).Value = $"{CDate(hNfo(j).ObservationTime.Value):h:mm tt}"
+                    .Rows(j).Cells(2).Style.BackColor = bgClr
+                    .Rows(j).Cells(0).Value = $"{CDate(hNfo(j).ObservationTime.Value):MMM d}"
+                    .Rows(j).Cells(1).Value = $"{CDate(hNfo(j).ObservationTime.Value):h:mm tt}"
 
-                Dim sb As New StringBuilder()
-                sb.Append($"Day: {CDate(hNfo(j).ObservationTime.Value):MMM d}   Hour: {CDate(hNfo(j).ObservationTime.Value):h tt}{vbLf}")
-                sb.Append($"Temp: {hNfo(j).Temp.Value:N1}°{hNfo(j).Temp.Units}{vbLf}")
-                sb.Append($"Cloud Base: {hNfo(j).CloudBase.Value} {hNfo(j).CloudBase.Units}{vbLf}")
-                sb.Append($"Cloud Cover: {hNfo(j).CloudCover.Value:N2} {hNfo(j).CloudCover.Units}{vbLf}")
-                sb.Append($"Wind {Deg2Compass(CDbl(hNfo(j).WindDir.Value))} @ {Math.Round(CDbl(hNfo(j).WindSpeed.Value)):N0} {hNfo(j).WindSpeed.Units}, gusting to {Math.Round(CDbl(hNfo(j).WindGust.Value)):N0} {hNfo(j).WindGust.Units}{vbLf}")
-                Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
-                sb.Append($"Weather: {myTI.ToTitleCase(hNfo(j).WxCode.Value.Replace("_", " "))}{vbLf}")
-                sb.Append($"Precipitation: {hNfo(j).PrecipiProb.Value}{hNfo(j).PrecipiProb.Units} chance of {hNfo(j).PrecipType.Value.Replace("none", "precipitation")}{vbLf} ")
-                'If My.Settings.Hour_HailRisk AndAlso (hNfo(j).HailRisk.Value = 0 OrElse hNfo(j).HailRisk.Value = 1) Then
-                '   sb.append($"Hail Risk: {CBool(hNfo(j).HailRisk.Value)}{vbLf}")
-                'End If
-                .Rows(j).Cells(3).Value = sb.ToString
-                sb.Clear()
-                Application.DoEvents()
-            Next
-            .ClearSelection()
-        End With
+                    Dim sb As New StringBuilder()
+                    sb.Append($"Day: {CDate(hNfo(j).ObservationTime.Value):MMM d}   Hour: {CDate(hNfo(j).ObservationTime.Value):h tt}{vbLf}")
+                    sb.Append($"Temp: {hNfo(j).Temp.Value:N1}°{hNfo(j).Temp.Units}{vbLf}")
+                    sb.Append($"Cloud Base: {hNfo(j).CloudBase.Value} {hNfo(j).CloudBase.Units}{vbLf}")
+                    sb.Append($"Cloud Cover: {hNfo(j).CloudCover.Value:N2} {hNfo(j).CloudCover.Units}{vbLf}")
+                    sb.Append($"Wind {Deg2Compass(CDbl(hNfo(j).WindDir.Value))} @ {Math.Round(CDbl(hNfo(j).WindSpeed.Value)):N0} {hNfo(j).WindSpeed.Units}, gusting to {Math.Round(CDbl(hNfo(j).WindGust.Value)):N0} {hNfo(j).WindGust.Units}{vbLf}")
+                    Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
+                    sb.Append($"Weather: {myTI.ToTitleCase(hNfo(j).WxCode.Value.Replace("_", " "))}{vbLf}")
+                    sb.Append($"Precipitation: {hNfo(j).PrecipiProb.Value}{hNfo(j).PrecipiProb.Units} chance of {hNfo(j).PrecipType.Value.Replace("none", "precipitation")}{vbLf} ")
+                    'If My.Settings.Hour_HailRisk AndAlso (hNfo(j).HailRisk.Value = 0 OrElse hNfo(j).HailRisk.Value = 1) Then
+                    '   sb.append($"Hail Risk: {CBool(hNfo(j).HailRisk.Value)}{vbLf}")
+                    'End If
+                    .Rows(j).Cells(3).Value = sb.ToString
+                    sb.Clear()
+                    Application.DoEvents()
+                Next
+                .ClearSelection()
+            End With
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            ''
+        End Try
     End Sub
 
 End Module
