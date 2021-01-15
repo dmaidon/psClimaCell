@@ -138,175 +138,10 @@ Public Class FrmMain
         ChkFetchNowcast.Checked = My.Settings.Fetch_Nowcast
         ChkFetchRt.Checked = My.Settings.Fetch_Realtime
 
-
-        ''Daily settings
-        ChkBP.Checked = My.Settings.Daily_Bp
-        ChkDewpoint.Checked = My.Settings.Daily_Dewpoint
-        ChkFeelsLike.Checked = My.Settings.Daily_FeelsLike
-        ChkHumidity.Checked = My.Settings.Daily_Humidity
-        ChkPrecip.Checked = My.Settings.Daily_Precip
-        ChkPrecipAcc.Checked = My.Settings.Daily_PrecipAcc
-        ChkPrecipProb.Checked = My.Settings.Daily_PrecipProb
-        ChkSunrise.Checked = My.Settings.Daily_Sunrise
-        ChkSunset.Checked = My.Settings.Daily_Sunset
-        ChkTemp.Checked = My.Settings.Daily_Temp
-        ChkVis.Checked = My.Settings.Daily_Vis
-        ChkWindDir.Checked = My.Settings.Daily_WindDir
-        ChkWindSpeed.Checked = My.Settings.Daily_WindSpeed
-        ChkWxCode.Checked = My.Settings.Daily_WxCode
-        ChkMoonPhase.Checked = My.Settings.Daily_MoonPhase
-
-        'Hour settings
-        ChkHourBP.Checked = My.Settings.Hour_Bp
-        ChkHourDewpoint.Checked = My.Settings.Hour_Dewpoint
-        ChkHourFeelsLike.Checked = My.Settings.Hour_FeelsLike
-        ChkHourRH.Checked = My.Settings.Hour_Humidity
-        ChkHourPrecip.Checked = My.Settings.Hour_Precip
-        ChkHourPrecipType.Checked = My.Settings.Hour_PrecipType
-        ChkHourPrecipProb.Checked = My.Settings.Hour_PrecipProb
-        ChkHourSunrise.Checked = My.Settings.Hour_Sunrise
-        ChkHourSunset.Checked = My.Settings.Hour_Sunset
-        ChkHourTemp.Checked = My.Settings.Hour_Temp
-        ChkHourVis.Checked = My.Settings.Hour_Vis
-        ChkHourWindDir.Checked = My.Settings.Hour_WindDir
-        ChkHourWindSpeed.Checked = My.Settings.Hour_WindSpeed
-        ChkHourWindGust.Checked = My.Settings.Hour_WindGust
-        ChkHourWxCode.Checked = My.Settings.Hour_WxCode
-        ChkHourMoonPhase.Checked = My.Settings.Hour_MoonPhase
-        ChkHourSSR.Checked = My.Settings.Hour_SSR
-        ChkHourCloudBase.Checked = My.Settings.Hour_CloudBase
-        ChkHourCloudCeil.Checked = My.Settings.Hour_CloudCeil
-        ChkHourCloudCover.Checked = My.Settings.Hour_CloudCover
-        ChkHourTreePollen.Checked = My.Settings.Hour_TreePollen
-        ChkHourWeedPollen.Checked = My.Settings.Hour_WeedPollen
-        ChkHourGrassPollen.Checked = My.Settings.Hour_GrassPollen
-        ChkHourTreeAcacia.Checked = My.Settings.Hour_TreeAcacia
-        ChkHourTreeAsh.Checked = My.Settings.Hour_TreeAsh
-        ChkHourTreeBeech.Checked = My.Settings.Hour_TreeBeech
-        ChkHourTreeBirch.Checked = My.Settings.Hour_TreeBirch
-        ChkHourTreeCedar.Checked = My.Settings.Hour_TreeCedar
-        ChkHourTreeCottonwood.Checked = My.Settings.Hour_TreeCottonwood
-        ChkHourTreeCypress.Checked = My.Settings.Hour_TreeCypress
-        ChkHourTreeElder.Checked = My.Settings.Hour_TreeElder
-        ChkHourTreeElm.Checked = My.Settings.Hour_TreeElm
-        ChkHourGrass.Checked = My.Settings.Hour_Grass
-        ChkHourTreeHemlock.Checked = My.Settings.Hour_TreeHemlock
-        ChkHourTreeHickory.Checked = My.Settings.Hour_TreeHickory
-        ChkHourTreeJuniper.Checked = My.Settings.Hour_TreeJuniper
-        ChkHourTreeMahogany.Checked = My.Settings.Hour_TreeMahogany
-        ChkHourTreeMaple.Checked = My.Settings.Hour_TreeMaple
-        ChkHourTreeMulberry.Checked = My.Settings.Hour_TreeMulberry
-        ChkHourTreeOak.Checked = My.Settings.Hour_TreeOak
-        ChkHourTreePine.Checked = My.Settings.Hour_TreePine
-        ChkHourRagweed.Checked = My.Settings.Hour_Ragweed
-        ChkHourTreeSpruce.Checked = My.Settings.Hour_TreeSpruce
-        ChkHourTreeSycamore.Checked = My.Settings.Hour_TreeSycamore
-        ChkHourTreeWalnut.Checked = My.Settings.Hour_TreeWalnut
-        ChkHourTreeWillow.Checked = My.Settings.Hour_TreeWillow
-        ChkHourAqiPm10.Checked = My.Settings.Hour_Pm10
-        ChkHourAqiPm25.Checked = My.Settings.Hour_Pm25
-        ChkHourAqiO3.Checked = My.Settings.Hour_O3
-        ChkHourAqiNo2.Checked = My.Settings.Hour_No2
-        ChkHourAqiCo.Checked = My.Settings.Hour_Co
-        ChkHourAqiSo2.Checked = My.Settings.Hour_So2
-        ChkHourEpaAqi.Checked = My.Settings.Hour_EpaAqi
-        ChkHourEpaConcern.Checked = My.Settings.Hour_EpaHealthConcern
-        ChkHourEpaPollutant.Checked = My.Settings.Hour_EpaPrimaryPollutant
-        ChkHourChinaAqi.Checked = My.Settings.Hour_ChinaAqi
-        ChkHourChinaConcern.Checked = My.Settings.Hour_ChinaHealthConcern
-        ChkHourChinaPollutant.Checked = My.Settings.Hour_ChinaPrimaryPollutant
-        ChkHrRoadRisk.Checked = My.Settings.Hour_RoadRisk
-        ChkHrRiskScore.Checked = My.Settings.Hour_RiskScore
-        ChkHrRiskConfidence.Checked = My.Settings.Hour_RiskConfidence
-        ChkHrRiskCondition.Checked = My.Settings.Hour_RiskCondition
-        ChkHrHailRisk.Checked = My.Settings.Hour_HailRisk
-
-        'Nowcast settings
-
-        ChkNcBP.Checked = My.Settings.Nc_Bp
-        ChkNcDewpoint.Checked = My.Settings.Nc_Dewpoint
-        ChkNcFeelsLike.Checked = My.Settings.Nc_FeelsLike
-        ChkNcRH.Checked = My.Settings.Nc_RH
-        ChkNcPrecip.Checked = My.Settings.Nc_Precip
-        ChkNcPrecipType.Checked = My.Settings.Nc_PrecipType
-        ChkNcSunrise.Checked = My.Settings.Nc_Sunrise
-        ChkNcSunset.Checked = My.Settings.Nc_Sunset
-        ChkNcTemp.Checked = My.Settings.Nc_Temp
-        ChkNcVis.Checked = My.Settings.Nc_Vis
-        ChkNcWindDir.Checked = My.Settings.Nc_WindDir
-        ChkNcWindSpeed.Checked = My.Settings.Nc_WindSpeed
-        ChkNcWindGust.Checked = My.Settings.Nc_WindGust
-        ChkNcWxCode.Checked = My.Settings.Nc_WxCode
-        ChkNcSSR.Checked = My.Settings.Nc_SSR
-        ChkNcCloudBase.Checked = My.Settings.Nc_CloudBase
-        ChkNcCloudCeil.Checked = My.Settings.Nc_CloudCeil
-        ChkNcCloudCover.Checked = My.Settings.Nc_CloudCover
-        ChkNcTreePollen.Checked = My.Settings.Nc_TreePollen
-        ChkNcWeedPollen.Checked = My.Settings.Nc_WeedPollen
-        ChkNcGrassPollen.Checked = My.Settings.Nc_GrassPollen
-        ChkNcAcacia.Checked = My.Settings.Nc_Acacia
-        ChkNcAsh.Checked = My.Settings.Nc_Ash
-        ChkNcBeech.Checked = My.Settings.Nc_Beech
-        ChkNcBirch.Checked = My.Settings.Nc_Birch
-        ChkNcCedar.Checked = My.Settings.Nc_Cedar
-        ChkNcCottonwood.Checked = My.Settings.Nc_Cottonwood
-        ChkNcCypress.Checked = My.Settings.Nc_Cypress
-        ChkNcElder.Checked = My.Settings.Nc_Elder
-        ChkNcElm.Checked = My.Settings.Nc_Elm
-        ChkNcGrass.Checked = My.Settings.Nc_Grass
-        ChkNcHemlock.Checked = My.Settings.Nc_Hemlock
-        ChkNcHickory.Checked = My.Settings.Nc_Hickory
-        ChkNcJuniper.Checked = My.Settings.Nc_Juniper
-        ChkNcMahogany.Checked = My.Settings.Nc_Mahogany
-        ChkNcMaple.Checked = My.Settings.Nc_Maple
-        ChkNcMulberry.Checked = My.Settings.Nc_Mulberry
-        ChkNcOak.Checked = My.Settings.Nc_Oak
-        ChkNcPine.Checked = My.Settings.Nc_Pine
-        ChkNcRagweed.Checked = My.Settings.Nc_Ragweed
-        ChkNcSpruce.Checked = My.Settings.Nc_Spruce
-        ChkNcSycamore.Checked = My.Settings.Nc_Sycamore
-        ChkNcWalnut.Checked = My.Settings.Nc_Walnut
-        ChkNcWillow.Checked = My.Settings.Nc_Willow
-        ChkNcPm10.Checked = My.Settings.Nc_Pm10
-        ChkNcPm25.Checked = My.Settings.Nc_Pm25
-        ChkNcO3.Checked = My.Settings.NC_O3
-        ChkNcNo2.Checked = My.Settings.NC_No2
-        ChkNcCo.Checked = My.Settings.Nc_Co
-        ChkNcSo2.Checked = My.Settings.Nc_So2
-        ChkNcEpaAqi.Checked = My.Settings.Nc_EpaAqi
-        ChkNcEpaConcern.Checked = My.Settings.Nc_EpaHealthConcern
-        ChkNcEpaPollutant.Checked = My.Settings.NC_EpaPrimaryPollutant
-        ChkNcChinaAqi.Checked = My.Settings.NC_ChinaAqi
-        ChkNcChinaConcern.Checked = My.Settings.Nc_ChinaHealthConcern
-        ChkNcChinaPollutant.Checked = My.Settings.Nc_ChinaPrimaryPollutant
-        ChkNcRoadRisk.Checked = My.Settings.Nc_RoadRisk
-        ChkNcRiskScore.Checked = My.Settings.Nc_RiskScore
-        ChkNcRiskConfidence.Checked = My.Settings.Nc_RiskConfidence
-        ChkNcRiskCondition.Checked = My.Settings.Nc_RiskCondition
-        ChkNcHailRisk.Checked = My.Settings.Nc_HailRisk
-
-        ''realtime settings
-        ChkRtCore0.Checked = My.Settings.Rt_Core0
-        ChkRtCore1.Checked = My.Settings.Rt_Core1
-        ChkRtCore2.Checked = My.Settings.Rt_Core2
-        ChkRtCore3.Checked = My.Settings.Rt_Core3
-        ChkRtCore4.Checked = My.Settings.Rt_Core4
-        ChkRtCore5.Checked = My.Settings.Rt_Core5
-        ChkRtCore6.Checked = My.Settings.Rt_Core6
-        ChkRtCore7.Checked = My.Settings.Rt_Core7
-        ChkRtCore8.Checked = My.Settings.Rt_Core8
-        ChkRtCore9.Checked = My.Settings.Rt_Core9
-        ChkRtCore10.Checked = My.Settings.Rt_Core10
-        ChkRtCore11.Checked = My.Settings.Rt_Core11
-        ChkRtCore12.Checked = My.Settings.Rt_Core12
-        ChkRtCore13.Checked = My.Settings.Rt_Core13
-        ChkRtCore14.Checked = My.Settings.Rt_Core14
-        ChkRtCore15.Checked = My.Settings.Rt_Core15
-        ChkRtCore16.Checked = My.Settings.Rt_Core16
-        ChkRtCore17.Checked = My.Settings.Rt_Core17
-        ChkRtCore18.Checked = My.Settings.Rt_Core18
-        ChkRtCore19.Checked = My.Settings.Rt_Core19
-        ChkRtCore20.Checked = My.Settings.Rt_Core20
+        LoadDailySettings()
+        LoadHrSettings()
+        LoadNcSettings()
+        LoadRtSettings()
 
 
         Select Case My.Settings.Units
@@ -473,7 +308,7 @@ Public Class FrmMain
         Next
     End Sub
 
-    Private Sub HourlyForecast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkHourBP.CheckedChanged, ChkHourCloudBase.CheckedChanged, ChkHourCloudCeil.CheckedChanged, ChkHourCloudCover.CheckedChanged, ChkHourDewpoint.CheckedChanged, ChkHourMoonPhase.CheckedChanged, ChkHourPrecip.CheckedChanged, ChkHourPrecipProb.CheckedChanged, ChkHourPrecipType.CheckedChanged, ChkHourRH.CheckedChanged, ChkHourSSR.CheckedChanged, ChkHourSunrise.CheckedChanged, ChkHourSunset.CheckedChanged, ChkHourTemp.CheckedChanged, ChkHourVis.CheckedChanged, ChkHourWindDir.CheckedChanged, ChkHourWindGust.CheckedChanged, ChkHourWindSpeed.CheckedChanged, ChkHourWxCode.CheckedChanged, ChkHourFeelsLike.CheckedChanged, ChkHourTreePollen.CheckedChanged, ChkHourWeedPollen.CheckedChanged, ChkHourGrassPollen.CheckedChanged, ChkHourTreeAcacia.CheckedChanged, ChkHourTreeAsh.CheckedChanged, ChkHourTreeBeech.CheckedChanged, ChkHourTreeBirch.CheckedChanged, ChkHourTreeCedar.CheckedChanged, ChkHourTreeCottonwood.CheckedChanged, ChkHourTreeCypress.CheckedChanged, ChkHourTreeElder.CheckedChanged, ChkHourTreeElm.CheckedChanged, ChkHourGrass.CheckedChanged, ChkHourTreeHemlock.CheckedChanged, ChkHourTreeHickory.CheckedChanged, ChkHourTreeJuniper.CheckedChanged, ChkHourTreeMahogany.CheckedChanged, ChkHourTreeMaple.CheckedChanged, ChkHourTreeMulberry.CheckedChanged, ChkHourTreePine.CheckedChanged, ChkHourRagweed.CheckedChanged, ChkHourTreeSpruce.CheckedChanged, ChkHourTreeSycamore.CheckedChanged, ChkHourTreeWalnut.CheckedChanged, ChkHourTreeWillow.CheckedChanged, ChkHourTreeOak.CheckedChanged, ChkHourAqiPm10.CheckedChanged, ChkHourAqiPm25.CheckedChanged, ChkHourAqiO3.CheckedChanged, ChkHourAqiNo2.CheckedChanged, ChkHourAqiCo.CheckedChanged, ChkHourAqiSo2.CheckedChanged, ChkHourEpaAqi.CheckedChanged, ChkHourEpaConcern.CheckedChanged, ChkHourEpaPollutant.CheckedChanged, ChkHourChinaAqi.CheckedChanged, ChkHourChinaConcern.CheckedChanged, ChkHourChinaPollutant.CheckedChanged, ChkHrRiskCondition.CheckedChanged, ChkHrRiskConfidence.CheckedChanged, ChkHrRoadRisk.CheckedChanged, ChkHrRiskScore.CheckedChanged, ChkHrHailRisk.CheckedChanged
+    Private Sub HourlyForecast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkHrBP.CheckedChanged, ChkHrCloudBase.CheckedChanged, ChkHrCloudCeil.CheckedChanged, ChkHrCloudCover.CheckedChanged, ChkHrDewpoint.CheckedChanged, ChkHrMoonPhase.CheckedChanged, ChkHrPrecip.CheckedChanged, ChkHrPrecipProb.CheckedChanged, ChkHrPrecipType.CheckedChanged, ChkHrRH.CheckedChanged, ChkHrSSR.CheckedChanged, ChkHrSunrise.CheckedChanged, ChkHrSunset.CheckedChanged, ChkHrTemp.CheckedChanged, ChkHrVis.CheckedChanged, ChkHrWindDir.CheckedChanged, ChkHrWindGust.CheckedChanged, ChkHrWindSpeed.CheckedChanged, ChkHrWxCode.CheckedChanged, ChkHrFeelsLike.CheckedChanged, ChkHrTreePollen.CheckedChanged, ChkHrWeedPollen.CheckedChanged, ChkHrGrassPollen.CheckedChanged, ChkHrTreeAcacia.CheckedChanged, ChkHrTreeAsh.CheckedChanged, ChkHrTreeBeech.CheckedChanged, ChkHrTreeBirch.CheckedChanged, ChkHrTreeCedar.CheckedChanged, ChkHrTreeCottonwood.CheckedChanged, ChkHrTreeCypress.CheckedChanged, ChkHrTreeElder.CheckedChanged, ChkHrTreeElm.CheckedChanged, ChkHrGrass.CheckedChanged, ChkHrTreeHemlock.CheckedChanged, ChkHrTreeHickory.CheckedChanged, ChkHrTreeJuniper.CheckedChanged, ChkHrTreeMahogany.CheckedChanged, ChkHrTreeMaple.CheckedChanged, ChkHrTreeMulberry.CheckedChanged, ChkHrTreePine.CheckedChanged, ChkHrRagweed.CheckedChanged, ChkHrTreeSpruce.CheckedChanged, ChkHrTreeSycamore.CheckedChanged, ChkHrTreeWalnut.CheckedChanged, ChkHrTreeWillow.CheckedChanged, ChkHrTreeOak.CheckedChanged, ChkHrAqiPm10.CheckedChanged, ChkHrAqiPm25.CheckedChanged, ChkHrAqiO3.CheckedChanged, ChkHrAqiNo2.CheckedChanged, ChkHrAqiCo.CheckedChanged, ChkHrAqiSo2.CheckedChanged, ChkHrEpaAqi.CheckedChanged, ChkHrEpaConcern.CheckedChanged, ChkHrEpaPollutant.CheckedChanged, ChkHrChinaAqi.CheckedChanged, ChkHrChinaConcern.CheckedChanged, ChkHrChinaPollutant.CheckedChanged, ChkHrRiskCondition.CheckedChanged, ChkHrRiskConfidence.CheckedChanged, ChkHrRoadRisk.CheckedChanged, ChkHrRiskScore.CheckedChanged, ChkHrHailRisk.CheckedChanged
 
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
@@ -807,7 +642,6 @@ Public Class FrmMain
         End If
     End Sub
 
-
     Private Sub TmrUpdateRt_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateRt.Elapsed
         PrintLog($"Realtime Update timer elapsed @ {Now:T}.{vbLf}")
         If My.Settings.Fetch_Nowcast Then
@@ -867,8 +701,6 @@ Public Class FrmMain
         End Try
     End Sub
 
-
-
 #End Region
 
 #Region "Realtime"
@@ -891,7 +723,7 @@ Public Class FrmMain
         My.Settings.Save()
     End Sub
 
-    Private Sub RtData(sender As Object, e As EventArgs) Handles ChkRtCore0.CheckedChanged, ChkRtCore1.CheckedChanged, ChkRtCore2.CheckedChanged, ChkRtCore3.CheckedChanged, ChkRtCore4.CheckedChanged, ChkRtCore5.CheckedChanged, ChkRtCore6.CheckedChanged, ChkRtCore7.CheckedChanged, ChkRtCore8.CheckedChanged, ChkRtCore9.CheckedChanged, ChkRtCore10.CheckedChanged, ChkRtCore11.CheckedChanged, ChkRtCore12.CheckedChanged, ChkRtCore13.CheckedChanged, ChkRtCore14.CheckedChanged, ChkRtCore15.CheckedChanged, ChkRtCore16.CheckedChanged, ChkRtCore17.CheckedChanged, ChkRtCore18.CheckedChanged, ChkRtCore19.CheckedChanged, ChkRtCore20.CheckedChanged
+    Private Sub RtData(sender As Object, e As EventArgs) Handles ChkRtCore0.CheckedChanged, ChkRtCore1.CheckedChanged, ChkRtCore2.CheckedChanged, ChkRtCore3.CheckedChanged, ChkRtCore4.CheckedChanged, ChkRtCore5.CheckedChanged, ChkRtCore6.CheckedChanged, ChkRtCore7.CheckedChanged, ChkRtCore8.CheckedChanged, ChkRtCore9.CheckedChanged, ChkRtCore10.CheckedChanged, ChkRtCore11.CheckedChanged, ChkRtCore12.CheckedChanged, ChkRtCore13.CheckedChanged, ChkRtCore14.CheckedChanged, ChkRtCore15.CheckedChanged, ChkRtCore16.CheckedChanged, ChkRtCore17.CheckedChanged, ChkRtCore18.CheckedChanged, ChkRtCore19.CheckedChanged, ChkRtCore20.CheckedChanged, ChkRtPol21.CheckedChanged, ChkRtPol22.CheckedChanged, ChkRtPol23.CheckedChanged, ChkRtPol24.CheckedChanged, ChkRtPol25.CheckedChanged, ChkRtPol26.CheckedChanged, ChkRtPol27.CheckedChanged, ChkRtPol28.CheckedChanged, ChkRtPol29.CheckedChanged, ChkRtPol30.CheckedChanged, ChkRtPol31.CheckedChanged, ChkRtPol32.CheckedChanged, ChkRtPol33.CheckedChanged, ChkRtPol34.CheckedChanged, ChkRtPol35.CheckedChanged, ChkRtPol36.CheckedChanged, ChkRtPol37.CheckedChanged, ChkRtPol38.CheckedChanged, ChkRtPol39.CheckedChanged, ChkRtPol40.CheckedChanged, ChkRtPol41.CheckedChanged, ChkRtPol42.CheckedChanged, ChkRtPol43.CheckedChanged, ChkRtPol45.CheckedChanged, ChkRtPol44.CheckedChanged, ChkRtPol46.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -936,6 +768,58 @@ Public Class FrmMain
                     My.Settings.Rt_Core19 = .Checked
                 Case 20
                     My.Settings.Rt_Core20 = .Checked
+                Case 21
+                    My.Settings.Rt_Pol0 = .Checked
+                Case 22
+                    My.Settings.Rt_Pol1 = .Checked
+                Case 23
+                    My.Settings.Rt_Pol2 = .Checked
+                Case 24
+                    My.Settings.Rt_Pol3 = .Checked
+                Case 25
+                    My.Settings.Rt_Pol4 = .Checked
+                Case 26
+                    My.Settings.Rt_Pol5 = .Checked
+                Case 27
+                    My.Settings.Rt_Pol6 = .Checked
+                Case 28
+                    My.Settings.Rt_Pol7 = .Checked
+                Case 29
+                    My.Settings.Rt_Pol8 = .Checked
+                Case 30
+                    My.Settings.Rt_Pol9 = .Checked
+                Case 31
+                    My.Settings.Rt_Pol10 = .Checked
+                Case 32
+                    My.Settings.Rt_Pol11 = .Checked
+                Case 33
+                    My.Settings.Rt_Pol12 = .Checked
+                Case 34
+                    My.Settings.Rt_Pol13 = .Checked
+                Case 35
+                    My.Settings.Rt_Pol14 = .Checked
+                Case 36
+                    My.Settings.Rt_Pol15 = .Checked
+                Case 37
+                    My.Settings.Rt_Pol16 = .Checked
+                Case 38
+                    My.Settings.Rt_Pol17 = .Checked
+                Case 39
+                    My.Settings.Rt_Pol18 = .Checked
+                Case 40
+                    My.Settings.Rt_Pol19 = .Checked
+                Case 41
+                    My.Settings.Rt_Pol20 = .Checked
+                Case 42
+                    My.Settings.Rt_Pol21 = .Checked
+                Case 43
+                    My.Settings.Rt_Pol22 = .Checked
+                Case 44
+                    My.Settings.Rt_Pol23 = .Checked
+                Case 45
+                    My.Settings.Rt_Pol24 = .Checked
+                Case 46
+                    My.Settings.Rt_Pol25 = .Checked
                 Case Else
                     Exit Select
             End Select
@@ -943,4 +827,5 @@ Public Class FrmMain
     End Sub
 
 #End Region
+
 End Class

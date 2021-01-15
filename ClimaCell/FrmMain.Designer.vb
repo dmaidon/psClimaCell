@@ -112,65 +112,65 @@ Partial Class FrmMain
         Me.ChkHrRiskConfidence = New System.Windows.Forms.CheckBox()
         Me.ChkHrRiskScore = New System.Windows.Forms.CheckBox()
         Me.ChkHrHailRisk = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTemp = New System.Windows.Forms.CheckBox()
-        Me.ChkHourFeelsLike = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTemp = New System.Windows.Forms.CheckBox()
+        Me.ChkHrFeelsLike = New System.Windows.Forms.CheckBox()
         Me.ChkHrRoadRisk = New System.Windows.Forms.CheckBox()
-        Me.ChkHourRH = New System.Windows.Forms.CheckBox()
-        Me.ChkHourChinaPollutant = New System.Windows.Forms.CheckBox()
-        Me.ChkHourChinaConcern = New System.Windows.Forms.CheckBox()
-        Me.ChkHourChinaAqi = New System.Windows.Forms.CheckBox()
-        Me.ChkHourEpaPollutant = New System.Windows.Forms.CheckBox()
-        Me.ChkHourEpaAqi = New System.Windows.Forms.CheckBox()
-        Me.ChkHourEpaConcern = New System.Windows.Forms.CheckBox()
-        Me.ChkHourAqiNo2 = New System.Windows.Forms.CheckBox()
-        Me.ChkHourAqiO3 = New System.Windows.Forms.CheckBox()
-        Me.ChkHourAqiSo2 = New System.Windows.Forms.CheckBox()
-        Me.ChkHourAqiCo = New System.Windows.Forms.CheckBox()
-        Me.ChkHourAqiPm25 = New System.Windows.Forms.CheckBox()
-        Me.ChkHourCloudCover = New System.Windows.Forms.CheckBox()
-        Me.ChkHourCloudCeil = New System.Windows.Forms.CheckBox()
-        Me.ChkHourWxCode = New System.Windows.Forms.CheckBox()
-        Me.ChkHourAqiPm10 = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreePollen = New System.Windows.Forms.CheckBox()
-        Me.ChkHourWeedPollen = New System.Windows.Forms.CheckBox()
-        Me.ChkHourGrassPollen = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeAcacia = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeAsh = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeBeech = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeBirch = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeCedar = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeElm = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeElder = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeCypress = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeCottonwood = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeHemlock = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeHickory = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeJuniper = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeMulberry = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeMaple = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeMahogany = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeOak = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreePine = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeSpruce = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeSycamore = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeWillow = New System.Windows.Forms.CheckBox()
-        Me.ChkHourTreeWalnut = New System.Windows.Forms.CheckBox()
-        Me.ChkHourRagweed = New System.Windows.Forms.CheckBox()
-        Me.ChkHourGrass = New System.Windows.Forms.CheckBox()
-        Me.ChkHourMoonPhase = New System.Windows.Forms.CheckBox()
-        Me.ChkHourCloudBase = New System.Windows.Forms.CheckBox()
-        Me.ChkHourSunset = New System.Windows.Forms.CheckBox()
-        Me.ChkHourSunrise = New System.Windows.Forms.CheckBox()
-        Me.ChkHourPrecipProb = New System.Windows.Forms.CheckBox()
-        Me.ChkHourPrecipType = New System.Windows.Forms.CheckBox()
-        Me.ChkHourPrecip = New System.Windows.Forms.CheckBox()
-        Me.ChkHourWindSpeed = New System.Windows.Forms.CheckBox()
-        Me.ChkHourWindGust = New System.Windows.Forms.CheckBox()
-        Me.ChkHourWindDir = New System.Windows.Forms.CheckBox()
-        Me.ChkHourDewpoint = New System.Windows.Forms.CheckBox()
-        Me.ChkHourBP = New System.Windows.Forms.CheckBox()
-        Me.ChkHourVis = New System.Windows.Forms.CheckBox()
-        Me.ChkHourSSR = New System.Windows.Forms.CheckBox()
+        Me.ChkHrRH = New System.Windows.Forms.CheckBox()
+        Me.ChkHrChinaPollutant = New System.Windows.Forms.CheckBox()
+        Me.ChkHrChinaConcern = New System.Windows.Forms.CheckBox()
+        Me.ChkHrChinaAqi = New System.Windows.Forms.CheckBox()
+        Me.ChkHrEpaPollutant = New System.Windows.Forms.CheckBox()
+        Me.ChkHrEpaAqi = New System.Windows.Forms.CheckBox()
+        Me.ChkHrEpaConcern = New System.Windows.Forms.CheckBox()
+        Me.ChkHrAqiNo2 = New System.Windows.Forms.CheckBox()
+        Me.ChkHrAqiO3 = New System.Windows.Forms.CheckBox()
+        Me.ChkHrAqiSo2 = New System.Windows.Forms.CheckBox()
+        Me.ChkHrAqiCo = New System.Windows.Forms.CheckBox()
+        Me.ChkHrAqiPm25 = New System.Windows.Forms.CheckBox()
+        Me.ChkHrCloudCover = New System.Windows.Forms.CheckBox()
+        Me.ChkHrCloudCeil = New System.Windows.Forms.CheckBox()
+        Me.ChkHrWxCode = New System.Windows.Forms.CheckBox()
+        Me.ChkHrAqiPm10 = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreePollen = New System.Windows.Forms.CheckBox()
+        Me.ChkHrWeedPollen = New System.Windows.Forms.CheckBox()
+        Me.ChkHrGrassPollen = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeAcacia = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeAsh = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeBeech = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeBirch = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeCedar = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeElm = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeElder = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeCypress = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeCottonwood = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeHemlock = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeHickory = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeJuniper = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeMulberry = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeMaple = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeMahogany = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeOak = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreePine = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeSpruce = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeSycamore = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeWillow = New System.Windows.Forms.CheckBox()
+        Me.ChkHrTreeWalnut = New System.Windows.Forms.CheckBox()
+        Me.ChkHrRagweed = New System.Windows.Forms.CheckBox()
+        Me.ChkHrGrass = New System.Windows.Forms.CheckBox()
+        Me.ChkHrMoonPhase = New System.Windows.Forms.CheckBox()
+        Me.ChkHrCloudBase = New System.Windows.Forms.CheckBox()
+        Me.ChkHrSunset = New System.Windows.Forms.CheckBox()
+        Me.ChkHrSunrise = New System.Windows.Forms.CheckBox()
+        Me.ChkHrPrecipProb = New System.Windows.Forms.CheckBox()
+        Me.ChkHrPrecipType = New System.Windows.Forms.CheckBox()
+        Me.ChkHrPrecip = New System.Windows.Forms.CheckBox()
+        Me.ChkHrWindSpeed = New System.Windows.Forms.CheckBox()
+        Me.ChkHrWindGust = New System.Windows.Forms.CheckBox()
+        Me.ChkHrWindDir = New System.Windows.Forms.CheckBox()
+        Me.ChkHrDewpoint = New System.Windows.Forms.CheckBox()
+        Me.ChkHrBP = New System.Windows.Forms.CheckBox()
+        Me.ChkHrVis = New System.Windows.Forms.CheckBox()
+        Me.ChkHrSSR = New System.Windows.Forms.CheckBox()
         Me.ChkAllHourly = New System.Windows.Forms.CheckBox()
         Me.TpOptNowCast = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -267,32 +267,32 @@ Partial Class FrmMain
         Me.ChkRtCore18 = New System.Windows.Forms.CheckBox()
         Me.ChkRtCore19 = New System.Windows.Forms.CheckBox()
         Me.ChkRtCore20 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox25 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox26 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox27 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox28 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox29 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox30 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox31 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox32 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox33 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox34 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox35 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox36 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox37 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox38 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox39 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox40 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox41 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox42 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox43 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox44 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox45 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox46 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox47 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol21 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol22 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol23 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol24 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol25 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol26 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol27 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol28 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol29 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol30 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol31 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol32 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol33 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol34 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol35 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol36 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol37 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol38 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol39 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol40 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol41 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol42 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol43 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol44 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol45 = New System.Windows.Forms.CheckBox()
+        Me.ChkRtPol46 = New System.Windows.Forms.CheckBox()
         Me.CheckBox48 = New System.Windows.Forms.CheckBox()
         Me.CheckBox49 = New System.Windows.Forms.CheckBox()
         Me.CheckBox50 = New System.Windows.Forms.CheckBox()
@@ -1396,65 +1396,65 @@ Partial Class FrmMain
         Me.TlpHourly.Controls.Add(Me.ChkHrRiskConfidence, 4, 9)
         Me.TlpHourly.Controls.Add(Me.ChkHrRiskScore, 4, 8)
         Me.TlpHourly.Controls.Add(Me.ChkHrHailRisk, 1, 7)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTemp, 0, 0)
-        Me.TlpHourly.Controls.Add(Me.ChkHourFeelsLike, 0, 1)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTemp, 0, 0)
+        Me.TlpHourly.Controls.Add(Me.ChkHrFeelsLike, 0, 1)
         Me.TlpHourly.Controls.Add(Me.ChkHrRoadRisk, 4, 7)
-        Me.TlpHourly.Controls.Add(Me.ChkHourRH, 0, 2)
-        Me.TlpHourly.Controls.Add(Me.ChkHourChinaPollutant, 4, 6)
-        Me.TlpHourly.Controls.Add(Me.ChkHourChinaConcern, 4, 5)
-        Me.TlpHourly.Controls.Add(Me.ChkHourChinaAqi, 4, 4)
-        Me.TlpHourly.Controls.Add(Me.ChkHourEpaPollutant, 4, 3)
-        Me.TlpHourly.Controls.Add(Me.ChkHourEpaAqi, 4, 1)
-        Me.TlpHourly.Controls.Add(Me.ChkHourEpaConcern, 4, 2)
-        Me.TlpHourly.Controls.Add(Me.ChkHourAqiNo2, 4, 0)
-        Me.TlpHourly.Controls.Add(Me.ChkHourAqiO3, 3, 10)
-        Me.TlpHourly.Controls.Add(Me.ChkHourAqiSo2, 3, 12)
-        Me.TlpHourly.Controls.Add(Me.ChkHourAqiCo, 3, 11)
-        Me.TlpHourly.Controls.Add(Me.ChkHourAqiPm25, 3, 9)
-        Me.TlpHourly.Controls.Add(Me.ChkHourCloudCover, 0, 10)
-        Me.TlpHourly.Controls.Add(Me.ChkHourCloudCeil, 0, 11)
-        Me.TlpHourly.Controls.Add(Me.ChkHourWxCode, 1, 0)
-        Me.TlpHourly.Controls.Add(Me.ChkHourAqiPm10, 3, 8)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreePollen, 1, 8)
-        Me.TlpHourly.Controls.Add(Me.ChkHourWeedPollen, 1, 9)
-        Me.TlpHourly.Controls.Add(Me.ChkHourGrassPollen, 1, 10)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeAcacia, 1, 11)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeAsh, 1, 12)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeBeech, 2, 0)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeBirch, 2, 1)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeCedar, 2, 2)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeElm, 2, 6)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeElder, 2, 5)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeCypress, 2, 4)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeCottonwood, 2, 3)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeHemlock, 2, 7)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeHickory, 2, 8)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeJuniper, 2, 9)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeMulberry, 2, 12)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeMaple, 2, 11)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeMahogany, 2, 10)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeOak, 3, 0)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreePine, 3, 1)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeSpruce, 3, 2)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeSycamore, 3, 3)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeWillow, 3, 5)
-        Me.TlpHourly.Controls.Add(Me.ChkHourTreeWalnut, 3, 4)
-        Me.TlpHourly.Controls.Add(Me.ChkHourRagweed, 3, 6)
-        Me.TlpHourly.Controls.Add(Me.ChkHourGrass, 3, 7)
-        Me.TlpHourly.Controls.Add(Me.ChkHourMoonPhase, 1, 3)
-        Me.TlpHourly.Controls.Add(Me.ChkHourCloudBase, 0, 12)
-        Me.TlpHourly.Controls.Add(Me.ChkHourSunset, 1, 2)
-        Me.TlpHourly.Controls.Add(Me.ChkHourSunrise, 1, 1)
-        Me.TlpHourly.Controls.Add(Me.ChkHourPrecipProb, 0, 9)
-        Me.TlpHourly.Controls.Add(Me.ChkHourPrecipType, 0, 8)
-        Me.TlpHourly.Controls.Add(Me.ChkHourPrecip, 0, 7)
-        Me.TlpHourly.Controls.Add(Me.ChkHourWindSpeed, 0, 6)
-        Me.TlpHourly.Controls.Add(Me.ChkHourWindGust, 0, 5)
-        Me.TlpHourly.Controls.Add(Me.ChkHourWindDir, 0, 4)
-        Me.TlpHourly.Controls.Add(Me.ChkHourDewpoint, 0, 3)
-        Me.TlpHourly.Controls.Add(Me.ChkHourBP, 1, 4)
-        Me.TlpHourly.Controls.Add(Me.ChkHourVis, 1, 5)
-        Me.TlpHourly.Controls.Add(Me.ChkHourSSR, 1, 6)
+        Me.TlpHourly.Controls.Add(Me.ChkHrRH, 0, 2)
+        Me.TlpHourly.Controls.Add(Me.ChkHrChinaPollutant, 4, 6)
+        Me.TlpHourly.Controls.Add(Me.ChkHrChinaConcern, 4, 5)
+        Me.TlpHourly.Controls.Add(Me.ChkHrChinaAqi, 4, 4)
+        Me.TlpHourly.Controls.Add(Me.ChkHrEpaPollutant, 4, 3)
+        Me.TlpHourly.Controls.Add(Me.ChkHrEpaAqi, 4, 1)
+        Me.TlpHourly.Controls.Add(Me.ChkHrEpaConcern, 4, 2)
+        Me.TlpHourly.Controls.Add(Me.ChkHrAqiNo2, 4, 0)
+        Me.TlpHourly.Controls.Add(Me.ChkHrAqiO3, 3, 10)
+        Me.TlpHourly.Controls.Add(Me.ChkHrAqiSo2, 3, 12)
+        Me.TlpHourly.Controls.Add(Me.ChkHrAqiCo, 3, 11)
+        Me.TlpHourly.Controls.Add(Me.ChkHrAqiPm25, 3, 9)
+        Me.TlpHourly.Controls.Add(Me.ChkHrCloudCover, 0, 10)
+        Me.TlpHourly.Controls.Add(Me.ChkHrCloudCeil, 0, 11)
+        Me.TlpHourly.Controls.Add(Me.ChkHrWxCode, 1, 0)
+        Me.TlpHourly.Controls.Add(Me.ChkHrAqiPm10, 3, 8)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreePollen, 1, 8)
+        Me.TlpHourly.Controls.Add(Me.ChkHrWeedPollen, 1, 9)
+        Me.TlpHourly.Controls.Add(Me.ChkHrGrassPollen, 1, 10)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeAcacia, 1, 11)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeAsh, 1, 12)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeBeech, 2, 0)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeBirch, 2, 1)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeCedar, 2, 2)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeElm, 2, 6)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeElder, 2, 5)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeCypress, 2, 4)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeCottonwood, 2, 3)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeHemlock, 2, 7)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeHickory, 2, 8)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeJuniper, 2, 9)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeMulberry, 2, 12)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeMaple, 2, 11)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeMahogany, 2, 10)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeOak, 3, 0)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreePine, 3, 1)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeSpruce, 3, 2)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeSycamore, 3, 3)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeWillow, 3, 5)
+        Me.TlpHourly.Controls.Add(Me.ChkHrTreeWalnut, 3, 4)
+        Me.TlpHourly.Controls.Add(Me.ChkHrRagweed, 3, 6)
+        Me.TlpHourly.Controls.Add(Me.ChkHrGrass, 3, 7)
+        Me.TlpHourly.Controls.Add(Me.ChkHrMoonPhase, 1, 3)
+        Me.TlpHourly.Controls.Add(Me.ChkHrCloudBase, 0, 12)
+        Me.TlpHourly.Controls.Add(Me.ChkHrSunset, 1, 2)
+        Me.TlpHourly.Controls.Add(Me.ChkHrSunrise, 1, 1)
+        Me.TlpHourly.Controls.Add(Me.ChkHrPrecipProb, 0, 9)
+        Me.TlpHourly.Controls.Add(Me.ChkHrPrecipType, 0, 8)
+        Me.TlpHourly.Controls.Add(Me.ChkHrPrecip, 0, 7)
+        Me.TlpHourly.Controls.Add(Me.ChkHrWindSpeed, 0, 6)
+        Me.TlpHourly.Controls.Add(Me.ChkHrWindGust, 0, 5)
+        Me.TlpHourly.Controls.Add(Me.ChkHrWindDir, 0, 4)
+        Me.TlpHourly.Controls.Add(Me.ChkHrDewpoint, 0, 3)
+        Me.TlpHourly.Controls.Add(Me.ChkHrBP, 1, 4)
+        Me.TlpHourly.Controls.Add(Me.ChkHrVis, 1, 5)
+        Me.TlpHourly.Controls.Add(Me.ChkHrSSR, 1, 6)
         Me.TlpHourly.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlpHourly.Location = New System.Drawing.Point(25, 52)
         Me.TlpHourly.Margin = New System.Windows.Forms.Padding(1)
@@ -1546,39 +1546,39 @@ Partial Class FrmMain
         Me.ChkHrHailRisk.Text = "Hail Risk"
         Me.ChkHrHailRisk.UseVisualStyleBackColor = False
         '
-        'ChkHourTemp
+        'ChkHrTemp
         '
-        Me.ChkHourTemp.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTemp.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTemp.AutoSize = True
-        Me.ChkHourTemp.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourTemp.Location = New System.Drawing.Point(1, 1)
-        Me.ChkHourTemp.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTemp.Name = "ChkHourTemp"
-        Me.ChkHourTemp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTemp.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTemp.TabIndex = 0
-        Me.ChkHourTemp.Tag = "0"
-        Me.ChkHourTemp.Text = "Temperature"
-        Me.ChkHourTemp.UseVisualStyleBackColor = False
+        Me.ChkHrTemp.AutoSize = True
+        Me.ChkHrTemp.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrTemp.Location = New System.Drawing.Point(1, 1)
+        Me.ChkHrTemp.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTemp.Name = "ChkHrTemp"
+        Me.ChkHrTemp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTemp.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTemp.TabIndex = 0
+        Me.ChkHrTemp.Tag = "0"
+        Me.ChkHrTemp.Text = "Temperature"
+        Me.ChkHrTemp.UseVisualStyleBackColor = False
         '
-        'ChkHourFeelsLike
+        'ChkHrFeelsLike
         '
-        Me.ChkHourFeelsLike.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrFeelsLike.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourFeelsLike.AutoSize = True
-        Me.ChkHourFeelsLike.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourFeelsLike.Location = New System.Drawing.Point(1, 33)
-        Me.ChkHourFeelsLike.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourFeelsLike.Name = "ChkHourFeelsLike"
-        Me.ChkHourFeelsLike.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourFeelsLike.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourFeelsLike.TabIndex = 1
-        Me.ChkHourFeelsLike.Tag = "1"
-        Me.ChkHourFeelsLike.Text = "Feels Like"
-        Me.ChkHourFeelsLike.UseVisualStyleBackColor = False
+        Me.ChkHrFeelsLike.AutoSize = True
+        Me.ChkHrFeelsLike.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrFeelsLike.Location = New System.Drawing.Point(1, 33)
+        Me.ChkHrFeelsLike.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrFeelsLike.Name = "ChkHrFeelsLike"
+        Me.ChkHrFeelsLike.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrFeelsLike.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrFeelsLike.TabIndex = 1
+        Me.ChkHrFeelsLike.Tag = "1"
+        Me.ChkHrFeelsLike.Text = "Feels Like"
+        Me.ChkHrFeelsLike.UseVisualStyleBackColor = False
         '
         'ChkHrRoadRisk
         '
@@ -1597,957 +1597,957 @@ Partial Class FrmMain
         Me.ChkHrRoadRisk.Text = "Road Risk"
         Me.ChkHrRoadRisk.UseVisualStyleBackColor = False
         '
-        'ChkHourRH
+        'ChkHrRH
         '
-        Me.ChkHourRH.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrRH.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourRH.AutoSize = True
-        Me.ChkHourRH.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourRH.Location = New System.Drawing.Point(1, 65)
-        Me.ChkHourRH.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourRH.Name = "ChkHourRH"
-        Me.ChkHourRH.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourRH.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourRH.TabIndex = 2
-        Me.ChkHourRH.Tag = "3"
-        Me.ChkHourRH.Text = "Humidity"
-        Me.ChkHourRH.UseVisualStyleBackColor = False
+        Me.ChkHrRH.AutoSize = True
+        Me.ChkHrRH.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrRH.Location = New System.Drawing.Point(1, 65)
+        Me.ChkHrRH.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrRH.Name = "ChkHrRH"
+        Me.ChkHrRH.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrRH.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrRH.TabIndex = 2
+        Me.ChkHrRH.Tag = "3"
+        Me.ChkHrRH.Text = "Humidity"
+        Me.ChkHrRH.UseVisualStyleBackColor = False
         '
-        'ChkHourChinaPollutant
+        'ChkHrChinaPollutant
         '
-        Me.ChkHourChinaPollutant.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrChinaPollutant.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourChinaPollutant.AutoSize = True
-        Me.ChkHourChinaPollutant.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourChinaPollutant.Location = New System.Drawing.Point(913, 193)
-        Me.ChkHourChinaPollutant.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourChinaPollutant.Name = "ChkHourChinaPollutant"
-        Me.ChkHourChinaPollutant.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourChinaPollutant.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourChinaPollutant.TabIndex = 58
-        Me.ChkHourChinaPollutant.Tag = "57"
-        Me.ChkHourChinaPollutant.Text = "China Primary Pollutant"
-        Me.ChkHourChinaPollutant.UseVisualStyleBackColor = False
+        Me.ChkHrChinaPollutant.AutoSize = True
+        Me.ChkHrChinaPollutant.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrChinaPollutant.Location = New System.Drawing.Point(913, 193)
+        Me.ChkHrChinaPollutant.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrChinaPollutant.Name = "ChkHrChinaPollutant"
+        Me.ChkHrChinaPollutant.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrChinaPollutant.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrChinaPollutant.TabIndex = 58
+        Me.ChkHrChinaPollutant.Tag = "57"
+        Me.ChkHrChinaPollutant.Text = "China Primary Pollutant"
+        Me.ChkHrChinaPollutant.UseVisualStyleBackColor = False
         '
-        'ChkHourChinaConcern
+        'ChkHrChinaConcern
         '
-        Me.ChkHourChinaConcern.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrChinaConcern.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourChinaConcern.AutoSize = True
-        Me.ChkHourChinaConcern.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourChinaConcern.Location = New System.Drawing.Point(913, 161)
-        Me.ChkHourChinaConcern.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourChinaConcern.Name = "ChkHourChinaConcern"
-        Me.ChkHourChinaConcern.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourChinaConcern.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourChinaConcern.TabIndex = 57
-        Me.ChkHourChinaConcern.Tag = "56"
-        Me.ChkHourChinaConcern.Text = "China Health Concern"
-        Me.ChkHourChinaConcern.UseVisualStyleBackColor = False
+        Me.ChkHrChinaConcern.AutoSize = True
+        Me.ChkHrChinaConcern.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrChinaConcern.Location = New System.Drawing.Point(913, 161)
+        Me.ChkHrChinaConcern.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrChinaConcern.Name = "ChkHrChinaConcern"
+        Me.ChkHrChinaConcern.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrChinaConcern.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrChinaConcern.TabIndex = 57
+        Me.ChkHrChinaConcern.Tag = "56"
+        Me.ChkHrChinaConcern.Text = "China Health Concern"
+        Me.ChkHrChinaConcern.UseVisualStyleBackColor = False
         '
-        'ChkHourChinaAqi
+        'ChkHrChinaAqi
         '
-        Me.ChkHourChinaAqi.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrChinaAqi.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourChinaAqi.AutoSize = True
-        Me.ChkHourChinaAqi.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourChinaAqi.Location = New System.Drawing.Point(913, 129)
-        Me.ChkHourChinaAqi.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourChinaAqi.Name = "ChkHourChinaAqi"
-        Me.ChkHourChinaAqi.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourChinaAqi.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourChinaAqi.TabIndex = 56
-        Me.ChkHourChinaAqi.Tag = "55"
-        Me.ChkHourChinaAqi.Text = "China AQI"
-        Me.ChkHourChinaAqi.UseVisualStyleBackColor = False
+        Me.ChkHrChinaAqi.AutoSize = True
+        Me.ChkHrChinaAqi.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrChinaAqi.Location = New System.Drawing.Point(913, 129)
+        Me.ChkHrChinaAqi.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrChinaAqi.Name = "ChkHrChinaAqi"
+        Me.ChkHrChinaAqi.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrChinaAqi.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrChinaAqi.TabIndex = 56
+        Me.ChkHrChinaAqi.Tag = "55"
+        Me.ChkHrChinaAqi.Text = "China AQI"
+        Me.ChkHrChinaAqi.UseVisualStyleBackColor = False
         '
-        'ChkHourEpaPollutant
+        'ChkHrEpaPollutant
         '
-        Me.ChkHourEpaPollutant.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrEpaPollutant.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourEpaPollutant.AutoSize = True
-        Me.ChkHourEpaPollutant.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourEpaPollutant.Location = New System.Drawing.Point(913, 97)
-        Me.ChkHourEpaPollutant.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourEpaPollutant.Name = "ChkHourEpaPollutant"
-        Me.ChkHourEpaPollutant.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourEpaPollutant.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourEpaPollutant.TabIndex = 55
-        Me.ChkHourEpaPollutant.Tag = "54"
-        Me.ChkHourEpaPollutant.Text = "EPA Primary Pollutant"
-        Me.ChkHourEpaPollutant.UseVisualStyleBackColor = False
+        Me.ChkHrEpaPollutant.AutoSize = True
+        Me.ChkHrEpaPollutant.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrEpaPollutant.Location = New System.Drawing.Point(913, 97)
+        Me.ChkHrEpaPollutant.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrEpaPollutant.Name = "ChkHrEpaPollutant"
+        Me.ChkHrEpaPollutant.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrEpaPollutant.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrEpaPollutant.TabIndex = 55
+        Me.ChkHrEpaPollutant.Tag = "54"
+        Me.ChkHrEpaPollutant.Text = "EPA Primary Pollutant"
+        Me.ChkHrEpaPollutant.UseVisualStyleBackColor = False
         '
-        'ChkHourEpaAqi
+        'ChkHrEpaAqi
         '
-        Me.ChkHourEpaAqi.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrEpaAqi.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourEpaAqi.AutoSize = True
-        Me.ChkHourEpaAqi.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourEpaAqi.Location = New System.Drawing.Point(913, 33)
-        Me.ChkHourEpaAqi.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourEpaAqi.Name = "ChkHourEpaAqi"
-        Me.ChkHourEpaAqi.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourEpaAqi.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourEpaAqi.TabIndex = 53
-        Me.ChkHourEpaAqi.Tag = "52"
-        Me.ChkHourEpaAqi.Text = "EPA AQI"
-        Me.ChkHourEpaAqi.UseVisualStyleBackColor = False
+        Me.ChkHrEpaAqi.AutoSize = True
+        Me.ChkHrEpaAqi.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrEpaAqi.Location = New System.Drawing.Point(913, 33)
+        Me.ChkHrEpaAqi.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrEpaAqi.Name = "ChkHrEpaAqi"
+        Me.ChkHrEpaAqi.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrEpaAqi.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrEpaAqi.TabIndex = 53
+        Me.ChkHrEpaAqi.Tag = "52"
+        Me.ChkHrEpaAqi.Text = "EPA AQI"
+        Me.ChkHrEpaAqi.UseVisualStyleBackColor = False
         '
-        'ChkHourEpaConcern
+        'ChkHrEpaConcern
         '
-        Me.ChkHourEpaConcern.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrEpaConcern.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourEpaConcern.AutoSize = True
-        Me.ChkHourEpaConcern.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourEpaConcern.Location = New System.Drawing.Point(913, 65)
-        Me.ChkHourEpaConcern.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourEpaConcern.Name = "ChkHourEpaConcern"
-        Me.ChkHourEpaConcern.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourEpaConcern.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourEpaConcern.TabIndex = 54
-        Me.ChkHourEpaConcern.Tag = "53"
-        Me.ChkHourEpaConcern.Text = "EPA Health Concern"
-        Me.ChkHourEpaConcern.UseVisualStyleBackColor = False
+        Me.ChkHrEpaConcern.AutoSize = True
+        Me.ChkHrEpaConcern.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrEpaConcern.Location = New System.Drawing.Point(913, 65)
+        Me.ChkHrEpaConcern.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrEpaConcern.Name = "ChkHrEpaConcern"
+        Me.ChkHrEpaConcern.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrEpaConcern.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrEpaConcern.TabIndex = 54
+        Me.ChkHrEpaConcern.Tag = "53"
+        Me.ChkHrEpaConcern.Text = "EPA Health Concern"
+        Me.ChkHrEpaConcern.UseVisualStyleBackColor = False
         '
-        'ChkHourAqiNo2
+        'ChkHrAqiNo2
         '
-        Me.ChkHourAqiNo2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrAqiNo2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourAqiNo2.AutoSize = True
-        Me.ChkHourAqiNo2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourAqiNo2.Location = New System.Drawing.Point(913, 1)
-        Me.ChkHourAqiNo2.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourAqiNo2.Name = "ChkHourAqiNo2"
-        Me.ChkHourAqiNo2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourAqiNo2.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourAqiNo2.TabIndex = 52
-        Me.ChkHourAqiNo2.Tag = "51"
-        Me.ChkHourAqiNo2.Text = "NO2"
-        Me.ChkHourAqiNo2.UseVisualStyleBackColor = False
+        Me.ChkHrAqiNo2.AutoSize = True
+        Me.ChkHrAqiNo2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrAqiNo2.Location = New System.Drawing.Point(913, 1)
+        Me.ChkHrAqiNo2.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrAqiNo2.Name = "ChkHrAqiNo2"
+        Me.ChkHrAqiNo2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrAqiNo2.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrAqiNo2.TabIndex = 52
+        Me.ChkHrAqiNo2.Tag = "51"
+        Me.ChkHrAqiNo2.Text = "NO2"
+        Me.ChkHrAqiNo2.UseVisualStyleBackColor = False
         '
-        'ChkHourAqiO3
+        'ChkHrAqiO3
         '
-        Me.ChkHourAqiO3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrAqiO3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourAqiO3.AutoSize = True
-        Me.ChkHourAqiO3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourAqiO3.Location = New System.Drawing.Point(685, 321)
-        Me.ChkHourAqiO3.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourAqiO3.Name = "ChkHourAqiO3"
-        Me.ChkHourAqiO3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourAqiO3.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourAqiO3.TabIndex = 49
-        Me.ChkHourAqiO3.Tag = "48"
-        Me.ChkHourAqiO3.Text = "O3"
-        Me.ChkHourAqiO3.UseVisualStyleBackColor = False
+        Me.ChkHrAqiO3.AutoSize = True
+        Me.ChkHrAqiO3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrAqiO3.Location = New System.Drawing.Point(685, 321)
+        Me.ChkHrAqiO3.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrAqiO3.Name = "ChkHrAqiO3"
+        Me.ChkHrAqiO3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrAqiO3.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrAqiO3.TabIndex = 49
+        Me.ChkHrAqiO3.Tag = "48"
+        Me.ChkHrAqiO3.Text = "O3"
+        Me.ChkHrAqiO3.UseVisualStyleBackColor = False
         '
-        'ChkHourAqiSo2
+        'ChkHrAqiSo2
         '
-        Me.ChkHourAqiSo2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrAqiSo2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourAqiSo2.AutoSize = True
-        Me.ChkHourAqiSo2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourAqiSo2.Location = New System.Drawing.Point(685, 385)
-        Me.ChkHourAqiSo2.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourAqiSo2.Name = "ChkHourAqiSo2"
-        Me.ChkHourAqiSo2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourAqiSo2.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourAqiSo2.TabIndex = 51
-        Me.ChkHourAqiSo2.Tag = "50"
-        Me.ChkHourAqiSo2.Text = "SO2"
-        Me.ChkHourAqiSo2.UseVisualStyleBackColor = False
+        Me.ChkHrAqiSo2.AutoSize = True
+        Me.ChkHrAqiSo2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrAqiSo2.Location = New System.Drawing.Point(685, 385)
+        Me.ChkHrAqiSo2.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrAqiSo2.Name = "ChkHrAqiSo2"
+        Me.ChkHrAqiSo2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrAqiSo2.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrAqiSo2.TabIndex = 51
+        Me.ChkHrAqiSo2.Tag = "50"
+        Me.ChkHrAqiSo2.Text = "SO2"
+        Me.ChkHrAqiSo2.UseVisualStyleBackColor = False
         '
-        'ChkHourAqiCo
+        'ChkHrAqiCo
         '
-        Me.ChkHourAqiCo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrAqiCo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourAqiCo.AutoSize = True
-        Me.ChkHourAqiCo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourAqiCo.Location = New System.Drawing.Point(685, 353)
-        Me.ChkHourAqiCo.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourAqiCo.Name = "ChkHourAqiCo"
-        Me.ChkHourAqiCo.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourAqiCo.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourAqiCo.TabIndex = 50
-        Me.ChkHourAqiCo.Tag = "49"
-        Me.ChkHourAqiCo.Text = "CO"
-        Me.ChkHourAqiCo.UseVisualStyleBackColor = False
+        Me.ChkHrAqiCo.AutoSize = True
+        Me.ChkHrAqiCo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrAqiCo.Location = New System.Drawing.Point(685, 353)
+        Me.ChkHrAqiCo.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrAqiCo.Name = "ChkHrAqiCo"
+        Me.ChkHrAqiCo.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrAqiCo.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrAqiCo.TabIndex = 50
+        Me.ChkHrAqiCo.Tag = "49"
+        Me.ChkHrAqiCo.Text = "CO"
+        Me.ChkHrAqiCo.UseVisualStyleBackColor = False
         '
-        'ChkHourAqiPm25
+        'ChkHrAqiPm25
         '
-        Me.ChkHourAqiPm25.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrAqiPm25.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourAqiPm25.AutoSize = True
-        Me.ChkHourAqiPm25.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourAqiPm25.Location = New System.Drawing.Point(685, 289)
-        Me.ChkHourAqiPm25.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourAqiPm25.Name = "ChkHourAqiPm25"
-        Me.ChkHourAqiPm25.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourAqiPm25.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourAqiPm25.TabIndex = 48
-        Me.ChkHourAqiPm25.Tag = "47"
-        Me.ChkHourAqiPm25.Text = "PM25"
-        Me.ChkHourAqiPm25.UseVisualStyleBackColor = False
+        Me.ChkHrAqiPm25.AutoSize = True
+        Me.ChkHrAqiPm25.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrAqiPm25.Location = New System.Drawing.Point(685, 289)
+        Me.ChkHrAqiPm25.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrAqiPm25.Name = "ChkHrAqiPm25"
+        Me.ChkHrAqiPm25.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrAqiPm25.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrAqiPm25.TabIndex = 48
+        Me.ChkHrAqiPm25.Tag = "47"
+        Me.ChkHrAqiPm25.Text = "PM25"
+        Me.ChkHrAqiPm25.UseVisualStyleBackColor = False
         '
-        'ChkHourCloudCover
+        'ChkHrCloudCover
         '
-        Me.ChkHourCloudCover.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrCloudCover.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourCloudCover.AutoSize = True
-        Me.ChkHourCloudCover.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourCloudCover.Location = New System.Drawing.Point(1, 321)
-        Me.ChkHourCloudCover.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourCloudCover.Name = "ChkHourCloudCover"
-        Me.ChkHourCloudCover.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourCloudCover.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourCloudCover.TabIndex = 10
-        Me.ChkHourCloudCover.Tag = "14"
-        Me.ChkHourCloudCover.Text = "Cloud Cover"
-        Me.ChkHourCloudCover.UseVisualStyleBackColor = False
+        Me.ChkHrCloudCover.AutoSize = True
+        Me.ChkHrCloudCover.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrCloudCover.Location = New System.Drawing.Point(1, 321)
+        Me.ChkHrCloudCover.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrCloudCover.Name = "ChkHrCloudCover"
+        Me.ChkHrCloudCover.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrCloudCover.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrCloudCover.TabIndex = 10
+        Me.ChkHrCloudCover.Tag = "14"
+        Me.ChkHrCloudCover.Text = "Cloud Cover"
+        Me.ChkHrCloudCover.UseVisualStyleBackColor = False
         '
-        'ChkHourCloudCeil
+        'ChkHrCloudCeil
         '
-        Me.ChkHourCloudCeil.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrCloudCeil.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourCloudCeil.AutoSize = True
-        Me.ChkHourCloudCeil.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourCloudCeil.Location = New System.Drawing.Point(1, 353)
-        Me.ChkHourCloudCeil.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourCloudCeil.Name = "ChkHourCloudCeil"
-        Me.ChkHourCloudCeil.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourCloudCeil.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourCloudCeil.TabIndex = 11
-        Me.ChkHourCloudCeil.Tag = "16"
-        Me.ChkHourCloudCeil.Text = "Cloud Ceiling"
-        Me.ChkHourCloudCeil.UseVisualStyleBackColor = False
+        Me.ChkHrCloudCeil.AutoSize = True
+        Me.ChkHrCloudCeil.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrCloudCeil.Location = New System.Drawing.Point(1, 353)
+        Me.ChkHrCloudCeil.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrCloudCeil.Name = "ChkHrCloudCeil"
+        Me.ChkHrCloudCeil.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrCloudCeil.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrCloudCeil.TabIndex = 11
+        Me.ChkHrCloudCeil.Tag = "16"
+        Me.ChkHrCloudCeil.Text = "Cloud Ceiling"
+        Me.ChkHrCloudCeil.UseVisualStyleBackColor = False
         '
-        'ChkHourWxCode
+        'ChkHrWxCode
         '
-        Me.ChkHourWxCode.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrWxCode.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourWxCode.AutoSize = True
-        Me.ChkHourWxCode.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourWxCode.Location = New System.Drawing.Point(229, 1)
-        Me.ChkHourWxCode.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourWxCode.Name = "ChkHourWxCode"
-        Me.ChkHourWxCode.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourWxCode.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourWxCode.TabIndex = 13
-        Me.ChkHourWxCode.Tag = "19"
-        Me.ChkHourWxCode.Text = "Weather Code"
-        Me.ChkHourWxCode.UseVisualStyleBackColor = False
+        Me.ChkHrWxCode.AutoSize = True
+        Me.ChkHrWxCode.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrWxCode.Location = New System.Drawing.Point(229, 1)
+        Me.ChkHrWxCode.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrWxCode.Name = "ChkHrWxCode"
+        Me.ChkHrWxCode.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrWxCode.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrWxCode.TabIndex = 13
+        Me.ChkHrWxCode.Tag = "19"
+        Me.ChkHrWxCode.Text = "Weather Code"
+        Me.ChkHrWxCode.UseVisualStyleBackColor = False
         '
-        'ChkHourAqiPm10
+        'ChkHrAqiPm10
         '
-        Me.ChkHourAqiPm10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrAqiPm10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourAqiPm10.AutoSize = True
-        Me.ChkHourAqiPm10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourAqiPm10.Location = New System.Drawing.Point(685, 257)
-        Me.ChkHourAqiPm10.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourAqiPm10.Name = "ChkHourAqiPm10"
-        Me.ChkHourAqiPm10.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourAqiPm10.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourAqiPm10.TabIndex = 47
-        Me.ChkHourAqiPm10.Tag = "46"
-        Me.ChkHourAqiPm10.Text = "PM10"
-        Me.ChkHourAqiPm10.UseVisualStyleBackColor = False
+        Me.ChkHrAqiPm10.AutoSize = True
+        Me.ChkHrAqiPm10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrAqiPm10.Location = New System.Drawing.Point(685, 257)
+        Me.ChkHrAqiPm10.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrAqiPm10.Name = "ChkHrAqiPm10"
+        Me.ChkHrAqiPm10.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrAqiPm10.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrAqiPm10.TabIndex = 47
+        Me.ChkHrAqiPm10.Tag = "46"
+        Me.ChkHrAqiPm10.Text = "PM10"
+        Me.ChkHrAqiPm10.UseVisualStyleBackColor = False
         '
-        'ChkHourTreePollen
+        'ChkHrTreePollen
         '
-        Me.ChkHourTreePollen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreePollen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreePollen.AutoSize = True
-        Me.ChkHourTreePollen.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreePollen.Location = New System.Drawing.Point(229, 257)
-        Me.ChkHourTreePollen.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreePollen.Name = "ChkHourTreePollen"
-        Me.ChkHourTreePollen.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreePollen.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreePollen.TabIndex = 21
-        Me.ChkHourTreePollen.Tag = "20"
-        Me.ChkHourTreePollen.Text = "Tree Pollen"
-        Me.ChkHourTreePollen.UseVisualStyleBackColor = False
+        Me.ChkHrTreePollen.AutoSize = True
+        Me.ChkHrTreePollen.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreePollen.Location = New System.Drawing.Point(229, 257)
+        Me.ChkHrTreePollen.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreePollen.Name = "ChkHrTreePollen"
+        Me.ChkHrTreePollen.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreePollen.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreePollen.TabIndex = 21
+        Me.ChkHrTreePollen.Tag = "20"
+        Me.ChkHrTreePollen.Text = "Tree Pollen"
+        Me.ChkHrTreePollen.UseVisualStyleBackColor = False
         '
-        'ChkHourWeedPollen
+        'ChkHrWeedPollen
         '
-        Me.ChkHourWeedPollen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrWeedPollen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourWeedPollen.AutoSize = True
-        Me.ChkHourWeedPollen.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourWeedPollen.Location = New System.Drawing.Point(229, 289)
-        Me.ChkHourWeedPollen.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourWeedPollen.Name = "ChkHourWeedPollen"
-        Me.ChkHourWeedPollen.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourWeedPollen.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourWeedPollen.TabIndex = 22
-        Me.ChkHourWeedPollen.Tag = "21"
-        Me.ChkHourWeedPollen.Text = "Weed Pollen"
-        Me.ChkHourWeedPollen.UseVisualStyleBackColor = False
+        Me.ChkHrWeedPollen.AutoSize = True
+        Me.ChkHrWeedPollen.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrWeedPollen.Location = New System.Drawing.Point(229, 289)
+        Me.ChkHrWeedPollen.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrWeedPollen.Name = "ChkHrWeedPollen"
+        Me.ChkHrWeedPollen.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrWeedPollen.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrWeedPollen.TabIndex = 22
+        Me.ChkHrWeedPollen.Tag = "21"
+        Me.ChkHrWeedPollen.Text = "Weed Pollen"
+        Me.ChkHrWeedPollen.UseVisualStyleBackColor = False
         '
-        'ChkHourGrassPollen
+        'ChkHrGrassPollen
         '
-        Me.ChkHourGrassPollen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrGrassPollen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourGrassPollen.AutoSize = True
-        Me.ChkHourGrassPollen.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourGrassPollen.Location = New System.Drawing.Point(229, 321)
-        Me.ChkHourGrassPollen.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourGrassPollen.Name = "ChkHourGrassPollen"
-        Me.ChkHourGrassPollen.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourGrassPollen.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourGrassPollen.TabIndex = 23
-        Me.ChkHourGrassPollen.Tag = "22"
-        Me.ChkHourGrassPollen.Text = "Grass Pollen"
-        Me.ChkHourGrassPollen.UseVisualStyleBackColor = False
+        Me.ChkHrGrassPollen.AutoSize = True
+        Me.ChkHrGrassPollen.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrGrassPollen.Location = New System.Drawing.Point(229, 321)
+        Me.ChkHrGrassPollen.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrGrassPollen.Name = "ChkHrGrassPollen"
+        Me.ChkHrGrassPollen.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrGrassPollen.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrGrassPollen.TabIndex = 23
+        Me.ChkHrGrassPollen.Tag = "22"
+        Me.ChkHrGrassPollen.Text = "Grass Pollen"
+        Me.ChkHrGrassPollen.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeAcacia
+        'ChkHrTreeAcacia
         '
-        Me.ChkHourTreeAcacia.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeAcacia.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeAcacia.AutoSize = True
-        Me.ChkHourTreeAcacia.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeAcacia.Location = New System.Drawing.Point(229, 353)
-        Me.ChkHourTreeAcacia.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeAcacia.Name = "ChkHourTreeAcacia"
-        Me.ChkHourTreeAcacia.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeAcacia.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeAcacia.TabIndex = 24
-        Me.ChkHourTreeAcacia.Tag = "23"
-        Me.ChkHourTreeAcacia.Text = "Acacia"
-        Me.ChkHourTreeAcacia.UseVisualStyleBackColor = False
+        Me.ChkHrTreeAcacia.AutoSize = True
+        Me.ChkHrTreeAcacia.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeAcacia.Location = New System.Drawing.Point(229, 353)
+        Me.ChkHrTreeAcacia.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeAcacia.Name = "ChkHrTreeAcacia"
+        Me.ChkHrTreeAcacia.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeAcacia.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeAcacia.TabIndex = 24
+        Me.ChkHrTreeAcacia.Tag = "23"
+        Me.ChkHrTreeAcacia.Text = "Acacia"
+        Me.ChkHrTreeAcacia.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeAsh
+        'ChkHrTreeAsh
         '
-        Me.ChkHourTreeAsh.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeAsh.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeAsh.AutoSize = True
-        Me.ChkHourTreeAsh.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeAsh.Location = New System.Drawing.Point(229, 385)
-        Me.ChkHourTreeAsh.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeAsh.Name = "ChkHourTreeAsh"
-        Me.ChkHourTreeAsh.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeAsh.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeAsh.TabIndex = 25
-        Me.ChkHourTreeAsh.Tag = "24"
-        Me.ChkHourTreeAsh.Text = "Ash "
-        Me.ChkHourTreeAsh.UseVisualStyleBackColor = False
+        Me.ChkHrTreeAsh.AutoSize = True
+        Me.ChkHrTreeAsh.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeAsh.Location = New System.Drawing.Point(229, 385)
+        Me.ChkHrTreeAsh.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeAsh.Name = "ChkHrTreeAsh"
+        Me.ChkHrTreeAsh.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeAsh.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeAsh.TabIndex = 25
+        Me.ChkHrTreeAsh.Tag = "24"
+        Me.ChkHrTreeAsh.Text = "Ash "
+        Me.ChkHrTreeAsh.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeBeech
+        'ChkHrTreeBeech
         '
-        Me.ChkHourTreeBeech.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeBeech.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeBeech.AutoSize = True
-        Me.ChkHourTreeBeech.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeBeech.Location = New System.Drawing.Point(457, 1)
-        Me.ChkHourTreeBeech.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeBeech.Name = "ChkHourTreeBeech"
-        Me.ChkHourTreeBeech.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeBeech.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeBeech.TabIndex = 26
-        Me.ChkHourTreeBeech.Tag = "25"
-        Me.ChkHourTreeBeech.Text = "Beech"
-        Me.ChkHourTreeBeech.UseVisualStyleBackColor = False
+        Me.ChkHrTreeBeech.AutoSize = True
+        Me.ChkHrTreeBeech.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeBeech.Location = New System.Drawing.Point(457, 1)
+        Me.ChkHrTreeBeech.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeBeech.Name = "ChkHrTreeBeech"
+        Me.ChkHrTreeBeech.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeBeech.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeBeech.TabIndex = 26
+        Me.ChkHrTreeBeech.Tag = "25"
+        Me.ChkHrTreeBeech.Text = "Beech"
+        Me.ChkHrTreeBeech.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeBirch
+        'ChkHrTreeBirch
         '
-        Me.ChkHourTreeBirch.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeBirch.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeBirch.AutoSize = True
-        Me.ChkHourTreeBirch.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeBirch.Location = New System.Drawing.Point(457, 33)
-        Me.ChkHourTreeBirch.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeBirch.Name = "ChkHourTreeBirch"
-        Me.ChkHourTreeBirch.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeBirch.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeBirch.TabIndex = 27
-        Me.ChkHourTreeBirch.Tag = "26"
-        Me.ChkHourTreeBirch.Text = "Birch"
-        Me.ChkHourTreeBirch.UseVisualStyleBackColor = False
+        Me.ChkHrTreeBirch.AutoSize = True
+        Me.ChkHrTreeBirch.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeBirch.Location = New System.Drawing.Point(457, 33)
+        Me.ChkHrTreeBirch.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeBirch.Name = "ChkHrTreeBirch"
+        Me.ChkHrTreeBirch.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeBirch.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeBirch.TabIndex = 27
+        Me.ChkHrTreeBirch.Tag = "26"
+        Me.ChkHrTreeBirch.Text = "Birch"
+        Me.ChkHrTreeBirch.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeCedar
+        'ChkHrTreeCedar
         '
-        Me.ChkHourTreeCedar.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeCedar.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeCedar.AutoSize = True
-        Me.ChkHourTreeCedar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeCedar.Location = New System.Drawing.Point(457, 65)
-        Me.ChkHourTreeCedar.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeCedar.Name = "ChkHourTreeCedar"
-        Me.ChkHourTreeCedar.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeCedar.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeCedar.TabIndex = 28
-        Me.ChkHourTreeCedar.Tag = "27"
-        Me.ChkHourTreeCedar.Text = "Cedar"
-        Me.ChkHourTreeCedar.UseVisualStyleBackColor = False
+        Me.ChkHrTreeCedar.AutoSize = True
+        Me.ChkHrTreeCedar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeCedar.Location = New System.Drawing.Point(457, 65)
+        Me.ChkHrTreeCedar.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeCedar.Name = "ChkHrTreeCedar"
+        Me.ChkHrTreeCedar.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeCedar.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeCedar.TabIndex = 28
+        Me.ChkHrTreeCedar.Tag = "27"
+        Me.ChkHrTreeCedar.Text = "Cedar"
+        Me.ChkHrTreeCedar.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeElm
+        'ChkHrTreeElm
         '
-        Me.ChkHourTreeElm.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeElm.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeElm.AutoSize = True
-        Me.ChkHourTreeElm.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeElm.Location = New System.Drawing.Point(457, 193)
-        Me.ChkHourTreeElm.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeElm.Name = "ChkHourTreeElm"
-        Me.ChkHourTreeElm.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeElm.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeElm.TabIndex = 32
-        Me.ChkHourTreeElm.Tag = "30"
-        Me.ChkHourTreeElm.Text = "Elm"
-        Me.ChkHourTreeElm.UseVisualStyleBackColor = False
+        Me.ChkHrTreeElm.AutoSize = True
+        Me.ChkHrTreeElm.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeElm.Location = New System.Drawing.Point(457, 193)
+        Me.ChkHrTreeElm.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeElm.Name = "ChkHrTreeElm"
+        Me.ChkHrTreeElm.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeElm.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeElm.TabIndex = 32
+        Me.ChkHrTreeElm.Tag = "30"
+        Me.ChkHrTreeElm.Text = "Elm"
+        Me.ChkHrTreeElm.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeElder
+        'ChkHrTreeElder
         '
-        Me.ChkHourTreeElder.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeElder.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeElder.AutoSize = True
-        Me.ChkHourTreeElder.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeElder.Location = New System.Drawing.Point(457, 161)
-        Me.ChkHourTreeElder.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeElder.Name = "ChkHourTreeElder"
-        Me.ChkHourTreeElder.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeElder.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeElder.TabIndex = 31
-        Me.ChkHourTreeElder.Tag = "29"
-        Me.ChkHourTreeElder.Text = "Elder"
-        Me.ChkHourTreeElder.UseVisualStyleBackColor = False
+        Me.ChkHrTreeElder.AutoSize = True
+        Me.ChkHrTreeElder.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeElder.Location = New System.Drawing.Point(457, 161)
+        Me.ChkHrTreeElder.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeElder.Name = "ChkHrTreeElder"
+        Me.ChkHrTreeElder.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeElder.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeElder.TabIndex = 31
+        Me.ChkHrTreeElder.Tag = "29"
+        Me.ChkHrTreeElder.Text = "Elder"
+        Me.ChkHrTreeElder.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeCypress
+        'ChkHrTreeCypress
         '
-        Me.ChkHourTreeCypress.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeCypress.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeCypress.AutoSize = True
-        Me.ChkHourTreeCypress.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeCypress.Location = New System.Drawing.Point(457, 129)
-        Me.ChkHourTreeCypress.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeCypress.Name = "ChkHourTreeCypress"
-        Me.ChkHourTreeCypress.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeCypress.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeCypress.TabIndex = 30
-        Me.ChkHourTreeCypress.Tag = "28"
-        Me.ChkHourTreeCypress.Text = "Cypress"
-        Me.ChkHourTreeCypress.UseVisualStyleBackColor = False
+        Me.ChkHrTreeCypress.AutoSize = True
+        Me.ChkHrTreeCypress.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeCypress.Location = New System.Drawing.Point(457, 129)
+        Me.ChkHrTreeCypress.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeCypress.Name = "ChkHrTreeCypress"
+        Me.ChkHrTreeCypress.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeCypress.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeCypress.TabIndex = 30
+        Me.ChkHrTreeCypress.Tag = "28"
+        Me.ChkHrTreeCypress.Text = "Cypress"
+        Me.ChkHrTreeCypress.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeCottonwood
+        'ChkHrTreeCottonwood
         '
-        Me.ChkHourTreeCottonwood.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeCottonwood.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeCottonwood.AutoSize = True
-        Me.ChkHourTreeCottonwood.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeCottonwood.Location = New System.Drawing.Point(457, 97)
-        Me.ChkHourTreeCottonwood.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeCottonwood.Name = "ChkHourTreeCottonwood"
-        Me.ChkHourTreeCottonwood.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeCottonwood.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeCottonwood.TabIndex = 29
-        Me.ChkHourTreeCottonwood.Tag = "39"
-        Me.ChkHourTreeCottonwood.Text = "Cottonwood"
-        Me.ChkHourTreeCottonwood.UseVisualStyleBackColor = False
+        Me.ChkHrTreeCottonwood.AutoSize = True
+        Me.ChkHrTreeCottonwood.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeCottonwood.Location = New System.Drawing.Point(457, 97)
+        Me.ChkHrTreeCottonwood.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeCottonwood.Name = "ChkHrTreeCottonwood"
+        Me.ChkHrTreeCottonwood.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeCottonwood.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeCottonwood.TabIndex = 29
+        Me.ChkHrTreeCottonwood.Tag = "39"
+        Me.ChkHrTreeCottonwood.Text = "Cottonwood"
+        Me.ChkHrTreeCottonwood.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeHemlock
+        'ChkHrTreeHemlock
         '
-        Me.ChkHourTreeHemlock.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeHemlock.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeHemlock.AutoSize = True
-        Me.ChkHourTreeHemlock.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeHemlock.Location = New System.Drawing.Point(457, 225)
-        Me.ChkHourTreeHemlock.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeHemlock.Name = "ChkHourTreeHemlock"
-        Me.ChkHourTreeHemlock.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeHemlock.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeHemlock.TabIndex = 33
-        Me.ChkHourTreeHemlock.Tag = "31"
-        Me.ChkHourTreeHemlock.Text = "Hemlock"
-        Me.ChkHourTreeHemlock.UseVisualStyleBackColor = False
+        Me.ChkHrTreeHemlock.AutoSize = True
+        Me.ChkHrTreeHemlock.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeHemlock.Location = New System.Drawing.Point(457, 225)
+        Me.ChkHrTreeHemlock.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeHemlock.Name = "ChkHrTreeHemlock"
+        Me.ChkHrTreeHemlock.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeHemlock.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeHemlock.TabIndex = 33
+        Me.ChkHrTreeHemlock.Tag = "31"
+        Me.ChkHrTreeHemlock.Text = "Hemlock"
+        Me.ChkHrTreeHemlock.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeHickory
+        'ChkHrTreeHickory
         '
-        Me.ChkHourTreeHickory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeHickory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeHickory.AutoSize = True
-        Me.ChkHourTreeHickory.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeHickory.Location = New System.Drawing.Point(457, 257)
-        Me.ChkHourTreeHickory.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeHickory.Name = "ChkHourTreeHickory"
-        Me.ChkHourTreeHickory.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeHickory.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeHickory.TabIndex = 34
-        Me.ChkHourTreeHickory.Tag = "32"
-        Me.ChkHourTreeHickory.Text = "Hickory"
-        Me.ChkHourTreeHickory.UseVisualStyleBackColor = False
+        Me.ChkHrTreeHickory.AutoSize = True
+        Me.ChkHrTreeHickory.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeHickory.Location = New System.Drawing.Point(457, 257)
+        Me.ChkHrTreeHickory.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeHickory.Name = "ChkHrTreeHickory"
+        Me.ChkHrTreeHickory.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeHickory.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeHickory.TabIndex = 34
+        Me.ChkHrTreeHickory.Tag = "32"
+        Me.ChkHrTreeHickory.Text = "Hickory"
+        Me.ChkHrTreeHickory.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeJuniper
+        'ChkHrTreeJuniper
         '
-        Me.ChkHourTreeJuniper.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeJuniper.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeJuniper.AutoSize = True
-        Me.ChkHourTreeJuniper.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeJuniper.Location = New System.Drawing.Point(457, 289)
-        Me.ChkHourTreeJuniper.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeJuniper.Name = "ChkHourTreeJuniper"
-        Me.ChkHourTreeJuniper.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeJuniper.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeJuniper.TabIndex = 35
-        Me.ChkHourTreeJuniper.Tag = "33"
-        Me.ChkHourTreeJuniper.Text = "Juniper"
-        Me.ChkHourTreeJuniper.UseVisualStyleBackColor = False
+        Me.ChkHrTreeJuniper.AutoSize = True
+        Me.ChkHrTreeJuniper.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeJuniper.Location = New System.Drawing.Point(457, 289)
+        Me.ChkHrTreeJuniper.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeJuniper.Name = "ChkHrTreeJuniper"
+        Me.ChkHrTreeJuniper.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeJuniper.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeJuniper.TabIndex = 35
+        Me.ChkHrTreeJuniper.Tag = "33"
+        Me.ChkHrTreeJuniper.Text = "Juniper"
+        Me.ChkHrTreeJuniper.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeMulberry
+        'ChkHrTreeMulberry
         '
-        Me.ChkHourTreeMulberry.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeMulberry.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeMulberry.AutoSize = True
-        Me.ChkHourTreeMulberry.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeMulberry.Location = New System.Drawing.Point(457, 385)
-        Me.ChkHourTreeMulberry.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeMulberry.Name = "ChkHourTreeMulberry"
-        Me.ChkHourTreeMulberry.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeMulberry.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeMulberry.TabIndex = 38
-        Me.ChkHourTreeMulberry.Tag = "36"
-        Me.ChkHourTreeMulberry.Text = "Mulberry"
-        Me.ChkHourTreeMulberry.UseVisualStyleBackColor = False
+        Me.ChkHrTreeMulberry.AutoSize = True
+        Me.ChkHrTreeMulberry.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeMulberry.Location = New System.Drawing.Point(457, 385)
+        Me.ChkHrTreeMulberry.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeMulberry.Name = "ChkHrTreeMulberry"
+        Me.ChkHrTreeMulberry.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeMulberry.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeMulberry.TabIndex = 38
+        Me.ChkHrTreeMulberry.Tag = "36"
+        Me.ChkHrTreeMulberry.Text = "Mulberry"
+        Me.ChkHrTreeMulberry.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeMaple
+        'ChkHrTreeMaple
         '
-        Me.ChkHourTreeMaple.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeMaple.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeMaple.AutoSize = True
-        Me.ChkHourTreeMaple.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeMaple.Location = New System.Drawing.Point(457, 353)
-        Me.ChkHourTreeMaple.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeMaple.Name = "ChkHourTreeMaple"
-        Me.ChkHourTreeMaple.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeMaple.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeMaple.TabIndex = 37
-        Me.ChkHourTreeMaple.Tag = "35"
-        Me.ChkHourTreeMaple.Text = "Maple"
-        Me.ChkHourTreeMaple.UseVisualStyleBackColor = False
+        Me.ChkHrTreeMaple.AutoSize = True
+        Me.ChkHrTreeMaple.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeMaple.Location = New System.Drawing.Point(457, 353)
+        Me.ChkHrTreeMaple.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeMaple.Name = "ChkHrTreeMaple"
+        Me.ChkHrTreeMaple.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeMaple.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeMaple.TabIndex = 37
+        Me.ChkHrTreeMaple.Tag = "35"
+        Me.ChkHrTreeMaple.Text = "Maple"
+        Me.ChkHrTreeMaple.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeMahogany
+        'ChkHrTreeMahogany
         '
-        Me.ChkHourTreeMahogany.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeMahogany.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeMahogany.AutoSize = True
-        Me.ChkHourTreeMahogany.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeMahogany.Location = New System.Drawing.Point(457, 321)
-        Me.ChkHourTreeMahogany.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeMahogany.Name = "ChkHourTreeMahogany"
-        Me.ChkHourTreeMahogany.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeMahogany.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeMahogany.TabIndex = 36
-        Me.ChkHourTreeMahogany.Tag = "34"
-        Me.ChkHourTreeMahogany.Text = "Mahogany"
-        Me.ChkHourTreeMahogany.UseVisualStyleBackColor = False
+        Me.ChkHrTreeMahogany.AutoSize = True
+        Me.ChkHrTreeMahogany.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeMahogany.Location = New System.Drawing.Point(457, 321)
+        Me.ChkHrTreeMahogany.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeMahogany.Name = "ChkHrTreeMahogany"
+        Me.ChkHrTreeMahogany.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeMahogany.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeMahogany.TabIndex = 36
+        Me.ChkHrTreeMahogany.Tag = "34"
+        Me.ChkHrTreeMahogany.Text = "Mahogany"
+        Me.ChkHrTreeMahogany.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeOak
+        'ChkHrTreeOak
         '
-        Me.ChkHourTreeOak.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeOak.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeOak.AutoSize = True
-        Me.ChkHourTreeOak.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeOak.Location = New System.Drawing.Point(685, 1)
-        Me.ChkHourTreeOak.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeOak.Name = "ChkHourTreeOak"
-        Me.ChkHourTreeOak.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeOak.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeOak.TabIndex = 39
-        Me.ChkHourTreeOak.Tag = "37"
-        Me.ChkHourTreeOak.Text = "Oak"
-        Me.ChkHourTreeOak.UseVisualStyleBackColor = False
+        Me.ChkHrTreeOak.AutoSize = True
+        Me.ChkHrTreeOak.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeOak.Location = New System.Drawing.Point(685, 1)
+        Me.ChkHrTreeOak.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeOak.Name = "ChkHrTreeOak"
+        Me.ChkHrTreeOak.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeOak.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeOak.TabIndex = 39
+        Me.ChkHrTreeOak.Tag = "37"
+        Me.ChkHrTreeOak.Text = "Oak"
+        Me.ChkHrTreeOak.UseVisualStyleBackColor = False
         '
-        'ChkHourTreePine
+        'ChkHrTreePine
         '
-        Me.ChkHourTreePine.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreePine.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreePine.AutoSize = True
-        Me.ChkHourTreePine.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreePine.Location = New System.Drawing.Point(685, 33)
-        Me.ChkHourTreePine.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreePine.Name = "ChkHourTreePine"
-        Me.ChkHourTreePine.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreePine.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreePine.TabIndex = 40
-        Me.ChkHourTreePine.Tag = "38"
-        Me.ChkHourTreePine.Text = "Pine"
-        Me.ChkHourTreePine.UseVisualStyleBackColor = False
+        Me.ChkHrTreePine.AutoSize = True
+        Me.ChkHrTreePine.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreePine.Location = New System.Drawing.Point(685, 33)
+        Me.ChkHrTreePine.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreePine.Name = "ChkHrTreePine"
+        Me.ChkHrTreePine.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreePine.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreePine.TabIndex = 40
+        Me.ChkHrTreePine.Tag = "38"
+        Me.ChkHrTreePine.Text = "Pine"
+        Me.ChkHrTreePine.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeSpruce
+        'ChkHrTreeSpruce
         '
-        Me.ChkHourTreeSpruce.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeSpruce.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeSpruce.AutoSize = True
-        Me.ChkHourTreeSpruce.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeSpruce.Location = New System.Drawing.Point(685, 65)
-        Me.ChkHourTreeSpruce.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeSpruce.Name = "ChkHourTreeSpruce"
-        Me.ChkHourTreeSpruce.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeSpruce.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeSpruce.TabIndex = 41
-        Me.ChkHourTreeSpruce.Tag = "40"
-        Me.ChkHourTreeSpruce.Text = "Spruce"
-        Me.ChkHourTreeSpruce.UseVisualStyleBackColor = False
+        Me.ChkHrTreeSpruce.AutoSize = True
+        Me.ChkHrTreeSpruce.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeSpruce.Location = New System.Drawing.Point(685, 65)
+        Me.ChkHrTreeSpruce.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeSpruce.Name = "ChkHrTreeSpruce"
+        Me.ChkHrTreeSpruce.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeSpruce.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeSpruce.TabIndex = 41
+        Me.ChkHrTreeSpruce.Tag = "40"
+        Me.ChkHrTreeSpruce.Text = "Spruce"
+        Me.ChkHrTreeSpruce.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeSycamore
+        'ChkHrTreeSycamore
         '
-        Me.ChkHourTreeSycamore.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeSycamore.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeSycamore.AutoSize = True
-        Me.ChkHourTreeSycamore.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeSycamore.Location = New System.Drawing.Point(685, 97)
-        Me.ChkHourTreeSycamore.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeSycamore.Name = "ChkHourTreeSycamore"
-        Me.ChkHourTreeSycamore.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeSycamore.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeSycamore.TabIndex = 42
-        Me.ChkHourTreeSycamore.Tag = "41"
-        Me.ChkHourTreeSycamore.Text = "Sycamore"
-        Me.ChkHourTreeSycamore.UseVisualStyleBackColor = False
+        Me.ChkHrTreeSycamore.AutoSize = True
+        Me.ChkHrTreeSycamore.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeSycamore.Location = New System.Drawing.Point(685, 97)
+        Me.ChkHrTreeSycamore.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeSycamore.Name = "ChkHrTreeSycamore"
+        Me.ChkHrTreeSycamore.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeSycamore.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeSycamore.TabIndex = 42
+        Me.ChkHrTreeSycamore.Tag = "41"
+        Me.ChkHrTreeSycamore.Text = "Sycamore"
+        Me.ChkHrTreeSycamore.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeWillow
+        'ChkHrTreeWillow
         '
-        Me.ChkHourTreeWillow.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeWillow.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeWillow.AutoSize = True
-        Me.ChkHourTreeWillow.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeWillow.Location = New System.Drawing.Point(685, 161)
-        Me.ChkHourTreeWillow.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeWillow.Name = "ChkHourTreeWillow"
-        Me.ChkHourTreeWillow.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeWillow.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeWillow.TabIndex = 44
-        Me.ChkHourTreeWillow.Tag = "43"
-        Me.ChkHourTreeWillow.Text = "Willow"
-        Me.ChkHourTreeWillow.UseVisualStyleBackColor = False
+        Me.ChkHrTreeWillow.AutoSize = True
+        Me.ChkHrTreeWillow.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeWillow.Location = New System.Drawing.Point(685, 161)
+        Me.ChkHrTreeWillow.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeWillow.Name = "ChkHrTreeWillow"
+        Me.ChkHrTreeWillow.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeWillow.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeWillow.TabIndex = 44
+        Me.ChkHrTreeWillow.Tag = "43"
+        Me.ChkHrTreeWillow.Text = "Willow"
+        Me.ChkHrTreeWillow.UseVisualStyleBackColor = False
         '
-        'ChkHourTreeWalnut
+        'ChkHrTreeWalnut
         '
-        Me.ChkHourTreeWalnut.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrTreeWalnut.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourTreeWalnut.AutoSize = True
-        Me.ChkHourTreeWalnut.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourTreeWalnut.Location = New System.Drawing.Point(685, 129)
-        Me.ChkHourTreeWalnut.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourTreeWalnut.Name = "ChkHourTreeWalnut"
-        Me.ChkHourTreeWalnut.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourTreeWalnut.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourTreeWalnut.TabIndex = 43
-        Me.ChkHourTreeWalnut.Tag = "42"
-        Me.ChkHourTreeWalnut.Text = "Walnut"
-        Me.ChkHourTreeWalnut.UseVisualStyleBackColor = False
+        Me.ChkHrTreeWalnut.AutoSize = True
+        Me.ChkHrTreeWalnut.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrTreeWalnut.Location = New System.Drawing.Point(685, 129)
+        Me.ChkHrTreeWalnut.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrTreeWalnut.Name = "ChkHrTreeWalnut"
+        Me.ChkHrTreeWalnut.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrTreeWalnut.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrTreeWalnut.TabIndex = 43
+        Me.ChkHrTreeWalnut.Tag = "42"
+        Me.ChkHrTreeWalnut.Text = "Walnut"
+        Me.ChkHrTreeWalnut.UseVisualStyleBackColor = False
         '
-        'ChkHourRagweed
+        'ChkHrRagweed
         '
-        Me.ChkHourRagweed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrRagweed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourRagweed.AutoSize = True
-        Me.ChkHourRagweed.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourRagweed.Location = New System.Drawing.Point(685, 193)
-        Me.ChkHourRagweed.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourRagweed.Name = "ChkHourRagweed"
-        Me.ChkHourRagweed.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourRagweed.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourRagweed.TabIndex = 45
-        Me.ChkHourRagweed.Tag = "44"
-        Me.ChkHourRagweed.Text = "Ragweed"
-        Me.ChkHourRagweed.UseVisualStyleBackColor = False
+        Me.ChkHrRagweed.AutoSize = True
+        Me.ChkHrRagweed.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrRagweed.Location = New System.Drawing.Point(685, 193)
+        Me.ChkHrRagweed.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrRagweed.Name = "ChkHrRagweed"
+        Me.ChkHrRagweed.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrRagweed.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrRagweed.TabIndex = 45
+        Me.ChkHrRagweed.Tag = "44"
+        Me.ChkHrRagweed.Text = "Ragweed"
+        Me.ChkHrRagweed.UseVisualStyleBackColor = False
         '
-        'ChkHourGrass
+        'ChkHrGrass
         '
-        Me.ChkHourGrass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrGrass.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourGrass.AutoSize = True
-        Me.ChkHourGrass.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkHourGrass.Location = New System.Drawing.Point(685, 225)
-        Me.ChkHourGrass.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourGrass.Name = "ChkHourGrass"
-        Me.ChkHourGrass.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourGrass.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourGrass.TabIndex = 46
-        Me.ChkHourGrass.Tag = "45"
-        Me.ChkHourGrass.Text = "Grass"
-        Me.ChkHourGrass.UseVisualStyleBackColor = False
+        Me.ChkHrGrass.AutoSize = True
+        Me.ChkHrGrass.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkHrGrass.Location = New System.Drawing.Point(685, 225)
+        Me.ChkHrGrass.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrGrass.Name = "ChkHrGrass"
+        Me.ChkHrGrass.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrGrass.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrGrass.TabIndex = 46
+        Me.ChkHrGrass.Tag = "45"
+        Me.ChkHrGrass.Text = "Grass"
+        Me.ChkHrGrass.UseVisualStyleBackColor = False
         '
-        'ChkHourMoonPhase
+        'ChkHrMoonPhase
         '
-        Me.ChkHourMoonPhase.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrMoonPhase.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourMoonPhase.AutoSize = True
-        Me.ChkHourMoonPhase.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourMoonPhase.Location = New System.Drawing.Point(229, 97)
-        Me.ChkHourMoonPhase.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourMoonPhase.Name = "ChkHourMoonPhase"
-        Me.ChkHourMoonPhase.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourMoonPhase.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourMoonPhase.TabIndex = 16
-        Me.ChkHourMoonPhase.Tag = "18"
-        Me.ChkHourMoonPhase.Text = "Moon Phase"
-        Me.ChkHourMoonPhase.UseVisualStyleBackColor = False
+        Me.ChkHrMoonPhase.AutoSize = True
+        Me.ChkHrMoonPhase.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrMoonPhase.Location = New System.Drawing.Point(229, 97)
+        Me.ChkHrMoonPhase.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrMoonPhase.Name = "ChkHrMoonPhase"
+        Me.ChkHrMoonPhase.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrMoonPhase.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrMoonPhase.TabIndex = 16
+        Me.ChkHrMoonPhase.Tag = "18"
+        Me.ChkHrMoonPhase.Text = "Moon Phase"
+        Me.ChkHrMoonPhase.UseVisualStyleBackColor = False
         '
-        'ChkHourCloudBase
+        'ChkHrCloudBase
         '
-        Me.ChkHourCloudBase.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrCloudBase.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourCloudBase.AutoSize = True
-        Me.ChkHourCloudBase.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourCloudBase.Location = New System.Drawing.Point(1, 385)
-        Me.ChkHourCloudBase.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourCloudBase.Name = "ChkHourCloudBase"
-        Me.ChkHourCloudBase.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourCloudBase.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourCloudBase.TabIndex = 12
-        Me.ChkHourCloudBase.Tag = "15"
-        Me.ChkHourCloudBase.Text = "Cloud Base"
-        Me.ChkHourCloudBase.UseVisualStyleBackColor = False
+        Me.ChkHrCloudBase.AutoSize = True
+        Me.ChkHrCloudBase.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrCloudBase.Location = New System.Drawing.Point(1, 385)
+        Me.ChkHrCloudBase.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrCloudBase.Name = "ChkHrCloudBase"
+        Me.ChkHrCloudBase.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrCloudBase.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrCloudBase.TabIndex = 12
+        Me.ChkHrCloudBase.Tag = "15"
+        Me.ChkHrCloudBase.Text = "Cloud Base"
+        Me.ChkHrCloudBase.UseVisualStyleBackColor = False
         '
-        'ChkHourSunset
+        'ChkHrSunset
         '
-        Me.ChkHourSunset.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrSunset.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourSunset.AutoSize = True
-        Me.ChkHourSunset.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourSunset.Location = New System.Drawing.Point(229, 65)
-        Me.ChkHourSunset.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourSunset.Name = "ChkHourSunset"
-        Me.ChkHourSunset.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourSunset.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourSunset.TabIndex = 15
-        Me.ChkHourSunset.Tag = "12"
-        Me.ChkHourSunset.Text = "Sunset"
-        Me.ChkHourSunset.UseVisualStyleBackColor = False
+        Me.ChkHrSunset.AutoSize = True
+        Me.ChkHrSunset.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrSunset.Location = New System.Drawing.Point(229, 65)
+        Me.ChkHrSunset.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrSunset.Name = "ChkHrSunset"
+        Me.ChkHrSunset.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrSunset.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrSunset.TabIndex = 15
+        Me.ChkHrSunset.Tag = "12"
+        Me.ChkHrSunset.Text = "Sunset"
+        Me.ChkHrSunset.UseVisualStyleBackColor = False
         '
-        'ChkHourSunrise
+        'ChkHrSunrise
         '
-        Me.ChkHourSunrise.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrSunrise.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourSunrise.AutoSize = True
-        Me.ChkHourSunrise.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourSunrise.Location = New System.Drawing.Point(229, 33)
-        Me.ChkHourSunrise.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourSunrise.Name = "ChkHourSunrise"
-        Me.ChkHourSunrise.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourSunrise.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourSunrise.TabIndex = 14
-        Me.ChkHourSunrise.Tag = "11"
-        Me.ChkHourSunrise.Text = "Sunrise"
-        Me.ChkHourSunrise.UseVisualStyleBackColor = False
+        Me.ChkHrSunrise.AutoSize = True
+        Me.ChkHrSunrise.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrSunrise.Location = New System.Drawing.Point(229, 33)
+        Me.ChkHrSunrise.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrSunrise.Name = "ChkHrSunrise"
+        Me.ChkHrSunrise.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrSunrise.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrSunrise.TabIndex = 14
+        Me.ChkHrSunrise.Tag = "11"
+        Me.ChkHrSunrise.Text = "Sunrise"
+        Me.ChkHrSunrise.UseVisualStyleBackColor = False
         '
-        'ChkHourPrecipProb
+        'ChkHrPrecipProb
         '
-        Me.ChkHourPrecipProb.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrPrecipProb.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourPrecipProb.AutoSize = True
-        Me.ChkHourPrecipProb.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourPrecipProb.Location = New System.Drawing.Point(1, 289)
-        Me.ChkHourPrecipProb.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourPrecipProb.Name = "ChkHourPrecipProb"
-        Me.ChkHourPrecipProb.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourPrecipProb.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourPrecipProb.TabIndex = 9
-        Me.ChkHourPrecipProb.Tag = "10"
-        Me.ChkHourPrecipProb.Text = "Precipitation Probability"
-        Me.ChkHourPrecipProb.UseVisualStyleBackColor = False
+        Me.ChkHrPrecipProb.AutoSize = True
+        Me.ChkHrPrecipProb.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrPrecipProb.Location = New System.Drawing.Point(1, 289)
+        Me.ChkHrPrecipProb.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrPrecipProb.Name = "ChkHrPrecipProb"
+        Me.ChkHrPrecipProb.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrPrecipProb.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrPrecipProb.TabIndex = 9
+        Me.ChkHrPrecipProb.Tag = "10"
+        Me.ChkHrPrecipProb.Text = "Precipitation Probability"
+        Me.ChkHrPrecipProb.UseVisualStyleBackColor = False
         '
-        'ChkHourPrecipType
+        'ChkHrPrecipType
         '
-        Me.ChkHourPrecipType.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrPrecipType.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourPrecipType.AutoSize = True
-        Me.ChkHourPrecipType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourPrecipType.Location = New System.Drawing.Point(1, 257)
-        Me.ChkHourPrecipType.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourPrecipType.Name = "ChkHourPrecipType"
-        Me.ChkHourPrecipType.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourPrecipType.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourPrecipType.TabIndex = 8
-        Me.ChkHourPrecipType.Tag = "9"
-        Me.ChkHourPrecipType.Text = "Precipitation Type"
-        Me.ChkHourPrecipType.UseVisualStyleBackColor = False
+        Me.ChkHrPrecipType.AutoSize = True
+        Me.ChkHrPrecipType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrPrecipType.Location = New System.Drawing.Point(1, 257)
+        Me.ChkHrPrecipType.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrPrecipType.Name = "ChkHrPrecipType"
+        Me.ChkHrPrecipType.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrPrecipType.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrPrecipType.TabIndex = 8
+        Me.ChkHrPrecipType.Tag = "9"
+        Me.ChkHrPrecipType.Text = "Precipitation Type"
+        Me.ChkHrPrecipType.UseVisualStyleBackColor = False
         '
-        'ChkHourPrecip
+        'ChkHrPrecip
         '
-        Me.ChkHourPrecip.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrPrecip.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourPrecip.AutoSize = True
-        Me.ChkHourPrecip.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourPrecip.Location = New System.Drawing.Point(1, 225)
-        Me.ChkHourPrecip.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourPrecip.Name = "ChkHourPrecip"
-        Me.ChkHourPrecip.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourPrecip.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourPrecip.TabIndex = 7
-        Me.ChkHourPrecip.Tag = "8"
-        Me.ChkHourPrecip.Text = "Precipitation"
-        Me.ChkHourPrecip.UseVisualStyleBackColor = False
+        Me.ChkHrPrecip.AutoSize = True
+        Me.ChkHrPrecip.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrPrecip.Location = New System.Drawing.Point(1, 225)
+        Me.ChkHrPrecip.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrPrecip.Name = "ChkHrPrecip"
+        Me.ChkHrPrecip.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrPrecip.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrPrecip.TabIndex = 7
+        Me.ChkHrPrecip.Tag = "8"
+        Me.ChkHrPrecip.Text = "Precipitation"
+        Me.ChkHrPrecip.UseVisualStyleBackColor = False
         '
-        'ChkHourWindSpeed
+        'ChkHrWindSpeed
         '
-        Me.ChkHourWindSpeed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrWindSpeed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourWindSpeed.AutoSize = True
-        Me.ChkHourWindSpeed.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourWindSpeed.Location = New System.Drawing.Point(1, 193)
-        Me.ChkHourWindSpeed.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourWindSpeed.Name = "ChkHourWindSpeed"
-        Me.ChkHourWindSpeed.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourWindSpeed.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourWindSpeed.TabIndex = 6
-        Me.ChkHourWindSpeed.Tag = "4"
-        Me.ChkHourWindSpeed.Text = "Wind Speed"
-        Me.ChkHourWindSpeed.UseVisualStyleBackColor = False
+        Me.ChkHrWindSpeed.AutoSize = True
+        Me.ChkHrWindSpeed.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrWindSpeed.Location = New System.Drawing.Point(1, 193)
+        Me.ChkHrWindSpeed.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrWindSpeed.Name = "ChkHrWindSpeed"
+        Me.ChkHrWindSpeed.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrWindSpeed.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrWindSpeed.TabIndex = 6
+        Me.ChkHrWindSpeed.Tag = "4"
+        Me.ChkHrWindSpeed.Text = "Wind Speed"
+        Me.ChkHrWindSpeed.UseVisualStyleBackColor = False
         '
-        'ChkHourWindGust
+        'ChkHrWindGust
         '
-        Me.ChkHourWindGust.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrWindGust.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourWindGust.AutoSize = True
-        Me.ChkHourWindGust.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourWindGust.Location = New System.Drawing.Point(1, 161)
-        Me.ChkHourWindGust.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourWindGust.Name = "ChkHourWindGust"
-        Me.ChkHourWindGust.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourWindGust.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourWindGust.TabIndex = 5
-        Me.ChkHourWindGust.Tag = "6"
-        Me.ChkHourWindGust.Text = "Wind Gust"
-        Me.ChkHourWindGust.UseVisualStyleBackColor = False
+        Me.ChkHrWindGust.AutoSize = True
+        Me.ChkHrWindGust.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrWindGust.Location = New System.Drawing.Point(1, 161)
+        Me.ChkHrWindGust.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrWindGust.Name = "ChkHrWindGust"
+        Me.ChkHrWindGust.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrWindGust.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrWindGust.TabIndex = 5
+        Me.ChkHrWindGust.Tag = "6"
+        Me.ChkHrWindGust.Text = "Wind Gust"
+        Me.ChkHrWindGust.UseVisualStyleBackColor = False
         '
-        'ChkHourWindDir
+        'ChkHrWindDir
         '
-        Me.ChkHourWindDir.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrWindDir.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourWindDir.AutoSize = True
-        Me.ChkHourWindDir.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourWindDir.Location = New System.Drawing.Point(1, 129)
-        Me.ChkHourWindDir.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourWindDir.Name = "ChkHourWindDir"
-        Me.ChkHourWindDir.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourWindDir.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourWindDir.TabIndex = 4
-        Me.ChkHourWindDir.Tag = "5"
-        Me.ChkHourWindDir.Text = "Wind Direction"
-        Me.ChkHourWindDir.UseVisualStyleBackColor = False
+        Me.ChkHrWindDir.AutoSize = True
+        Me.ChkHrWindDir.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrWindDir.Location = New System.Drawing.Point(1, 129)
+        Me.ChkHrWindDir.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrWindDir.Name = "ChkHrWindDir"
+        Me.ChkHrWindDir.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrWindDir.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrWindDir.TabIndex = 4
+        Me.ChkHrWindDir.Tag = "5"
+        Me.ChkHrWindDir.Text = "Wind Direction"
+        Me.ChkHrWindDir.UseVisualStyleBackColor = False
         '
-        'ChkHourDewpoint
+        'ChkHrDewpoint
         '
-        Me.ChkHourDewpoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrDewpoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourDewpoint.AutoSize = True
-        Me.ChkHourDewpoint.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourDewpoint.Location = New System.Drawing.Point(1, 97)
-        Me.ChkHourDewpoint.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourDewpoint.Name = "ChkHourDewpoint"
-        Me.ChkHourDewpoint.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourDewpoint.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourDewpoint.TabIndex = 3
-        Me.ChkHourDewpoint.Tag = "2"
-        Me.ChkHourDewpoint.Text = "Dewpoint"
-        Me.ChkHourDewpoint.UseVisualStyleBackColor = False
+        Me.ChkHrDewpoint.AutoSize = True
+        Me.ChkHrDewpoint.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrDewpoint.Location = New System.Drawing.Point(1, 97)
+        Me.ChkHrDewpoint.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrDewpoint.Name = "ChkHrDewpoint"
+        Me.ChkHrDewpoint.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrDewpoint.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrDewpoint.TabIndex = 3
+        Me.ChkHrDewpoint.Tag = "2"
+        Me.ChkHrDewpoint.Text = "Dewpoint"
+        Me.ChkHrDewpoint.UseVisualStyleBackColor = False
         '
-        'ChkHourBP
+        'ChkHrBP
         '
-        Me.ChkHourBP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrBP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourBP.AutoSize = True
-        Me.ChkHourBP.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourBP.Location = New System.Drawing.Point(229, 129)
-        Me.ChkHourBP.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourBP.Name = "ChkHourBP"
-        Me.ChkHourBP.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourBP.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourBP.TabIndex = 17
-        Me.ChkHourBP.Tag = "7"
-        Me.ChkHourBP.Text = "Barometric Pressure"
-        Me.ChkHourBP.UseVisualStyleBackColor = False
+        Me.ChkHrBP.AutoSize = True
+        Me.ChkHrBP.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrBP.Location = New System.Drawing.Point(229, 129)
+        Me.ChkHrBP.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrBP.Name = "ChkHrBP"
+        Me.ChkHrBP.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrBP.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrBP.TabIndex = 17
+        Me.ChkHrBP.Tag = "7"
+        Me.ChkHrBP.Text = "Barometric Pressure"
+        Me.ChkHrBP.UseVisualStyleBackColor = False
         '
-        'ChkHourVis
+        'ChkHrVis
         '
-        Me.ChkHourVis.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrVis.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourVis.AutoSize = True
-        Me.ChkHourVis.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourVis.Location = New System.Drawing.Point(229, 161)
-        Me.ChkHourVis.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourVis.Name = "ChkHourVis"
-        Me.ChkHourVis.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourVis.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourVis.TabIndex = 18
-        Me.ChkHourVis.Tag = "13"
-        Me.ChkHourVis.Text = "Visibility"
-        Me.ChkHourVis.UseVisualStyleBackColor = False
+        Me.ChkHrVis.AutoSize = True
+        Me.ChkHrVis.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrVis.Location = New System.Drawing.Point(229, 161)
+        Me.ChkHrVis.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrVis.Name = "ChkHrVis"
+        Me.ChkHrVis.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrVis.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrVis.TabIndex = 18
+        Me.ChkHrVis.Tag = "13"
+        Me.ChkHrVis.Text = "Visibility"
+        Me.ChkHrVis.UseVisualStyleBackColor = False
         '
-        'ChkHourSSR
+        'ChkHrSSR
         '
-        Me.ChkHourSSR.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ChkHrSSR.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ChkHourSSR.AutoSize = True
-        Me.ChkHourSSR.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHourSSR.Location = New System.Drawing.Point(229, 193)
-        Me.ChkHourSSR.Margin = New System.Windows.Forms.Padding(1)
-        Me.ChkHourSSR.Name = "ChkHourSSR"
-        Me.ChkHourSSR.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHourSSR.Size = New System.Drawing.Size(226, 30)
-        Me.ChkHourSSR.TabIndex = 19
-        Me.ChkHourSSR.Tag = "17"
-        Me.ChkHourSSR.Text = "Surface Shortwave Radiation"
-        Me.ChkHourSSR.UseVisualStyleBackColor = False
+        Me.ChkHrSSR.AutoSize = True
+        Me.ChkHrSSR.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkHrSSR.Location = New System.Drawing.Point(229, 193)
+        Me.ChkHrSSR.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkHrSSR.Name = "ChkHrSSR"
+        Me.ChkHrSSR.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkHrSSR.Size = New System.Drawing.Size(226, 30)
+        Me.ChkHrSSR.TabIndex = 19
+        Me.ChkHrSSR.Tag = "17"
+        Me.ChkHrSSR.Text = "Surface Shortwave Radiation"
+        Me.ChkHrSSR.UseVisualStyleBackColor = False
         '
         'ChkAllHourly
         '
@@ -3844,32 +3844,32 @@ Partial Class FrmMain
         Me.FlpRtOpt.Controls.Add(Me.ChkRtCore18)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtCore19)
         Me.FlpRtOpt.Controls.Add(Me.ChkRtCore20)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox22)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox23)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox24)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox25)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox26)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox27)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox28)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox29)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox30)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox31)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox32)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox33)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox34)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox35)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox36)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox37)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox38)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox39)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox40)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox41)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox42)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox43)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox44)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox45)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox46)
-        Me.FlpRtOpt.Controls.Add(Me.CheckBox47)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol21)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol22)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol23)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol24)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol25)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol26)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol27)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol28)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol29)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol30)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol31)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol32)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol33)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol34)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol35)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol36)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol37)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol38)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol39)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol40)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol41)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol42)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol43)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol44)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol45)
+        Me.FlpRtOpt.Controls.Add(Me.ChkRtPol46)
         Me.FlpRtOpt.Controls.Add(Me.CheckBox48)
         Me.FlpRtOpt.Controls.Add(Me.CheckBox49)
         Me.FlpRtOpt.Controls.Add(Me.CheckBox50)
@@ -4256,447 +4256,447 @@ Partial Class FrmMain
         Me.ChkRtCore20.Text = "Weather Code"
         Me.ChkRtCore20.UseVisualStyleBackColor = False
         '
-        'CheckBox22
+        'ChkRtPol21
         '
-        Me.CheckBox22.AutoSize = True
-        Me.CheckBox22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox22.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox22.Location = New System.Drawing.Point(243, 110)
-        Me.CheckBox22.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox22.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox22.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox22.Name = "CheckBox22"
-        Me.CheckBox22.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox22.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox22.TabIndex = 21
-        Me.CheckBox22.Tag = "21"
-        Me.CheckBox22.Text = "Tree Pollen"
-        Me.CheckBox22.UseVisualStyleBackColor = False
+        Me.ChkRtPol21.AutoSize = True
+        Me.ChkRtPol21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol21.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol21.Location = New System.Drawing.Point(243, 110)
+        Me.ChkRtPol21.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol21.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol21.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol21.Name = "ChkRtPol21"
+        Me.ChkRtPol21.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol21.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol21.TabIndex = 21
+        Me.ChkRtPol21.Tag = "21"
+        Me.ChkRtPol21.Text = "Tree Pollen"
+        Me.ChkRtPol21.UseVisualStyleBackColor = False
         '
-        'CheckBox23
+        'ChkRtPol22
         '
-        Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox23.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox23.Location = New System.Drawing.Point(480, 110)
-        Me.CheckBox23.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox23.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox23.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox23.Name = "CheckBox23"
-        Me.CheckBox23.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox23.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox23.TabIndex = 22
-        Me.CheckBox23.Tag = "22"
-        Me.CheckBox23.Text = "Weed Pollen"
-        Me.CheckBox23.UseVisualStyleBackColor = False
+        Me.ChkRtPol22.AutoSize = True
+        Me.ChkRtPol22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol22.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol22.Location = New System.Drawing.Point(480, 110)
+        Me.ChkRtPol22.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol22.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol22.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol22.Name = "ChkRtPol22"
+        Me.ChkRtPol22.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol22.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol22.TabIndex = 22
+        Me.ChkRtPol22.Tag = "22"
+        Me.ChkRtPol22.Text = "Weed Pollen"
+        Me.ChkRtPol22.UseVisualStyleBackColor = False
         '
-        'CheckBox24
+        'ChkRtPol23
         '
-        Me.CheckBox24.AutoSize = True
-        Me.CheckBox24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox24.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox24.Location = New System.Drawing.Point(717, 110)
-        Me.CheckBox24.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox24.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox24.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox24.Name = "CheckBox24"
-        Me.CheckBox24.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox24.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox24.TabIndex = 23
-        Me.CheckBox24.Tag = "23"
-        Me.CheckBox24.Text = "Grass Pollen"
-        Me.CheckBox24.UseVisualStyleBackColor = False
+        Me.ChkRtPol23.AutoSize = True
+        Me.ChkRtPol23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol23.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol23.Location = New System.Drawing.Point(717, 110)
+        Me.ChkRtPol23.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol23.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol23.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol23.Name = "ChkRtPol23"
+        Me.ChkRtPol23.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol23.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol23.TabIndex = 23
+        Me.ChkRtPol23.Tag = "23"
+        Me.ChkRtPol23.Text = "Grass Pollen"
+        Me.ChkRtPol23.UseVisualStyleBackColor = False
         '
-        'CheckBox25
+        'ChkRtPol24
         '
-        Me.CheckBox25.AutoSize = True
-        Me.CheckBox25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox25.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox25.Location = New System.Drawing.Point(954, 110)
-        Me.CheckBox25.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox25.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox25.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox25.Name = "CheckBox25"
-        Me.CheckBox25.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox25.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox25.TabIndex = 24
-        Me.CheckBox25.Tag = "24"
-        Me.CheckBox25.Text = "Ragweed"
-        Me.CheckBox25.UseVisualStyleBackColor = False
+        Me.ChkRtPol24.AutoSize = True
+        Me.ChkRtPol24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol24.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol24.Location = New System.Drawing.Point(954, 110)
+        Me.ChkRtPol24.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol24.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol24.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol24.Name = "ChkRtPol24"
+        Me.ChkRtPol24.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol24.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol24.TabIndex = 24
+        Me.ChkRtPol24.Tag = "24"
+        Me.ChkRtPol24.Text = "Ragweed"
+        Me.ChkRtPol24.UseVisualStyleBackColor = False
         '
-        'CheckBox26
+        'ChkRtPol25
         '
-        Me.CheckBox26.AutoSize = True
-        Me.CheckBox26.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox26.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox26.Location = New System.Drawing.Point(6, 136)
-        Me.CheckBox26.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox26.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox26.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox26.Name = "CheckBox26"
-        Me.CheckBox26.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox26.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox26.TabIndex = 25
-        Me.CheckBox26.Tag = "25"
-        Me.CheckBox26.Text = "Grass"
-        Me.CheckBox26.UseVisualStyleBackColor = False
+        Me.ChkRtPol25.AutoSize = True
+        Me.ChkRtPol25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol25.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol25.Location = New System.Drawing.Point(6, 136)
+        Me.ChkRtPol25.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol25.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol25.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol25.Name = "ChkRtPol25"
+        Me.ChkRtPol25.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol25.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol25.TabIndex = 25
+        Me.ChkRtPol25.Tag = "25"
+        Me.ChkRtPol25.Text = "Grass"
+        Me.ChkRtPol25.UseVisualStyleBackColor = False
         '
-        'CheckBox27
+        'ChkRtPol26
         '
-        Me.CheckBox27.AutoSize = True
-        Me.CheckBox27.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox27.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox27.Location = New System.Drawing.Point(243, 136)
-        Me.CheckBox27.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox27.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox27.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox27.Name = "CheckBox27"
-        Me.CheckBox27.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox27.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox27.TabIndex = 26
-        Me.CheckBox27.Tag = "26"
-        Me.CheckBox27.Text = "Acacia"
-        Me.CheckBox27.UseVisualStyleBackColor = False
+        Me.ChkRtPol26.AutoSize = True
+        Me.ChkRtPol26.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol26.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol26.Location = New System.Drawing.Point(243, 136)
+        Me.ChkRtPol26.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol26.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol26.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol26.Name = "ChkRtPol26"
+        Me.ChkRtPol26.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol26.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol26.TabIndex = 26
+        Me.ChkRtPol26.Tag = "26"
+        Me.ChkRtPol26.Text = "Acacia"
+        Me.ChkRtPol26.UseVisualStyleBackColor = False
         '
-        'CheckBox28
+        'ChkRtPol27
         '
-        Me.CheckBox28.AutoSize = True
-        Me.CheckBox28.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox28.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox28.Location = New System.Drawing.Point(480, 136)
-        Me.CheckBox28.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox28.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox28.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox28.Name = "CheckBox28"
-        Me.CheckBox28.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox28.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox28.TabIndex = 27
-        Me.CheckBox28.Tag = "27"
-        Me.CheckBox28.Text = "Ash"
-        Me.CheckBox28.UseVisualStyleBackColor = False
+        Me.ChkRtPol27.AutoSize = True
+        Me.ChkRtPol27.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol27.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol27.Location = New System.Drawing.Point(480, 136)
+        Me.ChkRtPol27.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol27.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol27.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol27.Name = "ChkRtPol27"
+        Me.ChkRtPol27.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol27.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol27.TabIndex = 27
+        Me.ChkRtPol27.Tag = "27"
+        Me.ChkRtPol27.Text = "Ash"
+        Me.ChkRtPol27.UseVisualStyleBackColor = False
         '
-        'CheckBox29
+        'ChkRtPol28
         '
-        Me.CheckBox29.AutoSize = True
-        Me.CheckBox29.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox29.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox29.Location = New System.Drawing.Point(717, 136)
-        Me.CheckBox29.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox29.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox29.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox29.Name = "CheckBox29"
-        Me.CheckBox29.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox29.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox29.TabIndex = 28
-        Me.CheckBox29.Tag = "28"
-        Me.CheckBox29.Text = "Beech"
-        Me.CheckBox29.UseVisualStyleBackColor = False
+        Me.ChkRtPol28.AutoSize = True
+        Me.ChkRtPol28.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol28.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol28.Location = New System.Drawing.Point(717, 136)
+        Me.ChkRtPol28.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol28.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol28.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol28.Name = "ChkRtPol28"
+        Me.ChkRtPol28.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol28.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol28.TabIndex = 28
+        Me.ChkRtPol28.Tag = "28"
+        Me.ChkRtPol28.Text = "Beech"
+        Me.ChkRtPol28.UseVisualStyleBackColor = False
         '
-        'CheckBox30
+        'ChkRtPol29
         '
-        Me.CheckBox30.AutoSize = True
-        Me.CheckBox30.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox30.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox30.Location = New System.Drawing.Point(954, 136)
-        Me.CheckBox30.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox30.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox30.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox30.Name = "CheckBox30"
-        Me.CheckBox30.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox30.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox30.TabIndex = 29
-        Me.CheckBox30.Tag = "29"
-        Me.CheckBox30.Text = "Birch"
-        Me.CheckBox30.UseVisualStyleBackColor = False
+        Me.ChkRtPol29.AutoSize = True
+        Me.ChkRtPol29.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol29.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol29.Location = New System.Drawing.Point(954, 136)
+        Me.ChkRtPol29.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol29.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol29.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol29.Name = "ChkRtPol29"
+        Me.ChkRtPol29.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol29.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol29.TabIndex = 29
+        Me.ChkRtPol29.Tag = "29"
+        Me.ChkRtPol29.Text = "Birch"
+        Me.ChkRtPol29.UseVisualStyleBackColor = False
         '
-        'CheckBox31
+        'ChkRtPol30
         '
-        Me.CheckBox31.AutoSize = True
-        Me.CheckBox31.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox31.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox31.Location = New System.Drawing.Point(6, 162)
-        Me.CheckBox31.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox31.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox31.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox31.Name = "CheckBox31"
-        Me.CheckBox31.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox31.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox31.TabIndex = 30
-        Me.CheckBox31.Tag = "30"
-        Me.CheckBox31.Text = "Cedar"
-        Me.CheckBox31.UseVisualStyleBackColor = False
+        Me.ChkRtPol30.AutoSize = True
+        Me.ChkRtPol30.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol30.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol30.Location = New System.Drawing.Point(6, 162)
+        Me.ChkRtPol30.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol30.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol30.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol30.Name = "ChkRtPol30"
+        Me.ChkRtPol30.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol30.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol30.TabIndex = 30
+        Me.ChkRtPol30.Tag = "30"
+        Me.ChkRtPol30.Text = "Cedar"
+        Me.ChkRtPol30.UseVisualStyleBackColor = False
         '
-        'CheckBox32
+        'ChkRtPol31
         '
-        Me.CheckBox32.AutoSize = True
-        Me.CheckBox32.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox32.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox32.Location = New System.Drawing.Point(243, 162)
-        Me.CheckBox32.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox32.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox32.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox32.Name = "CheckBox32"
-        Me.CheckBox32.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox32.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox32.TabIndex = 31
-        Me.CheckBox32.Tag = "31"
-        Me.CheckBox32.Text = "Cypress"
-        Me.CheckBox32.UseVisualStyleBackColor = False
+        Me.ChkRtPol31.AutoSize = True
+        Me.ChkRtPol31.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol31.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol31.Location = New System.Drawing.Point(243, 162)
+        Me.ChkRtPol31.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol31.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol31.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol31.Name = "ChkRtPol31"
+        Me.ChkRtPol31.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol31.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol31.TabIndex = 31
+        Me.ChkRtPol31.Tag = "31"
+        Me.ChkRtPol31.Text = "Cypress"
+        Me.ChkRtPol31.UseVisualStyleBackColor = False
         '
-        'CheckBox33
+        'ChkRtPol32
         '
-        Me.CheckBox33.AutoSize = True
-        Me.CheckBox33.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox33.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox33.Location = New System.Drawing.Point(480, 162)
-        Me.CheckBox33.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox33.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox33.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox33.Name = "CheckBox33"
-        Me.CheckBox33.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox33.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox33.TabIndex = 32
-        Me.CheckBox33.Tag = "32"
-        Me.CheckBox33.Text = "Elder"
-        Me.CheckBox33.UseVisualStyleBackColor = False
+        Me.ChkRtPol32.AutoSize = True
+        Me.ChkRtPol32.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol32.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol32.Location = New System.Drawing.Point(480, 162)
+        Me.ChkRtPol32.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol32.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol32.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol32.Name = "ChkRtPol32"
+        Me.ChkRtPol32.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol32.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol32.TabIndex = 32
+        Me.ChkRtPol32.Tag = "32"
+        Me.ChkRtPol32.Text = "Elder"
+        Me.ChkRtPol32.UseVisualStyleBackColor = False
         '
-        'CheckBox34
+        'ChkRtPol33
         '
-        Me.CheckBox34.AutoSize = True
-        Me.CheckBox34.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox34.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox34.Location = New System.Drawing.Point(717, 162)
-        Me.CheckBox34.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox34.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox34.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox34.Name = "CheckBox34"
-        Me.CheckBox34.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox34.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox34.TabIndex = 33
-        Me.CheckBox34.Tag = "33"
-        Me.CheckBox34.Text = "Elm"
-        Me.CheckBox34.UseVisualStyleBackColor = False
+        Me.ChkRtPol33.AutoSize = True
+        Me.ChkRtPol33.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol33.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol33.Location = New System.Drawing.Point(717, 162)
+        Me.ChkRtPol33.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol33.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol33.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol33.Name = "ChkRtPol33"
+        Me.ChkRtPol33.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol33.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol33.TabIndex = 33
+        Me.ChkRtPol33.Tag = "33"
+        Me.ChkRtPol33.Text = "Elm"
+        Me.ChkRtPol33.UseVisualStyleBackColor = False
         '
-        'CheckBox35
+        'ChkRtPol34
         '
-        Me.CheckBox35.AutoSize = True
-        Me.CheckBox35.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox35.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox35.Location = New System.Drawing.Point(954, 162)
-        Me.CheckBox35.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox35.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox35.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox35.Name = "CheckBox35"
-        Me.CheckBox35.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox35.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox35.TabIndex = 34
-        Me.CheckBox35.Tag = "34"
-        Me.CheckBox35.Text = "Hemlock"
-        Me.CheckBox35.UseVisualStyleBackColor = False
+        Me.ChkRtPol34.AutoSize = True
+        Me.ChkRtPol34.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol34.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol34.Location = New System.Drawing.Point(954, 162)
+        Me.ChkRtPol34.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol34.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol34.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol34.Name = "ChkRtPol34"
+        Me.ChkRtPol34.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol34.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol34.TabIndex = 34
+        Me.ChkRtPol34.Tag = "34"
+        Me.ChkRtPol34.Text = "Hemlock"
+        Me.ChkRtPol34.UseVisualStyleBackColor = False
         '
-        'CheckBox36
+        'ChkRtPol35
         '
-        Me.CheckBox36.AutoSize = True
-        Me.CheckBox36.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox36.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox36.Location = New System.Drawing.Point(6, 188)
-        Me.CheckBox36.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox36.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox36.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox36.Name = "CheckBox36"
-        Me.CheckBox36.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox36.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox36.TabIndex = 35
-        Me.CheckBox36.Tag = "35"
-        Me.CheckBox36.Text = "Hickory"
-        Me.CheckBox36.UseVisualStyleBackColor = False
+        Me.ChkRtPol35.AutoSize = True
+        Me.ChkRtPol35.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol35.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol35.Location = New System.Drawing.Point(6, 188)
+        Me.ChkRtPol35.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol35.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol35.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol35.Name = "ChkRtPol35"
+        Me.ChkRtPol35.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol35.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol35.TabIndex = 35
+        Me.ChkRtPol35.Tag = "35"
+        Me.ChkRtPol35.Text = "Hickory"
+        Me.ChkRtPol35.UseVisualStyleBackColor = False
         '
-        'CheckBox37
+        'ChkRtPol36
         '
-        Me.CheckBox37.AutoSize = True
-        Me.CheckBox37.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox37.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox37.Location = New System.Drawing.Point(243, 188)
-        Me.CheckBox37.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox37.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox37.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox37.Name = "CheckBox37"
-        Me.CheckBox37.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox37.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox37.TabIndex = 36
-        Me.CheckBox37.Tag = "36"
-        Me.CheckBox37.Text = "Juniper"
-        Me.CheckBox37.UseVisualStyleBackColor = False
+        Me.ChkRtPol36.AutoSize = True
+        Me.ChkRtPol36.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol36.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol36.Location = New System.Drawing.Point(243, 188)
+        Me.ChkRtPol36.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol36.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol36.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol36.Name = "ChkRtPol36"
+        Me.ChkRtPol36.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol36.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol36.TabIndex = 36
+        Me.ChkRtPol36.Tag = "36"
+        Me.ChkRtPol36.Text = "Juniper"
+        Me.ChkRtPol36.UseVisualStyleBackColor = False
         '
-        'CheckBox38
+        'ChkRtPol37
         '
-        Me.CheckBox38.AutoSize = True
-        Me.CheckBox38.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox38.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox38.Location = New System.Drawing.Point(480, 188)
-        Me.CheckBox38.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox38.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox38.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox38.Name = "CheckBox38"
-        Me.CheckBox38.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox38.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox38.TabIndex = 37
-        Me.CheckBox38.Tag = "37"
-        Me.CheckBox38.Text = "Mahogany"
-        Me.CheckBox38.UseVisualStyleBackColor = False
+        Me.ChkRtPol37.AutoSize = True
+        Me.ChkRtPol37.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol37.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol37.Location = New System.Drawing.Point(480, 188)
+        Me.ChkRtPol37.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol37.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol37.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol37.Name = "ChkRtPol37"
+        Me.ChkRtPol37.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol37.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol37.TabIndex = 37
+        Me.ChkRtPol37.Tag = "37"
+        Me.ChkRtPol37.Text = "Mahogany"
+        Me.ChkRtPol37.UseVisualStyleBackColor = False
         '
-        'CheckBox39
+        'ChkRtPol38
         '
-        Me.CheckBox39.AutoSize = True
-        Me.CheckBox39.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox39.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox39.Location = New System.Drawing.Point(717, 188)
-        Me.CheckBox39.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox39.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox39.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox39.Name = "CheckBox39"
-        Me.CheckBox39.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox39.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox39.TabIndex = 38
-        Me.CheckBox39.Tag = "38"
-        Me.CheckBox39.Text = "Maple"
-        Me.CheckBox39.UseVisualStyleBackColor = False
+        Me.ChkRtPol38.AutoSize = True
+        Me.ChkRtPol38.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol38.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol38.Location = New System.Drawing.Point(717, 188)
+        Me.ChkRtPol38.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol38.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol38.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol38.Name = "ChkRtPol38"
+        Me.ChkRtPol38.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol38.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol38.TabIndex = 38
+        Me.ChkRtPol38.Tag = "38"
+        Me.ChkRtPol38.Text = "Maple"
+        Me.ChkRtPol38.UseVisualStyleBackColor = False
         '
-        'CheckBox40
+        'ChkRtPol39
         '
-        Me.CheckBox40.AutoSize = True
-        Me.CheckBox40.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox40.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox40.Location = New System.Drawing.Point(954, 188)
-        Me.CheckBox40.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox40.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox40.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox40.Name = "CheckBox40"
-        Me.CheckBox40.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox40.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox40.TabIndex = 39
-        Me.CheckBox40.Tag = "39"
-        Me.CheckBox40.Text = "Mulberry"
-        Me.CheckBox40.UseVisualStyleBackColor = False
+        Me.ChkRtPol39.AutoSize = True
+        Me.ChkRtPol39.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol39.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol39.Location = New System.Drawing.Point(954, 188)
+        Me.ChkRtPol39.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol39.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol39.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol39.Name = "ChkRtPol39"
+        Me.ChkRtPol39.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol39.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol39.TabIndex = 39
+        Me.ChkRtPol39.Tag = "39"
+        Me.ChkRtPol39.Text = "Mulberry"
+        Me.ChkRtPol39.UseVisualStyleBackColor = False
         '
-        'CheckBox41
+        'ChkRtPol40
         '
-        Me.CheckBox41.AutoSize = True
-        Me.CheckBox41.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox41.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox41.Location = New System.Drawing.Point(6, 214)
-        Me.CheckBox41.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox41.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox41.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox41.Name = "CheckBox41"
-        Me.CheckBox41.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox41.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox41.TabIndex = 40
-        Me.CheckBox41.Tag = "40"
-        Me.CheckBox41.Text = "Oak"
-        Me.CheckBox41.UseVisualStyleBackColor = False
+        Me.ChkRtPol40.AutoSize = True
+        Me.ChkRtPol40.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol40.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol40.Location = New System.Drawing.Point(6, 214)
+        Me.ChkRtPol40.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol40.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol40.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol40.Name = "ChkRtPol40"
+        Me.ChkRtPol40.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol40.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol40.TabIndex = 40
+        Me.ChkRtPol40.Tag = "40"
+        Me.ChkRtPol40.Text = "Oak"
+        Me.ChkRtPol40.UseVisualStyleBackColor = False
         '
-        'CheckBox42
+        'ChkRtPol41
         '
-        Me.CheckBox42.AutoSize = True
-        Me.CheckBox42.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox42.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox42.Location = New System.Drawing.Point(243, 214)
-        Me.CheckBox42.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox42.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox42.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox42.Name = "CheckBox42"
-        Me.CheckBox42.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox42.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox42.TabIndex = 41
-        Me.CheckBox42.Tag = "41"
-        Me.CheckBox42.Text = "Pine"
-        Me.CheckBox42.UseVisualStyleBackColor = False
+        Me.ChkRtPol41.AutoSize = True
+        Me.ChkRtPol41.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol41.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol41.Location = New System.Drawing.Point(243, 214)
+        Me.ChkRtPol41.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol41.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol41.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol41.Name = "ChkRtPol41"
+        Me.ChkRtPol41.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol41.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol41.TabIndex = 41
+        Me.ChkRtPol41.Tag = "41"
+        Me.ChkRtPol41.Text = "Pine"
+        Me.ChkRtPol41.UseVisualStyleBackColor = False
         '
-        'CheckBox43
+        'ChkRtPol42
         '
-        Me.CheckBox43.AutoSize = True
-        Me.CheckBox43.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox43.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox43.Location = New System.Drawing.Point(480, 214)
-        Me.CheckBox43.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox43.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox43.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox43.Name = "CheckBox43"
-        Me.CheckBox43.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox43.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox43.TabIndex = 42
-        Me.CheckBox43.Tag = "42"
-        Me.CheckBox43.Text = "Cottonwood"
-        Me.CheckBox43.UseVisualStyleBackColor = False
+        Me.ChkRtPol42.AutoSize = True
+        Me.ChkRtPol42.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol42.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol42.Location = New System.Drawing.Point(480, 214)
+        Me.ChkRtPol42.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol42.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol42.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol42.Name = "ChkRtPol42"
+        Me.ChkRtPol42.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol42.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol42.TabIndex = 42
+        Me.ChkRtPol42.Tag = "42"
+        Me.ChkRtPol42.Text = "Cottonwood"
+        Me.ChkRtPol42.UseVisualStyleBackColor = False
         '
-        'CheckBox44
+        'ChkRtPol43
         '
-        Me.CheckBox44.AutoSize = True
-        Me.CheckBox44.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox44.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox44.Location = New System.Drawing.Point(717, 214)
-        Me.CheckBox44.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox44.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox44.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox44.Name = "CheckBox44"
-        Me.CheckBox44.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox44.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox44.TabIndex = 43
-        Me.CheckBox44.Tag = "43"
-        Me.CheckBox44.Text = "Spruce"
-        Me.CheckBox44.UseVisualStyleBackColor = False
+        Me.ChkRtPol43.AutoSize = True
+        Me.ChkRtPol43.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol43.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol43.Location = New System.Drawing.Point(717, 214)
+        Me.ChkRtPol43.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol43.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol43.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol43.Name = "ChkRtPol43"
+        Me.ChkRtPol43.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol43.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol43.TabIndex = 43
+        Me.ChkRtPol43.Tag = "43"
+        Me.ChkRtPol43.Text = "Spruce"
+        Me.ChkRtPol43.UseVisualStyleBackColor = False
         '
-        'CheckBox45
+        'ChkRtPol44
         '
-        Me.CheckBox45.AutoSize = True
-        Me.CheckBox45.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox45.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox45.Location = New System.Drawing.Point(954, 214)
-        Me.CheckBox45.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox45.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox45.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox45.Name = "CheckBox45"
-        Me.CheckBox45.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox45.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox45.TabIndex = 44
-        Me.CheckBox45.Tag = "44"
-        Me.CheckBox45.Text = "Sycamore"
-        Me.CheckBox45.UseVisualStyleBackColor = False
+        Me.ChkRtPol44.AutoSize = True
+        Me.ChkRtPol44.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol44.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol44.Location = New System.Drawing.Point(954, 214)
+        Me.ChkRtPol44.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol44.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol44.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol44.Name = "ChkRtPol44"
+        Me.ChkRtPol44.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol44.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol44.TabIndex = 44
+        Me.ChkRtPol44.Tag = "44"
+        Me.ChkRtPol44.Text = "Sycamore"
+        Me.ChkRtPol44.UseVisualStyleBackColor = False
         '
-        'CheckBox46
+        'ChkRtPol45
         '
-        Me.CheckBox46.AutoSize = True
-        Me.CheckBox46.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox46.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox46.Location = New System.Drawing.Point(6, 240)
-        Me.CheckBox46.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox46.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox46.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox46.Name = "CheckBox46"
-        Me.CheckBox46.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox46.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox46.TabIndex = 45
-        Me.CheckBox46.Tag = "45"
-        Me.CheckBox46.Text = "Walnut"
-        Me.CheckBox46.UseVisualStyleBackColor = False
+        Me.ChkRtPol45.AutoSize = True
+        Me.ChkRtPol45.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol45.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol45.Location = New System.Drawing.Point(6, 240)
+        Me.ChkRtPol45.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol45.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol45.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol45.Name = "ChkRtPol45"
+        Me.ChkRtPol45.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol45.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol45.TabIndex = 45
+        Me.ChkRtPol45.Tag = "45"
+        Me.ChkRtPol45.Text = "Walnut"
+        Me.ChkRtPol45.UseVisualStyleBackColor = False
         '
-        'CheckBox47
+        'ChkRtPol46
         '
-        Me.CheckBox47.AutoSize = True
-        Me.CheckBox47.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CheckBox47.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox47.Location = New System.Drawing.Point(243, 240)
-        Me.CheckBox47.Margin = New System.Windows.Forms.Padding(1)
-        Me.CheckBox47.MaximumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox47.MinimumSize = New System.Drawing.Size(235, 24)
-        Me.CheckBox47.Name = "CheckBox47"
-        Me.CheckBox47.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBox47.Size = New System.Drawing.Size(235, 24)
-        Me.CheckBox47.TabIndex = 46
-        Me.CheckBox47.Tag = "46"
-        Me.CheckBox47.Text = "Willow"
-        Me.CheckBox47.UseVisualStyleBackColor = False
+        Me.ChkRtPol46.AutoSize = True
+        Me.ChkRtPol46.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChkRtPol46.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkRtPol46.Location = New System.Drawing.Point(243, 240)
+        Me.ChkRtPol46.Margin = New System.Windows.Forms.Padding(1)
+        Me.ChkRtPol46.MaximumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol46.MinimumSize = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol46.Name = "ChkRtPol46"
+        Me.ChkRtPol46.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ChkRtPol46.Size = New System.Drawing.Size(235, 24)
+        Me.ChkRtPol46.TabIndex = 46
+        Me.ChkRtPol46.Tag = "46"
+        Me.ChkRtPol46.Text = "Willow"
+        Me.ChkRtPol46.UseVisualStyleBackColor = False
         '
         'CheckBox48
         '
@@ -5586,65 +5586,65 @@ Partial Class FrmMain
     Friend WithEvents ChkHrRiskConfidence As CheckBox
     Friend WithEvents ChkHrRiskScore As CheckBox
     Friend WithEvents ChkHrHailRisk As CheckBox
-    Friend WithEvents ChkHourTemp As CheckBox
-    Friend WithEvents ChkHourFeelsLike As CheckBox
+    Friend WithEvents ChkHrTemp As CheckBox
+    Friend WithEvents ChkHrFeelsLike As CheckBox
     Friend WithEvents ChkHrRoadRisk As CheckBox
-    Friend WithEvents ChkHourRH As CheckBox
-    Friend WithEvents ChkHourChinaPollutant As CheckBox
-    Friend WithEvents ChkHourChinaConcern As CheckBox
-    Friend WithEvents ChkHourChinaAqi As CheckBox
-    Friend WithEvents ChkHourEpaPollutant As CheckBox
-    Friend WithEvents ChkHourEpaAqi As CheckBox
-    Friend WithEvents ChkHourEpaConcern As CheckBox
-    Friend WithEvents ChkHourAqiNo2 As CheckBox
-    Friend WithEvents ChkHourAqiO3 As CheckBox
-    Friend WithEvents ChkHourAqiSo2 As CheckBox
-    Friend WithEvents ChkHourAqiCo As CheckBox
-    Friend WithEvents ChkHourAqiPm25 As CheckBox
-    Friend WithEvents ChkHourWindDir As CheckBox
-    Friend WithEvents ChkHourWindGust As CheckBox
-    Friend WithEvents ChkHourPrecip As CheckBox
-    Friend WithEvents ChkHourPrecipType As CheckBox
-    Friend WithEvents ChkHourPrecipProb As CheckBox
-    Friend WithEvents ChkHourSunrise As CheckBox
-    Friend WithEvents ChkHourVis As CheckBox
-    Friend WithEvents ChkHourCloudCover As CheckBox
-    Friend WithEvents ChkHourCloudCeil As CheckBox
-    Friend WithEvents ChkHourMoonPhase As CheckBox
-    Friend WithEvents ChkHourWxCode As CheckBox
-    Friend WithEvents ChkHourAqiPm10 As CheckBox
-    Friend WithEvents ChkHourSunset As CheckBox
-    Friend WithEvents ChkHourTreeWalnut As CheckBox
-    Friend WithEvents ChkHourTreeSycamore As CheckBox
-    Friend WithEvents ChkHourTreeSpruce As CheckBox
-    Friend WithEvents ChkHourTreeCottonwood As CheckBox
-    Friend WithEvents ChkHourTreePine As CheckBox
-    Friend WithEvents ChkHourGrass As CheckBox
-    Friend WithEvents ChkHourDewpoint As CheckBox
-    Friend WithEvents ChkHourTreeOak As CheckBox
-    Friend WithEvents ChkHourTreeMahogany As CheckBox
-    Friend WithEvents ChkHourTreeHemlock As CheckBox
-    Friend WithEvents ChkHourTreeCypress As CheckBox
-    Friend WithEvents ChkHourTreeBeech As CheckBox
-    Friend WithEvents ChkHourRagweed As CheckBox
-    Friend WithEvents ChkHourWindSpeed As CheckBox
-    Friend WithEvents ChkHourTreeAsh As CheckBox
-    Friend WithEvents ChkHourTreeCedar As CheckBox
-    Friend WithEvents ChkHourTreeElm As CheckBox
-    Friend WithEvents ChkHourTreeJuniper As CheckBox
-    Friend WithEvents ChkHourTreeMulberry As CheckBox
-    Friend WithEvents ChkHourCloudBase As CheckBox
-    Friend WithEvents ChkHourBP As CheckBox
-    Friend WithEvents ChkHourTreeBirch As CheckBox
-    Friend WithEvents ChkHourSSR As CheckBox
-    Friend WithEvents ChkHourTreeElder As CheckBox
-    Friend WithEvents ChkHourTreePollen As CheckBox
-    Friend WithEvents ChkHourTreeHickory As CheckBox
-    Friend WithEvents ChkHourWeedPollen As CheckBox
-    Friend WithEvents ChkHourTreeMaple As CheckBox
-    Friend WithEvents ChkHourGrassPollen As CheckBox
-    Friend WithEvents ChkHourTreeAcacia As CheckBox
-    Friend WithEvents ChkHourTreeWillow As CheckBox
+    Friend WithEvents ChkHrRH As CheckBox
+    Friend WithEvents ChkHrChinaPollutant As CheckBox
+    Friend WithEvents ChkHrChinaConcern As CheckBox
+    Friend WithEvents ChkHrChinaAqi As CheckBox
+    Friend WithEvents ChkHrEpaPollutant As CheckBox
+    Friend WithEvents ChkHrEpaAqi As CheckBox
+    Friend WithEvents ChkHrEpaConcern As CheckBox
+    Friend WithEvents ChkHrAqiNo2 As CheckBox
+    Friend WithEvents ChkHrAqiO3 As CheckBox
+    Friend WithEvents ChkHrAqiSo2 As CheckBox
+    Friend WithEvents ChkHrAqiCo As CheckBox
+    Friend WithEvents ChkHrAqiPm25 As CheckBox
+    Friend WithEvents ChkHrWindDir As CheckBox
+    Friend WithEvents ChkHrWindGust As CheckBox
+    Friend WithEvents ChkHrPrecip As CheckBox
+    Friend WithEvents ChkHrPrecipType As CheckBox
+    Friend WithEvents ChkHrPrecipProb As CheckBox
+    Friend WithEvents ChkHrSunrise As CheckBox
+    Friend WithEvents ChkHrVis As CheckBox
+    Friend WithEvents ChkHrCloudCover As CheckBox
+    Friend WithEvents ChkHrCloudCeil As CheckBox
+    Friend WithEvents ChkHrMoonPhase As CheckBox
+    Friend WithEvents ChkHrWxCode As CheckBox
+    Friend WithEvents ChkHrAqiPm10 As CheckBox
+    Friend WithEvents ChkHrSunset As CheckBox
+    Friend WithEvents ChkHrTreeWalnut As CheckBox
+    Friend WithEvents ChkHrTreeSycamore As CheckBox
+    Friend WithEvents ChkHrTreeSpruce As CheckBox
+    Friend WithEvents ChkHrTreeCottonwood As CheckBox
+    Friend WithEvents ChkHrTreePine As CheckBox
+    Friend WithEvents ChkHrGrass As CheckBox
+    Friend WithEvents ChkHrDewpoint As CheckBox
+    Friend WithEvents ChkHrTreeOak As CheckBox
+    Friend WithEvents ChkHrTreeMahogany As CheckBox
+    Friend WithEvents ChkHrTreeHemlock As CheckBox
+    Friend WithEvents ChkHrTreeCypress As CheckBox
+    Friend WithEvents ChkHrTreeBeech As CheckBox
+    Friend WithEvents ChkHrRagweed As CheckBox
+    Friend WithEvents ChkHrWindSpeed As CheckBox
+    Friend WithEvents ChkHrTreeAsh As CheckBox
+    Friend WithEvents ChkHrTreeCedar As CheckBox
+    Friend WithEvents ChkHrTreeElm As CheckBox
+    Friend WithEvents ChkHrTreeJuniper As CheckBox
+    Friend WithEvents ChkHrTreeMulberry As CheckBox
+    Friend WithEvents ChkHrCloudBase As CheckBox
+    Friend WithEvents ChkHrBP As CheckBox
+    Friend WithEvents ChkHrTreeBirch As CheckBox
+    Friend WithEvents ChkHrSSR As CheckBox
+    Friend WithEvents ChkHrTreeElder As CheckBox
+    Friend WithEvents ChkHrTreePollen As CheckBox
+    Friend WithEvents ChkHrTreeHickory As CheckBox
+    Friend WithEvents ChkHrWeedPollen As CheckBox
+    Friend WithEvents ChkHrTreeMaple As CheckBox
+    Friend WithEvents ChkHrGrassPollen As CheckBox
+    Friend WithEvents ChkHrTreeAcacia As CheckBox
+    Friend WithEvents ChkHrTreeWillow As CheckBox
     Friend WithEvents ChkAllHourly As CheckBox
     Friend WithEvents TpOptNowCast As TabPage
     Friend WithEvents Panel1 As Panel
@@ -5747,32 +5747,32 @@ Partial Class FrmMain
     Friend WithEvents ChkRtCore18 As CheckBox
     Friend WithEvents ChkRtCore19 As CheckBox
     Friend WithEvents ChkRtCore20 As CheckBox
-    Friend WithEvents CheckBox22 As CheckBox
-    Friend WithEvents CheckBox23 As CheckBox
-    Friend WithEvents CheckBox24 As CheckBox
-    Friend WithEvents CheckBox25 As CheckBox
-    Friend WithEvents CheckBox26 As CheckBox
-    Friend WithEvents CheckBox27 As CheckBox
-    Friend WithEvents CheckBox28 As CheckBox
-    Friend WithEvents CheckBox29 As CheckBox
-    Friend WithEvents CheckBox30 As CheckBox
-    Friend WithEvents CheckBox31 As CheckBox
-    Friend WithEvents CheckBox32 As CheckBox
-    Friend WithEvents CheckBox33 As CheckBox
-    Friend WithEvents CheckBox34 As CheckBox
-    Friend WithEvents CheckBox35 As CheckBox
-    Friend WithEvents CheckBox36 As CheckBox
-    Friend WithEvents CheckBox37 As CheckBox
-    Friend WithEvents CheckBox38 As CheckBox
-    Friend WithEvents CheckBox39 As CheckBox
-    Friend WithEvents CheckBox40 As CheckBox
-    Friend WithEvents CheckBox41 As CheckBox
-    Friend WithEvents CheckBox42 As CheckBox
-    Friend WithEvents CheckBox43 As CheckBox
-    Friend WithEvents CheckBox44 As CheckBox
-    Friend WithEvents CheckBox45 As CheckBox
-    Friend WithEvents CheckBox46 As CheckBox
-    Friend WithEvents CheckBox47 As CheckBox
+    Friend WithEvents ChkRtPol21 As CheckBox
+    Friend WithEvents ChkRtPol22 As CheckBox
+    Friend WithEvents ChkRtPol23 As CheckBox
+    Friend WithEvents ChkRtPol24 As CheckBox
+    Friend WithEvents ChkRtPol25 As CheckBox
+    Friend WithEvents ChkRtPol26 As CheckBox
+    Friend WithEvents ChkRtPol27 As CheckBox
+    Friend WithEvents ChkRtPol28 As CheckBox
+    Friend WithEvents ChkRtPol29 As CheckBox
+    Friend WithEvents ChkRtPol30 As CheckBox
+    Friend WithEvents ChkRtPol31 As CheckBox
+    Friend WithEvents ChkRtPol32 As CheckBox
+    Friend WithEvents ChkRtPol33 As CheckBox
+    Friend WithEvents ChkRtPol34 As CheckBox
+    Friend WithEvents ChkRtPol35 As CheckBox
+    Friend WithEvents ChkRtPol36 As CheckBox
+    Friend WithEvents ChkRtPol37 As CheckBox
+    Friend WithEvents ChkRtPol38 As CheckBox
+    Friend WithEvents ChkRtPol39 As CheckBox
+    Friend WithEvents ChkRtPol40 As CheckBox
+    Friend WithEvents ChkRtPol41 As CheckBox
+    Friend WithEvents ChkRtPol42 As CheckBox
+    Friend WithEvents ChkRtPol43 As CheckBox
+    Friend WithEvents ChkRtPol44 As CheckBox
+    Friend WithEvents ChkRtPol45 As CheckBox
+    Friend WithEvents ChkRtPol46 As CheckBox
     Friend WithEvents CheckBox48 As CheckBox
     Friend WithEvents CheckBox49 As CheckBox
     Friend WithEvents CheckBox50 As CheckBox

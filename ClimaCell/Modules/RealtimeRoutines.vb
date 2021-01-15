@@ -134,6 +134,60 @@ Friend Module RealtimeRoutines
                         sb.Append("surface_shortwave_radiation")
                     Case 20
                         sb.Append("weather_code")
+                    Case 21
+                        sb.Append("pollen_tree")
+                    Case 22
+                        sb.Append("pollen_weed")
+                    Case 23
+                        sb.Append("pollen_grass")
+                    Case 24
+                        sb.Append("pollen_weed_ragweed")
+                    Case 25
+                        sb.Append("pollen_grass_grass")
+                    Case 26
+                        sb.Append("pollen_tree_acacia")
+                    Case 27
+                        sb.Append("pollen_tree_ash")
+                    Case 28
+                        sb.Append("pollen_tree_beech")
+                    Case 29
+                        sb.Append("pollen_tree_birch")
+                    Case 30
+                        sb.Append("pollen_tree_cedar")
+                    Case 31
+                        sb.Append("pollen_tree_cypress")
+                    Case 32
+                        sb.Append("pollen_tree_elder")
+                    Case 33
+                        sb.Append("pollen_tree_elm")
+                    Case 34
+                        sb.Append("pollen_tree_hemlock")
+                    Case 35
+                        sb.Append("pollen_tree_hickory")
+                    Case 36
+                        sb.Append("pollen_tree_juniper")
+                    Case 37
+                        sb.Append("pollen_tree_mahogany")
+                    Case 38
+                        sb.Append("pollen_tree_maple")
+                    Case 39
+                        sb.Append("pollen_tree_mulberry")
+                    Case 40
+                        sb.Append("pollen_tree_oak")
+                    Case 41
+                        sb.Append("pollen_tree_pine")
+                    Case 42
+                        sb.Append("pollen_tree_cottonwood")
+                    Case 43
+                        sb.Append("pollen_tree_spruce")
+                    Case 44
+                        sb.Append("pollen_tree_sycamore")
+                    Case 45
+                        sb.Append("pollen_tree_walnut")
+                    Case 46
+                        sb.Append("pollen_tree_willow")
+
+
                     Case Else
                         sb.Append("")
                 End Select

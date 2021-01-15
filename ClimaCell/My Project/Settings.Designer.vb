@@ -2165,6 +2165,318 @@ Namespace My
                 Me("Fetch_Realtime") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol0() As Boolean
+            Get
+                Return CType(Me("Rt_Pol0"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol1() As Boolean
+            Get
+                Return CType(Me("Rt_Pol1"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol2() As Boolean
+            Get
+                Return CType(Me("Rt_Pol2"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol3() As Boolean
+            Get
+                Return CType(Me("Rt_Pol3"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol4() As Boolean
+            Get
+                Return CType(Me("Rt_Pol4"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol5() As Boolean
+            Get
+                Return CType(Me("Rt_Pol5"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol6() As Boolean
+            Get
+                Return CType(Me("Rt_Pol6"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol7() As Boolean
+            Get
+                Return CType(Me("Rt_Pol7"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol8() As Boolean
+            Get
+                Return CType(Me("Rt_Pol8"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol9() As Boolean
+            Get
+                Return CType(Me("Rt_Pol9"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol9") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol10() As Boolean
+            Get
+                Return CType(Me("Rt_Pol10"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol10") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol11() As Boolean
+            Get
+                Return CType(Me("Rt_Pol11"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol11") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol12() As Boolean
+            Get
+                Return CType(Me("Rt_Pol12"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol12") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol13() As Boolean
+            Get
+                Return CType(Me("Rt_Pol13"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol13") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol14() As Boolean
+            Get
+                Return CType(Me("Rt_Pol14"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol14") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol15() As Boolean
+            Get
+                Return CType(Me("Rt_Pol15"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol15") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol16() As Boolean
+            Get
+                Return CType(Me("Rt_Pol16"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol16") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol17() As Boolean
+            Get
+                Return CType(Me("Rt_Pol17"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol17") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol18() As Boolean
+            Get
+                Return CType(Me("Rt_Pol18"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol18") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol19() As Boolean
+            Get
+                Return CType(Me("Rt_Pol19"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol19") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol20() As Boolean
+            Get
+                Return CType(Me("Rt_Pol20"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol20") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol21() As Boolean
+            Get
+                Return CType(Me("Rt_Pol21"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol21") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol22() As Boolean
+            Get
+                Return CType(Me("Rt_Pol22"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol22") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol23() As Boolean
+            Get
+                Return CType(Me("Rt_Pol23"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol23") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol24() As Boolean
+            Get
+                Return CType(Me("Rt_Pol24"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol24") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Pol25() As Boolean
+            Get
+                Return CType(Me("Rt_Pol25"),Boolean)
+            End Get
+            Set
+                Me("Rt_Pol25") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
