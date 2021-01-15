@@ -24,6 +24,54 @@ Friend Module DailyRoutines
         End If
     End Sub
 
+    Private Async Sub DownloadDailyData(fn As String)
+        Try
+            Dim url = $"https://api.climacell.co/v3/weather/forecast/daily?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system={uArr(My.Settings.Units)}&start_time=now&fields={GetDailyString()}&apikey={My.Settings.ApiKey}"
+            PrintLog($"{vbLf}Daily Url: {url}{vbLf}")
+            Dim request = CType(WebRequest.Create(New Uri(url)), HttpWebRequest)
+            With request
+                .AutomaticDecompression = DecompressionMethods.GZip Or DecompressionMethods.Deflate
+                .Accept = "application/json"
+                .Timeout = 120000
+                .Headers.Add("Accept-Encoding", "gzip, deflate")
+                .UserAgent = Use_Agent
+            End With
+            Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
+                Dim sc As New StringBuilder()
+                PrintLog($"{vbLf}{vbLf}ClimaCell Daily Headers:{vbLf}{vbLf}")
+                For j = 0 To response.Headers.Count - 1
+                    PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                    sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                Next
+                sc.Clear()
+                PrintLog($"{Separator}{vbLf}{vbLf}")
+
+                If response.StatusCode = 200 Then
+                    PrintLog($"Download @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
+                    Dim dStr = response.GetResponseStream()
+                    Using reader = New StreamReader(dStr)
+                        Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)   'ddd
+                        File.WriteAllText(fn, resp)
+                        PrintLog($"Daily file saved -> {fn}{vbLf}")
+                        dNfo = JsonSerializer.Deserialize(Of DailyData())(resp)
+                        Using aTxt As StreamWriter = File.AppendText(dlyDataFile)
+                            Await aTxt.WriteLineAsync($"{Separator}{vbLf}").ConfigureAwait(True)
+                            Await aTxt.WriteLineAsync($"ClimaCell Daily Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
+                        End Using
+                        WriteDgvDaily()
+                    End Using
+                Else
+                    PrintLog($"Download @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
+                    SaveLogs()
+                    Return
+                End If
+            End Using
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            SaveLogs()
+        End Try
+    End Sub
     Private Function GetDailyString() As String
         Dim sb = New StringBuilder()
         For Each c As CheckBox In FrmMain.TlpDaily.Controls.OfType(Of CheckBox)()
@@ -69,65 +117,18 @@ Friend Module DailyRoutines
         Dim aa = sb.ToString
         Return Left(aa, aa.Length - 3)
     End Function
-
-    Public Async Sub DownloadDailyData(fn As String)
-        Try
-            Dim url = $"https://api.climacell.co/v3/weather/forecast/daily?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system={uArr(My.Settings.Units)}&start_time=now&fields={GetDailyString()}&apikey={My.Settings.ApiKey}"
-            PrintLog($"Daily Url: {url}{vbLf}")
-            Dim request = CType(WebRequest.Create(New Uri(url)), HttpWebRequest)
-            With request
-                .AutomaticDecompression = DecompressionMethods.GZip Or DecompressionMethods.Deflate
-                .Accept = "application/json"
-                .Timeout = 120000
-                .Headers.Add("Accept-Encoding", "gzip, deflate")
-                .UserAgent = Use_Agent
-            End With
-            Using response = CType(Await request.GetResponseAsync(), HttpWebResponse)
-                Dim sc As New StringBuilder()
-                PrintLog($"{vbLf}{vbLf}ClimaCell Daily Headers:{vbLf}{vbLf}")
-                For j = 0 To response.Headers.Count - 1
-                    PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                    sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                Next
-                sc.Clear()
-                PrintLog($"{Separator}{vbLf}{vbLf}")
-
-                If response.StatusCode = 200 Then
-                    PrintLog($"Download @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
-                    Dim dStr = response.GetResponseStream()
-                    Using reader = New StreamReader(dStr)
-                        Dim resp As String = Await reader.ReadToEndAsync()
-                        File.WriteAllText(fn, resp)
-                        dNfo = JsonSerializer.Deserialize(Of DailyData())(resp)
-                        Using aTxt As StreamWriter = File.AppendText(DataFile)
-                            Await aTxt.WriteLineAsync($"ClimaCell Daily Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}")
-                        End Using
-                        WriteDgvDaily()
-                    End Using
-                Else
-                    PrintLog($"Download @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
-                    SaveLogs()
-                    Return
-                End If
-            End Using
-        Catch ex As Exception
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
-        Finally
-            SaveLogs()
-        End Try
-    End Sub
-
     Private Async Sub ParseDailyData(fa As Double, fn As String)
         Try
             Using reader = New StreamReader(fn)
                 Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
-                Using aTxt As StreamWriter = File.AppendText(DataFile)
-                    Await aTxt.WriteLineAsync($"Parsed ClimaCell Daily Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}")
+                Using aTxt As StreamWriter = File.AppendText(dlyDataFile)
+                    Await aTxt.WriteLineAsync($"{Separator}{vbLf}").ConfigureAwait(True)
+                    Await aTxt.WriteLineAsync($"Parsed ClimaCell Daily Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
                 End Using
                 dNfo = JsonSerializer.Deserialize(Of DailyData())(resp)
-                    PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
-                End Using
-                WriteDgvDaily()
+                PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
+            End Using
+            WriteDgvDaily()
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally

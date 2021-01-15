@@ -33,7 +33,7 @@ Friend Module NowcastRoutines
     Private Async Sub DownloadNowCastData(fn As String)
         Try
             Dim url As String = $"https://api.climacell.co/v3/weather/nowcast?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system={uArr(My.Settings.Units)}&timestep=15&start_time=now&fields={GetNowcastString()}&apikey={My.Settings.ApiKey}"
-            PrintLog($"Nowcast Url: {url}{vbLf}")
+            PrintLog($"{vbLf}Nowcast Url: {url}{vbLf}")
             Dim request = CType(WebRequest.Create(New Uri(url)), HttpWebRequest)
             With request
                 .AutomaticDecompression = DecompressionMethods.GZip Or DecompressionMethods.Deflate
@@ -43,7 +43,7 @@ Friend Module NowcastRoutines
                 .UserAgent = Use_Agent
             End With
 
-            Using response = CType(Await request.GetResponseAsync(), HttpWebResponse)
+            Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
                 Dim sc As New StringBuilder()
                 PrintLog($"{vbLf}{vbLf}ClimaCell Nowcast Headers:{vbLf}{vbLf}")
                 For j = 0 To response.Headers.Count - 1
@@ -57,12 +57,14 @@ Friend Module NowcastRoutines
                     PrintLog($"Download @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
                     Dim dStr = response.GetResponseStream()
                     Using reader = New StreamReader(dStr)
-                        Dim resp As String = Await reader.ReadToEndAsync()
+                        Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)   'ddd
                         File.WriteAllText(fn, resp)
+                        PrintLog($"Nowcast file saved -> {fn}{vbLf}")
                         ncNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
-                        'Using aTxt As StreamWriter = File.AppendText(DataFile)
-                        '    Await aTxt.WriteLineAsync($"ClimaCell Nowcast Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}")
-                        'End Using
+                        Using cTxt As StreamWriter = File.AppendText(ncDataFile)
+                            Await cTxt.WriteLineAsync($"{Separator}{vbLf}").ConfigureAwait(True)
+                            Await cTxt.WriteLineAsync($"ClimaCell Nowcast Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
+                        End Using
                         WriteDgvNowcast()
                     End Using
                 Else
@@ -71,24 +73,6 @@ Friend Module NowcastRoutines
                     Return
                 End If
             End Using
-        Catch ex As Exception
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
-        Finally
-            SaveLogs()
-        End Try
-    End Sub
-
-    Private Async Sub ParseNowcastData(fn As String, fa As Double)
-        Try
-            Using reader = New StreamReader(fn)
-                Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
-                'Using aTxt As StreamWriter = File.AppendText(DataFile)
-                '    Await aTxt.WriteLineAsync($"Parsed ClimaCell Nowcast Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}")
-                'End Using
-                ncNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
-                PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
-            End Using
-            WriteDgvNowcast()
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
@@ -237,9 +221,27 @@ Friend Module NowcastRoutines
         Return Left(aa, aa.Length - 3)
     End Function
 
+    Private Async Sub ParseNowcastData(fn As String, fa As Double)
+        Try
+            Using reader = New StreamReader(fn)
+                Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
+                Using cTxt As StreamWriter = File.AppendText(ncDataFile)
+                    Await cTxt.WriteLineAsync($"{Separator}{vbLf}").ConfigureAwait(True)
+                    Await cTxt.WriteLineAsync($"Parsed ClimaCell Nowcast Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
+                End Using
+                ncNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
+                PrintLog($"[Parsed] Nowcast Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
+            End Using
+            WriteDgvNowcast()
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            SaveLogs()
+        End Try
+    End Sub
     Private Sub WriteDgvNowcast()
 
-        Dim bgClr As Color = Color.LightBlue
+        Dim bgClr As Color = Color.LightSkyBlue
         Try
             With FrmMain.DgvNowcast
                 .Rows.Clear()

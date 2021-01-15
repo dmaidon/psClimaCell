@@ -61,11 +61,21 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        '''</summary>
+        Friend ReadOnly Property climacell() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("climacell", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Data_Layers() As System.Drawing.Bitmap
+        Friend ReadOnly Property data_layers_6() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Data_Layers", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("data_layers_6", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -76,6 +86,16 @@ Namespace My.Resources
         Friend ReadOnly Property powered_by_climacell_halo() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("powered_by_climacell_halo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property powered_by_climacell_halo_sml() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("powered_by_climacell_halo_sml", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -28,7 +28,7 @@ Friend Module HourlyRoutines
     Private Async Sub DownloadHourData(fn As String)
         Try
             Dim url = $"https://api.climacell.co/v3/weather/forecast/hourly?lat={My.Settings.cLatitude}&lon={My.Settings.cLongitude}&unit_system={uArr(My.Settings.Units)}&start_time=now&fields={GetHourString()}&apikey={My.Settings.ApiKey}"
-            PrintLog($"Hour Url: {url}{vbLf}")
+            PrintLog($"{vbLf}Hour Url: {url}{vbLf}")
             Dim request = CType(WebRequest.Create(New Uri(url)), HttpWebRequest)
             With request
                 .AutomaticDecompression = DecompressionMethods.GZip Or DecompressionMethods.Deflate
@@ -37,7 +37,7 @@ Friend Module HourlyRoutines
                 .Headers.Add("Accept-Encoding", "gzip, deflate")
                 .UserAgent = Use_Agent
             End With
-            Using response = CType(Await request.GetResponseAsync(), HttpWebResponse)
+            Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
                 Dim sc As New StringBuilder()
                 PrintLog($"{vbLf}{vbLf}ClimaCell Hourly Headers:{vbLf}{vbLf}")
                 For j = 0 To response.Headers.Count - 1
@@ -51,12 +51,14 @@ Friend Module HourlyRoutines
                     PrintLog($"Download @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
                     Dim dStr = response.GetResponseStream()
                     Using reader = New StreamReader(dStr)
-                        Dim resp As String = Await reader.ReadToEndAsync()
-                        'Using aTxt As StreamWriter = File.AppendText(DataFile)
-                        '    aTxt.WriteLine($"ClimaCell Hourly Forecast Data @ {Now:T}")
-                        '    aTxt.WriteLine($"ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}")
-                        'End Using
+                        Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)  'ddd
+                        Using bTxt As StreamWriter = File.AppendText(hrDataFile)
+                            Await bTxt.WriteLineAsync($"{Separator}{vbLf}").ConfigureAwait(True)
+                            Await bTxt.WriteLineAsync($"ClimaCell Hourly Forecast Data @ {Now:T}").ConfigureAwait(True)
+                            Await bTxt.WriteLineAsync($"ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}").ConfigureAwait(True)
+                        End Using
                         File.WriteAllText(fn, resp)
+                        PrintLog($"Hourle data file saved -> {fn}{vbLf}")
                         hNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
                         WriteHourData()
                     End Using
@@ -66,25 +68,6 @@ Friend Module HourlyRoutines
                     Return
                 End If
             End Using
-        Catch ex As Exception
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
-        Finally
-            SaveLogs()
-        End Try
-    End Sub
-
-    Private Async Sub ParseHourData(fa As Double, fn As String)
-        Try
-            Using reader = New StreamReader(fn)
-                Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
-                'Using aTxt As StreamWriter = File.AppendText(DataFile)
-                '    aTxt.WriteLine($"Parsed ClimaCell Hourly Forecast Data @ {Now:T}")
-                '    aTxt.WriteLine("{resp}{vbLf}")
-                'End Using
-                hNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
-                PrintLog($"[Parsed] Daily Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
-            End Using
-            WriteHourData()
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
@@ -234,6 +217,25 @@ Friend Module HourlyRoutines
         Return Left(aa, aa.Length - 3)
     End Function
 
+    Private Async Sub ParseHourData(fa As Double, fn As String)
+        Try
+            Using reader = New StreamReader(fn)
+                Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
+                Using bTxt As StreamWriter = File.AppendText(hrDataFile)
+                    Await bTxt.WriteLineAsync($"{Separator}{vbLf}").ConfigureAwait(True)
+                    Await bTxt.WriteLineAsync($"Parsed ClimaCell Hourly Forecast Data @ {Now:T}").ConfigureAwait(True)
+                    Await bTxt.WriteLineAsync($"{resp}{vbLf}").ConfigureAwait(True)
+                End Using
+                hNfo = JsonSerializer.Deserialize(Of HourNum())(resp)
+                PrintLog($"[Parsed] Hourly Forecast Data @ {Now:T}{vbLf}File age: {fa:N2} minutes{vbLf}{vbLf}")
+            End Using
+            WriteHourData()
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            SaveLogs()
+        End Try
+    End Sub
     Private Sub WriteHourData()
         With FrmMain.DgvHourly
             .Rows.Clear()

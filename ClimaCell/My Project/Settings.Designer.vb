@@ -1889,6 +1889,282 @@ Namespace My
                 Me("Nc_TimeStep") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core0() As Boolean
+            Get
+                Return CType(Me("Rt_Core0"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core1() As Boolean
+            Get
+                Return CType(Me("Rt_Core1"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("30")>  _
+        Public Property UpdateInterval_Realtime() As Integer
+            Get
+                Return CType(Me("UpdateInterval_Realtime"),Integer)
+            End Get
+            Set
+                Me("UpdateInterval_Realtime") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core2() As Boolean
+            Get
+                Return CType(Me("Rt_Core2"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core3() As Boolean
+            Get
+                Return CType(Me("Rt_Core3"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core4() As Boolean
+            Get
+                Return CType(Me("Rt_Core4"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core5() As Boolean
+            Get
+                Return CType(Me("Rt_Core5"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core6() As Boolean
+            Get
+                Return CType(Me("Rt_Core6"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core7() As Boolean
+            Get
+                Return CType(Me("Rt_Core7"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core8() As Boolean
+            Get
+                Return CType(Me("Rt_Core8"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core9() As Boolean
+            Get
+                Return CType(Me("Rt_Core9"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core9") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core10() As Boolean
+            Get
+                Return CType(Me("Rt_Core10"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core10") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core11() As Boolean
+            Get
+                Return CType(Me("Rt_Core11"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core11") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core12() As Boolean
+            Get
+                Return CType(Me("Rt_Core12"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core12") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core13() As Boolean
+            Get
+                Return CType(Me("Rt_Core13"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core13") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core14() As Boolean
+            Get
+                Return CType(Me("Rt_Core14"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core14") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core15() As Boolean
+            Get
+                Return CType(Me("Rt_Core15"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core15") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core16() As Boolean
+            Get
+                Return CType(Me("Rt_Core16"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core16") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core17() As Boolean
+            Get
+                Return CType(Me("Rt_Core17"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core17") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core18() As Boolean
+            Get
+                Return CType(Me("Rt_Core18"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core18") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core19() As Boolean
+            Get
+                Return CType(Me("Rt_Core19"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core19") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Rt_Core20() As Boolean
+            Get
+                Return CType(Me("Rt_Core20"),Boolean)
+            End Get
+            Set
+                Me("Rt_Core20") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Fetch_Realtime() As Boolean
+            Get
+                Return CType(Me("Fetch_Realtime"),Boolean)
+            End Get
+            Set
+                Me("Fetch_Realtime") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

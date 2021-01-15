@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.1.13.508</AssemblyVersion>
+    <AssemblyVersion>21.1.14.651</AssemblyVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
@@ -137,6 +137,7 @@
     <Compile Include="Modules\HourlyRoutines.vb" />
     <Compile Include="Modules\LogRoutines.vb" />
     <Compile Include="Modules\NowcastRoutines.vb" />
+    <Compile Include="Modules\RealtimeRoutines.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -162,9 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -508,10 +509,12 @@
     <Content Include="Icons\SVG\Color\tstorm.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\Data_Layers.gif" />
+    <None Include="Resources\climacell.ico" />
+    <None Include="Resources\PS_LOGO-transparent-190x150.png" />
+    <None Include="Resources\data_layers_6.gif" />
+    <None Include="Resources\powered_by_climacell_halo_sml.png" />
     <None Include="Resources\powered_by_climacell_halo.png" />
     <None Include="packages.config" />
-    <None Include="Resources\PS_LOGO-transparent-190x150.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

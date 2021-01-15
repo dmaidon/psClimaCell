@@ -64,6 +64,9 @@ Namespace Models
         <JsonPropertyName("sunrise")>
         Public Property Sunrise As Dv1
 
+        <JsonPropertyName("moon_phase")>
+        Public Property MoonPhase As Dv1
+
         <JsonPropertyName("sunset")>
         Public Property Sunset As Dv1
 

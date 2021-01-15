@@ -15,6 +15,8 @@ Public Class FrmMain
         TsslVer.Text = Application.ProductVersion
         LblAbout.Text = $"Written by: Dennis N Maidon{vbLf}PAROLE Software{vbLf}VB.Net{vbLf}.Net Framework 4.8{vbLf}Compiled: {ParseVersion()}"
 
+        SetMidnightRollover()
+
         If String.IsNullOrEmpty(My.Settings.ApiKey) Then
             TcOpt.SelectedTab = TpOptMain
         Else
@@ -27,10 +29,28 @@ Public Class FrmMain
             If My.Settings.Fetch_Nowcast Then
                 FetchNowcastData()
             End If
+            If My.Settings.Fetch_Realtime Then
+                FetchRealtimeData()
+            End If
         End If
 
         SaveLogs()
         TmrClock.Start()
+    End Sub
+
+    Private Sub SetMidnightRollover()
+        ''set the date to midnight + 5 seconds for the next day.
+        Dim st = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 1).AddDays(1)
+        Dim _int As Long = Date2Unix(st) - Date2Unix(Now)
+        MidDuration = New TimeSpan(0, 0, 0, CInt(_int))
+        MidNextUpdate = Date.Now + MidDuration
+        TmrMidnight.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+        TmrMidnight.Start()
+        'TsslMN.ForeColor = Color.Green
+        'TsslMidnight.Visible = True
+        'CalMonth.SetDate(Now)
+        'CalMonth.Refresh()
+        PrintLog($"=> Set midnight rollover: {st} -> Interval: {_int} seconds{vbLf}")
     End Sub
 
     Friend Shared Function ParseVersion() As String
@@ -80,9 +100,11 @@ Public Class FrmMain
         NumDailyInterval.Value = My.Settings.UpdateInterval_Daily
         NumHourlyInterval.Value = My.Settings.UpdateInterval_Hourly
         NumNowcastInterval.Value = My.Settings.UpdateInterval_Nowcast
+        NumRtInterval.Value = My.Settings.UpdateInterval_Realtime
         TmrInt(0) = My.Settings.UpdateInterval_Daily
         TmrInt(1) = My.Settings.UpdateInterval_Hourly
         TmrInt(2) = My.Settings.UpdateInterval_Nowcast
+        TmrInt(3) = My.Settings.UpdateInterval_Realtime
         NumNcTimeStep.Value = CDec(My.Settings.Nc_TimeStep)
 
         TxtApiKey.Text = My.Settings.ApiKey
@@ -100,6 +122,9 @@ Public Class FrmMain
                     Case 2
                         NcDuration = New TimeSpan(0, 0, TmrInt(j), 0)
                         NcNextUp = Date.Now + NcDuration
+                    Case 3
+                        RtDuration = New TimeSpan(0, 0, TmrInt(j), 0)
+                        RtNextUp = Date.Now + RtDuration
                     Case Else
                         Exit Select
                 End Select
@@ -111,7 +136,10 @@ Public Class FrmMain
         ChkFetchDaily.Checked = My.Settings.Fetch_Daily
         ChkFetchHourly.Checked = My.Settings.Fetch_Hourly
         ChkFetchNowcast.Checked = My.Settings.Fetch_Nowcast
+        ChkFetchRt.Checked = My.Settings.Fetch_Realtime
 
+
+        ''Daily settings
         ChkBP.Checked = My.Settings.Daily_Bp
         ChkDewpoint.Checked = My.Settings.Daily_Dewpoint
         ChkFeelsLike.Checked = My.Settings.Daily_FeelsLike
@@ -257,6 +285,30 @@ Public Class FrmMain
         ChkNcRiskCondition.Checked = My.Settings.Nc_RiskCondition
         ChkNcHailRisk.Checked = My.Settings.Nc_HailRisk
 
+        ''realtime settings
+        ChkRtCore0.Checked = My.Settings.Rt_Core0
+        ChkRtCore1.Checked = My.Settings.Rt_Core1
+        ChkRtCore2.Checked = My.Settings.Rt_Core2
+        ChkRtCore3.Checked = My.Settings.Rt_Core3
+        ChkRtCore4.Checked = My.Settings.Rt_Core4
+        ChkRtCore5.Checked = My.Settings.Rt_Core5
+        ChkRtCore6.Checked = My.Settings.Rt_Core6
+        ChkRtCore7.Checked = My.Settings.Rt_Core7
+        ChkRtCore8.Checked = My.Settings.Rt_Core8
+        ChkRtCore9.Checked = My.Settings.Rt_Core9
+        ChkRtCore10.Checked = My.Settings.Rt_Core10
+        ChkRtCore11.Checked = My.Settings.Rt_Core11
+        ChkRtCore12.Checked = My.Settings.Rt_Core12
+        ChkRtCore13.Checked = My.Settings.Rt_Core13
+        ChkRtCore14.Checked = My.Settings.Rt_Core14
+        ChkRtCore15.Checked = My.Settings.Rt_Core15
+        ChkRtCore16.Checked = My.Settings.Rt_Core16
+        ChkRtCore17.Checked = My.Settings.Rt_Core17
+        ChkRtCore18.Checked = My.Settings.Rt_Core18
+        ChkRtCore19.Checked = My.Settings.Rt_Core19
+        ChkRtCore20.Checked = My.Settings.Rt_Core20
+
+
         Select Case My.Settings.Units
             Case 0
                 RbUnitUS.Checked = True
@@ -282,12 +334,12 @@ Public Class FrmMain
         My.Settings.Save()
     End Sub
 
-    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLatiutude.Enter, NumLongitude.Enter, NumDailyInterval.Enter, NumHourlyInterval.Enter, NumNowcastInterval.Enter, NumNcTimeStep.Enter
+    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLatiutude.Enter, NumLongitude.Enter, NumDailyInterval.Enter, NumHourlyInterval.Enter, NumNowcastInterval.Enter, NumRtInterval.Enter
         Dim ct = DirectCast(sender, NumericUpDown)
         ct.Select(0, ct.Text.Length)
     End Sub
 
-    Private Sub UpdateIntervals(sender As Object, e As EventArgs) Handles NumDailyInterval.ValueChanged, NumHourlyInterval.ValueChanged, NumNowcastInterval.ValueChanged
+    Private Sub UpdateIntervals(sender As Object, e As EventArgs) Handles NumDailyInterval.ValueChanged, NumHourlyInterval.ValueChanged, NumNowcastInterval.ValueChanged, NumRtInterval.ValueChanged
         With DirectCast(sender, NumericUpDown)
             Select Case CInt(.Tag)
                 Case 0
@@ -299,7 +351,11 @@ Public Class FrmMain
                 Case 2
                     My.Settings.UpdateInterval_Nowcast = CInt(.Value)
                     TmrInt(2) = CInt(.Value)
+                Case 3
+                    My.Settings.UpdateInterval_Realtime = CInt(.Value)
+                    TmrInt(3) = CInt(.Value)
                 Case Else
+                    Exit Select
             End Select
         End With
     End Sub
@@ -318,7 +374,7 @@ Public Class FrmMain
         My.Settings.Save()
     End Sub
 
-    Private Sub FetchData(sender As Object, e As EventArgs) Handles ChkFetchDaily.CheckedChanged, ChkFetchHourly.CheckedChanged, ChkFetchNowcast.CheckedChanged
+    Private Sub FetchData(sender As Object, e As EventArgs) Handles ChkFetchDaily.CheckedChanged, ChkFetchHourly.CheckedChanged, ChkFetchNowcast.CheckedChanged, ChkFetchRt.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -327,6 +383,8 @@ Public Class FrmMain
                     My.Settings.Fetch_Hourly = .Checked
                 Case 2
                     My.Settings.Fetch_Nowcast = .Checked
+                Case 3
+                    My.Settings.Fetch_Realtime = .Checked
                 Case Else
                     Exit Select
             End Select
@@ -724,6 +782,7 @@ Public Class FrmMain
         If My.Settings.Fetch_Daily Then
             DlyDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Daily, 0)
             DlyNextUp = Date.Now + DlyDuration
+            PrintLog($"Next Daily Update @ {DlyNextUp:T}.{vbLf}")
             FetchDailyData()
         End If
     End Sub
@@ -733,6 +792,7 @@ Public Class FrmMain
         If My.Settings.Fetch_Hourly Then
             HrDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
             HrNextUp = Date.Now + HrDuration
+            PrintLog($"Next Hourly Update @ {HrNextUp:T}.{vbLf}")
             FetchHourData()
         End If
     End Sub
@@ -740,9 +800,21 @@ Public Class FrmMain
     Private Sub TmrUpdateNowcast_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateNowcast.Elapsed
         PrintLog($"Nowcast Update timer elapsed @ {Now:T}.{vbLf}")
         If My.Settings.Fetch_Nowcast Then
-            NcDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Hourly, 0)
+            NcDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Nowcast, 0)
             NcNextUp = Date.Now + NcDuration
+            PrintLog($"Next Nowcast Update @ {NcNextUp:T}.{vbLf}")
             FetchNowcastData()
+        End If
+    End Sub
+
+
+    Private Sub TmrUpdateRt_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrUpdateRt.Elapsed
+        PrintLog($"Realtime Update timer elapsed @ {Now:T}.{vbLf}")
+        If My.Settings.Fetch_Nowcast Then
+            RtDuration = New TimeSpan(0, 0, My.Settings.UpdateInterval_Realtime, 0)
+            RtNextUp = Date.Now + RtDuration
+            PrintLog($"Next Realtime Update @ {RtNextUp:T}.{vbLf}")
+            FetchRealtimeData()
         End If
     End Sub
 
@@ -766,8 +838,109 @@ Public Class FrmMain
     $"Nc: {DateDiff(DateInterval.Second, Date.Now, NcNextUp):N0}",
     $"Nc: {DateDiff(DateInterval.Minute, Date.Now, NcNextUp):N0}")
         End If
+
+        If TmrUpdateRt.Enabled Then
+            TsslNextRt.Text = If(DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, RtNextUp) < 1,
+    $"Rt: {DateDiff(DateInterval.Second, Date.Now, RtNextUp):N0}",
+    $"Rt: {DateDiff(DateInterval.Minute, Date.Now, RtNextUp):N0}")
+        End If
     End Sub
+
+    Private Sub TmrMidnight_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrMidnight.Elapsed
+        Try
+            PrintLog($"=> Midnight timer elapsed and stopped @ {Now:T}.{vbLf}")
+            TmrMidnight.Stop()
+            Dim _st As Date = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 1).AddDays(1)
+            Dim _int As Long = Date2Unix(_st) - Date2Unix(Now)
+            MidDuration = New TimeSpan(0, 0, 0, CInt(_int))
+            MidNextUpdate = Date.Now + MidDuration
+            TmrMidnight.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+            TmrMidnight.Start()
+            PrintLog($"<== Midnight timer restarted @ {Now:T}.{vbLf}     Interval: {_int} seconds{vbLf}")
+
+            Check4NewLogFile()
+            SaveLogs()
+        Catch ex As ArgumentNullException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            'a
+        End Try
+    End Sub
+
+
 
 #End Region
 
+#Region "Realtime"
+
+    Private Sub ChkRtCheckAll_CheckedChanged(sender As Object, e As EventArgs) Handles ChkRtCheckAll.CheckedChanged
+        For Each c As CheckBox In FlpRtOpt.Controls.OfType(Of CheckBox)()
+            If Not c.Checked Then
+                c.Checked = True
+            End If
+        Next
+        My.Settings.Save()
+    End Sub
+
+    Private Sub ChkRtUncheckAll_CheckedChanged(sender As Object, e As EventArgs) Handles ChkRtUncheckAll.CheckedChanged
+        For Each c As CheckBox In FlpRtOpt.Controls.OfType(Of CheckBox)()
+            If c.Checked Then
+                c.Checked = False
+            End If
+        Next
+        My.Settings.Save()
+    End Sub
+
+    Private Sub RtData(sender As Object, e As EventArgs) Handles ChkRtCore0.CheckedChanged, ChkRtCore1.CheckedChanged, ChkRtCore2.CheckedChanged, ChkRtCore3.CheckedChanged, ChkRtCore4.CheckedChanged, ChkRtCore5.CheckedChanged, ChkRtCore6.CheckedChanged, ChkRtCore7.CheckedChanged, ChkRtCore8.CheckedChanged, ChkRtCore9.CheckedChanged, ChkRtCore10.CheckedChanged, ChkRtCore11.CheckedChanged, ChkRtCore12.CheckedChanged, ChkRtCore13.CheckedChanged, ChkRtCore14.CheckedChanged, ChkRtCore15.CheckedChanged, ChkRtCore16.CheckedChanged, ChkRtCore17.CheckedChanged, ChkRtCore18.CheckedChanged, ChkRtCore19.CheckedChanged, ChkRtCore20.CheckedChanged
+        With DirectCast(sender, CheckBox)
+            Select Case CInt(.Tag)
+                Case 0
+                    My.Settings.Rt_Core0 = .Checked
+                Case 1
+                    My.Settings.Rt_Core1 = .Checked
+                Case 2
+                    My.Settings.Rt_Core2 = .Checked
+                Case 3
+                    My.Settings.Rt_Core3 = .Checked
+                Case 4
+                    My.Settings.Rt_Core4 = .Checked
+                Case 5
+                    My.Settings.Rt_Core5 = .Checked
+                Case 6
+                    My.Settings.Rt_Core6 = .Checked
+                Case 7
+                    My.Settings.Rt_Core7 = .Checked
+                Case 8
+                    My.Settings.Rt_Core8 = .Checked
+                Case 9
+                    My.Settings.Rt_Core9 = .Checked
+                Case 10
+                    My.Settings.Rt_Core10 = .Checked
+                Case 11
+                    My.Settings.Rt_Core11 = .Checked
+                Case 12
+                    My.Settings.Rt_Core12 = .Checked
+                Case 13
+                    My.Settings.Rt_Core13 = .Checked
+                Case 14
+                    My.Settings.Rt_Core14 = .Checked
+                Case 15
+                    My.Settings.Rt_Core15 = .Checked
+                Case 16
+                    My.Settings.Rt_Core16 = .Checked
+                Case 17
+                    My.Settings.Rt_Core17 = .Checked
+                Case 18
+                    My.Settings.Rt_Core18 = .Checked
+                Case 19
+                    My.Settings.Rt_Core19 = .Checked
+                Case 20
+                    My.Settings.Rt_Core20 = .Checked
+                Case Else
+                    Exit Select
+            End Select
+        End With
+    End Sub
+
+#End Region
 End Class
