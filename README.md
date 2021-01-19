@@ -1,4 +1,4 @@
-# ClimaCell
+# ClimaCell V3
 Utilizes [ClimaCell V3 API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast, Realtime and Hourly forecasts.
 
 ### What's Included: ###
