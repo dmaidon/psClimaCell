@@ -1,4 +1,4 @@
-# ClimaCell V4
+# ClimaCell V4 #
 
 Utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "1d", "1h", "30m", "15m", "5m" and "1m".
 
@@ -34,10 +34,10 @@ Following sections were added to Imperial and Metric Field Units Json files.
   },
 </pre>
 
-# ClimaCell V3
+# ClimaCell V3 #
 Utilizes [ClimaCell V3 API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast, Realtime and Hourly forecasts.
 
-# Notice: Version 3 will sunset on June 21, 2021 and all requests will fail. #
+### Notice: Version 3 will sunset on June 21, 2021 and all requests will fail. ###
 
 ### What's Included: ###
 - [ ] [Daily](https://developer.climacell.co/v3/reference#get-daily)
