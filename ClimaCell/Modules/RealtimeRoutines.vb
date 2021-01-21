@@ -51,13 +51,15 @@ Friend Module RealtimeRoutines
                 .UserAgent = Use_Agent
             End With
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
-                Dim sc As New StringBuilder()
-                PrintLog($"{vbLf}{vbLf}ClimaCell Realtime Headers:{vbLf}{vbLf}")
-                For j = 0 To response.Headers.Count - 1
-                    PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                    sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                Next
-                sc.Clear()
+                If My.Settings.Log_Headers Then
+                    Dim sc As New StringBuilder()
+                    PrintLog($"{vbLf}{vbLf}ClimaCell Realtime Headers:{vbLf}{vbLf}")
+                    For j = 0 To response.Headers.Count - 1
+                        PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                        sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                    Next
+                    sc.Clear()
+                End If
                 PrintLog($"{Separator}{vbLf}{vbLf}")
 
                 If response.StatusCode = 200 Then
@@ -106,16 +108,16 @@ Friend Module RealtimeRoutines
                         sb.Append("wind_direction")
                     Case 6
                         sb.Append("wind_gust")
-                    Case 7
-                        sb.Append("")   '("barometer")
+                    'Case 7
+                    '    sb.Append("")   '("barometer")
                     Case 8
                         sb.Append("precipitation")
                     Case 9
                         sb.Append("precipitation_type")
-                    Case 10
-                        sb.Append("")   '("precipitation_probability")
-                    Case 11
-                        sb.Append("")   '("precipitation_accumulation")
+                    'Case 10
+                    '    sb.Append("")   '("precipitation_probability")
+                    'Case 11
+                    '    sb.Append("")   '("precipitation_accumulation")
                     Case 12
                         sb.Append("sunrise")
                     Case 13
@@ -223,7 +225,7 @@ Friend Module RealtimeRoutines
                     Case 64
                         sb.Append("china_health_concern")
                     Case Else
-                        sb.Append("")
+                        'sb.Append("")
                 End Select
                 sb.Append("%2C")
             End If
@@ -274,6 +276,7 @@ Friend Module RealtimeRoutines
                 End Using
             End Using
 
+
             With FrmMain.DgvRt
                 .Rows.Clear()
                 .BackgroundColor = bgClr
@@ -302,7 +305,7 @@ Friend Module RealtimeRoutines
                 .Rows(16).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.MoonPhase.Value).Replace("_", " ")}"
                 .Rows(17).Cells(1).Value = $"{myTI.ToTitleCase(rtNfo.WxCode.Value).Replace("_", " ")}"
                 .Rows(18).Cells(1).Value = $"{CDate(rtNfo.ObservationTime.Value):F}"
-                .Rows(19).Cells(1).Value = $"AQI: {rtNfo.EpaAqi.Value:N0}  ->  Primary Pollutant: {rtNfo.EpaPrimaryPollutant.Value}"
+                .Rows(19).Cells(1).Value = $"AQI: {rtNfo.EpaAqi.Value:N0}  ->  Primary Pollutant: {rtNfo.EpaPrimaryPollutant.Value.ToUpper}"
                 .ClearSelection()
             End With
             RtArr.Clear()

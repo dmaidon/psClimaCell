@@ -2693,6 +2693,30 @@ Namespace My
                 Me("Rt_Aqi11") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Log_Images() As Boolean
+            Get
+                Return CType(Me("Log_Images"),Boolean)
+            End Get
+            Set
+                Me("Log_Images") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Log_Headers() As Boolean
+            Get
+                Return CType(Me("Log_Headers"),Boolean)
+            End Get
+            Set
+                Me("Log_Headers") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

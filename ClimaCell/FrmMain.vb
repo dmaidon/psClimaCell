@@ -1,8 +1,8 @@
 ﻿Imports System.IO
+Imports System.Text
 
 Public Class FrmMain
 
-    'C:\Users\dmaid\AppData\Local\PAROLE_Software\ClimaCell.exe_Url_2dgbsvwgjqedz0grtx5rs15dcfk2xfjp
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpgradeMySettings()
         LoadProgramSettings()
@@ -14,6 +14,7 @@ Public Class FrmMain
         TsslCpy.Text = Cpy
         TsslVer.Text = Application.ProductVersion
         LblAbout.Text = $"Written by: Dennis N Maidon{vbLf}PAROLE Software{vbLf}VB.Net{vbLf}.Net Framework 4.8{vbLf}Compiled: {ParseVersion()}"
+        Show()
 
         SetMidnightRollover()
 
@@ -38,6 +39,7 @@ Public Class FrmMain
         TmrClock.Start()
     End Sub
 
+
     Private Sub SetMidnightRollover()
         ''set the date to midnight + 5 seconds for the next day.
         Dim st = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 1).AddDays(1)
@@ -46,10 +48,6 @@ Public Class FrmMain
         MidNextUpdate = Date.Now + MidDuration
         TmrMidnight.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
         TmrMidnight.Start()
-        'TsslMN.ForeColor = Color.Green
-        'TsslMidnight.Visible = True
-        'CalMonth.SetDate(Now)
-        'CalMonth.Refresh()
         PrintLog($"=> Set midnight rollover: {st} -> Interval: {_int} seconds{vbLf}")
     End Sub
 
@@ -137,12 +135,13 @@ Public Class FrmMain
         ChkFetchHourly.Checked = My.Settings.Fetch_Hourly
         ChkFetchNowcast.Checked = My.Settings.Fetch_Nowcast
         ChkFetchRt.Checked = My.Settings.Fetch_Realtime
+        ChkLogHeaders.Checked = My.Settings.Log_Headers
+        ChkLogImages.Checked = My.Settings.Log_Images
 
         LoadDailySettings()
         LoadHrSettings()
         LoadNcSettings()
         LoadRtSettings()
-
 
         Select Case My.Settings.Units
             Case 0
@@ -209,7 +208,7 @@ Public Class FrmMain
         My.Settings.Save()
     End Sub
 
-    Private Sub FetchData(sender As Object, e As EventArgs) Handles ChkFetchDaily.CheckedChanged, ChkFetchHourly.CheckedChanged, ChkFetchNowcast.CheckedChanged, ChkFetchRt.CheckedChanged
+    Private Sub FetchData(sender As Object, e As EventArgs) Handles ChkFetchDaily.CheckedChanged, ChkFetchHourly.CheckedChanged, ChkFetchNowcast.CheckedChanged, ChkFetchRt.CheckedChanged, ChkLogImages.CheckedChanged, ChkLogHeaders.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -220,6 +219,8 @@ Public Class FrmMain
                     My.Settings.Fetch_Nowcast = .Checked
                 Case 3
                     My.Settings.Fetch_Realtime = .Checked
+                Case 4
+                Case 5
                 Case Else
                     Exit Select
             End Select
@@ -273,15 +274,15 @@ Public Class FrmMain
     End Sub
 
     Private Sub DailyCheckAll(sender As Object, e As EventArgs) Handles ChkAllDaily.CheckedChanged
-        For Each c As CheckBox In TlpDaily.Controls.OfType(Of CheckBox)()
-            If Not c.Checked Then
+        For Each c As CheckBox In FlpDaily.Controls.OfType(Of CheckBox)()
+            If Not c.Checked And c.Enabled Then
                 c.Checked = True
             End If
         Next
     End Sub
 
     Private Sub ChkUncheckAllDaily_CheckedChanged(sender As Object, e As EventArgs) Handles ChkUncheckAllDaily.CheckedChanged
-        For Each c As CheckBox In TlpDaily.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FlpDaily.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 c.Checked = False
             End If
@@ -293,15 +294,15 @@ Public Class FrmMain
 #Region "Hourly Forecast"
 
     Private Sub HourlyCheckAll(sender As Object, e As EventArgs) Handles ChkAllHourly.CheckedChanged
-        For Each c As CheckBox In TlpHourly.Controls.OfType(Of CheckBox)()
-            If Not c.Checked Then
+        For Each c As CheckBox In FlpHourly.Controls.OfType(Of CheckBox)()
+            If Not c.Checked And c.Enabled Then
                 c.Checked = True
             End If
         Next
     End Sub
 
     Private Sub ChkUncheckAllHr_CheckedChanged(sender As Object, e As EventArgs) Handles ChkUncheckAllHr.CheckedChanged
-        For Each c As CheckBox In TlpHourly.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FlpHourly.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 c.Checked = False
             End If
@@ -584,8 +585,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub NowcastCheckAll(sender As Object, e As EventArgs) Handles ChkAllNowcast.CheckedChanged
-        For Each c As CheckBox In TlpNowcast.Controls.OfType(Of CheckBox)()
-            If Not c.Checked Then
+        For Each c As CheckBox In FlpNowcast.Controls.OfType(Of CheckBox)()
+            If Not c.Checked And c.Enabled Then
                 c.Checked = True
             End If
         Next
@@ -593,7 +594,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub ChkUncheckAllNowcast_CheckedChanged(sender As Object, e As EventArgs) Handles ChkUncheckAllNowcast.CheckedChanged
-        For Each c As CheckBox In TlpNowcast.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FlpNowcast.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 c.Checked = False
             End If
@@ -723,7 +724,7 @@ Public Class FrmMain
 
     Private Sub ChkRtCheckAll_CheckedChanged(sender As Object, e As EventArgs) Handles ChkRtCheckAll.CheckedChanged
         For Each c As CheckBox In FlpRtOpt.Controls.OfType(Of CheckBox)()
-            If Not c.Checked Then
+            If Not c.Checked And c.Enabled Then
                 c.Checked = True
             End If
         Next
@@ -849,29 +850,29 @@ Public Class FrmMain
                 Case 52
                     My.Settings.Rt_Hail0 = .Checked
                 Case 53
-                    My.Settings.Rt_aqi0 = .Checked
+                    My.Settings.Rt_Aqi0 = .Checked
                 Case 54
-                    My.Settings.Rt_aqi1 = .Checked
+                    My.Settings.Rt_Aqi1 = .Checked
                 Case 55
-                    My.Settings.Rt_aqi2 = .Checked
+                    My.Settings.Rt_Aqi2 = .Checked
                 Case 56
-                    My.Settings.Rt_aqi3 = .Checked
+                    My.Settings.Rt_Aqi3 = .Checked
                 Case 57
-                    My.Settings.Rt_aqi4 = .Checked
+                    My.Settings.Rt_Aqi4 = .Checked
                 Case 58
-                    My.Settings.Rt_aqi5 = .Checked
+                    My.Settings.Rt_Aqi5 = .Checked
                 Case 59
-                    My.Settings.Rt_aqi6 = .Checked
+                    My.Settings.Rt_Aqi6 = .Checked
                 Case 60
-                    My.Settings.Rt_aqi7 = .Checked
+                    My.Settings.Rt_Aqi7 = .Checked
                 Case 61
-                    My.Settings.Rt_aqi8 = .Checked
+                    My.Settings.Rt_Aqi8 = .Checked
                 Case 62
-                    My.Settings.Rt_aqi9 = .Checked
+                    My.Settings.Rt_Aqi9 = .Checked
                 Case 63
-                    My.Settings.Rt_aqi10 = .Checked
+                    My.Settings.Rt_Aqi10 = .Checked
                 Case 64
-                    My.Settings.Rt_aqi11 = .Checked
+                    My.Settings.Rt_Aqi11 = .Checked
                 Case Else
                     Exit Select
             End Select

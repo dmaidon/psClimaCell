@@ -176,9 +176,9 @@
             .ChkRtCore18.Checked = My.Settings.Rt_Core18
             .ChkRtCore19.Checked = My.Settings.Rt_Core19
             .ChkRtCore20.Checked = My.Settings.Rt_Core20
-            .ChkRtPol1.Checked = My.Settings.Rt_Pol0
+            .ChkRtPol0.Checked = My.Settings.Rt_Pol0
             .ChkRtPol1.Checked = My.Settings.Rt_Pol1
-            .ChkRtPol3.Checked = My.Settings.Rt_Pol2
+            .ChkRtPol2.Checked = My.Settings.Rt_Pol2
             .ChkRtPol3.Checked = My.Settings.Rt_Pol3
             .ChkRtPol4.Checked = My.Settings.Rt_Pol4
             .ChkRtPol5.Checked = My.Settings.Rt_Pol5
@@ -188,6 +188,7 @@
             .ChkRtPol9.Checked = My.Settings.Rt_Pol9
             .ChkRtPol10.Checked = My.Settings.Rt_Pol10
             .ChkRtPol11.Checked = My.Settings.Rt_Pol11
+            .ChkRtPol12.Checked = My.Settings.Rt_Pol12
             .ChkRtPol13.Checked = My.Settings.Rt_Pol13
             .ChkRtPol14.Checked = My.Settings.Rt_Pol14
             .ChkRtPol15.Checked = My.Settings.Rt_Pol15

@@ -1,0 +1,341 @@
+﻿{
+  "CloudBase": "km",
+  "CloudCeiling": "km",
+  "CloudCover": "%",
+  "DewPoint": "°C",
+  "_epaComment": "EpsBgColor, EpaFgColor and EpaConcernText added to enhance AQI data response.",
+  "EpaBgColor": {
+    "0": "#31AE8C",
+    "1": "#EDE066",
+    "2": "#EDAD66",
+    "3": "#C73A66",
+    "4": "#7A3AB3",
+    "5": "#8C3A5A"
+  },
+  "EpaFgColor": {
+    "0": "#000000",
+    "1": "#000000",
+    "2": "#000000",
+    "3": "#000000",
+    "4": "##E6E6FA",
+    "5": "##E6E6FA"
+  },
+  "EpaConcernText": {
+    "0": "(0-50)  Air quality is satisfactory and poses little or no health risk",
+    "1": "(51-100)  Air quality is acceptable; however, pollution in this range may pose\n a moderate health concern for a very small number of individuals. People\n who are unusually sensitive to ozone or particle pollution may experience\n respiratory symptoms.",
+    "2": "(101-150)  Members of sensitive groups may experience health effects, but the\n general public is unlikely to be affected.",
+    "3": "(151-200)  Everyone may begin to experience health effects but members of sensitive\n groups may experience more serious health effects.",
+    "4": "(201-300)  Values Trigger a health alert, meaning everyone may experience more\n serious health effects.",
+    "5": "(300+)  AQI values over 300 trigger health warnings of emergency conditions. The\n entire population is even more likely to be affected by serious health\n effects."
+  },
+  "EpaHealthConcern": {
+    "0": "Good",
+    "1": "Moderate",
+    "2": "Unhealthy for Sensitive Groups",
+    "3": "Unhealthy",
+    "4": "Very Unhealthy",
+    "5": "Hazardous"
+  },
+  "EpaIndex": "EPA AQI",
+  "EpaPrimaryPollutant": {
+    "0": "PM2.5",
+    "1": "PM10",
+    "2": "O3",
+    "3": "NO2",
+    "4": "CO",
+    "5": "SO2"
+  },
+  "FireIndex": "FWI",
+  "GrassGrassIndex": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "GrassIndex": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "HailBinary": "Binary Prediction",
+  "Humidity": "%",
+  "MepHealthConcern": {
+    "0": "Good",
+    "1": "Moderate",
+    "2": "Unhealthy for Sensitive Groups",
+    "3": "Unhealthy",
+    "4": "Very Unhealthy",
+    "5": "Hazardous"
+  },
+  "MepIndex": "MEP AQI",
+  "MepPrimaryPollutant": {
+    "0": "PM2.5",
+    "1": "PM10",
+    "2": "O3",
+    "3": "NO2",
+    "4": "CO",
+    "5": "SO2"
+  },
+  "MoonPhase": {
+    "0": "New",
+    "1": "Waxing Crescent",
+    "2": "First Quarter",
+    "3": "Waxing Gibbous",
+    "4": "Full",
+    "5": "Waning Gibbous",
+    "6": "Third Quarter",
+    "7": "Waning Crescent"
+  },
+  "ParticulateMatter10": "μg/m^3",
+  "ParticulateMatter25": "μg/m^3",
+  "PollutantCO": "ppb",
+  "PollutantNO2": "ppb",
+  "PollutantO3": "ppb",
+  "PollutantSO2": "ppb",
+  "PrecipitationIntensity": "mm/hr",
+  "PrecipitationProbability": "%",
+  "PrecipitationType": {
+    "0": "N/A",
+    "1": "Rain",
+    "2": "Snow",
+    "3": "Freezing Rain",
+    "4": "Ice Pellets"
+  },
+  "PressureSeaLevel": "hPa",
+  "PressureSurfaceLevel": "hPa",
+  "SolarDIF": "W/m^2",
+  "SolarDIR": "W/m^2",
+  "SolarGHI": "W/m^2",
+  "Temperature": "°C",
+  "TemperatureApparent": "°C",
+  "TreeAcacia": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeAsh": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeBeech": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeBirch": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeCedar": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeCottonwood": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeCyPress": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeElder": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeElm": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeHemlock": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeHickory": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeIndex": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeJuniper": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeMahagony": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeMaple": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeMulberry": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeOak": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreePine": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeSpruce": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeSycamore": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeWalnut": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "TreeWillow": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "Visibility": "km",
+  "WeatherCode": {
+    "0": "Unknown",
+    "1000": "Clear",
+    "1001": "Cloudy",
+    "1100": "Mostly Clear",
+    "1101": "Partly Cloudy",
+    "1102": "Mostly Cloudy",
+    "2000": "Fog",
+    "2100": "Light Fog",
+    "3000": "Light Wind",
+    "3001": "Wind",
+    "3002": "Strong Wind",
+    "4000": "Drizzle",
+    "4001": "Rain",
+    "4200": "Light Rain",
+    "4201": "Heavy Rain",
+    "5000": "Snow",
+    "5001": "Flurries",
+    "5100": "Light Snow",
+    "5101": "Heavy Snow",
+    "6000": "Freezing Drizzle",
+    "6001": "Freezing Rain",
+    "6200": "Light Freezing Rain",
+    "6201": "Heavy Freezing Rain",
+    "7000": "Ice Pellets",
+    "7101": "Heavy Ice Pellets",
+    "7102": "Light Ice Pellets",
+    "8000": "Thunderstorm"
+  },
+  "WeedGrassWeedIndex": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "WeedIndex": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
+  "WindDirection": "°",
+  "WindGust": "m/s",
+  "WindSpeed": "m/s"
+}

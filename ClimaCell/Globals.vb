@@ -15,6 +15,8 @@ Module Globals
 
     Public uArr As New List(Of String)({"us", "si"})
 
+    'Public ShowImgFiles As Boolean
+
     'number of times that program has been run
     Public Timesrun As Long
 

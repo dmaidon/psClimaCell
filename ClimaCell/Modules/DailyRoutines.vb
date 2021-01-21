@@ -37,13 +37,15 @@ Friend Module DailyRoutines
                 .UserAgent = Use_Agent
             End With
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
-                Dim sc As New StringBuilder()
-                PrintLog($"{vbLf}{vbLf}ClimaCell Daily Headers:{vbLf}{vbLf}")
-                For j = 0 To response.Headers.Count - 1
-                    PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                    sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                Next
-                sc.Clear()
+                If My.Settings.Log_Headers Then
+                    PrintLog($"{vbLf}{vbLf}ClimaCell Daily Headers:{vbLf}{vbLf}")
+                    Dim sc As New StringBuilder()
+                    For j = 0 To response.Headers.Count - 1
+                        PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                        sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                    Next
+                    sc.Clear()
+                End If
                 PrintLog($"{Separator}{vbLf}{vbLf}")
 
                 If response.StatusCode = 200 Then
@@ -74,7 +76,7 @@ Friend Module DailyRoutines
     End Sub
     Private Function GetDailyString() As String
         Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMain.TlpDaily.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FrmMain.FlpDaily.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 Select Case CInt(c.Tag)
                     Case 0
@@ -179,7 +181,7 @@ Friend Module DailyRoutines
                     sb.Append($"Vis: {dNfo(j).Visibility(0).Min.Value} mi{vbLf}")
                     sb.Append($"{myTI.ToTitleCase(dNfo(j).WeatherCode.Value).Replace("_", " ")}{vbLf}")
                     Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{dNfo(j).WeatherCode.Value}.png")
-                    PrintLog($"{j}. Dly: {icn} --> Bitmap{vbLf}")
+                    If My.Settings.Log_Images Then PrintLog($"{j}. Dly: {icn} --> Bitmap{vbLf}")
 
                     Dim bgClr = If(Date2Unix(Now) >= Date2Unix(dNfo(0).Sunrise.Value.ToLocalTime) And Date2Unix(Now) <= Date2Unix(dNfo(0).Sunset.Value.ToLocalTime),
                         Color.LightSkyBlue,

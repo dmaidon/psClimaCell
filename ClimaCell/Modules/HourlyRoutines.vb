@@ -38,13 +38,15 @@ Friend Module HourlyRoutines
                 .UserAgent = Use_Agent
             End With
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
-                Dim sc As New StringBuilder()
-                PrintLog($"{vbLf}{vbLf}ClimaCell Hourly Headers:{vbLf}{vbLf}")
-                For j = 0 To response.Headers.Count - 1
-                    PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                    sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                Next
-                sc.Clear()
+                If My.Settings.Log_Headers Then
+                    Dim sc As New StringBuilder()
+                    PrintLog($"{vbLf}{vbLf}ClimaCell Hourly Headers:{vbLf}{vbLf}")
+                    For j = 0 To response.Headers.Count - 1
+                        PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                        sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                    Next
+                    sc.Clear()
+                End If
                 PrintLog($"{Separator}{vbLf}{vbLf}")
 
                 If response.StatusCode = 200 Then
@@ -77,7 +79,7 @@ Friend Module HourlyRoutines
 
     Private Function GetHourString() As String
         Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMain.TlpHourly.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FrmMain.FlpHourly.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 Select Case CInt(c.Tag)
                     Case 0
@@ -244,7 +246,7 @@ Friend Module HourlyRoutines
 
                     .Rows.Add()
                     Dim Icn As String = Path.Combine(IconDir, "PNG", "Color", $"{hNfo(j).WxCode.Value}.png")
-                    PrintLog($"{j}. Hr: {Icn}{vbLf}")
+                    If My.Settings.Log_Images Then PrintLog($"{j}. Hr: {Icn}{vbLf}")
                     Dim bgClr = If(Date2Unix(CDate(hNfo(j).ObservationTime.Value).ToLocalTime) >= Date2Unix(CDate(hNfo(j).Sunrise.Value).ToLocalTime) And Date2Unix(CDate(hNfo(j).ObservationTime.Value).ToLocalTime) <= Date2Unix(CDate(hNfo(j).Sunset.Value).ToLocalTime),
                         Color.LightSkyBlue,
                         Color.Gray)

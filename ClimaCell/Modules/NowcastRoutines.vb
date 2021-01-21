@@ -44,13 +44,15 @@ Friend Module NowcastRoutines
             End With
 
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
-                Dim sc As New StringBuilder()
-                PrintLog($"{vbLf}{vbLf}ClimaCell Nowcast Headers:{vbLf}{vbLf}")
-                For j = 0 To response.Headers.Count - 1
-                    PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                    sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                Next
-                sc.Clear()
+                If My.Settings.Log_Headers Then
+                    Dim sc As New StringBuilder()
+                    PrintLog($"{vbLf}{vbLf}ClimaCell Nowcast Headers:{vbLf}{vbLf}")
+                    For j = 0 To response.Headers.Count - 1
+                        PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                        sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                    Next
+                    sc.Clear()
+                End If
                 PrintLog($"{Separator}{vbLf}{vbLf}")
 
                 If response.StatusCode = 200 Then
@@ -83,7 +85,7 @@ Friend Module NowcastRoutines
     Private Function GetNowcastString() As String
 
         Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMain.TlpNowcast.Controls.OfType(Of CheckBox)()
+        For Each c As CheckBox In FrmMain.FlpNowcast.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 Select Case CInt(c.Tag)
                     Case 0
@@ -246,7 +248,7 @@ Friend Module NowcastRoutines
                 For j = 0 To ncNfo.Length - 1
                     .Rows.Add()
                     Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{ncNfo(j).WxCode.Value}.png")
-                    PrintLog($"{j}. Nc: {icn}{vbLf}")
+                    If My.Settings.Log_Images Then PrintLog($"{j}. Nc: {icn}{vbLf}")
                     Dim bgClr = If(Date2Unix(CDate(ncNfo(j).ObservationTime.Value).ToLocalTime) >= Date2Unix(CDate(ncNfo(j).Sunrise.Value).ToLocalTime) And Date2Unix(CDate(ncNfo(j).ObservationTime.Value).ToLocalTime) <= Date2Unix(CDate(ncNfo(j).Sunset.Value).ToLocalTime),
                         Color.LightSkyBlue,
                         Color.Gray)
@@ -265,7 +267,7 @@ Friend Module NowcastRoutines
                     sb.Append($"Dewpoint: {ncNfo(j).Dewpoint.Value:N1}°{ncNfo(j).Dewpoint.Units}{vbLf}")
                     sb.Append($"Wind {Deg2Compass(CDbl(ncNfo(j).WindDir.Value))} @ {Math.Ceiling(CDec(ncNfo(j).WindSpeed.Value))} mph, gusting to {Math.Round(CDbl(ncNfo(j).WindGust.Value)):N0} {ncNfo(j).WindGust.Units}{vbLf}")
                     sb.Append($"AQI: {Math.Ceiling(CDbl(ncNfo(j).EpaAqi.Value))}{vbLf}")
-                    sb.Append($"Primary Pollutant: {ncNfo(j).EpaPrimaryPollutant.Value}{vbLf}")
+                    sb.Append($"Primary Pollutant: {ncNfo(j).EpaPrimaryPollutant.Value.ToUpper}{vbLf}")
                     Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
                     sb.Append($"Forecast: {myTI.ToTitleCase(ncNfo(j).WxCode.Value.Replace("_", " "))}{vbLf}")
                     .Rows(j).Cells(3).Value = sb.ToString
@@ -274,6 +276,8 @@ Friend Module NowcastRoutines
                 Next
                 .ClearSelection()
             End With
+        Catch ex As NullReferenceException
+            PrintLog($"Null Reference Exception: Data is missing.{vbLf}")
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
