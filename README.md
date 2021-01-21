@@ -5,7 +5,7 @@ Requires a V4 API Key from http://climacell.co.
 
 Following sections were added to Imperial and Metric Field Units Json files.
 
-<blockquote>
+{{
  "_epaComment": "EpsBgColor, EpaFgColor and EpaConcernText added to enhance AQI data response.",
   "EpaBgColor": {
     "0": "#00E400",
@@ -31,7 +31,8 @@ Following sections were added to Imperial and Metric Field Units Json files.
     "4": "(201-300)  Values Trigger a health alert, meaning everyone may experience more\n serious health effects.",
     "5": "(300+)  AQI values over 300 trigger health warnings of emergency conditions. The\n entire population is even more likely to be affected by serious health\n effects."
   },
-</blockquote>
+}}
+
 # ClimaCell V3
 Utilizes [ClimaCell V3 API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast, Realtime and Hourly forecasts.
 
