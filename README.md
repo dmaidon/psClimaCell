@@ -39,7 +39,7 @@ The V4 code is not complete for all data streams.  Any contributors are welcome.
 # ClimaCell V3 #
 Utilizes [ClimaCell V3 API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast, Realtime and Hourly forecasts.
 
-### {{font color|red|Notice: Version 3 will sunset on June 21, 2021 and all requests will fail.}} ###
+### {{Font color|red|Notice: Version 3 will sunset on June 21, 2021 and all requests will fail.}} ###
 
 ### What's Included: ###
 - [ ] [Daily](https://developer.climacell.co/v3/reference#get-daily)
