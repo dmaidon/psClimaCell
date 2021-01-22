@@ -81,6 +81,16 @@ Friend Module TimeLineRoutinesV4
                             Next
                         End If
 
+                        If CBool(InStr(resp, "timestep"":""current", CompareMethod.Text)) Then
+                            For j = 0 To tlNfo.WxData.TimeLines.Count - 1
+                                If tlNfo.WxData.TimeLines(j).TimeStep = "current" Then
+                                    TsCnt = j
+                                    WriteCurrentData(TsCnt)
+                                    Exit For
+                                End If
+                            Next
+                        End If
+
                         'search for "1h' data stream
                         If CBool(InStr(resp, "timestep"":""1h", CompareMethod.Text)) Then
                             For j = 0 To tlNfo.WxData.TimeLines.Count - 1
@@ -107,7 +117,7 @@ Friend Module TimeLineRoutinesV4
     End Sub
     Private Function GetFieldsString() As String
         'temperature field is set to fetch Min and Max temperature for time period.
-        Dim tlFields As New List(Of String)({"temperatureMax%2CtemperatureMin%2CtemperatureMaxTime%2CtemperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "", "hailBinary", "fireIndex"})
+        Dim tlFields As New List(Of String)({"temperature%2CtemperatureMax%2CtemperatureMin%2CtemperatureMaxTime%2CtemperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "", "hailBinary", "fireIndex"})
         '58 = weedGrassweedIndex
         Dim sb = New StringBuilder()
         For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
@@ -127,7 +137,7 @@ Friend Module TimeLineRoutinesV4
     End Function
 
     Private Function GetTimeStepString() As String
-        Dim tsArr As New List(Of String)({"1m", "5m", "15m", "30m", "1h", "1d"})
+        Dim tsArr As New List(Of String)({"1m", "5m", "15m", "30m", "1h", "1d", "current"})
         Dim sb = New StringBuilder()
         For Each c As CheckBox In FrmMainv4.GbTimeSteps.Controls.OfType(Of CheckBox)()
             If c.Checked Then
@@ -162,7 +172,15 @@ Friend Module TimeLineRoutinesV4
                     Next
                 End If
 
-
+                If CBool(InStr(resp, "timestep"":""current", CompareMethod.Text)) Then
+                    For j = 0 To tlNfo.WxData.TimeLines.Count - 1
+                        If tlNfo.WxData.TimeLines(j).TimeStep = "current" Then
+                            TsCnt = j
+                            WriteCurrentData(TsCnt)
+                            Exit For
+                        End If
+                    Next
+                End If
 
                 If CBool(InStr(resp, "timestep"":""1h", CompareMethod.Text)) Then
                     For j = 0 To tlNfo.WxData.TimeLines.Count - 1
@@ -181,6 +199,49 @@ Friend Module TimeLineRoutinesV4
         End Try
     End Sub
 
+
+    Private Sub WriteCurrentData(TsCnt As Integer)
+        PrintLog($"Writing timelines current data @ {Now:F}.{vbLf}")
+
+        Try
+            With FrmMainv4.DgvCurrent
+                .Rows.Clear()
+
+                For j = 0 To tlNfo.WxData.TimeLines(TsCnt).Intervals.Count - 1
+                    Dim tl = tlNfo.WxData.TimeLines(TsCnt).Intervals(j).Values
+                    .Rows.Add("Time", $"{tlNfo.WxData.TimeLines(TsCnt).Intervals(j).StartTime.ToLocalTime:h:mm tt}")
+                    .Rows.Add($"Temperature", $"{tl.Temp:N0}{unitNfo.Temperature}")
+                    .Rows.Add($"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
+                    .Rows.Add($"Wind", $"{Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}")
+                    .Rows.Add($"Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
+                    .Rows.Add($"Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}")
+                    .Rows.Add($"Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}")
+                    .Rows.Add($"Barometric Pressure", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}")
+                    .Rows.Add($"Visibility", $"{tl.Visibility.Value:N0} {unitNfo.Visibility}")
+                    .Rows.Add("Air Quality Index", $"{tl.EpaIndex.Value}")
+                    .Rows.Add("EPA Health Concern", $"{unitNfo.EpaHealthConcern(tl.EpaHealthConcern.Value.ToString)}")
+                    .Rows(.Rows.Count - 1).Cells(1).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
+                    .Rows(.Rows.Count - 1).Cells(1).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
+                    .Rows(.Rows.Count - 1).Cells(1).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
+                    .Rows.Add("Health Concern Notes", $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}")
+                    .Rows.Add("EPA Primary Pollutant", $"{unitNfo.EpaPrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+                    .Rows.Add($"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
+                    .Rows.Add($"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
+                    .Rows.Add($"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
+                    .Rows.Add($"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
+                    .Rows.Add($"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
+                    .Rows.Add($"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
+                    .ClearSelection()
+                Next
+
+            End With
+
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            'SaveLogs()
+        End Try
+    End Sub
     Private Sub WriteTimeLinesData(tsCnt As Integer)
         PrintLog($"Writing timelines daily data @ {Now:F}.{vbLf}")
         Try

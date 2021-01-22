@@ -46,6 +46,8 @@ Partial Public Class Interval
 End Class
 
 Partial Public Class Values
+
+    <JsonPropertyName("temperature")> Public Property Temp As Double?
     <JsonPropertyName("temperatureMin")> Public Property TempMin As Double?
     <JsonPropertyName("temperatureMax")> Public Property TempMax As Double?
     <JsonPropertyName("temperatureApparent")> Public Property TempApparent As Double?

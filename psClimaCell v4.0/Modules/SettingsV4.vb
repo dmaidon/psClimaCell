@@ -21,6 +21,7 @@
             .ChkTs30m.Checked = My.Settings.Ts30m
             .ChkTs1h.Checked = My.Settings.Ts1h
             .ChkTs1d.Checked = My.Settings.Ts1d
+            .ChkTsCur.Checked = My.Settings.TsCur
             .ChkLogBool0.Checked = My.Settings.Log_Images
             .ChkLogBool1.Checked = My.Settings.Log_Headers
             .NumLat.Value = My.Settings.cLatitude

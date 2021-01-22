@@ -238,7 +238,7 @@
         My.Settings.Save()
     End Sub
 
-    Private Sub TimeSteps(sender As Object, e As EventArgs) Handles ChkTs1m.CheckedChanged, ChkTs5m.CheckedChanged, ChkTs15m.CheckedChanged, ChkTs30m.CheckedChanged, ChkTs1h.CheckedChanged, ChkTs1d.CheckedChanged
+    Private Sub TimeSteps(sender As Object, e As EventArgs) Handles ChkTs1m.CheckedChanged, ChkTs5m.CheckedChanged, ChkTs15m.CheckedChanged, ChkTs30m.CheckedChanged, ChkTs1h.CheckedChanged, ChkTs1d.CheckedChanged, ChkTsCur.CheckedChanged
         'maximum of 3 allowed
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
@@ -254,6 +254,8 @@
                     My.Settings.Ts1h = .Checked
                 Case 5
                     My.Settings.Ts1d = .Checked
+                Case 6
+                    My.Settings.TsCur = .Checked
                 Case Else
                     Exit Select
             End Select
