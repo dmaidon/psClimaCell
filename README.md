@@ -34,7 +34,7 @@ Following sections were added to Imperial and Metric Field Units Json files.
   },
 </pre>
 
-The following sections were added to the ClimaCellModelv4.vb file
+The following sections were added to the FieldUnitsModel.vb file
 
 <pre>
  Public Property EpaBgColor() As Dictionary(Of String, String)
