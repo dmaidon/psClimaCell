@@ -989,6 +989,18 @@ Namespace My
                 Me("TsCur") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Log_KeepDays() As Integer
+            Get
+                Return CType(Me("Log_KeepDays"),Integer)
+            End Get
+            Set
+                Me("Log_KeepDays") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.1.22.317</AssemblyVersion>
+    <AssemblyVersion>21.1.26.354</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -111,7 +111,7 @@
     </Compile>
     <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="GlobalsV4.vb" />
-    <Compile Include="Models\ClimaCellModelv4.vb" />
+    <Compile Include="Models\ClimaCellModelV4.vb" />
     <Compile Include="Models\FieldUnitsModel.vb" />
     <Compile Include="Modules\DayColorsV4.vb" />
     <Compile Include="Modules\FolderRoutinesV4.vb" />
@@ -254,6 +254,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\PNG\Color\rain.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\PNG\Color\heavy_rain.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\PNG\Color\rain_heavy.png">

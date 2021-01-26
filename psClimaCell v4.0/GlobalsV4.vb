@@ -21,6 +21,12 @@ Friend Module GlobalsV4
 
     Public TlNextUpdate As DateTime
 
+
+    'Midnight interval
+    Public MidDuration As TimeSpan
+
+    Public MidNextUpdate As DateTime
+
     'number of times that program has been run
     Public Timesrun As Long
 

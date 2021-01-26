@@ -36,7 +36,7 @@ Friend Module LogRoutinesV4
             With FrmMainv4
                 PrintLog($"<{My.Resources.separator}{vbLf}")
 
-                Dim intDays As Double = 3
+                Dim intDays As Integer = My.Settings.Log_KeepDays
                 If intDays <= 0 Then
                     PrintLog($"Logs set to keep all.{vbLf}")
                     Return
@@ -57,11 +57,11 @@ Friend Module LogRoutinesV4
                         PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
                     Next
 
-                    For Each file In From file1 In New DirectoryInfo(DataDir).GetFiles("*.*", SearchOption.AllDirectories) Where (Now - file1.LastWriteTime).Days >= intDays
-                        fc += 1
-                        file.Delete()
-                        PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
-                    Next
+                    'For Each file In From file1 In New DirectoryInfo(DataDir).GetFiles("*.*", SearchOption.AllDirectories) Where (Now - file1.LastWriteTime).Days >= intDays
+                    '    fc += 1
+                    '    file.Delete()
+                    '    PrintLog($">> Deleted: {file.FullName}.  Date: {file.CreationTime}{vbLf}")
+                    'Next
                 Catch ex As Exception When _
                     TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
                     PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())

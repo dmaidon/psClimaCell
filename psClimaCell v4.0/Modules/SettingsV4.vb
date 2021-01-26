@@ -6,6 +6,9 @@
 
         With FrmMainv4
             .TxtApiKey.Text = My.Settings.ApiKey
+
+            'check for Imperial or Metric data units
+            'defaults to Imperial
             Select Case My.Settings.Units
                 Case 0
                     .RbDataUnits0.Checked = True
@@ -27,13 +30,16 @@
             .NumLat.Value = My.Settings.cLatitude
             .NumLong.Value = My.Settings.cLongitude
             .NumTlInterval.Value = My.Settings.UpdateInt_Timelines
+            .NumLogKeepDays.Value = My.Settings.Log_KeepDays
 
-            If My.Settings.UpdateInt_Timelines > 0 Then
-                TlDuration = New TimeSpan(0, 0, CInt(My.Settings.UpdateInt_Timelines), 0)
-                TlNextUpdate = Date.Now + TlDuration
-                FrmMainv4.TmrTimelineUpdate.Interval = TimeSpan.FromMinutes(My.Settings.UpdateInt_Timelines).TotalMilliseconds
-                FrmMainv4.TmrTimelineUpdate.Start()
-            End If
+            'set timer for 1 second after the hour.  Datafile will update hourly
+            Dim st = New DateTime(Now.Year, Now.Month, Now.Day, Now.Hour, 0, 15).AddHours(1)
+            Dim _int As Long = Date2Unix(st) - Date2Unix(Now)
+            TlDuration = New TimeSpan(0, 0, 0, CInt(_int))
+            TlNextUpdate = Date.Now + TlDuration
+            FrmMainv4.TmrTimelineUpdate.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+            FrmMainv4.TmrTimelineUpdate.Start()
+            PrintLog($"*** Next update time: {TlNextUpdate:h:mm tt} ***{vbLf}")
 
         End With
 

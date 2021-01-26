@@ -1,4 +1,7 @@
-﻿Public Class FrmMainv4
+﻿Imports Microsoft.VisualBasic.Devices
+
+Public Class FrmMainv4
+
     'https://docs.climacell.co/reference/api-formats#locations
     'https://docs.climacell.co/reference/data-layers-core
     'https://docs.climacell.co/reference/data-layers-overview
@@ -24,6 +27,7 @@
         LblNumControls.Text = NumControls(Me).ToString
         FetchTimeLines()
 
+        SetMidnightRollover()
         SaveLogs()
         TmrClock.Start()
     End Sub
@@ -40,6 +44,33 @@
         End If
     End Sub
 
+    Private Sub SetMidnightRollover()
+        ''set the date to midnight + 5 seconds for the next day.
+        Dim st = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 1).AddDays(1)
+        Dim _int As Long = Date2Unix(st) - Date2Unix(Now)
+        MidDuration = New TimeSpan(0, 0, 0, CInt(_int))
+        MidNextUpdate = Date.Now + MidDuration
+        TmrMidnight.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+        TmrMidnight.Start()
+        TsslMidnight.ForeColor = Color.Blue
+        TsslMidnight.Visible = True
+
+        PrintLog($"=> Set midnight rollover: {st} -> Interval: {_int} seconds{vbLf}")
+    End Sub
+
+    Private Sub TmrMidnight_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrMidnight.Elapsed
+        TmrMidnight.Stop()
+        PrintLog($"=> Midnight timer elapsed and stopped @ {Now:T}.{vbLf}")
+        Dim _st As Date = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 1).AddDays(1)
+        Dim _int As Long = Date2Unix(_st) - Date2Unix(Now)
+        MidDuration = New TimeSpan(0, 0, 0, CInt(_int))
+        MidNextUpdate = Date.Now + MidDuration
+        TmrMidnight.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+        TmrMidnight.Start()
+        PrintLog($"<== Midnight timer restarted @ {Now:T}.{vbLf}     Interval: {_int} seconds{vbLf}")
+        Check4NewLogFile()
+    End Sub
+
     Private Sub TmrClock_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrClock.Elapsed
         TsslClock.Text = Now.ToLongTimeString
 
@@ -47,7 +78,14 @@
             TsslNextTl.Text = If(DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, TlNextUpdate) < 1,
      $"Tl: {DateDiff(DateInterval.Second, Date.Now, TlNextUpdate):N0}",
      $"Tl: {DateDiff(DateInterval.Minute, Date.Now, TlNextUpdate):N0}")
-            End If
+        End If
+
+
+        If TmrMidnight.Enabled Then
+            TsslMidnight.Text = If _
+                (DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, MidNextUpdate) < 1, $"Mn: {DateDiff(DateInterval.Second, Date.Now, MidNextUpdate):D0}",
+                    $"Mn: {DateDiff(DateInterval.Minute, Date.Now, MidNextUpdate):D0}")
+        End If
 
     End Sub
 
@@ -288,12 +326,12 @@
         My.Settings.Save()
     End Sub
 
-    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLat.Enter, NumLong.Enter
+    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLat.Enter, NumLong.Enter, NumLogKeepDays.Enter, NumTlInterval.Enter
         Dim ct = DirectCast(sender, NumericUpDown)
         ct.Select(0, ct.Text.Length)
     End Sub
 
-    Private Sub LocationData(sender As Object, e As EventArgs) Handles NumLat.ValueChanged, NumLong.ValueChanged, NumTlInterval.ValueChanged
+    Private Sub LocationData(sender As Object, e As EventArgs) Handles NumLat.ValueChanged, NumLong.ValueChanged, NumTlInterval.ValueChanged, NumLogKeepDays.ValueChanged
         With DirectCast(sender, NumericUpDown)
             Select Case CInt(.Tag)
                 Case 0
@@ -302,6 +340,8 @@
                     My.Settings.cLongitude = .Value
                 Case 2
                     My.Settings.UpdateInt_Timelines = CInt(.Value)
+                Case 3
+                    My.Settings.Log_KeepDays = CInt(.Value)
                 Case Else
                     Exit Select
             End Select
@@ -336,9 +376,14 @@
 
     Private Sub TmrTimelineUpdate_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrTimelineUpdate.Elapsed
         PrintLog($"Timelines Update timer elapsed @ {Now:T}.{vbLf}")
-        TlDuration = New TimeSpan(0, 0, My.Settings.UpdateInt_Timelines, 0)
+        TmrTimelineUpdate.Stop()
+        Dim st = New DateTime(Now.Year, Now.Month, Now.Day, Now.Hour, 0, 15).AddHours(1)
+        Dim _int As Long = Date2Unix(st) - Date2Unix(Now)
+        TlDuration = New TimeSpan(0, 0, 0, CInt(_int))
         TlNextUpdate = Date.Now + TlDuration
-        PrintLog($"Next Daily Update @ {TlNextUpdate:T}.{vbLf}")
+        TmrTimelineUpdate.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+        TmrTimelineUpdate.Start()
+        PrintLog($"*** Next TimeLines Update @ {TlNextUpdate:T}. ***{vbLf}")
         FetchTimeLines()
     End Sub
 
