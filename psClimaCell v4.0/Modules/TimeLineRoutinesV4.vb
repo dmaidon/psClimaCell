@@ -18,7 +18,8 @@ Friend Module TimeLineRoutinesV4
 
         If File.Exists(tlFile) Then
             Dim ab As Double = (Date2Unix(Now) - Date2Unix(File.GetLastWriteTime(tlFile))) / 60
-            If ab >= My.Settings.UpdateInt_Timelines - 1 Then
+            'If ab >= My.Settings.UpdateInt_Timelines - 1 Then
+            If ab >= 30 Then
                 DownloadTimeLines(tlFile)
             Else
                 ParseTimeLines(ab, tlFile)
@@ -60,47 +61,35 @@ Friend Module TimeLineRoutinesV4
                     Using reader = New StreamReader(dStr)
                         Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)   'ddd
                         File.WriteAllText(fn, resp)
-                        PrintLog($"Realtime file saved -> {fn}{vbLf}")
+                        PrintLog($"Timeline file saved -> {fn}{vbLf}")
                         'I prefer to search the Json file and replace the NULLs with "0"s.  Probably could use "-1" and then trap for the "-1".  do not write the correct Json file to disk
                         'so that you will have the original data for reference.  Apply same thing to ParseTimeLines
                         tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp.Replace("null", "0"))
                         Using aTxt As StreamWriter = File.AppendText(TlDataFile)
                             Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
-                            Await aTxt.WriteLineAsync($"ClimaCell Realtime Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
+                            Await aTxt.WriteLineAsync($"ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
                         End Using
 
-                        Dim TsCnt As Integer
-                        'seatch for "1d" data stream
-                        If CBool(InStr(resp, "timestep"":""1d", CompareMethod.Text)) Then
-                            For j = 0 To tlNfo.WxData.TimeLines.Count - 1
-                                If tlNfo.WxData.TimeLines(j).TimeStep = "1d" Then
-                                    TsCnt = j
-                                    WriteTimeLinesData(TsCnt)
-                                    Exit For
-                                End If
-                            Next
-                        End If
-
-                        If CBool(InStr(resp, "timestep"":""current", CompareMethod.Text)) Then
-                            For j = 0 To tlNfo.WxData.TimeLines.Count - 1
-                                If tlNfo.WxData.TimeLines(j).TimeStep = "current" Then
-                                    TsCnt = j
-                                    WriteCurrentData(TsCnt)
-                                    Exit For
-                                End If
-                            Next
-                        End If
-
-                        'search for "1h' data stream
-                        If CBool(InStr(resp, "timestep"":""1h", CompareMethod.Text)) Then
-                            For j = 0 To tlNfo.WxData.TimeLines.Count - 1
-                                If tlNfo.WxData.TimeLines(j).TimeStep = "1h" Then
-                                    TsCnt = j
-                                    WriteHourlyData(TsCnt)
-                                    Exit For
-                                End If
-                            Next
-                        End If
+                        For j = 0 To tlNfo.WxData.TimeLines.Count - 1
+                            Select Case tlNfo.WxData.TimeLines(j).TimeStep
+                                Case "1m"
+                                    Write1mData(j)
+                                Case "5m"
+                                    Write5mData(j)
+                                Case "15m"
+                                    Write15mData(j)
+                                Case "30m"
+                                    Write30mData(j)
+                                Case "1h"
+                                    WriteHourlyData(j)
+                                Case "1d"
+                                    WriteDailyData(j)
+                                Case "current"
+                                    WriteCurrentData(j)
+                                Case Else
+                                    Exit Select
+                            End Select
+                        Next
                     End Using
                 Else
                     PrintLog($"Download Rt Data @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
@@ -115,6 +104,7 @@ Friend Module TimeLineRoutinesV4
         End Try
 
     End Sub
+
     Private Function GetFieldsString() As String
         'temperature field is set to fetch Min and Max temperature for time period.
         Dim tlFields As New List(Of String)({"temperature%2CtemperatureMax%2CtemperatureMin%2CtemperatureMaxTime%2CtemperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "", "hailBinary", "fireIndex"})
@@ -159,38 +149,26 @@ Friend Module TimeLineRoutinesV4
                 End Using
                 tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp.Replace("null", "0"))
                 PrintLog($"[Parsed] Realtime Forecast Data @ {Now:T}{vbLf}File age: {ab:N2} minutes{vbLf}{vbLf}")
-
-                'need to determine which timeline has the "1d" forecast for the "Daily" tab
-                Dim TsCnt As Integer
-                If CBool(InStr(resp, "timestep"":""1d", CompareMethod.Text)) Then
-                    For j = 0 To tlNfo.WxData.TimeLines.Count - 1
-                        If tlNfo.WxData.TimeLines(j).TimeStep = "1d" Then
-                            TsCnt = j
-                            WriteTimeLinesData(TsCnt)
-                            Exit For
-                        End If
-                    Next
-                End If
-
-                If CBool(InStr(resp, "timestep"":""current", CompareMethod.Text)) Then
-                    For j = 0 To tlNfo.WxData.TimeLines.Count - 1
-                        If tlNfo.WxData.TimeLines(j).TimeStep = "current" Then
-                            TsCnt = j
-                            WriteCurrentData(TsCnt)
-                            Exit For
-                        End If
-                    Next
-                End If
-
-                If CBool(InStr(resp, "timestep"":""1h", CompareMethod.Text)) Then
-                    For j = 0 To tlNfo.WxData.TimeLines.Count - 1
-                        If tlNfo.WxData.TimeLines(j).TimeStep = "1h" Then
-                            TsCnt = j
-                            WriteHourlyData(TsCnt)
-                            Exit For
-                        End If
-                    Next
-                End If
+                For j = 0 To tlNfo.WxData.TimeLines.Count - 1
+                    Select Case tlNfo.WxData.TimeLines(j).TimeStep
+                        Case "1m"
+                            Write1mData(j)
+                        Case "5m"
+                            Write5mData(j)
+                        Case "15m"
+                            Write15mData(j)
+                        Case "30m"
+                            Write30mData(j)
+                        Case "1h"
+                            WriteHourlyData(j)
+                        Case "1d"
+                            WriteDailyData(j)
+                        Case "current"
+                            WriteCurrentData(j)
+                        Case Else
+                            Exit Select
+                    End Select
+                Next
             End Using
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
@@ -199,18 +177,33 @@ Friend Module TimeLineRoutinesV4
         End Try
     End Sub
 
+    Private Sub Write15mData(ct As Integer)
+        ''
+    End Sub
 
-    Private Sub WriteCurrentData(TsCnt As Integer)
-        PrintLog($"Writing timelines current data @ {Now:F}.{vbLf}")
+    Private Sub Write1mData(ct As Integer)
+        ''
+    End Sub
 
+    Private Sub Write30mData(ct As Integer)
+        ''
+    End Sub
+
+    Private Sub Write5mData(ct As Integer)
+        ''
+    End Sub
+    Private Sub WriteCurrentData(ct As Integer)
+        PrintLog($"Writing timelines current data @ {Now:F}.{vbLf}{vbLf}")
+        'no error checking to make sure fields exist in json file
         Try
             With FrmMainv4.DgvCurrent
                 .Rows.Clear()
 
-                For j = 0 To tlNfo.WxData.TimeLines(TsCnt).Intervals.Count - 1
-                    Dim tl = tlNfo.WxData.TimeLines(TsCnt).Intervals(j).Values
-                    .Rows.Add("Time", $"{tlNfo.WxData.TimeLines(TsCnt).Intervals(j).StartTime.ToLocalTime:h:mm tt}")
+                For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                    Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
+                    .Rows.Add("Time", $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime.ToLocalTime:h:mm tt}")
                     .Rows.Add($"Temperature", $"{tl.Temp:N0}{unitNfo.Temperature}")
+                    .Rows.Add($"Feels Like", $"{tl.TempApparent.Value:N0}{unitNfo.Temperature}")
                     .Rows.Add($"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
                     .Rows.Add($"Wind", $"{Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}")
                     .Rows.Add($"Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
@@ -232,18 +225,29 @@ Friend Module TimeLineRoutinesV4
                     .Rows.Add($"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
                     .Rows.Add($"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
                     .ClearSelection()
+                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
+                    If My.Settings.Log_Images Then PrintLog($"{j}. Current: {icn} --> Load{vbLf}")
+                    Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
+                       Color.LightSkyBlue,
+                       Color.Gray)
+                    FrmMainv4.TpCurrent.BackColor = bgClr
+                    FrmMainv4.DgvCurrent.BackgroundColor = bgClr
+                    If File.Exists(icn) Then
+                        FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(icn)
+                    Else
+                        FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
+                    End If
                 Next
-
             End With
-
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
             'SaveLogs()
         End Try
     End Sub
-    Private Sub WriteTimeLinesData(tsCnt As Integer)
-        PrintLog($"Writing timelines daily data @ {Now:F}.{vbLf}")
+
+    Private Sub WriteDailyData(ct As Integer)
+        PrintLog($"Writing timelines daily data @ {Now:F}.{vbLf}{vbLf}")
         Try
             With FrmMainv4.DgvDaily
                 .Visible = False
@@ -266,13 +270,13 @@ Friend Module TimeLineRoutinesV4
                     Application.DoEvents()
                 Next
 
-                For j = 0 To tlNfo.WxData.TimeLines(tsCnt).Intervals.Count - 1
-                    Dim tl = tlNfo.WxData.TimeLines(tsCnt).Intervals(j).Values
+                For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                    Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
                     Dim sb As New StringBuilder()
                     sb.Append($"Temp: {tl.TempMax.Value:N0}{unitNfo.Temperature} - {tl.TempMin.Value:N0}{unitNfo.Temperature}{vbLf}")
                     sb.Append($"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}")
                     sb.Append($"Wind {Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}{vbLf}")
-                    sb.Append($"Precip: {tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}{vbLf}")
+                    sb.Append($"Precip: {tl.PrecipPct.Value:N0}{unitNfo.PrecipitationProbability}{vbLf}")
                     sb.Append($"Type: {unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
                     sb.Append($"Intensity: {tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
                     sb.Append($"Bp: {tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
@@ -280,13 +284,14 @@ Friend Module TimeLineRoutinesV4
                     sb.Append($"Ss: {tl.Sunset.ToLocalTime:t}{vbLf}")
 
                     Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
-                    sb.Append($"{unitNfo.MoonPhase.Values(tlNfo.WxData.TimeLines(tsCnt).Intervals(j).Values.MoonPhase.Value)}{vbLf}")
+                    sb.Append($"{unitNfo.MoonPhase.Values(tlNfo.WxData.TimeLines(ct).Intervals(j).Values.MoonPhase.Value)}{vbLf}")
                     sb.Append($"Vis: {tl.Visibility.Value:N0} {unitNfo.Visibility}{vbLf}")
 
                     Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
+
                     If My.Settings.Log_Images Then PrintLog($"{j}. Daily: {icn} --> Bitmap{vbLf}")
 
-                    Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(tsCnt).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(tsCnt).Intervals(0).Values.Sunset.ToLocalTime)),
+                    Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
                         Color.LightSkyBlue,
                         Color.Gray)
                     Using bmp1 As New Bitmap(icn)
@@ -297,20 +302,20 @@ Friend Module TimeLineRoutinesV4
                                 .Rows(0).Cells(j).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
                                 .Rows(0).Cells(j).ToolTipText = $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}"
                                 .Rows(1).Cells(j).Value = sb.ToString
-                                .Rows(2).Cells(j).Value = $"{tlNfo.WxData.TimeLines(tsCnt).Intervals(j).StartTime:dddd}"
+                                .Rows(2).Cells(j).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:dddd}"
                                 .Rows(2).Cells(j).Style.BackColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Bg
                                 .Rows(2).Cells(j).Style.ForeColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Fg
-                                .Rows(3).Cells(j).Value = $"{tlNfo.WxData.TimeLines(tsCnt).Intervals(j).StartTime:MMM d}"
+                                .Rows(3).Cells(j).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:MMM d}"
                             ElseIf j >= 8 Then
                                 '.Rows(4).Cells(j - 8).Value = Transparent2Color(bmp1, bgClr)
                                 .Rows(4).Cells(j - 8).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
                                 .Rows(4).Cells(j - 8).Style.BackColor = bgClr
                                 .Rows(0).Cells(j - 8).ToolTipText = $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}"
                                 .Rows(5).Cells(j - 8).Value = sb.ToString
-                                .Rows(6).Cells(j - 8).Value = $"{tlNfo.WxData.TimeLines(tsCnt).Intervals(j).StartTime:dddd}"
+                                .Rows(6).Cells(j - 8).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:dddd}"
                                 .Rows(6).Cells(j - 8).Style.BackColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Bg
                                 .Rows(6).Cells(j - 8).Style.ForeColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Fg
-                                .Rows(7).Cells(j - 8).Value = $"{tlNfo.WxData.TimeLines(tsCnt).Intervals(j).StartTime:MMM d}"
+                                .Rows(7).Cells(j - 8).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:MMM d}"
                             End If
                         End Using
                     End Using
@@ -350,14 +355,14 @@ Friend Module TimeLineRoutinesV4
         End Try
     End Sub
 
-    Private Sub WriteHourlyData(TsCnt As Integer)
-        PrintLog($"Writing timelines hourly data @ {Now:F}.{vbLf}")
+    Private Sub WriteHourlyData(ct As Integer)
+        PrintLog($"Writing timelines hourly data @ {Now:F}.{vbLf}{vbLf}")
         Try
             With FrmMainv4.DgvHour
                 .Rows.Clear()
-                For j = 0 To tlNfo.WxData.TimeLines(TsCnt).Intervals.Count - 1
-                    Dim tl = tlNfo.WxData.TimeLines(TsCnt).Intervals(j).Values
-                    Dim tld = tlNfo.WxData.TimeLines(TsCnt).Intervals(j)
+                For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                    Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
+                    Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
                     .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}")
                     .Rows.Add("", $"{tld.StartTime.ToLocalTime:h:mm tt}")
                     .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
@@ -383,7 +388,6 @@ Friend Module TimeLineRoutinesV4
                     .Rows.Add("", "", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
                     .ClearSelection()
                 Next
-
             End With
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
@@ -391,4 +395,5 @@ Friend Module TimeLineRoutinesV4
             'SaveLogs()
         End Try
     End Sub
+
 End Module
