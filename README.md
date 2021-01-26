@@ -1,6 +1,6 @@
 # ClimaCell V4 #
 
-Utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "1d", "1h", "30m", "15m", "5m" and "1m".
+Utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "current", "1d", "1h", "30m", "15m", "5m" and "1m".
 
 Requires a V4 API Key from http://climacell.co.
 
@@ -32,6 +32,14 @@ Following sections were added to Imperial and Metric Field Units Json files.
     "4": "(201-300)  Values Trigger a health alert, meaning everyone may experience more\n serious health effects.",
     "5": "(300+)  AQI values over 300 trigger health warnings of emergency conditions. The\n entire population is even more likely to be affected by serious health\n effects."
   },
+</pre>
+
+The following sections were added to the FieldUnitsModel.vb file
+
+<pre>
+ Public Property EpaBgColor() As Dictionary(Of String, String)
+ Public Property EpaFgColor() As Dictionary(Of String, String)
+ Public Property EpaConcernText() As Dictionary(Of String, String)
 </pre>
 
 The V4 code is not complete for all data streams.  Any contributors are welcome.
