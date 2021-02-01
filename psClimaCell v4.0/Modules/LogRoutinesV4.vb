@@ -149,7 +149,6 @@ Friend Module LogRoutinesV4
             PrintLog($"¥{vbLf}")
             With FrmMainv4
                 .RtbLog.SaveFile(LogFile, RichTextBoxStreamType.PlainText)
-                '.RtbData.SaveFile(DataFile, RichTextBoxStreamType.PlainText)
                 .RtbError.SaveFile(ErrFile, RichTextBoxStreamType.PlainText)
             End With
         Catch ex As IOException
@@ -166,16 +165,9 @@ Friend Module LogRoutinesV4
             My.Settings.Save()
             LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
             tlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
-            'hrDataFile = Path.Combine(LogDir, $"hrData-{Now:Mdyyyy}_{Timesrun}.log")
-            'ncDataFile = Path.Combine(LogDir, $"ncData-{Now:Mdyyyy}_{Timesrun}.log")
-            'rtDataFile = Path.Combine(LogDir, $"rtData-{Now:Mdyyyy}_{Timesrun}.log")
             ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
-
             PrintLog(GetLogHeader())
             PrintErrLog(GetLogHeader())
-            'Using aTxt As StreamWriter = File.CreateText(DataFile)
-            '    aTxt.WriteLine(GetLogHeader())
-            'End Using
         Catch ex As Exception When _
               TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
@@ -192,17 +184,10 @@ Friend Module LogRoutinesV4
             Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}")
             sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
             sb.Append($"Log file: {LogFile}{vbLf}")
-            'sb.Append($"Daily Data file: {dlyDataFile}{vbLf}")
-            'sb.Append($"Hourly Data file: {hrDataFile}{vbLf}")
-            'sb.Append($"Nowcast Data file: {ncDataFile}{vbLf}")
-            'sb.Append($"Realtime Data file: {rtDataFile}{vbLf}")
             sb.Append($"Error file: {ErrFile}{vbLf}")
             sb.Append($"Times run: {Timesrun}{vbLf}")
             sb.Append($"Controls: {NumControls(FrmMainv4)}{vbLf}")
             sb.Append($"Daily Update interval: {My.Settings.UpdateInt_Timelines} minutes{vbLf}")
-            'sb.Append($"Hourly Update interval: {My.Settings.UpdateInterval_Hourly} minutes{vbLf}")
-            'sb.Append($"Nowcast Update interval: {My.Settings.UpdateInterval_Nowcast} minutes{vbLf}")
-            'sb.Append($"Location-> Latitude: {CLatitude}     Longitude: {CLongitude}{vbLf}")
             sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
             sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
 
@@ -226,10 +211,6 @@ Friend Module LogRoutinesV4
                 .RtbError.Clear()
                 .RtbLog.Clear()
                 LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
-                'dlyDataFile = Path.Combine(LogDir, $"dlyData-{Now:Mdyyyy}_{Timesrun}.log")
-                'hrDataFile = Path.Combine(LogDir, $"hrData-{Now:Mdyyyy}_{Timesrun}.log")
-                'ncDataFile = Path.Combine(LogDir, $"ncData-{Now:Mdyyyy}_{Timesrun}.log")
-                'rtDataFile = Path.Combine(LogDir, $"rtData-{Now:Mdyyyy}_{Timesrun}.log")
                 ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
                 PrintLog(GetLogHeader())
                 PrintErrLog(GetLogHeader())

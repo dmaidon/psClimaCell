@@ -47,7 +47,7 @@ Friend Module TimeLineRoutinesV4
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
                 If My.Settings.Log_Headers Then
                     Dim sc As New StringBuilder()
-                    PrintLog($"{vbLf}{vbLf}ClimaCell Realtime Headers:{vbLf}{vbLf}")
+                    PrintLog($"{vbLf}{vbLf}ClimaCell Timeline Headers:{vbLf}{vbLf}")
                     For j = 0 To response.Headers.Count - 1
                         PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
                         sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
@@ -56,7 +56,7 @@ Friend Module TimeLineRoutinesV4
                 End If
                 PrintLog($"{My.Resources.separator}{vbLf}{vbLf}")
                 If response.StatusCode = 200 Then
-                    PrintLog($"Download Rt Data @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
+                    PrintLog($"Download Timelines Data @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
                     Dim dStr = response.GetResponseStream()
                     Using reader = New StreamReader(dStr)
                         Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)   'ddd
@@ -107,7 +107,7 @@ Friend Module TimeLineRoutinesV4
 
     Private Function GetFieldsString() As String
         'temperature field is set to fetch Min and Max temperature for time period.
-        Dim tlFields As New List(Of String)({"temperature%2CtemperatureMax%2CtemperatureMin%2CtemperatureMaxTime%2CtemperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "", "hailBinary", "fireIndex"})
+        Dim tlFields As New List(Of String)({"temperature%2CtemperatureMax%2CtemperatureMin%2CtemperatureMaxTime%2CtemperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedGrassweedIndex", "hailBinary", "fireIndex"})
         '58 = weedGrassweedIndex
         Dim sb = New StringBuilder()
         For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
@@ -139,16 +139,30 @@ Friend Module TimeLineRoutinesV4
         Return Left(aa, aa.Length - 3)
     End Function
 
+    Private Function GetWindString(winSpd As Double, winGst As Double, winDir As Double) As String
+        If winSpd <= 0 Then
+            Return "Calm"
+        Else
+            Dim sb As New StringBuilder()
+            sb.Append($"{Deg2Compass(winDir)} @ {winSpd:N0} {unitNfo.WindSpeed}")
+            If winGst >= 1 Then
+                sb.Append($" gusting to {winGst:N0} {unitNfo.WindSpeed}")
+            End If
+
+            Return sb.ToString
+        End If
+    End Function
+
     Private Async Sub ParseTimeLines(ab As Double, fn As String)
         Try
             Using reader = New StreamReader(fn)
                 Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
                 Using aTxt As StreamWriter = File.AppendText(TlDataFile)
                     Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
-                    Await aTxt.WriteLineAsync($"Parsed ClimaCell Realtime Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
+                    Await aTxt.WriteLineAsync($"Parsed ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
                 End Using
                 tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp.Replace("null", "0"))
-                PrintLog($"[Parsed] Realtime Forecast Data @ {Now:T}{vbLf}File age: {ab:N2} minutes{vbLf}{vbLf}")
+                PrintLog($"[Parsed] Timeline Forecast Data @ {Now:T}{vbLf}File age: {ab:N2} minutes{vbLf}{vbLf}")
                 For j = 0 To tlNfo.WxData.TimeLines.Count - 1
                     Select Case tlNfo.WxData.TimeLines(j).TimeStep
                         Case "1m"
@@ -205,7 +219,8 @@ Friend Module TimeLineRoutinesV4
                     .Rows.Add($"Temperature", $"{tl.Temp:N0}{unitNfo.Temperature}")
                     .Rows.Add($"Feels Like", $"{tl.TempApparent.Value:N0}{unitNfo.Temperature}")
                     .Rows.Add($"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
-                    .Rows.Add($"Wind", $"{Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}")
+                    '.Rows.Add($"Wind", $"{Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}")
+                    .Rows.Add($"Wind", $"{GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value)}{vbLf}")
                     .Rows.Add($"Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
                     .Rows.Add($"Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}")
                     .Rows.Add($"Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}")
@@ -245,7 +260,6 @@ Friend Module TimeLineRoutinesV4
             'SaveLogs()
         End Try
     End Sub
-
     Private Sub WriteDailyData(ct As Integer)
         PrintLog($"Writing timelines daily data @ {Now:F}.{vbLf}{vbLf}")
         Try
@@ -275,7 +289,8 @@ Friend Module TimeLineRoutinesV4
                     Dim sb As New StringBuilder()
                     sb.Append($"Temp: {tl.TempMax.Value:N0}{unitNfo.Temperature} - {tl.TempMin.Value:N0}{unitNfo.Temperature}{vbLf}")
                     sb.Append($"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}")
-                    sb.Append($"Wind {Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}{vbLf}")
+                    'sb.Append($"Wind {Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}{vbLf}")
+                    sb.Append($"Wind {GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value)}{vbLf}")
                     sb.Append($"Precip: {tl.PrecipPct.Value:N0}{unitNfo.PrecipitationProbability}{vbLf}")
                     sb.Append($"Type: {unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
                     sb.Append($"Intensity: {tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
@@ -366,7 +381,8 @@ Friend Module TimeLineRoutinesV4
                     .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}")
                     .Rows.Add("", $"{tld.StartTime.ToLocalTime:h:mm tt}")
                     .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
-                    .Rows.Add("", "", "Wind", $"{Deg2Compass(tl.WindDir.Value)} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed} gusting to {Math.Ceiling(CDec(tl.WindGust.Value)):N0} {unitNfo.WindGust}")
+                    '.Rows.Add("", "", "Wind", $"{Deg2Compass(tl.WindDir.Value)} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed} gusting to {Math.Ceiling(CDec(tl.WindGust.Value)):N0} {unitNfo.WindGust}")
+                    .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value))
                     .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
                     .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
                     .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
