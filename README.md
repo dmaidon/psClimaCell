@@ -1,8 +1,19 @@
 # ClimaCell V4 #
 
-Utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "current", "1d", "1h", "30m", "15m", "5m" and "1m".
+A wwindows Desktop application that utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "current", "1d", "1h", "30m", "15m", "5m" and "1m" timelines.
+
+Written in Vb.Net 4.8 Framework.
 
 Requires a V4 API Key from http://climacell.co.
+
+## Features ##
+
+- [ ] Updates every hour at 15 seconds past the hour.
+- [ ] Easily select whick fields to download. (Max: 50)
+- [ ] Easily select which timlines to download. (Max: 3)
+- [ ] Runs an event at midnight to clear the log files and start a new one
+- [ ] Separate log files for any errors and debug information
+
 
 Following sections were added to Imperial and Metric Field Units Json files.
 
