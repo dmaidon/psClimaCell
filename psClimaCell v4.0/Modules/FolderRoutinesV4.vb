@@ -3,7 +3,7 @@
 Friend Module FolderRoutinesV4
 
     Friend Sub CreateProgramFolders()
-        Dim fName As New List(Of String)({LogDir, TempDir, DataDir, IconDir})
+        Dim fName As New List(Of String)({LogDir, TempDir, DataDir, IconDir, LocationDir})
 
         For j = 0 To fName.Count - 1
             Try

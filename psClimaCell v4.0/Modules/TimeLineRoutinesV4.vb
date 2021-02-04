@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Text.Json
-Imports psClimaCell_v4._0.Modules.DayColors
+Imports psClimaCellv4.Modules.DayColors
 
 Friend Module TimeLineRoutinesV4
 
@@ -46,13 +46,13 @@ Friend Module TimeLineRoutinesV4
             End With
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
                 If My.Settings.Log_Headers Then
-                    Dim sc As New StringBuilder()
+                    'Dim sc As New StringBuilder()
                     PrintLog($"{vbLf}{vbLf}ClimaCell Timeline Headers:{vbLf}{vbLf}")
                     For j = 0 To response.Headers.Count - 1
                         PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                        sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
+                        'sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
                     Next
-                    sc.Clear()
+                    'sc.Clear()
                 End If
                 PrintLog($"{My.Resources.separator}{vbLf}{vbLf}")
                 If response.StatusCode = 200 Then
@@ -90,6 +90,10 @@ Friend Module TimeLineRoutinesV4
                                     Exit Select
                             End Select
                         Next
+
+                        If InStr(resp, "warnings") > 0 Then
+                            WriteWarnings()
+                        End If
                     End Using
                 Else
                     PrintLog($"Download Rt Data @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
@@ -183,6 +187,9 @@ Friend Module TimeLineRoutinesV4
                             Exit Select
                     End Select
                 Next
+                If InStr(resp, "warnings") > 0 Then
+                    WriteWarnings()
+                End If
             End Using
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
@@ -240,7 +247,8 @@ Friend Module TimeLineRoutinesV4
                     .Rows.Add($"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
                     .Rows.Add($"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
                     .ClearSelection()
-                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
+                    'Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
+                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{tl.WxCode.Value}.png")
                     If My.Settings.Log_Images Then PrintLog($"{j}. Current: {icn} --> Load{vbLf}")
                     Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
                        Color.LightSkyBlue,
@@ -250,7 +258,7 @@ Friend Module TimeLineRoutinesV4
                     If File.Exists(icn) Then
                         FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(icn)
                     Else
-                        FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
+                        FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(Path.Combine(IconDir, "PNG", "Color", "0.png"))
                     End If
                 Next
             End With
@@ -302,7 +310,8 @@ Friend Module TimeLineRoutinesV4
                     sb.Append($"{unitNfo.MoonPhase.Values(tlNfo.WxData.TimeLines(ct).Intervals(j).Values.MoonPhase.Value)}{vbLf}")
                     sb.Append($"Vis: {tl.Visibility.Value:N0} {unitNfo.Visibility}{vbLf}")
 
-                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
+                    'Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
+                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{tl.WxCode.Value}.png")
 
                     If My.Settings.Log_Images Then PrintLog($"{j}. Daily: {icn} --> Bitmap{vbLf}")
 
@@ -310,7 +319,7 @@ Friend Module TimeLineRoutinesV4
                         Color.LightSkyBlue,
                         Color.Gray)
                     Using bmp1 As New Bitmap(icn)
-                        Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", $"na.png"))
+                        Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", "0.png"))
                             If j <= 7 Then
                                 .Rows(0).Cells(j).Style.BackColor = bgClr
                                 '.Rows(0).Cells(j).Value = Transparent2Color(bmp1, bgClr)
@@ -387,6 +396,7 @@ Friend Module TimeLineRoutinesV4
                     .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
                     .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
                     .Rows.Add("", "", "Surface Level Pressure", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
+                    .Rows.Add("", "", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
                     .Rows.Add("", "", "Air Quality Index", $"{tl.EpaIndex.Value}")
                     .Rows.Add("", "", "EPA Health Concern", $"{unitNfo.EpaHealthConcern(tl.EpaHealthConcern.Value.ToString)}")
                     'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
@@ -402,6 +412,7 @@ Friend Module TimeLineRoutinesV4
                     .Rows.Add("", "", $"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
                     .Rows.Add("", "", $"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
                     .Rows.Add("", "", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
+                    .Rows.Add("", "", $"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
                     .ClearSelection()
                 Next
             End With
@@ -410,6 +421,39 @@ Friend Module TimeLineRoutinesV4
         Finally
             'SaveLogs()
         End Try
+    End Sub
+
+    Private Sub WriteWarnings()
+        With FrmMainv4.DgvWarnings
+            .Rows.Clear()
+            ' .ColumnCount = 3
+            For j = 0 To tlNfo.Warnings.Count - 1
+                .Rows.Add("Code", tlNfo.Warnings(j).Code)
+                .Rows.Add("", "Type", tlNfo.Warnings(j).Type)
+                .Rows.Add("", "Message", tlNfo.Warnings(j).Message)
+                .Rows.Add("", "Meta ↓↓↓")
+                Select Case tlNfo.Warnings(j).Code
+                    Case 246001
+                        .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
+                        .Rows.Add("", "Dates", $"{CDate(tlNfo.Warnings(j).Meta.From).ToLocalTime:F} to {CDate(tlNfo.Warnings(j).Meta.To).ToLocalTime:F}")
+                    Case 246003
+                        .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
+                        .Rows.Add("", "Dates", $"{CDate(tlNfo.Warnings(j).Meta.From).ToLocalTime:F} to {CDate(tlNfo.Warnings(j).Meta.To).ToLocalTime:F}")
+                    Case 246008
+                        .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
+                        .Rows.Add("", "Timesteps ↓↓↓")
+                        For k = 0 To tlNfo.Warnings(j).Meta.Timesteps.Count - 1
+                            .Rows.Add("", "", tlNfo.Warnings(j).Meta.Timesteps(k))
+                        Next
+                    Case 246009
+                        .Rows.Add("", "Timestep", tlNfo.Warnings(j).Meta.Timestep)
+                        .Rows.Add("", "From / To", $"{tlNfo.Warnings(j).Meta.From} to {tlNfo.Warnings(j).Meta.To}")
+                    Case Else
+                        .Rows.Add("", "", "Information Missing.")
+                        PrintLog($"Warning information missing -> Code: {tlNfo.Warnings(j).Code}.{vbLf}")
+                End Select
+            Next
+        End With
     End Sub
 
 End Module

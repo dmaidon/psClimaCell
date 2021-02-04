@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic.Devices
-
-Public Class FrmMainv4
+﻿Public Class FrmMainv4
 
     'https://docs.climacell.co/reference/api-formats#locations
     'https://docs.climacell.co/reference/data-layers-core
@@ -79,7 +77,6 @@ Public Class FrmMainv4
      $"Tl: {DateDiff(DateInterval.Second, Date.Now, TlNextUpdate):N0}",
      $"Tl: {DateDiff(DateInterval.Minute, Date.Now, TlNextUpdate):N0}")
         End If
-
 
         If TmrMidnight.Enabled Then
             TsslMidnight.Text = If _
@@ -221,7 +218,7 @@ Public Class FrmMainv4
             End Select
         End With
 
-        'only allowed 50 fields checked so, let's count them as we check anbd uncheck the boxes
+        'only allowed 50 fields checked so, let's count them as we check and uncheck the boxes
         Dim ct As Integer
         For Each c As CheckBox In FlpDataFields.Controls.OfType(Of CheckBox)()
             If c.Checked Then
@@ -399,6 +396,14 @@ Public Class FrmMainv4
             End Select
         End With
         My.Settings.Save()
+    End Sub
+
+    Private Sub BtnNewPointLocation_Click(sender As Object, e As EventArgs) Handles BtnNewPointLocation.Click
+        If String.IsNullOrEmpty(TxtLocationName.Text) OrElse String.IsNullOrEmpty(TxtPointLat.Text) OrElse String.IsNullOrEmpty(TxtPointLong.Text) Then
+            MsgBox("Cannot fetch location, data missing!")
+        Else
+            CreateNewPointLocation()
+        End If
     End Sub
 
 #End Region

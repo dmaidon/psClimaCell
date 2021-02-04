@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.psClimaCell_v4._0.FrmMainv4
+            Me.MainForm = Global.psClimaCellv4.FrmMainv4
         End Sub
     End Class
 End Namespace

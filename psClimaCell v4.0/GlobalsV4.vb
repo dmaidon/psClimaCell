@@ -7,10 +7,14 @@ Friend Module GlobalsV4
     Public DataDir As String = Path.Combine(Application.StartupPath, "Data")
     Public LogDir As String = Path.Combine(Application.StartupPath, "Logs")
     Public IconDir As String = Path.Combine(Application.StartupPath, "Icons")
+    Public LocationDir As String = Path.Combine(Application.StartupPath, "Locations")
 
     Public LogFile, TlDataFile, ErrFile As String
 
     Public Cpy As String = $"©2020-{Now:yyyy} PAROLE Software - All rights reserved."
+
+    Public GotErr As Boolean
+    Public ResetErr As Boolean
 
     Public unitArr As New List(Of String)({"imperial", "metric"})
 

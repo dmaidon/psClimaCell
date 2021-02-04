@@ -1012,9 +1012,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.psClimaCell_v4._0.My.MySettings
+        Friend ReadOnly Property Settings() As Global.psClimaCellv4.My.MySettings
             Get
-                Return Global.psClimaCell_v4._0.My.MySettings.Default
+                Return Global.psClimaCellv4.My.MySettings.Default
             End Get
         End Property
     End Module

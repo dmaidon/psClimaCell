@@ -3,7 +3,7 @@ Imports System.Security
 Imports System.Text
 
 Friend Module LogRoutinesV4
-
+    Private _numErr As Integer
     Friend Sub Check4NewLogFile()
         Dim si = LogFile.Substring _
                 (LogFile.LastIndexOf("-", StringComparison.Ordinal) + 1, (LogFile.LastIndexOf("_", StringComparison.Ordinal) - LogFile.LastIndexOf("-", StringComparison.Ordinal) - 1))
@@ -82,16 +82,16 @@ Friend Module LogRoutinesV4
     End Sub
 
     Friend Sub PrintErr(msg As String, trg As String, stk As String, src As String, Optional gbe As String = "- Empty -")
-        'ResetError()
-        'GotErr = True
-        '_numErr += 1
+        ResetError()
+        GotErr = True
+        _numErr += 1
         Dim em As String =
                 $"   Error:{vbLf}{msg}{vbLf}{vbLf}   Location:{vbLf}{trg}{vbLf}{vbLf}   Trace:{vbLf}{stk}{vbLf}{vbLf}   Source:{vbLf}{src}{vbLf}{vbLf}   Base Exception:{ _
                 vbLf}{gbe}{vbLf}"
         With FrmMainv4
-            '.TsslError.ForeColor = Color.Red
-            '.TsslError.ToolTipText = My.Resources.err_in_pgm
-            '.TsslError.Text = $"{_numErr}"
+            .TsslErr.ForeColor = Color.Red
+            .TsslErr.ToolTipText = My.Resources.err_in_pgm
+            .TsslErr.Text = $"{_numErr}"
             .RtbLog.SelectionColor = Color.Red
             .RtbLog.AppendText($"{vbLf}{My.Resources.separator}{vbLf}Time: {Now:T}{vbLf}")
             .RtbLog.SelectionColor = Color.Black
@@ -117,14 +117,14 @@ Friend Module LogRoutinesV4
     End Sub
 
     Friend Sub PrintLog(m As String, Optional et As Boolean = False)
-        'ResetError()
+        ResetError()
         With FrmMainv4
             If et Then
-                'GotErr = True
-                '_numErr += 1
-                '.TsslError.ForeColor = Color.Red
-                '.TsslError.ToolTipText = My.Resources.err_in_pgm
-                '.TsslError.Text = $"{_numErr}"
+                GotErr = True
+                _numErr += 1
+                .TsslErr.ForeColor = Color.Red
+                .TsslErr.ToolTipText = My.Resources.err_in_pgm
+                .TsslErr.Text = $"{_numErr}"
                 .RtbLog.SelectionColor = Color.Red
                 .RtbLog.AppendText($"{My.Resources.err_separator}{vbLf}{vbLf}")
                 .RtbLog.SelectionColor = Color.Black
@@ -164,7 +164,7 @@ Friend Module LogRoutinesV4
             My.Settings.TimesRun = Timesrun
             My.Settings.Save()
             LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
-            tlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
+            TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
             ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
             PrintLog(GetLogHeader())
             PrintErrLog(GetLogHeader())
@@ -205,6 +205,12 @@ Friend Module LogRoutinesV4
         Return parent.Controls.Count + parent.Controls.Cast(Of Control)().Sum(Function(ctrl) NumControls(ctrl))
     End Function
 
+    Private Sub ResetError()
+        If ResetErr Then
+            _numErr = 0
+            ResetErr = False
+        End If
+    End Sub
     Private Sub StartNewLogFile()
         Try
             With FrmMainv4

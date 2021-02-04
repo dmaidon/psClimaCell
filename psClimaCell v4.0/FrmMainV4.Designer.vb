@@ -35,6 +35,8 @@ Partial Class FrmMainv4
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMainv4))
         Me.SS = New System.Windows.Forms.StatusStrip()
         Me.TsslVer = New System.Windows.Forms.ToolStripStatusLabel()
@@ -43,6 +45,7 @@ Partial Class FrmMainv4
         Me.TsslNextNowcast = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TsslMidnight = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TsslCpy = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TsslErr = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TsslClock = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TC = New System.Windows.Forms.TabControl()
         Me.TpDaily = New System.Windows.Forms.TabPage()
@@ -70,6 +73,7 @@ Partial Class FrmMainv4
         Me.NumTlInterval = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GbTimeSteps = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.ChkTsCur = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.LblNumTsSelected = New System.Windows.Forms.Label()
@@ -80,8 +84,10 @@ Partial Class FrmMainv4
         Me.ChkTs5m = New System.Windows.Forms.CheckBox()
         Me.ChkTs1m = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtApiKey = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.NumLong = New System.Windows.Forms.NumericUpDown()
         Me.NumLat = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -156,6 +162,15 @@ Partial Class FrmMainv4
         Me.ChkHail0 = New System.Windows.Forms.CheckBox()
         Me.ChkFire0 = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.TpLocations = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.BtnNewPointLocation = New System.Windows.Forms.Button()
+        Me.TxtPointLong = New System.Windows.Forms.TextBox()
+        Me.TxtPointLat = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TxtLocationName = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TpLogs = New System.Windows.Forms.TabPage()
         Me.TcLogs = New System.Windows.Forms.TabControl()
         Me.TpLogsLog = New System.Windows.Forms.TabPage()
@@ -170,9 +185,10 @@ Partial Class FrmMainv4
         Me.TmrClock = New System.Timers.Timer()
         Me.TTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.TmrMidnight = New System.Timers.Timer()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.DgvWarnings = New System.Windows.Forms.DataGridView()
+        Me.w0 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.w1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.w2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SS.SuspendLayout()
         Me.TC.SuspendLayout()
         Me.TpDaily.SuspendLayout()
@@ -197,26 +213,30 @@ Partial Class FrmMainv4
         Me.GroupBox1.SuspendLayout()
         Me.TpDataFields.SuspendLayout()
         Me.FlpDataFields.SuspendLayout()
+        Me.TpLocations.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.TpLogs.SuspendLayout()
         Me.TcLogs.SuspendLayout()
         Me.TpLogsLog.SuspendLayout()
         Me.TpLogsErr.SuspendLayout()
+        Me.TpLogsWarnings.SuspendLayout()
         Me.TpAbout.SuspendLayout()
         CType(Me.TmrTimelineUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TmrClock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TmrMidnight, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvWarnings, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SS
         '
         Me.SS.GripMargin = New System.Windows.Forms.Padding(0)
         Me.SS.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.SS.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsslVer, Me.TsslNextTl, Me.TsslNextHourly, Me.TsslNextNowcast, Me.TsslMidnight, Me.TsslCpy, Me.TsslClock})
-        Me.SS.Location = New System.Drawing.Point(0, 661)
+        Me.SS.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsslVer, Me.TsslNextTl, Me.TsslNextHourly, Me.TsslNextNowcast, Me.TsslMidnight, Me.TsslCpy, Me.TsslErr, Me.TsslClock})
+        Me.SS.Location = New System.Drawing.Point(0, 1033)
         Me.SS.Name = "SS"
-        Me.SS.Padding = New System.Windows.Forms.Padding(1, 0, 9, 0)
+        Me.SS.Padding = New System.Windows.Forms.Padding(2, 0, 14, 0)
         Me.SS.ShowItemToolTips = True
-        Me.SS.Size = New System.Drawing.Size(931, 28)
+        Me.SS.Size = New System.Drawing.Size(1396, 32)
         Me.SS.SizingGrip = False
         Me.SS.TabIndex = 8
         Me.SS.Text = "StatusStrip1"
@@ -226,7 +246,7 @@ Partial Class FrmMainv4
         Me.TsslVer.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.TsslVer.ForeColor = System.Drawing.Color.Navy
         Me.TsslVer.Name = "TsslVer"
-        Me.TsslVer.Size = New System.Drawing.Size(18, 21)
+        Me.TsslVer.Size = New System.Drawing.Size(18, 25)
         Me.TsslVer.Text = "v"
         Me.TsslVer.ToolTipText = "Application version"
         '
@@ -235,7 +255,7 @@ Partial Class FrmMainv4
         Me.TsslNextTl.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.TsslNextTl.ForeColor = System.Drawing.Color.Maroon
         Me.TsslNextTl.Name = "TsslNextTl"
-        Me.TsslNextTl.Size = New System.Drawing.Size(41, 21)
+        Me.TsslNextTl.Size = New System.Drawing.Size(41, 25)
         Me.TsslNextTl.Text = "Tl: 0"
         Me.TsslNextTl.ToolTipText = "Time to next timeline update"
         '
@@ -244,7 +264,7 @@ Partial Class FrmMainv4
         Me.TsslNextHourly.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.TsslNextHourly.ForeColor = System.Drawing.Color.ForestGreen
         Me.TsslNextHourly.Name = "TsslNextHourly"
-        Me.TsslNextHourly.Size = New System.Drawing.Size(46, 21)
+        Me.TsslNextHourly.Size = New System.Drawing.Size(46, 25)
         Me.TsslNextHourly.Text = "Hr: 0"
         Me.TsslNextHourly.ToolTipText = "Time to next hourly updatre"
         Me.TsslNextHourly.Visible = False
@@ -254,7 +274,7 @@ Partial Class FrmMainv4
         Me.TsslNextNowcast.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.TsslNextNowcast.ForeColor = System.Drawing.Color.Purple
         Me.TsslNextNowcast.Name = "TsslNextNowcast"
-        Me.TsslNextNowcast.Size = New System.Drawing.Size(48, 21)
+        Me.TsslNextNowcast.Size = New System.Drawing.Size(48, 25)
         Me.TsslNextNowcast.Text = "Nc: 0"
         Me.TsslNextNowcast.ToolTipText = "Time to next nowcast update"
         Me.TsslNextNowcast.Visible = False
@@ -265,7 +285,7 @@ Partial Class FrmMainv4
         Me.TsslMidnight.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.TsslMidnight.ForeColor = System.Drawing.Color.Blue
         Me.TsslMidnight.Name = "TsslMidnight"
-        Me.TsslMidnight.Size = New System.Drawing.Size(52, 21)
+        Me.TsslMidnight.Size = New System.Drawing.Size(52, 25)
         Me.TsslMidnight.Text = "Mn: 0"
         '
         'TsslCpy
@@ -273,15 +293,23 @@ Partial Class FrmMainv4
         Me.TsslCpy.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Italic)
         Me.TsslCpy.ForeColor = System.Drawing.Color.DarkRed
         Me.TsslCpy.Name = "TsslCpy"
-        Me.TsslCpy.Size = New System.Drawing.Size(760, 21)
+        Me.TsslCpy.Size = New System.Drawing.Size(1201, 25)
         Me.TsslCpy.Spring = True
         Me.TsslCpy.Text = "cpy"
+        '
+        'TsslErr
+        '
+        Me.TsslErr.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.TsslErr.ForeColor = System.Drawing.Color.ForestGreen
+        Me.TsslErr.Name = "TsslErr"
+        Me.TsslErr.Size = New System.Drawing.Size(18, 25)
+        Me.TsslErr.Text = "!"
         '
         'TsslClock
         '
         Me.TsslClock.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.TsslClock.Name = "TsslClock"
-        Me.TsslClock.Size = New System.Drawing.Size(50, 21)
+        Me.TsslClock.Size = New System.Drawing.Size(50, 25)
         Me.TsslClock.Text = "h:mm"
         '
         'TC
@@ -294,19 +322,19 @@ Partial Class FrmMainv4
         Me.TC.Controls.Add(Me.TpAbout)
         Me.TC.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TC.Location = New System.Drawing.Point(0, 0)
-        Me.TC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TC.Name = "TC"
         Me.TC.SelectedIndex = 0
-        Me.TC.Size = New System.Drawing.Size(931, 661)
+        Me.TC.Size = New System.Drawing.Size(1396, 1033)
         Me.TC.TabIndex = 9
         '
         'TpDaily
         '
         Me.TpDaily.Controls.Add(Me.DgvDaily)
-        Me.TpDaily.Location = New System.Drawing.Point(4, 22)
+        Me.TpDaily.Location = New System.Drawing.Point(4, 29)
+        Me.TpDaily.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpDaily.Name = "TpDaily"
-        Me.TpDaily.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TpDaily.Size = New System.Drawing.Size(923, 635)
+        Me.TpDaily.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TpDaily.Size = New System.Drawing.Size(1388, 995)
         Me.TpDaily.TabIndex = 0
         Me.TpDaily.Text = "Daily"
         Me.TpDaily.UseVisualStyleBackColor = True
@@ -341,8 +369,8 @@ Partial Class FrmMainv4
         Me.DgvDaily.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvDaily.Enabled = False
         Me.DgvDaily.EnableHeadersVisualStyles = False
-        Me.DgvDaily.Location = New System.Drawing.Point(3, 3)
-        Me.DgvDaily.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
+        Me.DgvDaily.Location = New System.Drawing.Point(4, 5)
+        Me.DgvDaily.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.DgvDaily.MultiSelect = False
         Me.DgvDaily.Name = "DgvDaily"
         Me.DgvDaily.ReadOnly = True
@@ -355,16 +383,15 @@ Partial Class FrmMainv4
         Me.DgvDaily.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.DgvDaily.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DgvDaily.ShowEditingIcon = False
-        Me.DgvDaily.Size = New System.Drawing.Size(917, 629)
+        Me.DgvDaily.Size = New System.Drawing.Size(1380, 985)
         Me.DgvDaily.TabIndex = 6
         '
         'TpHourly
         '
         Me.TpHourly.Controls.Add(Me.DgvHour)
-        Me.TpHourly.Location = New System.Drawing.Point(4, 22)
-        Me.TpHourly.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TpHourly.Location = New System.Drawing.Point(4, 29)
         Me.TpHourly.Name = "TpHourly"
-        Me.TpHourly.Size = New System.Drawing.Size(923, 645)
+        Me.TpHourly.Size = New System.Drawing.Size(1388, 995)
         Me.TpHourly.TabIndex = 6
         Me.TpHourly.Text = "Hourly"
         Me.TpHourly.UseVisualStyleBackColor = True
@@ -392,12 +419,11 @@ Partial Class FrmMainv4
         Me.DgvHour.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvHour.EnableHeadersVisualStyles = False
         Me.DgvHour.Location = New System.Drawing.Point(0, 0)
-        Me.DgvHour.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DgvHour.Name = "DgvHour"
         Me.DgvHour.RowHeadersVisible = False
         Me.DgvHour.RowHeadersWidth = 62
         Me.DgvHour.RowTemplate.Height = 28
-        Me.DgvHour.Size = New System.Drawing.Size(923, 645)
+        Me.DgvHour.Size = New System.Drawing.Size(1388, 995)
         Me.DgvHour.TabIndex = 0
         '
         'hr0
@@ -449,25 +475,25 @@ Partial Class FrmMainv4
         'TpCurrent
         '
         Me.TpCurrent.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.TpCurrent.BackgroundImage = Global.psClimaCell_v4._0.My.Resources.Resources.powered_by_climacell_halo_sml
+        Me.TpCurrent.BackgroundImage = Global.psClimaCellv4.My.Resources.Resources.powered_by_climacell_halo_sml
         Me.TpCurrent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpCurrent.Controls.Add(Me.PbCurImage)
         Me.TpCurrent.Controls.Add(Me.DgvCurrent)
-        Me.TpCurrent.Location = New System.Drawing.Point(4, 22)
-        Me.TpCurrent.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TpCurrent.Location = New System.Drawing.Point(4, 29)
         Me.TpCurrent.Name = "TpCurrent"
-        Me.TpCurrent.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TpCurrent.Size = New System.Drawing.Size(923, 645)
+        Me.TpCurrent.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpCurrent.Size = New System.Drawing.Size(1388, 995)
         Me.TpCurrent.TabIndex = 7
         Me.TpCurrent.Text = "Current"
         '
         'PbCurImage
         '
-        Me.PbCurImage.Location = New System.Drawing.Point(751, 262)
-        Me.PbCurImage.MaximumSize = New System.Drawing.Size(110, 110)
-        Me.PbCurImage.MinimumSize = New System.Drawing.Size(110, 110)
+        Me.PbCurImage.Location = New System.Drawing.Point(1126, 403)
+        Me.PbCurImage.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PbCurImage.MaximumSize = New System.Drawing.Size(165, 169)
+        Me.PbCurImage.MinimumSize = New System.Drawing.Size(165, 169)
         Me.PbCurImage.Name = "PbCurImage"
-        Me.PbCurImage.Size = New System.Drawing.Size(110, 110)
+        Me.PbCurImage.Size = New System.Drawing.Size(165, 169)
         Me.PbCurImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbCurImage.TabIndex = 9
         Me.PbCurImage.TabStop = False
@@ -503,8 +529,7 @@ Partial Class FrmMainv4
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgvCurrent.DefaultCellStyle = DataGridViewCellStyle11
         Me.DgvCurrent.EnableHeadersVisualStyles = False
-        Me.DgvCurrent.Location = New System.Drawing.Point(77, 80)
-        Me.DgvCurrent.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DgvCurrent.Location = New System.Drawing.Point(116, 123)
         Me.DgvCurrent.MultiSelect = False
         Me.DgvCurrent.Name = "DgvCurrent"
         Me.DgvCurrent.ReadOnly = True
@@ -522,7 +547,7 @@ Partial Class FrmMainv4
         Me.DgvCurrent.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.DgvCurrent.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgvCurrent.RowTemplate.Height = 30
-        Me.DgvCurrent.Size = New System.Drawing.Size(583, 503)
+        Me.DgvCurrent.Size = New System.Drawing.Size(874, 774)
         Me.DgvCurrent.TabIndex = 8
         '
         'cur0
@@ -544,10 +569,11 @@ Partial Class FrmMainv4
         'TpOptions
         '
         Me.TpOptions.Controls.Add(Me.TcOptions)
-        Me.TpOptions.Location = New System.Drawing.Point(4, 22)
+        Me.TpOptions.Location = New System.Drawing.Point(4, 29)
+        Me.TpOptions.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpOptions.Name = "TpOptions"
-        Me.TpOptions.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TpOptions.Size = New System.Drawing.Size(923, 635)
+        Me.TpOptions.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TpOptions.Size = New System.Drawing.Size(1388, 995)
         Me.TpOptions.TabIndex = 1
         Me.TpOptions.Text = "Options"
         Me.TpOptions.UseVisualStyleBackColor = True
@@ -556,17 +582,19 @@ Partial Class FrmMainv4
         '
         Me.TcOptions.Controls.Add(Me.TpAppOptions)
         Me.TcOptions.Controls.Add(Me.TpDataFields)
+        Me.TcOptions.Controls.Add(Me.TpLocations)
         Me.TcOptions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TcOptions.Location = New System.Drawing.Point(3, 3)
+        Me.TcOptions.Location = New System.Drawing.Point(4, 5)
+        Me.TcOptions.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TcOptions.Name = "TcOptions"
         Me.TcOptions.SelectedIndex = 0
-        Me.TcOptions.Size = New System.Drawing.Size(917, 629)
+        Me.TcOptions.Size = New System.Drawing.Size(1380, 985)
         Me.TcOptions.TabIndex = 0
         '
         'TpAppOptions
         '
         Me.TpAppOptions.BackColor = System.Drawing.Color.Silver
-        Me.TpAppOptions.BackgroundImage = Global.psClimaCell_v4._0.My.Resources.Resources.powered_by_climacell_halo_sml
+        Me.TpAppOptions.BackgroundImage = Global.psClimaCellv4.My.Resources.Resources.powered_by_climacell_halo_sml
         Me.TpAppOptions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpAppOptions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TpAppOptions.Controls.Add(Me.GroupBox5)
@@ -575,10 +603,11 @@ Partial Class FrmMainv4
         Me.TpAppOptions.Controls.Add(Me.GroupBox3)
         Me.TpAppOptions.Controls.Add(Me.GroupBox2)
         Me.TpAppOptions.Controls.Add(Me.GroupBox1)
-        Me.TpAppOptions.Location = New System.Drawing.Point(4, 22)
+        Me.TpAppOptions.Location = New System.Drawing.Point(4, 29)
+        Me.TpAppOptions.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpAppOptions.Name = "TpAppOptions"
-        Me.TpAppOptions.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TpAppOptions.Size = New System.Drawing.Size(909, 603)
+        Me.TpAppOptions.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TpAppOptions.Size = New System.Drawing.Size(1372, 952)
         Me.TpAppOptions.TabIndex = 0
         Me.TpAppOptions.Text = "App Options"
         '
@@ -589,20 +618,21 @@ Partial Class FrmMainv4
         Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.Controls.Add(Me.ChkLogBool1)
         Me.GroupBox5.Controls.Add(Me.ChkLogBool0)
-        Me.GroupBox5.Location = New System.Drawing.Point(565, 399)
+        Me.GroupBox5.Location = New System.Drawing.Point(848, 614)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(147, 100)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox5.Size = New System.Drawing.Size(220, 154)
         Me.GroupBox5.TabIndex = 5
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Log Options"
         '
         'NumLogKeepDays
         '
-        Me.NumLogKeepDays.Location = New System.Drawing.Point(91, 75)
-        Me.NumLogKeepDays.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.NumLogKeepDays.Location = New System.Drawing.Point(136, 115)
         Me.NumLogKeepDays.Maximum = New Decimal(New Integer() {30, 0, 0, 0})
         Me.NumLogKeepDays.Name = "NumLogKeepDays"
-        Me.NumLogKeepDays.Size = New System.Drawing.Size(40, 20)
+        Me.NumLogKeepDays.Size = New System.Drawing.Size(60, 26)
         Me.NumLogKeepDays.TabIndex = 2
         Me.NumLogKeepDays.Tag = "3"
         Me.TTip.SetToolTip(Me.NumLogKeepDays, "Number of days to keep log files. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(0 - 30) days" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0 - Disables and will keep all" &
@@ -611,19 +641,19 @@ Partial Class FrmMainv4
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 77)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(14, 118)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 13)
+        Me.Label6.Size = New System.Drawing.Size(117, 20)
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Log Keep Days"
         '
         'ChkLogBool1
         '
         Me.ChkLogBool1.AutoSize = True
-        Me.ChkLogBool1.Location = New System.Drawing.Point(9, 51)
+        Me.ChkLogBool1.Location = New System.Drawing.Point(14, 78)
+        Me.ChkLogBool1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkLogBool1.Name = "ChkLogBool1"
-        Me.ChkLogBool1.Size = New System.Drawing.Size(122, 21)
+        Me.ChkLogBool1.Size = New System.Drawing.Size(169, 24)
         Me.ChkLogBool1.TabIndex = 1
         Me.ChkLogBool1.Tag = "1"
         Me.ChkLogBool1.Text = "Log Headers to file"
@@ -633,9 +663,10 @@ Partial Class FrmMainv4
         'ChkLogBool0
         '
         Me.ChkLogBool0.AutoSize = True
-        Me.ChkLogBool0.Location = New System.Drawing.Point(9, 25)
+        Me.ChkLogBool0.Location = New System.Drawing.Point(14, 38)
+        Me.ChkLogBool0.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkLogBool0.Name = "ChkLogBool0"
-        Me.ChkLogBool0.Size = New System.Drawing.Size(116, 21)
+        Me.ChkLogBool0.Size = New System.Drawing.Size(161, 24)
         Me.ChkLogBool0.TabIndex = 0
         Me.ChkLogBool0.Tag = "0"
         Me.ChkLogBool0.Text = "Log Images to file"
@@ -648,9 +679,12 @@ Partial Class FrmMainv4
         Me.GroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox4.Controls.Add(Me.NumTlInterval)
         Me.GroupBox4.Controls.Add(Me.Label3)
-        Me.GroupBox4.Location = New System.Drawing.Point(203, 399)
+        Me.GroupBox4.Enabled = False
+        Me.GroupBox4.Location = New System.Drawing.Point(304, 614)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(222, 47)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox4.Size = New System.Drawing.Size(333, 72)
         Me.GroupBox4.TabIndex = 4
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Update Timer Intervals"
@@ -658,10 +692,11 @@ Partial Class FrmMainv4
         'NumTlInterval
         '
         Me.NumTlInterval.Enabled = False
-        Me.NumTlInterval.Location = New System.Drawing.Point(126, 13)
+        Me.NumTlInterval.Location = New System.Drawing.Point(189, 20)
+        Me.NumTlInterval.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NumTlInterval.Maximum = New Decimal(New Integer() {240, 0, 0, 0})
         Me.NumTlInterval.Name = "NumTlInterval"
-        Me.NumTlInterval.Size = New System.Drawing.Size(72, 20)
+        Me.NumTlInterval.Size = New System.Drawing.Size(108, 26)
         Me.NumTlInterval.TabIndex = 0
         Me.NumTlInterval.Tag = "2"
         Me.TTip.SetToolTip(Me.NumTlInterval, "Set time 0 - 240 minutes")
@@ -669,9 +704,10 @@ Partial Class FrmMainv4
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 17)
+        Me.Label3.Location = New System.Drawing.Point(38, 26)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 13)
+        Me.Label3.Size = New System.Drawing.Size(131, 20)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Timelines Interval"
         '
@@ -688,21 +724,34 @@ Partial Class FrmMainv4
         Me.GbTimeSteps.Controls.Add(Me.ChkTs15m)
         Me.GbTimeSteps.Controls.Add(Me.ChkTs5m)
         Me.GbTimeSteps.Controls.Add(Me.ChkTs1m)
-        Me.GbTimeSteps.Location = New System.Drawing.Point(203, 261)
+        Me.GbTimeSteps.Location = New System.Drawing.Point(304, 402)
+        Me.GbTimeSteps.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GbTimeSteps.Name = "GbTimeSteps"
-        Me.GbTimeSteps.Size = New System.Drawing.Size(509, 130)
+        Me.GbTimeSteps.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GbTimeSteps.Size = New System.Drawing.Size(764, 200)
         Me.GbTimeSteps.TabIndex = 3
         Me.GbTimeSteps.TabStop = False
         Me.GbTimeSteps.Text = "Time Steps"
         Me.TTip.SetToolTip(Me.GbTimeSteps, "Maximum of 3 Time Steps allowed.")
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(5, 166)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(23, 29)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "*"
+        '
         'ChkTsCur
         '
         Me.ChkTsCur.AutoSize = True
-        Me.ChkTsCur.Location = New System.Drawing.Point(429, 25)
-        Me.ChkTsCur.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkTsCur.Location = New System.Drawing.Point(644, 38)
         Me.ChkTsCur.Name = "ChkTsCur"
-        Me.ChkTsCur.Size = New System.Drawing.Size(67, 21)
+        Me.ChkTsCur.Size = New System.Drawing.Size(88, 24)
         Me.ChkTsCur.TabIndex = 6
         Me.ChkTsCur.Tag = "6"
         Me.ChkTsCur.Text = "Current"
@@ -712,9 +761,10 @@ Partial Class FrmMainv4
         '
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.MediumBlue
-        Me.Label4.Location = New System.Drawing.Point(125, 94)
+        Me.Label4.Location = New System.Drawing.Point(188, 145)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(259, 23)
+        Me.Label4.Size = New System.Drawing.Size(388, 35)
         Me.Label4.TabIndex = 7
         Me.Label4.Tag = ""
         Me.Label4.Text = "You may select a maximum of 3."
@@ -724,9 +774,10 @@ Partial Class FrmMainv4
         '
         Me.LblNumTsSelected.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblNumTsSelected.ForeColor = System.Drawing.Color.DarkRed
-        Me.LblNumTsSelected.Location = New System.Drawing.Point(150, 59)
+        Me.LblNumTsSelected.Location = New System.Drawing.Point(225, 91)
+        Me.LblNumTsSelected.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblNumTsSelected.Name = "LblNumTsSelected"
-        Me.LblNumTsSelected.Size = New System.Drawing.Size(209, 23)
+        Me.LblNumTsSelected.Size = New System.Drawing.Size(314, 35)
         Me.LblNumTsSelected.TabIndex = 6
         Me.LblNumTsSelected.Tag = "Time Steps selected: {0}"
         Me.LblNumTsSelected.Text = "-"
@@ -735,9 +786,10 @@ Partial Class FrmMainv4
         'ChkTs1d
         '
         Me.ChkTs1d.AutoSize = True
-        Me.ChkTs1d.Location = New System.Drawing.Point(364, 25)
+        Me.ChkTs1d.Location = New System.Drawing.Point(546, 38)
+        Me.ChkTs1d.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkTs1d.Name = "ChkTs1d"
-        Me.ChkTs1d.Size = New System.Drawing.Size(45, 21)
+        Me.ChkTs1d.Size = New System.Drawing.Size(53, 24)
         Me.ChkTs1d.TabIndex = 5
         Me.ChkTs1d.Tag = "5"
         Me.ChkTs1d.Text = "1d"
@@ -746,9 +798,10 @@ Partial Class FrmMainv4
         'ChkTs1h
         '
         Me.ChkTs1h.AutoSize = True
-        Me.ChkTs1h.Location = New System.Drawing.Point(299, 25)
+        Me.ChkTs1h.Location = New System.Drawing.Point(448, 38)
+        Me.ChkTs1h.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkTs1h.Name = "ChkTs1h"
-        Me.ChkTs1h.Size = New System.Drawing.Size(45, 21)
+        Me.ChkTs1h.Size = New System.Drawing.Size(53, 24)
         Me.ChkTs1h.TabIndex = 4
         Me.ChkTs1h.Tag = "4"
         Me.ChkTs1h.Text = "1h"
@@ -757,9 +810,10 @@ Partial Class FrmMainv4
         'ChkTs30m
         '
         Me.ChkTs30m.AutoSize = True
-        Me.ChkTs30m.Location = New System.Drawing.Point(226, 25)
+        Me.ChkTs30m.Location = New System.Drawing.Point(339, 38)
+        Me.ChkTs30m.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkTs30m.Name = "ChkTs30m"
-        Me.ChkTs30m.Size = New System.Drawing.Size(53, 21)
+        Me.ChkTs30m.Size = New System.Drawing.Size(66, 24)
         Me.ChkTs30m.TabIndex = 3
         Me.ChkTs30m.Tag = "3"
         Me.ChkTs30m.Text = "30m"
@@ -768,9 +822,10 @@ Partial Class FrmMainv4
         'ChkTs15m
         '
         Me.ChkTs15m.AutoSize = True
-        Me.ChkTs15m.Location = New System.Drawing.Point(153, 25)
+        Me.ChkTs15m.Location = New System.Drawing.Point(230, 38)
+        Me.ChkTs15m.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkTs15m.Name = "ChkTs15m"
-        Me.ChkTs15m.Size = New System.Drawing.Size(53, 21)
+        Me.ChkTs15m.Size = New System.Drawing.Size(66, 24)
         Me.ChkTs15m.TabIndex = 2
         Me.ChkTs15m.Tag = "2"
         Me.ChkTs15m.Text = "15m"
@@ -779,9 +834,10 @@ Partial Class FrmMainv4
         'ChkTs5m
         '
         Me.ChkTs5m.AutoSize = True
-        Me.ChkTs5m.Location = New System.Drawing.Point(85, 25)
+        Me.ChkTs5m.Location = New System.Drawing.Point(128, 38)
+        Me.ChkTs5m.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkTs5m.Name = "ChkTs5m"
-        Me.ChkTs5m.Size = New System.Drawing.Size(47, 21)
+        Me.ChkTs5m.Size = New System.Drawing.Size(57, 24)
         Me.ChkTs5m.TabIndex = 1
         Me.ChkTs5m.Tag = "1"
         Me.ChkTs5m.Text = "5m"
@@ -790,9 +846,10 @@ Partial Class FrmMainv4
         'ChkTs1m
         '
         Me.ChkTs1m.AutoSize = True
-        Me.ChkTs1m.Location = New System.Drawing.Point(18, 25)
+        Me.ChkTs1m.Location = New System.Drawing.Point(27, 38)
+        Me.ChkTs1m.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkTs1m.Name = "ChkTs1m"
-        Me.ChkTs1m.Size = New System.Drawing.Size(47, 21)
+        Me.ChkTs1m.Size = New System.Drawing.Size(57, 24)
         Me.ChkTs1m.TabIndex = 0
         Me.ChkTs1m.Tag = "0"
         Me.ChkTs1m.Text = "1m"
@@ -803,18 +860,34 @@ Partial Class FrmMainv4
         Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.TxtApiKey)
-        Me.GroupBox3.Location = New System.Drawing.Point(203, 187)
+        Me.GroupBox3.Location = New System.Drawing.Point(304, 288)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(395, 66)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox3.Size = New System.Drawing.Size(592, 102)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "API Key"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(4, 69)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(23, 29)
+        Me.Label9.TabIndex = 7
+        Me.Label9.Text = "*"
+        '
         'TxtApiKey
         '
-        Me.TxtApiKey.Location = New System.Drawing.Point(8, 23)
+        Me.TxtApiKey.Location = New System.Drawing.Point(12, 35)
+        Me.TxtApiKey.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtApiKey.Name = "TxtApiKey"
-        Me.TxtApiKey.Size = New System.Drawing.Size(379, 20)
+        Me.TxtApiKey.Size = New System.Drawing.Size(566, 26)
         Me.TxtApiKey.TabIndex = 0
         '
         'GroupBox2
@@ -825,41 +898,58 @@ Partial Class FrmMainv4
         Me.GroupBox2.Controls.Add(Me.NumLat)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Location = New System.Drawing.Point(481, 96)
+        Me.GroupBox2.Location = New System.Drawing.Point(722, 148)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(231, 83)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox2.Size = New System.Drawing.Size(346, 128)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Location"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(5, 94)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(23, 29)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "*"
+        '
         'NumLong
         '
         Me.NumLong.DecimalPlaces = 7
-        Me.NumLong.Location = New System.Drawing.Point(94, 45)
+        Me.NumLong.Location = New System.Drawing.Point(141, 69)
+        Me.NumLong.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NumLong.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.NumLong.Minimum = New Decimal(New Integer() {180, 0, 0, -2147483648})
         Me.NumLong.Name = "NumLong"
-        Me.NumLong.Size = New System.Drawing.Size(111, 20)
+        Me.NumLong.Size = New System.Drawing.Size(166, 26)
         Me.NumLong.TabIndex = 1
         Me.NumLong.Tag = "1"
         '
         'NumLat
         '
         Me.NumLat.DecimalPlaces = 7
-        Me.NumLat.Location = New System.Drawing.Point(94, 18)
+        Me.NumLat.Location = New System.Drawing.Point(141, 28)
+        Me.NumLat.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NumLat.Maximum = New Decimal(New Integer() {89, 0, 0, 0})
         Me.NumLat.Minimum = New Decimal(New Integer() {89, 0, 0, -2147483648})
         Me.NumLat.Name = "NumLat"
-        Me.NumLat.Size = New System.Drawing.Size(111, 20)
+        Me.NumLat.Size = New System.Drawing.Size(166, 26)
         Me.NumLat.TabIndex = 0
         Me.NumLat.Tag = "0"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(26, 49)
+        Me.Label2.Location = New System.Drawing.Point(39, 75)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 13)
+        Me.Label2.Size = New System.Drawing.Size(80, 20)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Longitude"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -867,9 +957,10 @@ Partial Class FrmMainv4
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(35, 22)
+        Me.Label1.Location = New System.Drawing.Point(52, 34)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 13)
+        Me.Label1.Size = New System.Drawing.Size(67, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Latitude"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -879,9 +970,11 @@ Partial Class FrmMainv4
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.RbDataUnits1)
         Me.GroupBox1.Controls.Add(Me.RbDataUnits0)
-        Me.GroupBox1.Location = New System.Drawing.Point(203, 98)
+        Me.GroupBox1.Location = New System.Drawing.Point(304, 151)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(114, 81)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox1.Size = New System.Drawing.Size(171, 125)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Units"
@@ -889,9 +982,10 @@ Partial Class FrmMainv4
         'RbDataUnits1
         '
         Me.RbDataUnits1.AutoSize = True
-        Me.RbDataUnits1.Location = New System.Drawing.Point(23, 44)
+        Me.RbDataUnits1.Location = New System.Drawing.Point(34, 68)
+        Me.RbDataUnits1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RbDataUnits1.Name = "RbDataUnits1"
-        Me.RbDataUnits1.Size = New System.Drawing.Size(61, 20)
+        Me.RbDataUnits1.Size = New System.Drawing.Size(77, 24)
         Me.RbDataUnits1.TabIndex = 1
         Me.RbDataUnits1.TabStop = True
         Me.RbDataUnits1.Tag = "1"
@@ -901,9 +995,10 @@ Partial Class FrmMainv4
         'RbDataUnits0
         '
         Me.RbDataUnits0.AutoSize = True
-        Me.RbDataUnits0.Location = New System.Drawing.Point(23, 17)
+        Me.RbDataUnits0.Location = New System.Drawing.Point(34, 26)
+        Me.RbDataUnits0.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RbDataUnits0.Name = "RbDataUnits0"
-        Me.RbDataUnits0.Size = New System.Drawing.Size(68, 20)
+        Me.RbDataUnits0.Size = New System.Drawing.Size(90, 24)
         Me.RbDataUnits0.TabIndex = 0
         Me.RbDataUnits0.TabStop = True
         Me.RbDataUnits0.Tag = "0"
@@ -913,7 +1008,7 @@ Partial Class FrmMainv4
         'TpDataFields
         '
         Me.TpDataFields.BackColor = System.Drawing.Color.Silver
-        Me.TpDataFields.BackgroundImage = Global.psClimaCell_v4._0.My.Resources.Resources.data_layers_6
+        Me.TpDataFields.BackgroundImage = Global.psClimaCellv4.My.Resources.Resources.data_layers_6
         Me.TpDataFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpDataFields.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TpDataFields.Controls.Add(Me.LblFieldsChecked)
@@ -921,10 +1016,11 @@ Partial Class FrmMainv4
         Me.TpDataFields.Controls.Add(Me.BtnFdCheck)
         Me.TpDataFields.Controls.Add(Me.FlpDataFields)
         Me.TpDataFields.Controls.Add(Me.Label5)
-        Me.TpDataFields.Location = New System.Drawing.Point(4, 22)
+        Me.TpDataFields.Location = New System.Drawing.Point(4, 29)
+        Me.TpDataFields.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpDataFields.Name = "TpDataFields"
-        Me.TpDataFields.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TpDataFields.Size = New System.Drawing.Size(909, 603)
+        Me.TpDataFields.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TpDataFields.Size = New System.Drawing.Size(1372, 952)
         Me.TpDataFields.TabIndex = 1
         Me.TpDataFields.Text = "Data Fields"
         '
@@ -933,9 +1029,10 @@ Partial Class FrmMainv4
         Me.LblFieldsChecked.BackColor = System.Drawing.Color.WhiteSmoke
         Me.LblFieldsChecked.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblFieldsChecked.ForeColor = System.Drawing.Color.Red
-        Me.LblFieldsChecked.Location = New System.Drawing.Point(297, 548)
+        Me.LblFieldsChecked.Location = New System.Drawing.Point(446, 843)
+        Me.LblFieldsChecked.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblFieldsChecked.Name = "LblFieldsChecked"
-        Me.LblFieldsChecked.Size = New System.Drawing.Size(312, 30)
+        Me.LblFieldsChecked.Size = New System.Drawing.Size(468, 46)
         Me.LblFieldsChecked.TabIndex = 3
         Me.LblFieldsChecked.Tag = "Total Fields selected: {0}"
         Me.LblFieldsChecked.Text = "-"
@@ -945,9 +1042,10 @@ Partial Class FrmMainv4
         '
         Me.BtnFdUncheck.AutoSize = True
         Me.BtnFdUncheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnFdUncheck.Location = New System.Drawing.Point(520, 505)
+        Me.BtnFdUncheck.Location = New System.Drawing.Point(780, 777)
+        Me.BtnFdUncheck.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnFdUncheck.Name = "BtnFdUncheck"
-        Me.BtnFdUncheck.Size = New System.Drawing.Size(90, 25)
+        Me.BtnFdUncheck.Size = New System.Drawing.Size(135, 38)
         Me.BtnFdUncheck.TabIndex = 2
         Me.BtnFdUncheck.Text = "Uncheck All"
         Me.BtnFdUncheck.UseVisualStyleBackColor = True
@@ -956,9 +1054,10 @@ Partial Class FrmMainv4
         '
         Me.BtnFdCheck.AutoSize = True
         Me.BtnFdCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnFdCheck.Location = New System.Drawing.Point(297, 505)
+        Me.BtnFdCheck.Location = New System.Drawing.Point(446, 777)
+        Me.BtnFdCheck.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnFdCheck.Name = "BtnFdCheck"
-        Me.BtnFdCheck.Size = New System.Drawing.Size(90, 25)
+        Me.BtnFdCheck.Size = New System.Drawing.Size(135, 38)
         Me.BtnFdCheck.TabIndex = 1
         Me.BtnFdCheck.Text = "Check All"
         Me.BtnFdCheck.UseVisualStyleBackColor = True
@@ -1027,20 +1126,20 @@ Partial Class FrmMainv4
         Me.FlpDataFields.Controls.Add(Me.ChkPol25)
         Me.FlpDataFields.Controls.Add(Me.ChkHail0)
         Me.FlpDataFields.Controls.Add(Me.ChkFire0)
-        Me.FlpDataFields.Location = New System.Drawing.Point(62, 104)
+        Me.FlpDataFields.Location = New System.Drawing.Point(93, 160)
+        Me.FlpDataFields.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.FlpDataFields.Name = "FlpDataFields"
-        Me.FlpDataFields.Size = New System.Drawing.Size(782, 394)
+        Me.FlpDataFields.Size = New System.Drawing.Size(1173, 606)
         Me.FlpDataFields.TabIndex = 0
         Me.TTip.SetToolTip(Me.FlpDataFields, "Maximum of 50 fields allowed.")
         '
         'ChkCore0
         '
         Me.ChkCore0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore0.Location = New System.Drawing.Point(2, 2)
-        Me.ChkCore0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore0.Location = New System.Drawing.Point(3, 3)
         Me.ChkCore0.Name = "ChkCore0"
-        Me.ChkCore0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore0.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore0.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore0.TabIndex = 0
         Me.ChkCore0.Tag = "0"
         Me.ChkCore0.Text = "Temperature"
@@ -1049,11 +1148,10 @@ Partial Class FrmMainv4
         'ChkCore1
         '
         Me.ChkCore1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore1.Location = New System.Drawing.Point(156, 2)
-        Me.ChkCore1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore1.Location = New System.Drawing.Point(234, 3)
         Me.ChkCore1.Name = "ChkCore1"
-        Me.ChkCore1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore1.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore1.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore1.TabIndex = 1
         Me.ChkCore1.Tag = "1"
         Me.ChkCore1.Text = "Temperature Apparent"
@@ -1062,11 +1160,10 @@ Partial Class FrmMainv4
         'ChkCore2
         '
         Me.ChkCore2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore2.Location = New System.Drawing.Point(310, 2)
-        Me.ChkCore2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore2.Location = New System.Drawing.Point(465, 3)
         Me.ChkCore2.Name = "ChkCore2"
-        Me.ChkCore2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore2.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore2.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore2.TabIndex = 2
         Me.ChkCore2.Tag = "2"
         Me.ChkCore2.Text = "Dewpoint"
@@ -1075,11 +1172,10 @@ Partial Class FrmMainv4
         'ChkCore3
         '
         Me.ChkCore3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore3.Location = New System.Drawing.Point(464, 2)
-        Me.ChkCore3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore3.Location = New System.Drawing.Point(696, 3)
         Me.ChkCore3.Name = "ChkCore3"
-        Me.ChkCore3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore3.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore3.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore3.TabIndex = 3
         Me.ChkCore3.Tag = "3"
         Me.ChkCore3.Text = "Humidity"
@@ -1088,11 +1184,10 @@ Partial Class FrmMainv4
         'ChkCore4
         '
         Me.ChkCore4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore4.Location = New System.Drawing.Point(618, 2)
-        Me.ChkCore4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore4.Location = New System.Drawing.Point(927, 3)
         Me.ChkCore4.Name = "ChkCore4"
-        Me.ChkCore4.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore4.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore4.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore4.TabIndex = 4
         Me.ChkCore4.Tag = "4"
         Me.ChkCore4.Text = "Wind Speed"
@@ -1101,11 +1196,10 @@ Partial Class FrmMainv4
         'ChkCore5
         '
         Me.ChkCore5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore5.Location = New System.Drawing.Point(2, 31)
-        Me.ChkCore5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore5.Location = New System.Drawing.Point(3, 47)
         Me.ChkCore5.Name = "ChkCore5"
-        Me.ChkCore5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore5.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore5.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore5.TabIndex = 5
         Me.ChkCore5.Tag = "5"
         Me.ChkCore5.Text = "Wind Direction"
@@ -1114,11 +1208,10 @@ Partial Class FrmMainv4
         'ChkCore6
         '
         Me.ChkCore6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore6.Location = New System.Drawing.Point(156, 31)
-        Me.ChkCore6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore6.Location = New System.Drawing.Point(234, 47)
         Me.ChkCore6.Name = "ChkCore6"
-        Me.ChkCore6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore6.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore6.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore6.TabIndex = 6
         Me.ChkCore6.Tag = "6"
         Me.ChkCore6.Text = "Wind Gust"
@@ -1127,11 +1220,10 @@ Partial Class FrmMainv4
         'ChkCore7
         '
         Me.ChkCore7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore7.Location = New System.Drawing.Point(310, 31)
-        Me.ChkCore7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore7.Location = New System.Drawing.Point(465, 47)
         Me.ChkCore7.Name = "ChkCore7"
-        Me.ChkCore7.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore7.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore7.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore7.TabIndex = 7
         Me.ChkCore7.Tag = "7"
         Me.ChkCore7.Text = "Pressure Surface Level"
@@ -1140,11 +1232,10 @@ Partial Class FrmMainv4
         'ChkCore8
         '
         Me.ChkCore8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore8.Location = New System.Drawing.Point(464, 31)
-        Me.ChkCore8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore8.Location = New System.Drawing.Point(696, 47)
         Me.ChkCore8.Name = "ChkCore8"
-        Me.ChkCore8.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore8.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore8.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore8.TabIndex = 8
         Me.ChkCore8.Tag = "8"
         Me.ChkCore8.Text = "Pressure Sea Level"
@@ -1153,11 +1244,10 @@ Partial Class FrmMainv4
         'ChkCore9
         '
         Me.ChkCore9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore9.Location = New System.Drawing.Point(618, 31)
-        Me.ChkCore9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore9.Location = New System.Drawing.Point(927, 47)
         Me.ChkCore9.Name = "ChkCore9"
-        Me.ChkCore9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore9.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore9.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore9.TabIndex = 9
         Me.ChkCore9.Tag = "9"
         Me.ChkCore9.Text = "Precipitation Intensity"
@@ -1166,11 +1256,10 @@ Partial Class FrmMainv4
         'ChkCore10
         '
         Me.ChkCore10.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore10.Location = New System.Drawing.Point(2, 60)
-        Me.ChkCore10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore10.Location = New System.Drawing.Point(3, 91)
         Me.ChkCore10.Name = "ChkCore10"
-        Me.ChkCore10.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore10.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore10.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore10.TabIndex = 10
         Me.ChkCore10.Tag = "10"
         Me.ChkCore10.Text = "Precipitation Probability"
@@ -1179,11 +1268,10 @@ Partial Class FrmMainv4
         'ChkCore11
         '
         Me.ChkCore11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore11.Location = New System.Drawing.Point(156, 60)
-        Me.ChkCore11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore11.Location = New System.Drawing.Point(234, 91)
         Me.ChkCore11.Name = "ChkCore11"
-        Me.ChkCore11.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore11.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore11.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore11.TabIndex = 11
         Me.ChkCore11.Tag = "11"
         Me.ChkCore11.Text = "Precipitation Type"
@@ -1192,11 +1280,10 @@ Partial Class FrmMainv4
         'ChkCore12
         '
         Me.ChkCore12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore12.Location = New System.Drawing.Point(310, 60)
-        Me.ChkCore12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore12.Location = New System.Drawing.Point(465, 91)
         Me.ChkCore12.Name = "ChkCore12"
-        Me.ChkCore12.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore12.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore12.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore12.TabIndex = 12
         Me.ChkCore12.Tag = "12"
         Me.ChkCore12.Text = "Sunrise"
@@ -1205,11 +1292,10 @@ Partial Class FrmMainv4
         'ChkCore13
         '
         Me.ChkCore13.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore13.Location = New System.Drawing.Point(464, 60)
-        Me.ChkCore13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore13.Location = New System.Drawing.Point(696, 91)
         Me.ChkCore13.Name = "ChkCore13"
-        Me.ChkCore13.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore13.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore13.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore13.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore13.TabIndex = 13
         Me.ChkCore13.Tag = "13"
         Me.ChkCore13.Text = "Sunset"
@@ -1218,11 +1304,10 @@ Partial Class FrmMainv4
         'ChkCore14
         '
         Me.ChkCore14.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore14.Location = New System.Drawing.Point(618, 60)
-        Me.ChkCore14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore14.Location = New System.Drawing.Point(927, 91)
         Me.ChkCore14.Name = "ChkCore14"
-        Me.ChkCore14.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore14.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore14.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore14.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore14.TabIndex = 14
         Me.ChkCore14.Tag = "14"
         Me.ChkCore14.Text = "Moonrise"
@@ -1231,11 +1316,10 @@ Partial Class FrmMainv4
         'ChkCore15
         '
         Me.ChkCore15.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore15.Location = New System.Drawing.Point(2, 89)
-        Me.ChkCore15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore15.Location = New System.Drawing.Point(3, 135)
         Me.ChkCore15.Name = "ChkCore15"
-        Me.ChkCore15.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore15.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore15.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore15.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore15.TabIndex = 15
         Me.ChkCore15.Tag = "15"
         Me.ChkCore15.Text = "Solar Radiation"
@@ -1244,11 +1328,10 @@ Partial Class FrmMainv4
         'ChkCore16
         '
         Me.ChkCore16.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore16.Location = New System.Drawing.Point(156, 89)
-        Me.ChkCore16.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore16.Location = New System.Drawing.Point(234, 135)
         Me.ChkCore16.Name = "ChkCore16"
-        Me.ChkCore16.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore16.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore16.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore16.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore16.TabIndex = 16
         Me.ChkCore16.Tag = "16"
         Me.ChkCore16.Text = "Visibility"
@@ -1257,11 +1340,10 @@ Partial Class FrmMainv4
         'ChkCore17
         '
         Me.ChkCore17.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore17.Location = New System.Drawing.Point(310, 89)
-        Me.ChkCore17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore17.Location = New System.Drawing.Point(465, 135)
         Me.ChkCore17.Name = "ChkCore17"
-        Me.ChkCore17.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore17.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore17.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore17.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore17.TabIndex = 17
         Me.ChkCore17.Tag = "17"
         Me.ChkCore17.Text = "Cloud Cover"
@@ -1270,11 +1352,10 @@ Partial Class FrmMainv4
         'ChkCore18
         '
         Me.ChkCore18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore18.Location = New System.Drawing.Point(464, 89)
-        Me.ChkCore18.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore18.Location = New System.Drawing.Point(696, 135)
         Me.ChkCore18.Name = "ChkCore18"
-        Me.ChkCore18.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore18.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore18.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore18.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore18.TabIndex = 18
         Me.ChkCore18.Tag = "18"
         Me.ChkCore18.Text = "Cloud Base"
@@ -1283,11 +1364,10 @@ Partial Class FrmMainv4
         'ChkCore19
         '
         Me.ChkCore19.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore19.Location = New System.Drawing.Point(618, 89)
-        Me.ChkCore19.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore19.Location = New System.Drawing.Point(927, 135)
         Me.ChkCore19.Name = "ChkCore19"
-        Me.ChkCore19.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore19.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore19.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore19.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore19.TabIndex = 19
         Me.ChkCore19.Tag = "19"
         Me.ChkCore19.Text = "Cloud Ceiling"
@@ -1296,11 +1376,10 @@ Partial Class FrmMainv4
         'ChkCore20
         '
         Me.ChkCore20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore20.Location = New System.Drawing.Point(2, 118)
-        Me.ChkCore20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkCore20.Location = New System.Drawing.Point(3, 179)
         Me.ChkCore20.Name = "ChkCore20"
-        Me.ChkCore20.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkCore20.Size = New System.Drawing.Size(150, 25)
+        Me.ChkCore20.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore20.Size = New System.Drawing.Size(225, 38)
         Me.ChkCore20.TabIndex = 20
         Me.ChkCore20.Tag = "20"
         Me.ChkCore20.Text = "Weather Code"
@@ -1309,11 +1388,10 @@ Partial Class FrmMainv4
         'ChkAqi0
         '
         Me.ChkAqi0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi0.Location = New System.Drawing.Point(156, 118)
-        Me.ChkAqi0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi0.Location = New System.Drawing.Point(234, 179)
         Me.ChkAqi0.Name = "ChkAqi0"
-        Me.ChkAqi0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi0.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi0.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi0.TabIndex = 21
         Me.ChkAqi0.Tag = "21"
         Me.ChkAqi0.Text = "PM25"
@@ -1322,11 +1400,10 @@ Partial Class FrmMainv4
         'ChkAqi1
         '
         Me.ChkAqi1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi1.Location = New System.Drawing.Point(310, 118)
-        Me.ChkAqi1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi1.Location = New System.Drawing.Point(465, 179)
         Me.ChkAqi1.Name = "ChkAqi1"
-        Me.ChkAqi1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi1.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi1.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi1.TabIndex = 22
         Me.ChkAqi1.Tag = "22"
         Me.ChkAqi1.Text = "PM10"
@@ -1335,11 +1412,10 @@ Partial Class FrmMainv4
         'ChkAqi2
         '
         Me.ChkAqi2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi2.Location = New System.Drawing.Point(464, 118)
-        Me.ChkAqi2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi2.Location = New System.Drawing.Point(696, 179)
         Me.ChkAqi2.Name = "ChkAqi2"
-        Me.ChkAqi2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi2.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi2.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi2.TabIndex = 23
         Me.ChkAqi2.Tag = "23"
         Me.ChkAqi2.Text = "O3"
@@ -1348,11 +1424,10 @@ Partial Class FrmMainv4
         'ChkAqi3
         '
         Me.ChkAqi3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi3.Location = New System.Drawing.Point(618, 118)
-        Me.ChkAqi3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi3.Location = New System.Drawing.Point(927, 179)
         Me.ChkAqi3.Name = "ChkAqi3"
-        Me.ChkAqi3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi3.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi3.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi3.TabIndex = 24
         Me.ChkAqi3.Tag = "24"
         Me.ChkAqi3.Text = "NO2"
@@ -1361,11 +1436,10 @@ Partial Class FrmMainv4
         'ChkAqi4
         '
         Me.ChkAqi4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi4.Location = New System.Drawing.Point(2, 147)
-        Me.ChkAqi4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi4.Location = New System.Drawing.Point(3, 223)
         Me.ChkAqi4.Name = "ChkAqi4"
-        Me.ChkAqi4.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi4.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi4.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi4.TabIndex = 25
         Me.ChkAqi4.Tag = "25"
         Me.ChkAqi4.Text = "CO"
@@ -1374,11 +1448,10 @@ Partial Class FrmMainv4
         'ChkAqi5
         '
         Me.ChkAqi5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi5.Location = New System.Drawing.Point(156, 147)
-        Me.ChkAqi5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi5.Location = New System.Drawing.Point(234, 223)
         Me.ChkAqi5.Name = "ChkAqi5"
-        Me.ChkAqi5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi5.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi5.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi5.TabIndex = 26
         Me.ChkAqi5.Tag = "26"
         Me.ChkAqi5.Text = "SO2"
@@ -1387,11 +1460,10 @@ Partial Class FrmMainv4
         'ChkAqi6
         '
         Me.ChkAqi6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi6.Location = New System.Drawing.Point(310, 147)
-        Me.ChkAqi6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi6.Location = New System.Drawing.Point(465, 223)
         Me.ChkAqi6.Name = "ChkAqi6"
-        Me.ChkAqi6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi6.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi6.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi6.TabIndex = 27
         Me.ChkAqi6.Tag = "27"
         Me.ChkAqi6.Text = "MEP Index"
@@ -1400,11 +1472,10 @@ Partial Class FrmMainv4
         'ChkAqi7
         '
         Me.ChkAqi7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi7.Location = New System.Drawing.Point(464, 147)
-        Me.ChkAqi7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi7.Location = New System.Drawing.Point(696, 223)
         Me.ChkAqi7.Name = "ChkAqi7"
-        Me.ChkAqi7.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi7.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi7.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi7.TabIndex = 28
         Me.ChkAqi7.Tag = "28"
         Me.ChkAqi7.Text = "MEP Primary Pollutant"
@@ -1413,11 +1484,10 @@ Partial Class FrmMainv4
         'ChkAqi8
         '
         Me.ChkAqi8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi8.Location = New System.Drawing.Point(618, 147)
-        Me.ChkAqi8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi8.Location = New System.Drawing.Point(927, 223)
         Me.ChkAqi8.Name = "ChkAqi8"
-        Me.ChkAqi8.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi8.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi8.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi8.TabIndex = 29
         Me.ChkAqi8.Tag = "29"
         Me.ChkAqi8.Text = "MEP Health Concern"
@@ -1426,11 +1496,10 @@ Partial Class FrmMainv4
         'ChkAqi9
         '
         Me.ChkAqi9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi9.Location = New System.Drawing.Point(2, 176)
-        Me.ChkAqi9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi9.Location = New System.Drawing.Point(3, 267)
         Me.ChkAqi9.Name = "ChkAqi9"
-        Me.ChkAqi9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi9.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi9.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi9.TabIndex = 30
         Me.ChkAqi9.Tag = "30"
         Me.ChkAqi9.Text = "EPA Index"
@@ -1439,11 +1508,10 @@ Partial Class FrmMainv4
         'ChkAqi10
         '
         Me.ChkAqi10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi10.Location = New System.Drawing.Point(156, 176)
-        Me.ChkAqi10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi10.Location = New System.Drawing.Point(234, 267)
         Me.ChkAqi10.Name = "ChkAqi10"
-        Me.ChkAqi10.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi10.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi10.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi10.TabIndex = 31
         Me.ChkAqi10.Tag = "31"
         Me.ChkAqi10.Text = "EPA Primary Pollutant"
@@ -1452,11 +1520,10 @@ Partial Class FrmMainv4
         'ChkAqi11
         '
         Me.ChkAqi11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkAqi11.Location = New System.Drawing.Point(310, 176)
-        Me.ChkAqi11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkAqi11.Location = New System.Drawing.Point(465, 267)
         Me.ChkAqi11.Name = "ChkAqi11"
-        Me.ChkAqi11.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkAqi11.Size = New System.Drawing.Size(150, 25)
+        Me.ChkAqi11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkAqi11.Size = New System.Drawing.Size(225, 38)
         Me.ChkAqi11.TabIndex = 32
         Me.ChkAqi11.Tag = "32"
         Me.ChkAqi11.Text = "EPA Health Concern"
@@ -1465,11 +1532,10 @@ Partial Class FrmMainv4
         'ChkPol0
         '
         Me.ChkPol0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol0.Location = New System.Drawing.Point(464, 176)
-        Me.ChkPol0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol0.Location = New System.Drawing.Point(696, 267)
         Me.ChkPol0.Name = "ChkPol0"
-        Me.ChkPol0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol0.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol0.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol0.TabIndex = 33
         Me.ChkPol0.Tag = "33"
         Me.ChkPol0.Text = "Tree Index"
@@ -1478,11 +1544,10 @@ Partial Class FrmMainv4
         'ChkPol1
         '
         Me.ChkPol1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol1.Location = New System.Drawing.Point(618, 176)
-        Me.ChkPol1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol1.Location = New System.Drawing.Point(927, 267)
         Me.ChkPol1.Name = "ChkPol1"
-        Me.ChkPol1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol1.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol1.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol1.TabIndex = 34
         Me.ChkPol1.Tag = "34"
         Me.ChkPol1.Text = "Acacia"
@@ -1491,11 +1556,10 @@ Partial Class FrmMainv4
         'ChkPol2
         '
         Me.ChkPol2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol2.Location = New System.Drawing.Point(2, 205)
-        Me.ChkPol2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol2.Location = New System.Drawing.Point(3, 311)
         Me.ChkPol2.Name = "ChkPol2"
-        Me.ChkPol2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol2.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol2.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol2.TabIndex = 35
         Me.ChkPol2.Tag = "35"
         Me.ChkPol2.Text = "Ash"
@@ -1504,11 +1568,10 @@ Partial Class FrmMainv4
         'ChkPol3
         '
         Me.ChkPol3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol3.Location = New System.Drawing.Point(156, 205)
-        Me.ChkPol3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol3.Location = New System.Drawing.Point(234, 311)
         Me.ChkPol3.Name = "ChkPol3"
-        Me.ChkPol3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol3.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol3.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol3.TabIndex = 36
         Me.ChkPol3.Tag = "36"
         Me.ChkPol3.Text = "Beech"
@@ -1517,11 +1580,10 @@ Partial Class FrmMainv4
         'ChkPol4
         '
         Me.ChkPol4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol4.Location = New System.Drawing.Point(310, 205)
-        Me.ChkPol4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol4.Location = New System.Drawing.Point(465, 311)
         Me.ChkPol4.Name = "ChkPol4"
-        Me.ChkPol4.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol4.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol4.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol4.TabIndex = 37
         Me.ChkPol4.Tag = "37"
         Me.ChkPol4.Text = "Birch"
@@ -1530,11 +1592,10 @@ Partial Class FrmMainv4
         'ChkPol5
         '
         Me.ChkPol5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol5.Location = New System.Drawing.Point(464, 205)
-        Me.ChkPol5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol5.Location = New System.Drawing.Point(696, 311)
         Me.ChkPol5.Name = "ChkPol5"
-        Me.ChkPol5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol5.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol5.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol5.TabIndex = 38
         Me.ChkPol5.Tag = "38"
         Me.ChkPol5.Text = "Cedar"
@@ -1543,11 +1604,10 @@ Partial Class FrmMainv4
         'ChkPol6
         '
         Me.ChkPol6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol6.Location = New System.Drawing.Point(618, 205)
-        Me.ChkPol6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol6.Location = New System.Drawing.Point(927, 311)
         Me.ChkPol6.Name = "ChkPol6"
-        Me.ChkPol6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol6.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol6.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol6.TabIndex = 39
         Me.ChkPol6.Tag = "39"
         Me.ChkPol6.Text = "Cypress"
@@ -1556,11 +1616,10 @@ Partial Class FrmMainv4
         'ChkPol7
         '
         Me.ChkPol7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol7.Location = New System.Drawing.Point(2, 234)
-        Me.ChkPol7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol7.Location = New System.Drawing.Point(3, 355)
         Me.ChkPol7.Name = "ChkPol7"
-        Me.ChkPol7.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol7.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol7.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol7.TabIndex = 40
         Me.ChkPol7.Tag = "40"
         Me.ChkPol7.Text = "Elder"
@@ -1569,11 +1628,10 @@ Partial Class FrmMainv4
         'ChkPol8
         '
         Me.ChkPol8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol8.Location = New System.Drawing.Point(156, 234)
-        Me.ChkPol8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol8.Location = New System.Drawing.Point(234, 355)
         Me.ChkPol8.Name = "ChkPol8"
-        Me.ChkPol8.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol8.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol8.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol8.TabIndex = 41
         Me.ChkPol8.Tag = "41"
         Me.ChkPol8.Text = "Elm"
@@ -1582,11 +1640,10 @@ Partial Class FrmMainv4
         'ChkPol9
         '
         Me.ChkPol9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol9.Location = New System.Drawing.Point(310, 234)
-        Me.ChkPol9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol9.Location = New System.Drawing.Point(465, 355)
         Me.ChkPol9.Name = "ChkPol9"
-        Me.ChkPol9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol9.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol9.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol9.TabIndex = 42
         Me.ChkPol9.Tag = "42"
         Me.ChkPol9.Text = "Hemlock"
@@ -1595,11 +1652,10 @@ Partial Class FrmMainv4
         'ChkPol10
         '
         Me.ChkPol10.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol10.Location = New System.Drawing.Point(464, 234)
-        Me.ChkPol10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol10.Location = New System.Drawing.Point(696, 355)
         Me.ChkPol10.Name = "ChkPol10"
-        Me.ChkPol10.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol10.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol10.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol10.TabIndex = 43
         Me.ChkPol10.Tag = "43"
         Me.ChkPol10.Text = "Hickory"
@@ -1608,11 +1664,10 @@ Partial Class FrmMainv4
         'ChkPol11
         '
         Me.ChkPol11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol11.Location = New System.Drawing.Point(618, 234)
-        Me.ChkPol11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol11.Location = New System.Drawing.Point(927, 355)
         Me.ChkPol11.Name = "ChkPol11"
-        Me.ChkPol11.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol11.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol11.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol11.TabIndex = 44
         Me.ChkPol11.Tag = "44"
         Me.ChkPol11.Text = "Juniper"
@@ -1621,11 +1676,10 @@ Partial Class FrmMainv4
         'ChkPol12
         '
         Me.ChkPol12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol12.Location = New System.Drawing.Point(2, 263)
-        Me.ChkPol12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol12.Location = New System.Drawing.Point(3, 399)
         Me.ChkPol12.Name = "ChkPol12"
-        Me.ChkPol12.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol12.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol12.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol12.TabIndex = 45
         Me.ChkPol12.Tag = "45"
         Me.ChkPol12.Text = "Mahogany"
@@ -1634,11 +1688,10 @@ Partial Class FrmMainv4
         'ChkPol13
         '
         Me.ChkPol13.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol13.Location = New System.Drawing.Point(156, 263)
-        Me.ChkPol13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol13.Location = New System.Drawing.Point(234, 399)
         Me.ChkPol13.Name = "ChkPol13"
-        Me.ChkPol13.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol13.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol13.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol13.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol13.TabIndex = 46
         Me.ChkPol13.Tag = "46"
         Me.ChkPol13.Text = "Maple"
@@ -1647,11 +1700,10 @@ Partial Class FrmMainv4
         'ChkPol14
         '
         Me.ChkPol14.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol14.Location = New System.Drawing.Point(310, 263)
-        Me.ChkPol14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol14.Location = New System.Drawing.Point(465, 399)
         Me.ChkPol14.Name = "ChkPol14"
-        Me.ChkPol14.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol14.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol14.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol14.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol14.TabIndex = 47
         Me.ChkPol14.Tag = "47"
         Me.ChkPol14.Text = "Mulberry"
@@ -1660,11 +1712,10 @@ Partial Class FrmMainv4
         'ChkPol15
         '
         Me.ChkPol15.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol15.Location = New System.Drawing.Point(464, 263)
-        Me.ChkPol15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol15.Location = New System.Drawing.Point(696, 399)
         Me.ChkPol15.Name = "ChkPol15"
-        Me.ChkPol15.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol15.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol15.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol15.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol15.TabIndex = 48
         Me.ChkPol15.Tag = "48"
         Me.ChkPol15.Text = "Oak"
@@ -1673,11 +1724,10 @@ Partial Class FrmMainv4
         'ChkPol16
         '
         Me.ChkPol16.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol16.Location = New System.Drawing.Point(618, 263)
-        Me.ChkPol16.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol16.Location = New System.Drawing.Point(927, 399)
         Me.ChkPol16.Name = "ChkPol16"
-        Me.ChkPol16.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol16.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol16.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol16.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol16.TabIndex = 49
         Me.ChkPol16.Tag = "49"
         Me.ChkPol16.Text = "Pine"
@@ -1686,11 +1736,10 @@ Partial Class FrmMainv4
         'ChkPol17
         '
         Me.ChkPol17.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol17.Location = New System.Drawing.Point(2, 292)
-        Me.ChkPol17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol17.Location = New System.Drawing.Point(3, 443)
         Me.ChkPol17.Name = "ChkPol17"
-        Me.ChkPol17.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol17.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol17.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol17.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol17.TabIndex = 50
         Me.ChkPol17.Tag = "50"
         Me.ChkPol17.Text = "Cottonwood"
@@ -1699,11 +1748,10 @@ Partial Class FrmMainv4
         'ChkPol18
         '
         Me.ChkPol18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol18.Location = New System.Drawing.Point(156, 292)
-        Me.ChkPol18.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol18.Location = New System.Drawing.Point(234, 443)
         Me.ChkPol18.Name = "ChkPol18"
-        Me.ChkPol18.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol18.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol18.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol18.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol18.TabIndex = 51
         Me.ChkPol18.Tag = "51"
         Me.ChkPol18.Text = "Spruce"
@@ -1712,11 +1760,10 @@ Partial Class FrmMainv4
         'ChkPol19
         '
         Me.ChkPol19.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol19.Location = New System.Drawing.Point(310, 292)
-        Me.ChkPol19.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol19.Location = New System.Drawing.Point(465, 443)
         Me.ChkPol19.Name = "ChkPol19"
-        Me.ChkPol19.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol19.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol19.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol19.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol19.TabIndex = 52
         Me.ChkPol19.Tag = "52"
         Me.ChkPol19.Text = "Sycamore"
@@ -1725,11 +1772,10 @@ Partial Class FrmMainv4
         'ChkPol20
         '
         Me.ChkPol20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol20.Location = New System.Drawing.Point(464, 292)
-        Me.ChkPol20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol20.Location = New System.Drawing.Point(696, 443)
         Me.ChkPol20.Name = "ChkPol20"
-        Me.ChkPol20.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol20.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol20.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol20.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol20.TabIndex = 53
         Me.ChkPol20.Tag = "53"
         Me.ChkPol20.Text = "Walnut"
@@ -1738,11 +1784,10 @@ Partial Class FrmMainv4
         'ChkPol21
         '
         Me.ChkPol21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol21.Location = New System.Drawing.Point(618, 292)
-        Me.ChkPol21.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol21.Location = New System.Drawing.Point(927, 443)
         Me.ChkPol21.Name = "ChkPol21"
-        Me.ChkPol21.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol21.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol21.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol21.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol21.TabIndex = 54
         Me.ChkPol21.Tag = "54"
         Me.ChkPol21.Text = "Willow"
@@ -1751,11 +1796,10 @@ Partial Class FrmMainv4
         'ChkPol22
         '
         Me.ChkPol22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol22.Location = New System.Drawing.Point(2, 321)
-        Me.ChkPol22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol22.Location = New System.Drawing.Point(3, 487)
         Me.ChkPol22.Name = "ChkPol22"
-        Me.ChkPol22.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol22.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol22.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol22.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol22.TabIndex = 55
         Me.ChkPol22.Tag = "55"
         Me.ChkPol22.Text = "Grass Index"
@@ -1764,11 +1808,10 @@ Partial Class FrmMainv4
         'ChkPol23
         '
         Me.ChkPol23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol23.Location = New System.Drawing.Point(156, 321)
-        Me.ChkPol23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol23.Location = New System.Drawing.Point(234, 487)
         Me.ChkPol23.Name = "ChkPol23"
-        Me.ChkPol23.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol23.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol23.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol23.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol23.TabIndex = 56
         Me.ChkPol23.Tag = "56"
         Me.ChkPol23.Text = "Grass"
@@ -1777,11 +1820,10 @@ Partial Class FrmMainv4
         'ChkPol24
         '
         Me.ChkPol24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol24.Location = New System.Drawing.Point(310, 321)
-        Me.ChkPol24.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol24.Location = New System.Drawing.Point(465, 487)
         Me.ChkPol24.Name = "ChkPol24"
-        Me.ChkPol24.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol24.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol24.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol24.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol24.TabIndex = 57
         Me.ChkPol24.Tag = "57"
         Me.ChkPol24.Text = "Weed Index"
@@ -1790,11 +1832,10 @@ Partial Class FrmMainv4
         'ChkPol25
         '
         Me.ChkPol25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChkPol25.Location = New System.Drawing.Point(464, 321)
-        Me.ChkPol25.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkPol25.Location = New System.Drawing.Point(696, 487)
         Me.ChkPol25.Name = "ChkPol25"
-        Me.ChkPol25.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkPol25.Size = New System.Drawing.Size(150, 25)
+        Me.ChkPol25.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkPol25.Size = New System.Drawing.Size(225, 38)
         Me.ChkPol25.TabIndex = 58
         Me.ChkPol25.Tag = "58"
         Me.ChkPol25.Text = "Weed"
@@ -1803,11 +1844,10 @@ Partial Class FrmMainv4
         'ChkHail0
         '
         Me.ChkHail0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkHail0.Location = New System.Drawing.Point(618, 321)
-        Me.ChkHail0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkHail0.Location = New System.Drawing.Point(927, 487)
         Me.ChkHail0.Name = "ChkHail0"
-        Me.ChkHail0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkHail0.Size = New System.Drawing.Size(150, 25)
+        Me.ChkHail0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkHail0.Size = New System.Drawing.Size(225, 38)
         Me.ChkHail0.TabIndex = 59
         Me.ChkHail0.Tag = "59"
         Me.ChkHail0.Text = "Hail Probability"
@@ -1816,11 +1856,10 @@ Partial Class FrmMainv4
         'ChkFire0
         '
         Me.ChkFire0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkFire0.Location = New System.Drawing.Point(2, 350)
-        Me.ChkFire0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ChkFire0.Location = New System.Drawing.Point(3, 531)
         Me.ChkFire0.Name = "ChkFire0"
-        Me.ChkFire0.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.ChkFire0.Size = New System.Drawing.Size(150, 25)
+        Me.ChkFire0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkFire0.Size = New System.Drawing.Size(225, 38)
         Me.ChkFire0.TabIndex = 60
         Me.ChkFire0.Tag = "60"
         Me.ChkFire0.Text = "Fire Index"
@@ -1830,20 +1869,119 @@ Partial Class FrmMainv4
         '
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.MediumBlue
-        Me.Label5.Location = New System.Drawing.Point(324, 57)
+        Me.Label5.Location = New System.Drawing.Point(486, 88)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(299, 23)
+        Me.Label5.Size = New System.Drawing.Size(448, 35)
         Me.Label5.TabIndex = 8
         Me.Label5.Tag = ""
         Me.Label5.Text = "You may select a maximum of 50."
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'TpLocations
+        '
+        Me.TpLocations.BackColor = System.Drawing.Color.Silver
+        Me.TpLocations.BackgroundImage = Global.psClimaCellv4.My.Resources.Resources.powered_by_climacell_halo_sml
+        Me.TpLocations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.TpLocations.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.TpLocations.Controls.Add(Me.GroupBox6)
+        Me.TpLocations.Controls.Add(Me.TxtLocationName)
+        Me.TpLocations.Controls.Add(Me.Label10)
+        Me.TpLocations.Location = New System.Drawing.Point(4, 29)
+        Me.TpLocations.Name = "TpLocations"
+        Me.TpLocations.Size = New System.Drawing.Size(1372, 952)
+        Me.TpLocations.TabIndex = 2
+        Me.TpLocations.Text = "Locations"
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox6.Controls.Add(Me.BtnNewPointLocation)
+        Me.GroupBox6.Controls.Add(Me.TxtPointLong)
+        Me.GroupBox6.Controls.Add(Me.TxtPointLat)
+        Me.GroupBox6.Controls.Add(Me.Label12)
+        Me.GroupBox6.Controls.Add(Me.Label11)
+        Me.GroupBox6.Location = New System.Drawing.Point(470, 427)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(260, 150)
+        Me.GroupBox6.TabIndex = 2
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Point Coordinates"
+        '
+        'BtnNewPointLocation
+        '
+        Me.BtnNewPointLocation.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.BtnNewPointLocation.Location = New System.Drawing.Point(64, 99)
+        Me.BtnNewPointLocation.Name = "BtnNewPointLocation"
+        Me.BtnNewPointLocation.Size = New System.Drawing.Size(132, 34)
+        Me.BtnNewPointLocation.TabIndex = 4
+        Me.BtnNewPointLocation.Text = "Fetch Location"
+        Me.BtnNewPointLocation.UseVisualStyleBackColor = False
+        '
+        'TxtPointLong
+        '
+        Me.TxtPointLong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TxtPointLong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList
+        Me.TxtPointLong.Location = New System.Drawing.Point(92, 59)
+        Me.TxtPointLong.Name = "TxtPointLong"
+        Me.TxtPointLong.Size = New System.Drawing.Size(145, 26)
+        Me.TxtPointLong.TabIndex = 3
+        '
+        'TxtPointLat
+        '
+        Me.TxtPointLat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TxtPointLat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList
+        Me.TxtPointLat.Location = New System.Drawing.Point(92, 26)
+        Me.TxtPointLat.Name = "TxtPointLat"
+        Me.TxtPointLat.Size = New System.Drawing.Size(145, 26)
+        Me.TxtPointLat.TabIndex = 2
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 62)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(80, 20)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "Longitude"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(19, 29)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(67, 20)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "Latitude"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TxtLocationName
+        '
+        Me.TxtLocationName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TxtLocationName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList
+        Me.TxtLocationName.Location = New System.Drawing.Point(605, 371)
+        Me.TxtLocationName.Name = "TxtLocationName"
+        Me.TxtLocationName.Size = New System.Drawing.Size(293, 26)
+        Me.TxtLocationName.TabIndex = 1
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(470, 374)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(129, 20)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Location Name"
+        '
         'TpLogs
         '
         Me.TpLogs.Controls.Add(Me.TcLogs)
-        Me.TpLogs.Location = New System.Drawing.Point(4, 22)
+        Me.TpLogs.Location = New System.Drawing.Point(4, 29)
+        Me.TpLogs.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpLogs.Name = "TpLogs"
-        Me.TpLogs.Size = New System.Drawing.Size(923, 645)
+        Me.TpLogs.Size = New System.Drawing.Size(1388, 1000)
         Me.TpLogs.TabIndex = 3
         Me.TpLogs.Text = "Logs"
         Me.TpLogs.UseVisualStyleBackColor = True
@@ -1856,19 +1994,21 @@ Partial Class FrmMainv4
         Me.TcLogs.Controls.Add(Me.TpLogsWarnings)
         Me.TcLogs.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TcLogs.Location = New System.Drawing.Point(0, 0)
+        Me.TcLogs.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TcLogs.Multiline = True
         Me.TcLogs.Name = "TcLogs"
         Me.TcLogs.SelectedIndex = 0
-        Me.TcLogs.Size = New System.Drawing.Size(923, 645)
+        Me.TcLogs.Size = New System.Drawing.Size(1388, 1000)
         Me.TcLogs.TabIndex = 0
         '
         'TpLogsLog
         '
         Me.TpLogsLog.Controls.Add(Me.RtbLog)
         Me.TpLogsLog.Location = New System.Drawing.Point(4, 4)
+        Me.TpLogsLog.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpLogsLog.Name = "TpLogsLog"
-        Me.TpLogsLog.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TpLogsLog.Size = New System.Drawing.Size(896, 637)
+        Me.TpLogsLog.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TpLogsLog.Size = New System.Drawing.Size(1356, 987)
         Me.TpLogsLog.TabIndex = 0
         Me.TpLogsLog.Text = "Log"
         Me.TpLogsLog.UseVisualStyleBackColor = True
@@ -1877,12 +2017,13 @@ Partial Class FrmMainv4
         '
         Me.RtbLog.BackColor = System.Drawing.SystemColors.Info
         Me.RtbLog.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RtbLog.Location = New System.Drawing.Point(3, 3)
+        Me.RtbLog.Location = New System.Drawing.Point(4, 5)
+        Me.RtbLog.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RtbLog.Name = "RtbLog"
         Me.RtbLog.ReadOnly = True
         Me.RtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth
         Me.RtbLog.ShowSelectionMargin = True
-        Me.RtbLog.Size = New System.Drawing.Size(890, 631)
+        Me.RtbLog.Size = New System.Drawing.Size(1348, 977)
         Me.RtbLog.TabIndex = 0
         Me.RtbLog.Text = ""
         '
@@ -1890,9 +2031,10 @@ Partial Class FrmMainv4
         '
         Me.TpLogsErr.Controls.Add(Me.RtbError)
         Me.TpLogsErr.Location = New System.Drawing.Point(4, 4)
+        Me.TpLogsErr.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpLogsErr.Name = "TpLogsErr"
-        Me.TpLogsErr.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TpLogsErr.Size = New System.Drawing.Size(898, 632)
+        Me.TpLogsErr.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TpLogsErr.Size = New System.Drawing.Size(1356, 987)
         Me.TpLogsErr.TabIndex = 1
         Me.TpLogsErr.Text = "Error"
         Me.TpLogsErr.UseVisualStyleBackColor = True
@@ -1901,21 +2043,22 @@ Partial Class FrmMainv4
         '
         Me.RtbError.BackColor = System.Drawing.SystemColors.Info
         Me.RtbError.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RtbError.Location = New System.Drawing.Point(3, 3)
+        Me.RtbError.Location = New System.Drawing.Point(4, 5)
+        Me.RtbError.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RtbError.Name = "RtbError"
         Me.RtbError.ReadOnly = True
         Me.RtbError.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth
         Me.RtbError.ShowSelectionMargin = True
-        Me.RtbError.Size = New System.Drawing.Size(892, 626)
+        Me.RtbError.Size = New System.Drawing.Size(1348, 977)
         Me.RtbError.TabIndex = 1
         Me.RtbError.Text = ""
         '
         'TpLogsWarnings
         '
+        Me.TpLogsWarnings.Controls.Add(Me.DgvWarnings)
         Me.TpLogsWarnings.Location = New System.Drawing.Point(4, 4)
-        Me.TpLogsWarnings.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TpLogsWarnings.Name = "TpLogsWarnings"
-        Me.TpLogsWarnings.Size = New System.Drawing.Size(898, 632)
+        Me.TpLogsWarnings.Size = New System.Drawing.Size(1356, 992)
         Me.TpLogsWarnings.TabIndex = 2
         Me.TpLogsWarnings.Text = "Warnings"
         Me.TpLogsWarnings.UseVisualStyleBackColor = True
@@ -1923,14 +2066,15 @@ Partial Class FrmMainv4
         'TpAbout
         '
         Me.TpAbout.BackColor = System.Drawing.Color.Black
-        Me.TpAbout.BackgroundImage = Global.psClimaCell_v4._0.My.Resources.Resources.powered_by_climacell_halo
+        Me.TpAbout.BackgroundImage = Global.psClimaCellv4.My.Resources.Resources.powered_by_climacell_halo
         Me.TpAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpAbout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TpAbout.Controls.Add(Me.LblNumControls)
         Me.TpAbout.Controls.Add(Me.LblAbout)
-        Me.TpAbout.Location = New System.Drawing.Point(4, 22)
+        Me.TpAbout.Location = New System.Drawing.Point(4, 29)
+        Me.TpAbout.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpAbout.Name = "TpAbout"
-        Me.TpAbout.Size = New System.Drawing.Size(923, 645)
+        Me.TpAbout.Size = New System.Drawing.Size(1388, 995)
         Me.TpAbout.TabIndex = 4
         Me.TpAbout.Text = "About"
         '
@@ -1939,10 +2083,9 @@ Partial Class FrmMainv4
         Me.LblNumControls.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.LblNumControls.AutoSize = True
         Me.LblNumControls.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.LblNumControls.Location = New System.Drawing.Point(4, 643)
-        Me.LblNumControls.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblNumControls.Location = New System.Drawing.Point(8, 963)
         Me.LblNumControls.Name = "LblNumControls"
-        Me.LblNumControls.Size = New System.Drawing.Size(10, 13)
+        Me.LblNumControls.Size = New System.Drawing.Size(14, 20)
         Me.LblNumControls.TabIndex = 1
         Me.LblNumControls.Text = "-"
         '
@@ -1950,9 +2093,10 @@ Partial Class FrmMainv4
         '
         Me.LblAbout.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblAbout.ForeColor = System.Drawing.SystemColors.Info
-        Me.LblAbout.Location = New System.Drawing.Point(278, 228)
+        Me.LblAbout.Location = New System.Drawing.Point(417, 351)
+        Me.LblAbout.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblAbout.Name = "LblAbout"
-        Me.LblAbout.Size = New System.Drawing.Size(365, 179)
+        Me.LblAbout.Size = New System.Drawing.Size(548, 275)
         Me.LblAbout.TabIndex = 0
         Me.LblAbout.Text = "-"
         Me.LblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1977,53 +2121,72 @@ Partial Class FrmMainv4
         Me.TmrMidnight.Interval = 999.0R
         Me.TmrMidnight.SynchronizingObject = Me
         '
-        'Label7
+        'DgvWarnings
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(6, 94)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(23, 29)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "*"
+        Me.DgvWarnings.AllowUserToAddRows = False
+        Me.DgvWarnings.AllowUserToDeleteRows = False
+        Me.DgvWarnings.AllowUserToResizeColumns = False
+        Me.DgvWarnings.AllowUserToResizeRows = False
+        Me.DgvWarnings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvWarnings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvWarnings.ColumnHeadersVisible = False
+        Me.DgvWarnings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.w0, Me.w1, Me.w2})
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvWarnings.DefaultCellStyle = DataGridViewCellStyle14
+        Me.DgvWarnings.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvWarnings.Location = New System.Drawing.Point(0, 0)
+        Me.DgvWarnings.Name = "DgvWarnings"
+        Me.DgvWarnings.RowHeadersVisible = False
+        Me.DgvWarnings.RowHeadersWidth = 62
+        Me.DgvWarnings.RowTemplate.Height = 28
+        Me.DgvWarnings.Size = New System.Drawing.Size(1356, 992)
+        Me.DgvWarnings.TabIndex = 0
         '
-        'Label8
+        'w0
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(5, 51)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(23, 29)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "*"
+        Me.w0.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.w0.FillWeight = 102.8839!
+        Me.w0.HeaderText = "Column1"
+        Me.w0.MinimumWidth = 75
+        Me.w0.Name = "w0"
+        Me.w0.Width = 75
         '
-        'Label9
+        'w1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(3, 45)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(23, 29)
-        Me.Label9.TabIndex = 7
-        Me.Label9.Text = "*"
+        Me.w1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.w1.FillWeight = 127.8409!
+        Me.w1.HeaderText = "Column1"
+        Me.w1.MinimumWidth = 75
+        Me.w1.Name = "w1"
+        Me.w1.Width = 75
+        '
+        'w2
+        '
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.w2.DefaultCellStyle = DataGridViewCellStyle13
+        Me.w2.FillWeight = 69.27517!
+        Me.w2.HeaderText = "Column1"
+        Me.w2.MinimumWidth = 8
+        Me.w2.Name = "w2"
         '
         'FrmMainv4
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(931, 689)
+        Me.ClientSize = New System.Drawing.Size(1396, 1065)
         Me.Controls.Add(Me.TC)
         Me.Controls.Add(Me.SS)
-        Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.psClimaCell_v4._0.My.MySettings.Default, "MainFormLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.psClimaCellv4.My.MySettings.Default, "MainFormLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Location = Global.psClimaCell_v4._0.My.MySettings.Default.MainFormLocation
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.MaximumSize = New System.Drawing.Size(953, 745)
-        Me.MinimumSize = New System.Drawing.Size(953, 745)
+        Me.Location = Global.psClimaCellv4.My.MySettings.Default.MainFormLocation
+        Me.MaximumSize = New System.Drawing.Size(1418, 1121)
+        Me.MinimumSize = New System.Drawing.Size(1418, 1121)
         Me.Name = "FrmMainv4"
         Me.Text = "FormV4"
         Me.SS.ResumeLayout(False)
@@ -2058,15 +2221,21 @@ Partial Class FrmMainv4
         Me.TpDataFields.ResumeLayout(False)
         Me.TpDataFields.PerformLayout()
         Me.FlpDataFields.ResumeLayout(False)
+        Me.TpLocations.ResumeLayout(False)
+        Me.TpLocations.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.TpLogs.ResumeLayout(False)
         Me.TcLogs.ResumeLayout(False)
         Me.TpLogsLog.ResumeLayout(False)
         Me.TpLogsErr.ResumeLayout(False)
+        Me.TpLogsWarnings.ResumeLayout(False)
         Me.TpAbout.ResumeLayout(False)
         Me.TpAbout.PerformLayout()
         CType(Me.TmrTimelineUpdate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TmrClock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TmrMidnight, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvWarnings, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2209,4 +2378,18 @@ Partial Class FrmMainv4
     Friend WithEvents Label7 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents TsslErr As ToolStripStatusLabel
+    Friend WithEvents TpLocations As TabPage
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TxtLocationName As TextBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents TxtPointLong As TextBox
+    Friend WithEvents TxtPointLat As TextBox
+    Friend WithEvents BtnNewPointLocation As Button
+    Friend WithEvents DgvWarnings As DataGridView
+    Friend WithEvents w0 As DataGridViewTextBoxColumn
+    Friend WithEvents w1 As DataGridViewTextBoxColumn
+    Friend WithEvents w2 As DataGridViewTextBoxColumn
 End Class
