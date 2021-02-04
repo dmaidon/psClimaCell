@@ -39,7 +39,7 @@ Namespace My.Resources
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("psClimaCell_v4._0.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("psClimaCellv4.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -86,6 +86,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("data_layers_6", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Errors in program!.
+        '''</summary>
+        Friend ReadOnly Property err_in_pgm() As String
+            Get
+                Return ResourceManager.GetString("err_in_pgm", resourceCulture)
             End Get
         End Property
         
