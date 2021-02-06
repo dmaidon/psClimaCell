@@ -216,6 +216,8 @@ Friend Module LogRoutinesV4
             With FrmMainv4
                 .RtbError.Clear()
                 .RtbLog.Clear()
+                GotErr = False
+                ResetErr = True
                 LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
                 ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
                 PrintLog(GetLogHeader())
