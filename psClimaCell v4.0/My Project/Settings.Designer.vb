@@ -1001,6 +1001,30 @@ Namespace My
                 Me("Log_KeepDays") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property CallsRemaining() As Integer
+            Get
+                Return CType(Me("CallsRemaining"),Integer)
+            End Get
+            Set
+                Me("CallsRemaining") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ShowTask() As Boolean
+            Get
+                Return CType(Me("ShowTask"),Boolean)
+            End Get
+            Set
+                Me("ShowTask") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

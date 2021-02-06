@@ -19,6 +19,7 @@
         Show()
 
         Text = $"psClimaCell V4 API - Tr: {My.Settings.TimesRun}"
+        ShowInTaskbar = My.Settings.ShowTask
         TsslCpy.Text = Cpy
         TsslVer.Text = Application.ProductVersion
         LblAbout.Text = String.Format(My.Resources.about, vbLf, ParseVersion())
@@ -261,6 +262,7 @@
     Private Sub FrmMainv4_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         SaveLogs()
         My.Settings.Save()
+        TIcon.Dispose()
     End Sub
 
 #End Region
@@ -406,6 +408,37 @@
         End If
     End Sub
 
+
+
 #End Region
 
+#Region "Tray Icon"
+
+    Private Sub MinimizeForm(sender As Object, e As EventArgs) Handles MinimizeToolStripMenuItem.Click
+        TIcon.Visible = True
+        WindowState = FormWindowState.Minimized
+        ShowInTaskbar = False
+    End Sub
+
+    Private Sub MaximizeForm(sender As Object, e As EventArgs) Handles MaximizeToolStripMenuItem.Click
+        Hide()
+        TIcon.Visible = False
+        WindowState = FormWindowState.Normal
+        ShowInTaskbar = True
+        Update()
+        Show()
+    End Sub
+
+    Private Sub TIcon_Click(sender As Object, e As MouseEventArgs) Handles TIcon.MouseDoubleClick
+        'https://www.codeproject.com/questions/642452/multiple-notify-icon-in-tray-issue
+        Me.WindowState = FormWindowState.Normal
+        TIcon.Visible = False
+        ShowInTaskbar = True
+    End Sub
+
+    Private Sub LocateForm(sender As Object, e As EventArgs) Handles LocateToolStripMenuItem.Click
+        Top = 150
+        Left = 175
+    End Sub
+#End Region
 End Class

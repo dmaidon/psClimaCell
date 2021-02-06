@@ -1,6 +1,7 @@
 ﻿Imports System.Globalization
 Imports System.IO
 Imports System.Net
+Imports System.Security
 Imports System.Text
 Imports System.Text.Json
 Imports psClimaCellv4.Modules.DayColors
@@ -46,13 +47,13 @@ Friend Module TimeLineRoutinesV4
             End With
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
                 If My.Settings.Log_Headers Then
-                    'Dim sc As New StringBuilder()
                     PrintLog($"{vbLf}{vbLf}ClimaCell Timeline Headers:{vbLf}{vbLf}")
                     For j = 0 To response.Headers.Count - 1
                         PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
-                        'sc.Append($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
                     Next
-                    'sc.Clear()
+                    FrmMainv4.TsslCallRemaining.Text = String.Format(FrmMainv4.TsslCallRemaining.Tag.ToString, response.Headers.Item(7))
+                    My.Settings.CallsRemaining = CInt(response.Headers.Item(7))
+                    My.Settings.Save()
                 End If
                 PrintLog($"{My.Resources.separator}{vbLf}{vbLf}")
                 If response.StatusCode = 200 Then
@@ -101,7 +102,14 @@ Friend Module TimeLineRoutinesV4
                     Return
                 End If
             End Using
-        Catch ex As Exception
+        Catch ex As WebException
+            PrintLog($"DownloadTimelines failed @ {Now:T} -> {ex.Message}{vbLf}{vbLf}")
+            SaveLogs()
+            Exit Sub
+        Catch ex As Exception When _
+                    TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is ProtocolViolationException OrElse TypeOf ex Is NotSupportedException OrElse
+                    TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is OutOfMemoryException OrElse
+                    TypeOf ex Is IOException
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
             SaveLogs()
@@ -110,51 +118,72 @@ Friend Module TimeLineRoutinesV4
     End Sub
 
     Private Function GetFieldsString() As String
-        'temperature field is set to fetch Min and Max temperature for time period.
-        Dim tlFields As New List(Of String)({"temperature%2CtemperatureMax%2CtemperatureMin%2CtemperatureMaxTime%2CtemperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedGrassweedIndex", "hailBinary", "fireIndex"})
-        '58 = weedGrassweedIndex
-        Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
-            If c.Checked Then
-                sb.Append(tlFields(CInt(c.Tag)))
-                If Not String.IsNullOrEmpty(CStr(CInt(c.Tag))) Then
-                    sb.Append("%2C")
+        Try
+            'temperature field is set to fetch Min and Max temperature for time period.
+            Dim tlFields As New List(Of String)({"temperature%2CtemperatureMax%2CtemperatureMin%2CtemperatureMaxTime%2CtemperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedGrassweedIndex", "hailBinary", "fireIndex"})
+            '58 = weedGrassweedIndex
+            Dim sb = New StringBuilder()
+            For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
+                If c.Checked Then
+                    sb.Append(tlFields(CInt(c.Tag)))
+                    If Not String.IsNullOrEmpty(CStr(CInt(c.Tag))) Then
+                        sb.Append("%2C")
+                    End If
                 End If
+            Next
+            Dim aa = sb.ToString
+            If String.IsNullOrEmpty(aa) Then
+                Return "temperature"
+            Else
+                Return Left(aa, aa.Length - 3)
             End If
-        Next
-        Dim aa = sb.ToString
-        If String.IsNullOrEmpty(aa) Then
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
             Return "temperature"
-        Else
-            Return Left(aa, aa.Length - 3)
-        End If
+        Finally
+            ''
+        End Try
     End Function
 
     Private Function GetTimeStepString() As String
-        Dim tsArr As New List(Of String)({"1m", "5m", "15m", "30m", "1h", "1d", "current"})
-        Dim sb = New StringBuilder()
-        For Each c As CheckBox In FrmMainv4.GbTimeSteps.Controls.OfType(Of CheckBox)()
-            If c.Checked Then
-                sb.Append(tsArr(CInt(c.Tag)))
-                sb.Append("%2C")
-            End If
-        Next
-        Dim aa = sb.ToString
-        Return Left(aa, aa.Length - 3)
+        Try
+            Dim tsArr As New List(Of String)({"1m", "5m", "15m", "30m", "1h", "1d", "current"})
+            Dim sb = New StringBuilder()
+            For Each c As CheckBox In FrmMainv4.GbTimeSteps.Controls.OfType(Of CheckBox)()
+                If c.Checked Then
+                    sb.Append(tsArr(CInt(c.Tag)))
+                    sb.Append("%2C")
+                End If
+            Next
+            Dim aa = sb.ToString
+            Return Left(aa, aa.Length - 3)
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+            Return ""
+        Finally
+            ''
+        End Try
     End Function
 
     Private Function GetWindString(winSpd As Double, winGst As Double, winDir As Double) As String
-        If winSpd <= 0 Then
-            Return "Calm"
-        Else
-            Dim sb As New StringBuilder()
-            sb.Append($"{Deg2Compass(winDir)} @ {winSpd:N0} {unitNfo.WindSpeed}")
-            If winGst >= 1 Then
-                sb.Append($" gusting to {winGst:N0} {unitNfo.WindSpeed}")
-            End If
+        Try
+            If winSpd <= 0 Then
+                Return "Calm"
+            Else
+                Dim sb As New StringBuilder()
+                sb.Append($"{Deg2Compass(winDir)} @ {winSpd:N0} {unitNfo.WindSpeed}")
+                If winGst >= 1 Then
+                    sb.Append($" gusting to {winGst:N0} {unitNfo.WindSpeed}")
+                End If
 
-            Return sb.ToString
-        End If
+                Return sb.ToString
+            End If
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+            Return "Calm"
+        Finally
+            ''
+        End Try
     End Function
 
     Private Async Sub ParseTimeLines(ab As Double, fn As String)
@@ -167,6 +196,7 @@ Friend Module TimeLineRoutinesV4
                 End Using
                 tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp.Replace("null", "0"))
                 PrintLog($"[Parsed] Timeline Forecast Data @ {Now:T}{vbLf}File age: {ab:N2} minutes{vbLf}{vbLf}")
+                FrmMainv4.TsslCallRemaining.Text = String.Format(FrmMainv4.TsslCallRemaining.Tag.ToString, My.Settings.CallsRemaining)
                 For j = 0 To tlNfo.WxData.TimeLines.Count - 1
                     Select Case tlNfo.WxData.TimeLines(j).TimeStep
                         Case "1m"
@@ -261,6 +291,9 @@ Friend Module TimeLineRoutinesV4
                         FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(Path.Combine(IconDir, "PNG", "Color", "0.png"))
                     End If
                 Next
+                'write the current weather to the Tray Icon
+                FrmMainv4.TIcon.Text = unitNfo.WeatherCode(CStr(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.WxCode.Value))
+                .ClearSelection()
             End With
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
@@ -424,36 +457,40 @@ Friend Module TimeLineRoutinesV4
     End Sub
 
     Private Sub WriteWarnings()
-        With FrmMainv4.DgvWarnings
-            .Rows.Clear()
-            ' .ColumnCount = 3
-            For j = 0 To tlNfo.Warnings.Count - 1
-                .Rows.Add("Code", tlNfo.Warnings(j).Code)
-                .Rows.Add("", "Type", tlNfo.Warnings(j).Type)
-                .Rows.Add("", "Message", tlNfo.Warnings(j).Message)
-                .Rows.Add("", "Meta ↓↓↓")
-                Select Case tlNfo.Warnings(j).Code
-                    Case 246001
-                        .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
-                        .Rows.Add("", "Dates", $"{CDate(tlNfo.Warnings(j).Meta.From).ToLocalTime:F} to {CDate(tlNfo.Warnings(j).Meta.To).ToLocalTime:F}")
-                    Case 246003
-                        .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
-                        .Rows.Add("", "Dates", $"{CDate(tlNfo.Warnings(j).Meta.From).ToLocalTime:F} to {CDate(tlNfo.Warnings(j).Meta.To).ToLocalTime:F}")
-                    Case 246008
-                        .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
-                        .Rows.Add("", "Timesteps ↓↓↓")
-                        For k = 0 To tlNfo.Warnings(j).Meta.Timesteps.Count - 1
-                            .Rows.Add("", "", tlNfo.Warnings(j).Meta.Timesteps(k))
-                        Next
-                    Case 246009
-                        .Rows.Add("", "Timestep", tlNfo.Warnings(j).Meta.Timestep)
-                        .Rows.Add("", "From / To", $"{tlNfo.Warnings(j).Meta.From} to {tlNfo.Warnings(j).Meta.To}")
-                    Case Else
-                        .Rows.Add("", "", "Information Missing.")
-                        PrintLog($"Warning information missing -> Code: {tlNfo.Warnings(j).Code}.{vbLf}")
-                End Select
-            Next
-        End With
+        Try
+            With FrmMainv4.DgvWarnings
+                .Rows.Clear()
+                ' .ColumnCount = 3
+                For j = 0 To tlNfo.Warnings.Count - 1
+                    .Rows.Add("Code", tlNfo.Warnings(j).Code)
+                    .Rows.Add("", "Type", tlNfo.Warnings(j).Type)
+                    .Rows.Add("", "Message", tlNfo.Warnings(j).Message)
+                    .Rows.Add("", "Meta ↓↓↓")
+                    Select Case tlNfo.Warnings(j).Code
+                        Case 246001, 246003
+                            .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
+                            .Rows.Add("", "Dates", $"{CDate(tlNfo.Warnings(j).Meta.From).ToLocalTime:F} to {CDate(tlNfo.Warnings(j).Meta.To).ToLocalTime:F}")
+                        Case 246008
+                            .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
+                            .Rows.Add("", "Timesteps ↓↓↓")
+                            For k = 0 To tlNfo.Warnings(j).Meta.Timesteps.Count - 1
+                                .Rows.Add("", "", tlNfo.Warnings(j).Meta.Timesteps(k))
+                            Next
+                        Case 246009
+                            .Rows.Add("", "Timestep", tlNfo.Warnings(j).Meta.Timestep)
+                            .Rows.Add("", "From / To", $"{tlNfo.Warnings(j).Meta.From} to {tlNfo.Warnings(j).Meta.To}")
+                        Case Else
+                            .Rows.Add("Code", tlNfo.Warnings(j).Code, "Information Missing.")
+                            PrintLog($"Warning information missing -> Code: {tlNfo.Warnings(j).Code}.{vbLf}")
+                    End Select
+                Next
+                .ClearSelection()
+            End With
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            'SaveLogs()
+        End Try
     End Sub
 
 End Module
