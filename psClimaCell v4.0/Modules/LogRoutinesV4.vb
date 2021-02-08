@@ -4,7 +4,7 @@ Imports System.Text
 
 Friend Module LogRoutinesV4
     Private _numErr As Integer
-    Friend Sub Check4NewLogFile()
+    Friend Async Sub Check4NewLogFile()
         Dim si = LogFile.Substring _
                 (LogFile.LastIndexOf("-", StringComparison.Ordinal) + 1, (LogFile.LastIndexOf("_", StringComparison.Ordinal) - LogFile.LastIndexOf("-", StringComparison.Ordinal) - 1))
 
@@ -14,6 +14,9 @@ Friend Module LogRoutinesV4
                     ''close old log file
                     PrintLog($"{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}", False)
                     PrintErrLog($"{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}")
+                    Using aTxt As StreamWriter = File.AppendText(TlDataFile)
+                        Await aTxt.WriteLineAsync($"{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}")
+                    End Using
 
                     ''save old log file
                     .RtbLog.SaveFile(LogFile, RichTextBoxStreamType.PlainText)
@@ -158,16 +161,17 @@ Friend Module LogRoutinesV4
         End Try
     End Sub
 
-    Friend Sub StartLogfile()
+    Friend Async Sub StartLogfile()
         Try
-            Timesrun = My.Settings.TimesRun + 1
-            My.Settings.TimesRun = Timesrun
-            My.Settings.Save()
+            Timesrun = My.Settings.TimesRun
             LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
             TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
             ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
             PrintLog(GetLogHeader())
             PrintErrLog(GetLogHeader())
+            Using aTxt As StreamWriter = File.AppendText(TlDataFile)
+                Await aTxt.WriteAsync(GetLogHeader)
+            End Using
         Catch ex As Exception When _
               TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
@@ -220,6 +224,7 @@ Friend Module LogRoutinesV4
                 ResetErr = True
                 LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
                 ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
+                TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
                 PrintLog(GetLogHeader())
                 PrintErrLog(GetLogHeader())
                 PerformLogMaintenance()
