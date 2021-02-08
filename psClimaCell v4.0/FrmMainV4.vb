@@ -440,5 +440,46 @@
         Top = 150
         Left = 175
     End Sub
+
+
+#End Region
+
+#Region "About"
+
+    ''' <summary>
+    ''' if you get "cannot load counter name data" error
+    ''' https://stackoverflow.com/questions/17980178/cannot-load-counter-name-data-because-an-invalid-index-exception
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub TpAbout_Enter(sender As Object, e As EventArgs) Handles TpAbout.Enter
+        Dim ts = CalcUpTime()
+        Dim runtime = Date.Now - Process.GetCurrentProcess().StartTime
+        LblSysUpTime.Text =
+            $"System Uptime:{vbLf}{ts.TotalDays:N0} Days  {ts.Hours:N0} Hours  {ts.Minutes:N0} Minutes  {ts.Seconds:N0} Seconds{vbLf}{vbLf}Program Runtime:{vbLf}{ _
+                runtime.TotalDays:N0} Days  {runtime.Hours:N0} Hours  {runtime.Minutes:N0} Minutes  {runtime.Seconds:N0} Seconds"
+
+        ''https://stackoverflow.com/questions/18039315/is-it-possible-to-determine-how-long-a-process-has-been-running
+
+        Dim x = Process.GetCurrentProcess()
+        LblMemory.Text = $"Memory: {x.WorkingSet64 / 1024:N0} K{vbLf}{vbLf}Paged: {x.PagedMemorySize64 / 1024:N0} K"
+    End Sub
+
+    Private Shared Function CalcUpTime() As TimeSpan
+        'https://stackoverflow.com/questions/972105/retrieve-system-uptime-using-c-sharp
+        Dim uptimeTs As New TimeSpan()
+        Try
+            Using pc As New PerformanceCounter($"System", "System Up Time")
+                pc.NextValue()
+                uptimeTs = TimeSpan.FromSeconds(pc.NextValue())
+                Return uptimeTs
+            End Using
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            'a
+        End Try
+        Return uptimeTs
+    End Function
 #End Region
 End Class

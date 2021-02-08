@@ -51,10 +51,10 @@ Friend Module TimeLineRoutinesV4
                     For j = 0 To response.Headers.Count - 1
                         PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
                     Next
-                    FrmMainv4.TsslCallRemaining.Text = String.Format(FrmMainv4.TsslCallRemaining.Tag.ToString, response.Headers.Item(7))
-                    My.Settings.CallsRemaining = CInt(response.Headers.Item(7))
-                    My.Settings.Save()
                 End If
+                FrmMainv4.TsslCallRemaining.Text = String.Format(FrmMainv4.TsslCallRemaining.Tag.ToString, response.GetResponseHeader("X-RateLimit-Remaining-Day"))
+                My.Settings.CallsRemaining = CInt(response.GetResponseHeader("X-RateLimit-Remaining-Day"))
+                My.Settings.Save()
                 PrintLog($"{My.Resources.separator}{vbLf}{vbLf}")
                 If response.StatusCode = 200 Then
                     PrintLog($"Download Timelines Data @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
@@ -330,7 +330,6 @@ Friend Module TimeLineRoutinesV4
                     Dim sb As New StringBuilder()
                     sb.Append($"Temp: {tl.TempMax.Value:N0}{unitNfo.Temperature} - {tl.TempMin.Value:N0}{unitNfo.Temperature}{vbLf}")
                     sb.Append($"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}")
-                    'sb.Append($"Wind {Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}{vbLf}")
                     sb.Append($"Wind {GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value)}{vbLf}")
                     sb.Append($"Precip: {tl.PrecipPct.Value:N0}{unitNfo.PrecipitationProbability}{vbLf}")
                     sb.Append($"Type: {unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
@@ -343,7 +342,6 @@ Friend Module TimeLineRoutinesV4
                     sb.Append($"{unitNfo.MoonPhase.Values(tlNfo.WxData.TimeLines(ct).Intervals(j).Values.MoonPhase.Value)}{vbLf}")
                     sb.Append($"Vis: {tl.Visibility.Value:N0} {unitNfo.Visibility}{vbLf}")
 
-                    'Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
                     Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{tl.WxCode.Value}.png")
 
                     If My.Settings.Log_Images Then PrintLog($"{j}. Daily: {icn} --> Bitmap{vbLf}")
@@ -355,19 +353,17 @@ Friend Module TimeLineRoutinesV4
                         Using bmp2 As New Bitmap(Path.Combine(IconDir, "PNG", "Color", "0.png"))
                             If j <= 7 Then
                                 .Rows(0).Cells(j).Style.BackColor = bgClr
-                                '.Rows(0).Cells(j).Value = Transparent2Color(bmp1, bgClr)
                                 .Rows(0).Cells(j).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
-                                .Rows(0).Cells(j).ToolTipText = $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}"
+                                .Rows(0).Cells(j).ToolTipText = unitNfo.WeatherCode(tl.WxCode.Value.ToString)
                                 .Rows(1).Cells(j).Value = sb.ToString
                                 .Rows(2).Cells(j).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:dddd}"
                                 .Rows(2).Cells(j).Style.BackColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Bg
                                 .Rows(2).Cells(j).Style.ForeColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Fg
                                 .Rows(3).Cells(j).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:MMM d}"
                             ElseIf j >= 8 Then
-                                '.Rows(4).Cells(j - 8).Value = Transparent2Color(bmp1, bgClr)
-                                .Rows(4).Cells(j - 8).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
                                 .Rows(4).Cells(j - 8).Style.BackColor = bgClr
-                                .Rows(0).Cells(j - 8).ToolTipText = $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}"
+                                .Rows(4).Cells(j - 8).Value = If(File.Exists(icn), Transparent2Color(bmp1, bgClr), Transparent2Color(bmp2, bgClr))
+                                .Rows(4).Cells(j - 8).ToolTipText = unitNfo.WeatherCode(tl.WxCode.Value.ToString)
                                 .Rows(5).Cells(j - 8).Value = sb.ToString
                                 .Rows(6).Cells(j - 8).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:dddd}"
                                 .Rows(6).Cells(j - 8).Style.BackColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Bg
@@ -449,7 +445,7 @@ Friend Module TimeLineRoutinesV4
                     .ClearSelection()
                 Next
             End With
-        Catch ex As Exception
+        Catch ex As Exception When TypeOf Ex Is ArgumentNullException OrElse TypeOf Ex Is InvalidOperationException OrElse TypeOf Ex Is Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
             'SaveLogs()
