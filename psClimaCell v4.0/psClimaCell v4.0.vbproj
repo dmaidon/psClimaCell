@@ -387,50 +387,6 @@
     <Content Include="Icons\Styles\Pollen\white_sml.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icon_Archive\clear.png" />
-    <Content Include="Icon_Archive\clear_day.png" />
-    <Content Include="Icon_Archive\clear_night.png" />
-    <Content Include="Icon_Archive\cloudy.png" />
-    <Content Include="Icon_Archive\drizzle.png" />
-    <Content Include="Icon_Archive\flurries.png" />
-    <Content Include="Icon_Archive\fog.png" />
-    <Content Include="Icon_Archive\freezing_drizzle.png" />
-    <Content Include="Icon_Archive\freezing_rain.png" />
-    <Content Include="Icon_Archive\freezing_rain_heavy.png" />
-    <Content Include="Icon_Archive\freezing_rain_light.png" />
-    <Content Include="Icon_Archive\heavy_rain.png" />
-    <Content Include="Icon_Archive\heavy_snow.png" />
-    <Content Include="Icon_Archive\ice_pellets.png" />
-    <Content Include="Icon_Archive\ice_pellets_heavy.png" />
-    <Content Include="Icon_Archive\ice_pellets_light.png" />
-    <Content Include="Icon_Archive\light_fog.png" />
-    <Content Include="Icon_Archive\light_rain.png" />
-    <Content Include="Icon_Archive\light_snow.png" />
-    <Content Include="Icon_Archive\mostly_clear - Copy.png" />
-    <Content Include="Icon_Archive\mostly_clear.png" />
-    <Content Include="Icon_Archive\mostly_clear_day - Copy.png" />
-    <Content Include="Icon_Archive\mostly_clear_day.png" />
-    <Content Include="Icon_Archive\mostly_clear_night - Copy.png" />
-    <Content Include="Icon_Archive\mostly_clear_night.png" />
-    <Content Include="Icon_Archive\mostly_cloudy.png" />
-    <Content Include="Icon_Archive\na.png" />
-    <Content Include="Icon_Archive\partly_cloudy - Copy.png" />
-    <Content Include="Icon_Archive\partly_cloudy.png" />
-    <Content Include="Icon_Archive\partly_cloudy_day - Copy.png" />
-    <Content Include="Icon_Archive\partly_cloudy_day.png" />
-    <Content Include="Icon_Archive\partly_cloudy_night - Copy.png" />
-    <Content Include="Icon_Archive\partly_cloudy_night.png" />
-    <Content Include="Icon_Archive\rain.png" />
-    <Content Include="Icon_Archive\rain_heavy - Copy.png" />
-    <Content Include="Icon_Archive\rain_heavy.png" />
-    <Content Include="Icon_Archive\rain_light - Copy.png" />
-    <Content Include="Icon_Archive\rain_light.png" />
-    <Content Include="Icon_Archive\snow.png" />
-    <Content Include="Icon_Archive\snow_heavy - Copy.png" />
-    <Content Include="Icon_Archive\snow_heavy.png" />
-    <Content Include="Icon_Archive\snow_light - Copy.png" />
-    <Content Include="Icon_Archive\snow_light.png" />
-    <Content Include="Icon_Archive\tstorm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions />
