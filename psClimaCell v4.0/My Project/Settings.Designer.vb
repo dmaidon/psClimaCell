@@ -1025,6 +1025,18 @@ Namespace My
                 Me("ShowTask") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ImageStyle() As Integer
+            Get
+                Return CType(Me("ImageStyle"),Integer)
+            End Get
+            Set
+                Me("ImageStyle") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

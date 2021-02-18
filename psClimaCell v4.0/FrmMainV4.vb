@@ -1,4 +1,6 @@
-﻿Public Class FrmMainv4
+﻿Imports System.IO
+
+Public Class FrmMainv4
 
     'https://docs.climacell.co/reference/api-formats#locations
     'https://docs.climacell.co/reference/data-layers-core
@@ -6,6 +8,7 @@
     Public tlNfo As CcTimelinesModel()
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Application.EnableVisualStyles()
         UpgradeMySettings()
         LoadProgramSettings()
         CreateProgramFolders()
@@ -23,8 +26,7 @@
         TsslCpy.Text = Cpy
         TsslVer.Text = Application.ProductVersion
         LblAbout.Text = String.Format(My.Resources.about, vbLf, ParseVersion())
-        LblNumControls.Text = NumControls(Me).ToString
-        FetchTimeLines()
+        FetchTimeLines(False)
 
         SetMidnightRollover()
         SaveLogs()
@@ -42,6 +44,19 @@
             My.Settings.Save()
         End If
     End Sub
+
+    Private Sub TsslRefresh_Click(sender As Object, e As EventArgs) Handles TsslRefresh.Click
+        FetchTimeLines(True)
+    End Sub
+
+
+    Private Sub FrmMainv4_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        SaveLogs()
+        My.Settings.Save()
+        TIcon.Dispose()
+    End Sub
+
+#Region "Timer Routines"
 
     Private Sub SetMidnightRollover()
         ''set the date to midnight + 5 seconds for the next day.
@@ -86,6 +101,21 @@
         End If
 
     End Sub
+
+    Private Sub TmrTimelineUpdate_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrTimelineUpdate.Elapsed
+        PrintLog($"Timelines Update timer elapsed @ {Now:T}.{vbLf}")
+        TmrTimelineUpdate.Stop()
+        Dim st = New DateTime(Now.Year, Now.Month, Now.Day, Now.Hour, 0, 15).AddHours(1)
+        Dim _int As Long = Date2Unix(st) - Date2Unix(Now)
+        TlDuration = New TimeSpan(0, 0, 0, CInt(_int))
+        TlNextUpdate = Date.Now + TlDuration
+        TmrTimelineUpdate.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+        TmrTimelineUpdate.Start()
+        PrintLog($"*** Next TimeLines Update @ {TlNextUpdate:T}. ***{vbLf}")
+        FetchTimeLines(True)
+    End Sub
+
+#End Region
 
 #Region "Field Data"
 
@@ -259,12 +289,6 @@
         My.Settings.Save()
     End Sub
 
-    Private Sub FrmMainv4_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        SaveLogs()
-        My.Settings.Save()
-        TIcon.Dispose()
-    End Sub
-
 #End Region
 
 #Region "App Settings"
@@ -273,6 +297,15 @@
         Dim ct = DirectCast(sender, RadioButton)
         My.Settings.Units = CInt(ct.Tag)
         My.Settings.Save()
+    End Sub
+
+    Private Sub ImgStyle(sender As Object, e As EventArgs) Handles RbImgStyle0.CheckedChanged, RbImgStyle1.CheckedChanged
+        Dim ct = DirectCast(sender, RadioButton)
+        My.Settings.ImageStyle = CInt(ct.Tag)
+        My.Settings.Save()
+        For j = 0 To 3
+            ImgPbArr(j).Image = Image.FromFile(Path.Combine(IconDir, "PNG", "COLOR", ImgStyleArr(My.Settings.ImageStyle), ImgSamp(j)))
+        Next
     End Sub
 
     Private Sub TimeSteps(sender As Object, e As EventArgs) Handles ChkTs1m.CheckedChanged, ChkTs5m.CheckedChanged, ChkTs15m.CheckedChanged, ChkTs30m.CheckedChanged, ChkTs1h.CheckedChanged, ChkTs1d.CheckedChanged, ChkTsCur.CheckedChanged
@@ -373,19 +406,6 @@
         LblNumTsSelected.Text = String.Format(LblNumTsSelected.Tag.ToString, ct)
     End Sub
 
-    Private Sub TmrTimelineUpdate_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrTimelineUpdate.Elapsed
-        PrintLog($"Timelines Update timer elapsed @ {Now:T}.{vbLf}")
-        TmrTimelineUpdate.Stop()
-        Dim st = New DateTime(Now.Year, Now.Month, Now.Day, Now.Hour, 0, 15).AddHours(1)
-        Dim _int As Long = Date2Unix(st) - Date2Unix(Now)
-        TlDuration = New TimeSpan(0, 0, 0, CInt(_int))
-        TlNextUpdate = Date.Now + TlDuration
-        TmrTimelineUpdate.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
-        TmrTimelineUpdate.Start()
-        PrintLog($"*** Next TimeLines Update @ {TlNextUpdate:T}. ***{vbLf}")
-        FetchTimeLines()
-    End Sub
-
     Private Sub LogBooleans(sender As Object, e As EventArgs) Handles ChkLogBool0.CheckedChanged, ChkLogBool1.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
@@ -407,8 +427,6 @@
             CreateNewPointLocation()
         End If
     End Sub
-
-
 
 #End Region
 
@@ -440,7 +458,6 @@
         Top = 150
         Left = 175
     End Sub
-
 
 #End Region
 
@@ -481,5 +498,12 @@
         End Try
         Return uptimeTs
     End Function
+
+    Private Sub RbImgStyle0_CheckedChanged(sender As Object, e As EventArgs) Handles RbImgStyle0.CheckedChanged, RbImgStyle1.CheckedChanged
+
+    End Sub
+
+
 #End Region
+
 End Class

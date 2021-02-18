@@ -82,32 +82,32 @@ Partial Public Class Values
     <JsonPropertyName("epaIndex")> Public Property EpaIndex As Integer?
     <JsonPropertyName("epaPrimaryPollutant")> Public Property EpaPrimaryPollutant As Integer?
     <JsonPropertyName("epaHealthConcern")> Public Property EpaHealthConcern As Integer?
-    <JsonPropertyName("treeIndex")> Public Property Tree As Integer?
-    <JsonPropertyName("treeAcaciaIndex")> Public Property TreeAcacia As Integer?
-    <JsonPropertyName("treeAshIndex")> Public Property TreeAsh As Integer?
-    <JsonPropertyName("treeBeechIndex")> Public Property TreeBeech As Integer?
-    <JsonPropertyName("treeBirchIndex")> Public Property TreeBirch As Integer?
-    <JsonPropertyName("treeCedarIndex")> Public Property TreeCedar As Integer?
-    <JsonPropertyName("treeCypressIndex")> Public Property TreeCypress As Integer?
-    <JsonPropertyName("treeElderIndex")> Public Property TreeElder As Integer?
-    <JsonPropertyName("treeElmIndex")> Public Property TreeElm As Integer?
-    <JsonPropertyName("treeHemlockIndex")> Public Property TreeHemlock As Integer?
-    <JsonPropertyName("treeHickoryIndex")> Public Property TreeHickory As Integer?
-    <JsonPropertyName("treeJuniperIndex")> Public Property TreeJuniper As Integer?
-    <JsonPropertyName("treeMahagonyIndex")> Public Property TreeMahogany As Integer?
-    <JsonPropertyName("treeMapleIndex")> Public Property TreeMaple As Integer?
-    <JsonPropertyName("treeMulberryIndex")> Public Property TreeMulberry As Integer?
-    <JsonPropertyName("treeOakIndex")> Public Property TreeOak As Integer?
-    <JsonPropertyName("treePineIndex")> Public Property TreePine As Integer?
-    <JsonPropertyName("treeCottonwoodIndex")> Public Property TreeCottonwood As Integer?
-    <JsonPropertyName("treeSpruceIndex")> Public Property TreeSpruce As Integer?
-    <JsonPropertyName("treeSycamoreIndex")> Public Property TreeSycamore As Integer?
-    <JsonPropertyName("treeWalnutIndex")> Public Property TreeWalnut As Integer?
-    <JsonPropertyName("treeWillowIndex")> Public Property TreeWillow As Integer?
-    <JsonPropertyName("grassIndex")> Public Property Grass As Integer?
-    <JsonPropertyName("grassGrassIndex")> Public Property GrassGrass As Integer?
-    <JsonPropertyName("weedIndex")> Public Property Weed As Integer?
-    <JsonPropertyName("weedGrassweedIndex")> Public Property WeedGrassWeed As Integer?
+    <JsonPropertyName("treeIndex")> Public Property Tree As Double?
+    <JsonPropertyName("treeAcaciaIndex")> Public Property TreeAcacia As Double?
+    <JsonPropertyName("treeAshIndex")> Public Property TreeAsh As Double?
+    <JsonPropertyName("treeBeechIndex")> Public Property TreeBeech As Double?
+    <JsonPropertyName("treeBirchIndex")> Public Property TreeBirch As Double?
+    <JsonPropertyName("treeCedarIndex")> Public Property TreeCedar As Double?
+    <JsonPropertyName("treeCypressIndex")> Public Property TreeCypress As Double?
+    <JsonPropertyName("treeElderIndex")> Public Property TreeElder As Double?
+    <JsonPropertyName("treeElmIndex")> Public Property TreeElm As Double?
+    <JsonPropertyName("treeHemlockIndex")> Public Property TreeHemlock As Double?
+    <JsonPropertyName("treeHickoryIndex")> Public Property TreeHickory As Double?
+    <JsonPropertyName("treeJuniperIndex")> Public Property TreeJuniper As Double?
+    <JsonPropertyName("treeMahagonyIndex")> Public Property TreeMahogany As Double?
+    <JsonPropertyName("treeMapleIndex")> Public Property TreeMaple As Double?
+    <JsonPropertyName("treeMulberryIndex")> Public Property TreeMulberry As Double?
+    <JsonPropertyName("treeOakIndex")> Public Property TreeOak As Double?
+    <JsonPropertyName("treePineIndex")> Public Property TreePine As Double?
+    <JsonPropertyName("treeCottonwoodIndex")> Public Property TreeCottonwood As Double?
+    <JsonPropertyName("treeSpruceIndex")> Public Property TreeSpruce As Double?
+    <JsonPropertyName("treeSycamoreIndex")> Public Property TreeSycamore As Double?
+    <JsonPropertyName("treeWalnutIndex")> Public Property TreeWalnut As Double?
+    <JsonPropertyName("treeWillowIndex")> Public Property TreeWillow As Double?
+    <JsonPropertyName("grassIndex")> Public Property Grass As Double?
+    <JsonPropertyName("grassGrassIndex")> Public Property GrassGrass As Double?
+    <JsonPropertyName("weedIndex")> Public Property Weed As Double?
+    <JsonPropertyName("weedGrassweedIndex")> Public Property WeedGrassWeed As Double?
     <JsonPropertyName("fireIndex")> Public Property FireIndex As Integer?
     <JsonPropertyName("hailBinary")> Public Property HailProbability As Integer?
 

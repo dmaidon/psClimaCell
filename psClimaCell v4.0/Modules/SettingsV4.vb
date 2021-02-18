@@ -1,4 +1,6 @@
-﻿Friend Module SettingsV4
+﻿Imports System.Globalization
+
+Friend Module SettingsV4
 
     Friend Sub LoadProgramSettings()
         Timesrun = My.Settings.TimesRun + 1
@@ -16,6 +18,15 @@
                     .RbDataUnits1.Checked = True
                 Case Else
                     .RbDataUnits0.Checked = True
+            End Select
+
+            Select Case My.Settings.ImageStyle
+                Case 0
+                    .RbImgStyle0.Checked = True
+                Case 1
+                    .RbImgStyle1.Checked = True
+                Case Else
+                    .RbImgStyle0.Checked = True
             End Select
 
             .ChkTs1m.Checked = My.Settings.Ts1m
@@ -39,8 +50,8 @@
             TlNextUpdate = Date.Now + TlDuration
             FrmMainv4.TmrTimelineUpdate.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
             FrmMainv4.TmrTimelineUpdate.Start()
-            PrintLog($"*** Next update time: {TlNextUpdate:h:mm tt} ***{vbLf}")
-
+            PrintLog($"*** Next update time: {TlNextUpdate:h:mm:ss tt} ***{vbLf}")
+            .LblTimesrun.Text = String.Format(CultureInfo.CurrentCulture, CType(.LblTimesrun.Tag, String), Timesrun, NumControls(FrmMainv4), vbLf, ParseVersion)
         End With
 
         LoadDataFields()
@@ -111,7 +122,6 @@
             .ChkPol25.Checked = My.Settings.TlPol25
             .ChkHail0.Checked = My.Settings.TlHail0
             .ChkFire0.Checked = My.Settings.TlFire0
-
         End With
     End Sub
 

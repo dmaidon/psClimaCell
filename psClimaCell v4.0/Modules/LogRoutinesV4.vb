@@ -180,15 +180,13 @@ Friend Module LogRoutinesV4
         End Try
     End Sub
 
-    'Friend Sub PrintData(t As String, m As String)
-    '    FrmMain.RtbData.AppendText($"{my.resources.separator}{vbLf}{t}{vbLf}{m}{vbLf}{my.resources.separator}{vbLf}")
-    'End Sub
     Private Function GetLogHeader() As String
         Try
             Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}")
             sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
             sb.Append($"Log file: {LogFile}{vbLf}")
             sb.Append($"Error file: {ErrFile}{vbLf}")
+            sb.Append($"Data file: {TlDataFile}{vbLf}")
             sb.Append($"Times run: {Timesrun}{vbLf}")
             sb.Append($"Controls: {NumControls(FrmMainv4)}{vbLf}")
             sb.Append($"Daily Update interval: {My.Settings.UpdateInt_Timelines} minutes{vbLf}")

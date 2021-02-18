@@ -34,9 +34,12 @@ Friend Module GlobalsV4
     'number of times that program has been run
     Public Timesrun As Long
 
-    Public Use_Agent As String = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36 Edg/85.0.564.44"
+    Public Use_Agent As String = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63"
 
 
     Public suffixArr As New List(Of String)({"Max", "Min", "Avg", "MaxTime", "MinTime"})
+    Public ImgPbArr As New List(Of PictureBox)({FrmMainv4.PbImgStyle0, FrmMainv4.PbImgStyle1, FrmMainv4.PbImgStyle2, FrmMainv4.PbImgStyle3})
 
+    Public ImgStyleArr As New List(Of String)({"A", "B"})
+    Public ImgSamp As New List(Of String)({"1000.png", "1102.png", "4000.png", "5001.png"})
 End Module
