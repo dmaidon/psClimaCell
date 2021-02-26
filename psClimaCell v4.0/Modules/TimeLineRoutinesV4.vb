@@ -1,8 +1,6 @@
 ﻿Imports System.Globalization
 Imports System.IO
 Imports System.Net
-Imports System.Net.Http
-Imports System.Net.Http.Headers
 Imports System.Security
 Imports System.Text
 Imports System.Text.Json
@@ -27,10 +25,8 @@ Friend Module TimeLineRoutinesV4
             If File.Exists(tlFile) Then
                 Dim ab As Double = (Date2Unix(Now) - Date2Unix(File.GetLastWriteTime(tlFile))) / 60
                 If ab >= 30 Then
-                    'if data 30 minutes or older, download a new file.
                     DownloadTimeLines(tlFile)
                 Else
-                    'if data less than 30 minutes, parse the existing file.
                     ParseTimeLines(ab, tlFile)
                 End If
             Else
@@ -66,17 +62,16 @@ Friend Module TimeLineRoutinesV4
                 My.Settings.CallsRemaining = CInt(response.GetResponseHeader("X-RateLimit-Remaining-Day"))
                 My.Settings.Save()
                 PrintLog($"{My.Resources.separator}{vbLf}{vbLf}")
-                If Not (response Is Nothing) Then
+                If response IsNot Nothing Then
                     If response.StatusCode = HttpStatusCode.OK Then
                         PrintLog($"Download Timelines Data @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
                         Dim dStr = response.GetResponseStream()
                         Using reader = New StreamReader(dStr)
-                            Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)   'ddd
+                            Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
                             File.WriteAllText(fn, resp)
                             PrintLog($"Timeline file saved -> {fn}{vbLf}")
-                            'I prefer to search the Json file and replace the NULLs with "0"s.  Probably could use "-1" and then trap for the "-1".  do not write the correct Json file to disk
-                            'so that you will have the original data for reference.  Apply same reasoning to ParseTimeLines
-                            tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)   '.Replace("null", "0"))
+
+                            tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)
                             Using aTxt As StreamWriter = File.AppendText(TlDataFile)
                                 Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
                                 Await aTxt.WriteLineAsync($"ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
@@ -136,13 +131,11 @@ Friend Module TimeLineRoutinesV4
         Try
             'temperature field is set to fetch Min and Max temperature for time period.
             Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin,temperatureMaxTime,temperatureMinTime", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "teeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedGrassweedIndex", "hailBinary", "fireIndex"})
-            '58 = weedGrassweedIndex
             Dim sb = New StringBuilder()
             For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
                 If c.Checked Then
                     sb.Append(tlFields(CInt(c.Tag)))
                     If Not String.IsNullOrEmpty(CStr(CInt(c.Tag))) Then
-                        'sb.Append("%2C")
                         sb.Append(",")
                     End If
                 End If
@@ -151,7 +144,6 @@ Friend Module TimeLineRoutinesV4
             If String.IsNullOrEmpty(aa) Then
                 Return "temperature"
             Else
-                'Return Left(aa, aa.Length - 3)
                 Return Left(aa, aa.Length - 1)
             End If
         Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
@@ -169,13 +161,11 @@ Friend Module TimeLineRoutinesV4
             For Each c As CheckBox In FrmMainv4.GbTimeSteps.Controls.OfType(Of CheckBox)()
                 If c.Checked Then
                     sb.Append(tsArr(CInt(c.Tag)))
-                    'sb.Append("%2C")
                     sb.Append(",")
                 End If
             Next
             Dim aa = sb.ToString
-            'Return Left(aa, aa.Length - 3)
-            'strip the trailing comma ","
+            'strip the trailing comma ",", if there is one
             Return Left(aa, aa.Length - 1)
         Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
@@ -185,9 +175,11 @@ Friend Module TimeLineRoutinesV4
         End Try
     End Function
 
-    Private Function GetWindString(winSpd As Double, winGst As Double, winDir As Double) As String
+    Private Function GetWindString(winSpd As Double, winGst As Double, Optional winDir As Double = vbNull) As String
         Try
             If winSpd <= 0 Then
+                Return "Calm"
+            ElseIf winDir = vbNull Then
                 Return "Calm"
             Else
                 Dim sb As New StringBuilder()
@@ -214,7 +206,7 @@ Friend Module TimeLineRoutinesV4
                     Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
                     Await aTxt.WriteLineAsync($"Parsed ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
                 End Using
-                tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)   '.Replace("null", "0"))
+                tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)
                 PrintLog($"[Parsed] Timeline Forecast Data @ {Now:T}{vbLf}File age: {ab:N2} minutes{vbLf}{vbLf}")
                 FrmMainv4.TsslCallRemaining.Text = String.Format(FrmMainv4.TsslCallRemaining.Tag.ToString, My.Settings.CallsRemaining)
                 For j = 0 To tlNfo.WxData.TimeLines.Count - 1
@@ -280,8 +272,8 @@ Friend Module TimeLineRoutinesV4
                         .Rows.Add($"Temperature", $"{tl.Temp:N0}{unitNfo.Temperature}")
                         .Rows.Add($"Feels Like", $"{tl.TempApparent.Value:N0}{unitNfo.Temperature}")
                         .Rows.Add($"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
-                        '.Rows.Add($"Wind", $"{Deg2Compass(CDbl(tl.WindDir.Value))} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed}")
-                        .Rows.Add($"Wind", $"{GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value)}{vbLf}")
+                        Dim wd = If(tl.WindDir, vbNull)
+                        .Rows.Add($"Wind", $"{GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd)}{vbLf}")
                         .Rows.Add($"Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
                         .Rows.Add($"Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}")
                         .Rows.Add($"Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}")
@@ -301,7 +293,6 @@ Friend Module TimeLineRoutinesV4
                         .Rows.Add($"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
                         .Rows.Add($"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
                         .ClearSelection()
-                        'Dim icn As String = Path.Combine(IconDir, "PNG", "Color", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString).ToLower.Replace(" ", "_")}.png")
                         Dim icn As String = Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), $"{tl.WxCode.Value}.png")
                         If My.Settings.Log_Images Then PrintLog($"{j}. Current: {icn} --> Load{vbLf}")
                         Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
@@ -367,7 +358,8 @@ Friend Module TimeLineRoutinesV4
                         Dim sb As New StringBuilder()
                         sb.Append($"Temp: {tl.TempMax.Value:N0}{unitNfo.Temperature} - {tl.TempMin.Value:N0}{unitNfo.Temperature}{vbLf}")
                         sb.Append($"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}{vbLf}")
-                        sb.Append($"Wind {GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value)}{vbLf}")
+                        Dim wd = If(tl.WindDir, vbNull)
+                        sb.Append($"Wind {GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd)}{vbLf}")
                         sb.Append($"Precip: {tl.PrecipPct.Value:N0}{unitNfo.PrecipitationProbability}{vbLf}")
                         sb.Append($"Type: {unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
                         sb.Append($"Intensity: {tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
@@ -461,7 +453,8 @@ Friend Module TimeLineRoutinesV4
                         .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
                         .Rows.Add("", "", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
                         .Rows.Add("", "", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.DewPoint}")
-                        .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value))
+                        Dim wd = If(tl.WindDir, vbNull)
+                        .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
                         .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
                         .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
                         .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
@@ -509,26 +502,27 @@ Friend Module TimeLineRoutinesV4
                 .Rows.Clear()
                 ' .ColumnCount = 3
                 For j = 0 To tlNfo.Warnings.Count - 1
-                    .Rows.Add("Code", tlNfo.Warnings(j).Code)
-                    .Rows.Add("", "Type", tlNfo.Warnings(j).Type)
-                    .Rows.Add("", "Message", tlNfo.Warnings(j).Message)
+                    Dim tw = tlNfo.Warnings(j)
+                    .Rows.Add("Code", tw.Code)
+                    .Rows.Add("", "Type", tw.Type)
+                    .Rows.Add("", "Message", tw.Message)
                     .Rows.Add("", "Meta ↓↓↓")
-                    Select Case tlNfo.Warnings(j).Code
+                    Select Case tw.Code
                         Case 246001, 246003
-                            .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
-                            .Rows.Add("", "Dates", $"{CDate(tlNfo.Warnings(j).Meta.From).ToLocalTime:F} to {CDate(tlNfo.Warnings(j).Meta.To).ToLocalTime:F}")
+                            .Rows.Add("", "Field", tw.Meta.Field)
+                            .Rows.Add("", "Dates", $"{CDate(tw.Meta.From).ToLocalTime:F} to {CDate(tw.Meta.To).ToLocalTime:F}")
                         Case 246008
-                            .Rows.Add("", "Field", tlNfo.Warnings(j).Meta.Field)
+                            .Rows.Add("", "Field", tw.Meta.Field)
                             .Rows.Add("", "Timesteps ↓↓↓")
-                            For k = 0 To tlNfo.Warnings(j).Meta.Timesteps.Count - 1
-                                .Rows.Add("", "", tlNfo.Warnings(j).Meta.Timesteps(k))
+                            For k = 0 To tw.Meta.Timesteps.Count - 1
+                                .Rows.Add("", "", tw.Meta.Timesteps(k))
                             Next
                         Case 246009
-                            .Rows.Add("", "Timestep", tlNfo.Warnings(j).Meta.Timestep)
-                            .Rows.Add("", "From / To", $"{tlNfo.Warnings(j).Meta.From} to {tlNfo.Warnings(j).Meta.To}")
+                            .Rows.Add("", "Timestep", tw.Meta.Timestep)
+                            .Rows.Add("", "From / To", $"{tw.Meta.From} to {tw.Meta.To}")
                         Case Else
-                            .Rows.Add("Code", tlNfo.Warnings(j).Code, "Information Missing.")
-                            PrintLog($"Warning information missing -> Code: {tlNfo.Warnings(j).Code}.{vbLf}")
+                            .Rows.Add("Code", tw.Code, "Information Missing.")
+                            PrintLog($"Warning information missing -> Code: {tw.Code}.{vbLf}")
                     End Select
                     Application.DoEvents()
                 Next
