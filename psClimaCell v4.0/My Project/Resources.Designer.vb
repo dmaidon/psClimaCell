@@ -80,6 +80,27 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to The height of the lowest visible portion of a cloud..
+        '''</summary>
+        Friend ReadOnly Property cloud_base() As String
+            Get
+                Return ResourceManager.GetString("cloud_base", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ICAO legal definition: Ceiling is the height above 
+        '''the ground or water of the base of the lowest 
+        '''layer of cloud below 20 000ft covering more than 
+        '''half the sky..
+        '''</summary>
+        Friend ReadOnly Property cloud_celiing() As String
+            Get
+                Return ResourceManager.GetString("cloud_celiing", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property data_layers_6() As System.Drawing.Bitmap

@@ -21,13 +21,16 @@ Friend Module TimeLineRoutinesV4
         End If
 
         If OverRide Then
+            'force a new download, doesn't matter how old the current data
             DownloadTimeLines(tlFile)
         Else
             If File.Exists(tlFile) Then
                 Dim ab As Double = (Date2Unix(Now) - Date2Unix(File.GetLastWriteTime(tlFile))) / 60
                 If ab >= 30 Then
+                    'if data 30 minutes or older, download a new file.
                     DownloadTimeLines(tlFile)
                 Else
+                    'if data less than 30 minutes, parse the existing file.
                     ParseTimeLines(ab, tlFile)
                 End If
             Else
@@ -73,7 +76,7 @@ Friend Module TimeLineRoutinesV4
                             PrintLog($"Timeline file saved -> {fn}{vbLf}")
                             'I prefer to search the Json file and replace the NULLs with "0"s.  Probably could use "-1" and then trap for the "-1".  do not write the correct Json file to disk
                             'so that you will have the original data for reference.  Apply same reasoning to ParseTimeLines
-                            tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp.Replace("null", "0"))
+                            tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)   '.Replace("null", "0"))
                             Using aTxt As StreamWriter = File.AppendText(TlDataFile)
                                 Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
                                 Await aTxt.WriteLineAsync($"ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
@@ -211,7 +214,7 @@ Friend Module TimeLineRoutinesV4
                     Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
                     Await aTxt.WriteLineAsync($"Parsed ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
                 End Using
-                tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp.Replace("null", "0"))
+                tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)   '.Replace("null", "0"))
                 PrintLog($"[Parsed] Timeline Forecast Data @ {Now:T}{vbLf}File age: {ab:N2} minutes{vbLf}{vbLf}")
                 FrmMainv4.TsslCallRemaining.Text = String.Format(FrmMainv4.TsslCallRemaining.Tag.ToString, My.Settings.CallsRemaining)
                 For j = 0 To tlNfo.WxData.TimeLines.Count - 1
@@ -246,23 +249,23 @@ Friend Module TimeLineRoutinesV4
     End Sub
 
     Private Sub Write15mData(ct As Integer)
-        ''
+        Exit Sub
     End Sub
 
     Private Sub Write1mData(ct As Integer)
-        ''
+        Exit Sub
     End Sub
 
     Private Sub Write30mData(ct As Integer)
-        ''
+        Exit Sub
     End Sub
 
     Private Sub Write5mData(ct As Integer)
-        ''
+        Exit Sub
     End Sub
 
     Private Sub WriteCurrentData(ct As Integer)
-        PrintLog($"Writing timelines current data @ {Now:F}.{vbLf}{vbLf}")
+        PrintLog($"{vbLf}Writing timelines current data @ {Now:F}.{vbLf}{vbLf}")
         'no error checking to make sure individual fields exist in json file
 
         If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
@@ -326,7 +329,7 @@ Friend Module TimeLineRoutinesV4
     End Sub
 
     Private Sub WriteDailyData(ct As Integer)
-        PrintLog($"Writing timelines daily data @ {Now:F}.{vbLf}{vbLf}")
+        PrintLog($"{vbLf}Writing timelines daily data @ {Now:F}.{vbLf}{vbLf}")
 
         If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
             PrintLog($"Daily data does not exist @ {Now:F}.{vbLf}{vbLf}")
@@ -352,6 +355,12 @@ Friend Module TimeLineRoutinesV4
                         .Rows(7).Cells(j) = New DataGridViewTextBoxCell With {.Value = ""}
                         Application.DoEvents()
                     Next
+
+                    If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 15 Then
+                        .Rows(4).Cells(7).Value = Transparent2Color(My.Resources.PS_LOGO_transparent_190x150, Color.MintCream)
+                        .Rows(6).Cells(7).Style.BackColor = Color.DarkGray
+                        .Rows(7).Cells(7).Style.BackColor = Color.DarkGray
+                    End If
 
                     For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
                         Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
@@ -397,6 +406,7 @@ Friend Module TimeLineRoutinesV4
                                     .Rows(6).Cells(j - 8).Style.BackColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Bg
                                     .Rows(6).Cells(j - 8).Style.ForeColor = DgvColorDay(CDbl(tl.TempMax.Value), CDbl(tl.TempMin.Value)).Fg
                                     .Rows(7).Cells(j - 8).Value = $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime:MMM d}"
+                                    .Rows(7).Cells(j - 8).Style.BackColor = Color.Gainsboro
                                 End If
                             End Using
                         End Using
@@ -404,13 +414,11 @@ Friend Module TimeLineRoutinesV4
                         Application.DoEvents()
                     Next
 
-                    .Rows(4).Cells(7).Value = Transparent2Color(My.Resources.PS_LOGO_transparent_190x150, Color.MintCream)
+                    '.Rows(4).Cells(7).Value = Transparent2Color(My.Resources.PS_LOGO_transparent_190x150, Color.MintCream)
                     .Rows(1).DefaultCellStyle.BackColor = Color.DarkGray
                     .Rows(3).DefaultCellStyle.BackColor = Color.Gainsboro
                     .Rows(5).DefaultCellStyle.BackColor = Color.DarkGray
                     .Rows(7).DefaultCellStyle.BackColor = Color.Gainsboro
-                    .Rows(6).Cells(7).Style.BackColor = Color.DarkGray
-                    .Rows(7).Cells(7).Style.BackColor = Color.DarkGray
 
                     .Rows(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     .Rows(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -438,7 +446,7 @@ Friend Module TimeLineRoutinesV4
     End Sub
 
     Private Sub WriteHourlyData(ct As Integer)
-        PrintLog($"Writing timelines hourly data @ {Now:F}.{vbLf}{vbLf}")
+        PrintLog($"{vbLf}Writing timelines hourly data @ {Now:F}.{vbLf}{vbLf}")
         If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
             PrintLog($"Hourly data does not exist @ {Now:F}.{vbLf}{vbLf}")
         Else
@@ -451,13 +459,22 @@ Friend Module TimeLineRoutinesV4
                         .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}")
                         .Rows.Add("", $"{tld.StartTime.ToLocalTime:h:mm tt}")
                         .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
-                        '.Rows.Add("", "", "Wind", $"{Deg2Compass(tl.WindDir.Value)} @ {Math.Ceiling(CDec(tl.WindSpeed.Value)):N0} {unitNfo.WindSpeed} gusting to {Math.Ceiling(CDec(tl.WindGust.Value)):N0} {unitNfo.WindGust}")
+                        .Rows.Add("", "", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
+                        .Rows.Add("", "", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.DewPoint}")
                         .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, tl.WindDir.Value))
                         .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
                         .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
                         .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
                         .Rows.Add("", "", "Surface Level Pressure", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
                         .Rows.Add("", "", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
+                        If tl.CloudBase.HasValue Then
+                            .Rows.Add("", "", "Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_base
+                        End If
+                        If tl.CloudCeiling.HasValue Then
+                            .Rows.Add("", "", "Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_celiing
+                        End If
                         .Rows.Add("", "", "Air Quality Index", $"{tl.EpaIndex.Value}")
                         .Rows.Add("", "", "EPA Health Concern", $"{unitNfo.EpaHealthConcern(tl.EpaHealthConcern.Value.ToString)}")
                         'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.

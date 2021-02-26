@@ -51,7 +51,7 @@ Partial Public Class Values
     <JsonPropertyName("temperatureMin")> Public Property TempMin As Double?
     <JsonPropertyName("temperatureMax")> Public Property TempMax As Double?
     <JsonPropertyName("temperatureApparent")> Public Property TempApparent As Double?
-    <JsonPropertyName("dewpoint")> Public Property Dewpoint As Double?
+    <JsonPropertyName("dewPoint")> Public Property Dewpoint As Double?
     <JsonPropertyName("humidity")> Public Property RH As Double?
     <JsonPropertyName("windSpeed")> Public Property WindSpeed As Double?
     <JsonPropertyName("windDirection")> Public Property WindDir As Double?

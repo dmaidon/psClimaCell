@@ -432,6 +432,13 @@ Public Class FrmMainv4
 
 #Region "Tray Icon"
 
+    Private Sub FrmMainv4_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        If WindowState = FormWindowState.Minimized Then
+            ShowInTaskbar = False
+            TIcon.Visible = True
+        End If
+    End Sub
+
     Private Sub MinimizeForm(sender As Object, e As EventArgs) Handles MinimizeToolStripMenuItem.Click
         TIcon.Visible = True
         WindowState = FormWindowState.Minimized
@@ -498,11 +505,6 @@ Public Class FrmMainv4
         End Try
         Return uptimeTs
     End Function
-
-    Private Sub RbImgStyle0_CheckedChanged(sender As Object, e As EventArgs) Handles RbImgStyle0.CheckedChanged, RbImgStyle1.CheckedChanged
-
-    End Sub
-
 
 #End Region
 
