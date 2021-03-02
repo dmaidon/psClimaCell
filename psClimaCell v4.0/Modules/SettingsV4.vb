@@ -137,6 +137,20 @@ Friend Module SettingsV4
             .ChkMt9.Checked = My.Settings.TlMt9
             .ChkMt10.Checked = My.Settings.TlMt10
             .ChkMt11.Checked = My.Settings.TlMt11
+            .ChkMt12.Checked = My.Settings.TlMt12
+            .ChkMt13.Checked = My.Settings.TlMt13
+            .ChkMt14.Checked = My.Settings.TlMt14
+            .ChkLand0.Checked = My.Settings.TlLand0
+            .ChkLand1.Checked = My.Settings.TlLand1
+            .ChkLand2.Checked = My.Settings.TlLand2
+            .ChkLand3.Checked = My.Settings.TlLand3
+            .ChkLand4.Checked = My.Settings.TlLand4
+            .ChkLand5.Checked = My.Settings.TlLand5
+            .ChkLand6.Checked = My.Settings.TlLand6
+            .ChkLand7.Checked = My.Settings.TlLand7
+            .ChkLand8.Checked = My.Settings.TlLand8
+            .ChkLand9.Checked = My.Settings.TlLand9
+
         End With
     End Sub
 

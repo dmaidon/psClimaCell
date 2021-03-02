@@ -1217,6 +1217,162 @@ Namespace My
                 Me("TlMt11") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt12() As Boolean
+            Get
+                Return CType(Me("TlMt12"),Boolean)
+            End Get
+            Set
+                Me("TlMt12") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt13() As Boolean
+            Get
+                Return CType(Me("TlMt13"),Boolean)
+            End Get
+            Set
+                Me("TlMt13") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt14() As Boolean
+            Get
+                Return CType(Me("TlMt14"),Boolean)
+            End Get
+            Set
+                Me("TlMt14") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand0() As Boolean
+            Get
+                Return CType(Me("TlLand0"),Boolean)
+            End Get
+            Set
+                Me("TlLand0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand1() As Boolean
+            Get
+                Return CType(Me("TlLand1"),Boolean)
+            End Get
+            Set
+                Me("TlLand1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand2() As Boolean
+            Get
+                Return CType(Me("TlLand2"),Boolean)
+            End Get
+            Set
+                Me("TlLand2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand3() As Boolean
+            Get
+                Return CType(Me("TlLand3"),Boolean)
+            End Get
+            Set
+                Me("TlLand3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand4() As Boolean
+            Get
+                Return CType(Me("TlLand4"),Boolean)
+            End Get
+            Set
+                Me("TlLand4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand5() As Boolean
+            Get
+                Return CType(Me("TlLand5"),Boolean)
+            End Get
+            Set
+                Me("TlLand5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand6() As Boolean
+            Get
+                Return CType(Me("TlLand6"),Boolean)
+            End Get
+            Set
+                Me("TlLand6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand7() As Boolean
+            Get
+                Return CType(Me("TlLand7"),Boolean)
+            End Get
+            Set
+                Me("TlLand7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand8() As Boolean
+            Get
+                Return CType(Me("TlLand8"),Boolean)
+            End Get
+            Set
+                Me("TlLand8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlLand9() As Boolean
+            Get
+                Return CType(Me("TlLand9"),Boolean)
+            End Get
+            Set
+                Me("TlLand9") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

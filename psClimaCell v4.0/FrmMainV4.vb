@@ -119,7 +119,7 @@ Public Class FrmMainv4
 
 #Region "Field Data"
 
-    Private Sub SelectFieldData(sender As Object, e As EventArgs) Handles ChkCore20.CheckedChanged, ChkCore1.CheckedChanged, ChkCore2.CheckedChanged, ChkCore3.CheckedChanged, ChkCore4.CheckedChanged, ChkCore5.CheckedChanged, ChkCore6.CheckedChanged, ChkCore7.CheckedChanged, ChkCore8.CheckedChanged, ChkCore9.CheckedChanged, ChkCore10.CheckedChanged, ChkCore11.CheckedChanged, ChkCore12.CheckedChanged, ChkCore13.CheckedChanged, ChkCore14.CheckedChanged, ChkCore15.CheckedChanged, ChkCore16.CheckedChanged, ChkCore17.CheckedChanged, ChkCore18.CheckedChanged, ChkCore19.CheckedChanged, ChkCore0.CheckedChanged, ChkAqi0.CheckedChanged, ChkAqi1.CheckedChanged, ChkAqi2.CheckedChanged, ChkAqi3.CheckedChanged, ChkAqi4.CheckedChanged, ChkAqi5.CheckedChanged, ChkAqi6.CheckedChanged, ChkAqi7.CheckedChanged, ChkAqi8.CheckedChanged, ChkAqi9.CheckedChanged, ChkAqi10.CheckedChanged, ChkAqi11.CheckedChanged, ChkPol0.CheckedChanged, ChkPol1.CheckedChanged, ChkPol2.CheckedChanged, ChkPol3.CheckedChanged, ChkPol4.CheckedChanged, ChkPol5.CheckedChanged, ChkPol6.CheckedChanged, ChkPol7.CheckedChanged, ChkPol8.CheckedChanged, ChkPol9.CheckedChanged, ChkPol10.CheckedChanged, ChkPol12.CheckedChanged, ChkPol11.CheckedChanged, ChkPol13.CheckedChanged, ChkPol14.CheckedChanged, ChkPol15.CheckedChanged, ChkPol16.CheckedChanged, ChkPol17.CheckedChanged, ChkPol18.CheckedChanged, ChkPol19.CheckedChanged, ChkPol20.CheckedChanged, ChkPol21.CheckedChanged, ChkPol22.CheckedChanged, ChkPol23.CheckedChanged, ChkPol24.CheckedChanged, ChkPol25.CheckedChanged, ChkHail0.CheckedChanged, ChkFire0.CheckedChanged, ChkSol0.CheckedChanged, ChkSol1.CheckedChanged, ChkSol2.CheckedChanged, ChkMt0.CheckedChanged, ChkMt1.CheckedChanged, ChkMt2.CheckedChanged, ChkMt3.CheckedChanged, ChkMt4.CheckedChanged, ChkMt5.CheckedChanged, ChkMt6.CheckedChanged, ChkMt7.CheckedChanged, ChkMt8.CheckedChanged, ChkMt9.CheckedChanged, ChkMt10.CheckedChanged, ChkMt11.CheckedChanged
+    Private Sub SelectFieldData(sender As Object, e As EventArgs) Handles ChkCore20.CheckedChanged, ChkCore1.CheckedChanged, ChkCore2.CheckedChanged, ChkCore3.CheckedChanged, ChkCore4.CheckedChanged, ChkCore5.CheckedChanged, ChkCore6.CheckedChanged, ChkCore7.CheckedChanged, ChkCore8.CheckedChanged, ChkCore9.CheckedChanged, ChkCore10.CheckedChanged, ChkCore11.CheckedChanged, ChkCore12.CheckedChanged, ChkCore13.CheckedChanged, ChkCore14.CheckedChanged, ChkCore15.CheckedChanged, ChkCore16.CheckedChanged, ChkCore17.CheckedChanged, ChkCore18.CheckedChanged, ChkCore19.CheckedChanged, ChkCore0.CheckedChanged, ChkAqi0.CheckedChanged, ChkAqi1.CheckedChanged, ChkAqi2.CheckedChanged, ChkAqi3.CheckedChanged, ChkAqi4.CheckedChanged, ChkAqi5.CheckedChanged, ChkAqi6.CheckedChanged, ChkAqi7.CheckedChanged, ChkAqi8.CheckedChanged, ChkAqi9.CheckedChanged, ChkAqi10.CheckedChanged, ChkAqi11.CheckedChanged, ChkPol0.CheckedChanged, ChkPol1.CheckedChanged, ChkPol2.CheckedChanged, ChkPol3.CheckedChanged, ChkPol4.CheckedChanged, ChkPol5.CheckedChanged, ChkPol6.CheckedChanged, ChkPol7.CheckedChanged, ChkPol8.CheckedChanged, ChkPol9.CheckedChanged, ChkPol10.CheckedChanged, ChkPol12.CheckedChanged, ChkPol11.CheckedChanged, ChkPol13.CheckedChanged, ChkPol14.CheckedChanged, ChkPol15.CheckedChanged, ChkPol16.CheckedChanged, ChkPol17.CheckedChanged, ChkPol18.CheckedChanged, ChkPol19.CheckedChanged, ChkPol20.CheckedChanged, ChkPol21.CheckedChanged, ChkPol22.CheckedChanged, ChkPol23.CheckedChanged, ChkPol24.CheckedChanged, ChkPol25.CheckedChanged, ChkHail0.CheckedChanged, ChkFire0.CheckedChanged, ChkSol0.CheckedChanged, ChkSol1.CheckedChanged, ChkSol2.CheckedChanged, ChkMt0.CheckedChanged, ChkMt1.CheckedChanged, ChkMt2.CheckedChanged, ChkMt3.CheckedChanged, ChkMt4.CheckedChanged, ChkMt5.CheckedChanged, ChkMt6.CheckedChanged, ChkMt7.CheckedChanged, ChkMt8.CheckedChanged, ChkMt9.CheckedChanged, ChkMt10.CheckedChanged, ChkMt11.CheckedChanged, ChkMt12.CheckedChanged, ChkMt13.CheckedChanged, ChkMt14.CheckedChanged, ChkLand0.CheckedChanged, ChkLand1.CheckedChanged, ChkLand2.CheckedChanged, ChkLand3.CheckedChanged, ChkLand4.CheckedChanged, ChkLand5.CheckedChanged, ChkLand6.CheckedChanged, ChkLand7.CheckedChanged, ChkLand8.CheckedChanged, ChkLand9.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -274,6 +274,32 @@ Public Class FrmMainv4
                     My.Settings.TlMt10 = .Checked
                 Case 75
                     My.Settings.TlMt11 = .Checked
+                Case 76
+                    My.Settings.TlMt12 = .Checked
+                Case 77
+                    My.Settings.TlMt13 = .Checked
+                Case 78
+                    My.Settings.TlMt14 = .Checked
+                Case 79
+                    My.Settings.TlLand0 = .Checked
+                Case 80
+                    My.Settings.TlLand1 = .Checked
+                Case 81
+                    My.Settings.TlLand2 = .Checked
+                Case 82
+                    My.Settings.TlLand3 = .Checked
+                Case 83
+                    My.Settings.TlLand4 = .Checked
+                Case 84
+                    My.Settings.TlLand5 = .Checked
+                Case 85
+                    My.Settings.TlLand6 = .Checked
+                Case 86
+                    My.Settings.TlLand7 = .Checked
+                Case 87
+                    My.Settings.TlLand8 = .Checked
+                Case 88
+                    My.Settings.TlLand9 = .Checked
 
                 Case Else
                     Exit Select
