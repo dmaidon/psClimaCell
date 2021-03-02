@@ -122,6 +122,21 @@ Friend Module SettingsV4
             .ChkPol25.Checked = My.Settings.TlPol25
             .ChkHail0.Checked = My.Settings.TlHail0
             .ChkFire0.Checked = My.Settings.TlFire0
+            .ChkSol0.Checked = My.Settings.TlSol0
+            .ChkSol1.Checked = My.Settings.TlSol1
+            .ChkSol2.Checked = My.Settings.TlSol2
+            .ChkMt0.Checked = My.Settings.TlMt0
+            .ChkMt1.Checked = My.Settings.TlMt1
+            .ChkMt2.Checked = My.Settings.TlMt2
+            .ChkMt3.Checked = My.Settings.TlMt3
+            .ChkMt4.Checked = My.Settings.TlMt4
+            .ChkMt5.Checked = My.Settings.TlMt5
+            .ChkMt6.Checked = My.Settings.TlMt6
+            .ChkMt7.Checked = My.Settings.TlMt7
+            .ChkMt8.Checked = My.Settings.TlMt8
+            .ChkMt9.Checked = My.Settings.TlMt9
+            .ChkMt10.Checked = My.Settings.TlMt10
+            .ChkMt11.Checked = My.Settings.TlMt11
         End With
     End Sub
 

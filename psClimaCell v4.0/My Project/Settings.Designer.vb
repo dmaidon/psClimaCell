@@ -1037,6 +1037,186 @@ Namespace My
                 Me("ImageStyle") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlSol0() As Boolean
+            Get
+                Return CType(Me("TlSol0"),Boolean)
+            End Get
+            Set
+                Me("TlSol0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlSol1() As Boolean
+            Get
+                Return CType(Me("TlSol1"),Boolean)
+            End Get
+            Set
+                Me("TlSol1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlSol2() As Boolean
+            Get
+                Return CType(Me("TlSol2"),Boolean)
+            End Get
+            Set
+                Me("TlSol2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt0() As Boolean
+            Get
+                Return CType(Me("TlMt0"),Boolean)
+            End Get
+            Set
+                Me("TlMt0") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt1() As Boolean
+            Get
+                Return CType(Me("TlMt1"),Boolean)
+            End Get
+            Set
+                Me("TlMt1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt2() As Boolean
+            Get
+                Return CType(Me("TlMt2"),Boolean)
+            End Get
+            Set
+                Me("TlMt2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt3() As Boolean
+            Get
+                Return CType(Me("TlMt3"),Boolean)
+            End Get
+            Set
+                Me("TlMt3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt4() As Boolean
+            Get
+                Return CType(Me("TlMt4"),Boolean)
+            End Get
+            Set
+                Me("TlMt4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt5() As Boolean
+            Get
+                Return CType(Me("TlMt5"),Boolean)
+            End Get
+            Set
+                Me("TlMt5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt6() As Boolean
+            Get
+                Return CType(Me("TlMt6"),Boolean)
+            End Get
+            Set
+                Me("TlMt6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt7() As Boolean
+            Get
+                Return CType(Me("TlMt7"),Boolean)
+            End Get
+            Set
+                Me("TlMt7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt8() As Boolean
+            Get
+                Return CType(Me("TlMt8"),Boolean)
+            End Get
+            Set
+                Me("TlMt8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt9() As Boolean
+            Get
+                Return CType(Me("TlMt9"),Boolean)
+            End Get
+            Set
+                Me("TlMt9") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt10() As Boolean
+            Get
+                Return CType(Me("TlMt10"),Boolean)
+            End Get
+            Set
+                Me("TlMt10") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlMt11() As Boolean
+            Get
+                Return CType(Me("TlMt11"),Boolean)
+            End Get
+            Set
+                Me("TlMt11") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

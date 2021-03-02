@@ -12,8 +12,8 @@ Friend Module LogRoutinesV4
             If si <> $"{Now:Mdyyyy}" Then
                 Try
                     ''close old log file
-                    PrintLog($"{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}", False)
-                    PrintErrLog($"{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}")
+                    PrintLog($"{vbLf}{My.Resources.separator}>{vbLf}Errors this run: { .TsslErr.Text}{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}", False)
+                    PrintErrLog($"{vbLf}{My.Resources.separator}>{vbLf}Errors this run: { .TsslErr.Text}{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}")
                     Using aTxt As StreamWriter = File.AppendText(TlDataFile)
                         Await aTxt.WriteLineAsync($"{vbLf}{My.Resources.separator}>{vbLf}Closing log: {Now:T}{vbLf}")
                     End Using
@@ -220,6 +220,9 @@ Friend Module LogRoutinesV4
                 .RtbLog.Clear()
                 GotErr = False
                 ResetErr = True
+                .TsslErr.ForeColor = Color.Green
+                .TsslErr.ToolTipText = My.Resources.err_in_pgm
+                .TsslErr.Text = $"0"
                 LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
                 ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
                 TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
