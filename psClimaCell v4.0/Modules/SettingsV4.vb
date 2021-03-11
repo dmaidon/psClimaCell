@@ -51,7 +51,7 @@ Friend Module SettingsV4
             FrmMainv4.TmrTimelineUpdate.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
             FrmMainv4.TmrTimelineUpdate.Start()
             PrintLog($"*** Next update time: {TlNextUpdate:h:mm:ss tt} ***{vbLf}")
-            .LblTimesrun.Text = String.Format(CultureInfo.CurrentCulture, CType(.LblTimesrun.Tag, String), Timesrun, NumControls(FrmMainv4), vbLf, ParseVersion)
+            .LblTimesrun.Text = String.Format(CultureInfo.CurrentCulture, CType(.LblTimesrun.Tag, String), Timesrun, NumControls(FrmMainv4), vbLf, ParseVersion, $"{AppStartTime:F}")
         End With
 
         LoadDataFields()

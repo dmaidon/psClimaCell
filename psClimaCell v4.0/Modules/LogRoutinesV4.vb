@@ -84,13 +84,13 @@ Friend Module LogRoutinesV4
         SaveLogs()
     End Sub
 
-    Friend Sub PrintErr(msg As String, trg As String, stk As String, src As String, Optional gbe As String = "- Empty -")
+    Friend Sub PrintErr(msg As String, trg As String, stk As String, src As String, gbe As String, Optional ie As String = "- N/A -")
         ResetError()
         GotErr = True
         _numErr += 1
         Dim em As String =
                 $"   Error:{vbLf}{msg}{vbLf}{vbLf}   Location:{vbLf}{trg}{vbLf}{vbLf}   Trace:{vbLf}{stk}{vbLf}{vbLf}   Source:{vbLf}{src}{vbLf}{vbLf}   Base Exception:{ _
-                vbLf}{gbe}{vbLf}"
+                vbLf}{gbe}{vbLf}Inner Exception:{vbLf}{ie}{vbLf} "
         With FrmMainv4
             .TsslErr.ForeColor = Color.Red
             .TsslErr.ToolTipText = My.Resources.err_in_pgm
@@ -184,6 +184,7 @@ Friend Module LogRoutinesV4
         Try
             Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}")
             sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
+            sb.Append($"Application Startup Time: {AppStartTime:F}{vbLf}")
             sb.Append($"Log file: {LogFile}{vbLf}")
             sb.Append($"Error file: {ErrFile}{vbLf}")
             sb.Append($"Data file: {TlDataFile}{vbLf}")
@@ -192,7 +193,6 @@ Friend Module LogRoutinesV4
             sb.Append($"Daily Update interval: {My.Settings.UpdateInt_Timelines} minutes{vbLf}")
             sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
             sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
-
             Return sb.ToString()
         Catch ex As Exception When _
                   TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException

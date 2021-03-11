@@ -9,6 +9,7 @@ Public Class FrmMainv4
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Application.EnableVisualStyles()
+        AppStartTime = Now
         UpgradeMySettings()
         LoadProgramSettings()
         CreateProgramFolders()
@@ -56,6 +57,12 @@ Public Class FrmMainv4
         TIcon.Dispose()
     End Sub
 
+    Private Sub DgvDaily_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvDaily.CellClick
+        DgvDaily.ClearSelection()
+    End Sub
+
+
+
 #Region "Timer Routines"
 
     Private Sub SetMidnightRollover()
@@ -100,6 +107,10 @@ Public Class FrmMainv4
                     $"Mn: {DateDiff(DateInterval.Minute, Date.Now, MidNextUpdate):D0}")
         End If
 
+        If TmrReset.Enabled Then
+            TsslReset.Text = $"{DateDiff(DateInterval.Second, Date.Now, ResetNextUpdate):D0}"
+        End If
+
     End Sub
 
     Private Sub TmrTimelineUpdate_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrTimelineUpdate.Elapsed
@@ -113,6 +124,13 @@ Public Class FrmMainv4
         TmrTimelineUpdate.Start()
         PrintLog($"*** Next TimeLines Update @ {TlNextUpdate:T}. ***{vbLf}")
         FetchTimeLines(True)
+    End Sub
+
+    Private Sub TmrReset_Tick(sender As Object, e As EventArgs) Handles TmrReset.Tick
+        PrintLog($"Reset timer elapsed @ {Now:F}. ResetCounter: {ResetCounter}{vbLf}")
+        TmrReset.Stop()
+        TsslReset.Visible = False
+        FetchTimeLines()
     End Sub
 
 #End Region
@@ -562,6 +580,8 @@ Public Class FrmMainv4
         End Try
         Return uptimeTs
     End Function
+
+
 
 #End Region
 

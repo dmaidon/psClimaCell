@@ -20,15 +20,18 @@ Friend Module GlobalsV4
 
     Public unitNfo As FieldUnitsModel
 
-    'Timelines update interval
+    ' Timelines update interval
     Public TlDuration As TimeSpan
-
     Public TlNextUpdate As DateTime
 
+    ' download reset timer interval
+    Public ResetDuration As TimeSpan
+    Public ResetNextUpdate As DateTime
+    Public ResetCounter As Integer
 
-    'Midnight interval
+
+    ' Midnight interval
     Public MidDuration As TimeSpan
-
     Public MidNextUpdate As DateTime
 
     'number of times that program has been run
@@ -42,4 +45,15 @@ Friend Module GlobalsV4
 
     Public ImgStyleArr As New List(Of String)({"A", "B"})
     Public ImgSamp As New List(Of String)({"1000.png", "1102.png", "4000.png", "5001.png"})
+
+    'Public Enum PreX
+    '    Max = &H1
+    '    Min = &H2
+    '    Avg = &H4
+    '    MaxTime = &H8
+    '    MinTime = &H10
+    'End Enum
+
+    'time value for when application starts up
+    Public AppStartTime As DateTime
 End Module

@@ -9,9 +9,19 @@ Imports psClimaCellv4.Modules.DayColors
 Friend Module TimeLineRoutinesV4
 
     Private tlNfo As CcTimelinesModel
+    Private ie As String = "- N/A -"
 
     Friend Sub FetchTimeLines(Optional OverRide As Boolean = False)
         Dim tlFile As String = Path.Combine(TempDir, $"tlData_{Now:Mddyy-HH}.json")
+        With FrmMainv4
+            .TC.TabPages.Remove(.TpDaily)
+            .TC.TabPages.Remove(.TpHourly)
+            .TC.TabPages.Remove(.TpCurrent)
+            .TC.TabPages.Remove(.Tp1Min)
+            .TC.TabPages.Remove(.Tp5Min)
+            .TC.TabPages.Remove(.Tp15Min)
+            .TC.TabPages.Remove(.Tp30Min)
+        End With
         'GetTimeline(tlFile)
         If String.IsNullOrEmpty(My.Settings.ApiKey) Then
             FrmMainv4.TC.SelectedTab = FrmMainv4.TpAppOptions
@@ -80,28 +90,41 @@ Friend Module TimeLineRoutinesV4
                             For j = 0 To tlNfo.WxData.TimeLines.Count - 1
                                 Select Case tlNfo.WxData.TimeLines(j).TimeStep
                                     Case "1m"
+                                        FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp1Min)
                                         Write1mData(j)
                                     Case "5m"
+                                        FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp5Min)
                                         Write5mData(j)
                                     Case "15m"
+                                        FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp15Min)
                                         Write15mData(j)
                                     Case "30m"
+                                        FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp30Min)
                                         Write30mData(j)
                                     Case "1h"
+                                        FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpHourly)
                                         WriteHourlyData(j)
                                     Case "1d"
+                                        FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.TpDaily)
                                         WriteDailyData(j)
                                     Case "current"
+                                        FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpCurrent)
                                         WriteCurrentData(j)
                                     Case Else
                                         Exit Select
                                 End Select
                             Next
 
-                            If InStr(resp, "warnings") > 0 Then
+                            If tlNfo.Warnings IsNot Nothing Then
                                 WriteWarnings()
                             End If
+
                         End Using
+                        With FrmMainv4
+                            .TmrReset.Stop()
+                            .TsslReset.Visible = False
+                            ResetCounter = 0
+                        End With
                     Else
                         PrintLog($"Download Rt Data @ {Now:T}{vbLf}{response.StatusCode}{vbLf}{response.StatusDescription}{vbLf}*****{vbLf}")
                         SaveLogs()
@@ -111,16 +134,35 @@ Friend Module TimeLineRoutinesV4
                     PrintLog($"{vbLf}Response received from server was null.{vbLf}")
                 End If
             End Using
+            FrmMainv4.TC.SelectedIndex = 0
         Catch ex As WebException
             PrintLog($"DownloadTimelines failed @ {Now:T} -> {ex.Message}{vbLf}{vbLf}")
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
-            SaveLogs()
-            Exit Sub
+            If ex.InnerException IsNot Nothing Then
+                ie = ex.InnerException.ToString
+            End If
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            With FrmMainv4
+                ResetCounter += 1
+                If ResetCounter <= 3 AndAlso DateDiff(DateInterval.Minute, My.Computer.Clock.LocalTime, MidNextUpdate) >= 15 Then
+                    ResetDuration = New TimeSpan(0, 0, 3, 0)
+                    ResetNextUpdate = Date.Now + ResetDuration
+                    .TsslReset.Visible = True
+                    .TmrReset.Start()
+                    PrintLog($"Reset timer started @ {Now:F} for 3 minutes. Counter: {ResetCounter}{vbLf}")
+                Else
+                    PrintLog($"ResetCounter set to 0. Counter: {ResetCounter}{vbLf}")
+                    ResetCounter = 0
+                End If
+            End With
+            ' Exit Sub
         Catch ex As Exception When _
                     TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is ProtocolViolationException OrElse TypeOf ex Is NotSupportedException OrElse
                     TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is OutOfMemoryException OrElse
-                    TypeOf ex Is IOException
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+                    TypeOf ex Is IOException OrElse TypeOf ex Is Exception
+            If ex.InnerException IsNot Nothing Then
+                ie = ex.InnerException.ToString
+            End If
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
         Finally
             SaveLogs()
         End Try
@@ -146,8 +188,11 @@ Friend Module TimeLineRoutinesV4
             Else
                 Return Left(aa, aa.Length - 1)
             End If
-        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
+            If ex.InnerException IsNot Nothing Then
+                ie = ex.InnerException.ToString
+            End If
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
             Return "temperature"
         Finally
             ''
@@ -167,7 +212,7 @@ Friend Module TimeLineRoutinesV4
             Dim aa = sb.ToString
             'strip the trailing comma ",", if there is one
             Return Left(aa, aa.Length - 1)
-        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
             Return ""
         Finally
@@ -177,9 +222,7 @@ Friend Module TimeLineRoutinesV4
 
     Private Function GetWindString(winSpd As Double, winGst As Double, Optional winDir As Double = vbNull) As String
         Try
-            If winSpd <= 0 Then
-                Return "Calm"
-            ElseIf winDir = vbNull Then
+            If winSpd <= 0 OrElse winDir = vbNull Then
                 Return "Calm"
             Else
                 Dim sb As New StringBuilder()
@@ -187,10 +230,9 @@ Friend Module TimeLineRoutinesV4
                 If winGst >= 1 Then
                     sb.Append($" gusting to {winGst:N0} {unitNfo.WindSpeed}")
                 End If
-
                 Return sb.ToString
             End If
-        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
             Return "Calm"
         Finally
@@ -212,18 +254,25 @@ Friend Module TimeLineRoutinesV4
                 For j = 0 To tlNfo.WxData.TimeLines.Count - 1
                     Select Case tlNfo.WxData.TimeLines(j).TimeStep
                         Case "1m"
+                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp1Min)
                             Write1mData(j)
                         Case "5m"
+                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp5Min)
                             Write5mData(j)
                         Case "15m"
+                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp15Min)
                             Write15mData(j)
                         Case "30m"
+                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp30Min)
                             Write30mData(j)
                         Case "1h"
+                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpHourly)
                             WriteHourlyData(j)
                         Case "1d"
+                            FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.TpDaily)
                             WriteDailyData(j)
                         Case "current"
+                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpCurrent)
                             WriteCurrentData(j)
                         Case Else
                             Exit Select
@@ -233,7 +282,8 @@ Friend Module TimeLineRoutinesV4
                     WriteWarnings()
                 End If
             End Using
-        Catch ex As Exception
+            FrmMainv4.TC.SelectedIndex = 0
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
             SaveLogs()
@@ -241,19 +291,269 @@ Friend Module TimeLineRoutinesV4
     End Sub
 
     Private Sub Write15mData(ct As Integer)
-        Exit Sub
+        PrintLog($"{vbLf}Writing timelines Fifteen Minute data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Fifteen Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv15Min
+                    .Rows.Clear()
+                    PrintLog($"Fifteen Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
+                        Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
+                        .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}")
+                        .Rows.Add("", $"{tld.StartTime.ToLocalTime:h:mm tt}")
+                        .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
+                        .Rows.Add("", "", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
+                        .Rows.Add("", "", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.DewPoint}")
+                        Dim wd = If(tl.WindDir, vbNull)
+                        .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
+                        .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
+                        .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
+                        .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
+                        .Rows.Add("", "", "Surface Level Pressure", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
+                        .Rows.Add("", "", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
+                        If tl.CloudBase.HasValue Then
+                            .Rows.Add("", "", "Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_base
+                        End If
+                        If tl.CloudCeiling.HasValue Then
+                            .Rows.Add("", "", "Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_celiing
+                        End If
+                        .Rows.Add("", "", "Air Quality Index", $"{tl.EpaIndex.Value}")
+                        .Rows.Add("", "", "EPA Health Concern", $"{unitNfo.EpaHealthConcern(tl.EpaHealthConcern.Value.ToString)}")
+                        'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
+                        'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
+                        'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
+                        .Rows(.Rows.Count - 1).Cells(3).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
+                        .Rows.Add("", "", "EPA Primary Pollutant", $"{unitNfo.EpaPrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+                        .Rows.Add("", "", $"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
+                        .Rows.Add("", "", $"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
+                        .Rows.Add("", "", $"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
+                        .Rows.Add("", "", $"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
+                        .Rows.Add("", "", $"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
+                        .Rows.Add("", "", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
+                        .Rows.Add("", "", $"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
+                        .Rows.Add("", "", $"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}%")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}°F")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}°F")
+                        .ClearSelection()
+                        Application.DoEvents()
+                    Next
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
     End Sub
 
     Private Sub Write1mData(ct As Integer)
-        Exit Sub
+        PrintLog($"{vbLf}Writing timelines One Minute data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"One Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv1Min
+                    .Rows.Clear()
+                    PrintLog($"One Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
+                        Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
+                        .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}")
+                        .Rows.Add("", $"{tld.StartTime.ToLocalTime:h:mm tt}")
+                        If tl.TempMax IsNot Nothing AndAlso tl.TempMax.HasValue Then
+                            .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
+                        End If
+                        .Rows.Add("", "", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
+                        .Rows.Add("", "", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.DewPoint}")
+                        Dim wd = If(tl.WindDir, vbNull)
+                        .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
+                        .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
+                        .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
+                        .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
+                        .Rows.Add("", "", "Surface Level Pressure", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
+                        .Rows.Add("", "", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
+                        If tl.CloudBase.HasValue Then
+                            .Rows.Add("", "", "Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_base
+                        End If
+                        If tl.CloudCeiling.HasValue Then
+                            .Rows.Add("", "", "Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_celiing
+                        End If
+                        .Rows.Add("", "", "Air Quality Index", $"{tl.EpaIndex.Value}")
+                        .Rows.Add("", "", "EPA Health Concern", $"{unitNfo.EpaHealthConcern(tl.EpaHealthConcern.Value.ToString)}")
+                        'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
+                        'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
+                        'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
+                        .Rows(.Rows.Count - 1).Cells(3).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
+                        .Rows.Add("", "", "EPA Primary Pollutant", $"{unitNfo.EpaPrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+                        .Rows.Add("", "", $"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
+                        .Rows.Add("", "", $"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
+                        .Rows.Add("", "", $"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
+                        .Rows.Add("", "", $"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
+                        .Rows.Add("", "", $"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
+                        .Rows.Add("", "", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
+                        .Rows.Add("", "", $"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
+                        .Rows.Add("", "", $"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}%")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}°F")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}°F")
+                        .ClearSelection()
+                        Application.DoEvents()
+                    Next
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
     End Sub
 
     Private Sub Write30mData(ct As Integer)
-        Exit Sub
+        PrintLog($"{vbLf}Writing timelines Thirth Minute data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Thirty Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv30Min
+                    .Rows.Clear()
+                    PrintLog($"Thirty Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
+                        Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
+                        .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}")
+                        .Rows.Add("", $"{tld.StartTime.ToLocalTime:h:mm tt}")
+                        .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
+                        .Rows.Add("", "", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
+                        .Rows.Add("", "", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.DewPoint}")
+                        Dim wd = If(tl.WindDir, vbNull)
+                        .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
+                        .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
+                        .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
+                        .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
+                        .Rows.Add("", "", "Surface Level Pressure", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
+                        .Rows.Add("", "", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
+                        If tl.CloudBase.HasValue Then
+                            .Rows.Add("", "", "Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_base
+                        End If
+                        If tl.CloudCeiling.HasValue Then
+                            .Rows.Add("", "", "Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_celiing
+                        End If
+                        .Rows.Add("", "", "Air Quality Index", $"{tl.EpaIndex.Value}")
+                        .Rows.Add("", "", "EPA Health Concern", $"{unitNfo.EpaHealthConcern(tl.EpaHealthConcern.Value.ToString)}")
+                        'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
+                        'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
+                        'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
+                        .Rows(.Rows.Count - 1).Cells(3).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
+                        .Rows.Add("", "", "EPA Primary Pollutant", $"{unitNfo.EpaPrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+                        .Rows.Add("", "", $"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
+                        .Rows.Add("", "", $"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
+                        .Rows.Add("", "", $"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
+                        .Rows.Add("", "", $"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
+                        .Rows.Add("", "", $"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
+                        .Rows.Add("", "", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
+                        .Rows.Add("", "", $"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
+                        .Rows.Add("", "", $"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}%")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}°F")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}°F")
+                        .ClearSelection()
+                        Application.DoEvents()
+                    Next
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
     End Sub
 
     Private Sub Write5mData(ct As Integer)
-        Exit Sub
+        PrintLog($"{vbLf}Writing timelines Five Minute data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Five Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv5Min
+                    .Rows.Clear()
+                    PrintLog($"Five Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
+                        Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
+                        .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}")
+                        .Rows.Add("", $"{tld.StartTime.ToLocalTime:h:mm tt}")
+                        .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
+                        .Rows.Add("", "", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
+                        .Rows.Add("", "", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.DewPoint}")
+                        Dim wd = If(tl.WindDir, vbNull)
+                        .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
+                        .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
+                        .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}{vbLf}")
+                        .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}{vbLf}")
+                        .Rows.Add("", "", "Surface Level Pressure", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
+                        .Rows.Add("", "", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
+                        If tl.CloudBase.HasValue Then
+                            .Rows.Add("", "", "Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_base
+                        End If
+                        If tl.CloudCeiling.HasValue Then
+                            .Rows.Add("", "", "Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
+                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_celiing
+                        End If
+                        .Rows.Add("", "", "Air Quality Index", $"{tl.EpaIndex.Value}")
+                        .Rows.Add("", "", "EPA Health Concern", $"{unitNfo.EpaHealthConcern(tl.EpaHealthConcern.Value.ToString)}")
+                        'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
+                        'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
+                        'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
+                        .Rows(.Rows.Count - 1).Cells(3).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
+                        .Rows(.Rows.Count - 1).Cells(3).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
+                        .Rows.Add("", "", "EPA Primary Pollutant", $"{unitNfo.EpaPrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+                        .Rows.Add("", "", $"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
+                        .Rows.Add("", "", $"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
+                        .Rows.Add("", "", $"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
+                        .Rows.Add("", "", $"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
+                        .Rows.Add("", "", $"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
+                        .Rows.Add("", "", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
+                        .Rows.Add("", "", $"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
+                        .Rows.Add("", "", $"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}%")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}°F")
+                        .Rows.Add("", "", $"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}°F")
+                        .ClearSelection()
+                        Application.DoEvents()
+                    Next
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
     End Sub
 
     Private Sub WriteCurrentData(ct As Integer)
@@ -266,6 +566,7 @@ Friend Module TimeLineRoutinesV4
             Try
                 With FrmMainv4.DgvCurrent
                     .Rows.Clear()
+                    PrintLog($"Current records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
                     For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
                         Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
                         .Rows.Add("Time", $"{tlNfo.WxData.TimeLines(ct).Intervals(j).StartTime.ToLocalTime:h:mm tt}")
@@ -298,21 +599,24 @@ Friend Module TimeLineRoutinesV4
                         Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
                            Color.LightSkyBlue,
                            Color.Gray)
-                        FrmMainv4.TpCurrent.BackColor = bgClr
-                        FrmMainv4.DgvCurrent.BackgroundColor = bgClr
-                        If File.Exists(icn) Then
-                            FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(icn)
-                        Else
-                            FrmMainv4.PbCurImage.BackgroundImage = Image.FromFile(Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), "0.png"))
-                        End If
+                        With FrmMainv4
+                            .TpCurrent.BackColor = bgClr
+                            .DgvCurrent.BackgroundColor = bgClr
+                            .PbCurImage.BackgroundImage = If(File.Exists(icn),
+                            Image.FromFile(icn),
+                            Image.FromFile(Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), "0.png")))
+                        End With
                         Application.DoEvents()
                     Next
                     'write the current weather to the Tray Icon
                     FrmMainv4.TIcon.Text = unitNfo.WeatherCode(CStr(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.WxCode.Value))
                     .ClearSelection()
                 End With
-            Catch ex As Exception
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+            Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
             Finally
                 'SaveLogs()
             End Try
@@ -353,6 +657,7 @@ Friend Module TimeLineRoutinesV4
                         .Rows(7).Cells(7).Style.BackColor = Color.DarkGray
                     End If
 
+                    PrintLog($"Daily records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
                     For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
                         Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
                         Dim sb As New StringBuilder()
@@ -429,8 +734,11 @@ Friend Module TimeLineRoutinesV4
                     .Visible = True
                     .ClearSelection()
                 End With
-            Catch ex As Exception
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+            Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
             Finally
                 'SaveLogs()
             End Try
@@ -445,6 +753,7 @@ Friend Module TimeLineRoutinesV4
             Try
                 With FrmMainv4.DgvHour
                     .Rows.Clear()
+                    PrintLog($"Hourly records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
                     For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
                         Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
                         Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
@@ -492,7 +801,10 @@ Friend Module TimeLineRoutinesV4
                     Next
                 End With
             Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
             Finally
                 'SaveLogs()
             End Try
@@ -504,6 +816,7 @@ Friend Module TimeLineRoutinesV4
             With FrmMainv4.DgvWarnings
                 .Rows.Clear()
                 ' .ColumnCount = 3
+                PrintLog($"Warning records total count: {tlNfo.Warnings.Count}{vbLf}")
                 For j = 0 To tlNfo.Warnings.Count - 1
                     Dim tw = tlNfo.Warnings(j)
                     .Rows.Add("Code", tw.Code)
@@ -534,8 +847,11 @@ Friend Module TimeLineRoutinesV4
                 Next
                 .ClearSelection()
             End With
-        Catch ex As Exception
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
+            If ex.InnerException IsNot Nothing Then
+                ie = ex.InnerException.ToString
+            End If
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
         Finally
             'SaveLogs()
         End Try
