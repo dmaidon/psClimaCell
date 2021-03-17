@@ -2,7 +2,6 @@
   "CloudBase": "km",
   "CloudCeiling": "km",
   "CloudCover": "%",
-  "DewPoint": "°C",
   "_epaComment": "EpsBgColor, EpaFgColor and EpaConcernText added to enhance AQI data response.",
   "EpaBgColor": {
     "0": "#31AE8C",
@@ -28,7 +27,7 @@
     "4": "(201-300)  Values Trigger a health alert, meaning everyone may experience more\n serious health effects.",
     "5": "(300+)  AQI values over 300 trigger health warnings of emergency conditions. The\n entire population is even more likely to be affected by serious health\n effects."
   },
-  "EpaHealthConcern": {
+  "HealthConcern": {
     "0": "Good",
     "1": "Moderate",
     "2": "Unhealthy for Sensitive Groups",
@@ -37,7 +36,7 @@
     "5": "Hazardous"
   },
   "EpaIndex": "EPA AQI",
-  "EpaPrimaryPollutant": {
+  "PrimaryPollutant": {
     "0": "PM2.5",
     "1": "PM10",
     "2": "O3",
@@ -46,42 +45,10 @@
     "5": "SO2"
   },
   "FireIndex": "FWI",
-  "GrassGrassIndex": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "GrassIndex": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
   "HailBinary": "Binary Prediction",
   "Humidity": "%",
-  "MepHealthConcern": {
-    "0": "Good",
-    "1": "Moderate",
-    "2": "Unhealthy for Sensitive Groups",
-    "3": "Unhealthy",
-    "4": "Very Unhealthy",
-    "5": "Hazardous"
-  },
-  "MepIndex": "MEP AQI",
-  "MepPrimaryPollutant": {
-    "0": "PM2.5",
-    "1": "PM10",
-    "2": "O3",
-    "3": "NO2",
-    "4": "CO",
-    "5": "SO2"
-  },
-  "MoonPhase": {
+    "MepIndex": "MEP AQI",
+    "MoonPhase": {
     "0": "New",
     "1": "Waxing Crescent",
     "2": "First Quarter",
@@ -93,6 +60,14 @@
   },
   "ParticulateMatter10": "μg/m^3",
   "ParticulateMatter25": "μg/m^3",
+  "PollenIndex": {
+    "0": "None",
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Very High"
+  },
   "PollutantCO": "ppb",
   "PollutantNO2": "ppb",
   "PollutantO3": "ppb",
@@ -114,200 +89,12 @@
   "secondarySwellWaveFromDirection": "°",
   "secondarySwellWaveSMeanPeriod": "seconds",
   "secondarySwellWaveSignificantHeight": "m",
-  "soilMoistureVolumetric0To10": "%",
-  "soilMoistureVolumetric10To40": "%",
-  "soilMoistureVolumetric40To100": "%",
-  "soilMoistureVolumetric100To200": "%",
-  "soilMoistureVolumetric0To200": "%",
-  "soilTemperature0To10": "°C",
-  "soilTemperature10To40": "°C",
-  "soilTemperature40To100": "°C",
-  "soilTemperature100To200": "°C",
-  "soilTemperature0To200": "°C",
-  "SolarDIF": "W/m^2",
-  "SolarDIR": "W/m^2",
-  "SolarGHI": "W/m^2",
-  "Temperature": "°C",
-  "TemperatureApparent": "°C",
-  "tertiarySwellWaveFromDirection": "°",
-  "tertiarySwellWaveSMeanPeriod": "seconds",
-  "tertiarySwellWaveSignificantHeight": "m",
-  "TreeAcacia": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeAsh": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeBeech": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeBirch": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeCedar": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeCottonwood": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeCyPress": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeElder": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeElm": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeHemlock": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeHickory": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeIndex": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeJuniper": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeMahagony": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeMaple": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeMulberry": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeOak": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreePine": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeSpruce": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeSycamore": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeWalnut": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "TreeWillow": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
+  "SoilMoistureVolume": "%",
+  "Solar": "W/m^2",
+   "Temperature": "°C",
+   "TertiarySwellWaveFromDirection": "°",
+  "TertiarySwellWaveSMeanPeriod": "seconds",
+  "TertiarySwellWaveSignificantHeight": "m",
   "Visibility": "km",
   "WeatherCode": {
     "0": "Unknown",
@@ -338,25 +125,9 @@
     "7102": "Light Ice Pellets",
     "8000": "Thunderstorm"
   },
-  "WeedGrassWeedIndex": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "WeedIndex": {
-    "0": "None",
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "High",
-    "5": "Very High"
-  },
-  "waveSignificantHeight": "m",
-  "waveFromDirection": "degrees",
-  "waveMeanPeriod": "seconds",
+  "WaveSignificantHeight": "m",
+  "WaveFromDirection": "degrees",
+  "WaveMeanPeriod": "seconds",
   "WindDirection": "°",
   "WindGust": "m/s",
   "WindSpeed": "m/s",

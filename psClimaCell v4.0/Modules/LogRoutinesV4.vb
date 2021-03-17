@@ -154,7 +154,7 @@ Friend Module LogRoutinesV4
                 .RtbLog.SaveFile(LogFile, RichTextBoxStreamType.PlainText)
                 .RtbError.SaveFile(ErrFile, RichTextBoxStreamType.PlainText)
             End With
-        Catch ex As IOException
+        Catch ex As exception When TypeOf ex Is IOException OrElse TypeOf ex Is ArgumentException
             Return
         Finally
             'a

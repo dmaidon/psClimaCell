@@ -7,6 +7,41 @@ Public Class FrmMainv4
     'https://docs.climacell.co/reference/data-layers-overview
     Public tlNfo As CcTimelinesModel()
 
+    ''' <summary>
+    '''     Manually update application settings In Settings create MustUpgrade/Boolean/User/True
+    ''' </summary>
+    Private Shared Sub UpgradeMySettings()
+        'https://stackoverflow.com/questions/1702260/losing-vb-net-my-settings-with-each-new-clickonce-deployment-release
+        If My.Settings.MustUpgrade Then
+            My.Settings.Upgrade()
+            My.Settings.MustUpgrade = False
+            My.Settings.Save()
+        End If
+    End Sub
+
+    Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvDaily.CellClick, DgvHour.CellClick, DgvCurrent.CellClick, Dgv1Min.CellClick, Dgv5Min.CellClick, Dgv15Min.CellClick, Dgv30Min.CellClick
+        With DirectCast(sender, DataGridView)
+            Select Case CInt(.Tag)
+                Case 0
+                    DgvDaily.ClearSelection()
+                Case 1
+                    DgvHour.ClearSelection()
+                Case 2
+                    DgvCurrent.ClearSelection()
+                Case 3
+                    Dgv1Min.ClearSelection()
+                Case 4
+                    Dgv5Min.ClearSelection()
+                Case 5
+                    Dgv15Min.ClearSelection()
+                Case 6
+                    Dgv30Min.ClearSelection()
+                Case Else
+                    Exit Sub
+            End Select
+        End With
+    End Sub
+
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Application.EnableVisualStyles()
         AppStartTime = Now
@@ -34,34 +69,15 @@ Public Class FrmMainv4
         TmrClock.Start()
     End Sub
 
-    ''' <summary>
-    '''     Manually update application settings In Settings create MustUpgrade/Boolean/User/True
-    ''' </summary>
-    Private Shared Sub UpgradeMySettings()
-        'https://stackoverflow.com/questions/1702260/losing-vb-net-my-settings-with-each-new-clickonce-deployment-release
-        If My.Settings.MustUpgrade Then
-            My.Settings.Upgrade()
-            My.Settings.MustUpgrade = False
-            My.Settings.Save()
-        End If
-    End Sub
-
-    Private Sub TsslRefresh_Click(sender As Object, e As EventArgs) Handles TsslRefresh.Click
-        FetchTimeLines(True)
-    End Sub
-
-
     Private Sub FrmMainv4_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         SaveLogs()
         My.Settings.Save()
         TIcon.Dispose()
     End Sub
 
-    Private Sub DgvDaily_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvDaily.CellClick
-        DgvDaily.ClearSelection()
+    Private Sub TsslRefresh_Click(sender As Object, e As EventArgs) Handles TsslRefresh.Click
+        FetchTimeLines(True)
     End Sub
-
-
 
 #Region "Timer Routines"
 
@@ -77,19 +93,6 @@ Public Class FrmMainv4
         TsslMidnight.Visible = True
 
         PrintLog($"=> Set midnight rollover: {st} -> Interval: {_int} seconds{vbLf}")
-    End Sub
-
-    Private Sub TmrMidnight_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrMidnight.Elapsed
-        TmrMidnight.Stop()
-        PrintLog($"=> Midnight timer elapsed and stopped @ {Now:T}.{vbLf}")
-        Dim _st As Date = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 1).AddDays(1)
-        Dim _int As Long = Date2Unix(_st) - Date2Unix(Now)
-        MidDuration = New TimeSpan(0, 0, 0, CInt(_int))
-        MidNextUpdate = Date.Now + MidDuration
-        TmrMidnight.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
-        TmrMidnight.Start()
-        PrintLog($"<== Midnight timer restarted @ {Now:T}.{vbLf}     Interval: {_int} seconds{vbLf}")
-        Check4NewLogFile()
     End Sub
 
     Private Sub TmrClock_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrClock.Elapsed
@@ -113,6 +116,26 @@ Public Class FrmMainv4
 
     End Sub
 
+    Private Sub TmrMidnight_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrMidnight.Elapsed
+        TmrMidnight.Stop()
+        PrintLog($"=> Midnight timer elapsed and stopped @ {Now:T}.{vbLf}")
+        Dim _st As Date = New DateTime(Now.Year, Now.Month, Now.Day, 0, 0, 1).AddDays(1)
+        Dim _int As Long = Date2Unix(_st) - Date2Unix(Now)
+        MidDuration = New TimeSpan(0, 0, 0, CInt(_int))
+        MidNextUpdate = Date.Now + MidDuration
+        TmrMidnight.Interval = TimeSpan.FromSeconds(_int).TotalMilliseconds
+        TmrMidnight.Start()
+        PrintLog($"<== Midnight timer restarted @ {Now:T}.{vbLf}     Interval: {_int} seconds{vbLf}")
+        Check4NewLogFile()
+    End Sub
+
+    Private Sub TmrReset_Tick(sender As Object, e As EventArgs) Handles TmrReset.Tick
+        PrintLog($"Reset timer elapsed @ {Now:F}. ResetCounter: {ResetCounter}{vbLf}")
+        TmrReset.Stop()
+        TsslReset.Visible = False
+        FetchTimeLines()
+    End Sub
+
     Private Sub TmrTimelineUpdate_Elapsed(sender As Object, e As Timers.ElapsedEventArgs) Handles TmrTimelineUpdate.Elapsed
         PrintLog($"Timelines Update timer elapsed @ {Now:T}.{vbLf}")
         TmrTimelineUpdate.Stop()
@@ -126,16 +149,27 @@ Public Class FrmMainv4
         FetchTimeLines(True)
     End Sub
 
-    Private Sub TmrReset_Tick(sender As Object, e As EventArgs) Handles TmrReset.Tick
-        PrintLog($"Reset timer elapsed @ {Now:F}. ResetCounter: {ResetCounter}{vbLf}")
-        TmrReset.Stop()
-        TsslReset.Visible = False
-        FetchTimeLines()
-    End Sub
-
 #End Region
 
 #Region "Field Data"
+
+    Private Sub BtnFdCheck_Click(sender As Object, e As EventArgs) Handles BtnFdCheck.Click
+        For Each c As CheckBox In FlpDataFields.Controls.OfType(Of CheckBox)()
+            If Not c.Checked And c.Enabled Then
+                c.Checked = True
+            End If
+        Next
+        My.Settings.Save()
+    End Sub
+
+    Private Sub BtnFdUncheck_Click(sender As Object, e As EventArgs) Handles BtnFdUncheck.Click
+        For Each c As CheckBox In FlpDataFields.Controls.OfType(Of CheckBox)()
+            If c.Checked Then
+                c.Checked = False
+            End If
+        Next
+        My.Settings.Save()
+    End Sub
 
     Private Sub SelectFieldData(sender As Object, e As EventArgs) Handles ChkCore20.CheckedChanged, ChkCore1.CheckedChanged, ChkCore2.CheckedChanged, ChkCore3.CheckedChanged, ChkCore4.CheckedChanged, ChkCore5.CheckedChanged, ChkCore6.CheckedChanged, ChkCore7.CheckedChanged, ChkCore8.CheckedChanged, ChkCore9.CheckedChanged, ChkCore10.CheckedChanged, ChkCore11.CheckedChanged, ChkCore12.CheckedChanged, ChkCore13.CheckedChanged, ChkCore14.CheckedChanged, ChkCore15.CheckedChanged, ChkCore16.CheckedChanged, ChkCore17.CheckedChanged, ChkCore18.CheckedChanged, ChkCore19.CheckedChanged, ChkCore0.CheckedChanged, ChkAqi0.CheckedChanged, ChkAqi1.CheckedChanged, ChkAqi2.CheckedChanged, ChkAqi3.CheckedChanged, ChkAqi4.CheckedChanged, ChkAqi5.CheckedChanged, ChkAqi6.CheckedChanged, ChkAqi7.CheckedChanged, ChkAqi8.CheckedChanged, ChkAqi9.CheckedChanged, ChkAqi10.CheckedChanged, ChkAqi11.CheckedChanged, ChkPol0.CheckedChanged, ChkPol1.CheckedChanged, ChkPol2.CheckedChanged, ChkPol3.CheckedChanged, ChkPol4.CheckedChanged, ChkPol5.CheckedChanged, ChkPol6.CheckedChanged, ChkPol7.CheckedChanged, ChkPol8.CheckedChanged, ChkPol9.CheckedChanged, ChkPol10.CheckedChanged, ChkPol12.CheckedChanged, ChkPol11.CheckedChanged, ChkPol13.CheckedChanged, ChkPol14.CheckedChanged, ChkPol15.CheckedChanged, ChkPol16.CheckedChanged, ChkPol17.CheckedChanged, ChkPol18.CheckedChanged, ChkPol19.CheckedChanged, ChkPol20.CheckedChanged, ChkPol21.CheckedChanged, ChkPol22.CheckedChanged, ChkPol23.CheckedChanged, ChkPol24.CheckedChanged, ChkPol25.CheckedChanged, ChkHail0.CheckedChanged, ChkFire0.CheckedChanged, ChkSol0.CheckedChanged, ChkSol1.CheckedChanged, ChkSol2.CheckedChanged, ChkMt0.CheckedChanged, ChkMt1.CheckedChanged, ChkMt2.CheckedChanged, ChkMt3.CheckedChanged, ChkMt4.CheckedChanged, ChkMt5.CheckedChanged, ChkMt6.CheckedChanged, ChkMt7.CheckedChanged, ChkMt8.CheckedChanged, ChkMt9.CheckedChanged, ChkMt10.CheckedChanged, ChkMt11.CheckedChanged, ChkMt12.CheckedChanged, ChkMt13.CheckedChanged, ChkMt14.CheckedChanged, ChkLand0.CheckedChanged, ChkLand1.CheckedChanged, ChkLand2.CheckedChanged, ChkLand3.CheckedChanged, ChkLand4.CheckedChanged, ChkLand5.CheckedChanged, ChkLand6.CheckedChanged, ChkLand7.CheckedChanged, ChkLand8.CheckedChanged, ChkLand9.CheckedChanged
         With DirectCast(sender, CheckBox)
@@ -318,7 +352,6 @@ Public Class FrmMainv4
                     My.Settings.TlLand8 = .Checked
                 Case 88
                     My.Settings.TlLand9 = .Checked
-
                 Case Else
                     Exit Select
             End Select
@@ -346,32 +379,16 @@ Public Class FrmMainv4
         End If
     End Sub
 
-    Private Sub BtnFdCheck_Click(sender As Object, e As EventArgs) Handles BtnFdCheck.Click
-        For Each c As CheckBox In FlpDataFields.Controls.OfType(Of CheckBox)()
-            If Not c.Checked And c.Enabled Then
-                c.Checked = True
-            End If
-        Next
-        My.Settings.Save()
-    End Sub
-
-    Private Sub BtnFdUncheck_Click(sender As Object, e As EventArgs) Handles BtnFdUncheck.Click
-        For Each c As CheckBox In FlpDataFields.Controls.OfType(Of CheckBox)()
-            If c.Checked Then
-                c.Checked = False
-            End If
-        Next
-        My.Settings.Save()
-    End Sub
-
 #End Region
 
 #Region "App Settings"
 
-    Private Sub Units(sender As Object, e As EventArgs) Handles RbDataUnits0.CheckedChanged, RbDataUnits1.CheckedChanged
-        Dim ct = DirectCast(sender, RadioButton)
-        My.Settings.Units = CInt(ct.Tag)
-        My.Settings.Save()
+    Private Sub BtnNewPointLocation_Click(sender As Object, e As EventArgs) Handles BtnNewPointLocation.Click
+        If String.IsNullOrEmpty(TxtLocationName.Text) OrElse String.IsNullOrEmpty(TxtPointLat.Text) OrElse String.IsNullOrEmpty(TxtPointLong.Text) Then
+            MsgBox("Cannot fetch location, data missing!")
+        Else
+            CreateNewPointLocation()
+        End If
     End Sub
 
     Private Sub ImgStyle(sender As Object, e As EventArgs) Handles RbImgStyle0.CheckedChanged, RbImgStyle1.CheckedChanged
@@ -381,6 +398,43 @@ Public Class FrmMainv4
         For j = 0 To 3
             ImgPbArr(j).Image = Image.FromFile(Path.Combine(IconDir, "PNG", "COLOR", ImgStyleArr(My.Settings.ImageStyle), ImgSamp(j)))
         Next
+    End Sub
+
+    Private Sub LocationData(sender As Object, e As EventArgs) Handles NumLat.ValueChanged, NumLong.ValueChanged, NumTlInterval.ValueChanged, NumLogKeepDays.ValueChanged
+        With DirectCast(sender, NumericUpDown)
+            Select Case CInt(.Tag)
+                Case 0
+                    My.Settings.cLatitude = .Value
+                Case 1
+                    My.Settings.cLongitude = .Value
+                Case 2
+                    My.Settings.UpdateInt_Timelines = CInt(.Value)
+                Case 3
+                    My.Settings.Log_KeepDays = CInt(.Value)
+                Case Else
+                    Exit Select
+            End Select
+        End With
+        My.Settings.Save()
+    End Sub
+
+    Private Sub LogBooleans(sender As Object, e As EventArgs) Handles ChkLogBool0.CheckedChanged, ChkLogBool1.CheckedChanged
+        With DirectCast(sender, CheckBox)
+            Select Case CInt(.Tag)
+                Case 0
+                    My.Settings.Log_Images = .Checked
+                Case 1
+                    My.Settings.Log_Headers = .Checked
+                Case Else
+                    Exit Select
+            End Select
+        End With
+        My.Settings.Save()
+    End Sub
+
+    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLat.Enter, NumLong.Enter, NumLogKeepDays.Enter, NumTlInterval.Enter
+        Dim ct = DirectCast(sender, NumericUpDown)
+        ct.Select(0, ct.Text.Length)
     End Sub
 
     Private Sub TimeSteps(sender As Object, e As EventArgs) Handles ChkTs1m.CheckedChanged, ChkTs5m.CheckedChanged, ChkTs15m.CheckedChanged, ChkTs30m.CheckedChanged, ChkTs1h.CheckedChanged, ChkTs1d.CheckedChanged, ChkTsCur.CheckedChanged
@@ -428,34 +482,6 @@ Public Class FrmMainv4
         LblNumTsSelected.Text = String.Format(LblNumTsSelected.Tag.ToString, ct)
     End Sub
 
-    Private Sub TxtApiKey_TextChanged(sender As Object, e As EventArgs) Handles TxtApiKey.TextChanged
-        My.Settings.ApiKey = TxtApiKey.Text
-        My.Settings.Save()
-    End Sub
-
-    Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLat.Enter, NumLong.Enter, NumLogKeepDays.Enter, NumTlInterval.Enter
-        Dim ct = DirectCast(sender, NumericUpDown)
-        ct.Select(0, ct.Text.Length)
-    End Sub
-
-    Private Sub LocationData(sender As Object, e As EventArgs) Handles NumLat.ValueChanged, NumLong.ValueChanged, NumTlInterval.ValueChanged, NumLogKeepDays.ValueChanged
-        With DirectCast(sender, NumericUpDown)
-            Select Case CInt(.Tag)
-                Case 0
-                    My.Settings.cLatitude = .Value
-                Case 1
-                    My.Settings.cLongitude = .Value
-                Case 2
-                    My.Settings.UpdateInt_Timelines = CInt(.Value)
-                Case 3
-                    My.Settings.Log_KeepDays = CInt(.Value)
-                Case Else
-                    Exit Select
-            End Select
-        End With
-        My.Settings.Save()
-    End Sub
-
     ''' <summary>
     ''' only allowed 50 fields checked so, let's count them when we enter the tabpage
     ''' </summary>
@@ -481,26 +507,15 @@ Public Class FrmMainv4
         LblNumTsSelected.Text = String.Format(LblNumTsSelected.Tag.ToString, ct)
     End Sub
 
-    Private Sub LogBooleans(sender As Object, e As EventArgs) Handles ChkLogBool0.CheckedChanged, ChkLogBool1.CheckedChanged
-        With DirectCast(sender, CheckBox)
-            Select Case CInt(.Tag)
-                Case 0
-                    My.Settings.Log_Images = .Checked
-                Case 1
-                    My.Settings.Log_Headers = .Checked
-                Case Else
-                    Exit Select
-            End Select
-        End With
+    Private Sub TxtApiKey_TextChanged(sender As Object, e As EventArgs) Handles TxtApiKey.TextChanged
+        My.Settings.ApiKey = TxtApiKey.Text
         My.Settings.Save()
     End Sub
 
-    Private Sub BtnNewPointLocation_Click(sender As Object, e As EventArgs) Handles BtnNewPointLocation.Click
-        If String.IsNullOrEmpty(TxtLocationName.Text) OrElse String.IsNullOrEmpty(TxtPointLat.Text) OrElse String.IsNullOrEmpty(TxtPointLong.Text) Then
-            MsgBox("Cannot fetch location, data missing!")
-        Else
-            CreateNewPointLocation()
-        End If
+    Private Sub Units(sender As Object, e As EventArgs) Handles RbDataUnits0.CheckedChanged, RbDataUnits1.CheckedChanged
+        Dim ct = DirectCast(sender, RadioButton)
+        My.Settings.Units = CInt(ct.Tag)
+        My.Settings.Save()
     End Sub
 
 #End Region
@@ -514,10 +529,9 @@ Public Class FrmMainv4
         End If
     End Sub
 
-    Private Sub MinimizeForm(sender As Object, e As EventArgs) Handles MinimizeToolStripMenuItem.Click
-        TIcon.Visible = True
-        WindowState = FormWindowState.Minimized
-        ShowInTaskbar = False
+    Private Sub LocateForm(sender As Object, e As EventArgs) Handles LocateToolStripMenuItem.Click
+        Top = 150
+        Left = 175
     End Sub
 
     Private Sub MaximizeForm(sender As Object, e As EventArgs) Handles MaximizeToolStripMenuItem.Click
@@ -529,6 +543,12 @@ Public Class FrmMainv4
         Show()
     End Sub
 
+    Private Sub MinimizeForm(sender As Object, e As EventArgs) Handles MinimizeToolStripMenuItem.Click
+        TIcon.Visible = True
+        WindowState = FormWindowState.Minimized
+        ShowInTaskbar = False
+    End Sub
+
     Private Sub TIcon_Click(sender As Object, e As MouseEventArgs) Handles TIcon.MouseDoubleClick
         'https://www.codeproject.com/questions/642452/multiple-notify-icon-in-tray-issue
         Me.WindowState = FormWindowState.Normal
@@ -536,14 +556,26 @@ Public Class FrmMainv4
         ShowInTaskbar = True
     End Sub
 
-    Private Sub LocateForm(sender As Object, e As EventArgs) Handles LocateToolStripMenuItem.Click
-        Top = 150
-        Left = 175
-    End Sub
-
 #End Region
 
 #Region "About"
+
+    Private Shared Function CalcUpTime() As TimeSpan
+        'https://stackoverflow.com/questions/972105/retrieve-system-uptime-using-c-sharp
+        Dim uptimeTs As New TimeSpan()
+        Try
+            Using pc As New PerformanceCounter($"System", "System Up Time")
+                pc.NextValue()
+                uptimeTs = TimeSpan.FromSeconds(pc.NextValue())
+                Return uptimeTs
+            End Using
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            'a
+        End Try
+        Return uptimeTs
+    End Function
 
     ''' <summary>
     ''' if you get "cannot load counter name data" error
@@ -563,25 +595,6 @@ Public Class FrmMainv4
         Dim x = Process.GetCurrentProcess()
         LblMemory.Text = $"Memory: {x.WorkingSet64 / 1024:N0} K{vbLf}{vbLf}Paged: {x.PagedMemorySize64 / 1024:N0} K"
     End Sub
-
-    Private Shared Function CalcUpTime() As TimeSpan
-        'https://stackoverflow.com/questions/972105/retrieve-system-uptime-using-c-sharp
-        Dim uptimeTs As New TimeSpan()
-        Try
-            Using pc As New PerformanceCounter($"System", "System Up Time")
-                pc.NextValue()
-                uptimeTs = TimeSpan.FromSeconds(pc.NextValue())
-                Return uptimeTs
-            End Using
-        Catch ex As Exception
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
-        Finally
-            'a
-        End Try
-        Return uptimeTs
-    End Function
-
-
 
 #End Region
 

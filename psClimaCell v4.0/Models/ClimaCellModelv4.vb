@@ -48,14 +48,11 @@ Partial Public Class Values
     <JsonPropertyName("soilMoistureVolumetric100To200")> Public Property Moisture100To200 As Double?
     <JsonPropertyName("soilMoistureVolumetric10To40")> Public Property Moisture10To40 As Double?
     <JsonPropertyName("soilMoistureVolumetric40To100")> Public Property Moisture40To100 As Double?
-
-
     <JsonPropertyName("soilTemperature0To10")> Public Property SoilTemp0To10 As Double?
     <JsonPropertyName("soilTemperature0To200")> Public Property SoilTemp0To200 As Double?
     <JsonPropertyName("soilTemperature100To200")> Public Property SoilTemp100To200 As Double?
     <JsonPropertyName("soilTemperature10To40")> Public Property SoilTemp10To40 As Double?
     <JsonPropertyName("soilTemperature40To100")> Public Property SoilTemp40To100 As Double?
-
     <JsonPropertyName("moonPhase")> Public Property MoonPhase As Integer?
     <JsonPropertyName("pollutantNO2")> Public Property NO2 As Double?
     <JsonPropertyName("pollutantO3")> Public Property O3 As Double?
@@ -69,6 +66,8 @@ Partial Public Class Values
     <JsonPropertyName("humidity")> Public Property RH As Double?
     <JsonPropertyName("pollutantSO2")> Public Property SO2 As Double?
     <JsonPropertyName("solarGHI")> Public Property SolarGHI As Double?
+    <JsonPropertyName("solarDNI")> Public Property SolarDNI As Double?
+    <JsonPropertyName("solarDHI")> Public Property SolarDHI As Double?
     <JsonPropertyName("sunriseTime")> Public Property Sunrise As Date
     <JsonPropertyName("sunsetTime")> Public Property Sunset As Date
     <JsonPropertyName("temperature")> Public Property Temp As Double?
