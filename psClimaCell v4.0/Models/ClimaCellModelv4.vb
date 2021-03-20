@@ -103,6 +103,21 @@ Partial Public Class Values
     <JsonPropertyName("windGust")> Public Property WindGust As Double?
     <JsonPropertyName("windSpeed")> Public Property WindSpeed As Double?
     <JsonPropertyName("weatherCode")> Public Property WxCode As Integer?
+    <JsonPropertyName("waveSignificantHeight")> Public Property WaveSignificantHeight As Double?
+    <JsonPropertyName("waveDirection")> Public Property WaveDirection As Double?
+    <JsonPropertyName("waveMeanPeriod")> Public Property WaveMeanPeriod As Double?
+    <JsonPropertyName("windWaveSignificantHeight")> Public Property WindWaveSignificantHeight As Double?
+    <JsonPropertyName("windWaveDirection")> Public Property WindWaveDirection As Double?
+    <JsonPropertyName("windWaveMeanPeriod")> Public Property WindWaveMeanPeriod As Double?
+    <JsonPropertyName("primarySwellSignificantHeight")> Public Property PrimarySwellSignificantHeight As Double?
+    <JsonPropertyName("primarySwellDirection")> Public Property PrimarySwellDirection As Double?
+    <JsonPropertyName("PrimarySwellMeanPeriod")> Public Property PrimarySwellMeanPeriod As Double?
+    <JsonPropertyName("secondarySwellSignificantHeight")> Public Property SecondarySwellSignificantHeight As Double?
+    <JsonPropertyName("secondarySwellDirection")> Public Property SecondarySwellDirection As Double?
+    <JsonPropertyName("secondarySwellMeanPeriod")> Public Property SecondarySwellMeanPeriod As Double?
+    <JsonPropertyName("tertiarySwellSignificantHeight")> Public Property TertiarySwellSignificantHeight As Double?
+    <JsonPropertyName("tertiarySwellDirection")> Public Property TertiarySwellDirection As Double?
+    <JsonPropertyName("tertiarySwellMeanPeriod")> Public Property TertiarySwellMeanPeriod As Double?
 End Class
 
 Partial Public Class Warning

@@ -664,6 +664,7 @@ Friend Module TimeLineRoutinesV4
             End Try
         End If
     End Sub
+
     Private Sub WriteData(ctl As DataGridView, ct As Integer, j As Integer)
         Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
         Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
@@ -944,8 +945,72 @@ Friend Module TimeLineRoutinesV4
             If tl.WeedGrassWeed IsNot Nothing AndAlso tl.WeedGrassWeed.HasValue Then
                 .Rows.Add("Weed Grass Weed Pollen Index", $"{GetPollenValue(tl.WeedGrassWeed.Value)}")
             End If
+
+            'Maritime data
+
+            If tl.WindWaveSignificantHeight IsNot Nothing AndAlso tl.WindWaveSignificantHeight.HasValue Then
+                .Rows.Add("Height of combined wind waves and swells", $"{tl.WindWaveSignificantHeight.Value} {unitNfo.WaveSignificantHeight}")
+            End If
+
+            If tl.WaveDirection IsNot Nothing AndAlso tl.WaveDirection.HasValue Then
+                .Rows.Add("Direction the combined wind waves and swells are moving in", $"{tl.WaveDirection.Value}{unitNfo.WaveDirection}")
+            End If
+
+            If tl.WaveMeanPeriod IsNot Nothing AndAlso tl.WaveMeanPeriod.HasValue Then
+                .Rows.Add("Frequency of combined wind waves and swells; or, the space and time between each wave", $"{tl.WaveMeanPeriod.Value} {unitNfo.WaveMeanPeriod}")
+            End If
+
+            If tl.WindWaveSignificantHeight IsNot Nothing AndAlso tl.WindWaveSignificantHeight.HasValue Then
+                .Rows.Add("Height of wind waves", $"{tl.WindWaveSignificantHeight.Value} {unitNfo.WindWaveSignificantHeight}")
+            End If
+
+            If tl.WindWaveDirection IsNot Nothing AndAlso tl.WindWaveDirection.HasValue Then
+                .Rows.Add("Direction the combined wind waves and swells are moving in", $"{tl.WindWaveDirection.Value}{unitNfo.WindWaveDirection}")
+            End If
+
+            If tl.WindWaveMeanPeriod IsNot Nothing AndAlso tl.WindWaveMeanPeriod.HasValue Then
+                .Rows.Add("Frequency of combined wind waves and swells; or, the space and time between each wave", $"{tl.WindWaveMeanPeriod.Value} {unitNfo.WindWaveMeanperiod}")
+            End If
+
+            If tl.PrimarySwellSignificantHeight IsNot Nothing AndAlso tl.PrimarySwellSignificantHeight.HasValue Then
+                .Rows.Add("Height of primary swell", $"{tl.PrimarySwellSignificantHeight.Value} {unitNfo.PrimarySwellSignificantHeight}")
+            End If
+
+            If tl.PrimarySwellDirection IsNot Nothing AndAlso tl.PrimarySwellDirection.HasValue Then
+                .Rows.Add("Direction the primary swells are moving in", $"{tl.PrimarySwellDirection.Value}{unitNfo.PrimarySwellDirection}")
+            End If
+
+            If tl.PrimarySwellMeanPeriod IsNot Nothing AndAlso tl.PrimarySwellMeanPeriod.HasValue Then
+                .Rows.Add("Frequency of primary swells; or, the space and time between each wave", $"{tl.PrimarySwellMeanPeriod.Value} {unitNfo.PrimarySwellMeanPeriod}")
+            End If
+
+            If tl.SecondarySwellSignificantHeight IsNot Nothing AndAlso tl.SecondarySwellSignificantHeight.HasValue Then
+                .Rows.Add("Height of secondary swells", $"{tl.SecondarySwellSignificantHeight.Value} {unitNfo.SecondarySwellSignificantHeight}")
+            End If
+
+            If tl.SecondarySwellDirection IsNot Nothing AndAlso tl.SecondarySwellDirection.HasValue Then
+                .Rows.Add("Direction the secondary swells are moving in", $"{tl.SecondarySwellDirection.Value}{unitNfo.SecondarySwellDirection}")
+            End If
+
+            If tl.SecondarySwellMeanPeriod IsNot Nothing AndAlso tl.SecondarySwellMeanPeriod.HasValue Then
+                .Rows.Add("Frequency of secondary swells; or, the space and time between each wave", $"{tl.SecondarySwellMeanPeriod.Value} {unitNfo.SecondarySwellMeanPeriod}")
+            End If
+
+            If tl.TertiarySwellSignificantHeight IsNot Nothing AndAlso tl.TertiarySwellSignificantHeight.HasValue Then
+                .Rows.Add("Height of tertiary swells", $"{tl.TertiarySwellSignificantHeight.Value} {unitNfo.TertiarySwellSignificantHeight}")
+            End If
+
+            If tl.TertiarySwellDirection IsNot Nothing AndAlso tl.TertiarySwellDirection.HasValue Then
+                .Rows.Add("Direction the tertiary swells are moving in", $"{tl.TertiarySwellDirection.Value}{unitNfo.TertiarySwellDirection}")
+            End If
+
+            If tl.TertiarySwellMeanPeriod IsNot Nothing AndAlso tl.TertiarySwellMeanPeriod.HasValue Then
+                .Rows.Add("Frequency of tertiary swells; or, the space and time between each wave", $"{tl.TertiarySwellMeanPeriod.Value} {unitNfo.TertiarySwellMeanPeriod}")
+            End If
+
         End With
     End Sub
+
     Private Sub WriteWarnings()
         Try
             With FrmMainv4.DgvWarnings
