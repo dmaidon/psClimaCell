@@ -19,7 +19,7 @@ Public Class FrmMainv4
         End If
     End Sub
 
-    Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvDaily.CellClick, DgvHour.CellClick, DgvCurrent.CellClick, Dgv1Min.CellClick, Dgv5Min.CellClick, Dgv15Min.CellClick, Dgv30Min.CellClick
+    Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvDaily.CellClick, DgvCurrent.CellClick, DgvHour.CellClick, Dgv1Min.CellClick, Dgv5Min.CellClick, Dgv15Min.CellClick, Dgv30Min.CellClick, Dgv1dFull.CellClick
         With DirectCast(sender, DataGridView)
             Select Case CInt(.Tag)
                 Case 0
@@ -36,6 +36,8 @@ Public Class FrmMainv4
                     Dgv15Min.ClearSelection()
                 Case 6
                     Dgv30Min.ClearSelection()
+                Case 7
+                    Dgv1dFull.ClearSelection()
                 Case Else
                     Exit Sub
             End Select
@@ -584,16 +586,22 @@ Public Class FrmMainv4
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub TpAbout_Enter(sender As Object, e As EventArgs) Handles TpAbout.Enter
-        Dim ts = CalcUpTime()
-        Dim runtime = Date.Now - Process.GetCurrentProcess().StartTime
-        LblSysUpTime.Text =
-            $"System Uptime:{vbLf}{ts.TotalDays:N0} Days  {ts.Hours:N0} Hours  {ts.Minutes:N0} Minutes  {ts.Seconds:N0} Seconds{vbLf}{vbLf}Program Runtime:{vbLf}{ _
-                runtime.TotalDays:N0} Days  {runtime.Hours:N0} Hours  {runtime.Minutes:N0} Minutes  {runtime.Seconds:N0} Seconds"
+        Try
+            Dim ts = CalcUpTime()
+            Dim runtime = Date.Now - Process.GetCurrentProcess().StartTime
+            LblSysUpTime.Text =
+                $"System Uptime:{vbLf}{ts.TotalDays:N0} Days  {ts.Hours:N0} Hours  {ts.Minutes:N0} Minutes  {ts.Seconds:N0} Seconds{vbLf}{vbLf}Program Runtime:{vbLf}{ _
+                    runtime.TotalDays:N0} Days  {runtime.Hours:N0} Hours  {runtime.Minutes:N0} Minutes  {runtime.Seconds:N0} Seconds"
 
-        ''https://stackoverflow.com/questions/18039315/is-it-possible-to-determine-how-long-a-process-has-been-running
+            ''https://stackoverflow.com/questions/18039315/is-it-possible-to-determine-how-long-a-process-has-been-running
 
-        Dim x = Process.GetCurrentProcess()
-        LblMemory.Text = $"Memory: {x.WorkingSet64 / 1024:N0} K{vbLf}{vbLf}Paged: {x.PagedMemorySize64 / 1024:N0} K"
+            Dim x = Process.GetCurrentProcess()
+            LblMemory.Text = $"Memory: {x.WorkingSet64 / 1024:N0} K{vbLf}{vbLf}Paged: {x.PagedMemorySize64 / 1024:N0} K"
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            'a
+        End Try
     End Sub
 
 #End Region

@@ -21,13 +21,13 @@
   },
   "EpaConcernText": {
     "0": "(0-50)  Air quality is satisfactory and poses little or no health risk.",
-    "1": "(51-100)  Air quality is acceptable; however, pollution in this range may pose\n a moderate health concern for a very small number of individuals. People\n who are unusually sensitive to ozone or particle pollution may experience\n respiratory symptoms.",
-    "2": "(101-150)  Members of sensitive groups may experience health effects, but the\n general public is unlikely to be affected.",
-    "3": "(151-200)  Everyone may begin to experience health effects but members of sensitive\n groups may experience more serious health effects.",
-    "4": "(201-300)  Values Trigger a health alert, meaning everyone may experience more\n serious health effects.",
-    "5": "(300+)  AQI values over 300 trigger health warnings of emergency conditions. The\n entire population is even more likely to be affected by serious health\n effects."
+    "1": "(51-100)  Air quality is acceptable; however, pollution in this range may pose a moderate health concern for a very small number of individuals. People who are unusually sensitive to ozone or particle pollution may experience respiratory symptoms.",
+    "2": "(101-150)  Members of sensitive groups may experience health effects, but the general public is unlikely to be affected.",
+    "3": "(151-200)  Everyone may begin to experience health effects but members of sensitive groups may experience more serious health effects.",
+    "4": "(201-300)  Values Trigger a health alert, meaning everyone may experience more serious health effects.",
+    "5": "(300+)  AQI values over 300 trigger health warnings of emergency conditions. The entire population is even more likely to be affected by serious health effects."
   },
-  "HealthConcern": {
+     "HealthConcern": {
     "0": "Good",
     "1": "Moderate",
     "2": "Unhealthy for Sensitive Groups",

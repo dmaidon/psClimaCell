@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Globalization
+Imports System.IO
 Imports System.Net
 Imports System.Security
 Imports System.Text
@@ -291,12 +292,12 @@ Friend Module TimeLineRoutinesV4
                             FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp1Hr)
                             Write1hData(j)
                         Case "1d"
+                            FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.Tp1dFull)
                             FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.Tp1Day)
-                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp1dFull)
-                            Write1dData(j)
                             Write1dFullData(j)
+                            Write1dData(j)
                         Case "current"
-                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpCurrent)
+                            FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.TpCurrent)
                             WriteCurrentData(j)
                         Case Else
                             Exit Select
@@ -336,376 +337,6 @@ Friend Module TimeLineRoutinesV4
                 PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
             Finally
                 '
-            End Try
-        End If
-    End Sub
-
-    Private Sub Write1mData(ct As Integer)
-        PrintLog($"{vbLf}Writing timelines One Minute data @ {Now:F}.{vbLf}{vbLf}")
-        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
-            PrintLog($"One Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
-        Else
-            Try
-                With FrmMainv4.Dgv1Min
-                    .Rows.Clear()
-                    PrintLog($"**> One Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
-                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
-                        WriteData(FrmMainv4.Dgv1Min, ct, j)
-                        .ClearSelection()
-                        Application.DoEvents()
-                    Next
-                End With
-            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
-                If ex.InnerException IsNot Nothing Then
-                    ie = ex.InnerException.ToString
-                End If
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
-            Finally
-                'SaveLogs()
-            End Try
-        End If
-    End Sub
-
-    Private Sub Write30mData(ct As Integer)
-        PrintLog($"{vbLf}Writing timelines Thirth Minute data @ {Now:F}.{vbLf}{vbLf}")
-        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
-            PrintLog($"Thirty Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
-        Else
-            Try
-                With FrmMainv4.Dgv30Min
-                    .Rows.Clear()
-                    PrintLog($"**> Thirty Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
-                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
-                        WriteData(FrmMainv4.Dgv30Min, ct, j)
-                        .ClearSelection()
-                        Application.DoEvents()
-                    Next
-                End With
-            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
-                If ex.InnerException IsNot Nothing Then
-                    ie = ex.InnerException.ToString
-                End If
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
-            Finally
-                'SaveLogs()
-            End Try
-        End If
-    End Sub
-
-    Private Sub Write5mData(ct As Integer)
-        PrintLog($"{vbLf}Writing timelines Five Minute data @ {Now:F}.{vbLf}{vbLf}")
-        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
-            PrintLog($"Five Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
-        Else
-            Try
-                With FrmMainv4.Dgv5Min
-                    .Rows.Clear()
-                    PrintLog($"**> Five Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
-                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
-                        WriteData(FrmMainv4.Dgv5Min, ct, j)
-                        .ClearSelection()
-                        Application.DoEvents()
-                    Next
-                End With
-            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
-                If ex.InnerException IsNot Nothing Then
-                    ie = ex.InnerException.ToString
-                End If
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
-            Finally
-                'SaveLogs()
-            End Try
-        End If
-    End Sub
-
-    Private Sub WriteCurrentData(ct As Integer)
-        PrintLog($"{vbLf}Writing timelines current data @ {Now:F}.{vbLf}{vbLf}")
-        'no error checking to make sure individual fields exist in json file
-
-        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
-            PrintLog($"Current data does not exist @ {Now:F}.{vbLf}{vbLf}")
-        Else
-            Try
-                With FrmMainv4.DgvCurrent
-                    .Rows.Clear()
-                    PrintLog($"**> Current records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
-                    'WriteData(FrmMainv4.Dgv5Min, ct, j, false)
-                    'For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
-                    Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(0).Values
-                    .Rows.Add("Date", $"{tlNfo.WxData.TimeLines(ct).Intervals(0).StartTime.ToLocalTime:F}")
-                    If tl.Temp IsNot Nothing AndAlso tl.Temp.HasValue Then
-                        .Rows.Add($"Temperature", $"{tl.Temp:N0}{unitNfo.Temperature}")
-                    End If
-                    If tl.TempApparent IsNot Nothing AndAlso tl.TempApparent.HasValue Then
-                        .Rows.Add($"Feels Like", $"{tl.TempApparent.Value:N0}{unitNfo.Temperature}")
-                    End If
-
-                    If tl.WxCode IsNot Nothing AndAlso tl.WxCode.HasValue Then
-                        .Rows.Add($"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
-                    End If
-
-                    If tl.WindSpeed IsNot Nothing AndAlso tl.WindSpeed.HasValue Then
-                        Dim wd = If(tl.WindDir, vbNull)
-                        .Rows.Add("Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
-                    End If
-
-                    If tl.PrecipPct IsNot Nothing AndAlso tl.PrecipPct.HasValue Then
-                        .Rows.Add("Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
-                    End If
-
-                    If tl.PrecipType IsNot Nothing AndAlso tl.PrecipType.HasValue Then
-                        .Rows.Add("Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}")
-                    End If
-
-                    If tl.PrecipIntensity IsNot Nothing AndAlso tl.PrecipIntensity.HasValue Then
-                        .Rows.Add("Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}")
-                    End If
-
-                    If tl.HailProbability IsNot Nothing AndAlso tl.HailProbability.HasValue Then
-                        Dim hp As Boolean
-                        If tl.HailProbability <> 0 Then hp = True
-                        .Rows.Add("Chance of Hail", $"{hp}")
-                    End If
-
-                    If tl.PressureSurfaceLevel IsNot Nothing AndAlso tl.PressureSurfaceLevel.HasValue Then
-                        .Rows.Add($"Barometric Pressure{vbLf}Surface Level", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}")
-                    End If
-
-                    If tl.PressureSeaLevel IsNot Nothing AndAlso tl.PressureSeaLevel.HasValue Then
-                        .Rows.Add($"Barometric Pressure{vbLf}Sea Level", $"{tl.PressureSeaLevel.Value} {unitNfo.PressureSeaLevel}")
-                    End If
-
-                    If tl.Visibility IsNot Nothing AndAlso tl.Visibility.HasValue Then
-                        .Rows.Add($"Visibility", $"{tl.Visibility.Value:N0} {unitNfo.Visibility}")
-                    End If
-
-                    If tl.EpaIndex IsNot Nothing AndAlso tl.EpaIndex.HasValue Then
-                        .Rows.Add("Air Quality Index", $"{tl.EpaIndex.Value}")
-                    End If
-
-                    If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
-                        .Rows.Add("EPA Health Concern", $"{unitNfo.HealthConcern(tl.EpaHealthConcern.Value.ToString)}")
-                        'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
-                        'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
-                        'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
-                        .Rows(.Rows.Count - 1).Cells(1).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
-                        .Rows(.Rows.Count - 1).Cells(1).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
-                        .Rows(.Rows.Count - 1).Cells(1).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
-                    End If
-
-                    If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
-                        .Rows.Add("Health Concern Notes", $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}")
-                    End If
-
-                    If tl.EpaPrimaryPollutant IsNot Nothing AndAlso tl.EpaPrimaryPollutant.HasValue Then
-                        .Rows.Add("EPA Primary Pollutant", $"{unitNfo.PrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
-                    End If
-
-                    If tl.PM25 IsNot Nothing AndAlso tl.PM25.HasValue Then
-                        .Rows.Add($"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
-                    End If
-
-                    If tl.PM10 IsNot Nothing AndAlso tl.PM10.HasValue Then
-                        .Rows.Add($"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
-                    End If
-
-                    If tl.O3 IsNot Nothing AndAlso tl.O3.HasValue Then
-                        .Rows.Add($"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
-                    End If
-
-                    If tl.NO2 IsNot Nothing AndAlso tl.NO2.HasValue Then
-                        .Rows.Add($"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
-                    End If
-
-                    If tl.CO IsNot Nothing AndAlso tl.CO.HasValue Then
-                        .Rows.Add($"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
-                    End If
-
-                    If tl.SO2 IsNot Nothing AndAlso tl.SO2.HasValue Then
-                        .Rows.Add($"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
-                    End If
-
-                    If tl.SolarGHI IsNot Nothing AndAlso tl.SolarGHI.HasValue Then
-                        .Rows.Add($"Shortwave Radiation received{vbLf}Surface horizontal to ground", $"{tl.SolarGHI} {unitNfo.Solar}")
-                    End If
-
-                    If tl.SolarDHI IsNot Nothing AndAlso tl.SolarDHI.HasValue Then
-                        .Rows.Add($"Diffused, scattered component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDHI} {unitNfo.Solar}")
-                    End If
-
-                    If tl.SolarDNI IsNot Nothing AndAlso tl.SolarDNI.HasValue Then
-                        .Rows.Add($"Direct component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDNI} {unitNfo.Solar}")
-                    End If
-
-                    If tl.Moisture0To10 IsNot Nothing AndAlso tl.Moisture0To10.HasValue Then
-                        .Rows.Add($"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}{unitNfo.SoilMoistureVolume}")
-                    End If
-
-                    If tl.Moisture10To40 IsNot Nothing AndAlso tl.Moisture10To40.HasValue Then
-                        .Rows.Add($"Soil Moisture Volume{vbLf}10 to 40 cm", $"{tl.Moisture10To40}{unitNfo.SoilMoistureVolume}")
-                    End If
-
-                    If tl.Moisture40To100 IsNot Nothing AndAlso tl.Moisture40To100.HasValue Then
-                        .Rows.Add($"Soil Moisture Volume{vbLf}40 to 100 cm", $"{tl.Moisture40To100}{unitNfo.SoilMoistureVolume}")
-                    End If
-
-                    If tl.Moisture100To200 IsNot Nothing AndAlso tl.Moisture100To200.HasValue Then
-                        .Rows.Add($"Soil Moisture Volume{vbLf}100 to 200 cm", $"{tl.Moisture100To200}{unitNfo.SoilMoistureVolume}")
-                    End If
-
-                    If tl.Moisture0To200 IsNot Nothing AndAlso tl.Moisture0To200.HasValue Then
-                        .Rows.Add($"Soil Moisture Volume{vbLf}0 to 200 cm", $"{tl.Moisture0To200}{unitNfo.SoilMoistureVolume}")
-                    End If
-
-                    If tl.SoilTemp0To10 IsNot Nothing AndAlso tl.SoilTemp0To10.HasValue Then
-                        .Rows.Add($"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}{unitNfo.Temperature}")
-                    End If
-
-                    If tl.SoilTemp10To40 IsNot Nothing AndAlso tl.SoilTemp10To40.HasValue Then
-                        .Rows.Add($"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}{unitNfo.Temperature}")
-                    End If
-
-                    If tl.SoilTemp40To100 IsNot Nothing AndAlso tl.SoilTemp40To100.HasValue Then
-                        .Rows.Add($"Soil Temperature{vbLf}40 to 100 cm", $"{tl.SoilTemp40To100}{unitNfo.Temperature}")
-                    End If
-
-                    If tl.SoilTemp100To200 IsNot Nothing AndAlso tl.SoilTemp100To200.HasValue Then
-                        .Rows.Add($"Soil Temperature{vbLf}100 to 200 cm", $"{tl.SoilTemp100To200}{unitNfo.Temperature}")
-                    End If
-
-                    If tl.SoilTemp0To200 IsNot Nothing AndAlso tl.SoilTemp0To200.HasValue Then
-                        .Rows.Add($"Soil Temperature{vbLf}0 to 200 cm", $"{tl.SoilTemp0To200}{unitNfo.Temperature}")
-                    End If
-
-                    If tl.Tree IsNot Nothing AndAlso tl.Tree.HasValue Then
-                        .Rows.Add("Tree Pollen Index", $"{GetPollenValue(tl.Tree.Value)}")
-                    End If
-                    If tl.TreeAcacia IsNot Nothing AndAlso tl.TreeAcacia.HasValue Then
-                        .Rows.Add("Acacia Tree Pollen Index", $"{GetPollenValue(tl.TreeAcacia.Value)}")
-                    End If
-
-                    If tl.TreeAsh IsNot Nothing AndAlso tl.TreeAsh.HasValue Then
-                        .Rows.Add("Ash Tree Pollen Index", $"{GetPollenValue(tl.TreeAsh.Value)}")
-                    End If
-
-                    If tl.TreeBeech IsNot Nothing AndAlso tl.TreeBeech.HasValue Then
-                        .Rows.Add("Beech Tree Pollen Index", $"{GetPollenValue(tl.TreeBeech.Value)}")
-                    End If
-
-                    If tl.TreeBirch IsNot Nothing AndAlso tl.TreeBirch.HasValue Then
-                        .Rows.Add("Birch Tree Pollen Index", $"{GetPollenValue(tl.TreeBirch.Value)}")
-                    End If
-
-                    If tl.TreeCedar IsNot Nothing AndAlso tl.TreeCedar.HasValue Then
-                        .Rows.Add("Cedar Tree Pollen Index", $"{GetPollenValue(tl.TreeCedar.Value)}")
-                    End If
-
-                    If tl.TreeCottonwood IsNot Nothing AndAlso tl.TreeCottonwood.HasValue Then
-                        .Rows.Add("Cottonwood Tree Pollen Index", $"{GetPollenValue(tl.TreeCottonwood.Value)}")
-                    End If
-
-                    If tl.TreeCypress IsNot Nothing AndAlso tl.TreeCypress.HasValue Then
-                        .Rows.Add("Cypress Tree Pollen Index", $"{GetPollenValue(tl.TreeCypress.Value)}")
-                    End If
-
-                    If tl.TreeElder IsNot Nothing AndAlso tl.TreeElder.HasValue Then
-                        .Rows.Add("Elder Tree Pollen Index", $"{GetPollenValue(tl.TreeElder.Value)}")
-                    End If
-
-                    If tl.TreeElm IsNot Nothing AndAlso tl.TreeElm.HasValue Then
-                        .Rows.Add("Elm Tree Pollen Index", $"{GetPollenValue(tl.TreeElm.Value)}")
-                    End If
-
-                    If tl.TreeHemlock IsNot Nothing AndAlso tl.TreeHemlock.HasValue Then
-                        .Rows.Add("Hemlock Tree Pollen Index", $"{GetPollenValue(tl.TreeHemlock.Value)}")
-                    End If
-
-                    If tl.TreeHickory IsNot Nothing AndAlso tl.TreeHickory.HasValue Then
-                        .Rows.Add("Hickory Tree Pollen Index", $"{GetPollenValue(tl.TreeHickory.Value)}")
-                    End If
-
-                    If tl.TreeJuniper IsNot Nothing AndAlso tl.TreeJuniper.HasValue Then
-                        .Rows.Add("Juniper Tree Pollen Index", $"{GetPollenValue(tl.TreeJuniper.Value)}")
-                    End If
-
-                    If tl.TreeMahogany IsNot Nothing AndAlso tl.TreeMahogany.HasValue Then
-                        .Rows.Add("Mahogany Tree Pollen Index", $"{GetPollenValue(tl.TreeMahogany.Value)}")
-                    End If
-
-                    If tl.TreeMaple IsNot Nothing AndAlso tl.TreeMaple.HasValue Then
-                        .Rows.Add("Maple Tree Pollen Index", $"{GetPollenValue(tl.TreeMaple.Value)}")
-                    End If
-
-                    If tl.TreeMulberry IsNot Nothing AndAlso tl.TreeMulberry.HasValue Then
-                        .Rows.Add("Mulberry Tree Pollen Index", $"{GetPollenValue(tl.TreeMulberry.Value)}")
-                    End If
-
-                    If tl.TreeOak IsNot Nothing AndAlso tl.TreeOak.HasValue Then
-                        .Rows.Add("Oak Tree Pollen Index", $"{GetPollenValue(tl.TreeOak.Value)}")
-                    End If
-
-                    If tl.TreePine IsNot Nothing AndAlso tl.TreePine.HasValue Then
-                        .Rows.Add("Pine Tree Pollen Index", $"{GetPollenValue(tl.TreePine.Value)}")
-                    End If
-
-                    If tl.TreeSpruce IsNot Nothing AndAlso tl.TreeSpruce.HasValue Then
-                        .Rows.Add("Spruce Tree Pollen Index", $"{GetPollenValue(tl.TreeSpruce.Value)}")
-                    End If
-
-                    If tl.TreeSycamore IsNot Nothing AndAlso tl.TreeSycamore.HasValue Then
-                        .Rows.Add("Sycamore Tree Pollen Index", $"{GetPollenValue(tl.TreeSycamore.Value)}")
-                    End If
-
-                    If tl.TreeWalnut IsNot Nothing AndAlso tl.TreeWalnut.HasValue Then
-                        .Rows.Add("Walnut Tree Pollen Index", $"{GetPollenValue(tl.TreeWalnut.Value)}")
-                    End If
-
-                    If tl.TreeWillow IsNot Nothing AndAlso tl.TreeWillow.HasValue Then
-                        .Rows.Add("Willow Tree Pollen Index", $"{GetPollenValue(tl.TreeWillow.Value)}")
-                    End If
-
-                    If tl.Grass IsNot Nothing AndAlso tl.Grass.HasValue Then
-                        .Rows.Add("Grass Pollen Index", $"{GetPollenValue(tl.Grass.Value)}")
-                    End If
-
-                    If tl.GrassGrass IsNot Nothing AndAlso tl.GrassGrass.HasValue Then
-                        .Rows.Add("Grass Grass Pollen Index", $"{GetPollenValue(tl.GrassGrass.Value)}")
-                    End If
-
-                    If tl.Weed IsNot Nothing AndAlso tl.Weed.HasValue Then
-                        .Rows.Add("Weed Pollen Index", $"{GetPollenValue(tl.Weed.Value)}")
-                    End If
-
-                    If tl.WeedGrassWeed IsNot Nothing AndAlso tl.WeedGrassWeed.HasValue Then
-                        .Rows.Add("Weed Grass Weed Pollen Index", $"{GetPollenValue(tl.WeedGrassWeed.Value)}")
-                    End If
-
-                    .ClearSelection()
-                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), $"{tl.WxCode.Value}.png")
-                    If My.Settings.Log_Images Then PrintLog($"{0}. Current: {icn} --> Load{vbLf}")
-                    Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
-                       Color.LightSkyBlue,
-                       Color.Gray)
-                    With FrmMainv4
-                        .TpCurrent.BackColor = bgClr
-                        .DgvCurrent.BackgroundColor = bgClr
-                        .PbCurImage.BackgroundImage = If(File.Exists(icn),
-                        Image.FromFile(icn),
-                        Image.FromFile(Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), "0.png")))
-                    End With
-                    Application.DoEvents()
-                    'Next
-                    'write the current weather to the Tray Icon
-                    FrmMainv4.TIcon.Text = unitNfo.WeatherCode(CStr(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.WxCode.Value))
-                    .ClearSelection()
-                End With
-            Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
-                If ex.InnerException IsNot Nothing Then
-                    ie = ex.InnerException.ToString
-                End If
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
-            Finally
-                'SaveLogs()
             End Try
         End If
     End Sub
@@ -862,282 +493,30 @@ Friend Module TimeLineRoutinesV4
         End If
     End Sub
 
-    Private Sub WriteData(ctl As DataGridView, ct As Integer, j As Integer)
-        Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
-        Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
-        With ctl
-            .Rows.Add($"{tld.StartTime.ToLocalTime:MMM d}", $"{tld.StartTime.ToLocalTime:h:mm tt}")
-
-            If tl.TempMax IsNot Nothing AndAlso tl.TempMax.HasValue Then
-                .Rows.Add("", "", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
-            End If
-
-            If tl.WxCode IsNot Nothing AndAlso tl.WxCode.HasValue Then
-                .Rows.Add("", "", $"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
-            End If
-
-            If tl.RH IsNot Nothing AndAlso tl.RH.HasValue Then
-                .Rows.Add("", "", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
-            End If
-
-            If tl.Dewpoint IsNot Nothing AndAlso tl.Dewpoint.HasValue Then
-                .Rows.Add("", "", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.Temperature}")
-            End If
-
-            If tl.WindSpeed IsNot Nothing AndAlso tl.WindSpeed.HasValue Then
-                Dim wd = If(tl.WindDir, vbNull)
-                .Rows.Add("", "", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
-            End If
-
-            If tl.PrecipPct IsNot Nothing AndAlso tl.PrecipPct.HasValue Then
-                .Rows.Add("", "", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
-            End If
-
-            If tl.PrecipType IsNot Nothing AndAlso tl.PrecipType.HasValue Then
-                .Rows.Add("", "", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}")
-            End If
-
-            If tl.PrecipIntensity IsNot Nothing AndAlso tl.PrecipIntensity.HasValue Then
-                .Rows.Add("", "", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}")
-            End If
-
-            If tl.HailProbability IsNot Nothing AndAlso tl.HailProbability.HasValue Then
-                Dim hp As Boolean
-                If tl.HailProbability <> 0 Then hp = True
-                .Rows.Add("", "", "Chance of Hail", $"{hp}")
-            End If
-
-            If tl.PressureSurfaceLevel IsNot Nothing AndAlso tl.PressureSurfaceLevel.HasValue Then
-                .Rows.Add("", "", $"Barometric Pressure{vbLf}Surface Level", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}")
-            End If
-
-            If tl.PressureSeaLevel IsNot Nothing AndAlso tl.PressureSeaLevel.HasValue Then
-                .Rows.Add("", "", $"Barometric Pressure{vbLf}Sea Level", $"{tl.PressureSeaLevel.Value} {unitNfo.PressureSeaLevel}")
-            End If
-
-            If tl.CloudCover IsNot Nothing AndAlso tl.CloudCover.HasValue Then
-                .Rows.Add("", "", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
-            End If
-
-            If tl.CloudBase IsNot Nothing AndAlso tl.CloudBase.HasValue Then
-                .Rows.Add("", "", "Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
-                .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_base
-            End If
-
-            If tl.CloudCeiling IsNot Nothing AndAlso tl.CloudCeiling.HasValue Then
-                .Rows.Add("", "", "Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
-                .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_celiing
-            End If
-
-            If tl.Visibility IsNot Nothing AndAlso tl.Visibility.HasValue Then
-                .Rows.Add("", "", $"Visibility", $"{tl.Visibility.Value:N0} {unitNfo.Visibility}")
-            End If
-
-            If tl.EpaIndex IsNot Nothing AndAlso tl.EpaIndex.HasValue Then
-                .Rows.Add("", "", "Air Quality Index", $"{tl.EpaIndex.Value}")
-            End If
-
-            If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
-                .Rows.Add("", "", "EPA Health Concern", $"{unitNfo.HealthConcern(tl.EpaHealthConcern.Value.ToString)}")
-                'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
-                'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
-                'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
-                .Rows(.Rows.Count - 1).Cells(3).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
-                .Rows(.Rows.Count - 1).Cells(3).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
-                .Rows(.Rows.Count - 1).Cells(3).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
-            End If
-
-            If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
-                .Rows.Add("", "", "Health Concern Notes", $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}")
-            End If
-
-            If tl.EpaPrimaryPollutant IsNot Nothing AndAlso tl.EpaPrimaryPollutant.HasValue Then
-                .Rows.Add("", "", "EPA Primary Pollutant", $"{unitNfo.PrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
-            End If
-
-            If tl.PM25 IsNot Nothing AndAlso tl.PM25.HasValue Then
-                .Rows.Add("", "", $"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
-            End If
-
-            If tl.PM10 IsNot Nothing AndAlso tl.PM10.HasValue Then
-                .Rows.Add("", "", $"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
-            End If
-
-            If tl.O3 IsNot Nothing AndAlso tl.O3.HasValue Then
-                .Rows.Add("", "", $"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
-            End If
-
-            If tl.NO2 IsNot Nothing AndAlso tl.NO2.HasValue Then
-                .Rows.Add("", "", $"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
-            End If
-
-            If tl.CO IsNot Nothing AndAlso tl.CO.HasValue Then
-                .Rows.Add("", "", $"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
-            End If
-
-            If tl.SO2 IsNot Nothing AndAlso tl.SO2.HasValue Then
-                .Rows.Add("", "", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
-            End If
-
-            If tl.FireIndex IsNot Nothing AndAlso tl.FireIndex.HasValue Then
-                .Rows.Add("", "", $"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
-            End If
-
-            If tl.SolarGHI IsNot Nothing AndAlso tl.SolarGHI.HasValue Then
-                .Rows.Add("", "", $"Shortwave Radiation received{vbLf}Surface horizontal to ground", $"{tl.SolarGHI} {unitNfo.Solar}")
-            End If
-
-            If tl.SolarDHI IsNot Nothing AndAlso tl.SolarDHI.HasValue Then
-                .Rows.Add("", "", $"Diffused, scattered component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDHI} {unitNfo.Solar}")
-            End If
-
-            If tl.SolarDNI IsNot Nothing AndAlso tl.SolarDNI.HasValue Then
-                .Rows.Add("", "", $"Direct component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDNI} {unitNfo.Solar}")
-            End If
-
-            If tl.Moisture0To10 IsNot Nothing AndAlso tl.Moisture0To10.HasValue Then
-                .Rows.Add("", "", $"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}{unitNfo.SoilMoistureVolume}")
-            End If
-
-            If tl.Moisture10To40 IsNot Nothing AndAlso tl.Moisture10To40.HasValue Then
-                .Rows.Add("", "", $"Soil Moisture Volume{vbLf}10 to 40 cm", $"{tl.Moisture10To40}{unitNfo.SoilMoistureVolume}")
-            End If
-
-            If tl.Moisture40To100 IsNot Nothing AndAlso tl.Moisture40To100.HasValue Then
-                .Rows.Add("", "", $"Soil Moisture Volume{vbLf}40 to 100 cm", $"{tl.Moisture40To100}{unitNfo.SoilMoistureVolume}")
-            End If
-
-            If tl.Moisture100To200 IsNot Nothing AndAlso tl.Moisture100To200.HasValue Then
-                .Rows.Add("", "", $"Soil Moisture Volume{vbLf}100 to 200 cm", $"{tl.Moisture100To200}{unitNfo.SoilMoistureVolume}")
-            End If
-
-            If tl.Moisture0To200 IsNot Nothing AndAlso tl.Moisture0To200.HasValue Then
-                .Rows.Add("", "", $"Soil Moisture Volume{vbLf}0 to 200 cm", $"{tl.Moisture0To200}{unitNfo.SoilMoistureVolume}")
-            End If
-
-            If tl.SoilTemp0To10 IsNot Nothing AndAlso tl.SoilTemp0To10.HasValue Then
-                .Rows.Add("", "", $"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}{unitNfo.Temperature}")
-            End If
-
-            If tl.SoilTemp10To40 IsNot Nothing AndAlso tl.SoilTemp10To40.HasValue Then
-                .Rows.Add("", "", $"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}{unitNfo.Temperature}")
-            End If
-
-            If tl.SoilTemp40To100 IsNot Nothing AndAlso tl.SoilTemp40To100.HasValue Then
-                .Rows.Add("", "", $"Soil Temperature{vbLf}40 to 100 cm", $"{tl.SoilTemp40To100}{unitNfo.Temperature}")
-            End If
-
-            If tl.SoilTemp100To200 IsNot Nothing AndAlso tl.SoilTemp100To200.HasValue Then
-                .Rows.Add("", "", $"Soil Temperature{vbLf}100 to 200 cm", $"{tl.SoilTemp100To200}{unitNfo.Temperature}")
-            End If
-
-            If tl.SoilTemp0To200 IsNot Nothing AndAlso tl.SoilTemp0To200.HasValue Then
-                .Rows.Add("", "", $"Soil Temperature{vbLf}0 to 200 cm", $"{tl.SoilTemp0To200}{unitNfo.Temperature}")
-            End If
-
-            If tl.Tree IsNot Nothing AndAlso tl.Tree.HasValue Then
-                .Rows.Add("", "", "Tree Pollen Index", $"{GetPollenValue(tl.Tree.Value)}")
-            End If
-            If tl.TreeAcacia IsNot Nothing AndAlso tl.TreeAcacia.HasValue Then
-                .Rows.Add("", "", "Acacia Tree Pollen Index", $"{GetPollenValue(tl.TreeAcacia.Value)}")
-            End If
-
-            If tl.TreeAsh IsNot Nothing AndAlso tl.TreeAsh.HasValue Then
-                .Rows.Add("", "", "Ash Tree Pollen Index", $"{GetPollenValue(tl.TreeAsh.Value)}")
-            End If
-
-            If tl.TreeBeech IsNot Nothing AndAlso tl.TreeBeech.HasValue Then
-                .Rows.Add("", "", "Beech Tree Pollen Index", $"{GetPollenValue(tl.TreeBeech.Value)}")
-            End If
-
-            If tl.TreeBirch IsNot Nothing AndAlso tl.TreeBirch.HasValue Then
-                .Rows.Add("", "", "Birch Tree Pollen Index", $"{GetPollenValue(tl.TreeBirch.Value)}")
-            End If
-
-            If tl.TreeCedar IsNot Nothing AndAlso tl.TreeCedar.HasValue Then
-                .Rows.Add("", "", "Cedar Tree Pollen Index", $"{GetPollenValue(tl.TreeCedar.Value)}")
-            End If
-
-            If tl.TreeCottonwood IsNot Nothing AndAlso tl.TreeCottonwood.HasValue Then
-                .Rows.Add("", "", "Cottonwood Tree Pollen Index", $"{GetPollenValue(tl.TreeCottonwood.Value)}")
-            End If
-
-            If tl.TreeCypress IsNot Nothing AndAlso tl.TreeCypress.HasValue Then
-                .Rows.Add("", "", "Cypress Tree Pollen Index", $"{GetPollenValue(tl.TreeCypress.Value)}")
-            End If
-
-            If tl.TreeElder IsNot Nothing AndAlso tl.TreeElder.HasValue Then
-                .Rows.Add("", "", "Elder Tree Pollen Index", $"{GetPollenValue(tl.TreeElder.Value)}")
-            End If
-
-            If tl.TreeElm IsNot Nothing AndAlso tl.TreeElm.HasValue Then
-                .Rows.Add("", "", "Elm Tree Pollen Index", $"{GetPollenValue(tl.TreeElm.Value)}")
-            End If
-
-            If tl.TreeHemlock IsNot Nothing AndAlso tl.TreeHemlock.HasValue Then
-                .Rows.Add("", "", "Hemlock Tree Pollen Index", $"{GetPollenValue(tl.TreeHemlock.Value)}")
-            End If
-
-            If tl.TreeHickory IsNot Nothing AndAlso tl.TreeHickory.HasValue Then
-                .Rows.Add("", "", "Hickory Tree Pollen Index", $"{GetPollenValue(tl.TreeHickory.Value)}")
-            End If
-
-            If tl.TreeJuniper IsNot Nothing AndAlso tl.TreeJuniper.HasValue Then
-                .Rows.Add("", "", "Juniper Tree Pollen Index", $"{GetPollenValue(tl.TreeJuniper.Value)}")
-            End If
-
-            If tl.TreeMahogany IsNot Nothing AndAlso tl.TreeMahogany.HasValue Then
-                .Rows.Add("", "", "Mahogany Tree Pollen Index", $"{GetPollenValue(tl.TreeMahogany.Value)}")
-            End If
-
-            If tl.TreeMaple IsNot Nothing AndAlso tl.TreeMaple.HasValue Then
-                .Rows.Add("", "", "Maple Tree Pollen Index", $"{GetPollenValue(tl.TreeMaple.Value)}")
-            End If
-
-            If tl.TreeMulberry IsNot Nothing AndAlso tl.TreeMulberry.HasValue Then
-                .Rows.Add("", "", "Mulberry Tree Pollen Index", $"{GetPollenValue(tl.TreeMulberry.Value)}")
-            End If
-
-            If tl.TreeOak IsNot Nothing AndAlso tl.TreeOak.HasValue Then
-                .Rows.Add("", "", "Oak Tree Pollen Index", $"{GetPollenValue(tl.TreeOak.Value)}")
-            End If
-
-            If tl.TreePine IsNot Nothing AndAlso tl.TreePine.HasValue Then
-                .Rows.Add("", "", "Pine Tree Pollen Index", $"{GetPollenValue(tl.TreePine.Value)}")
-            End If
-
-            If tl.TreeSpruce IsNot Nothing AndAlso tl.TreeSpruce.HasValue Then
-                .Rows.Add("", "", "Spruce Tree Pollen Index", $"{GetPollenValue(tl.TreeSpruce.Value)}")
-            End If
-
-            If tl.TreeSycamore IsNot Nothing AndAlso tl.TreeSycamore.HasValue Then
-                .Rows.Add("", "", "Sycamore Tree Pollen Index", $"{GetPollenValue(tl.TreeSycamore.Value)}")
-            End If
-
-            If tl.TreeWalnut IsNot Nothing AndAlso tl.TreeWalnut.HasValue Then
-                .Rows.Add("", "", "Walnut Tree Pollen Index", $"{GetPollenValue(tl.TreeWalnut.Value)}")
-            End If
-
-            If tl.TreeWillow IsNot Nothing AndAlso tl.TreeWillow.HasValue Then
-                .Rows.Add("", "", "Willow Tree Pollen Index", $"{GetPollenValue(tl.TreeWillow.Value)}")
-            End If
-
-            If tl.Grass IsNot Nothing AndAlso tl.Grass.HasValue Then
-                .Rows.Add("", "", "Grass Pollen Index", $"{GetPollenValue(tl.Grass.Value)}")
-            End If
-
-            If tl.GrassGrass IsNot Nothing AndAlso tl.GrassGrass.HasValue Then
-                .Rows.Add("", "", "Grass Grass Pollen Index", $"{GetPollenValue(tl.GrassGrass.Value)}")
-            End If
-
-            If tl.Weed IsNot Nothing AndAlso tl.Weed.HasValue Then
-                .Rows.Add("", "", "Weed Pollen Index", $"{GetPollenValue(tl.Weed.Value)}")
-            End If
-
-            If tl.WeedGrassWeed IsNot Nothing AndAlso tl.WeedGrassWeed.HasValue Then
-                .Rows.Add("", "", "Weed Grass Weed Pollen Index", $"{GetPollenValue(tl.WeedGrassWeed.Value)}")
-            End If
-        End With
+    Private Sub Write1dFullData(ct As Integer)
+        PrintLog($"{vbLf}Writing timelines Daily - Full data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Daily - full data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv1dFull
+                    .Rows.Clear()
+                    PrintLog($"**> Daily - Full data records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        WriteData(FrmMainv4.Dgv1dFull, ct, j)
+                        Application.DoEvents()
+                    Next
+                    .ClearSelection()
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
     End Sub
 
     Private Sub Write1hData(ct As Integer)
@@ -1151,9 +530,9 @@ Friend Module TimeLineRoutinesV4
                     PrintLog($"**> Hourly records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
                     For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
                         WriteData(FrmMainv4.DgvHour, ct, j)
-                        .ClearSelection()
                         Application.DoEvents()
                     Next
+                    .ClearSelection()
                 End With
             Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
                 If ex.InnerException IsNot Nothing Then
@@ -1166,6 +545,407 @@ Friend Module TimeLineRoutinesV4
         End If
     End Sub
 
+    Private Sub Write1mData(ct As Integer)
+        PrintLog($"{vbLf}Writing timelines One Minute data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"One Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv1Min
+                    .Rows.Clear()
+                    PrintLog($"**> One Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        WriteData(FrmMainv4.Dgv1Min, ct, j)
+                        Application.DoEvents()
+                    Next
+                    .ClearSelection()
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
+    End Sub
+
+    Private Sub Write30mData(ct As Integer)
+        PrintLog($"{vbLf}Writing timelines Thirth Minute data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Thirty Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv30Min
+                    .Rows.Clear()
+                    PrintLog($"**> Thirty Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        WriteData(FrmMainv4.Dgv30Min, ct, j)
+                        Application.DoEvents()
+                    Next
+                    .ClearSelection()
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
+    End Sub
+
+    Private Sub Write5mData(ct As Integer)
+        PrintLog($"{vbLf}Writing timelines Five Minute data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Five Minute data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.Dgv5Min
+                    .Rows.Clear()
+                    PrintLog($"**> Five Minute records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        WriteData(FrmMainv4.Dgv5Min, ct, j)
+                        Application.DoEvents()
+                    Next
+                    .ClearSelection()
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
+    End Sub
+
+    Private Sub WriteCurrentData(ct As Integer)
+        PrintLog($"{vbLf}Writing timelines current data @ {Now:F}.{vbLf}{vbLf}")
+        'no error checking to make sure individual fields exist in json file
+
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Current data does not exist @ {Now:f}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.DgvCurrent
+                    Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(0).Values
+                    .Rows.Clear()
+                    PrintLog($"**> Current records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    WriteData(FrmMainv4.DgvCurrent, ct, 0)
+
+                    Dim icn As String = Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), $"{tl.WxCode.Value}.png")
+                    If My.Settings.Log_Images Then PrintLog($"{0}. Current: {icn} --> Load{vbLf}")
+                    Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
+                       Color.LightSkyBlue,
+                       Color.Gray)
+                    With FrmMainv4
+                        .TpCurrent.BackColor = bgClr
+                        .DgvCurrent.BackgroundColor = bgClr
+                        .PbCurImage.BackgroundImage = If(File.Exists(icn),
+                        Image.FromFile(icn),
+                        Image.FromFile(Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), "0.png")))
+                    End With
+                    Application.DoEvents()
+                    'write the current weather to the Tray Icon
+                    FrmMainv4.TIcon.Text = unitNfo.WeatherCode(CStr(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.WxCode.Value))
+                    .ClearSelection()
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                'SaveLogs()
+            End Try
+        End If
+    End Sub
+    Private Sub WriteData(ctl As DataGridView, ct As Integer, j As Integer)
+        Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
+        Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
+        With ctl
+            .Rows.Add()
+            '.Rows.Add($"{tld.StartTime.ToLocalTime:f}")
+            .Rows.Add($"{tld.StartTime.ToLocalTime.ToString("dddd", CultureInfo.CreateSpecificCulture("en-US"))}", $"{tld.StartTime.ToLocalTime.ToString("MMMM d, yyyy h:mm tt", CultureInfo.CreateSpecificCulture("en-US"))}")
+            .Rows(.Rows.Count - 1).DefaultCellStyle.Font = New Font("", 9, FontStyle.Bold)
+            .Rows(.Rows.Count - 1).DefaultCellStyle.ForeColor = Color.Maroon
+            .Rows(.Rows.Count - 1).DefaultCellStyle.BackColor = Color.Honeydew
+
+            If tl.TempMax IsNot Nothing AndAlso tl.TempMax.HasValue Then
+                .Rows.Add("Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
+            End If
+
+            If tl.WxCode IsNot Nothing AndAlso tl.WxCode.HasValue Then
+                .Rows.Add($"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
+            End If
+
+            If tl.RH IsNot Nothing AndAlso tl.RH.HasValue Then
+                .Rows.Add("Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
+            End If
+
+            If tl.Dewpoint IsNot Nothing AndAlso tl.Dewpoint.HasValue Then
+                .Rows.Add("Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.Temperature}")
+            End If
+
+            If tl.WindSpeed IsNot Nothing AndAlso tl.WindSpeed.HasValue Then
+                Dim wd = If(tl.WindDir, vbNull)
+                .Rows.Add("Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
+            End If
+
+            If tl.PrecipPct IsNot Nothing AndAlso tl.PrecipPct.HasValue Then
+                .Rows.Add("Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
+            End If
+
+            If tl.PrecipType IsNot Nothing AndAlso tl.PrecipType.HasValue Then
+                .Rows.Add("Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}")
+            End If
+
+            If tl.PrecipIntensity IsNot Nothing AndAlso tl.PrecipIntensity.HasValue Then
+                .Rows.Add("Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}")
+            End If
+
+            If tl.HailProbability IsNot Nothing AndAlso tl.HailProbability.HasValue Then
+                Dim hp As Boolean
+                If tl.HailProbability <> 0 Then hp = True
+                .Rows.Add("Chance of Hail", $"{hp}")
+            End If
+
+            If tl.PressureSurfaceLevel IsNot Nothing AndAlso tl.PressureSurfaceLevel.HasValue Then
+                .Rows.Add($"Barometric Pressure{vbLf}Surface Level", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}")
+            End If
+
+            If tl.PressureSeaLevel IsNot Nothing AndAlso tl.PressureSeaLevel.HasValue Then
+                .Rows.Add($"Barometric Pressure{vbLf}Sea Level", $"{tl.PressureSeaLevel.Value} {unitNfo.PressureSeaLevel}")
+            End If
+
+            If tl.CloudCover IsNot Nothing AndAlso tl.CloudCover.HasValue Then
+                .Rows.Add("Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
+            End If
+
+            If tl.CloudBase IsNot Nothing AndAlso tl.CloudBase.HasValue Then
+                .Rows.Add("Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
+                .Rows(.Rows.Count - 1).Cells(1).ToolTipText = My.Resources.cloud_base
+            End If
+
+            If tl.CloudCeiling IsNot Nothing AndAlso tl.CloudCeiling.HasValue Then
+                .Rows.Add("Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
+                .Rows(.Rows.Count - 1).Cells(1).ToolTipText = My.Resources.cloud_celiing
+            End If
+
+            If tl.Visibility IsNot Nothing AndAlso tl.Visibility.HasValue Then
+                .Rows.Add($"Visibility", $"{tl.Visibility.Value:N0} {unitNfo.Visibility}")
+            End If
+
+            If tl.EpaIndex IsNot Nothing AndAlso tl.EpaIndex.HasValue Then
+                .Rows.Add("Air Quality Index", $"{tl.EpaIndex.Value}")
+            End If
+
+            If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
+                .Rows.Add("EPA Health Concern", $"{unitNfo.HealthConcern(tl.EpaHealthConcern.Value.ToString)}")
+                'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
+                'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
+                'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
+                .Rows(.Rows.Count - 1).Cells(1).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
+                .Rows(.Rows.Count - 1).Cells(1).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
+                .Rows(.Rows.Count - 1).Cells(1).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
+            End If
+
+            If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
+                .Rows.Add("Health Concern Notes", $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}")
+            End If
+
+            If tl.EpaPrimaryPollutant IsNot Nothing AndAlso tl.EpaPrimaryPollutant.HasValue Then
+                .Rows.Add("EPA Primary Pollutant", $"{unitNfo.PrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+            End If
+
+            If tl.PM25 IsNot Nothing AndAlso tl.PM25.HasValue Then
+                .Rows.Add($"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
+            End If
+
+            If tl.PM10 IsNot Nothing AndAlso tl.PM10.HasValue Then
+                .Rows.Add($"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
+            End If
+
+            If tl.O3 IsNot Nothing AndAlso tl.O3.HasValue Then
+                .Rows.Add($"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
+            End If
+
+            If tl.NO2 IsNot Nothing AndAlso tl.NO2.HasValue Then
+                .Rows.Add($"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
+            End If
+
+            If tl.CO IsNot Nothing AndAlso tl.CO.HasValue Then
+                .Rows.Add($"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
+            End If
+
+            If tl.SO2 IsNot Nothing AndAlso tl.SO2.HasValue Then
+                .Rows.Add($"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
+            End If
+
+            If tl.FireIndex IsNot Nothing AndAlso tl.FireIndex.HasValue Then
+                .Rows.Add($"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
+            End If
+
+            If tl.SolarGHI IsNot Nothing AndAlso tl.SolarGHI.HasValue Then
+                .Rows.Add($"Shortwave Radiation received{vbLf}Surface horizontal to ground", $"{tl.SolarGHI} {unitNfo.Solar}")
+            End If
+
+            If tl.SolarDHI IsNot Nothing AndAlso tl.SolarDHI.HasValue Then
+                .Rows.Add($"Diffused, scattered component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDHI} {unitNfo.Solar}")
+            End If
+
+            If tl.SolarDNI IsNot Nothing AndAlso tl.SolarDNI.HasValue Then
+                .Rows.Add($"Direct component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDNI} {unitNfo.Solar}")
+            End If
+
+            If tl.Moisture0To10 IsNot Nothing AndAlso tl.Moisture0To10.HasValue Then
+                .Rows.Add($"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}{unitNfo.SoilMoistureVolume}")
+            End If
+
+            If tl.Moisture10To40 IsNot Nothing AndAlso tl.Moisture10To40.HasValue Then
+                .Rows.Add($"Soil Moisture Volume{vbLf}10 to 40 cm", $"{tl.Moisture10To40}{unitNfo.SoilMoistureVolume}")
+            End If
+
+            If tl.Moisture40To100 IsNot Nothing AndAlso tl.Moisture40To100.HasValue Then
+                .Rows.Add($"Soil Moisture Volume{vbLf}40 to 100 cm", $"{tl.Moisture40To100}{unitNfo.SoilMoistureVolume}")
+            End If
+
+            If tl.Moisture100To200 IsNot Nothing AndAlso tl.Moisture100To200.HasValue Then
+                .Rows.Add($"Soil Moisture Volume{vbLf}100 to 200 cm", $"{tl.Moisture100To200}{unitNfo.SoilMoistureVolume}")
+            End If
+
+            If tl.Moisture0To200 IsNot Nothing AndAlso tl.Moisture0To200.HasValue Then
+                .Rows.Add($"Soil Moisture Volume{vbLf}0 to 200 cm", $"{tl.Moisture0To200}{unitNfo.SoilMoistureVolume}")
+            End If
+
+            If tl.SoilTemp0To10 IsNot Nothing AndAlso tl.SoilTemp0To10.HasValue Then
+                .Rows.Add($"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}{unitNfo.Temperature}")
+            End If
+
+            If tl.SoilTemp10To40 IsNot Nothing AndAlso tl.SoilTemp10To40.HasValue Then
+                .Rows.Add($"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}{unitNfo.Temperature}")
+            End If
+
+            If tl.SoilTemp40To100 IsNot Nothing AndAlso tl.SoilTemp40To100.HasValue Then
+                .Rows.Add($"Soil Temperature{vbLf}40 to 100 cm", $"{tl.SoilTemp40To100}{unitNfo.Temperature}")
+            End If
+
+            If tl.SoilTemp100To200 IsNot Nothing AndAlso tl.SoilTemp100To200.HasValue Then
+                .Rows.Add($"Soil Temperature{vbLf}100 to 200 cm", $"{tl.SoilTemp100To200}{unitNfo.Temperature}")
+            End If
+
+            If tl.SoilTemp0To200 IsNot Nothing AndAlso tl.SoilTemp0To200.HasValue Then
+                .Rows.Add($"Soil Temperature{vbLf}0 to 200 cm", $"{tl.SoilTemp0To200}{unitNfo.Temperature}")
+            End If
+
+            If tl.Tree IsNot Nothing AndAlso tl.Tree.HasValue Then
+                .Rows.Add("Tree Pollen Index", $"{GetPollenValue(tl.Tree.Value)}")
+            End If
+            If tl.TreeAcacia IsNot Nothing AndAlso tl.TreeAcacia.HasValue Then
+                .Rows.Add("Acacia Tree Pollen Index", $"{GetPollenValue(tl.TreeAcacia.Value)}")
+            End If
+
+            If tl.TreeAsh IsNot Nothing AndAlso tl.TreeAsh.HasValue Then
+                .Rows.Add("Ash Tree Pollen Index", $"{GetPollenValue(tl.TreeAsh.Value)}")
+            End If
+
+            If tl.TreeBeech IsNot Nothing AndAlso tl.TreeBeech.HasValue Then
+                .Rows.Add("Beech Tree Pollen Index", $"{GetPollenValue(tl.TreeBeech.Value)}")
+            End If
+
+            If tl.TreeBirch IsNot Nothing AndAlso tl.TreeBirch.HasValue Then
+                .Rows.Add("Birch Tree Pollen Index", $"{GetPollenValue(tl.TreeBirch.Value)}")
+            End If
+
+            If tl.TreeCedar IsNot Nothing AndAlso tl.TreeCedar.HasValue Then
+                .Rows.Add("Cedar Tree Pollen Index", $"{GetPollenValue(tl.TreeCedar.Value)}")
+            End If
+
+            If tl.TreeCottonwood IsNot Nothing AndAlso tl.TreeCottonwood.HasValue Then
+                .Rows.Add("Cottonwood Tree Pollen Index", $"{GetPollenValue(tl.TreeCottonwood.Value)}")
+            End If
+
+            If tl.TreeCypress IsNot Nothing AndAlso tl.TreeCypress.HasValue Then
+                .Rows.Add("Cypress Tree Pollen Index", $"{GetPollenValue(tl.TreeCypress.Value)}")
+            End If
+
+            If tl.TreeElder IsNot Nothing AndAlso tl.TreeElder.HasValue Then
+                .Rows.Add("Elder Tree Pollen Index", $"{GetPollenValue(tl.TreeElder.Value)}")
+            End If
+
+            If tl.TreeElm IsNot Nothing AndAlso tl.TreeElm.HasValue Then
+                .Rows.Add("Elm Tree Pollen Index", $"{GetPollenValue(tl.TreeElm.Value)}")
+            End If
+
+            If tl.TreeHemlock IsNot Nothing AndAlso tl.TreeHemlock.HasValue Then
+                .Rows.Add("Hemlock Tree Pollen Index", $"{GetPollenValue(tl.TreeHemlock.Value)}")
+            End If
+
+            If tl.TreeHickory IsNot Nothing AndAlso tl.TreeHickory.HasValue Then
+                .Rows.Add("Hickory Tree Pollen Index", $"{GetPollenValue(tl.TreeHickory.Value)}")
+            End If
+
+            If tl.TreeJuniper IsNot Nothing AndAlso tl.TreeJuniper.HasValue Then
+                .Rows.Add("Juniper Tree Pollen Index", $"{GetPollenValue(tl.TreeJuniper.Value)}")
+            End If
+
+            If tl.TreeMahogany IsNot Nothing AndAlso tl.TreeMahogany.HasValue Then
+                .Rows.Add("Mahogany Tree Pollen Index", $"{GetPollenValue(tl.TreeMahogany.Value)}")
+            End If
+
+            If tl.TreeMaple IsNot Nothing AndAlso tl.TreeMaple.HasValue Then
+                .Rows.Add("Maple Tree Pollen Index", $"{GetPollenValue(tl.TreeMaple.Value)}")
+            End If
+
+            If tl.TreeMulberry IsNot Nothing AndAlso tl.TreeMulberry.HasValue Then
+                .Rows.Add("Mulberry Tree Pollen Index", $"{GetPollenValue(tl.TreeMulberry.Value)}")
+            End If
+
+            If tl.TreeOak IsNot Nothing AndAlso tl.TreeOak.HasValue Then
+                .Rows.Add("Oak Tree Pollen Index", $"{GetPollenValue(tl.TreeOak.Value)}")
+            End If
+
+            If tl.TreePine IsNot Nothing AndAlso tl.TreePine.HasValue Then
+                .Rows.Add("Pine Tree Pollen Index", $"{GetPollenValue(tl.TreePine.Value)}")
+            End If
+
+            If tl.TreeSpruce IsNot Nothing AndAlso tl.TreeSpruce.HasValue Then
+                .Rows.Add("Spruce Tree Pollen Index", $"{GetPollenValue(tl.TreeSpruce.Value)}")
+            End If
+
+            If tl.TreeSycamore IsNot Nothing AndAlso tl.TreeSycamore.HasValue Then
+                .Rows.Add("Sycamore Tree Pollen Index", $"{GetPollenValue(tl.TreeSycamore.Value)}")
+            End If
+
+            If tl.TreeWalnut IsNot Nothing AndAlso tl.TreeWalnut.HasValue Then
+                .Rows.Add("Walnut Tree Pollen Index", $"{GetPollenValue(tl.TreeWalnut.Value)}")
+            End If
+
+            If tl.TreeWillow IsNot Nothing AndAlso tl.TreeWillow.HasValue Then
+                .Rows.Add("Willow Tree Pollen Index", $"{GetPollenValue(tl.TreeWillow.Value)}")
+            End If
+
+            If tl.Grass IsNot Nothing AndAlso tl.Grass.HasValue Then
+                .Rows.Add("Grass Pollen Index", $"{GetPollenValue(tl.Grass.Value)}")
+            End If
+
+            If tl.GrassGrass IsNot Nothing AndAlso tl.GrassGrass.HasValue Then
+                .Rows.Add("Grass Grass Pollen Index", $"{GetPollenValue(tl.GrassGrass.Value)}")
+            End If
+
+            If tl.Weed IsNot Nothing AndAlso tl.Weed.HasValue Then
+                .Rows.Add("Weed Pollen Index", $"{GetPollenValue(tl.Weed.Value)}")
+            End If
+
+            If tl.WeedGrassWeed IsNot Nothing AndAlso tl.WeedGrassWeed.HasValue Then
+                .Rows.Add("Weed Grass Weed Pollen Index", $"{GetPollenValue(tl.WeedGrassWeed.Value)}")
+            End If
+        End With
+    End Sub
     Private Sub WriteWarnings()
         Try
             With FrmMainv4.DgvWarnings
@@ -1210,313 +990,6 @@ Friend Module TimeLineRoutinesV4
         Finally
             'SaveLogs()
         End Try
-    End Sub
-
-    Private Sub Write1dFullData(ct As Integer)
-        PrintLog($"{vbLf}Writing timelines Daily - Full data @ {Now:F}.{vbLf}{vbLf}")
-        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
-            PrintLog($"Daily - full data does not exist @ {Now:F}.{vbLf}{vbLf}")
-        Else
-            Try
-                With FrmMainv4.Dgv1dFull
-                    .Rows.Clear()
-                    PrintLog($"**> Daily - Full data records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
-                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
-                        Dim tl = tlNfo.WxData.TimeLines(ct).Intervals(j).Values
-                        Dim tld = tlNfo.WxData.TimeLines(ct).Intervals(j)
-                        .Rows.Add($"{tld.StartTime.ToLocalTime:dddd, MMMM d}")
-
-                        If tl.TempMax IsNot Nothing AndAlso tl.TempMax.HasValue Then
-                            .Rows.Add("", "Temperature", $"{tl.TempMax.Value:N0}{unitNfo.Temperature}")
-                        End If
-
-                        If tl.WxCode IsNot Nothing AndAlso tl.WxCode.HasValue Then
-                            .Rows.Add("", $"Weather", $"{unitNfo.WeatherCode(tl.WxCode.Value.ToString)}")
-                        End If
-
-                        If tl.RH IsNot Nothing AndAlso tl.RH.HasValue Then
-                            .Rows.Add("", "Relative Humidity", $"{tl.RH.Value}{unitNfo.Humidity}")
-                        End If
-
-                        If tl.Dewpoint IsNot Nothing AndAlso tl.Dewpoint.HasValue Then
-                            .Rows.Add("", "Dewpoint", $"{tl.Dewpoint.Value:N0}{unitNfo.Temperature}")
-                        End If
-
-                        If tl.WindSpeed IsNot Nothing AndAlso tl.WindSpeed.HasValue Then
-                            Dim wd = If(tl.WindDir, vbNull)
-                            .Rows.Add("", "Wind", GetWindString(tl.WindSpeed.Value, tl.WindGust.Value, wd))
-                        End If
-
-                        If tl.PrecipPct IsNot Nothing AndAlso tl.PrecipPct.HasValue Then
-                            .Rows.Add("", "Precipitation", $"{tl.PrecipPct.Value}{unitNfo.PrecipitationProbability}")
-                        End If
-
-                        If tl.PrecipType IsNot Nothing AndAlso tl.PrecipType.HasValue Then
-                            .Rows.Add("", "Precipitation Type", $"{unitNfo.PrecipitationType(tl.PrecipType.Value.ToString)}")
-                        End If
-
-                        If tl.PrecipIntensity IsNot Nothing AndAlso tl.PrecipIntensity.HasValue Then
-                            .Rows.Add("", "Precipitation Intensity", $"{tl.PrecipIntensity.Value:N3} {unitNfo.PrecipitationIntensity}")
-                        End If
-
-                        If tl.HailProbability IsNot Nothing AndAlso tl.HailProbability.HasValue Then
-                            Dim hp As Boolean
-                            If tl.HailProbability <> 0 Then hp = True
-                            .Rows.Add("", "Chance of Hail", $"{hp}")
-                        End If
-
-                        If tl.PressureSurfaceLevel IsNot Nothing AndAlso tl.PressureSurfaceLevel.HasValue Then
-                            .Rows.Add("", $"Barometric Pressure{vbLf}Surface Level", $"{tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}")
-                        End If
-
-                        If tl.PressureSeaLevel IsNot Nothing AndAlso tl.PressureSeaLevel.HasValue Then
-                            .Rows.Add("", $"Barometric Pressure{vbLf}Sea Level", $"{tl.PressureSeaLevel.Value} {unitNfo.PressureSeaLevel}")
-                        End If
-
-                        If tl.CloudCover IsNot Nothing AndAlso tl.CloudCover.HasValue Then
-                            .Rows.Add("", "Cloud Cover", $"{tl.CloudCover:N0}{unitNfo.CloudCover}")
-                        End If
-
-                        If tl.CloudBase IsNot Nothing AndAlso tl.CloudBase.HasValue Then
-                            .Rows.Add("", "Cloud Base", $"{tl.CloudBase.Value * 5280:N0} ft.")
-                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_base
-                        End If
-
-                        If tl.CloudCeiling IsNot Nothing AndAlso tl.CloudCeiling.HasValue Then
-                            .Rows.Add("", "Cloud Ceiling", $"{tl.CloudCeiling.Value * 5280:N0} ft.")
-                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = My.Resources.cloud_celiing
-                        End If
-
-                        If tl.Visibility IsNot Nothing AndAlso tl.Visibility.HasValue Then
-                            .Rows.Add("", $"Visibility", $"{tl.Visibility.Value:N0} {unitNfo.Visibility}")
-                        End If
-
-                        .Rows.Add("", $"Sunrise", tl.Sunrise.ToLocalTime.ToLongTimeString)
-                        .Rows.Add("", $"Sunset", tl.Sunset.ToLocalTime.ToLongTimeString)
-
-                        'Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
-                        If tl.MoonPhase IsNot Nothing AndAlso tl.MoonPhase.HasValue Then
-                            .Rows.Add("", "Moon Phase", $"{unitNfo.MoonPhase.Values(tl.MoonPhase.Value)}")
-                        End If
-
-                        If tl.EpaIndex IsNot Nothing AndAlso tl.EpaIndex.HasValue Then
-                            .Rows.Add("", "Air Quality Index", $"{tl.EpaIndex.Value}")
-                        End If
-
-                        If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
-                            .Rows.Add("", "EPA Health Concern", $"{unitNfo.HealthConcern(tl.EpaHealthConcern.Value.ToString)}")
-                            'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
-                            'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
-                            'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
-                            .Rows(.Rows.Count - 1).Cells(2).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
-                            .Rows(.Rows.Count - 1).Cells(2).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
-                            .Rows(.Rows.Count - 1).Cells(2).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
-                        End If
-
-                        If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
-                            .Rows.Add("", "Health Concern Notes", $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}")
-                        End If
-
-                        If tl.EpaPrimaryPollutant IsNot Nothing AndAlso tl.EpaPrimaryPollutant.HasValue Then
-                            .Rows.Add("", "EPA Primary Pollutant", $"{unitNfo.PrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
-                        End If
-
-                        If tl.PM25 IsNot Nothing AndAlso tl.PM25.HasValue Then
-                            .Rows.Add("", $"PM25{vbLf}Particulate Matter < 2.5 mic", $"{tl.PM25.Value} {unitNfo.ParticulateMatter25}")
-                        End If
-
-                        If tl.PM10 IsNot Nothing AndAlso tl.PM10.HasValue Then
-                            .Rows.Add("", $"PM10{vbLf}Particulate Matter < 10 mic", $"{tl.PM10.Value} {unitNfo.ParticulateMatter10}")
-                        End If
-
-                        If tl.O3 IsNot Nothing AndAlso tl.O3.HasValue Then
-                            .Rows.Add("", $"O3{vbLf}Ozone", $"{tl.O3.Value} {unitNfo.PollutantO3}")
-                        End If
-
-                        If tl.NO2 IsNot Nothing AndAlso tl.NO2.HasValue Then
-                            .Rows.Add("", $"NO2{vbLf}Nitrogen Dioxide", $"{tl.NO2.Value} {unitNfo.PollutantNO2}")
-                        End If
-
-                        If tl.CO IsNot Nothing AndAlso tl.CO.HasValue Then
-                            .Rows.Add("", $"CO{vbLf}Carbon Monoxide", $"{tl.CO.Value} {unitNfo.PollutantCO}")
-                        End If
-
-                        If tl.SO2 IsNot Nothing AndAlso tl.SO2.HasValue Then
-                            .Rows.Add("", $"SO2{vbLf}Sulfur Dioxide", $"{tl.SO2.Value} {unitNfo.PollutantSO2}")
-                        End If
-
-                        If tl.FireIndex IsNot Nothing AndAlso tl.FireIndex.HasValue Then
-                            .Rows.Add("", $"FWI{vbLf}Fosberg Fire Weather Index", $"{tl.FireIndex.Value}")
-                        End If
-
-                        If tl.SolarGHI IsNot Nothing AndAlso tl.SolarGHI.HasValue Then
-                            .Rows.Add("", $"Shortwave Radiation received{vbLf}Surface horizontal to ground", $"{tl.SolarGHI} {unitNfo.Solar}")
-                        End If
-
-                        If tl.SolarDHI IsNot Nothing AndAlso tl.SolarDHI.HasValue Then
-                            .Rows.Add("", $"Diffused, scattered component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDHI} {unitNfo.Solar}")
-                        End If
-
-                        If tl.SolarDNI IsNot Nothing AndAlso tl.SolarDNI.HasValue Then
-                            .Rows.Add("", $"Direct component of{vbLf}Solar Radiation reaching ground", $"{tl.SolarDNI} {unitNfo.Solar}")
-                        End If
-
-                        If tl.Moisture0To10 IsNot Nothing AndAlso tl.Moisture0To10.HasValue Then
-                            .Rows.Add("", $"Soil Moisture Volume{vbLf}0 to 10 cm", $"{tl.Moisture0To10}{unitNfo.SoilMoistureVolume}")
-                        End If
-
-                        If tl.Moisture10To40 IsNot Nothing AndAlso tl.Moisture10To40.HasValue Then
-                            .Rows.Add("", $"Soil Moisture Volume{vbLf}10 to 40 cm", $"{tl.Moisture10To40}{unitNfo.SoilMoistureVolume}")
-                        End If
-
-                        If tl.Moisture40To100 IsNot Nothing AndAlso tl.Moisture40To100.HasValue Then
-                            .Rows.Add("", $"Soil Moisture Volume{vbLf}40 to 100 cm", $"{tl.Moisture40To100}{unitNfo.SoilMoistureVolume}")
-                        End If
-
-                        If tl.Moisture100To200 IsNot Nothing AndAlso tl.Moisture100To200.HasValue Then
-                            .Rows.Add("", $"Soil Moisture Volume{vbLf}100 to 200 cm", $"{tl.Moisture100To200}{unitNfo.SoilMoistureVolume}")
-                        End If
-
-                        If tl.Moisture0To200 IsNot Nothing AndAlso tl.Moisture0To200.HasValue Then
-                            .Rows.Add("", $"Soil Moisture Volume{vbLf}0 to 200 cm", $"{tl.Moisture0To200}{unitNfo.SoilMoistureVolume}")
-                        End If
-
-                        If tl.SoilTemp0To10 IsNot Nothing AndAlso tl.SoilTemp0To10.HasValue Then
-                            .Rows.Add("", $"Soil Temperature{vbLf}0 to 10 cm", $"{tl.SoilTemp0To10}{unitNfo.Temperature}")
-                        End If
-
-                        If tl.SoilTemp10To40 IsNot Nothing AndAlso tl.SoilTemp10To40.HasValue Then
-                            .Rows.Add("", $"Soil Temperature{vbLf}10 to 40 cm", $"{tl.SoilTemp10To40}{unitNfo.Temperature}")
-                        End If
-
-                        If tl.SoilTemp40To100 IsNot Nothing AndAlso tl.SoilTemp40To100.HasValue Then
-                            .Rows.Add("", $"Soil Temperature{vbLf}40 to 100 cm", $"{tl.SoilTemp40To100}{unitNfo.Temperature}")
-                        End If
-
-                        If tl.SoilTemp100To200 IsNot Nothing AndAlso tl.SoilTemp100To200.HasValue Then
-                            .Rows.Add("", $"Soil Temperature{vbLf}100 to 200 cm", $"{tl.SoilTemp100To200}{unitNfo.Temperature}")
-                        End If
-
-                        If tl.SoilTemp0To200 IsNot Nothing AndAlso tl.SoilTemp0To200.HasValue Then
-                            .Rows.Add("", $"Soil Temperature{vbLf}0 to 200 cm", $"{tl.SoilTemp0To200}{unitNfo.Temperature}")
-                        End If
-
-                        If tl.Tree IsNot Nothing AndAlso tl.Tree.HasValue Then
-                            .Rows.Add("", "Tree Pollen Index", $"{GetPollenValue(tl.Tree.Value)}")
-                        End If
-                        If tl.TreeAcacia IsNot Nothing AndAlso tl.TreeAcacia.HasValue Then
-                            .Rows.Add("", "Acacia Tree Pollen Index", $"{GetPollenValue(tl.TreeAcacia.Value)}")
-                        End If
-
-                        If tl.TreeAsh IsNot Nothing AndAlso tl.TreeAsh.HasValue Then
-                            .Rows.Add("", "Ash Tree Pollen Index", $"{GetPollenValue(tl.TreeAsh.Value)}")
-                        End If
-
-                        If tl.TreeBeech IsNot Nothing AndAlso tl.TreeBeech.HasValue Then
-                            .Rows.Add("", "Beech Tree Pollen Index", $"{GetPollenValue(tl.TreeBeech.Value)}")
-                        End If
-
-                        If tl.TreeBirch IsNot Nothing AndAlso tl.TreeBirch.HasValue Then
-                            .Rows.Add("", "Birch Tree Pollen Index", $"{GetPollenValue(tl.TreeBirch.Value)}")
-                        End If
-
-                        If tl.TreeCedar IsNot Nothing AndAlso tl.TreeCedar.HasValue Then
-                            .Rows.Add("", "Cedar Tree Pollen Index", $"{GetPollenValue(tl.TreeCedar.Value)}")
-                        End If
-
-                        If tl.TreeCottonwood IsNot Nothing AndAlso tl.TreeCottonwood.HasValue Then
-                            .Rows.Add("", "Cottonwood Tree Pollen Index", $"{GetPollenValue(tl.TreeCottonwood.Value)}")
-                        End If
-
-                        If tl.TreeCypress IsNot Nothing AndAlso tl.TreeCypress.HasValue Then
-                            .Rows.Add("", "Cypress Tree Pollen Index", $"{GetPollenValue(tl.TreeCypress.Value)}")
-                        End If
-
-                        If tl.TreeElder IsNot Nothing AndAlso tl.TreeElder.HasValue Then
-                            .Rows.Add("", "Elder Tree Pollen Index", $"{GetPollenValue(tl.TreeElder.Value)}")
-                        End If
-
-                        If tl.TreeElm IsNot Nothing AndAlso tl.TreeElm.HasValue Then
-                            .Rows.Add("", "Elm Tree Pollen Index", $"{GetPollenValue(tl.TreeElm.Value)}")
-                        End If
-
-                        If tl.TreeHemlock IsNot Nothing AndAlso tl.TreeHemlock.HasValue Then
-                            .Rows.Add("", "Hemlock Tree Pollen Index", $"{GetPollenValue(tl.TreeHemlock.Value)}")
-                        End If
-
-                        If tl.TreeHickory IsNot Nothing AndAlso tl.TreeHickory.HasValue Then
-                            .Rows.Add("", "Hickory Tree Pollen Index", $"{GetPollenValue(tl.TreeHickory.Value)}")
-                        End If
-
-                        If tl.TreeJuniper IsNot Nothing AndAlso tl.TreeJuniper.HasValue Then
-                            .Rows.Add("", "Juniper Tree Pollen Index", $"{GetPollenValue(tl.TreeJuniper.Value)}")
-                        End If
-
-                        If tl.TreeMahogany IsNot Nothing AndAlso tl.TreeMahogany.HasValue Then
-                            .Rows.Add("", "Mahogany Tree Pollen Index", $"{GetPollenValue(tl.TreeMahogany.Value)}")
-                        End If
-
-                        If tl.TreeMaple IsNot Nothing AndAlso tl.TreeMaple.HasValue Then
-                            .Rows.Add("", "Maple Tree Pollen Index", $"{GetPollenValue(tl.TreeMaple.Value)}")
-                        End If
-
-                        If tl.TreeMulberry IsNot Nothing AndAlso tl.TreeMulberry.HasValue Then
-                            .Rows.Add("", "Mulberry Tree Pollen Index", $"{GetPollenValue(tl.TreeMulberry.Value)}")
-                        End If
-
-                        If tl.TreeOak IsNot Nothing AndAlso tl.TreeOak.HasValue Then
-                            .Rows.Add("", "Oak Tree Pollen Index", $"{GetPollenValue(tl.TreeOak.Value)}")
-                        End If
-
-                        If tl.TreePine IsNot Nothing AndAlso tl.TreePine.HasValue Then
-                            .Rows.Add("", "Pine Tree Pollen Index", $"{GetPollenValue(tl.TreePine.Value)}")
-                        End If
-
-                        If tl.TreeSpruce IsNot Nothing AndAlso tl.TreeSpruce.HasValue Then
-                            .Rows.Add("", "Spruce Tree Pollen Index", $"{GetPollenValue(tl.TreeSpruce.Value)}")
-                        End If
-
-                        If tl.TreeSycamore IsNot Nothing AndAlso tl.TreeSycamore.HasValue Then
-                            .Rows.Add("", "Sycamore Tree Pollen Index", $"{GetPollenValue(tl.TreeSycamore.Value)}")
-                        End If
-
-                        If tl.TreeWalnut IsNot Nothing AndAlso tl.TreeWalnut.HasValue Then
-                            .Rows.Add("", "Walnut Tree Pollen Index", $"{GetPollenValue(tl.TreeWalnut.Value)}")
-                        End If
-
-                        If tl.TreeWillow IsNot Nothing AndAlso tl.TreeWillow.HasValue Then
-                            .Rows.Add("", "Willow Tree Pollen Index", $"{GetPollenValue(tl.TreeWillow.Value)}")
-                        End If
-
-                        If tl.Grass IsNot Nothing AndAlso tl.Grass.HasValue Then
-                            .Rows.Add("", "Grass Pollen Index", $"{GetPollenValue(tl.Grass.Value)}")
-                        End If
-
-                        If tl.GrassGrass IsNot Nothing AndAlso tl.GrassGrass.HasValue Then
-                            .Rows.Add("", "Grass Grass Pollen Index", $"{GetPollenValue(tl.GrassGrass.Value)}")
-                        End If
-
-                        If tl.Weed IsNot Nothing AndAlso tl.Weed.HasValue Then
-                            .Rows.Add("", "Weed Pollen Index", $"{GetPollenValue(tl.Weed.Value)}")
-                        End If
-
-                        If tl.WeedGrassWeed IsNot Nothing AndAlso tl.WeedGrassWeed.HasValue Then
-                            .Rows.Add("", "Weed Grass Weed Pollen Index", $"{GetPollenValue(tl.WeedGrassWeed.Value)}")
-                        End If
-
-                        Application.DoEvents()
-                    Next
-                    .ClearSelection()
-                End With
-            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
-                If ex.InnerException IsNot Nothing Then
-                    ie = ex.InnerException.ToString
-                End If
-                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
-            Finally
-                'SaveLogs()
-            End Try
-        End If
     End Sub
 
 End Module

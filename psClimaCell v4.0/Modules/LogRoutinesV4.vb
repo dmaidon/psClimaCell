@@ -222,7 +222,7 @@ Friend Module LogRoutinesV4
                 ResetErr = True
                 .TsslErr.ForeColor = Color.Green
                 .TsslErr.ToolTipText = My.Resources.err_in_pgm
-                .TsslErr.Text = $"0"
+                .TsslErr.Text = $"!"
                 LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
                 ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
                 TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
