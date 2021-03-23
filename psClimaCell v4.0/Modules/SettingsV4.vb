@@ -150,7 +150,6 @@ Friend Module SettingsV4
             .ChkLand7.Checked = My.Settings.TlLand7
             .ChkLand8.Checked = My.Settings.TlLand8
             .ChkLand9.Checked = My.Settings.TlLand9
-
         End With
     End Sub
 

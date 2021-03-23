@@ -3,7 +3,7 @@
   "CloudCeiling": "km",
   "CloudCover": "%",
   "_epaComment": "EpsBgColor, EpaFgColor and EpaConcernText added to enhance AQI data response.",
-  "EpaBgColor": {
+  "BgColor": {
     "0": "#31AE8C",
     "1": "#EDE066",
     "2": "#EDAD66",
@@ -11,7 +11,7 @@
     "4": "#7A3AB3",
     "5": "#8C3A5A"
   },
-  "EpaFgColor": {
+  "FgColor": {
     "0": "#000000",
     "1": "#000000",
     "2": "#000000",
@@ -19,7 +19,7 @@
     "4": "##E6E6FA",
     "5": "##E6E6FA"
   },
-  "EpaConcernText": {
+  "ConcernText": {
     "0": "(0-50)  Air quality is satisfactory and poses little or no health risk",
     "1": "(51-100)  Air quality is acceptable; however, pollution in this range may pose a moderate health concern for a very small number of individuals. People who are unusually sensitive to ozone or particle pollution may experience respiratory symptoms.",
     "2": "(101-150)  Members of sensitive groups may experience health effects, but the general public is unlikely to be affected.",

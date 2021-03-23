@@ -366,6 +366,14 @@ Public Class FrmMainv4
                 ct += 1
             End If
         Next
+        If My.Settings.TlCore0 Then
+            'we get 3 for 1 here  temperature, temperatureMax and temperatureMin
+            ct += 2
+        End If
+        If My.Settings.TlCore15 Then
+            'we have a duplicate with solarGHI
+            ct -= 1
+        End If
         LblFieldsChecked.Text = String.Format(LblFieldsChecked.Tag.ToString, ct)
         If ct = 50 Then
             For Each c As CheckBox In FlpDataFields.Controls.OfType(Of CheckBox)
@@ -491,6 +499,9 @@ Public Class FrmMainv4
     ''' <param name="e"></param>
     Private Sub TpDataFields_Enter(sender As Object, e As EventArgs) Handles TpDataFields.Enter
         Dim ct As Integer
+        If My.Settings.TlCore0 Then
+            ct = 2
+        End If
         For Each c As CheckBox In FlpDataFields.Controls.OfType(Of CheckBox)()
             If c.Checked Then
                 ct += 1
@@ -606,4 +617,126 @@ Public Class FrmMainv4
 
 #End Region
 
+#Region "RtbMenu"
+
+    Private Sub SearchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchToolStripMenuItem.Click
+        Dim sStr As Object
+        sStr = InputBox("Enter Text to Find", "Search", "")
+        RtbSearch(RtbLog, sStr.ToString, Color.Crimson, Color.White)
+    End Sub
+
+    Private Sub ScrollToEndToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScrollToEndToolStripMenuItem.Click
+        RtbLog.Select(RtbLog.Text.Length, RtbLog.Text.Length)
+        RtbLog.ScrollToCaret()
+    End Sub
+
+    Private Sub ScrollToTopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScrollToTopToolStripMenuItem.Click
+        RtbLog.Select(0, 0)
+        RtbLog.ScrollToCaret()
+    End Sub
+
+    Private Sub PasteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteToolStripMenuItem.Click
+        RtbLog.Paste()
+    End Sub
+
+    Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
+        RtbLog.Copy()
+    End Sub
+
+    Private Sub CutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CutToolStripMenuItem.Click
+        RtbLog.Cut()
+    End Sub
+
+    Private Shared Sub RtbSearch(T As RichTextBox, word As String, color1 As Color, Optional color2 As Color = Nothing)
+        Const pos = 0
+        Dim s = T.Text
+        Dim i = 0
+        Dim stopWhile = False
+        While Not stopWhile
+            Dim j = s.IndexOf(word, i, StringComparison.CurrentCultureIgnoreCase)
+            If j < 0 Then
+                stopWhile = True
+            Else
+                T.Select(j, word.Length)
+                T.SelectionColor = color1
+                T.SelectionBackColor = color2
+                i = j + 1
+            End If
+        End While
+        T.Select(pos, 0)
+    End Sub
+
+#Region "Log Search"
+
+    Private indexOfSearchText As Integer
+
+    'variables used for log search
+    Private start As Integer
+
+    Public Function FindMyText(ByVal txtToSearch As String, ByVal searchStart As Integer, ByVal searchEnd As Integer) As Integer
+        ' Unselect the previously searched string
+        If searchStart > 0 AndAlso searchEnd > 0 AndAlso indexOfSearchText >= 0 Then
+            RtbLog.Undo()
+        End If
+
+        ' Set the return value to -1 by default.
+        Dim retVal As Integer = -1
+
+        ' A valid starting index should be specified.
+        ' if indexOfSearchText = -1, the end of search
+        If searchStart >= 0 AndAlso indexOfSearchText >= 0 Then
+            ' A valid ending index
+            If searchEnd > searchStart OrElse searchEnd = -1 Then
+                ' Find the position of search string in RichTextBox
+                indexOfSearchText = RtbLog.Find(txtToSearch, searchStart, searchEnd, RichTextBoxFinds.None)
+                ' Determine whether the text was found in richTextBox1.
+                If indexOfSearchText <> -1 Then
+                    ' Return the index to the specified search text.
+                    retVal = indexOfSearchText
+                End If
+            End If
+        End If
+        Return retVal
+    End Function
+
+    Private Sub BtnFind_Click(sender As Object, e As EventArgs) Handles BtnFind.Click
+        'http://www.dotnetcurry.com/showarticle.aspx?ID=146
+        Dim startindex As Integer = 0
+
+        If TxtLogSearch.Text.Length > 0 Then
+            startindex = FindMyText(TxtLogSearch.Text.Trim(), start, RtbLog.Text.Length)
+        End If
+
+        ' If string was found in the RichTextBox, highlight it
+        If startindex >= 0 Then
+            ' Set the highlight color as red
+            RtbLog.SelectionColor = Color.Red
+            ' Find the end index. End Index = number of characters in textbox
+            Dim endindex As Integer = TxtLogSearch.Text.Length
+            ' Highlight the search string
+            RtbLog.Select(startindex, endindex)
+            RtbLog.ScrollToCaret()
+            ' mark the start position after the position of
+            ' last search string
+            start = startindex + endindex
+        End If
+    End Sub
+
+    Private Sub BtnLogSearchClear_Click(sender As Object, e As EventArgs) Handles BtnLogSearchClear.Click
+        TxtLogSearch.Text = ""
+        start = 0
+        indexOfSearchText = 0
+        RtbLog.SelectionColor = Color.Black
+        RtbLog.Select(1, RtbLog.Text.Length)
+        RtbLog.ScrollToCaret()
+    End Sub
+
+    Private Sub TxtLogSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtLogSearch.TextChanged
+        start = 0
+        indexOfSearchText = 0
+    End Sub
+
+#End Region
+
+#End Region
 End Class

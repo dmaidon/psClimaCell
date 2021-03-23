@@ -2,9 +2,9 @@
     Public Property CloudBase As String
     Public Property CloudCeiling As String
     Public Property CloudCover As String
-    Public Property EpaBgColor() As Dictionary(Of String, String)
-    Public Property EpaConcernText() As Dictionary(Of String, String)
-    Public Property EpaFgColor() As Dictionary(Of String, String)
+    Public Property BgColor() As Dictionary(Of String, String)
+    Public Property ConcernText() As Dictionary(Of String, String)
+    Public Property FgColor() As Dictionary(Of String, String)
     Public Property EpaIndex As String
     Public Property FireIndex As String
     Public Property HailBinary As String

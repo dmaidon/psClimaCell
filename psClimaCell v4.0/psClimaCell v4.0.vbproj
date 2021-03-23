@@ -14,9 +14,20 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.3.20.879</AssemblyVersion>
+    <AssemblyVersion>21.3.23.884</AssemblyVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>AssemblyFileVersion</InheritWinAppVersionFrom>
+    <AssemblyInfoFilePath>My%2520Project\AssemblyInfo.vb</AssemblyInfoFilePath>
+    <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
+    <ApplicationVersion>21.3.23.884</ApplicationVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +45,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\Release\psClimaCellV4\</OutputPath>
     <DocumentationFile>psClimaCell v4.0.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
@@ -195,6 +206,9 @@
     <None Include="Resources\PS_LOGO-transparent-190x150.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\climacell.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icons\PNG\Color\A\1000.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

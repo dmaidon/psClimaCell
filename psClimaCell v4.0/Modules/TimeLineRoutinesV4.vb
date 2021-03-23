@@ -175,7 +175,8 @@ Friend Module TimeLineRoutinesV4
     Private Function GetFieldsString() As String
         Try
             'temperature field is set to fetch Min and Max temperature for time period.
-            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "solarGHI", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedGrassweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200"})
+            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedGrassweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200"})
+            '#15 = solarGHI
             Dim sb = New StringBuilder()
             For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
                 If c.Checked Then
@@ -741,6 +742,7 @@ Friend Module TimeLineRoutinesV4
                 .Rows.Add($"Visibility", $"{tl.Visibility.Value:N0} {unitNfo.Visibility}")
             End If
 
+            'EPA
             If tl.EpaIndex IsNot Nothing AndAlso tl.EpaIndex.HasValue Then
                 .Rows.Add("Air Quality Index", $"{tl.EpaIndex.Value}")
             End If
@@ -750,17 +752,40 @@ Friend Module TimeLineRoutinesV4
                 'color the Epa Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
                 'https://cfpub.epa.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
                 'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
-                .Rows(.Rows.Count - 1).Cells(1).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.EpaBgColor(tl.EpaHealthConcern.Value.ToString)}")
-                .Rows(.Rows.Count - 1).Cells(1).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.EpaFgColor(tl.EpaHealthConcern.Value.ToString)}")
-                .Rows(.Rows.Count - 1).Cells(1).ToolTipText = $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}"
+                .Rows(.Rows.Count - 1).Cells(1).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.BgColor(tl.EpaHealthConcern.Value.ToString)}")
+                .Rows(.Rows.Count - 1).Cells(1).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.FgColor(tl.EpaHealthConcern.Value.ToString)}")
+                .Rows(.Rows.Count - 1).Cells(1).ToolTipText = $"{unitNfo.ConcernText(tl.EpaHealthConcern.Value.ToString)}"
             End If
 
             If tl.EpaHealthConcern IsNot Nothing AndAlso tl.EpaHealthConcern.HasValue Then
-                .Rows.Add("Health Concern Notes", $"{unitNfo.EpaConcernText(tl.EpaHealthConcern.Value.ToString)}")
+                .Rows.Add("Health Concern Notes", $"{unitNfo.ConcernText(tl.EpaHealthConcern.Value.ToString)}")
             End If
 
             If tl.EpaPrimaryPollutant IsNot Nothing AndAlso tl.EpaPrimaryPollutant.HasValue Then
                 .Rows.Add("EPA Primary Pollutant", $"{unitNfo.PrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+            End If
+
+            'MEP China
+            If tl.MepIndex IsNot Nothing AndAlso tl.MepIndex.HasValue Then
+                .Rows.Add("Air Quality Index", $"{tl.MepIndex.Value}")
+            End If
+
+            If tl.MepHealthConcern IsNot Nothing AndAlso tl.MepHealthConcern.HasValue Then
+                .Rows.Add("MEP Health Concern", $"{unitNfo.HealthConcern(tl.MepHealthConcern.Value.ToString)}")
+                'color the MEP Health Concern cell with the appropriate color for the level of concern. Colors from https://AirNow.gov.
+                'https://cfpub.MEP.gov/airnow/index.cfm?action=aqi_brochure.index#:~:text=An%20AQI%20value%20of%20100%20generally%20corresponds%20to,below%20100%20are%20generally%20thought%20of%20as%20satisfactory.
+                'https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
+                .Rows(.Rows.Count - 1).Cells(1).Style.BackColor = ColorTranslator.FromHtml($"{unitNfo.BgColor(tl.MepHealthConcern.Value.ToString)}")
+                .Rows(.Rows.Count - 1).Cells(1).Style.ForeColor = ColorTranslator.FromHtml($"{unitNfo.FgColor(tl.MepHealthConcern.Value.ToString)}")
+                .Rows(.Rows.Count - 1).Cells(1).ToolTipText = $"{unitNfo.ConcernText(tl.MepHealthConcern.Value.ToString)}"
+            End If
+
+            If tl.MepHealthConcern IsNot Nothing AndAlso tl.MepHealthConcern.HasValue Then
+                .Rows.Add("Health Concern Notes", $"{unitNfo.ConcernText(tl.MepHealthConcern.Value.ToString)}")
+            End If
+
+            If tl.MepPrimaryPollutant IsNot Nothing AndAlso tl.MepPrimaryPollutant.HasValue Then
+                .Rows.Add("MEP Primary Pollutant", $"{unitNfo.PrimaryPollutant(tl.MepPrimaryPollutant.Value.ToString)}")
             End If
 
             If tl.PM25 IsNot Nothing AndAlso tl.PM25.HasValue Then
@@ -1007,7 +1032,6 @@ Friend Module TimeLineRoutinesV4
             If tl.TertiarySwellMeanPeriod IsNot Nothing AndAlso tl.TertiarySwellMeanPeriod.HasValue Then
                 .Rows.Add("Frequency of tertiary swells; or, the space and time between each wave", $"{tl.TertiarySwellMeanPeriod.Value} {unitNfo.TertiarySwellMeanPeriod}")
             End If
-
         End With
     End Sub
 
