@@ -4,6 +4,7 @@ Imports System.Text
 
 Friend Module LogRoutinesV4
     Private _numErr As Integer
+
     Friend Async Sub Check4NewLogFile()
         Dim si = LogFile.Substring _
                 (LogFile.LastIndexOf("-", StringComparison.Ordinal) + 1, (LogFile.LastIndexOf("_", StringComparison.Ordinal) - LogFile.LastIndexOf("-", StringComparison.Ordinal) - 1))
@@ -21,12 +22,13 @@ Friend Module LogRoutinesV4
                     ''save old log file
                     .RtbLog.SaveFile(LogFile, RichTextBoxStreamType.PlainText)
                     .RtbError.SaveFile(ErrFile, RichTextBoxStreamType.PlainText)
+                    FrmMainv4.CollectMemoryGarbage(True)
                 Catch ex As IOException
                     PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
                 Finally
                     'a
                 End Try
-                PrintLog($"-{vbLf}")
+                'PrintLog($"-{vbLf}")
                 StartNewLogFile()
             Else
                 PrintLog($"Check for new log -> File date: {si}  Current Date: { Replace($"{Now:d}", "/", String.Empty)}{vbLf}")
@@ -149,12 +151,12 @@ Friend Module LogRoutinesV4
 
     Friend Sub SaveLogs()
         Try
-            PrintLog($"¥{vbLf}")
+            PrintLog($"¥{vbLf}")
             With FrmMainv4
                 .RtbLog.SaveFile(LogFile, RichTextBoxStreamType.PlainText)
                 .RtbError.SaveFile(ErrFile, RichTextBoxStreamType.PlainText)
             End With
-        Catch ex As exception When TypeOf ex Is IOException OrElse TypeOf ex Is ArgumentException
+        Catch ex As Exception When TypeOf ex Is IOException OrElse TypeOf ex Is ArgumentException
             Return
         Finally
             'a
@@ -181,26 +183,18 @@ Friend Module LogRoutinesV4
     End Sub
 
     Private Function GetLogHeader() As String
-        Try
-            Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}")
-            sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
-            sb.Append($"Application Startup Time: {AppStartTime:F}{vbLf}")
-            sb.Append($"Log file: {LogFile}{vbLf}")
-            sb.Append($"Error file: {ErrFile}{vbLf}")
-            sb.Append($"Data file: {TlDataFile}{vbLf}")
-            sb.Append($"Times run: {Timesrun}{vbLf}")
-            sb.Append($"Controls: {NumControls(FrmMainv4)}{vbLf}")
-            sb.Append($"Daily Update interval: {My.Settings.UpdateInt_Timelines} minutes{vbLf}")
-            sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
-            sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
-            Return sb.ToString()
-        Catch ex As Exception When _
-                  TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is SecurityException OrElse TypeOf ex Is DirectoryNotFoundException
-            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
-        Finally
-            ''trap error
-        End Try
-        Return $"- Invalid Log Header -{vbLf}"
+        Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}", 128)
+        sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
+        sb.Append($"Application Startup Time: {AppStartTime:F}{vbLf}")
+        sb.Append($"Log file: {LogFile}{vbLf}")
+        sb.Append($"Error file: {ErrFile}{vbLf}")
+        sb.Append($"Data file: {TlDataFile}{vbLf}")
+        sb.Append($"Times run: {Timesrun}{vbLf}")
+        sb.Append($"Controls: {NumControls(FrmMainv4)}{vbLf}")
+        sb.Append($"Daily Update interval: {My.Settings.UpdateInt_Timelines} minutes{vbLf}")
+        sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
+        sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
+        Return sb.ToString
     End Function
 
     Private Function NumControls(parent As Control) As Integer
@@ -213,14 +207,20 @@ Friend Module LogRoutinesV4
             ResetErr = False
         End If
     End Sub
+
     Private Sub StartNewLogFile()
         Try
             With FrmMainv4
-                .RtbError.Clear()
+                FrmMainv4.CollectMemoryGarbage(False)
+                .RtbLog.SelectAll()
                 .RtbLog.Clear()
+                .RtbLog.Text = vbNullString
+                .RtbError.SelectAll()
+                .RtbError.Clear()
+                .RtbError.Text = vbNullString
                 GotErr = False
                 ResetErr = True
-                .TsslErr.ForeColor = Color.Green
+                .TsslErr.ForeColor = Color.ForestGreen
                 .TsslErr.ToolTipText = My.Resources.err_in_pgm
                 .TsslErr.Text = $"!"
                 LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
@@ -228,12 +228,13 @@ Friend Module LogRoutinesV4
                 TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
                 PrintLog(GetLogHeader())
                 PrintErrLog(GetLogHeader())
+                FrmMainv4.CollectMemoryGarbage(True)
                 PerformLogMaintenance()
             End With
         Catch ex As ArgumentNullException
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
         Finally
-            'a
+            SaveLogs()
         End Try
     End Sub
 

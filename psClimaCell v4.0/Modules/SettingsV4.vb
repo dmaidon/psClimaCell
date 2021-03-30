@@ -36,6 +36,7 @@ Friend Module SettingsV4
             .ChkTs1h.Checked = My.Settings.Ts1h
             .ChkTs1d.Checked = My.Settings.Ts1d
             .ChkTsCur.Checked = My.Settings.TsCur
+            .ChkTsBest.Checked = My.Settings.TsBest
             .ChkLogBool0.Checked = My.Settings.Log_Images
             .ChkLogBool1.Checked = My.Settings.Log_Headers
             .NumLat.Value = My.Settings.cLatitude

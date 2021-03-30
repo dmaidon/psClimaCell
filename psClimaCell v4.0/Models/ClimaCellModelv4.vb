@@ -98,7 +98,7 @@ Partial Public Class Values
     <JsonPropertyName("treeWillowIndex")> Public Property TreeWillow As Double?
     <JsonPropertyName("visibility")> Public Property Visibility As Double?
     <JsonPropertyName("weedIndex")> Public Property Weed As Double?
-    <JsonPropertyName("weedGrassweedIndex")> Public Property WeedGrassWeed As Double?
+    <JsonPropertyName("weedRagweedIndex")> Public Property WeedRagweed As Double?
     <JsonPropertyName("windDirection")> Public Property WindDir As Double?
     <JsonPropertyName("windGust")> Public Property WindGust As Double?
     <JsonPropertyName("windSpeed")> Public Property WindSpeed As Double?

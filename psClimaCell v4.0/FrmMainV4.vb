@@ -7,6 +7,30 @@ Public Class FrmMainv4
     'https://docs.climacell.co/reference/data-layers-overview
     Public tlNfo As CcTimelinesModel()
 
+    Friend Shared Sub CollectMemoryGarbage(save As Boolean)
+        Dim hg = GC.MaxGeneration
+        Dim tmb = GC.GetTotalMemory(False)
+        Dim mbc As Long = GC.GetTotalMemory(False)
+        GC.Collect()
+        Dim tma = GC.GetTotalMemory(False)
+        Dim mac As Long = GC.GetTotalMemory(False)
+        ''XML literal
+        If save Then
+            Dim msg = <msg>
+Memory Garbage Collection
+Highest Generation: <%= hg %>
+Total memory before: <%= tmb.ToString("#,### bytes") %>
+Total memory after: <%= tma.ToString("#,### bytes") %>
+Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
+                      </msg>.Value
+            PrintLog($"{msg}{vbLf}")
+            Dim x = Process.GetCurrentProcess()
+            PrintLog($"---{vbLf}Memory: {x.WorkingSet64 / 1024:N0} K{vbLf}{vbLf}Paged: {x.PagedMemorySize64 / 1024:N0} K{vbLf}")
+            PrintLog($"{My.Resources.separator}{vbLf}")
+        End If
+        SaveLogs()
+    End Sub
+
     ''' <summary>
     '''     Manually update application settings In Settings create MustUpgrade/Boolean/User/True
     ''' </summary>
@@ -53,7 +77,8 @@ Public Class FrmMainv4
         StartLogfile()
         PerformLogMaintenance()
         ParseDataFieldUnits()
-
+        AddContextMenu(RtbLog)
+        AddContextMenu(RtbError)
         If String.IsNullOrEmpty(My.Settings.ApiKey) Then
             TC.SelectedTab = TpAppOptions
         End If
@@ -447,7 +472,7 @@ Public Class FrmMainv4
         ct.Select(0, ct.Text.Length)
     End Sub
 
-    Private Sub TimeSteps(sender As Object, e As EventArgs) Handles ChkTs1m.CheckedChanged, ChkTs5m.CheckedChanged, ChkTs15m.CheckedChanged, ChkTs30m.CheckedChanged, ChkTs1h.CheckedChanged, ChkTs1d.CheckedChanged, ChkTsCur.CheckedChanged
+    Private Sub TimeSteps(sender As Object, e As EventArgs) Handles ChkTs1m.CheckedChanged, ChkTs5m.CheckedChanged, ChkTs15m.CheckedChanged, ChkTs30m.CheckedChanged, ChkTs1h.CheckedChanged, ChkTs1d.CheckedChanged, ChkTsCur.CheckedChanged, ChkTsBest.CheckedChanged
         'maximum of 3 allowed
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
@@ -465,6 +490,8 @@ Public Class FrmMainv4
                     My.Settings.Ts1d = .Checked
                 Case 6
                     My.Settings.TsCur = .Checked
+                Case 7
+                    My.Settings.TsBest = .Checked
                 Case Else
                     Exit Select
             End Select
@@ -619,34 +646,6 @@ Public Class FrmMainv4
 
 #Region "RtbMenu"
 
-    Private Sub SearchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchToolStripMenuItem.Click
-        Dim sStr As Object
-        sStr = InputBox("Enter Text to Find", "Search", "")
-        RtbSearch(RtbLog, sStr.ToString, Color.Crimson, Color.White)
-    End Sub
-
-    Private Sub ScrollToEndToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScrollToEndToolStripMenuItem.Click
-        RtbLog.Select(RtbLog.Text.Length, RtbLog.Text.Length)
-        RtbLog.ScrollToCaret()
-    End Sub
-
-    Private Sub ScrollToTopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScrollToTopToolStripMenuItem.Click
-        RtbLog.Select(0, 0)
-        RtbLog.ScrollToCaret()
-    End Sub
-
-    Private Sub PasteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteToolStripMenuItem.Click
-        RtbLog.Paste()
-    End Sub
-
-    Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
-        RtbLog.Copy()
-    End Sub
-
-    Private Sub CutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CutToolStripMenuItem.Click
-        RtbLog.Cut()
-    End Sub
-
     Private Shared Sub RtbSearch(T As RichTextBox, word As String, color1 As Color, Optional color2 As Color = Nothing)
         Const pos = 0
         Dim s = T.Text
@@ -664,6 +663,22 @@ Public Class FrmMainv4
             End If
         End While
         T.Select(pos, 0)
+    End Sub
+
+    Private Sub ScrollToEndToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        RtbLog.Select(RtbLog.Text.Length, RtbLog.Text.Length)
+        RtbLog.ScrollToCaret()
+    End Sub
+
+    Private Sub ScrollToTopToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        RtbLog.Select(0, 0)
+        RtbLog.ScrollToCaret()
+    End Sub
+
+    Private Sub SearchToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Dim sStr As Object
+        sStr = InputBox("Enter Text to Find", "Search", "")
+        RtbSearch(RtbLog, sStr.ToString, Color.Crimson, Color.White)
     End Sub
 
 #Region "Log Search"
@@ -731,6 +746,7 @@ Public Class FrmMainv4
         RtbLog.ScrollToCaret()
     End Sub
 
+
     Private Sub TxtLogSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtLogSearch.TextChanged
         start = 0
         indexOfSearchText = 0
@@ -739,4 +755,5 @@ Public Class FrmMainv4
 #End Region
 
 #End Region
+
 End Class

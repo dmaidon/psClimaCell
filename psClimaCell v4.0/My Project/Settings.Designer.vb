@@ -1373,6 +1373,18 @@ Namespace My
                 Me("TlLand9") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TsBest() As Boolean
+            Get
+                Return CType(Me("TsBest"),Boolean)
+            End Get
+            Set
+                Me("TsBest") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

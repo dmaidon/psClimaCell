@@ -18,6 +18,7 @@ Friend Module TimeLineRoutinesV4
             .TC.TabPages.Remove(.Tp1dFull)
             .TC.TabPages.Remove(.Tp1Hr)
             .TC.TabPages.Remove(.TpCurrent)
+            .TC.TabPages.Remove(.TpBest)
             .TC.TabPages.Remove(.Tp1Min)
             .TC.TabPages.Remove(.Tp5Min)
             .TC.TabPages.Remove(.Tp15Min)
@@ -44,6 +45,7 @@ Friend Module TimeLineRoutinesV4
                 DownloadTimeLines(tlFile)
             End If
         End If
+        FrmMainv4.CollectMemoryGarbage(True)
     End Sub
 
     Private Async Sub DownloadTimeLines(fn As String)
@@ -113,6 +115,9 @@ Friend Module TimeLineRoutinesV4
                                     Case "current"
                                         FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpCurrent)
                                         WriteCurrentData(j)
+                                    Case "best"
+                                        FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpBest)
+                                        WriteBestData(j)
                                     Case Else
                                         Exit Select
                                 End Select
@@ -175,7 +180,7 @@ Friend Module TimeLineRoutinesV4
     Private Function GetFieldsString() As String
         Try
             'temperature field is set to fetch Min and Max temperature for time period.
-            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedGrassweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200"})
+            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedRagweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200"})
             '#15 = solarGHI
             Dim sb = New StringBuilder()
             For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
@@ -225,7 +230,7 @@ Friend Module TimeLineRoutinesV4
 
     Private Function GetTimeStepString() As String
         Try
-            Dim tsArr As New List(Of String)({"1m", "5m", "15m", "30m", "1h", "1d", "current"})
+            Dim tsArr As New List(Of String)({"1m", "5m", "15m", "30m", "1h", "1d", "current", "best"})
             Dim sb = New StringBuilder()
             For Each c As CheckBox In FrmMainv4.GbTimeSteps.Controls.OfType(Of CheckBox)()
                 If c.Checked Then
@@ -300,6 +305,9 @@ Friend Module TimeLineRoutinesV4
                         Case "current"
                             FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.TpCurrent)
                             WriteCurrentData(j)
+                        Case "best"
+                            FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpBest)
+                            WriteBestData(j)
                         Case Else
                             Exit Select
                     End Select
@@ -624,6 +632,31 @@ Friend Module TimeLineRoutinesV4
         End If
     End Sub
 
+    Private Sub WriteBestData(ct As Integer)
+        PrintLog($"{vbLf}Writing timelines Best data @ {Now:F}.{vbLf}{vbLf}")
+        If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
+            PrintLog($"Best data does not exist @ {Now:F}.{vbLf}{vbLf}")
+        Else
+            Try
+                With FrmMainv4.DgvBest
+                    .Rows.Clear()
+                    PrintLog($"**> Best records total count: {tlNfo.WxData.TimeLines(ct).Intervals.Count}{vbLf}")
+                    For j = 0 To tlNfo.WxData.TimeLines(ct).Intervals.Count - 1
+                        WriteData(FrmMainv4.DgvBest, ct, j)
+                        .ClearSelection()
+                        Application.DoEvents()
+                    Next
+                End With
+            Catch ex As Exception When TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is Exception
+                If ex.InnerException IsNot Nothing Then
+                    ie = ex.InnerException.ToString
+                End If
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Finally
+                '
+            End Try
+        End If
+    End Sub
     Private Sub WriteCurrentData(ct As Integer)
         PrintLog($"{vbLf}Writing timelines current data @ {Now:F}.{vbLf}{vbLf}")
         'no error checking to make sure individual fields exist in json file
@@ -967,8 +1000,8 @@ Friend Module TimeLineRoutinesV4
                 .Rows.Add("Weed Pollen Index", $"{GetPollenValue(tl.Weed.Value)}")
             End If
 
-            If tl.WeedGrassWeed IsNot Nothing AndAlso tl.WeedGrassWeed.HasValue Then
-                .Rows.Add("Weed Grass Weed Pollen Index", $"{GetPollenValue(tl.WeedGrassWeed.Value)}")
+            If tl.WeedRagweed IsNot Nothing AndAlso tl.WeedRagweed.HasValue Then
+                .Rows.Add("Ragweed Pollen Index", $"{GetPollenValue(tl.WeedRagweed.Value)}")
             End If
 
             'Maritime data
