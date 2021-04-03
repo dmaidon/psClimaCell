@@ -133,5 +133,7 @@
   "WindSpeed": "m/s",
   "windWaveSignificantHeight": "m",
   "windWaveDirection": "degrees",
-  "WindWaveMeanPeriod": "seconds"
+  "WindWaveMeanPeriod": "seconds",
+  "SnowAccumulation": "mm",
+  "IceAccumulation": "mm"
 }

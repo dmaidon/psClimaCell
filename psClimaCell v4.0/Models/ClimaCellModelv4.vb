@@ -61,6 +61,8 @@ Partial Public Class Values
     <JsonPropertyName("precipitationIntensity")> Public Property PrecipIntensity As Double?
     <JsonPropertyName("precipitationProbability")> Public Property PrecipPct As Double?
     <JsonPropertyName("precipitationType")> Public Property PrecipType As Integer?
+    <JsonPropertyName("snowAccumulation")> Public Property SnowAccumulation As Double?
+    <JsonPropertyName("iceAccumulation")> Public Property IceAccumulation As Double?
     <JsonPropertyName("pressureSeaLevel")> Public Property PressureSeaLevel As Double?
     <JsonPropertyName("pressureSurfaceLevel")> Public Property PressureSurfaceLevel As Double?
     <JsonPropertyName("humidity")> Public Property RH As Double?

@@ -1385,6 +1385,30 @@ Namespace My
                 Me("TsBest") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore21() As Boolean
+            Get
+                Return CType(Me("TlCore21"),Boolean)
+            End Get
+            Set
+                Me("TlCore21") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore22() As Boolean
+            Get
+                Return CType(Me("TlCore22"),Boolean)
+            End Get
+            Set
+                Me("TlCore22") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

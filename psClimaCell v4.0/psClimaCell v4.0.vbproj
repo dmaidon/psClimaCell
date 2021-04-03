@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.3.30.886</AssemblyVersion>
+    <AssemblyVersion>21.3.30.887</AssemblyVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ShouldCreateLogs>True</ShouldCreateLogs>
@@ -27,7 +27,7 @@
     <InheritWinAppVersionFrom>AssemblyFileVersion</InheritWinAppVersionFrom>
     <AssemblyInfoFilePath>My%2520Project\AssemblyInfo.vb</AssemblyInfoFilePath>
     <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
-    <ApplicationVersion>21.3.30.885</ApplicationVersion>
+    <ApplicationVersion>21.3.30.886</ApplicationVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
