@@ -1,6 +1,6 @@
 # ClimaCell V4 #
 
-A Windows Desktop application that utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "current", "1d", "1h", "30m", "15m", "5m" and "1m" timelines.
+A Windows Desktop application that utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "best", "current", "1d", "1h", "30m", "15m", "5m" and "1m" timelines.
 
 A separate tab is provided for each data timeline.
 
