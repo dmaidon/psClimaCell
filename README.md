@@ -1,6 +1,6 @@
-# ClimaCell V4 #
+# Tomorrow.io V4 #
 
-A Windows Desktop application that utilizes [ClimaCell V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "best", "current", "1d", "1h", "30m", "15m", "5m" and "1m" timelines.
+A Windows Desktop application that utilizes [Tomorrow.io V4 API](https://developer.climacell.co/) TimeLine forecasts.  Supports "best", "current", "1d", "1h", "30m", "15m", "5m" and "1m" timelines.
 
 A separate tab is provided for each data timeline.
 
@@ -8,7 +8,7 @@ Core, Air Quality, Fire, Land, Maritime, Pollen, Precipitation and Solar data is
 
 Written in Vb.Net 4.8 Framework.
 
-Requires a V4 API Key from http://climacell.co.
+Requires a V4 API Key from http://tomorrow.io
 
 ## Features ##
 
