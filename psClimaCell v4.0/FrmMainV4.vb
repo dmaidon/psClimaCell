@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports IWshRuntimeLibrary
 
 Public Class FrmMainv4
 
@@ -6,6 +7,10 @@ Public Class FrmMainv4
     'https://docs.climacell.co/reference/data-layers-core
     'https://docs.climacell.co/reference/data-layers-overview
     Public tlNfo As CcTimelinesModel()
+    Private ReadOnly _desktopPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), My.Application.Info.AssemblyName & ".lnk")
+    Private ReadOnly _startupPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), My.Application.Info.AssemblyName & ".lnk")
+    Private ReadOnly _startMenuPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), My.Application.Info.AssemblyName & ".lnk")
+    Private _loading As Boolean = True
 
     Friend Shared Sub CollectMemoryGarbage(save As Boolean)
         Dim hg = GC.MaxGeneration
@@ -72,6 +77,10 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         Application.EnableVisualStyles()
         AppStartTime = Now
         UpgradeMySettings()
+        ChkScDesktop.Checked = IO.File.Exists(_desktopPathName)
+        ChkScStartup.Checked = IO.File.Exists(_startupPathName)
+        ChkScMenu.Checked = IO.File.Exists(_startMenuPathName)
+        _loading = False
         LoadProgramSettings()
         CreateProgramFolders()
         StartLogfile()
@@ -100,6 +109,50 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         SaveLogs()
         My.Settings.Save()
         TIcon.Dispose()
+    End Sub
+
+    Private Sub Shortcuts(sender As Object, e As EventArgs) Handles ChkScDesktop.Click, ChkScStartup.Click, ChkScMenu.Click
+        If Not _loading Then
+            With DirectCast(sender, CheckBox)
+                Select Case CInt(.Tag)
+                    Case 0
+                        CreateShortcut(_desktopPathName, .Checked) 'Create a shortcut on the desktop
+                    Case 1
+                        CreateShortcut(_startupPathName, .Checked) 'Create a shortcut in the start folder 'Starts with Windows'
+                    Case 2
+                        CreateShortcut(_startMenuPathName, .Checked) 'Create a shortcut in the start folder 'Starts with Windows'
+                End Select
+            End With
+        End If
+    End Sub
+
+    Private Shared Sub CreateShortcut(shortcutPathName As String, create As Boolean)
+        If create Then
+            Try
+                Dim shortcutTarget = Path.Combine(Application.StartupPath, My.Application.Info.AssemblyName & ".exe")
+                Dim myShell As New WshShell()
+                Dim myShortcut = CType(myShell.CreateShortcut(shortcutPathName), WshShortcut)
+                myShortcut.TargetPath = shortcutTarget 'The exe file this shortcut executes when double clicked
+                myShortcut.IconLocation = shortcutTarget & ",0" 'Sets the icon of the shortcut to the exe`s icon
+                myShortcut.WorkingDirectory = Application.StartupPath 'The working directory for the exe
+                myShortcut.Arguments = "" 'The arguments used when executing the exe
+                myShortcut.Save() 'Creates the shortcut
+                PrintLog($"Created shortcut: {shortcutTarget}{vbLf}")
+            Catch ex As Exception When TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
+                PrintLog($"   Error: {ex.Message}{vbLf}   Location: {ex.TargetSite}{vbLf}   Trace: { ex.StackTrace}{vbLf}")
+            Finally
+                'a
+            End Try
+        Else
+            Try
+                If IO.File.Exists(shortcutPathName) Then IO.File.Delete(shortcutPathName)
+                PrintLog($"Deleted shortcut: {shortcutPathName}{vbLf}")
+            Catch ex As Exception When TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is IOException
+                PrintLog($"   Error: {ex.Message}{vbLf}   Location: {ex.TargetSite}{vbLf}   Trace: { ex.StackTrace}{vbLf}")
+            Finally
+                'a
+            End Try
+        End If
     End Sub
 
     Private Sub TsslRefresh_Click(sender As Object, e As EventArgs) Handles TsslRefresh.Click
@@ -749,7 +802,6 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         RtbLog.Select(1, RtbLog.Text.Length)
         RtbLog.ScrollToCaret()
     End Sub
-
 
     Private Sub TxtLogSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtLogSearch.TextChanged
         start = 0

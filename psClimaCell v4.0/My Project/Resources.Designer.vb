@@ -131,19 +131,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property powered_by_climacell_halo() As System.Drawing.Bitmap
+        Friend ReadOnly Property Powered_by_Tomorrow_Halo_sml() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("powered_by_climacell_halo", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property powered_by_climacell_halo_sml() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("powered_by_climacell_halo_sml", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Powered_by_Tomorrow_Halo_sml", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

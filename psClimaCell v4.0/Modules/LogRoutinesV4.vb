@@ -29,6 +29,8 @@ Friend Module LogRoutinesV4
                     'a
                 End Try
                 'PrintLog($"-{vbLf}")
+                .RtbLog.Clear()
+                .RtbLog.Text = vbNullString
                 StartNewLogFile()
             Else
                 PrintLog($"Check for new log -> File date: {si}  Current Date: { Replace($"{Now:d}", "/", String.Empty)}{vbLf}")
@@ -99,16 +101,16 @@ Friend Module LogRoutinesV4
             .TsslErr.Text = $"{_numErr}"
             .RtbLog.SelectionColor = Color.Red
             .RtbLog.AppendText($"{vbLf}{My.Resources.separator}{vbLf}Time: {Now:T}{vbLf}")
-            .RtbLog.SelectionColor = Color.Black
+            .RtbLog.SelectionColor = Color.WhiteSmoke
             .RtbLog.AppendText(em)
             .RtbLog.SelectionColor = Color.Red
             .RtbLog.AppendText($"{My.Resources.separator}{vbLf}{vbLf}")
-            .RtbLog.SelectionColor = Color.Black
+            .RtbLog.SelectionColor = Color.WhiteSmoke
 
             ''write same information to error log
             .RtbError.SelectionColor = Color.Red
             .RtbError.AppendText($"{vbLf}{My.Resources.err_separator}{vbLf}Time: {Now:T}{vbLf}")
-            .RtbError.SelectionColor = Color.Black
+            .RtbError.SelectionColor = Color.WhiteSmoke
             .RtbError.AppendText(em)
             .RtbError.SelectionColor = Color.Red
             .RtbError.AppendText($"{My.Resources.err_separator}{vbLf}{vbLf}")
@@ -183,7 +185,7 @@ Friend Module LogRoutinesV4
     End Sub
 
     Private Function GetLogHeader() As String
-        Dim sb = New StringBuilder($"Log file started: {Now:F}{vbLf}", 128)
+        Dim sb = New StringBuilder($"{Now:T}{vbCrLf}Log file started: {Now:F}{vbLf}", 128)
         sb.Append($"Program: {Application.ProductName} v{Application.ProductVersion}{vbLf}")
         sb.Append($"Application Startup Time: {AppStartTime:F}{vbLf}")
         sb.Append($"Log file: {LogFile}{vbLf}")
@@ -212,12 +214,8 @@ Friend Module LogRoutinesV4
         Try
             With FrmMainv4
                 FrmMainv4.CollectMemoryGarbage(False)
-                .RtbLog.SelectAll()
                 .RtbLog.Clear()
-                .RtbLog.Text = vbNullString
-                .RtbError.SelectAll()
                 .RtbError.Clear()
-                .RtbError.Text = vbNullString
                 GotErr = False
                 ResetErr = True
                 .TsslErr.ForeColor = Color.ForestGreen
@@ -228,14 +226,15 @@ Friend Module LogRoutinesV4
                 TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
                 PrintLog(GetLogHeader())
                 PrintErrLog(GetLogHeader())
-                FrmMainv4.CollectMemoryGarbage(True)
+                FrmMainv4.CollectMemoryGarbage(False)
                 PerformLogMaintenance()
             End With
         Catch ex As ArgumentNullException
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
         Finally
-            SaveLogs()
+            'a
         End Try
+        SaveLogs()
     End Sub
 
 End Module

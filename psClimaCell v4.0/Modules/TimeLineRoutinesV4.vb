@@ -417,8 +417,13 @@ Friend Module TimeLineRoutinesV4
                             sb.Append($"Bp: {tl.PressureSurfaceLevel.Value} {unitNfo.PressureSurfaceLevel}{vbLf}")
                         End If
 
-                        sb.Append($"Sr: {tl.Sunrise.ToLocalTime:t}{vbLf}")
-                        sb.Append($"Ss: {tl.Sunset.ToLocalTime:t}{vbLf}")
+                        If tl.Sunrise.ToString.Length > 0 Then
+                            sb.Append($"Sr: {tl.Sunrise.ToLocalTime:t}{vbLf}")
+                        End If
+
+                        If tl.Sunset.ToString.Length > 0 Then
+                            sb.Append($"Ss: {tl.Sunset.ToLocalTime:t}{vbLf}")
+                        End If
 
                         'Dim myTI As TextInfo = New CultureInfo("en-US", False).TextInfo
                         If tl.MoonPhase IsNot Nothing AndAlso tl.MoonPhase.HasValue Then
@@ -479,10 +484,10 @@ Friend Module TimeLineRoutinesV4
                     .Rows(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     .Rows(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-                    .Rows(0).Height = 78
-                    .Rows(1).Height = 187
-                    .Rows(4).Height = 78
-                    .Rows(5).Height = 187
+                    .Rows(0).Height = 120   '78
+                    .Rows(1).Height = 275  '187
+                    .Rows(4).Height = 120   '78
+                    .Rows(5).Height = 275   '187
 
                     .Rows(2).DefaultCellStyle.Font = New Font("", 13, FontStyle.Bold)
                     .Rows(3).DefaultCellStyle.Font = New Font("", 14, FontStyle.Bold)
@@ -782,6 +787,16 @@ Friend Module TimeLineRoutinesV4
 
             If tl.Visibility IsNot Nothing AndAlso tl.Visibility.HasValue Then
                 .Rows.Add($"Visibility", $"{tl.Visibility.Value:N0} {unitNfo.Visibility}")
+            End If
+
+            If Not tlNfo.WxData.TimeLines(ct).TimeStep.Contains("current") Then
+                If tl.Sunrise.ToString.Trim.Length > 0 Then
+                    .Rows.Add("Sunrise", $"{tl.Sunrise.ToLocalTime:t}")
+                End If
+
+                If tl.Sunset.ToString.Trim.Length > 0 Then
+                    .Rows.Add("Sunset", $"{tl.Sunset.ToLocalTime:t}")
+                End If
             End If
 
             'EPA
