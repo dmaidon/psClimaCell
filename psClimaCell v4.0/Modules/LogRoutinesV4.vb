@@ -30,6 +30,7 @@ Friend Module LogRoutinesV4
                 End Try
                 'PrintLog($"-{vbLf}")
                 .RtbLog.Clear()
+                .RtbLog.Refresh()
                 .RtbLog.Text = vbNullString
                 StartNewLogFile()
             Else
@@ -215,7 +216,9 @@ Friend Module LogRoutinesV4
             With FrmMainv4
                 FrmMainv4.CollectMemoryGarbage(False)
                 .RtbLog.Clear()
+                .RtbLog.Refresh()
                 .RtbError.Clear()
+                .RtbError.Refresh()
                 GotErr = False
                 ResetErr = True
                 .TsslErr.ForeColor = Color.ForestGreen

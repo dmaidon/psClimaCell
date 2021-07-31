@@ -99,7 +99,7 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         TsslVer.Text = Application.ProductVersion
         LblAbout.Text = String.Format(My.Resources.about, vbLf, ParseVersion())
         FetchTimeLines(False)
-
+        FetchWildfireData()
         SetMidnightRollover()
         SaveLogs()
         TmrClock.Start()
@@ -227,6 +227,7 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         TmrTimelineUpdate.Start()
         PrintLog($"*** Next TimeLines Update @ {TlNextUpdate:T}. ***{vbLf}")
         FetchTimeLines(True)
+        FetchWildfireData()
     End Sub
 
 #End Region
@@ -806,6 +807,10 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
     Private Sub TxtLogSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtLogSearch.TextChanged
         start = 0
         indexOfSearchText = 0
+    End Sub
+
+    Private Sub BtnLogRefresh_Click(sender As Object, e As EventArgs) Handles BtnLogRefresh.Click
+        RtbLog.Refresh()
     End Sub
 
 #End Region

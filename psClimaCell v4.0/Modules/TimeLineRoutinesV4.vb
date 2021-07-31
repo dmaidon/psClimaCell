@@ -440,7 +440,7 @@ Friend Module TimeLineRoutinesV4
 
                         Dim icn As String = Path.Combine(IconDir, "PNG", "Color", ImgStyleArr(My.Settings.ImageStyle), $"{tl.WxCode.Value}.png")
 
-                        If My.Settings.Log_Images Then PrintLog($"{j}. Daily: {icn} --> Bitmap{vbLf}")
+                        If My.Settings.Log_Images Then PrintLog($"{j:0#}. Daily: {icn} --> Bitmap{vbLf}")
 
                         Dim bgClr = If(Date2Unix(CDate(Now)) >= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunrise.ToLocalTime)) And Date2Unix(Now) <= Date2Unix(CDate(tlNfo.WxData.TimeLines(ct).Intervals(0).Values.Sunset.ToLocalTime)),
                             Color.LightSkyBlue,
