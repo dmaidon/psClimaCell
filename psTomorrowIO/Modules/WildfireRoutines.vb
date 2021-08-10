@@ -1,4 +1,4 @@
-﻿Imports psClimaCellv4.Models
+﻿Imports psTomorrowIO.Models
 
 Imports System.IO
 Imports System.Net.Http
@@ -47,6 +47,11 @@ Friend Module WildfireRoutines
                     'PrintLog($"Wildfire Data @ {Now:T}.{vbLf}{rb}{vbLf}")
                     PrintLog($"Writing Wildfire data to disk --> {fn}.{vbLf}")
                     wfNfo = JsonSerializer.Deserialize(Of FireApiData)(rb)
+                    'Using aTxt As StreamWriter = File.AppendText(TlDataFile)
+                    '    Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(False)
+                    '    Await aTxt.WriteLineAsync($"Wildfires Data @ {Now:T}{vbLf}{rb}{vbLf}{vbLf}").ConfigureAwait(False)
+                    'End Using
+
                     WriteWildfireData()
                 End Using
             End Using
@@ -134,6 +139,22 @@ Friend Module WildfireRoutines
                         .Rows.Add("", "Secondary Fuel Model", wf.SecondaryFuelModel)
                     End If
 
+                    If wf.FireBehaviorGeneral IsNot vbNullString Then
+                        .Rows.Add("", "Behavior", wf.FireBehaviorGeneral)
+                    End If
+
+                    If wf.FireBehaviorGeneral1 IsNot vbNullString Then
+                        .Rows.Add("", "Behavior 1", wf.FireBehaviorGeneral2)
+                    End If
+
+                    If wf.FireBehaviorGeneral2 IsNot vbNullString Then
+                        .Rows.Add("", "Behavior 2", wf.FireBehaviorGeneral2)
+                    End If
+
+                    If wf.FireBehaviorGeneral3 IsNot vbNullString Then
+                        .Rows.Add("", "Behavior 3", wf.FireBehaviorGeneral3)
+                    End If
+
                     If wf.PooLandownerKind IsNot vbNullString Then
                         .Rows.Add("", "Land Owner", wf.PooLandownerKind)
                     End If
@@ -146,6 +167,7 @@ Friend Module WildfireRoutines
                 .Rows.Add()
                 .Rows.Add("", "", "Total Burned Acres", $"{ta:N2}")
                 FrmMainv4.LblWfData.Text = String.Format(CStr(FrmMainv4.LblWfData.Tag), wfNfo.Features.Count, $"{ta:N2}")
+                PrintLog($"Total Wildfires: {wfNfo.Features.Count}{vbLf}Acres Burned: {ta:N2}{vbLf}")
                 .ClearSelection()
             End With
         Catch ex As Exception When TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is ArgumentOutOfRangeException

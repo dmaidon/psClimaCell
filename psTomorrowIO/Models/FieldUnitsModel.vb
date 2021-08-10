@@ -39,6 +39,7 @@
     Public Property TertiarySwellDirection As String
     Public Property TertiarySwellMeanPeriod As String
     Public Property TertiarySwellSignificantHeight As String
+    Public Property Uv As Dictionary(Of String, String)
     Public Property Visibility As String
     Public Property WaveDirection As String
     Public Property WaveFromDirection As String

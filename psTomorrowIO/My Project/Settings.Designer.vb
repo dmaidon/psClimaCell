@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -1409,6 +1409,30 @@ Namespace My
                 Me("TlCore22") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore23() As Boolean
+            Get
+                Return CType(Me("TlCore23"),Boolean)
+            End Get
+            Set
+                Me("TlCore23") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore24() As Boolean
+            Get
+                Return CType(Me("TlCore24"),Boolean)
+            End Get
+            Set
+                Me("TlCore24") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
@@ -1420,9 +1444,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.psClimaCellv4.My.MySettings
+        Friend ReadOnly Property Settings() As Global.psTomorrowIO.My.MySettings
             Get
-                Return Global.psClimaCellv4.My.MySettings.Default
+                Return Global.psTomorrowIO.My.MySettings.Default
             End Get
         End Property
     End Module

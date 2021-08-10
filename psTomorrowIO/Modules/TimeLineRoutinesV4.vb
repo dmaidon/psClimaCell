@@ -4,12 +4,13 @@ Imports System.Net
 Imports System.Security
 Imports System.Text
 Imports System.Text.Json
-Imports psClimaCellv4.Modules.DayColors
+
+Imports psTomorrowIO.Modules.DayColors
 
 Friend Module TimeLineRoutinesV4
 
     Private ie As String = "- N/A -"
-    Private tlNfo As CcTimelinesModel
+    Private tlNfo As TioTimelinesModel
 
     Friend Sub FetchTimeLines(Optional OverRide As Boolean = False)
         Dim tlFile As String = Path.Combine(TempDir, $"tlData_{Now:Mddyy-HH}.json")
@@ -50,7 +51,8 @@ Friend Module TimeLineRoutinesV4
 
     Private Async Sub DownloadTimeLines(fn As String)
         Try
-            Dim url As String = $"https://data.climacell.co/v4/timelines?apikey={My.Settings.ApiKey}&location={My.Settings.cLatitude},{My.Settings.cLongitude}&units={unitArr(My.Settings.Units)}&timesteps={GetTimeStepString()}&fields={GetFieldsString()}"
+            'Dim url As String = $"https://data.climacell.co/v4/timelines?apikey={My.Settings.ApiKey}&location={My.Settings.cLatitude},{My.Settings.cLongitude}&units={unitArr(My.Settings.Units)}&timesteps={GetTimeStepString()}&fields={GetFieldsString()}"
+            Dim url As String = $"https://api.tomorrow.io/v4/timelines?apikey={My.Settings.ApiKey}&location={My.Settings.cLatitude},{My.Settings.cLongitude}&units={unitArr(My.Settings.Units)}&timesteps={GetTimeStepString()}&fields={GetFieldsString()}"
 
             PrintLog($"TimeLines Url: {url}{vbLf}{vbLf}")
 
@@ -66,7 +68,7 @@ Friend Module TimeLineRoutinesV4
             End With
             Using response = CType(Await request.GetResponseAsync.ConfigureAwait(True), HttpWebResponse)
                 If My.Settings.Log_Headers Then
-                    PrintLog($"{vbLf}{vbLf}ClimaCell Timeline Headers:{vbLf}{vbLf}")
+                    PrintLog($"{vbLf}{vbLf}Tomorrow.io Timeline Headers:{vbLf}{vbLf}")
                     For j = 0 To response.Headers.Count - 1
                         PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
                     Next
@@ -84,10 +86,10 @@ Friend Module TimeLineRoutinesV4
                             File.WriteAllText(fn, resp)
                             PrintLog($"Timeline file saved -> {fn}{vbLf}")
 
-                            tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)
+                            tlNfo = JsonSerializer.Deserialize(Of TioTimelinesModel)(resp)
                             Using aTxt As StreamWriter = File.AppendText(TlDataFile)
                                 Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
-                                Await aTxt.WriteLineAsync($"ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
+                                Await aTxt.WriteLineAsync($"Tomorrow.io Timeline Forecast Data @ {Now:T}{vbLf}ID: {response.GetResponseHeader("X-Correlation-ID")}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
                             End Using
 
                             For j = 0 To tlNfo.WxData.TimeLines.Count - 1
@@ -180,7 +182,7 @@ Friend Module TimeLineRoutinesV4
     Private Function GetFieldsString() As String
         Try
             'temperature field is set to fetch Min and Max temperature for time period.
-            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedRagweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200", "snowAccumulation", "iceAccumulation"})
+            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedRagweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200", "snowAccumulation", "iceAccumulation", "uvIndex", "uvHealthConcern"})
             '#15 = solarGHI
             Dim sb = New StringBuilder()
             For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
@@ -275,9 +277,9 @@ Friend Module TimeLineRoutinesV4
                 Dim resp As String = Await reader.ReadToEndAsync().ConfigureAwait(True)
                 Using aTxt As StreamWriter = File.AppendText(TlDataFile)
                     Await aTxt.WriteLineAsync($"{My.Resources.separator}{vbLf}").ConfigureAwait(True)
-                    Await aTxt.WriteLineAsync($"Parsed ClimaCell Timeline Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
+                    Await aTxt.WriteLineAsync($"Parsed Tomorrow.io Timeline Forecast Data @ {Now:T}{vbLf}{resp}{vbLf}{vbLf}").ConfigureAwait(True)
                 End Using
-                tlNfo = JsonSerializer.Deserialize(Of CcTimelinesModel)(resp)
+                tlNfo = JsonSerializer.Deserialize(Of TioTimelinesModel)(resp)
                 PrintLog($"[Parsed] Timeline Forecast Data @ {Now:T}{vbLf}File age: {ab:N2} minutes{vbLf}{vbLf}")
                 FrmMainv4.TsslCallRemaining.Text = String.Format(FrmMainv4.TsslCallRemaining.Tag.ToString, My.Settings.CallsRemaining)
                 For j = 0 To tlNfo.WxData.TimeLines.Count - 1
@@ -820,6 +822,14 @@ Friend Module TimeLineRoutinesV4
 
             If tl.EpaPrimaryPollutant IsNot Nothing AndAlso tl.EpaPrimaryPollutant.HasValue Then
                 .Rows.Add("EPA Primary Pollutant", $"{unitNfo.PrimaryPollutant(tl.EpaPrimaryPollutant.Value.ToString)}")
+            End If
+
+            If tl.UvIndex.HasValue Then
+                .Rows.Add("UV Index", $"{unitNfo.Uv(tl.UvIndex.Value.ToString)}")
+            End If
+
+            If tl.UvHealthConcern.HasValue Then
+                .Rows.Add("UV Health Concern", $"{unitNfo.Uv(tl.UvHealthConcern.Value.ToString)}")
             End If
 
             'MEP China

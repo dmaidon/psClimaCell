@@ -5,7 +5,7 @@ Friend Module UnitRoutinesV4
 
     ''' <summary>
     ''' Parse the Selected Field Units data fil.  The "Imperial" and "Metric" data files are located in the Data directory.
-    ''' The Field Unit data files are modified versions of those from ClimaCell.
+    ''' The Field Unit data files are modified versions of those from Tomorrow.io.
     ''' </summary>
     Friend Sub ParseDataFieldUnits()
         Try

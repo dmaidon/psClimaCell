@@ -1,15 +1,15 @@
 ﻿{
-  "CloudBase": "mi",
-  "CloudCeiling": "mi",
+  "CloudBase": "km",
+  "CloudCeiling": "km",
   "CloudCover": "%",
   "_epaComment": "EpsBgColor, EpaFgColor and EpaConcernText added to enhance AQI data response.",
   "BgColor": {
-    "0": "#00E400",
-    "1": "#FFFF00",
-    "2": "#FF7E00",
-    "3": "#FF0000",
-    "4": "#8F3F97",
-    "5": "#7E0023"
+    "0": "#31AE8C",
+    "1": "#EDE066",
+    "2": "#EDAD66",
+    "3": "#C73A66",
+    "4": "#7A3AB3",
+    "5": "#8C3A5A"
   },
   "FgColor": {
     "0": "#000000",
@@ -20,7 +20,7 @@
     "5": "##E6E6FA"
   },
   "ConcernText": {
-    "0": "(0-50)  Air quality is satisfactory and poses little or no health risk.",
+    "0": "(0-50)  Air quality is satisfactory and poses little or no health risk",
     "1": "(51-100)  Air quality is acceptable; however, pollution in this range may pose a moderate health concern for a very small number of individuals. People who are unusually sensitive to ozone or particle pollution may experience respiratory symptoms.",
     "2": "(101-150)  Members of sensitive groups may experience health effects, but the general public is unlikely to be affected.",
     "3": "(151-200)  Everyone may begin to experience health effects but members of sensitive groups may experience more serious health effects.",
@@ -58,8 +58,8 @@
     "6": "Third Quarter",
     "7": "Waning Crescent"
   },
-  "ParticulateMatter10": "μg/ft^3",
-  "ParticulateMatter25": "μg/ft^3",
+  "ParticulateMatter10": "μg/m^3",
+  "ParticulateMatter25": "μg/m^3",
   "PollenIndex": {
     "0": "None",
     "1": "Very Low",
@@ -72,7 +72,7 @@
   "PollutantNO2": "ppb",
   "PollutantO3": "ppb",
   "PollutantSO2": "ppb",
-  "PrecipitationIntensity": "in/hr",
+  "PrecipitationIntensity": "mm/hr",
   "PrecipitationProbability": "%",
   "PrecipitationType": {
     "0": "N/A",
@@ -81,21 +81,35 @@
     "3": "Freezing Rain",
     "4": "Ice Pellets"
   },
-  "PressureSeaLevel": "inHg",
-  "PressureSurfaceLevel": "inHg",
-  "PrimarySwellWaveDirection": "°",
+  "PressureSeaLevel": "hPa",
+  "PressureSurfaceLevel": "hPa",
+  "PrimarySwellDirection": "°",
   "PrimarySwellMeanPeriod": "seconds",
-  "PrimarySwellSignificantHeight": "ft",
+  "PrimarySwellSignificantHeight": "m",
   "SecondarySwellDirection": "°",
-  "SecondarySwellSMeanPeriod": "seconds",
-  "SecondarySwellSignificantHeight": "ft",
+  "SecondarySwellMeanPeriod": "seconds",
+  "SecondarySwellSignificantHeight": "m",
   "SoilMoistureVolume": "%",
-  "Solar": "Btu/ft^2",
-  "Temperature": "°F",
+  "Solar": "W/m^2",
+  "Temperature": "°C",
   "TertiarySwellWaveDirection": "°",
   "TertiarySwellWaveSMeanPeriod": "seconds",
-  "TertiarySwellWaveSignificantHeight": "ft",
-  "Visibility": "mi",
+  "TertiarySwellWaveSignificantHeight": "m",
+  "Uv": {
+    "0": "Low",
+    "1": "Low",
+    "2": "Low",
+    "3": "Moderate",
+    "4": "Moderate",
+    "5": "Moderate",
+    "6": "High",
+    "7": "High",
+    "8": "Very High",
+    "9": "Very High",
+    "10": "Very High",
+    "11": "Extreme"
+  },
+  "Visibility": "km",
   "WeatherCode": {
     "0": "Unknown",
     "1000": "Clear",
@@ -125,15 +139,15 @@
     "7102": "Light Ice Pellets",
     "8000": "Thunderstorm"
   },
-  "WaveDirection": "°",
-  "WaveSignificantHeight": "ft",
+  "WaveSignificantHeight": "m",
+  "WaveDirection": "degrees",
   "WaveMeanPeriod": "seconds",
   "WindDirection": "°",
-  "WindGust": "mph",
-  "WindSpeed": "mph",
-  "windWaveSignificantHeight": "ft",
-  "windWaveDirection": "°",
+  "WindGust": "m/s",
+  "WindSpeed": "m/s",
+  "windWaveSignificantHeight": "m",
+  "windWaveDirection": "degrees",
   "WindWaveMeanPeriod": "seconds",
-  "SnowAccumulation": "in",
-  "IceAccumulation": "in"
+  "SnowAccumulation": "mm",
+  "IceAccumulation": "mm"
 }

@@ -169,7 +169,7 @@ Friend Module LogRoutinesV4
     Friend Async Sub StartLogfile()
         Try
             Timesrun = My.Settings.TimesRun
-            LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
+            LogFile = Path.Combine(LogDir, $"tIo-{Now:Mdyyyy}_{Timesrun}.log")
             TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
             ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
             PrintLog(GetLogHeader())

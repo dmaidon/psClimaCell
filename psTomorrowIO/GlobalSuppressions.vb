@@ -5,4 +5,3 @@
 
 Imports System.Diagnostics.CodeAnalysis
 
-<Assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification:="<Pending>", Scope:="member", Target:="~M:psClimaCell_v4._0.FolderRoutinesV4.CreateProgramFolders")>

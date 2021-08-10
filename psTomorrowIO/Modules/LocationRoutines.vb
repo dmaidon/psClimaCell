@@ -8,7 +8,7 @@ Friend Module LocationRoutines
 
     Friend Async Sub CreateNewPointLocation()
         Try
-            Dim request = CType(WebRequest.Create(New Uri($"https://data.climacell.co/v4/locations?apikey={My.Settings.ApiKey}")), HttpWebRequest)
+            Dim request = CType(WebRequest.Create(New Uri($"https://api.tomorrow.io/v4/locations?apikey={My.Settings.ApiKey}")), HttpWebRequest)
             With request
                 .AutomaticDecompression = DecompressionMethods.GZip Or DecompressionMethods.Deflate
                 .Timeout = 120000
@@ -20,7 +20,7 @@ Friend Module LocationRoutines
             End With
             Using response = CType(Await request.GetResponseAsync().ConfigureAwait(True), HttpWebResponse)
                 If My.Settings.Log_Headers Then
-                    PrintLog($"{vbLf}{vbLf}ClimaCell Create Location Headers:{vbLf}{vbLf}")
+                    PrintLog($"{vbLf}{vbLf}Tomorrow.io Create Location Headers:{vbLf}{vbLf}")
                     For j = 0 To response.Headers.Count - 1
                         PrintLog($"   {response.Headers.Keys(j)}: {response.Headers.Item(j)}{vbLf}")
                     Next
