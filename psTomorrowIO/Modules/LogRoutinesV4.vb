@@ -197,6 +197,7 @@ Friend Module LogRoutinesV4
         sb.Append($"Daily Update interval: {My.Settings.UpdateInt_Timelines} minutes{vbLf}")
         sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
         sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
+        sb.Append($"Location: {My.Settings.cLatitude}, {My.Settings.cLongitude}{vbLf}")
         Return sb.ToString
     End Function
 
@@ -224,7 +225,7 @@ Friend Module LogRoutinesV4
                 .TsslErr.ForeColor = Color.ForestGreen
                 .TsslErr.ToolTipText = My.Resources.err_in_pgm
                 .TsslErr.Text = $"!"
-                LogFile = Path.Combine(LogDir, $"ccell-{Now:Mdyyyy}_{Timesrun}.log")
+                LogFile = Path.Combine(LogDir, $"tIo-{Now:Mdyyyy}_{Timesrun}.log")
                 ErrFile = Path.Combine(LogDir, $"err-{Now:Mdyyyy}_{Timesrun}.log")
                 TlDataFile = Path.Combine(LogDir, $"tlData-{Now:Mdyyyy}_{Timesrun}.log")
                 PrintLog(GetLogHeader())

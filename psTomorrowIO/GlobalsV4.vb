@@ -8,16 +8,20 @@ Friend Module GlobalsV4
     Public LogDir As String = Path.Combine(Application.StartupPath, "Logs")
     Public IconDir As String = Path.Combine(Application.StartupPath, "Icons")
     Public LocationDir As String = Path.Combine(Application.StartupPath, "Locations")
+    Public ImageDir As String = Path.Combine(Application.StartupPath, "ForecastImages")
 
     Public LogFile, TlDataFile, ErrFile As String
+
+    Public DayDir, MonthDir, YearDir As String
 
     Public Cpy As String = $"©2020-{Now:yyyy} PAROLE Software - All rights reserved."
 
     Public GotErr As Boolean
     Public ResetErr As Boolean
+    Public FetchWildfire As Boolean
+    Public SaveFcImages As Boolean
 
     Public unitArr As New List(Of String)({"imperial", "metric"})
-
     Public unitNfo As FieldUnitsModel
 
     ' Timelines update interval

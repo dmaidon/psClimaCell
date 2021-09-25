@@ -222,6 +222,10 @@ Partial Class FrmMainv4
         Me.TpOptions = New System.Windows.Forms.TabPage()
         Me.TcOptions = New System.Windows.Forms.TabControl()
         Me.TpAppOptions = New System.Windows.Forms.TabPage()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.ChkSaveFcImages = New System.Windows.Forms.CheckBox()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.ChkWildfire = New System.Windows.Forms.CheckBox()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.ChkScMenu = New System.Windows.Forms.CheckBox()
         Me.ChkScStartup = New System.Windows.Forms.CheckBox()
@@ -304,6 +308,13 @@ Partial Class FrmMainv4
         Me.TpWildfire = New System.Windows.Forms.TabPage()
         Me.LblWfData = New System.Windows.Forms.Label()
         Me.DgvWildfire = New System.Windows.Forms.DataGridView()
+        Me.TpImages = New System.Windows.Forms.TabPage()
+        Me.BtnTvCollapse = New System.Windows.Forms.Button()
+        Me.BtnTvExpand = New System.Windows.Forms.Button()
+        Me.BtnClearFcImage = New System.Windows.Forms.Button()
+        Me.PbFcImage = New System.Windows.Forms.PictureBox()
+        Me.TV = New System.Windows.Forms.TreeView()
+        Me.TmrSaveImage = New System.Windows.Forms.Timer(Me.components)
         Me.SS.SuspendLayout()
         CType(Me.TmrTimelineUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TmrClock, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -323,6 +334,8 @@ Partial Class FrmMainv4
         Me.TpOptions.SuspendLayout()
         Me.TcOptions.SuspendLayout()
         Me.TpAppOptions.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.PbImgStyle3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -361,6 +374,8 @@ Partial Class FrmMainv4
         Me.TC.SuspendLayout()
         Me.TpWildfire.SuspendLayout()
         CType(Me.DgvWildfire, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TpImages.SuspendLayout()
+        CType(Me.PbFcImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SS
@@ -2471,6 +2486,8 @@ Partial Class FrmMainv4
         Me.TpAppOptions.BackgroundImage = Global.psTomorrowIO.My.Resources.Resources.Powered_by_Tomorrow_Halo_sml
         Me.TpAppOptions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TpAppOptions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.TpAppOptions.Controls.Add(Me.GroupBox10)
+        Me.TpAppOptions.Controls.Add(Me.GroupBox9)
         Me.TpAppOptions.Controls.Add(Me.GroupBox8)
         Me.TpAppOptions.Controls.Add(Me.Label14)
         Me.TpAppOptions.Controls.Add(Me.Label13)
@@ -2488,6 +2505,48 @@ Partial Class FrmMainv4
         Me.TpAppOptions.Size = New System.Drawing.Size(1372, 957)
         Me.TpAppOptions.TabIndex = 0
         Me.TpAppOptions.Text = "App Options"
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GroupBox10.Controls.Add(Me.ChkSaveFcImages)
+        Me.GroupBox10.Location = New System.Drawing.Point(848, 207)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(220, 55)
+        Me.GroupBox10.TabIndex = 11
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Forecast Images"
+        '
+        'ChkSaveFcImages
+        '
+        Me.ChkSaveFcImages.AutoSize = True
+        Me.ChkSaveFcImages.Location = New System.Drawing.Point(14, 21)
+        Me.ChkSaveFcImages.Name = "ChkSaveFcImages"
+        Me.ChkSaveFcImages.Size = New System.Drawing.Size(128, 24)
+        Me.ChkSaveFcImages.TabIndex = 0
+        Me.ChkSaveFcImages.Text = "Save Images"
+        Me.ChkSaveFcImages.UseVisualStyleBackColor = True
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GroupBox9.Controls.Add(Me.ChkWildfire)
+        Me.GroupBox9.Location = New System.Drawing.Point(653, 218)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(181, 61)
+        Me.GroupBox9.TabIndex = 10
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Wildfire"
+        '
+        'ChkWildfire
+        '
+        Me.ChkWildfire.AutoSize = True
+        Me.ChkWildfire.Location = New System.Drawing.Point(12, 21)
+        Me.ChkWildfire.Name = "ChkWildfire"
+        Me.ChkWildfire.Size = New System.Drawing.Size(145, 24)
+        Me.ChkWildfire.TabIndex = 0
+        Me.ChkWildfire.Text = "Download Data"
+        Me.ChkWildfire.UseVisualStyleBackColor = True
         '
         'GroupBox8
         '
@@ -2643,7 +2702,7 @@ Partial Class FrmMainv4
         Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.Controls.Add(Me.ChkLogBool1)
         Me.GroupBox5.Controls.Add(Me.ChkLogBool0)
-        Me.GroupBox5.Location = New System.Drawing.Point(848, 75)
+        Me.GroupBox5.Location = New System.Drawing.Point(848, 47)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -2729,7 +2788,7 @@ Partial Class FrmMainv4
         Me.GroupBox2.Controls.Add(Me.NumLat)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Location = New System.Drawing.Point(488, 75)
+        Me.GroupBox2.Location = New System.Drawing.Point(488, 47)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -2801,7 +2860,7 @@ Partial Class FrmMainv4
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.RbDataUnits1)
         Me.GroupBox1.Controls.Add(Me.RbDataUnits0)
-        Me.GroupBox1.Location = New System.Drawing.Point(304, 75)
+        Me.GroupBox1.Location = New System.Drawing.Point(304, 47)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -3410,7 +3469,7 @@ Partial Class FrmMainv4
         DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgvCurrent.DefaultCellStyle = DataGridViewCellStyle13
         Me.DgvCurrent.EnableHeadersVisualStyles = False
-        Me.DgvCurrent.Location = New System.Drawing.Point(75, 69)
+        Me.DgvCurrent.Location = New System.Drawing.Point(75, 46)
         Me.DgvCurrent.MultiSelect = False
         Me.DgvCurrent.Name = "DgvCurrent"
         Me.DgvCurrent.ReadOnly = True
@@ -3428,7 +3487,7 @@ Partial Class FrmMainv4
         Me.DgvCurrent.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.DgvCurrent.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgvCurrent.RowTemplate.Height = 30
-        Me.DgvCurrent.Size = New System.Drawing.Size(977, 838)
+        Me.DgvCurrent.Size = New System.Drawing.Size(977, 942)
         Me.DgvCurrent.TabIndex = 8
         Me.DgvCurrent.Tag = "2"
         '
@@ -3663,6 +3722,7 @@ Partial Class FrmMainv4
         Me.TC.Controls.Add(Me.TpWildfire)
         Me.TC.Controls.Add(Me.TpOptions)
         Me.TC.Controls.Add(Me.TpLogs)
+        Me.TC.Controls.Add(Me.TpImages)
         Me.TC.Controls.Add(Me.TpAbout)
         Me.TC.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TC.HotTrack = True
@@ -3744,6 +3804,73 @@ Partial Class FrmMainv4
         Me.DgvWildfire.Size = New System.Drawing.Size(1382, 848)
         Me.DgvWildfire.TabIndex = 3
         '
+        'TpImages
+        '
+        Me.TpImages.BackColor = System.Drawing.Color.DimGray
+        Me.TpImages.Controls.Add(Me.BtnTvCollapse)
+        Me.TpImages.Controls.Add(Me.BtnTvExpand)
+        Me.TpImages.Controls.Add(Me.BtnClearFcImage)
+        Me.TpImages.Controls.Add(Me.PbFcImage)
+        Me.TpImages.Controls.Add(Me.TV)
+        Me.TpImages.Location = New System.Drawing.Point(4, 29)
+        Me.TpImages.Name = "TpImages"
+        Me.TpImages.Size = New System.Drawing.Size(1388, 1000)
+        Me.TpImages.TabIndex = 15
+        Me.TpImages.Text = "Images"
+        '
+        'BtnTvCollapse
+        '
+        Me.BtnTvCollapse.BackColor = System.Drawing.Color.Silver
+        Me.BtnTvCollapse.Location = New System.Drawing.Point(78, 946)
+        Me.BtnTvCollapse.Name = "BtnTvCollapse"
+        Me.BtnTvCollapse.Size = New System.Drawing.Size(151, 37)
+        Me.BtnTvCollapse.TabIndex = 4
+        Me.BtnTvCollapse.Text = "Collapse All"
+        Me.BtnTvCollapse.UseVisualStyleBackColor = False
+        '
+        'BtnTvExpand
+        '
+        Me.BtnTvExpand.BackColor = System.Drawing.Color.Silver
+        Me.BtnTvExpand.Location = New System.Drawing.Point(78, 895)
+        Me.BtnTvExpand.Name = "BtnTvExpand"
+        Me.BtnTvExpand.Size = New System.Drawing.Size(151, 37)
+        Me.BtnTvExpand.TabIndex = 3
+        Me.BtnTvExpand.Text = "     Expand All         "
+        Me.BtnTvExpand.UseVisualStyleBackColor = False
+        '
+        'BtnClearFcImage
+        '
+        Me.BtnClearFcImage.BackColor = System.Drawing.Color.Silver
+        Me.BtnClearFcImage.Location = New System.Drawing.Point(774, 858)
+        Me.BtnClearFcImage.Name = "BtnClearFcImage"
+        Me.BtnClearFcImage.Size = New System.Drawing.Size(130, 37)
+        Me.BtnClearFcImage.TabIndex = 2
+        Me.BtnClearFcImage.Text = "Clear Image"
+        Me.BtnClearFcImage.UseVisualStyleBackColor = False
+        '
+        'PbFcImage
+        '
+        Me.PbFcImage.BackColor = System.Drawing.Color.Gainsboro
+        Me.PbFcImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PbFcImage.Location = New System.Drawing.Point(304, 15)
+        Me.PbFcImage.Name = "PbFcImage"
+        Me.PbFcImage.Size = New System.Drawing.Size(1071, 824)
+        Me.PbFcImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbFcImage.TabIndex = 1
+        Me.PbFcImage.TabStop = False
+        '
+        'TV
+        '
+        Me.TV.Location = New System.Drawing.Point(9, 15)
+        Me.TV.Name = "TV"
+        Me.TV.ShowNodeToolTips = True
+        Me.TV.Size = New System.Drawing.Size(289, 855)
+        Me.TV.TabIndex = 0
+        '
+        'TmrSaveImage
+        '
+        Me.TmrSaveImage.Interval = 15000
+        '
         'FrmMainv4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -3784,6 +3911,10 @@ Partial Class FrmMainv4
         Me.TcOptions.ResumeLayout(False)
         Me.TpAppOptions.ResumeLayout(False)
         Me.TpAppOptions.PerformLayout()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
@@ -3833,6 +3964,8 @@ Partial Class FrmMainv4
         Me.TC.ResumeLayout(False)
         Me.TpWildfire.ResumeLayout(False)
         CType(Me.DgvWildfire, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TpImages.ResumeLayout(False)
+        CType(Me.PbFcImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4078,4 +4211,15 @@ Partial Class FrmMainv4
     Friend WithEvents LblWfData As Label
     Friend WithEvents ChkCore23 As CheckBox
     Friend WithEvents ChkCore24 As CheckBox
+    Friend WithEvents GroupBox9 As GroupBox
+    Friend WithEvents ChkWildfire As CheckBox
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents ChkSaveFcImages As CheckBox
+    Friend WithEvents TpImages As TabPage
+    Friend WithEvents TV As TreeView
+    Friend WithEvents PbFcImage As PictureBox
+    Friend WithEvents BtnClearFcImage As Button
+    Friend WithEvents TmrSaveImage As Timer
+    Friend WithEvents BtnTvExpand As Button
+    Friend WithEvents BtnTvCollapse As Button
 End Class

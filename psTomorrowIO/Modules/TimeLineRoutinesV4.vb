@@ -11,8 +11,28 @@ Friend Module TimeLineRoutinesV4
 
     Private ie As String = "- N/A -"
     Private tlNfo As TioTimelinesModel
+    Private GraphSaved As Boolean
+
+
+    Private Sub Check4ArchiveFolders()
+        Dim arcArr As New List(Of String)({YearDir, MonthDir, DayDir})
+        PrintLog($"{vbLf}YearDir: {YearDir}{vbLf}MonthDir: {MonthDir}{vbLf}DayDir: {DayDir}{vbLf}")
+
+        For j = 0 To arcArr.Count - 1
+            If Not Directory.Exists(arcArr(j)) Then
+                Directory.CreateDirectory(arcArr(j))
+                PrintLog($"Created {arcArr(j)} Archive Folder.{vbLf}{vbLf}")
+            End If
+        Next
+    End Sub
+
+
 
     Friend Sub FetchTimeLines(Optional OverRide As Boolean = False)
+        YearDir = Path.Combine(ImageDir, Now.Year.ToString)
+        MonthDir = Path.Combine(YearDir, $"{Now:MMMM}")
+        DayDir = Path.Combine(MonthDir, $"{Now:dd}")
+        Check4ArchiveFolders()
         Dim tlFile As String = Path.Combine(TempDir, $"tlData_{Now:Mddyy-HH}.json")
         With FrmMainv4
             .TC.TabPages.Remove(.Tp1Day)
@@ -51,7 +71,6 @@ Friend Module TimeLineRoutinesV4
 
     Private Async Sub DownloadTimeLines(fn As String)
         Try
-            'Dim url As String = $"https://data.climacell.co/v4/timelines?apikey={My.Settings.ApiKey}&location={My.Settings.cLatitude},{My.Settings.cLongitude}&units={unitArr(My.Settings.Units)}&timesteps={GetTimeStepString()}&fields={GetFieldsString()}"
             Dim url As String = $"https://api.tomorrow.io/v4/timelines?apikey={My.Settings.ApiKey}&location={My.Settings.cLatitude},{My.Settings.cLongitude}&units={unitArr(My.Settings.Units)}&timesteps={GetTimeStepString()}&fields={GetFieldsString()}"
 
             PrintLog($"TimeLines Url: {url}{vbLf}{vbLf}")
@@ -112,8 +131,11 @@ Friend Module TimeLineRoutinesV4
                                     Case "1d"
                                         FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.Tp1Day)
                                         FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.Tp1dFull)
+                                        GraphSaved = False
                                         Write1dData(j)
                                         Write1dFullData(j)
+                                        If GraphSaved Then FrmMainv4.TmrSaveImage.Start()
+                                        'If SaveFcImages Then SaveForecastImages(FrmMainv4.Tp1Day, $"{Now:Mddyy-HH}.png", "15-Day Forecast", DayDir)
                                     Case "current"
                                         FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpCurrent)
                                         WriteCurrentData(j)
@@ -189,7 +211,7 @@ Friend Module TimeLineRoutinesV4
                 If c.Checked Then
                     sb.Append(tlFields(CInt(c.Tag)))
                     If Not String.IsNullOrEmpty(CStr(CInt(c.Tag))) Then
-                        sb.Append(",")
+                        sb.Append(","c)
                     End If
                 End If
             Next
@@ -237,7 +259,7 @@ Friend Module TimeLineRoutinesV4
             For Each c As CheckBox In FrmMainv4.GbTimeSteps.Controls.OfType(Of CheckBox)()
                 If c.Checked Then
                     sb.Append(tsArr(CInt(c.Tag)))
-                    sb.Append(",")
+                    sb.Append(","c)
                 End If
             Next
             Dim aa = sb.ToString
@@ -302,8 +324,12 @@ Friend Module TimeLineRoutinesV4
                         Case "1d"
                             FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.Tp1dFull)
                             FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.Tp1Day)
-                            Write1dFullData(j)
                             Write1dData(j)
+                            Write1dFullData(j)
+                            FrmMainv4.TmrSaveImage.Start()
+                            'If Not File.Exists(Path.Combine(DayDir, $"{Now:Mddyy-HH}.png")) Then
+                            '    SaveForecastImages(FrmMainv4.Tp1Day, $"{Now:Mddyy-HH}.png", "15-Day Forecast", DayDir)
+                            'End If
                         Case "current"
                             FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.TpCurrent)
                             WriteCurrentData(j)
@@ -497,8 +523,12 @@ Friend Module TimeLineRoutinesV4
                     .Rows(7).DefaultCellStyle.Font = New Font("", 14, FontStyle.Bold)
                     .Visible = True
                     .ClearSelection()
+                    GraphSaved = True
                 End With
+
+                ' SaveForecastImages(FrmMainv4.DgvDaily, $"fc-{Now:Mddyy-HH}.png", "15-Day Forecast", ImageDir)
             Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
+                GraphSaved = False
                 If ex.InnerException IsNot Nothing Then
                     ie = ex.InnerException.ToString
                 End If

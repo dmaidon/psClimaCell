@@ -1,6 +1,5 @@
-﻿Imports System.Resources
-Imports System
-Imports System.Reflection
+﻿Imports System.Reflection
+Imports System.Resources
 Imports System.Runtime.InteropServices
 
 ' General Information about an assembly is controlled through the following
@@ -32,6 +31,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("21.8.10.234")>
-<Assembly: AssemblyFileVersion("21.8.10.234")>
+<Assembly: AssemblyVersion("21.9.25.325")>
+<Assembly: AssemblyFileVersion("21.9.25.325")>
 <Assembly: NeutralResourcesLanguage("en-US")>

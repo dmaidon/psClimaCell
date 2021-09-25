@@ -39,10 +39,20 @@ Friend Module SettingsV4
             .ChkTsBest.Checked = My.Settings.TsBest
             .ChkLogBool0.Checked = My.Settings.Log_Images
             .ChkLogBool1.Checked = My.Settings.Log_Headers
+            .ChkWildfire.Checked = My.Settings.DownloadWildfire
+            .ChkSaveFcImages.Checked = My.Settings.SaveForecastImages
             .NumLat.Value = My.Settings.cLatitude
             .NumLong.Value = My.Settings.cLongitude
             .NumTlInterval.Value = My.Settings.UpdateInt_Timelines
             .NumLogKeepDays.Value = My.Settings.Log_KeepDays
+
+            FetchWildfire = My.Settings.DownloadWildfire
+            'If FetchWildfire Then
+            '    .TC.TabPages.Insert(1, .TpWildfire)
+            'Else
+            '    .TC.TabPages.Remove(.TpWildfire)
+            'End If
+
 
             'set timer for 1 second after the hour.  Datafile will update hourly
             Dim st = New DateTime(Now.Year, Now.Month, Now.Day, Now.Hour, 0, 15).AddHours(1)

@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
 Imports IWshRuntimeLibrary
 
 Public Class FrmMainv4
@@ -91,6 +93,7 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         If String.IsNullOrEmpty(My.Settings.ApiKey) Then
             TC.SelectedTab = TpAppOptions
         End If
+        ' TC.TabPages.Remove(TpWildfire)
         Show()
 
         Text = $"TomorrowIO API - Tr: {My.Settings.TimesRun}"
@@ -99,7 +102,11 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         TsslVer.Text = Application.ProductVersion
         LblAbout.Text = String.Format(My.Resources.about, vbLf, ParseVersion())
         FetchTimeLines(False)
-        FetchWildfireData()
+        If FetchWildfire Then
+            FetchWildfireData()
+        Else
+
+        End If
         SetMidnightRollover()
         SaveLogs()
         TmrClock.Start()
@@ -227,7 +234,9 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         TmrTimelineUpdate.Start()
         PrintLog($"*** Next TimeLines Update @ {TlNextUpdate:T}. ***{vbLf}")
         FetchTimeLines(True)
-        FetchWildfireData()
+        If FetchWildfire Then
+            FetchWildfireData()
+        End If
     End Sub
 
 #End Region
@@ -529,6 +538,29 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         My.Settings.Save()
     End Sub
 
+    Private Sub ChkWildfire_CheckedChanged(sender As Object, e As EventArgs) Handles ChkWildfire.CheckedChanged
+        With DirectCast(sender, CheckBox)
+            My.Settings.DownloadWildfire = .Checked
+            FetchWildfire = .Checked
+        End With
+
+        'If FetchWildfire Then
+        '    TC.TabPages.Insert(1, TpWildfire)
+        'Else
+        '    TC.TabPages.Remove(TpWildfire)
+        'End If
+    End Sub
+
+    Private Sub ChkSaveForcastImages_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSaveFcImages.CheckedChanged
+        With DirectCast(sender, CheckBox)
+            My.Settings.SaveForecastImages = .Checked
+            SaveFcImages = .Checked
+        End With
+    End Sub
+
+
+
+
     Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLat.Enter, NumLong.Enter, NumLogKeepDays.Enter, NumTlInterval.Enter
         Dim ct = DirectCast(sender, NumericUpDown)
         ct.Select(0, ct.Text.Length)
@@ -817,7 +849,67 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         RtbLog.Refresh()
     End Sub
 
+
+
 #End Region
+
+#End Region
+
+#Region "Archive Images"
+    'https://www.skotechlearn.com/2020/07/show-drives-folders-files-in-treeview-vbnet.html
+    'https://stackoverflow.com/questions/16315042/how-to-display-directories-in-a-treeview
+
+    Private Sub TpImages_Enter(sender As Object, e As EventArgs) Handles TpImages.Enter
+        TV.Nodes.Clear()
+        Dim dirNfo As New DirectoryInfo(ImageDir)
+        If dirNfo.Exists Then
+            AddHandler TV.AfterSelect, AddressOf TV_AfterSelect
+            BuildTree(dirNfo, TV.Nodes)
+        End If
+    End Sub
+
+    Private Sub BuildTree(ByVal directoryInfo As DirectoryInfo, ByVal addInMe As TreeNodeCollection)
+        Dim curNode As TreeNode = addInMe.Add(directoryInfo.Name)
+
+        For Each file As FileInfo In directoryInfo.GetFiles()
+            curNode.Nodes.Add(file.FullName, file.Name)
+        Next file
+        For Each subdir As DirectoryInfo In directoryInfo.GetDirectories()
+            BuildTree(subdir, curNode.Nodes)
+        Next subdir
+    End Sub
+
+    Private Sub TV_AfterSelect(ByVal sender As Object, ByVal e As TreeViewEventArgs)
+        ClearPicturebox(PbFcImage)
+        If e.Node.Name.EndsWith("png") Then
+            PbFcImage.LoadAsync(e.Node.Name)
+        End If
+    End Sub
+
+    Private Shared Sub ClearPicturebox(pb As PictureBox)
+        'https://stackoverflow.com/questions/1403630/clearing-the-image-in-a-picturebox
+        pb.Image = Nothing
+        pb.BackColor = Color.Empty
+        pb.Invalidate()
+    End Sub
+
+    Private Sub BtnClearFcImage_Click(sender As Object, e As EventArgs) Handles BtnClearFcImage.Click
+        ClearPicturebox(PbFcImage)
+    End Sub
+
+    Private Sub TmrSaveImage_Tick(sender As Object, e As EventArgs) Handles TmrSaveImage.Tick
+        PrintLog($"Save Image timer elapsed @ {Now:F}.{vbLf}")
+        TmrSaveImage.Stop()
+        If SaveFcImages Then SaveForecastImages(Tp1Day, $"{Now:Mddyy-HH}.png", "15-Day Forecast", DayDir)
+    End Sub
+
+    Private Sub BtnTvExpand_Click(sender As Object, e As EventArgs) Handles BtnTvExpand.Click
+        TV.ExpandAll()
+    End Sub
+
+    Private Sub BtnTvCollapse_Click(sender As Object, e As EventArgs) Handles BtnTvCollapse.Click
+        TV.CollapseAll()
+    End Sub
 
 #End Region
 

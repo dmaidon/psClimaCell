@@ -1,9 +1,9 @@
-﻿Imports psTomorrowIO.Models
-
-Imports System.IO
+﻿Imports System.IO
 Imports System.Net.Http
 Imports System.Text
 Imports System.Text.Json
+
+Imports psTomorrowIO.Models
 
 Friend Module WildfireRoutines
 
