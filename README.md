@@ -60,6 +60,7 @@ The following sections were added to the FieldUnitsModel.vb file
 The V4 code is not complete for all data streams.  Any contributors are welcome.
 
 # ClimaCell V3 #
+## Deprecated ##
 Utilizes [ClimaCell V3 API](https://developer.climacell.co/) 15-day Daily forecast, Nowcast, Realtime and Hourly forecasts.
 
 ### Notice: Version 3 will sunset on June 21, 2021 and all requests will fail. ###
