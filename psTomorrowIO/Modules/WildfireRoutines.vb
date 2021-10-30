@@ -81,6 +81,7 @@ Friend Module WildfireRoutines
         Try
             PrintLog($"Writing Wildfire data to tab.{vbLf}")
             Dim ta As Double
+            Dim wfCnt As Integer = wfNfo.Features.Count
             With FrmMainv4.DgvWildfire
                 .Rows.Clear()
                 .Columns.Clear()
@@ -88,12 +89,12 @@ Friend Module WildfireRoutines
                 .Columns(0).Width = 50
                 .Columns(1).Width = 175
                 'FrmMainv4.TpWildfire.Text = $"Wildfires({wfNfo.Features.Count})"
-                For j = 0 To wfNfo.Features.Count - 1
+                For j = 0 To wfCnt - 1
                     Dim wf = wfNfo.Features(j).Properties
-                    .Rows.Add(j + 1, "Name", wf.IncidentName)
+                    .Rows.Add(j + 1, "Name", wf.IncidentName, "")
 
                     If wf.IncidentShortDescription IsNot vbNullString Then
-                        .Rows.Add("", "Short Description", wf.IncidentShortDescription)
+                        .Rows.Add("", "Short Description", wf.IncidentShortDescription, "")
                     End If
 
                     .Rows.Add("", "Location", "County", wf.PooCounty)
@@ -113,61 +114,65 @@ Friend Module WildfireRoutines
                     End If
 
                     If wf.FireCause IsNot vbNullString Then
+                        If wf.FireCauseGeneral = "" Then
+                            wf.FireCauseGeneral = " "
+                        End If
                         .Rows.Add("", "Cause", wf.FireCause, wf.FireCauseGeneral)
                     End If
 
-                    .Rows.Add("", "Discovered", wf.FireDiscoveryDateTime.ToLocalTime)
+                    .Rows.Add("", "Discovered", wf.FireDiscoveryDateTime.ToLocalTime, "")
 
                     If wf.CalculatedAcres.HasValue Then
-                        .Rows.Add("", "Calculated Acres", $"{wf.CalculatedAcres:N2}")
+                        .Rows.Add("", "Calculated Acres", $"{wf.CalculatedAcres:N2}", "")
                         ta = CDbl(ta + wf.CalculatedAcres)
                     End If
 
                     If wf.PredominantFuelGroup IsNot vbNullString Then
-                        .Rows.Add("", "Predominate Fuel Group", wf.PredominantFuelGroup)
+                        .Rows.Add("", "Predominate Fuel Group", wf.PredominantFuelGroup, "")
                     End If
 
                     If wf.PredominantFuelModel IsNot vbNullString Then
-                        .Rows.Add("", "Predominate Fuel Model", wf.PredominantFuelModel)
+                        .Rows.Add("", "Predominate Fuel Model", wf.PredominantFuelModel, "")
                     End If
 
                     If wf.PrimaryFuelModel IsNot vbNullString Then
-                        .Rows.Add("", "Primary Fuel Model", wf.PrimaryFuelModel)
+                        .Rows.Add("", "Primary Fuel Model", wf.PrimaryFuelModel, "")
                     End If
 
                     If wf.SecondaryFuelModel IsNot vbNullString Then
-                        .Rows.Add("", "Secondary Fuel Model", wf.SecondaryFuelModel)
+                        .Rows.Add("", "Secondary Fuel Model", wf.SecondaryFuelModel, "")
                     End If
 
                     If wf.FireBehaviorGeneral IsNot vbNullString Then
-                        .Rows.Add("", "Behavior", wf.FireBehaviorGeneral)
+                        .Rows.Add("", "Behavior", wf.FireBehaviorGeneral, "")
                     End If
 
                     If wf.FireBehaviorGeneral1 IsNot vbNullString Then
-                        .Rows.Add("", "Behavior 1", wf.FireBehaviorGeneral2)
+                        .Rows.Add("", "Behavior 1", wf.FireBehaviorGeneral2, "")
                     End If
 
                     If wf.FireBehaviorGeneral2 IsNot vbNullString Then
-                        .Rows.Add("", "Behavior 2", wf.FireBehaviorGeneral2)
+                        .Rows.Add("", "Behavior 2", wf.FireBehaviorGeneral2, "")
                     End If
 
                     If wf.FireBehaviorGeneral3 IsNot vbNullString Then
-                        .Rows.Add("", "Behavior 3", wf.FireBehaviorGeneral3)
+                        .Rows.Add("", "Behavior 3", wf.FireBehaviorGeneral3, "")
                     End If
 
                     If wf.PooLandownerKind IsNot vbNullString Then
-                        .Rows.Add("", "Land Owner", wf.PooLandownerKind)
+                        .Rows.Add("", "Land Owner", wf.PooLandownerKind, "")
                     End If
 
                     If wf.PooProtectingAgency IsNot vbNullString Then
-                        .Rows.Add("", "Protecting Agency", wf.PooProtectingAgency)
+                        .Rows.Add("", "Protecting Agency", wf.PooProtectingAgency, "")
                     End If
                     Application.DoEvents()
                 Next
                 .Rows.Add()
                 .Rows.Add("", "", "Total Burned Acres", $"{ta:N2}")
-                FrmMainv4.LblWfData.Text = String.Format(CStr(FrmMainv4.LblWfData.Tag), wfNfo.Features.Count, $"{ta:N2}")
-                PrintLog($"Total Wildfires: {wfNfo.Features.Count}{vbLf}Acres Burned: {ta:N2}{vbLf}")
+                FrmMainv4.LblWfData.Text = String.Format(CStr(FrmMainv4.LblWfData.Tag), wfCnt, $"{ta:N2}")
+                PrintLog($"Total Wildfires: {wfCnt}{vbLf}Acres Burned: {ta:N2}{vbLf}")
+                FrmMainv4.TpWildfire.Text = $"Wildfires ({wfCnt})"
                 .ClearSelection()
             End With
         Catch ex As Exception When TypeOf ex Is InvalidOperationException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is ArgumentOutOfRangeException

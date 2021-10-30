@@ -198,6 +198,11 @@ Friend Module LogRoutinesV4
         sb.Append($"OS Version: {Environment.OSVersion}{vbLf}")
         sb.Append($"Machine Name: {Environment.MachineName}{vbLf}")
         sb.Append($"Location: {My.Settings.cLatitude}, {My.Settings.cLongitude}{vbLf}")
+        'If Environment.OSVersion.Version.Build >= 22000 Then
+        '    MsgBox("Windows 11")
+        'Else
+        '    MsgBox(Environment.OSVersion.Version.Build)
+        'End If
         Return sb.ToString
     End Function
 

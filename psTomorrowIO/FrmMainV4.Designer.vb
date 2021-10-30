@@ -309,12 +309,17 @@ Partial Class FrmMainv4
         Me.LblWfData = New System.Windows.Forms.Label()
         Me.DgvWildfire = New System.Windows.Forms.DataGridView()
         Me.TpImages = New System.Windows.Forms.TabPage()
+        Me.LblFcImageName = New System.Windows.Forms.Label()
         Me.BtnTvCollapse = New System.Windows.Forms.Button()
         Me.BtnTvExpand = New System.Windows.Forms.Button()
         Me.BtnClearFcImage = New System.Windows.Forms.Button()
         Me.PbFcImage = New System.Windows.Forms.PictureBox()
         Me.TV = New System.Windows.Forms.TreeView()
         Me.TmrSaveImage = New System.Windows.Forms.Timer(Me.components)
+        Me.TxtWfFindStr = New System.Windows.Forms.TextBox()
+        Me.BtnWfFind = New System.Windows.Forms.Button()
+        Me.BtnWfFindNext = New System.Windows.Forms.Button()
+        Me.BtnWfClearFind = New System.Windows.Forms.Button()
         Me.SS.SuspendLayout()
         CType(Me.TmrTimelineUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TmrClock, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1958,7 +1963,7 @@ Partial Class FrmMainv4
         Me.ChkTsBest.Location = New System.Drawing.Point(663, 38)
         Me.ChkTsBest.Name = "ChkTsBest"
         Me.ChkTsBest.Size = New System.Drawing.Size(68, 24)
-        Me.ChkTsBest.TabIndex = 8
+        Me.ChkTsBest.TabIndex = 7
         Me.ChkTsBest.Tag = "7"
         Me.ChkTsBest.Text = "Best"
         Me.ChkTsBest.UseVisualStyleBackColor = True
@@ -2129,7 +2134,7 @@ Partial Class FrmMainv4
         Me.NumLogKeepDays.Maximum = New Decimal(New Integer() {30, 0, 0, 0})
         Me.NumLogKeepDays.Name = "NumLogKeepDays"
         Me.NumLogKeepDays.Size = New System.Drawing.Size(60, 26)
-        Me.NumLogKeepDays.TabIndex = 2
+        Me.NumLogKeepDays.TabIndex = 3
         Me.NumLogKeepDays.Tag = "3"
         Me.TTip.SetToolTip(Me.NumLogKeepDays, "Number of days to keep log files. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(0 - 30) days" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0 - Disables and will keep all" &
         " log files")
@@ -2769,7 +2774,7 @@ Partial Class FrmMainv4
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(23, 29)
-        Me.Label9.TabIndex = 7
+        Me.Label9.TabIndex = 1
         Me.Label9.Text = "*"
         '
         'TxtApiKey
@@ -3736,6 +3741,10 @@ Partial Class FrmMainv4
         '
         'TpWildfire
         '
+        Me.TpWildfire.Controls.Add(Me.BtnWfClearFind)
+        Me.TpWildfire.Controls.Add(Me.BtnWfFindNext)
+        Me.TpWildfire.Controls.Add(Me.BtnWfFind)
+        Me.TpWildfire.Controls.Add(Me.TxtWfFindStr)
         Me.TpWildfire.Controls.Add(Me.LblWfData)
         Me.TpWildfire.Controls.Add(Me.DgvWildfire)
         Me.TpWildfire.Location = New System.Drawing.Point(4, 29)
@@ -3750,7 +3759,7 @@ Partial Class FrmMainv4
         'LblWfData
         '
         Me.LblWfData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblWfData.Location = New System.Drawing.Point(311, 913)
+        Me.LblWfData.Location = New System.Drawing.Point(311, 940)
         Me.LblWfData.Name = "LblWfData"
         Me.LblWfData.Size = New System.Drawing.Size(767, 23)
         Me.LblWfData.TabIndex = 4
@@ -3801,12 +3810,14 @@ Partial Class FrmMainv4
         Me.DgvWildfire.RowTemplate.ReadOnly = True
         Me.DgvWildfire.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvWildfire.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.DgvWildfire.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvWildfire.Size = New System.Drawing.Size(1382, 848)
         Me.DgvWildfire.TabIndex = 3
         '
         'TpImages
         '
         Me.TpImages.BackColor = System.Drawing.Color.DimGray
+        Me.TpImages.Controls.Add(Me.LblFcImageName)
         Me.TpImages.Controls.Add(Me.BtnTvCollapse)
         Me.TpImages.Controls.Add(Me.BtnTvExpand)
         Me.TpImages.Controls.Add(Me.BtnClearFcImage)
@@ -3818,13 +3829,24 @@ Partial Class FrmMainv4
         Me.TpImages.TabIndex = 15
         Me.TpImages.Text = "Images"
         '
+        'LblFcImageName
+        '
+        Me.LblFcImageName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblFcImageName.ForeColor = System.Drawing.Color.Khaki
+        Me.LblFcImageName.Location = New System.Drawing.Point(509, 931)
+        Me.LblFcImageName.Name = "LblFcImageName"
+        Me.LblFcImageName.Size = New System.Drawing.Size(660, 38)
+        Me.LblFcImageName.TabIndex = 5
+        Me.LblFcImageName.Text = "."
+        Me.LblFcImageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'BtnTvCollapse
         '
         Me.BtnTvCollapse.BackColor = System.Drawing.Color.Silver
         Me.BtnTvCollapse.Location = New System.Drawing.Point(78, 946)
         Me.BtnTvCollapse.Name = "BtnTvCollapse"
         Me.BtnTvCollapse.Size = New System.Drawing.Size(151, 37)
-        Me.BtnTvCollapse.TabIndex = 4
+        Me.BtnTvCollapse.TabIndex = 2
         Me.BtnTvCollapse.Text = "Collapse All"
         Me.BtnTvCollapse.UseVisualStyleBackColor = False
         '
@@ -3834,7 +3856,7 @@ Partial Class FrmMainv4
         Me.BtnTvExpand.Location = New System.Drawing.Point(78, 895)
         Me.BtnTvExpand.Name = "BtnTvExpand"
         Me.BtnTvExpand.Size = New System.Drawing.Size(151, 37)
-        Me.BtnTvExpand.TabIndex = 3
+        Me.BtnTvExpand.TabIndex = 1
         Me.BtnTvExpand.Text = "     Expand All         "
         Me.BtnTvExpand.UseVisualStyleBackColor = False
         '
@@ -3844,7 +3866,7 @@ Partial Class FrmMainv4
         Me.BtnClearFcImage.Location = New System.Drawing.Point(774, 858)
         Me.BtnClearFcImage.Name = "BtnClearFcImage"
         Me.BtnClearFcImage.Size = New System.Drawing.Size(130, 37)
-        Me.BtnClearFcImage.TabIndex = 2
+        Me.BtnClearFcImage.TabIndex = 3
         Me.BtnClearFcImage.Text = "Clear Image"
         Me.BtnClearFcImage.UseVisualStyleBackColor = False
         '
@@ -3870,6 +3892,46 @@ Partial Class FrmMainv4
         'TmrSaveImage
         '
         Me.TmrSaveImage.Interval = 15000
+        '
+        'TxtWfFindStr
+        '
+        Me.TxtWfFindStr.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.TxtWfFindStr.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList
+        Me.TxtWfFindStr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtWfFindStr.Location = New System.Drawing.Point(249, 878)
+        Me.TxtWfFindStr.Name = "TxtWfFindStr"
+        Me.TxtWfFindStr.Size = New System.Drawing.Size(318, 26)
+        Me.TxtWfFindStr.TabIndex = 5
+        '
+        'BtnWfFind
+        '
+        Me.BtnWfFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnWfFind.Location = New System.Drawing.Point(638, 874)
+        Me.BtnWfFind.Name = "BtnWfFind"
+        Me.BtnWfFind.Size = New System.Drawing.Size(120, 30)
+        Me.BtnWfFind.TabIndex = 6
+        Me.BtnWfFind.Text = "Find"
+        Me.BtnWfFind.UseVisualStyleBackColor = True
+        '
+        'BtnWfFindNext
+        '
+        Me.BtnWfFindNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnWfFindNext.Location = New System.Drawing.Point(829, 874)
+        Me.BtnWfFindNext.Name = "BtnWfFindNext"
+        Me.BtnWfFindNext.Size = New System.Drawing.Size(120, 30)
+        Me.BtnWfFindNext.TabIndex = 7
+        Me.BtnWfFindNext.Text = "Find Next"
+        Me.BtnWfFindNext.UseVisualStyleBackColor = True
+        '
+        'BtnWfClearFind
+        '
+        Me.BtnWfClearFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnWfClearFind.Location = New System.Drawing.Point(1020, 874)
+        Me.BtnWfClearFind.Name = "BtnWfClearFind"
+        Me.BtnWfClearFind.Size = New System.Drawing.Size(120, 30)
+        Me.BtnWfClearFind.TabIndex = 8
+        Me.BtnWfClearFind.Text = "Clear"
+        Me.BtnWfClearFind.UseVisualStyleBackColor = True
         '
         'FrmMainv4
         '
@@ -3963,6 +4025,7 @@ Partial Class FrmMainv4
         CType(Me.DgvDaily, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TC.ResumeLayout(False)
         Me.TpWildfire.ResumeLayout(False)
+        Me.TpWildfire.PerformLayout()
         CType(Me.DgvWildfire, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TpImages.ResumeLayout(False)
         CType(Me.PbFcImage, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4222,4 +4285,9 @@ Partial Class FrmMainv4
     Friend WithEvents TmrSaveImage As Timer
     Friend WithEvents BtnTvExpand As Button
     Friend WithEvents BtnTvCollapse As Button
+    Friend WithEvents LblFcImageName As Label
+    Friend WithEvents BtnWfClearFind As Button
+    Friend WithEvents BtnWfFindNext As Button
+    Friend WithEvents BtnWfFind As Button
+    Friend WithEvents TxtWfFindStr As TextBox
 End Class

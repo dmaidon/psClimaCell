@@ -135,7 +135,6 @@ Friend Module TimeLineRoutinesV4
                                         Write1dData(j)
                                         Write1dFullData(j)
                                         If GraphSaved Then FrmMainv4.TmrSaveImage.Start()
-                                        'If SaveFcImages Then SaveForecastImages(FrmMainv4.Tp1Day, $"{Now:Mddyy-HH}.png", "15-Day Forecast", DayDir)
                                     Case "current"
                                         FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpCurrent)
                                         WriteCurrentData(j)
@@ -327,9 +326,6 @@ Friend Module TimeLineRoutinesV4
                             Write1dData(j)
                             Write1dFullData(j)
                             FrmMainv4.TmrSaveImage.Start()
-                            'If Not File.Exists(Path.Combine(DayDir, $"{Now:Mddyy-HH}.png")) Then
-                            '    SaveForecastImages(FrmMainv4.Tp1Day, $"{Now:Mddyy-HH}.png", "15-Day Forecast", DayDir)
-                            'End If
                         Case "current"
                             FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.TpCurrent)
                             WriteCurrentData(j)
@@ -525,8 +521,6 @@ Friend Module TimeLineRoutinesV4
                     .ClearSelection()
                     GraphSaved = True
                 End With
-
-                ' SaveForecastImages(FrmMainv4.DgvDaily, $"fc-{Now:Mddyy-HH}.png", "15-Day Forecast", ImageDir)
             Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
                 GraphSaved = False
                 If ex.InnerException IsNot Nothing Then

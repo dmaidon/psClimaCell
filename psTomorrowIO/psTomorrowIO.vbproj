@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <AssemblyVersion>21.9.25.325</AssemblyVersion>
+    <AssemblyVersion>21.10.6.357</AssemblyVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ShouldCreateLogs>True</ShouldCreateLogs>
@@ -45,7 +45,7 @@
     <PublisherName>PAROLE Software</PublisherName>
     <SuiteName>psTomorrowIO</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>21.9.24.324</ApplicationVersion>
+    <ApplicationVersion>21.10.4.356</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -111,6 +111,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -450,7 +451,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
-      <Version>6.0.0-rc.1.21451.13</Version>
+      <Version>6.0.0-rc.2.21480.5</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

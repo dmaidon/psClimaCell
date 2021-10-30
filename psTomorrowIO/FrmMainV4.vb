@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Imports IWshRuntimeLibrary
 
@@ -9,9 +8,10 @@ Public Class FrmMainv4
     'https://docs.tomorrow.io/reference/data-layers-core
     'https://docs.tomorrow.io/reference/data-layers-overview
     Public tlNfo As TioTimelinesModel()
+
     Private ReadOnly _desktopPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), My.Application.Info.AssemblyName & ".lnk")
-    Private ReadOnly _startupPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), My.Application.Info.AssemblyName & ".lnk")
     Private ReadOnly _startMenuPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), My.Application.Info.AssemblyName & ".lnk")
+    Private ReadOnly _startupPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), My.Application.Info.AssemblyName & ".lnk")
     Private _loading As Boolean = True
 
     Friend Shared Sub CollectMemoryGarbage(save As Boolean)
@@ -36,6 +36,35 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
             PrintLog($"{My.Resources.separator}{vbLf}")
         End If
         SaveLogs()
+    End Sub
+
+    Private Shared Sub CreateShortcut(shortcutPathName As String, create As Boolean)
+        If create Then
+            Try
+                Dim shortcutTarget = Path.Combine(Application.StartupPath, My.Application.Info.AssemblyName & ".exe")
+                Dim myShell As New WshShell()
+                Dim myShortcut = CType(myShell.CreateShortcut(shortcutPathName), WshShortcut)
+                myShortcut.TargetPath = shortcutTarget 'The exe file this shortcut executes when double clicked
+                myShortcut.IconLocation = shortcutTarget & ",0" 'Sets the icon of the shortcut to the exe`s icon
+                myShortcut.WorkingDirectory = Application.StartupPath 'The working directory for the exe
+                myShortcut.Arguments = "" 'The arguments used when executing the exe
+                myShortcut.Save() 'Creates the shortcut
+                PrintLog($"Created shortcut: {shortcutTarget}{vbLf}")
+            Catch ex As Exception When TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
+                PrintLog($"   Error: {ex.Message}{vbLf}   Location: {ex.TargetSite}{vbLf}   Trace: { ex.StackTrace}{vbLf}")
+            Finally
+                'a
+            End Try
+        Else
+            Try
+                If IO.File.Exists(shortcutPathName) Then IO.File.Delete(shortcutPathName)
+                PrintLog($"Deleted shortcut: {shortcutPathName}{vbLf}")
+            Catch ex As Exception When TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is IOException
+                PrintLog($"   Error: {ex.Message}{vbLf}   Location: {ex.TargetSite}{vbLf}   Trace: { ex.StackTrace}{vbLf}")
+            Finally
+                'a
+            End Try
+        End If
     End Sub
 
     ''' <summary>
@@ -130,35 +159,6 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
                         CreateShortcut(_startMenuPathName, .Checked) 'Create a shortcut in the start folder 'Starts with Windows'
                 End Select
             End With
-        End If
-    End Sub
-
-    Private Shared Sub CreateShortcut(shortcutPathName As String, create As Boolean)
-        If create Then
-            Try
-                Dim shortcutTarget = Path.Combine(Application.StartupPath, My.Application.Info.AssemblyName & ".exe")
-                Dim myShell As New WshShell()
-                Dim myShortcut = CType(myShell.CreateShortcut(shortcutPathName), WshShortcut)
-                myShortcut.TargetPath = shortcutTarget 'The exe file this shortcut executes when double clicked
-                myShortcut.IconLocation = shortcutTarget & ",0" 'Sets the icon of the shortcut to the exe`s icon
-                myShortcut.WorkingDirectory = Application.StartupPath 'The working directory for the exe
-                myShortcut.Arguments = "" 'The arguments used when executing the exe
-                myShortcut.Save() 'Creates the shortcut
-                PrintLog($"Created shortcut: {shortcutTarget}{vbLf}")
-            Catch ex As Exception When TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException
-                PrintLog($"   Error: {ex.Message}{vbLf}   Location: {ex.TargetSite}{vbLf}   Trace: { ex.StackTrace}{vbLf}")
-            Finally
-                'a
-            End Try
-        Else
-            Try
-                If IO.File.Exists(shortcutPathName) Then IO.File.Delete(shortcutPathName)
-                PrintLog($"Deleted shortcut: {shortcutPathName}{vbLf}")
-            Catch ex As Exception When TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is IOException
-                PrintLog($"   Error: {ex.Message}{vbLf}   Location: {ex.TargetSite}{vbLf}   Trace: { ex.StackTrace}{vbLf}")
-            Finally
-                'a
-            End Try
         End If
     End Sub
 
@@ -497,6 +497,26 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         End If
     End Sub
 
+    Private Sub ChkSaveForcastImages_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSaveFcImages.CheckedChanged
+        With DirectCast(sender, CheckBox)
+            My.Settings.SaveForecastImages = .Checked
+            SaveFcImages = .Checked
+        End With
+    End Sub
+
+    Private Sub ChkWildfire_CheckedChanged(sender As Object, e As EventArgs) Handles ChkWildfire.CheckedChanged
+        With DirectCast(sender, CheckBox)
+            My.Settings.DownloadWildfire = .Checked
+            FetchWildfire = .Checked
+        End With
+
+        'If FetchWildfire Then
+        '    TC.TabPages.Insert(1, TpWildfire)
+        'Else
+        '    TC.TabPages.Remove(TpWildfire)
+        'End If
+    End Sub
+
     Private Sub ImgStyle(sender As Object, e As EventArgs) Handles RbImgStyle0.CheckedChanged, RbImgStyle1.CheckedChanged
         Dim ct = DirectCast(sender, RadioButton)
         My.Settings.ImageStyle = CInt(ct.Tag)
@@ -537,29 +557,6 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         End With
         My.Settings.Save()
     End Sub
-
-    Private Sub ChkWildfire_CheckedChanged(sender As Object, e As EventArgs) Handles ChkWildfire.CheckedChanged
-        With DirectCast(sender, CheckBox)
-            My.Settings.DownloadWildfire = .Checked
-            FetchWildfire = .Checked
-        End With
-
-        'If FetchWildfire Then
-        '    TC.TabPages.Insert(1, TpWildfire)
-        'Else
-        '    TC.TabPages.Remove(TpWildfire)
-        'End If
-    End Sub
-
-    Private Sub ChkSaveForcastImages_CheckedChanged(sender As Object, e As EventArgs) Handles ChkSaveFcImages.CheckedChanged
-        With DirectCast(sender, CheckBox)
-            My.Settings.SaveForecastImages = .Checked
-            SaveFcImages = .Checked
-        End With
-    End Sub
-
-
-
 
     Private Sub Num_Enter(sender As Object, e As EventArgs) Handles NumLat.Enter, NumLong.Enter, NumLogKeepDays.Enter, NumTlInterval.Enter
         Dim ct = DirectCast(sender, NumericUpDown)
@@ -831,6 +828,10 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         End If
     End Sub
 
+    Private Sub BtnLogRefresh_Click(sender As Object, e As EventArgs) Handles BtnLogRefresh.Click
+        RtbLog.Refresh()
+    End Sub
+
     Private Sub BtnLogSearchClear_Click(sender As Object, e As EventArgs) Handles BtnLogSearchClear.Click
         TxtLogSearch.Text = ""
         start = 0
@@ -845,27 +846,66 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         indexOfSearchText = 0
     End Sub
 
-    Private Sub BtnLogRefresh_Click(sender As Object, e As EventArgs) Handles BtnLogRefresh.Click
-        RtbLog.Refresh()
-    End Sub
-
-
-
 #End Region
 
 #End Region
 
 #Region "Archive Images"
+
     'https://www.skotechlearn.com/2020/07/show-drives-folders-files-in-treeview-vbnet.html
     'https://stackoverflow.com/questions/16315042/how-to-display-directories-in-a-treeview
 
-    Private Sub TpImages_Enter(sender As Object, e As EventArgs) Handles TpImages.Enter
-        TV.Nodes.Clear()
-        Dim dirNfo As New DirectoryInfo(ImageDir)
-        If dirNfo.Exists Then
-            AddHandler TV.AfterSelect, AddressOf TV_AfterSelect
-            BuildTree(dirNfo, TV.Nodes)
-        End If
+    Private Shared Sub ClearPicturebox(pb As PictureBox)
+        'https://stackoverflow.com/questions/1403630/clearing-the-image-in-a-picturebox
+        pb.Image = Nothing
+        pb.BackColor = Color.Empty
+        pb.Invalidate()
+    End Sub
+
+    Private Shared Function String2Date(aa As String) As Date
+        'Dim ndx As Integer = aa.IndexOf("-"c)
+        Dim Mo, Dy, Yr, Hr As String
+        Select Case aa.Length
+            Case 8
+                Mo = Strings.Left(aa, 1)
+                Dy = Strings.Mid(aa, 2, 2)
+                Yr = Strings.Mid(aa, 4, 2)
+                Hr = Strings.Right(aa, 2)
+                If CInt(Hr) >= 13 Then
+                    Hr = $"{CInt(Hr) - 12}:00:00 PM"
+                Else
+                    Hr = $"{Hr}:00:00 AM"
+                End If
+                ' MsgBox($"{Mo}/{Dy}/20{Yr} {Hr}")
+                Return Convert.ToDateTime($"{Mo}/{Dy}/20{Yr} {Hr}")
+            Case 9
+                Mo = Strings.Left(aa, 2)
+                Dy = Strings.Mid(aa, 3, 2)
+                Yr = Strings.Mid(aa, 5, 2)
+                Hr = Strings.Right(aa, 2)
+                If CInt(Hr) >= 13 Then
+                    Hr = $"{CInt(Hr) - 12}:00:00 PM"
+                Else
+                    Hr = $"{Hr}:00:00 AM"
+                End If
+                Return Convert.ToDateTime($"{Mo}/{Dy}/20{Yr} {Hr}")
+            Case Else
+                Return CDate("")
+        End Select
+
+    End Function
+
+    Private Sub BtnClearFcImage_Click(sender As Object, e As EventArgs) Handles BtnClearFcImage.Click
+        ClearPicturebox(PbFcImage)
+        LblFcImageName.Text = ""
+    End Sub
+
+    Private Sub BtnTvCollapse_Click(sender As Object, e As EventArgs) Handles BtnTvCollapse.Click
+        TV.CollapseAll()
+    End Sub
+
+    Private Sub BtnTvExpand_Click(sender As Object, e As EventArgs) Handles BtnTvExpand.Click
+        TV.ExpandAll()
     End Sub
 
     Private Sub BuildTree(ByVal directoryInfo As DirectoryInfo, ByVal addInMe As TreeNodeCollection)
@@ -879,37 +919,127 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         Next subdir
     End Sub
 
-    Private Sub TV_AfterSelect(ByVal sender As Object, ByVal e As TreeViewEventArgs)
-        ClearPicturebox(PbFcImage)
-        If e.Node.Name.EndsWith("png") Then
-            PbFcImage.LoadAsync(e.Node.Name)
-        End If
-    End Sub
-
-    Private Shared Sub ClearPicturebox(pb As PictureBox)
-        'https://stackoverflow.com/questions/1403630/clearing-the-image-in-a-picturebox
-        pb.Image = Nothing
-        pb.BackColor = Color.Empty
-        pb.Invalidate()
-    End Sub
-
-    Private Sub BtnClearFcImage_Click(sender As Object, e As EventArgs) Handles BtnClearFcImage.Click
-        ClearPicturebox(PbFcImage)
-    End Sub
-
     Private Sub TmrSaveImage_Tick(sender As Object, e As EventArgs) Handles TmrSaveImage.Tick
         PrintLog($"Save Image timer elapsed @ {Now:F}.{vbLf}")
         TmrSaveImage.Stop()
-        If SaveFcImages Then SaveForecastImages(Tp1Day, $"{Now:Mddyy-HH}.png", "15-Day Forecast", DayDir)
+        If SaveFcImages Then SaveForecastImages(Tp1Day, $"{Now:MMddyy-HH}.png", "15-Day Forecast", DayDir)
     End Sub
 
-    Private Sub BtnTvExpand_Click(sender As Object, e As EventArgs) Handles BtnTvExpand.Click
-        TV.ExpandAll()
+    Private Sub TpImages_Enter(sender As Object, e As EventArgs) Handles TpImages.Enter
+        TV.Nodes.Clear()
+        Dim dirNfo As New DirectoryInfo(ImageDir)
+        If dirNfo.Exists Then
+            AddHandler TV.AfterSelect, AddressOf TV_AfterSelect
+            BuildTree(dirNfo, TV.Nodes)
+        End If
     End Sub
 
-    Private Sub BtnTvCollapse_Click(sender As Object, e As EventArgs) Handles BtnTvCollapse.Click
+    Private Sub TpImages_Leave(sender As Object, e As EventArgs) Handles TpImages.Leave
         TV.CollapseAll()
+        ClearPicturebox(PbFcImage)
+        LblFcImageName.Text = vbNullString
+        CollectMemoryGarbage(True)
     End Sub
+
+    Private Sub TV_AfterSelect(ByVal sender As Object, ByVal e As TreeViewEventArgs)
+        Try
+            ClearPicturebox(PbFcImage)
+            If e.Node.Name.EndsWith("png") Then
+                PbFcImage.LoadAsync(e.Node.Name)
+                Dim iName As String = Path.GetFileName(e.Node.Name).Replace(".png", "")
+                PrintLog($"Date String: {iName}{vbLf}")
+                LblFcImageName.Text = $"{String2Date(iName):F}"
+                PrintLog($"Viewed {e.Node.Name}. ({String2Date(iName):F}){vbLf}")
+            End If
+        Catch ex As Exception
+            PrintLog($"   Error: {ex.Message}{vbLf}   Location: {ex.TargetSite}{vbLf}   Trace: { ex.StackTrace}{vbLf}")
+        Finally
+            'a
+        End Try
+    End Sub
+
+#End Region
+
+#Region "Wildfire Search"
+
+    Private Sub BtnWfFind_Click(sender As Object, e As EventArgs) Handles BtnWfFind.Click
+        If TxtWfFindStr.Text.Trim <> "" Then
+            Find(TxtWfFindStr.Text.Trim.ToLower)
+        End If
+    End Sub
+
+    Private Sub BtnWfFindNext_Click(sender As Object, e As EventArgs) Handles BtnWfFindNext.Click
+        FindNext(TxtWfFindStr.Text.Trim.ToLower)
+    End Sub
+
+
+    Private Sub BtnWfClearFind_Click(sender As Object, e As EventArgs) Handles BtnWfClearFind.Click
+        TxtWfFindStr.Text = vbNullString
+        DgvWildfire.FirstDisplayedScrollingRowIndex = 0
+    End Sub
+
+
+    Private Function Find(SearchStr As String) As Boolean
+        Try
+            'DgvWildfire.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            Dim intCount As Integer
+            For Each row As DataGridViewRow In DgvWildfire.Rows
+                If intCount <= DgvWildfire.Rows.Count - 1 Then
+                    For j = 0 To DgvWildfire.Columns.Count - 1
+                        If DgvWildfire.Rows(intCount).Cells(j).Value.ToString().ToLower.Contains(SearchStr) Then
+                            DgvWildfire.Rows(intCount).Selected = True
+                            DgvWildfire.FirstDisplayedScrollingRowIndex = intCount
+                            Find = True
+                            Exit For
+                        End If
+                    Next
+                    If Find Then
+                        Exit For
+                    End If
+                Else
+                    Exit For
+                End If
+                intCount += 1
+            Next row
+            Find = False
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            'a
+        End Try
+        Find = False
+    End Function
+
+    Private Function FindNext(SearchStr As String) As Boolean
+        Try
+            'DgvWildfire.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            Dim intCount As Integer = DgvWildfire.FirstDisplayedScrollingRowIndex + 1
+            For Each row As DataGridViewRow In DgvWildfire.Rows
+                If intCount <= DgvWildfire.Rows.Count - 1 Then
+                    For j = 0 To DgvWildfire.Columns.Count - 1
+                        If DgvWildfire.Rows(intCount).Cells(j).Value.ToString().ToLower.Contains(SearchStr) Then
+                            DgvWildfire.Rows(intCount).Selected = True
+                            DgvWildfire.FirstDisplayedScrollingRowIndex = intCount
+                            FindNext = True
+                            Exit For
+                        End If
+                    Next
+                    If FindNext Then
+                        Exit For
+                    End If
+                Else
+                    Exit For
+                End If
+                intCount += 1
+            Next row
+            FindNext = False
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
+        Finally
+            'a
+        End Try
+        FindNext = False
+    End Function
 
 #End Region
 
