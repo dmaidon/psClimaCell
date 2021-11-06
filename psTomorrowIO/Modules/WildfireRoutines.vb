@@ -114,7 +114,7 @@ Friend Module WildfireRoutines
                     End If
 
                     If wf.FireCause IsNot vbNullString Then
-                        If wf.FireCauseGeneral = "" Then
+                        If wf.FireCauseGeneral = vbNullString Then
                             wf.FireCauseGeneral = " "
                         End If
                         .Rows.Add("", "Cause", wf.FireCause, wf.FireCauseGeneral)
@@ -148,7 +148,7 @@ Friend Module WildfireRoutines
                     End If
 
                     If wf.FireBehaviorGeneral1 IsNot vbNullString Then
-                        .Rows.Add("", "Behavior 1", wf.FireBehaviorGeneral2, "")
+                        .Rows.Add("", "Behavior 1", wf.FireBehaviorGeneral1, "")
                     End If
 
                     If wf.FireBehaviorGeneral2 IsNot vbNullString Then

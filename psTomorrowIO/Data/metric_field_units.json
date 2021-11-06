@@ -149,5 +149,15 @@
   "windWaveDirection": "degrees",
   "WindWaveMeanPeriod": "seconds",
   "SnowAccumulation": "mm",
-  "IceAccumulation": "mm"
+  "IceAccumulation": "mm",
+  "StreamFlow": "m^3/sec",
+  "RainAccumulation": "mm",
+  "LightningFlashRateDensity": "km^2 5-min^-1",
+  "FloodIndex": {
+    "1": "Minor flash flooding possible: Rivers may go out of their banks briefly",
+    "2": "Moderate flash flooding possible: Rivers experiencing flooding conditions with minor impacts to homes and businesses",
+    "3": "Significant flash flooding possible: Could lead to disruptions with river flooding also significant enough to threaten homes and businesses",
+    "4": "Major river and/or flash flooding possible: Major disruptions to transportation, along with significant impacts to homes/businesses",
+    "5": "Catastrophic or extreme river and/or flash flooding probable or likely: Extreme impacts along river networks and low-lying areas"
+  }
 }

@@ -14,6 +14,9 @@ Public Class FrmMainv4
     Private ReadOnly _startupPathName As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), My.Application.Info.AssemblyName & ".lnk")
     Private _loading As Boolean = True
 
+    'https://stackoverflow.com/questions/47213856/check-whether-a-form-Is-loaded-even-if-minimized
+    Public Shared Property Instance As FrmMainv4
+
     Friend Shared Sub CollectMemoryGarbage(save As Boolean)
         Dim hg = GC.MaxGeneration
         Dim tmb = GC.GetTotalMemory(False)
@@ -107,6 +110,7 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Application.EnableVisualStyles()
         AppStartTime = Now
+        Instance = Me
         UpgradeMySettings()
         ChkScDesktop.Checked = IO.File.Exists(_desktopPathName)
         ChkScStartup.Checked = IO.File.Exists(_startupPathName)
@@ -261,7 +265,7 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
         My.Settings.Save()
     End Sub
 
-    Private Sub SelectFieldData(sender As Object, e As EventArgs) Handles ChkCore20.CheckedChanged, ChkCore1.CheckedChanged, ChkCore2.CheckedChanged, ChkCore3.CheckedChanged, ChkCore4.CheckedChanged, ChkCore5.CheckedChanged, ChkCore6.CheckedChanged, ChkCore7.CheckedChanged, ChkCore8.CheckedChanged, ChkCore9.CheckedChanged, ChkCore10.CheckedChanged, ChkCore11.CheckedChanged, ChkCore12.CheckedChanged, ChkCore13.CheckedChanged, ChkCore14.CheckedChanged, ChkCore15.CheckedChanged, ChkCore16.CheckedChanged, ChkCore17.CheckedChanged, ChkCore18.CheckedChanged, ChkCore19.CheckedChanged, ChkCore0.CheckedChanged, ChkCore21.CheckedChanged, ChkCore22.CheckedChanged, ChkCore23.CheckedChanged, ChkCore24.CheckedChanged, ChkAqi0.CheckedChanged, ChkAqi1.CheckedChanged, ChkAqi2.CheckedChanged, ChkAqi3.CheckedChanged, ChkAqi4.CheckedChanged, ChkAqi5.CheckedChanged, ChkAqi6.CheckedChanged, ChkAqi7.CheckedChanged, ChkAqi8.CheckedChanged, ChkAqi9.CheckedChanged, ChkAqi10.CheckedChanged, ChkAqi11.CheckedChanged, ChkPol0.CheckedChanged, ChkPol1.CheckedChanged, ChkPol2.CheckedChanged, ChkPol3.CheckedChanged, ChkPol4.CheckedChanged, ChkPol5.CheckedChanged, ChkPol6.CheckedChanged, ChkPol7.CheckedChanged, ChkPol8.CheckedChanged, ChkPol9.CheckedChanged, ChkPol10.CheckedChanged, ChkPol12.CheckedChanged, ChkPol11.CheckedChanged, ChkPol13.CheckedChanged, ChkPol14.CheckedChanged, ChkPol15.CheckedChanged, ChkPol16.CheckedChanged, ChkPol17.CheckedChanged, ChkPol18.CheckedChanged, ChkPol19.CheckedChanged, ChkPol20.CheckedChanged, ChkPol21.CheckedChanged, ChkPol22.CheckedChanged, ChkPol23.CheckedChanged, ChkPol24.CheckedChanged, ChkPol25.CheckedChanged, ChkHail0.CheckedChanged, ChkFire0.CheckedChanged, ChkSol0.CheckedChanged, ChkSol1.CheckedChanged, ChkSol2.CheckedChanged, ChkMt0.CheckedChanged, ChkMt1.CheckedChanged, ChkMt2.CheckedChanged, ChkMt3.CheckedChanged, ChkMt4.CheckedChanged, ChkMt5.CheckedChanged, ChkMt6.CheckedChanged, ChkMt7.CheckedChanged, ChkMt8.CheckedChanged, ChkMt9.CheckedChanged, ChkMt10.CheckedChanged, ChkMt11.CheckedChanged, ChkMt12.CheckedChanged, ChkMt13.CheckedChanged, ChkMt14.CheckedChanged, ChkLand0.CheckedChanged, ChkLand1.CheckedChanged, ChkLand2.CheckedChanged, ChkLand3.CheckedChanged, ChkLand4.CheckedChanged, ChkLand5.CheckedChanged, ChkLand6.CheckedChanged, ChkLand7.CheckedChanged, ChkLand8.CheckedChanged, ChkLand9.CheckedChanged
+    Private Sub SelectFieldData(sender As Object, e As EventArgs) Handles ChkCore20.CheckedChanged, ChkCore1.CheckedChanged, ChkCore2.CheckedChanged, ChkCore3.CheckedChanged, ChkCore4.CheckedChanged, ChkCore5.CheckedChanged, ChkCore6.CheckedChanged, ChkCore7.CheckedChanged, ChkCore8.CheckedChanged, ChkCore9.CheckedChanged, ChkCore10.CheckedChanged, ChkCore11.CheckedChanged, ChkCore12.CheckedChanged, ChkCore13.CheckedChanged, ChkCore14.CheckedChanged, ChkCore15.CheckedChanged, ChkCore16.CheckedChanged, ChkCore17.CheckedChanged, ChkCore18.CheckedChanged, ChkCore19.CheckedChanged, ChkCore0.CheckedChanged, ChkCore21.CheckedChanged, ChkCore22.CheckedChanged, ChkCore23.CheckedChanged, ChkCore24.CheckedChanged, ChkCore25.CheckedChanged, ChkAqi0.CheckedChanged, ChkAqi1.CheckedChanged, ChkAqi2.CheckedChanged, ChkAqi3.CheckedChanged, ChkAqi4.CheckedChanged, ChkAqi5.CheckedChanged, ChkAqi6.CheckedChanged, ChkAqi7.CheckedChanged, ChkAqi8.CheckedChanged, ChkAqi9.CheckedChanged, ChkAqi10.CheckedChanged, ChkAqi11.CheckedChanged, ChkPol0.CheckedChanged, ChkPol1.CheckedChanged, ChkPol2.CheckedChanged, ChkPol3.CheckedChanged, ChkPol4.CheckedChanged, ChkPol5.CheckedChanged, ChkPol6.CheckedChanged, ChkPol7.CheckedChanged, ChkPol8.CheckedChanged, ChkPol9.CheckedChanged, ChkPol10.CheckedChanged, ChkPol12.CheckedChanged, ChkPol11.CheckedChanged, ChkPol13.CheckedChanged, ChkPol14.CheckedChanged, ChkPol15.CheckedChanged, ChkPol16.CheckedChanged, ChkPol17.CheckedChanged, ChkPol18.CheckedChanged, ChkPol19.CheckedChanged, ChkPol20.CheckedChanged, ChkPol21.CheckedChanged, ChkPol22.CheckedChanged, ChkPol23.CheckedChanged, ChkPol24.CheckedChanged, ChkPol25.CheckedChanged, ChkHail0.CheckedChanged, ChkFire0.CheckedChanged, ChkSol0.CheckedChanged, ChkSol1.CheckedChanged, ChkSol2.CheckedChanged, ChkMt0.CheckedChanged, ChkMt1.CheckedChanged, ChkMt2.CheckedChanged, ChkMt3.CheckedChanged, ChkMt4.CheckedChanged, ChkMt5.CheckedChanged, ChkMt6.CheckedChanged, ChkMt7.CheckedChanged, ChkMt8.CheckedChanged, ChkMt9.CheckedChanged, ChkMt10.CheckedChanged, ChkMt11.CheckedChanged, ChkMt12.CheckedChanged, ChkMt13.CheckedChanged, ChkMt14.CheckedChanged, ChkLand0.CheckedChanged, ChkLand1.CheckedChanged, ChkLand2.CheckedChanged, ChkLand3.CheckedChanged, ChkLand4.CheckedChanged, ChkLand5.CheckedChanged, ChkLand6.CheckedChanged, ChkLand7.CheckedChanged, ChkLand8.CheckedChanged, ChkLand9.CheckedChanged, ChkFld0.CheckedChanged, ChkFld1.CheckedChanged, ChkLgt0.CheckedChanged
         With DirectCast(sender, CheckBox)
             Select Case CInt(.Tag)
                 Case 0
@@ -450,6 +454,14 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
                     My.Settings.TlCore23 = .Checked     'uvIndex
                 Case 92
                     My.Settings.TlCore24 = .Checked     'uvHealthConcern
+                Case 93
+                    My.Settings.TlFld0 = .Checked       'floodIndex
+                Case 94
+                    My.Settings.TlFld1 = .Checked       'streamFlow
+                Case 95
+                    My.Settings.TlCore25 = .Checked     'rainAccumulation
+                Case 96
+                    My.Settings.TlLgt0 = .Checked       'lightningFlashRateDensity
                 Case Else
                     Exit Select
             End Select
@@ -989,24 +1001,29 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
                         If DgvWildfire.Rows(intCount).Cells(j).Value.ToString().ToLower.Contains(SearchStr) Then
                             DgvWildfire.Rows(intCount).Selected = True
                             DgvWildfire.FirstDisplayedScrollingRowIndex = intCount
+                            BtnWfFindNext.Enabled = True
                             Find = True
                             Exit For
                         End If
                     Next
                     If Find Then
+                        BtnWfFindNext.Enabled = True
                         Exit For
                     End If
                 Else
+                    BtnWfFindNext.Enabled = False
                     Exit For
                 End If
                 intCount += 1
             Next row
+            BtnWfFindNext.Enabled = False
             Find = False
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
             'a
         End Try
+        BtnWfFindNext.Enabled = False
         Find = False
     End Function
 
@@ -1032,13 +1049,16 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
                 End If
                 intCount += 1
             Next row
+            BtnWfFindNext.Enabled = False
             FindNext = False
         Catch ex As Exception
             PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
         Finally
             'a
         End Try
+        BtnWfFindNext.Enabled = False
         FindNext = False
+
     End Function
 
 #End Region

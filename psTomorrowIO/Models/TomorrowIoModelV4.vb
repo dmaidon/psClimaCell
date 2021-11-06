@@ -122,6 +122,10 @@ Partial Public Class Values
     <JsonPropertyName("windWaveMeanPeriod")> Public Property WindWaveMeanPeriod As Double?
     <JsonPropertyName("windWaveSignificantHeight")> Public Property WindWaveSignificantHeight As Double?
     <JsonPropertyName("weatherCode")> Public Property WxCode As Integer?
+    <JsonPropertyName("floodIndex")> Public Property FloodIndex As Integer?
+    <JsonPropertyName("streamFlow")> Public Property StreamFlow As Double?
+    <JsonPropertyName("rainAccumulation")> Public Property RainAccumulation As Double?
+    <JsonPropertyName("lightningFlashRateDensity")> Public Property LightningFlashRateDensity As Double?
 End Class
 
 Partial Public Class Warning

@@ -93,6 +93,11 @@ Friend Module SettingsV4
             .ChkCore18.Checked = My.Settings.TlCore18
             .ChkCore19.Checked = My.Settings.TlCore19
             .ChkCore20.Checked = My.Settings.TlCore20
+            .ChkCore21.Checked = My.Settings.TlCore21
+            .ChkCore22.Checked = My.Settings.TlCore22
+            .ChkCore23.Checked = My.Settings.TlCore23
+            .ChkCore24.Checked = My.Settings.TlCore24
+            .ChkCore25.Checked = My.Settings.TlCore25
             .ChkAqi0.Checked = My.Settings.TlAqi0
             .ChkAqi1.Checked = My.Settings.TlAqi1
             .ChkAqi2.Checked = My.Settings.TlAqi2
@@ -161,6 +166,9 @@ Friend Module SettingsV4
             .ChkLand7.Checked = My.Settings.TlLand7
             .ChkLand8.Checked = My.Settings.TlLand8
             .ChkLand9.Checked = My.Settings.TlLand9
+            .ChkFld0.Checked = My.Settings.TlFld0
+            .ChkFld1.Checked = My.Settings.TlFld1
+            .ChkLgt0.Checked = My.Settings.TlLgt0
         End With
     End Sub
 

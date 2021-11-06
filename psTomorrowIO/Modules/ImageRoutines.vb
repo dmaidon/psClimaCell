@@ -5,11 +5,18 @@ Friend Module ImageRoutines
     Private fMax As Boolean
     Friend Sub SaveForecastImages(ctl As Control, fn As String, str As String, sDir As String)
         ''https://www.aspsnippets.com/Articles/Convert-Export-DataGridView-to-Bitmap-PNG-Image-in-Windows-Forms-WinForms-Application-using-C-and-VBNet.aspx
+        fMax = False
 
-        If CBool(FormWindowState.Minimized) Then
+        ' MsgBox(FrmMainv4.WindowState)
+        If FrmMainv4.Instance.WindowState = FormWindowState.Minimized Then
             FrmMainv4.WindowState = FormWindowState.Normal
             fMax = True
         End If
+
+        'If CBool(FormWindowState.Minimized) Then
+        '    FrmMainv4.WindowState = FormWindowState.Normal
+        '    fMax = True
+        'End If
 
         Dim ax As String = Path.Combine(sDir, fn)
         PrintLog($"{vbLf}{My.Resources.separator}{vbLf}Saving {str} image: {ax}{vbLf}")

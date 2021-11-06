@@ -52,4 +52,8 @@
     Public Property WindWaveDirection As String
     Public Property WindWaveMeanperiod As String
     Public Property WindWaveSignificantHeight As String
+    Public Property FloodIndex As Dictionary(Of String, String)
+    Public Property StreamFlow As String
+    Public Property RainAccumulation As String
+    Public Property LightningFlashRateDensity As String
 End Class
