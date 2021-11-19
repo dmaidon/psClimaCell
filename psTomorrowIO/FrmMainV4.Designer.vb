@@ -994,6 +994,7 @@ Partial Class FrmMainv4
         Me.ChkCore25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore25.Location = New System.Drawing.Point(3, 173)
         Me.ChkCore25.Name = "ChkCore25"
+        Me.ChkCore25.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkCore25.Size = New System.Drawing.Size(250, 28)
         Me.ChkCore25.TabIndex = 95
         Me.ChkCore25.Tag = "95"
@@ -1957,6 +1958,7 @@ Partial Class FrmMainv4
         Me.ChkFld0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkFld0.Location = New System.Drawing.Point(1027, 615)
         Me.ChkFld0.Name = "ChkFld0"
+        Me.ChkFld0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkFld0.Size = New System.Drawing.Size(250, 28)
         Me.ChkFld0.TabIndex = 93
         Me.ChkFld0.Tag = "93"
@@ -1968,6 +1970,7 @@ Partial Class FrmMainv4
         Me.ChkFld1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkFld1.Location = New System.Drawing.Point(3, 649)
         Me.ChkFld1.Name = "ChkFld1"
+        Me.ChkFld1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkFld1.Size = New System.Drawing.Size(250, 28)
         Me.ChkFld1.TabIndex = 94
         Me.ChkFld1.Tag = "94"
@@ -1979,6 +1982,7 @@ Partial Class FrmMainv4
         Me.ChkLgt0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkLgt0.Location = New System.Drawing.Point(259, 649)
         Me.ChkLgt0.Name = "ChkLgt0"
+        Me.ChkLgt0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkLgt0.Size = New System.Drawing.Size(250, 28)
         Me.ChkLgt0.TabIndex = 96
         Me.ChkLgt0.Tag = "96"
