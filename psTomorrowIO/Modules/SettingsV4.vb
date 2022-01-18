@@ -54,7 +54,7 @@ Friend Module SettingsV4
             'End If
 
 
-            'set timer for 1 second after the hour.  Datafile will update hourly
+            'set timer for 15 seconds after the hour.  Datafile will update hourly
             Dim st = New DateTime(Now.Year, Now.Month, Now.Day, Now.Hour, 0, 15).AddHours(1)
             Dim _int As Long = Date2Unix(st) - Date2Unix(Now)
             TlDuration = New TimeSpan(0, 0, 0, CInt(_int))
@@ -98,6 +98,9 @@ Friend Module SettingsV4
             .ChkCore23.Checked = My.Settings.TlCore23
             .ChkCore24.Checked = My.Settings.TlCore24
             .ChkCore25.Checked = My.Settings.TlCore25
+            .ChkCore26.Checked = My.Settings.TlCore26
+            .ChkCore27.Checked = My.Settings.TlCore27
+            .ChkCore28.Checked = My.Settings.TlCore28
             .ChkAqi0.Checked = My.Settings.TlAqi0
             .ChkAqi1.Checked = My.Settings.TlAqi1
             .ChkAqi2.Checked = My.Settings.TlAqi2

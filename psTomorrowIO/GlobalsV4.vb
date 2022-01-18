@@ -79,7 +79,7 @@ Friend Module GlobalsV4
     'number of times that program has been run
     Public Timesrun As Long
 
-    Public Use_Agent As String = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63"
+    Public Use_Agent As String = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4324.4692 Safari/537.36 Edg/97.0.1072.62"
 
 #End Region
 

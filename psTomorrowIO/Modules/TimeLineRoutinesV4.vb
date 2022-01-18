@@ -21,7 +21,7 @@ Friend Module TimeLineRoutinesV4
         For j = 0 To arcArr.Count - 1
             If Not Directory.Exists(arcArr(j)) Then
                 Directory.CreateDirectory(arcArr(j))
-                PrintLog($"Created {arcArr(j)} Archive Folder.{vbLf}{vbLf}")
+                PrintLog($"Created [{arcArr(j)}] Archive Folder.{vbLf}{vbLf}")
             End If
         Next
     End Sub
@@ -33,7 +33,7 @@ Friend Module TimeLineRoutinesV4
         MonthDir = Path.Combine(YearDir, $"{Now:MMMM}")
         DayDir = Path.Combine(MonthDir, $"{Now:dd}")
         Check4ArchiveFolders()
-        Dim tlFile As String = Path.Combine(TempDir, $"tlData_{Now:Mddyy-HH}.json")
+        Dim tlFile As String = Path.Combine(TempDir, $"tlData_{Now:MMddyy-HH}.json")
         With FrmMainv4
             .TC.TabPages.Remove(.Tp1Day)
             .TC.TabPages.Remove(.Tp1dFull)
@@ -203,7 +203,7 @@ Friend Module TimeLineRoutinesV4
     Private Function GetFieldsString() As String
         Try
             'temperature field is set to fetch Min and Max temperature for time period.
-            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedRagweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200", "snowAccumulation", "iceAccumulation", "uvIndex", "uvHealthConcern", "floodIndex", "streamFlow", "rainAccumulation", "lightningFlashRateDensity"})
+            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedRagweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200", "snowAccumulation", "iceAccumulation", "uvIndex", "uvHealthConcern", "floodIndex", "streamFlow", "rainAccumulation", "lightningFlashRateDensity", "weatherCodeFullDay", "weatherCodeDay", "weatherCodeNight"})
             '#15 = solarGHI
             Dim sb = New StringBuilder()
             For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
@@ -379,11 +379,10 @@ Friend Module TimeLineRoutinesV4
     End Sub
 
     Private Sub Write1dData(ct As Integer)
-        PrintLog($"{vbLf}Writing timelines daily data @ {Now:F}.{vbLf}{vbLf}")
-
         If tlNfo.WxData.TimeLines(ct).Intervals.Count <= 0 Then
             PrintLog($"Daily data does not exist @ {Now:F}.{vbLf}{vbLf}")
         Else
+            PrintLog($"{vbLf}Writing timelines daily data @ {Now:F}.{vbLf}{vbLf}")
             Try
                 With FrmMainv4.DgvDaily
                     .Visible = False
@@ -393,6 +392,7 @@ Friend Module TimeLineRoutinesV4
                         .Columns.Add(New DataGridViewImageColumn With {.ImageLayout = DataGridViewImageCellLayout.Zoom})
                         .Columns(j).Name = $"dDay{j}"
                         .Rows.Add()
+                        PrintLog($"Created column: { .Columns(j).Name}{vbLf}")
                         Application.DoEvents()
                     Next
 
@@ -521,9 +521,11 @@ Friend Module TimeLineRoutinesV4
                     .Rows(3).DefaultCellStyle.Font = New Font("", 14, FontStyle.Bold)
                     .Rows(6).DefaultCellStyle.Font = New Font("", 13, FontStyle.Bold)
                     .Rows(7).DefaultCellStyle.Font = New Font("", 14, FontStyle.Bold)
+
                     .Visible = True
                     .ClearSelection()
                     GraphSaved = True
+                    ' MsgBox($"{ .Width},{ .Height}")
                 End With
             Catch ex As Exception When TypeOf ex Is ArgumentOutOfRangeException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is ArgumentNullException OrElse TypeOf ex Is Exception
                 GraphSaved = False
@@ -531,6 +533,8 @@ Friend Module TimeLineRoutinesV4
                     ie = ex.InnerException.ToString
                 End If
                 PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString, ie)
+            Catch ex As Exception
+                PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException.ToString)
             Finally
                 'SaveLogs()
             End Try

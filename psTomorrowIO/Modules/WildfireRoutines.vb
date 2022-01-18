@@ -10,7 +10,7 @@ Friend Module WildfireRoutines
     Private wfNfo As FireApiData
 
     Friend Sub FetchWildfireData()
-        Dim wfFile As String = Path.Combine(TempDir, $"wfData_{Now:Mddyy-HH}.geojson")
+        Dim wfFile As String = Path.Combine(TempDir, $"wfData_{Now:MMddyy-HH}.geojson")
         'FrmMainv4.TpWildfire.Text = "Wildfires(0)"
         If IO.File.Exists(wfFile) Then
             Dim ab As Double = (Date2Unix(Now) - Date2Unix(IO.File.GetLastWriteTime(wfFile))) / 60
