@@ -46,6 +46,9 @@
     Public Property WaveMeanPeriod As String
     Public Property WaveSignificantHeight As String
     Public Property WeatherCode() As Dictionary(Of String, String)
+    Public Property WeatherCodeFullDay() As Dictionary(Of String, String)
+    Public Property WeatherCodeDay() As Dictionary(Of String, String)
+    Public Property WeatherCodeNight() As Dictionary(Of String, String)
     Public Property WindDirection As String
     Public Property WindGust As String
     Public Property WindSpeed As String

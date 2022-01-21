@@ -149,7 +149,6 @@
     <Compile Include="Models\CreateLocationModel.vb" />
     <Compile Include="Models\FieldUnitsModel.vb" />
     <Compile Include="Models\FireData.vb" />
-    <Compile Include="Models\wxCodes.vb" />
     <Compile Include="Modules\DayColorsV4.vb" />
     <Compile Include="Modules\FolderRoutinesV4.vb" />
     <Compile Include="Modules\ImageRoutines.vb" />
@@ -194,18 +193,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\metric_field_units.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\wxCodes\WeatherCode.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\wxCodes\WeatherCodeDay.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\wxCodes\WeatherCodeFullDay.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\wxCodes\WeatherCodeNight.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="My Project\app.manifest" />
@@ -405,916 +392,916 @@
     <Content Include="Icons\PNG\Color\B\8000.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\10000_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\10000_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\10000_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\10000_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\10001_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\10001_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\10001_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\10001_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\10010_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\10010_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\10010_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\10010_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11000_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11000_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11000_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\11000_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11001_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11001_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11001_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\11001_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11010_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11010_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11010_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\11010_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11011_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11011_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11011_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\11011_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11020_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11020_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11020_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\11020_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11021_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11021_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11021_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\11021_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11030_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11030_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11030_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\11030_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11031_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\11031_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\11031_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\11031_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\20000_fog_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\20000_fog_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\20000_fog_large.png">
+    <Content Include="Icons\PNG\V2\Small\20000_fog_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21000_fog_light_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21000_fog_light_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21000_fog_light_large.png">
+    <Content Include="Icons\PNG\V2\Small\21000_fog_light_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21010_fog_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21010_fog_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21010_fog_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\21010_fog_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21011_fog_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21011_fog_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21011_fog_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\21011_fog_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21020_fog_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21020_fog_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21020_fog_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21020_fog_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21021_fog_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21021_fog_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21021_fog_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21021_fog_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21030_fog_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21030_fog_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21030_fog_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21030_fog_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21031_fog_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21031_fog_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21031_fog_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21031_fog_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21060_fog_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21060_fog_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21060_fog_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\21060_fog_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21061_fog_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21061_fog_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21061_fog_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\21061_fog_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21070_fog_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21070_fog_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21070_fog_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21070_fog_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21071_fog_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Small\21071_fog_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21071_fog_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21071_fog_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21080_fog_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21080_fog_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21080_fog_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21080_fog_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21081_fog_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\21081_fog_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\21081_fog_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\21081_fog_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\40000_drizzle_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\40000_drizzle_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\40000_drizzle_large.png">
+    <Content Include="Icons\PNG\V2\Small\40000_drizzle_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\40010_rain_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\40010_rain_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\40010_rain_large.png">
+    <Content Include="Icons\PNG\V2\Small\40010_rain_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42000_rain_light_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42000_rain_light_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42000_rain_light_large.png">
+    <Content Include="Icons\PNG\V2\Small\42000_rain_light_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42010_rain_heavy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42010_rain_heavy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42010_rain_heavy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42010_rain_heavy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42020_rain_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42020_rain_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42020_rain_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42020_rain_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42021_rain_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42021_rain_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42021_rain_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42021_rain_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42030_drizzle_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42030_drizzle_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42030_drizzle_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42030_drizzle_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42031_drizzle_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42031_drizzle_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42031_drizzle_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42031_drizzle_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42040_drizzle_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42040_drizzle_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42040_drizzle_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42040_drizzle_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42041_drizzle_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42041_drizzle_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42041_drizzle_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42041_drizzle_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42050_drizzle_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42050_drizzle_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42050_drizzle_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42050_drizzle_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42051_drizzle_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42051_drizzle_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42051_drizzle_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42051_drizzle_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42080_rain_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42080_rain_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42080_rain_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42080_rain_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42081_rain_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42081_rain_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42081_rain_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42081_rain_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42090_rain_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42090_rain_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42090_rain_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42090_rain_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42091_rain_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42091_rain_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42091_rain_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42091_rain_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42100_rain_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42100_rain_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42100_rain_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42100_rain_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42101_rain_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42101_rain_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42101_rain_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42101_rain_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42110_rain_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42110_rain_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42110_rain_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42110_rain_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42111_rain_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42111_rain_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42111_rain_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42111_rain_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42120_rain_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42120_rain_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42120_rain_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42120_rain_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42121_rain_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42121_rain_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42121_rain_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42121_rain_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42130_rain_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42130_rain_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42130_rain_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42130_rain_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42131_rain_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42131_rain_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42131_rain_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\42131_rain_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42140_rain_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42140_rain_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42140_rain_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42140_rain_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42141_rain_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42141_rain_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42141_rain_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42141_rain_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42150_rain_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42150_rain_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42150_rain_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42150_rain_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42151_rain_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\42151_rain_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\42151_rain_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\42151_rain_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\50000_snow_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\50000_snow_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\50000_snow_large.png">
+    <Content Include="Icons\PNG\V2\Small\50000_snow_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\50010_flurries_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\50010_flurries_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\50010_flurries_large.png">
+    <Content Include="Icons\PNG\V2\Small\50010_flurries_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51000_snow_light_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51000_snow_light_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51000_snow_light_large.png">
+    <Content Include="Icons\PNG\V2\Small\51000_snow_light_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51010_snow_heavy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51010_snow_heavy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51010_snow_heavy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51010_snow_heavy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51020_snow_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51020_snow_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51020_snow_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51020_snow_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51021_snow_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51021_snow_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51021_snow_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51021_snow_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51030_snow_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51030_snow_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51030_snow_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51030_snow_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51031_snow_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51031_snow_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51031_snow_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51031_snow_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51040_snow_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51040_snow_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51040_snow_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51040_snow_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51041_snow_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51041_snow_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51041_snow_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51041_snow_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51050_snow_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51050_snow_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51050_snow_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51050_snow_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51051_snow_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51051_snow_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51051_snow_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51051_snow_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51060_snow_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51060_snow_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51060_snow_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51060_snow_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51061_snow_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51061_snow_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51061_snow_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51061_snow_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51070_snow_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51070_snow_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51070_snow_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51070_snow_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51071_snow_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51071_snow_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51071_snow_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51071_snow_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51080_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51080_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51080_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\51080_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51100_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51100_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51100_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\51100_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51120_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51120_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51120_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\51120_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51140_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51140_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51140_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\51140_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51150_flurries_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51150_flurries_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51150_flurries_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51150_flurries_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51151_flurries_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51151_flurries_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51151_flurries_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51151_flurries_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51160_flurries_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51160_flurries_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51160_flurries_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51160_flurries_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51161_flurries_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51161_flurries_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51161_flurries_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51161_flurries_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51170_flurries_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51170_flurries_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51170_flurries_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51170_flurries_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51171_flurries_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51171_flurries_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51171_flurries_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51171_flurries_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51190_snow_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51190_snow_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51190_snow_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51190_snow_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51191_snow_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51191_snow_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51191_snow_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\51191_snow_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51200_snow_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51200_snow_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51200_snow_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51200_snow_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51201_snow_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51201_snow_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51201_snow_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51201_snow_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51210_snow_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51210_snow_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51210_snow_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51210_snow_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51211_snow_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51211_snow_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51211_snow_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\51211_snow_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51220_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\51220_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\51220_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\51220_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60000_freezing_rain_drizzle_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60000_freezing_rain_drizzle_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60000_freezing_rain_drizzle_large.png">
+    <Content Include="Icons\PNG\V2\Small\60000_freezing_rain_drizzle_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60010_freezing_rain_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60010_freezing_rain_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60010_freezing_rain_large.png">
+    <Content Include="Icons\PNG\V2\Small\60010_freezing_rain_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60020_freezing_rain_drizzle_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60020_freezing_rain_drizzle_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60020_freezing_rain_drizzle_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\60020_freezing_rain_drizzle_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60021_freezing_rain_drizzle_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60021_freezing_rain_drizzle_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60021_freezing_rain_drizzle_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\60021_freezing_rain_drizzle_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60030_freezing_rain_drizzle_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60030_freezing_rain_drizzle_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60030_freezing_rain_drizzle_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\60030_freezing_rain_drizzle_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60031_freezing_rain_drizzle_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60031_freezing_rain_drizzle_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60031_freezing_rain_drizzle_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\60031_freezing_rain_drizzle_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60040_freezing_rain_drizzle_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60040_freezing_rain_drizzle_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60040_freezing_rain_drizzle_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\60040_freezing_rain_drizzle_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60041_freezing_rain_drizzle_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\60041_freezing_rain_drizzle_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\60041_freezing_rain_drizzle_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\60041_freezing_rain_drizzle_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62000_freezing_rain_light_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62000_freezing_rain_light_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62000_freezing_rain_light_large.png">
+    <Content Include="Icons\PNG\V2\Small\62000_freezing_rain_light_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62010_freezing_rain_heavy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62010_freezing_rain_heavy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62010_freezing_rain_heavy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62010_freezing_rain_heavy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62020_freezing_rain_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62020_freezing_rain_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62020_freezing_rain_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62020_freezing_rain_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62021_freezing_rain_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62021_freezing_rain_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62021_freezing_rain_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62021_freezing_rain_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62030_freezing_rain_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62030_freezing_rain_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62030_freezing_rain_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62030_freezing_rain_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62031_freezing_rain_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62031_freezing_rain_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62031_freezing_rain_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62031_freezing_rain_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62040_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62040_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62040_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\62040_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62050_freezing_rain_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62050_freezing_rain_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62050_freezing_rain_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\62050_freezing_rain_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62051_freezing_rain_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62051_freezing_rain_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62051_freezing_rain_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\62051_freezing_rain_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62060_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62060_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62060_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\62060_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62070_freezing_rain_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62070_freezing_rain_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62070_freezing_rain_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\62070_freezing_rain_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62071_freezing_rain_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62071_freezing_rain_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62071_freezing_rain_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\62071_freezing_rain_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62080_freezing_rain_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62080_freezing_rain_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62080_freezing_rain_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62080_freezing_rain_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62081_freezing_rain_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62081_freezing_rain_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62081_freezing_rain_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62081_freezing_rain_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62090_freezing_rain_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62090_freezing_rain_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62090_freezing_rain_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62090_freezing_rain_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62091_freezing_rain_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62091_freezing_rain_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62091_freezing_rain_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62091_freezing_rain_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62120_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62120_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62120_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\62120_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62130_freezing_rain_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62130_freezing_rain_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62130_freezing_rain_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\62130_freezing_rain_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62131_freezing_rain_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62131_freezing_rain_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62131_freezing_rain_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\62131_freezing_rain_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62140_freezing_rain_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62140_freezing_rain_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62140_freezing_rain_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62140_freezing_rain_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62141_freezing_rain_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62141_freezing_rain_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62141_freezing_rain_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62141_freezing_rain_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62150_freezing_rain_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62150_freezing_rain_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62150_freezing_rain_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62150_freezing_rain_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62151_freezing_rain_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62151_freezing_rain_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62151_freezing_rain_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\62151_freezing_rain_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62200_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62200_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62200_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\62200_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62220_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\62220_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\62220_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\62220_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\70000_ice_pellets_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\70000_ice_pellets_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\70000_ice_pellets_large.png">
+    <Content Include="Icons\PNG\V2\Small\70000_ice_pellets_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71010_ice_pellets_heavy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71010_ice_pellets_heavy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71010_ice_pellets_heavy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71010_ice_pellets_heavy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71020_ice_pellets_light_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71020_ice_pellets_light_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71020_ice_pellets_light_large.png">
+    <Content Include="Icons\PNG\V2\Small\71020_ice_pellets_light_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71030_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71030_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71030_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\71030_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71050_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71050_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71050_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\71050_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71060_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71060_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71060_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\71060_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71070_ice_pellets_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71070_ice_pellets_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71070_ice_pellets_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71070_ice_pellets_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71071_ice_pellets_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71071_ice_pellets_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71071_ice_pellets_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71071_ice_pellets_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71080_ice_pellets_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71080_ice_pellets_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71080_ice_pellets_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\71080_ice_pellets_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71081_ice_pellets_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71081_ice_pellets_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71081_ice_pellets_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\71081_ice_pellets_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71090_ice_pellets_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71090_ice_pellets_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71090_ice_pellets_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71090_ice_pellets_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71091_ice_pellets_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71091_ice_pellets_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71091_ice_pellets_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71091_ice_pellets_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71100_ice_pellets_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71100_ice_pellets_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71100_ice_pellets_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\71100_ice_pellets_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71101_ice_pellets_light_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71101_ice_pellets_light_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71101_ice_pellets_light_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\71101_ice_pellets_light_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71110_ice_pellets_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71110_ice_pellets_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71110_ice_pellets_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71110_ice_pellets_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71111_ice_pellets_light_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71111_ice_pellets_light_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71111_ice_pellets_light_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71111_ice_pellets_light_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71120_ice_pellets_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71120_ice_pellets_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71120_ice_pellets_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71120_ice_pellets_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71121_ice_pellets_light_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71121_ice_pellets_light_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71121_ice_pellets_light_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71121_ice_pellets_light_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71130_ice_pellets_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71130_ice_pellets_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71130_ice_pellets_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\71130_ice_pellets_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71131_ice_pellets_heavy_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71131_ice_pellets_heavy_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71131_ice_pellets_heavy_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\71131_ice_pellets_heavy_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71140_ice_pellets_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71140_ice_pellets_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71140_ice_pellets_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71140_ice_pellets_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71141_ice_pellets_heavy_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71141_ice_pellets_heavy_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71141_ice_pellets_heavy_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71141_ice_pellets_heavy_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71150_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71150_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71150_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\71150_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71160_ice_pellets_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71160_ice_pellets_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71160_ice_pellets_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71160_ice_pellets_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71161_ice_pellets_heavy_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71161_ice_pellets_heavy_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71161_ice_pellets_heavy_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\71161_ice_pellets_heavy_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71170_wintry_mix_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\71170_wintry_mix_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\71170_wintry_mix_large.png">
+    <Content Include="Icons\PNG\V2\Small\71170_wintry_mix_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80000_tstorm_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\80000_tstorm_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80000_tstorm_large.png">
+    <Content Include="Icons\PNG\V2\Small\80000_tstorm_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80010_tstorm_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\80010_tstorm_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80010_tstorm_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\80010_tstorm_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80011_tstorm_mostly_clear_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\80011_tstorm_mostly_clear_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80011_tstorm_mostly_clear_large.png">
+    <Content Include="Icons\PNG\V2\Small\80011_tstorm_mostly_clear_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80020_tstorm_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\80020_tstorm_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80020_tstorm_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\80020_tstorm_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80021_tstorm_mostly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\80021_tstorm_mostly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80021_tstorm_mostly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\80021_tstorm_mostly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80030_tstorm_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\80030_tstorm_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80030_tstorm_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\80030_tstorm_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80031_tstorm_partly_cloudy_large%402x.png">
+    <Content Include="Icons\PNG\V2\Large\80031_tstorm_partly_cloudy_large%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\PNG\V2\80031_tstorm_partly_cloudy_large.png">
+    <Content Include="Icons\PNG\V2\Small\80031_tstorm_partly_cloudy_large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\Styles\Pollen\gold_lrg.png">
@@ -1370,7 +1357,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
-      <Version>6.0.1</Version>
+      <Version>6.0.2-mauipre.1.22054.8</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

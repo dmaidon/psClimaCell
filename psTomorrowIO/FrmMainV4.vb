@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
 
 Imports IWshRuntimeLibrary
 
@@ -164,6 +165,21 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
                 End Select
             End With
         End If
+    End Sub
+
+    ''' <summary>
+    ''' handles the links in the RichTextBoxes
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Shared Sub RtbUrls_Clicked(sender As Object, e As LinkClickedEventArgs) Handles RtbLog.LinkClicked, RtbLog.LinkClicked, RtbWxData.LinkClicked
+        Try
+            Process.Start(e.LinkText)
+        Catch ex As Exception When TypeOf ex Is Win32Exception OrElse TypeOf ex Is ObjectDisposedException OrElse TypeOf ex Is FileNotFoundException
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            'a
+        End Try
     End Sub
 
     Private Sub TsslRefresh_Click(sender As Object, e As EventArgs) Handles TsslRefresh.Click
