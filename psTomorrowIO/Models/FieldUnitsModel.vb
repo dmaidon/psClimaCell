@@ -20,7 +20,11 @@
     Public Property PollutantNO2 As String
     Public Property PollutantO3 As String
     Public Property PollutantSO2 As String
+    Public Property RainIntensity() As String
+    Public Property FreezingRainIntensity() As String
     Public Property PrecipitationIntensity() As String
+    Public Property SnowIntensity() As String
+    Public Property SleetIntensity() As String
     Public Property PrecipitationProbability() As String
     Public Property PrecipitationType() As Dictionary(Of String, String)
     Public Property PressureSeaLevel As String

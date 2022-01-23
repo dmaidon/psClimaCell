@@ -101,6 +101,10 @@ Friend Module SettingsV4
             .ChkCore26.Checked = My.Settings.TlCore26
             .ChkCore27.Checked = My.Settings.TlCore27
             .ChkCore28.Checked = My.Settings.TlCore28
+            .ChkCore29.Checked = My.Settings.TlCore30
+            .ChkCore30.Checked = My.Settings.TlCore31
+            .ChkCore31.Checked = My.Settings.TlCore32
+            .ChkCore32.Checked = My.Settings.TlCore33
             .ChkAqi0.Checked = My.Settings.TlAqi0
             .ChkAqi1.Checked = My.Settings.TlAqi1
             .ChkAqi2.Checked = My.Settings.TlAqi2

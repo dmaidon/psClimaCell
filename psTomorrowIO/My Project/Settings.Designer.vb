@@ -1553,6 +1553,54 @@ Namespace My
                 Me("TlCore29") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore30() As Boolean
+            Get
+                Return CType(Me("TlCore30"),Boolean)
+            End Get
+            Set
+                Me("TlCore30") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore31() As Boolean
+            Get
+                Return CType(Me("TlCore31"),Boolean)
+            End Get
+            Set
+                Me("TlCore31") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore32() As Boolean
+            Get
+                Return CType(Me("TlCore32"),Boolean)
+            End Get
+            Set
+                Me("TlCore32") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TlCore33() As Boolean
+            Get
+                Return CType(Me("TlCore33"),Boolean)
+            End Get
+            Set
+                Me("TlCore33") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

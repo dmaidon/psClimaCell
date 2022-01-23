@@ -23,47 +23,47 @@ Partial Class FrmMainv4
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle53 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle54 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle55 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle56 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle57 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle58 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle59 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle60 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle61 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle62 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle63 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle64 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle65 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle66 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle67 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle68 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle69 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle70 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle71 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle72 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle73 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle74 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle75 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle76 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle77 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle78 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle79 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle80 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMainv4))
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SS = New System.Windows.Forms.StatusStrip()
         Me.TsslVer = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TsslCallRemaining = New System.Windows.Forms.ToolStripStatusLabel()
@@ -90,6 +90,10 @@ Partial Class FrmMainv4
         Me.ChkCore7 = New System.Windows.Forms.CheckBox()
         Me.ChkCore8 = New System.Windows.Forms.CheckBox()
         Me.ChkCore9 = New System.Windows.Forms.CheckBox()
+        Me.ChkCore32 = New System.Windows.Forms.CheckBox()
+        Me.ChkCore29 = New System.Windows.Forms.CheckBox()
+        Me.ChkCore30 = New System.Windows.Forms.CheckBox()
+        Me.ChkCore31 = New System.Windows.Forms.CheckBox()
         Me.ChkCore10 = New System.Windows.Forms.CheckBox()
         Me.ChkCore11 = New System.Windows.Forms.CheckBox()
         Me.ChkCore12 = New System.Windows.Forms.CheckBox()
@@ -100,10 +104,10 @@ Partial Class FrmMainv4
         Me.ChkCore17 = New System.Windows.Forms.CheckBox()
         Me.ChkCore18 = New System.Windows.Forms.CheckBox()
         Me.ChkCore19 = New System.Windows.Forms.CheckBox()
+        Me.ChkCore20 = New System.Windows.Forms.CheckBox()
         Me.ChkCore26 = New System.Windows.Forms.CheckBox()
         Me.ChkCore27 = New System.Windows.Forms.CheckBox()
         Me.ChkCore28 = New System.Windows.Forms.CheckBox()
-        Me.ChkCore20 = New System.Windows.Forms.CheckBox()
         Me.ChkCore25 = New System.Windows.Forms.CheckBox()
         Me.ChkCore21 = New System.Windows.Forms.CheckBox()
         Me.ChkCore22 = New System.Windows.Forms.CheckBox()
@@ -548,6 +552,10 @@ Partial Class FrmMainv4
         Me.FlpDataFields.Controls.Add(Me.ChkCore7)
         Me.FlpDataFields.Controls.Add(Me.ChkCore8)
         Me.FlpDataFields.Controls.Add(Me.ChkCore9)
+        Me.FlpDataFields.Controls.Add(Me.ChkCore32)
+        Me.FlpDataFields.Controls.Add(Me.ChkCore29)
+        Me.FlpDataFields.Controls.Add(Me.ChkCore30)
+        Me.FlpDataFields.Controls.Add(Me.ChkCore31)
         Me.FlpDataFields.Controls.Add(Me.ChkCore10)
         Me.FlpDataFields.Controls.Add(Me.ChkCore11)
         Me.FlpDataFields.Controls.Add(Me.ChkCore12)
@@ -558,10 +566,10 @@ Partial Class FrmMainv4
         Me.FlpDataFields.Controls.Add(Me.ChkCore17)
         Me.FlpDataFields.Controls.Add(Me.ChkCore18)
         Me.FlpDataFields.Controls.Add(Me.ChkCore19)
+        Me.FlpDataFields.Controls.Add(Me.ChkCore20)
         Me.FlpDataFields.Controls.Add(Me.ChkCore26)
         Me.FlpDataFields.Controls.Add(Me.ChkCore27)
         Me.FlpDataFields.Controls.Add(Me.ChkCore28)
-        Me.FlpDataFields.Controls.Add(Me.ChkCore20)
         Me.FlpDataFields.Controls.Add(Me.ChkCore25)
         Me.FlpDataFields.Controls.Add(Me.ChkCore21)
         Me.FlpDataFields.Controls.Add(Me.ChkCore22)
@@ -786,11 +794,67 @@ Partial Class FrmMainv4
         Me.ChkCore9.Text = "Precipitation Intensity"
         Me.ChkCore9.UseVisualStyleBackColor = False
         '
+        'ChkCore32
+        '
+        Me.ChkCore32.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkCore32.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkCore32.Location = New System.Drawing.Point(3, 71)
+        Me.ChkCore32.MaximumSize = New System.Drawing.Size(250, 28)
+        Me.ChkCore32.Name = "ChkCore32"
+        Me.ChkCore32.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore32.Size = New System.Drawing.Size(250, 28)
+        Me.ChkCore32.TabIndex = 103
+        Me.ChkCore32.Tag = "103"
+        Me.ChkCore32.Text = "Rain Intensity"
+        Me.ChkCore32.UseVisualStyleBackColor = False
+        '
+        'ChkCore29
+        '
+        Me.ChkCore29.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkCore29.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkCore29.Location = New System.Drawing.Point(259, 71)
+        Me.ChkCore29.MaximumSize = New System.Drawing.Size(250, 28)
+        Me.ChkCore29.Name = "ChkCore29"
+        Me.ChkCore29.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore29.Size = New System.Drawing.Size(250, 28)
+        Me.ChkCore29.TabIndex = 100
+        Me.ChkCore29.Tag = "100"
+        Me.ChkCore29.Text = "Freezing Rain Intensity"
+        Me.ChkCore29.UseVisualStyleBackColor = False
+        '
+        'ChkCore30
+        '
+        Me.ChkCore30.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkCore30.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkCore30.Location = New System.Drawing.Point(515, 71)
+        Me.ChkCore30.MaximumSize = New System.Drawing.Size(250, 28)
+        Me.ChkCore30.Name = "ChkCore30"
+        Me.ChkCore30.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore30.Size = New System.Drawing.Size(250, 28)
+        Me.ChkCore30.TabIndex = 101
+        Me.ChkCore30.Tag = "101"
+        Me.ChkCore30.Text = "Snow Intensity"
+        Me.ChkCore30.UseVisualStyleBackColor = False
+        '
+        'ChkCore31
+        '
+        Me.ChkCore31.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkCore31.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkCore31.Location = New System.Drawing.Point(771, 71)
+        Me.ChkCore31.MaximumSize = New System.Drawing.Size(250, 28)
+        Me.ChkCore31.Name = "ChkCore31"
+        Me.ChkCore31.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore31.Size = New System.Drawing.Size(250, 28)
+        Me.ChkCore31.TabIndex = 102
+        Me.ChkCore31.Tag = "102"
+        Me.ChkCore31.Text = "Sleet Intensity"
+        Me.ChkCore31.UseVisualStyleBackColor = False
+        '
         'ChkCore10
         '
         Me.ChkCore10.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore10.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore10.Location = New System.Drawing.Point(3, 71)
+        Me.ChkCore10.Location = New System.Drawing.Point(1027, 71)
         Me.ChkCore10.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore10.Name = "ChkCore10"
         Me.ChkCore10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -804,7 +868,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore11.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore11.Location = New System.Drawing.Point(259, 71)
+        Me.ChkCore11.Location = New System.Drawing.Point(3, 105)
         Me.ChkCore11.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore11.Name = "ChkCore11"
         Me.ChkCore11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -818,7 +882,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore12.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore12.Location = New System.Drawing.Point(515, 71)
+        Me.ChkCore12.Location = New System.Drawing.Point(259, 105)
         Me.ChkCore12.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore12.Name = "ChkCore12"
         Me.ChkCore12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -832,7 +896,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore13.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore13.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore13.Location = New System.Drawing.Point(771, 71)
+        Me.ChkCore13.Location = New System.Drawing.Point(515, 105)
         Me.ChkCore13.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore13.Name = "ChkCore13"
         Me.ChkCore13.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -846,7 +910,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore14.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore14.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore14.Location = New System.Drawing.Point(1027, 71)
+        Me.ChkCore14.Location = New System.Drawing.Point(771, 105)
         Me.ChkCore14.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore14.Name = "ChkCore14"
         Me.ChkCore14.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -861,7 +925,7 @@ Partial Class FrmMainv4
         Me.ChkCore15.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore15.Enabled = False
         Me.ChkCore15.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore15.Location = New System.Drawing.Point(3, 105)
+        Me.ChkCore15.Location = New System.Drawing.Point(1027, 105)
         Me.ChkCore15.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore15.Name = "ChkCore15"
         Me.ChkCore15.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -876,7 +940,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore16.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore16.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore16.Location = New System.Drawing.Point(259, 105)
+        Me.ChkCore16.Location = New System.Drawing.Point(3, 139)
         Me.ChkCore16.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore16.Name = "ChkCore16"
         Me.ChkCore16.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -890,7 +954,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore17.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore17.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore17.Location = New System.Drawing.Point(515, 105)
+        Me.ChkCore17.Location = New System.Drawing.Point(259, 139)
         Me.ChkCore17.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore17.Name = "ChkCore17"
         Me.ChkCore17.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -904,7 +968,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore18.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore18.Location = New System.Drawing.Point(771, 105)
+        Me.ChkCore18.Location = New System.Drawing.Point(515, 139)
         Me.ChkCore18.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore18.Name = "ChkCore18"
         Me.ChkCore18.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -918,7 +982,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore19.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore19.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore19.Location = New System.Drawing.Point(1027, 105)
+        Me.ChkCore19.Location = New System.Drawing.Point(771, 139)
         Me.ChkCore19.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore19.Name = "ChkCore19"
         Me.ChkCore19.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -928,14 +992,28 @@ Partial Class FrmMainv4
         Me.ChkCore19.Text = "Cloud Ceiling"
         Me.ChkCore19.UseVisualStyleBackColor = False
         '
+        'ChkCore20
+        '
+        Me.ChkCore20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkCore20.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkCore20.Location = New System.Drawing.Point(1027, 139)
+        Me.ChkCore20.MaximumSize = New System.Drawing.Size(250, 28)
+        Me.ChkCore20.Name = "ChkCore20"
+        Me.ChkCore20.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore20.Size = New System.Drawing.Size(250, 28)
+        Me.ChkCore20.TabIndex = 20
+        Me.ChkCore20.Tag = "20"
+        Me.ChkCore20.Text = "Weather Code"
+        Me.ChkCore20.UseVisualStyleBackColor = False
+        '
         'ChkCore26
         '
         Me.ChkCore26.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore26.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore26.Location = New System.Drawing.Point(4, 141)
-        Me.ChkCore26.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ChkCore26.Location = New System.Drawing.Point(3, 173)
+        Me.ChkCore26.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore26.Name = "ChkCore26"
-        Me.ChkCore26.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.ChkCore26.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkCore26.Size = New System.Drawing.Size(250, 28)
         Me.ChkCore26.TabIndex = 97
         Me.ChkCore26.Tag = "97"
@@ -946,10 +1024,10 @@ Partial Class FrmMainv4
         '
         Me.ChkCore27.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore27.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore27.Location = New System.Drawing.Point(262, 141)
-        Me.ChkCore27.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ChkCore27.Location = New System.Drawing.Point(259, 173)
+        Me.ChkCore27.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore27.Name = "ChkCore27"
-        Me.ChkCore27.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.ChkCore27.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkCore27.Size = New System.Drawing.Size(250, 28)
         Me.ChkCore27.TabIndex = 98
         Me.ChkCore27.Tag = "98"
@@ -960,34 +1038,20 @@ Partial Class FrmMainv4
         '
         Me.ChkCore28.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore28.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore28.Location = New System.Drawing.Point(520, 141)
-        Me.ChkCore28.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ChkCore28.Location = New System.Drawing.Point(515, 173)
+        Me.ChkCore28.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore28.Name = "ChkCore28"
-        Me.ChkCore28.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.ChkCore28.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkCore28.Size = New System.Drawing.Size(250, 28)
         Me.ChkCore28.TabIndex = 99
         Me.ChkCore28.Tag = "99"
         Me.ChkCore28.Text = "weatherCodeNight"
         Me.ChkCore28.UseVisualStyleBackColor = False
         '
-        'ChkCore20
-        '
-        Me.ChkCore20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore20.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore20.Location = New System.Drawing.Point(777, 139)
-        Me.ChkCore20.MaximumSize = New System.Drawing.Size(250, 28)
-        Me.ChkCore20.Name = "ChkCore20"
-        Me.ChkCore20.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.ChkCore20.Size = New System.Drawing.Size(250, 28)
-        Me.ChkCore20.TabIndex = 20
-        Me.ChkCore20.Tag = "20"
-        Me.ChkCore20.Text = "Weather Code"
-        Me.ChkCore20.UseVisualStyleBackColor = False
-        '
         'ChkCore25
         '
         Me.ChkCore25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkCore25.Location = New System.Drawing.Point(1033, 139)
+        Me.ChkCore25.Location = New System.Drawing.Point(771, 173)
         Me.ChkCore25.Name = "ChkCore25"
         Me.ChkCore25.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkCore25.Size = New System.Drawing.Size(250, 28)
@@ -1000,7 +1064,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore21.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore21.Location = New System.Drawing.Point(3, 177)
+        Me.ChkCore21.Location = New System.Drawing.Point(1027, 173)
         Me.ChkCore21.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore21.Name = "ChkCore21"
         Me.ChkCore21.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1014,7 +1078,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore22.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore22.Location = New System.Drawing.Point(259, 177)
+        Me.ChkCore22.Location = New System.Drawing.Point(3, 207)
         Me.ChkCore22.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore22.Name = "ChkCore22"
         Me.ChkCore22.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1028,7 +1092,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore23.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore23.Location = New System.Drawing.Point(515, 177)
+        Me.ChkCore23.Location = New System.Drawing.Point(259, 207)
         Me.ChkCore23.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore23.Name = "ChkCore23"
         Me.ChkCore23.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1042,7 +1106,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore24.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore24.Location = New System.Drawing.Point(771, 177)
+        Me.ChkCore24.Location = New System.Drawing.Point(515, 207)
         Me.ChkCore24.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore24.Name = "ChkCore24"
         Me.ChkCore24.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1056,7 +1120,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi0.Location = New System.Drawing.Point(1027, 177)
+        Me.ChkAqi0.Location = New System.Drawing.Point(771, 207)
         Me.ChkAqi0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi0.Name = "ChkAqi0"
         Me.ChkAqi0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1070,7 +1134,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi1.Location = New System.Drawing.Point(3, 211)
+        Me.ChkAqi1.Location = New System.Drawing.Point(1027, 207)
         Me.ChkAqi1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi1.Name = "ChkAqi1"
         Me.ChkAqi1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1084,7 +1148,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi2.Location = New System.Drawing.Point(259, 211)
+        Me.ChkAqi2.Location = New System.Drawing.Point(3, 241)
         Me.ChkAqi2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi2.Name = "ChkAqi2"
         Me.ChkAqi2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1098,7 +1162,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi3.Location = New System.Drawing.Point(515, 211)
+        Me.ChkAqi3.Location = New System.Drawing.Point(259, 241)
         Me.ChkAqi3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi3.Name = "ChkAqi3"
         Me.ChkAqi3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1112,7 +1176,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi4.Location = New System.Drawing.Point(771, 211)
+        Me.ChkAqi4.Location = New System.Drawing.Point(515, 241)
         Me.ChkAqi4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi4.Name = "ChkAqi4"
         Me.ChkAqi4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1126,7 +1190,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi5.Location = New System.Drawing.Point(1027, 211)
+        Me.ChkAqi5.Location = New System.Drawing.Point(771, 241)
         Me.ChkAqi5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi5.Name = "ChkAqi5"
         Me.ChkAqi5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1140,7 +1204,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi6.Location = New System.Drawing.Point(3, 245)
+        Me.ChkAqi6.Location = New System.Drawing.Point(1027, 241)
         Me.ChkAqi6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi6.Name = "ChkAqi6"
         Me.ChkAqi6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1154,7 +1218,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi7.Location = New System.Drawing.Point(259, 245)
+        Me.ChkAqi7.Location = New System.Drawing.Point(3, 275)
         Me.ChkAqi7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi7.Name = "ChkAqi7"
         Me.ChkAqi7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1168,7 +1232,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi8.Location = New System.Drawing.Point(515, 245)
+        Me.ChkAqi8.Location = New System.Drawing.Point(259, 275)
         Me.ChkAqi8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi8.Name = "ChkAqi8"
         Me.ChkAqi8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1182,7 +1246,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi9.Location = New System.Drawing.Point(771, 245)
+        Me.ChkAqi9.Location = New System.Drawing.Point(515, 275)
         Me.ChkAqi9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi9.Name = "ChkAqi9"
         Me.ChkAqi9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1196,7 +1260,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi10.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi10.Location = New System.Drawing.Point(1027, 245)
+        Me.ChkAqi10.Location = New System.Drawing.Point(771, 275)
         Me.ChkAqi10.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi10.Name = "ChkAqi10"
         Me.ChkAqi10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1210,7 +1274,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi11.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi11.Location = New System.Drawing.Point(3, 279)
+        Me.ChkAqi11.Location = New System.Drawing.Point(1027, 275)
         Me.ChkAqi11.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi11.Name = "ChkAqi11"
         Me.ChkAqi11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1224,7 +1288,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol0.Location = New System.Drawing.Point(259, 279)
+        Me.ChkPol0.Location = New System.Drawing.Point(3, 309)
         Me.ChkPol0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol0.Name = "ChkPol0"
         Me.ChkPol0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1238,7 +1302,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol1.Location = New System.Drawing.Point(515, 279)
+        Me.ChkPol1.Location = New System.Drawing.Point(259, 309)
         Me.ChkPol1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol1.Name = "ChkPol1"
         Me.ChkPol1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1252,7 +1316,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol2.Location = New System.Drawing.Point(771, 279)
+        Me.ChkPol2.Location = New System.Drawing.Point(515, 309)
         Me.ChkPol2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol2.Name = "ChkPol2"
         Me.ChkPol2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1266,7 +1330,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol3.Location = New System.Drawing.Point(1027, 279)
+        Me.ChkPol3.Location = New System.Drawing.Point(771, 309)
         Me.ChkPol3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol3.Name = "ChkPol3"
         Me.ChkPol3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1280,7 +1344,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol4.Location = New System.Drawing.Point(3, 313)
+        Me.ChkPol4.Location = New System.Drawing.Point(1027, 309)
         Me.ChkPol4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol4.Name = "ChkPol4"
         Me.ChkPol4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1294,7 +1358,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol5.Location = New System.Drawing.Point(259, 313)
+        Me.ChkPol5.Location = New System.Drawing.Point(3, 343)
         Me.ChkPol5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol5.Name = "ChkPol5"
         Me.ChkPol5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1308,7 +1372,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol6.Location = New System.Drawing.Point(515, 313)
+        Me.ChkPol6.Location = New System.Drawing.Point(259, 343)
         Me.ChkPol6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol6.Name = "ChkPol6"
         Me.ChkPol6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1322,7 +1386,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol7.Location = New System.Drawing.Point(771, 313)
+        Me.ChkPol7.Location = New System.Drawing.Point(515, 343)
         Me.ChkPol7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol7.Name = "ChkPol7"
         Me.ChkPol7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1336,7 +1400,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol8.Location = New System.Drawing.Point(1027, 313)
+        Me.ChkPol8.Location = New System.Drawing.Point(771, 343)
         Me.ChkPol8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol8.Name = "ChkPol8"
         Me.ChkPol8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1350,7 +1414,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol9.Location = New System.Drawing.Point(3, 347)
+        Me.ChkPol9.Location = New System.Drawing.Point(1027, 343)
         Me.ChkPol9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol9.Name = "ChkPol9"
         Me.ChkPol9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1364,7 +1428,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol10.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol10.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol10.Location = New System.Drawing.Point(259, 347)
+        Me.ChkPol10.Location = New System.Drawing.Point(3, 377)
         Me.ChkPol10.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol10.Name = "ChkPol10"
         Me.ChkPol10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1378,7 +1442,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol11.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol11.Location = New System.Drawing.Point(515, 347)
+        Me.ChkPol11.Location = New System.Drawing.Point(259, 377)
         Me.ChkPol11.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol11.Name = "ChkPol11"
         Me.ChkPol11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1392,7 +1456,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol12.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol12.Location = New System.Drawing.Point(771, 347)
+        Me.ChkPol12.Location = New System.Drawing.Point(515, 377)
         Me.ChkPol12.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol12.Name = "ChkPol12"
         Me.ChkPol12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1406,7 +1470,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol13.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol13.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol13.Location = New System.Drawing.Point(1027, 347)
+        Me.ChkPol13.Location = New System.Drawing.Point(771, 377)
         Me.ChkPol13.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol13.Name = "ChkPol13"
         Me.ChkPol13.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1420,7 +1484,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol14.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol14.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol14.Location = New System.Drawing.Point(3, 381)
+        Me.ChkPol14.Location = New System.Drawing.Point(1027, 377)
         Me.ChkPol14.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol14.Name = "ChkPol14"
         Me.ChkPol14.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1434,7 +1498,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol15.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol15.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol15.Location = New System.Drawing.Point(259, 381)
+        Me.ChkPol15.Location = New System.Drawing.Point(3, 411)
         Me.ChkPol15.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol15.Name = "ChkPol15"
         Me.ChkPol15.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1448,7 +1512,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol16.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol16.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol16.Location = New System.Drawing.Point(515, 381)
+        Me.ChkPol16.Location = New System.Drawing.Point(259, 411)
         Me.ChkPol16.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol16.Name = "ChkPol16"
         Me.ChkPol16.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1462,7 +1526,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol17.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol17.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol17.Location = New System.Drawing.Point(771, 381)
+        Me.ChkPol17.Location = New System.Drawing.Point(515, 411)
         Me.ChkPol17.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol17.Name = "ChkPol17"
         Me.ChkPol17.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1476,7 +1540,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol18.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol18.Location = New System.Drawing.Point(1027, 381)
+        Me.ChkPol18.Location = New System.Drawing.Point(771, 411)
         Me.ChkPol18.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol18.Name = "ChkPol18"
         Me.ChkPol18.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1490,7 +1554,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol19.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol19.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol19.Location = New System.Drawing.Point(3, 415)
+        Me.ChkPol19.Location = New System.Drawing.Point(1027, 411)
         Me.ChkPol19.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol19.Name = "ChkPol19"
         Me.ChkPol19.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1504,7 +1568,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol20.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol20.Location = New System.Drawing.Point(259, 415)
+        Me.ChkPol20.Location = New System.Drawing.Point(3, 445)
         Me.ChkPol20.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol20.Name = "ChkPol20"
         Me.ChkPol20.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1518,7 +1582,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol21.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol21.Location = New System.Drawing.Point(515, 415)
+        Me.ChkPol21.Location = New System.Drawing.Point(259, 445)
         Me.ChkPol21.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol21.Name = "ChkPol21"
         Me.ChkPol21.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1532,7 +1596,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol22.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol22.Location = New System.Drawing.Point(771, 415)
+        Me.ChkPol22.Location = New System.Drawing.Point(515, 445)
         Me.ChkPol22.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol22.Name = "ChkPol22"
         Me.ChkPol22.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1546,7 +1610,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol23.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol23.Location = New System.Drawing.Point(1027, 415)
+        Me.ChkPol23.Location = New System.Drawing.Point(771, 445)
         Me.ChkPol23.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol23.Name = "ChkPol23"
         Me.ChkPol23.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1560,7 +1624,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol24.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol24.Location = New System.Drawing.Point(3, 449)
+        Me.ChkPol24.Location = New System.Drawing.Point(1027, 445)
         Me.ChkPol24.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol24.Name = "ChkPol24"
         Me.ChkPol24.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1574,7 +1638,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol25.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol25.Location = New System.Drawing.Point(259, 449)
+        Me.ChkPol25.Location = New System.Drawing.Point(3, 479)
         Me.ChkPol25.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol25.Name = "ChkPol25"
         Me.ChkPol25.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1588,7 +1652,7 @@ Partial Class FrmMainv4
         '
         Me.ChkHail0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkHail0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkHail0.Location = New System.Drawing.Point(515, 449)
+        Me.ChkHail0.Location = New System.Drawing.Point(259, 479)
         Me.ChkHail0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkHail0.Name = "ChkHail0"
         Me.ChkHail0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1602,7 +1666,7 @@ Partial Class FrmMainv4
         '
         Me.ChkFire0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkFire0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkFire0.Location = New System.Drawing.Point(771, 449)
+        Me.ChkFire0.Location = New System.Drawing.Point(515, 479)
         Me.ChkFire0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkFire0.Name = "ChkFire0"
         Me.ChkFire0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1616,7 +1680,7 @@ Partial Class FrmMainv4
         '
         Me.ChkSol0.BackColor = System.Drawing.Color.MistyRose
         Me.ChkSol0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkSol0.Location = New System.Drawing.Point(1027, 449)
+        Me.ChkSol0.Location = New System.Drawing.Point(771, 479)
         Me.ChkSol0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkSol0.Name = "ChkSol0"
         Me.ChkSol0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1630,7 +1694,7 @@ Partial Class FrmMainv4
         '
         Me.ChkSol1.BackColor = System.Drawing.Color.MistyRose
         Me.ChkSol1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkSol1.Location = New System.Drawing.Point(3, 483)
+        Me.ChkSol1.Location = New System.Drawing.Point(1027, 479)
         Me.ChkSol1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkSol1.Name = "ChkSol1"
         Me.ChkSol1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1644,7 +1708,7 @@ Partial Class FrmMainv4
         '
         Me.ChkSol2.BackColor = System.Drawing.Color.MistyRose
         Me.ChkSol2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkSol2.Location = New System.Drawing.Point(259, 483)
+        Me.ChkSol2.Location = New System.Drawing.Point(3, 513)
         Me.ChkSol2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkSol2.Name = "ChkSol2"
         Me.ChkSol2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1658,7 +1722,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt0.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt0.Location = New System.Drawing.Point(515, 483)
+        Me.ChkMt0.Location = New System.Drawing.Point(259, 513)
         Me.ChkMt0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt0.Name = "ChkMt0"
         Me.ChkMt0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1672,7 +1736,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt1.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt1.Location = New System.Drawing.Point(771, 483)
+        Me.ChkMt1.Location = New System.Drawing.Point(515, 513)
         Me.ChkMt1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt1.Name = "ChkMt1"
         Me.ChkMt1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1686,7 +1750,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt2.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt2.Location = New System.Drawing.Point(1027, 483)
+        Me.ChkMt2.Location = New System.Drawing.Point(771, 513)
         Me.ChkMt2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt2.Name = "ChkMt2"
         Me.ChkMt2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1700,7 +1764,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt3.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt3.Location = New System.Drawing.Point(3, 517)
+        Me.ChkMt3.Location = New System.Drawing.Point(1027, 513)
         Me.ChkMt3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt3.Name = "ChkMt3"
         Me.ChkMt3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1714,7 +1778,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt4.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt4.Location = New System.Drawing.Point(259, 517)
+        Me.ChkMt4.Location = New System.Drawing.Point(3, 547)
         Me.ChkMt4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt4.Name = "ChkMt4"
         Me.ChkMt4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1728,7 +1792,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt5.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt5.Location = New System.Drawing.Point(515, 517)
+        Me.ChkMt5.Location = New System.Drawing.Point(259, 547)
         Me.ChkMt5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt5.Name = "ChkMt5"
         Me.ChkMt5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1742,7 +1806,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt6.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt6.Location = New System.Drawing.Point(771, 517)
+        Me.ChkMt6.Location = New System.Drawing.Point(515, 547)
         Me.ChkMt6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt6.Name = "ChkMt6"
         Me.ChkMt6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1756,7 +1820,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt7.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt7.Location = New System.Drawing.Point(1027, 517)
+        Me.ChkMt7.Location = New System.Drawing.Point(771, 547)
         Me.ChkMt7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt7.Name = "ChkMt7"
         Me.ChkMt7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1770,7 +1834,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt8.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt8.Location = New System.Drawing.Point(3, 551)
+        Me.ChkMt8.Location = New System.Drawing.Point(1027, 547)
         Me.ChkMt8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt8.Name = "ChkMt8"
         Me.ChkMt8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1784,7 +1848,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt9.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt9.Location = New System.Drawing.Point(259, 551)
+        Me.ChkMt9.Location = New System.Drawing.Point(3, 581)
         Me.ChkMt9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt9.Name = "ChkMt9"
         Me.ChkMt9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1798,7 +1862,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt10.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt10.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt10.Location = New System.Drawing.Point(515, 551)
+        Me.ChkMt10.Location = New System.Drawing.Point(259, 581)
         Me.ChkMt10.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt10.Name = "ChkMt10"
         Me.ChkMt10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1812,7 +1876,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt11.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt11.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt11.Location = New System.Drawing.Point(771, 551)
+        Me.ChkMt11.Location = New System.Drawing.Point(515, 581)
         Me.ChkMt11.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt11.Name = "ChkMt11"
         Me.ChkMt11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1826,7 +1890,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt12.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt12.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt12.Location = New System.Drawing.Point(1027, 551)
+        Me.ChkMt12.Location = New System.Drawing.Point(771, 581)
         Me.ChkMt12.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt12.Name = "ChkMt12"
         Me.ChkMt12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1840,7 +1904,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt13.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt13.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt13.Location = New System.Drawing.Point(3, 585)
+        Me.ChkMt13.Location = New System.Drawing.Point(1027, 581)
         Me.ChkMt13.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt13.Name = "ChkMt13"
         Me.ChkMt13.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1854,7 +1918,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt14.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt14.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt14.Location = New System.Drawing.Point(259, 585)
+        Me.ChkMt14.Location = New System.Drawing.Point(3, 615)
         Me.ChkMt14.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt14.Name = "ChkMt14"
         Me.ChkMt14.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1868,7 +1932,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand0.BackColor = System.Drawing.Color.Tan
         Me.ChkLand0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand0.Location = New System.Drawing.Point(515, 585)
+        Me.ChkLand0.Location = New System.Drawing.Point(259, 615)
         Me.ChkLand0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand0.Name = "ChkLand0"
         Me.ChkLand0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1882,7 +1946,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand1.BackColor = System.Drawing.Color.Tan
         Me.ChkLand1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand1.Location = New System.Drawing.Point(771, 585)
+        Me.ChkLand1.Location = New System.Drawing.Point(515, 615)
         Me.ChkLand1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand1.Name = "ChkLand1"
         Me.ChkLand1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1896,7 +1960,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand2.BackColor = System.Drawing.Color.Tan
         Me.ChkLand2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand2.Location = New System.Drawing.Point(1027, 585)
+        Me.ChkLand2.Location = New System.Drawing.Point(771, 615)
         Me.ChkLand2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand2.Name = "ChkLand2"
         Me.ChkLand2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1910,7 +1974,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand3.BackColor = System.Drawing.Color.Tan
         Me.ChkLand3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand3.Location = New System.Drawing.Point(3, 619)
+        Me.ChkLand3.Location = New System.Drawing.Point(1027, 615)
         Me.ChkLand3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand3.Name = "ChkLand3"
         Me.ChkLand3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1924,7 +1988,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand4.BackColor = System.Drawing.Color.Tan
         Me.ChkLand4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand4.Location = New System.Drawing.Point(259, 619)
+        Me.ChkLand4.Location = New System.Drawing.Point(3, 649)
         Me.ChkLand4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand4.Name = "ChkLand4"
         Me.ChkLand4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1938,7 +2002,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand5.BackColor = System.Drawing.Color.Tan
         Me.ChkLand5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand5.Location = New System.Drawing.Point(515, 619)
+        Me.ChkLand5.Location = New System.Drawing.Point(259, 649)
         Me.ChkLand5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand5.Name = "ChkLand5"
         Me.ChkLand5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1952,7 +2016,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand6.BackColor = System.Drawing.Color.Tan
         Me.ChkLand6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand6.Location = New System.Drawing.Point(771, 619)
+        Me.ChkLand6.Location = New System.Drawing.Point(515, 649)
         Me.ChkLand6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand6.Name = "ChkLand6"
         Me.ChkLand6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1966,7 +2030,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand7.BackColor = System.Drawing.Color.Tan
         Me.ChkLand7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand7.Location = New System.Drawing.Point(1027, 619)
+        Me.ChkLand7.Location = New System.Drawing.Point(771, 649)
         Me.ChkLand7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand7.Name = "ChkLand7"
         Me.ChkLand7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1980,7 +2044,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand8.BackColor = System.Drawing.Color.Tan
         Me.ChkLand8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand8.Location = New System.Drawing.Point(3, 653)
+        Me.ChkLand8.Location = New System.Drawing.Point(1027, 649)
         Me.ChkLand8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand8.Name = "ChkLand8"
         Me.ChkLand8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1994,7 +2058,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand9.BackColor = System.Drawing.Color.Tan
         Me.ChkLand9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand9.Location = New System.Drawing.Point(259, 653)
+        Me.ChkLand9.Location = New System.Drawing.Point(3, 683)
         Me.ChkLand9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand9.Name = "ChkLand9"
         Me.ChkLand9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -2007,7 +2071,7 @@ Partial Class FrmMainv4
         'ChkFld0
         '
         Me.ChkFld0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkFld0.Location = New System.Drawing.Point(515, 653)
+        Me.ChkFld0.Location = New System.Drawing.Point(259, 683)
         Me.ChkFld0.Name = "ChkFld0"
         Me.ChkFld0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkFld0.Size = New System.Drawing.Size(250, 28)
@@ -2019,7 +2083,7 @@ Partial Class FrmMainv4
         'ChkFld1
         '
         Me.ChkFld1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkFld1.Location = New System.Drawing.Point(771, 653)
+        Me.ChkFld1.Location = New System.Drawing.Point(515, 683)
         Me.ChkFld1.Name = "ChkFld1"
         Me.ChkFld1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkFld1.Size = New System.Drawing.Size(250, 28)
@@ -2031,7 +2095,7 @@ Partial Class FrmMainv4
         'ChkLgt0
         '
         Me.ChkLgt0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkLgt0.Location = New System.Drawing.Point(1027, 653)
+        Me.ChkLgt0.Location = New System.Drawing.Point(771, 683)
         Me.ChkLgt0.Name = "ChkLgt0"
         Me.ChkLgt0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkLgt0.Size = New System.Drawing.Size(250, 28)
@@ -2513,20 +2577,20 @@ Partial Class FrmMainv4
         Me.DgvWarnings.AllowUserToDeleteRows = False
         Me.DgvWarnings.AllowUserToResizeColumns = False
         Me.DgvWarnings.AllowUserToResizeRows = False
-        DataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DgvWarnings.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle41
+        DataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DgvWarnings.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle38
         Me.DgvWarnings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvWarnings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvWarnings.ColumnHeadersVisible = False
         Me.DgvWarnings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.w0, Me.w1, Me.w2})
-        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle43.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvWarnings.DefaultCellStyle = DataGridViewCellStyle43
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle40.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvWarnings.DefaultCellStyle = DataGridViewCellStyle40
         Me.DgvWarnings.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvWarnings.Location = New System.Drawing.Point(0, 0)
         Me.DgvWarnings.MultiSelect = False
@@ -2562,8 +2626,8 @@ Partial Class FrmMainv4
         '
         'w2
         '
-        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.w2.DefaultCellStyle = DataGridViewCellStyle42
+        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.w2.DefaultCellStyle = DataGridViewCellStyle39
         Me.w2.FillWeight = 69.27517!
         Me.w2.HeaderText = "Column1"
         Me.w2.MinimumWidth = 8
@@ -3048,7 +3112,7 @@ Partial Class FrmMainv4
         Me.TpDataFields.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TpDataFields.Name = "TpDataFields"
         Me.TpDataFields.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TpDataFields.Size = New System.Drawing.Size(1372, 939)
+        Me.TpDataFields.Size = New System.Drawing.Size(1372, 957)
         Me.TpDataFields.TabIndex = 1
         Me.TpDataFields.Text = "Data Fields"
         '
@@ -3114,7 +3178,7 @@ Partial Class FrmMainv4
         Me.TpLocations.Controls.Add(Me.Label10)
         Me.TpLocations.Location = New System.Drawing.Point(4, 29)
         Me.TpLocations.Name = "TpLocations"
-        Me.TpLocations.Size = New System.Drawing.Size(1372, 939)
+        Me.TpLocations.Size = New System.Drawing.Size(1372, 957)
         Me.TpLocations.TabIndex = 2
         Me.TpLocations.Text = "Locations"
         '
@@ -3216,20 +3280,20 @@ Partial Class FrmMainv4
         Me.Dgv30Min.AllowUserToDeleteRows = False
         Me.Dgv30Min.AllowUserToResizeColumns = False
         Me.Dgv30Min.AllowUserToResizeRows = False
-        DataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgv30Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle44
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv30Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
         Me.Dgv30Min.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.Dgv30Min.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.Dgv30Min.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.Dgv30Min.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle45.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle45.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv30Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle45
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle32.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv30Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle32
         Me.Dgv30Min.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv30Min.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.Dgv30Min.EnableHeadersVisualStyles = False
@@ -3246,10 +3310,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle46
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle33
         Me.DataGridViewTextBoxColumn8.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn8.MinimumWidth = 225
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
@@ -3259,10 +3323,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn9
         '
         Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle47
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle34
         Me.DataGridViewTextBoxColumn9.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn9.MinimumWidth = 300
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
@@ -3286,20 +3350,20 @@ Partial Class FrmMainv4
         Me.Dgv15Min.AllowUserToDeleteRows = False
         Me.Dgv15Min.AllowUserToResizeColumns = False
         Me.Dgv15Min.AllowUserToResizeRows = False
-        DataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgv15Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle48
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv15Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle27
         Me.Dgv15Min.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.Dgv15Min.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.Dgv15Min.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.Dgv15Min.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle49.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle49.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv15Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle49
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle28.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv15Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle28
         Me.Dgv15Min.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv15Min.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.Dgv15Min.EnableHeadersVisualStyles = False
@@ -3316,10 +3380,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle50
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle29
         Me.DataGridViewTextBoxColumn6.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn6.MinimumWidth = 225
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
@@ -3329,10 +3393,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle51
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle30
         Me.DataGridViewTextBoxColumn7.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn7.MinimumWidth = 300
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
@@ -3356,20 +3420,20 @@ Partial Class FrmMainv4
         Me.Dgv5Min.AllowUserToDeleteRows = False
         Me.Dgv5Min.AllowUserToResizeColumns = False
         Me.Dgv5Min.AllowUserToResizeRows = False
-        DataGridViewCellStyle52.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgv5Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle52
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv5Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle23
         Me.Dgv5Min.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.Dgv5Min.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.Dgv5Min.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.Dgv5Min.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle53.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle53.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv5Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle53
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv5Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.Dgv5Min.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv5Min.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.Dgv5Min.EnableHeadersVisualStyles = False
@@ -3386,10 +3450,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle54.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle54
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle25
         Me.DataGridViewTextBoxColumn4.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn4.MinimumWidth = 225
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
@@ -3399,10 +3463,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle55.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle55
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle26
         Me.DataGridViewTextBoxColumn5.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn5.MinimumWidth = 300
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
@@ -3426,20 +3490,20 @@ Partial Class FrmMainv4
         Me.Dgv1Min.AllowUserToDeleteRows = False
         Me.Dgv1Min.AllowUserToResizeColumns = False
         Me.Dgv1Min.AllowUserToResizeRows = False
-        DataGridViewCellStyle56.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgv1Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle56
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv1Min.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
         Me.Dgv1Min.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.Dgv1Min.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.Dgv1Min.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.Dgv1Min.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle57.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle57.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv1Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle57
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv1Min.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.Dgv1Min.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv1Min.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
         Me.Dgv1Min.EnableHeadersVisualStyles = False
@@ -3456,10 +3520,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle58.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle58
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle21
         Me.DataGridViewTextBoxColumn1.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 225
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
@@ -3469,10 +3533,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle59.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle59
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle22
         Me.DataGridViewTextBoxColumn2.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn2.MinimumWidth = 300
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
@@ -3496,20 +3560,20 @@ Partial Class FrmMainv4
         Me.DgvBest.AllowUserToDeleteRows = False
         Me.DgvBest.AllowUserToResizeColumns = False
         Me.DgvBest.AllowUserToResizeRows = False
-        DataGridViewCellStyle60.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DgvBest.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle60
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DgvBest.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle15
         Me.DgvBest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DgvBest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DgvBest.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.DgvBest.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle61.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle61.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle61.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvBest.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle61
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvBest.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.DgvBest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvBest.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.DgvBest.EnableHeadersVisualStyles = False
@@ -3526,10 +3590,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn11
         '
         Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle62.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle62
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridViewTextBoxColumn11.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn11.MinimumWidth = 225
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
@@ -3539,10 +3603,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle63.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle63
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle18
         Me.DataGridViewTextBoxColumn12.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn12.MinimumWidth = 300
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
@@ -3582,43 +3646,43 @@ Partial Class FrmMainv4
         Me.DgvCurrent.AllowUserToDeleteRows = False
         Me.DgvCurrent.AllowUserToResizeColumns = False
         Me.DgvCurrent.AllowUserToResizeRows = False
-        DataGridViewCellStyle64.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DgvCurrent.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle64
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DgvCurrent.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
         Me.DgvCurrent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvCurrent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DgvCurrent.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.DgvCurrent.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle65.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle65.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvCurrent.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle65
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvCurrent.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.DgvCurrent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvCurrent.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cur0, Me.cur1})
-        DataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle66.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvCurrent.DefaultCellStyle = DataGridViewCellStyle66
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvCurrent.DefaultCellStyle = DataGridViewCellStyle13
         Me.DgvCurrent.EnableHeadersVisualStyles = False
         Me.DgvCurrent.Location = New System.Drawing.Point(75, 46)
         Me.DgvCurrent.MultiSelect = False
         Me.DgvCurrent.Name = "DgvCurrent"
         Me.DgvCurrent.ReadOnly = True
-        DataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle67.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvCurrent.RowHeadersDefaultCellStyle = DataGridViewCellStyle67
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvCurrent.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.DgvCurrent.RowHeadersVisible = False
         Me.DgvCurrent.RowHeadersWidth = 62
         Me.DgvCurrent.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
@@ -3661,20 +3725,20 @@ Partial Class FrmMainv4
         Me.DgvHour.AllowUserToDeleteRows = False
         Me.DgvHour.AllowUserToResizeColumns = False
         Me.DgvHour.AllowUserToResizeRows = False
-        DataGridViewCellStyle68.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DgvHour.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle68
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DgvHour.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DgvHour.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DgvHour.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DgvHour.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.DgvHour.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle69.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle69.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvHour.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle69
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvHour.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DgvHour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvHour.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn10})
         Me.DgvHour.EnableHeadersVisualStyles = False
@@ -3691,10 +3755,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle70.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle70
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridViewTextBoxColumn3.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn3.MinimumWidth = 225
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
@@ -3704,10 +3768,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle71.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle71
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridViewTextBoxColumn10.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn10.MinimumWidth = 300
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
@@ -3732,20 +3796,20 @@ Partial Class FrmMainv4
         Me.Dgv1dFull.AllowUserToDeleteRows = False
         Me.Dgv1dFull.AllowUserToResizeColumns = False
         Me.Dgv1dFull.AllowUserToResizeRows = False
-        DataGridViewCellStyle72.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgv1dFull.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle72
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv1dFull.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.Dgv1dFull.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.Dgv1dFull.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.Dgv1dFull.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.Dgv1dFull.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle73.BackColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle73.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle73.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv1dFull.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle73
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv1dFull.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.Dgv1dFull.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv1dFull.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20})
         Me.Dgv1dFull.EnableHeadersVisualStyles = False
@@ -3762,10 +3826,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn19
         '
         Me.DataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle74.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn19.DefaultCellStyle = DataGridViewCellStyle74
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn19.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn19.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn19.MinimumWidth = 225
         Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
@@ -3775,10 +3839,10 @@ Partial Class FrmMainv4
         'DataGridViewTextBoxColumn20
         '
         Me.DataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle75.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn20.DefaultCellStyle = DataGridViewCellStyle75
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn20.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn20.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn20.MinimumWidth = 300
         Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
@@ -3808,23 +3872,23 @@ Partial Class FrmMainv4
         Me.DgvDaily.BackgroundColor = System.Drawing.Color.LightSkyBlue
         Me.DgvDaily.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DgvDaily.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        DataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle76.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle76.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle76.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle76.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.DgvDaily.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle76
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.DgvDaily.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvDaily.ColumnHeadersVisible = False
-        DataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle77.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle77.SelectionBackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvDaily.DefaultCellStyle = DataGridViewCellStyle77
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvDaily.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvDaily.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvDaily.Location = New System.Drawing.Point(4, 5)
         Me.DgvDaily.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
@@ -3949,35 +4013,35 @@ Partial Class FrmMainv4
         Me.DgvWildfire.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DgvWildfire.BackgroundColor = System.Drawing.Color.Gray
         Me.DgvWildfire.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle78.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvWildfire.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle78
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle35.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvWildfire.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle35
         Me.DgvWildfire.ColumnHeadersHeight = 34
         Me.DgvWildfire.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DgvWildfire.ColumnHeadersVisible = False
-        DataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle79.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle79.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvWildfire.DefaultCellStyle = DataGridViewCellStyle79
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle36.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvWildfire.DefaultCellStyle = DataGridViewCellStyle36
         Me.DgvWildfire.Dock = System.Windows.Forms.DockStyle.Top
         Me.DgvWildfire.Location = New System.Drawing.Point(3, 3)
         Me.DgvWildfire.Name = "DgvWildfire"
         Me.DgvWildfire.RowHeadersVisible = False
         Me.DgvWildfire.RowHeadersWidth = 62
         Me.DgvWildfire.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle80.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvWildfire.RowsDefaultCellStyle = DataGridViewCellStyle80
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle37.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvWildfire.RowsDefaultCellStyle = DataGridViewCellStyle37
         Me.DgvWildfire.RowTemplate.Height = 28
         Me.DgvWildfire.RowTemplate.ReadOnly = True
         Me.DgvWildfire.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -4432,4 +4496,8 @@ Partial Class FrmMainv4
     Friend WithEvents ChkCore28 As CheckBox
     Friend WithEvents TpWxData As TabPage
     Friend WithEvents RtbWxData As RichTextBox
+    Friend WithEvents ChkCore29 As CheckBox
+    Friend WithEvents ChkCore30 As CheckBox
+    Friend WithEvents ChkCore31 As CheckBox
+    Friend WithEvents ChkCore32 As CheckBox
 End Class

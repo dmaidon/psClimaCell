@@ -73,6 +73,10 @@
   "PollutantO3": "ppb",
   "PollutantSO2": "ppb",
   "PrecipitationIntensity": "mm/hr",
+  "RainIntensity": "mm/hr",
+  "FreezingRainIntensity": "mm/hr",
+  "SnowIntensity": "mm/hr",
+  "SleetIntensity": "mm/hr",
   "PrecipitationProbability": "%",
   "PrecipitationType": {
     "0": "N/A",
@@ -235,7 +239,7 @@
     "8002": "Mostly Cloudy and Thunderstorm",
     "8000": "Thunderstorm"
   },
-    "WeatherCodeDay": {
+  "WeatherCodeDay": {
     "0": "Unknown",
     "10000": "Clear, Sunny",
     "11000": "Mostly Clear",
