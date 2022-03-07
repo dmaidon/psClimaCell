@@ -77,7 +77,7 @@
   "FreezingRainIntensity": "in/hr",
   "SnowIntensity": "in/hr",
   "SleetIntensity": "in/hr",
-    "PrecipitationProbability": "%",
+  "PrecipitationProbability": "%",
   "PrecipitationType": {
     "0": "N/A",
     "1": "Rain",
@@ -442,6 +442,7 @@
   "WindWaveMeanPeriod": "seconds",
   "SnowAccumulation": "in",
   "IceAccumulation": "in",
+  "SleetAccumulation": "in",
   "StreamFlow": "ft^3/sec",
   "RainAccumulation": "in",
   "LightningFlashRateDensity": "fl mi^2 5-min^-1",

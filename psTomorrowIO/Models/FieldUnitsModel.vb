@@ -37,6 +37,7 @@
     Public Property SecondarySwellMeanPeriod As String
     Public Property SecondarySwellSignificantHeight As String
     Public Property SnowAccumulation As String
+    Public Property SleetAccumulation As String
     Public Property SoilMoistureVolume As String
     Public Property Solar As String
     Public Property Temperature As String

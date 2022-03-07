@@ -57,7 +57,7 @@ Friend Module TimeLineRoutinesV4
         Else
             If File.Exists(tlFile) Then
                 Dim ab As Double = (Date2Unix(Now) - Date2Unix(File.GetLastWriteTime(tlFile))) / 60
-                If ab >= 30 Then
+                If ab >= 45 Then
                     DownloadTimeLines(tlFile)
                 Else
                     ParseTimeLines(ab, tlFile)
@@ -207,7 +207,7 @@ Friend Module TimeLineRoutinesV4
     Private Function GetFieldsString() As String
         Try
             'temperature field is set to fetch Min and Max temperature for time period.
-            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedRagweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200", "snowAccumulation", "iceAccumulation", "uvIndex", "uvHealthConcern", "floodIndex", "streamFlow", "rainAccumulation", "lightningFlashRateDensity", "weatherCodeFullDay", "weatherCodeDay", "weatherCodeNight", "freezingRainIntensity", "snowIntensity", "sleetIntensity", "rainIntensity"})
+            Dim tlFields As New List(Of String)({"temperature,temperatureMax,temperatureMin", "temperatureApparent", "dewPoint", "humidity", "windSpeed", "windDirection", "windGust", "pressureSurfaceLevel", "pressureSeaLevel", "precipitationIntensity", "precipitationProbability", "precipitationType", "sunriseTime", "sunsetTime", "moonPhase", "", "visibility", "cloudCover", "cloudBase", "cloudCeiling", "weatherCode", "particulateMatter25", "particulateMatter10", "pollutantO3", "pollutantNO2", "pollutantCO", "pollutantSO2", "mepIndex", "mepPrimaryPollutant", "mepHealthConcern", "epaIndex", "epaPrimaryPollutant", "epaHealthConcern", "treeIndex", "treeAcaciaIndex", "treeAshIndex", "treeBeechIndex", "treeBirchIndex", "treeCedarIndex", "treeCypressIndex", "treeElderIndex", "treeElmIndex", "treeHemlockIndex", "treeHickoryIndex", "treeJuniperIndex", "treeMahagonyIndex", "treeMapleIndex", "treeMulberryIndex", "treeOakIndex", "treePineIndex", "treeCottonwoodIndex", "treeSpruceIndex", "treeSycamoreIndex", "treeWalnutIndex", "treeWillowIndex", "grassIndex", "grassGrassIndex", "weedIndex", "weedRagweedIndex", "hailBinary", "fireIndex", "solarGHI", "solarDNI", "solarDHI", "waveSignificantHeight", "waveDirection", "waveMeanPeriod", "windWaveSignificantHeight", "windWaveDirection", "windWaveMeanPeriod", "primarySwellSignificantHeight", "primarySwellDirection", "primarySwellMeanPeriod", "secondarySwellSignificantHeight", "secondarySwellDirection", "secondarySwellMeanPeriod", "tertiarySwellMeanPeriod", "tertiarySwellFromDirection", "tertiarySwellSignificantHeight", "soilMoistureVolumetric0To10", "soilMoistureVolumetric10To40", "soilMoistureVolumetric40To100", "soilMoistureVolumetric100To200", "soilMoistureVolumetric0To200", "soilTemperature0To10", "soilTemperature10To40", "soilTemperature40To100", "soilTemperature100To200", "soilTemperature0To200", "snowAccumulation", "iceAccumulation", "uvIndex", "uvHealthConcern", "floodIndex", "streamFlow", "rainAccumulation", "lightningFlashRateDensity", "weatherCodeFullDay", "weatherCodeDay", "weatherCodeNight", "freezingRainIntensity", "snowIntensity", "sleetIntensity", "rainIntensity", "sleetAccumulation"})
             '#15 = solarGHI
             Dim sb = New StringBuilder()
             For Each c As CheckBox In FrmMainv4.FlpDataFields.Controls.OfType(Of CheckBox)()
@@ -846,6 +846,10 @@ Friend Module TimeLineRoutinesV4
 
                 If tl.IceAccumulation IsNot Nothing AndAlso tl.IceAccumulation.HasValue Then
                     .Rows.Add("Ice Accumulation", $"{tl.IceAccumulation.Value:N3} {unitNfo.IceAccumulation}")
+                End If
+
+                If tl.SleetAccumulation IsNot Nothing AndAlso tl.SleetAccumulation.HasValue Then
+                    .Rows.Add("Sleet Accumulation", $"{tl.SleetAccumulation.Value:N3} {unitNfo.SleetAccumulation}")
                 End If
 
                 If tl.HailProbability IsNot Nothing AndAlso tl.HailProbability.HasValue Then

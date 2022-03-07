@@ -71,6 +71,7 @@ Partial Public Class Values
     <JsonPropertyName("secondarySwellMeanPeriod")> Public Property SecondarySwellMeanPeriod As Double?
     <JsonPropertyName("secondarySwellSignificantHeight")> Public Property SecondarySwellSignificantHeight As Double?
     <JsonPropertyName("snowAccumulation")> Public Property SnowAccumulation As Double?
+    <JsonPropertyName("sleetAccumulation")> Public Property SleetAccumulation As Double?
     <JsonPropertyName("pollutantSO2")> Public Property SO2 As Double?
     <JsonPropertyName("soilTemperature0To10")> Public Property SoilTemp0To10 As Double?
     <JsonPropertyName("soilTemperature0To200")> Public Property SoilTemp0To200 As Double?

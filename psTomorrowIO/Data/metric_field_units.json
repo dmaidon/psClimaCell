@@ -442,6 +442,7 @@
   "WindWaveMeanPeriod": "seconds",
   "SnowAccumulation": "mm",
   "IceAccumulation": "mm",
+  "SleetAccumulation": "mm",
   "StreamFlow": "m^3/sec",
   "RainAccumulation": "mm",
   "LightningFlashRateDensity": "km^2 5-min^-1",

@@ -333,6 +333,7 @@ Partial Class FrmMainv4
         Me.PbFcImage = New System.Windows.Forms.PictureBox()
         Me.TV = New System.Windows.Forms.TreeView()
         Me.TmrSaveImage = New System.Windows.Forms.Timer(Me.components)
+        Me.ChkCore33 = New System.Windows.Forms.CheckBox()
         Me.SS.SuspendLayout()
         CType(Me.TmrTimelineUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TmrClock, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -573,6 +574,7 @@ Partial Class FrmMainv4
         Me.FlpDataFields.Controls.Add(Me.ChkCore25)
         Me.FlpDataFields.Controls.Add(Me.ChkCore21)
         Me.FlpDataFields.Controls.Add(Me.ChkCore22)
+        Me.FlpDataFields.Controls.Add(Me.ChkCore33)
         Me.FlpDataFields.Controls.Add(Me.ChkCore23)
         Me.FlpDataFields.Controls.Add(Me.ChkCore24)
         Me.FlpDataFields.Controls.Add(Me.ChkAqi0)
@@ -1092,7 +1094,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore23.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore23.Location = New System.Drawing.Point(259, 207)
+        Me.ChkCore23.Location = New System.Drawing.Point(515, 207)
         Me.ChkCore23.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore23.Name = "ChkCore23"
         Me.ChkCore23.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1106,7 +1108,7 @@ Partial Class FrmMainv4
         '
         Me.ChkCore24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkCore24.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkCore24.Location = New System.Drawing.Point(515, 207)
+        Me.ChkCore24.Location = New System.Drawing.Point(771, 207)
         Me.ChkCore24.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkCore24.Name = "ChkCore24"
         Me.ChkCore24.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1120,7 +1122,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi0.Location = New System.Drawing.Point(771, 207)
+        Me.ChkAqi0.Location = New System.Drawing.Point(1027, 207)
         Me.ChkAqi0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi0.Name = "ChkAqi0"
         Me.ChkAqi0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1134,7 +1136,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi1.Location = New System.Drawing.Point(1027, 207)
+        Me.ChkAqi1.Location = New System.Drawing.Point(3, 241)
         Me.ChkAqi1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi1.Name = "ChkAqi1"
         Me.ChkAqi1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1148,7 +1150,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi2.Location = New System.Drawing.Point(3, 241)
+        Me.ChkAqi2.Location = New System.Drawing.Point(259, 241)
         Me.ChkAqi2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi2.Name = "ChkAqi2"
         Me.ChkAqi2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1162,7 +1164,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi3.Location = New System.Drawing.Point(259, 241)
+        Me.ChkAqi3.Location = New System.Drawing.Point(515, 241)
         Me.ChkAqi3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi3.Name = "ChkAqi3"
         Me.ChkAqi3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1176,7 +1178,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi4.Location = New System.Drawing.Point(515, 241)
+        Me.ChkAqi4.Location = New System.Drawing.Point(771, 241)
         Me.ChkAqi4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi4.Name = "ChkAqi4"
         Me.ChkAqi4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1190,7 +1192,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi5.Location = New System.Drawing.Point(771, 241)
+        Me.ChkAqi5.Location = New System.Drawing.Point(1027, 241)
         Me.ChkAqi5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi5.Name = "ChkAqi5"
         Me.ChkAqi5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1204,7 +1206,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi6.Location = New System.Drawing.Point(1027, 241)
+        Me.ChkAqi6.Location = New System.Drawing.Point(3, 275)
         Me.ChkAqi6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi6.Name = "ChkAqi6"
         Me.ChkAqi6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1218,7 +1220,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi7.Location = New System.Drawing.Point(3, 275)
+        Me.ChkAqi7.Location = New System.Drawing.Point(259, 275)
         Me.ChkAqi7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi7.Name = "ChkAqi7"
         Me.ChkAqi7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1232,7 +1234,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi8.Location = New System.Drawing.Point(259, 275)
+        Me.ChkAqi8.Location = New System.Drawing.Point(515, 275)
         Me.ChkAqi8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi8.Name = "ChkAqi8"
         Me.ChkAqi8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1246,7 +1248,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi9.Location = New System.Drawing.Point(515, 275)
+        Me.ChkAqi9.Location = New System.Drawing.Point(771, 275)
         Me.ChkAqi9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi9.Name = "ChkAqi9"
         Me.ChkAqi9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1260,7 +1262,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi10.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi10.Location = New System.Drawing.Point(771, 275)
+        Me.ChkAqi10.Location = New System.Drawing.Point(1027, 275)
         Me.ChkAqi10.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi10.Name = "ChkAqi10"
         Me.ChkAqi10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1274,7 +1276,7 @@ Partial Class FrmMainv4
         '
         Me.ChkAqi11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkAqi11.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAqi11.Location = New System.Drawing.Point(1027, 275)
+        Me.ChkAqi11.Location = New System.Drawing.Point(3, 309)
         Me.ChkAqi11.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkAqi11.Name = "ChkAqi11"
         Me.ChkAqi11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1288,7 +1290,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol0.Location = New System.Drawing.Point(3, 309)
+        Me.ChkPol0.Location = New System.Drawing.Point(259, 309)
         Me.ChkPol0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol0.Name = "ChkPol0"
         Me.ChkPol0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1302,7 +1304,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol1.Location = New System.Drawing.Point(259, 309)
+        Me.ChkPol1.Location = New System.Drawing.Point(515, 309)
         Me.ChkPol1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol1.Name = "ChkPol1"
         Me.ChkPol1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1316,7 +1318,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol2.Location = New System.Drawing.Point(515, 309)
+        Me.ChkPol2.Location = New System.Drawing.Point(771, 309)
         Me.ChkPol2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol2.Name = "ChkPol2"
         Me.ChkPol2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1330,7 +1332,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol3.Location = New System.Drawing.Point(771, 309)
+        Me.ChkPol3.Location = New System.Drawing.Point(1027, 309)
         Me.ChkPol3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol3.Name = "ChkPol3"
         Me.ChkPol3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1344,7 +1346,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol4.Location = New System.Drawing.Point(1027, 309)
+        Me.ChkPol4.Location = New System.Drawing.Point(3, 343)
         Me.ChkPol4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol4.Name = "ChkPol4"
         Me.ChkPol4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1358,7 +1360,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol5.Location = New System.Drawing.Point(3, 343)
+        Me.ChkPol5.Location = New System.Drawing.Point(259, 343)
         Me.ChkPol5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol5.Name = "ChkPol5"
         Me.ChkPol5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1372,7 +1374,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol6.Location = New System.Drawing.Point(259, 343)
+        Me.ChkPol6.Location = New System.Drawing.Point(515, 343)
         Me.ChkPol6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol6.Name = "ChkPol6"
         Me.ChkPol6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1386,7 +1388,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol7.Location = New System.Drawing.Point(515, 343)
+        Me.ChkPol7.Location = New System.Drawing.Point(771, 343)
         Me.ChkPol7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol7.Name = "ChkPol7"
         Me.ChkPol7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1400,7 +1402,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol8.Location = New System.Drawing.Point(771, 343)
+        Me.ChkPol8.Location = New System.Drawing.Point(1027, 343)
         Me.ChkPol8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol8.Name = "ChkPol8"
         Me.ChkPol8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1414,7 +1416,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol9.Location = New System.Drawing.Point(1027, 343)
+        Me.ChkPol9.Location = New System.Drawing.Point(3, 377)
         Me.ChkPol9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol9.Name = "ChkPol9"
         Me.ChkPol9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1428,7 +1430,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol10.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol10.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol10.Location = New System.Drawing.Point(3, 377)
+        Me.ChkPol10.Location = New System.Drawing.Point(259, 377)
         Me.ChkPol10.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol10.Name = "ChkPol10"
         Me.ChkPol10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1442,7 +1444,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol11.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol11.Location = New System.Drawing.Point(259, 377)
+        Me.ChkPol11.Location = New System.Drawing.Point(515, 377)
         Me.ChkPol11.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol11.Name = "ChkPol11"
         Me.ChkPol11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1456,7 +1458,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol12.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol12.Location = New System.Drawing.Point(515, 377)
+        Me.ChkPol12.Location = New System.Drawing.Point(771, 377)
         Me.ChkPol12.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol12.Name = "ChkPol12"
         Me.ChkPol12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1470,7 +1472,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol13.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol13.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol13.Location = New System.Drawing.Point(771, 377)
+        Me.ChkPol13.Location = New System.Drawing.Point(1027, 377)
         Me.ChkPol13.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol13.Name = "ChkPol13"
         Me.ChkPol13.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1484,7 +1486,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol14.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol14.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol14.Location = New System.Drawing.Point(1027, 377)
+        Me.ChkPol14.Location = New System.Drawing.Point(3, 411)
         Me.ChkPol14.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol14.Name = "ChkPol14"
         Me.ChkPol14.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1498,7 +1500,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol15.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol15.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol15.Location = New System.Drawing.Point(3, 411)
+        Me.ChkPol15.Location = New System.Drawing.Point(259, 411)
         Me.ChkPol15.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol15.Name = "ChkPol15"
         Me.ChkPol15.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1512,7 +1514,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol16.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol16.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol16.Location = New System.Drawing.Point(259, 411)
+        Me.ChkPol16.Location = New System.Drawing.Point(515, 411)
         Me.ChkPol16.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol16.Name = "ChkPol16"
         Me.ChkPol16.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1526,7 +1528,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol17.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol17.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol17.Location = New System.Drawing.Point(515, 411)
+        Me.ChkPol17.Location = New System.Drawing.Point(771, 411)
         Me.ChkPol17.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol17.Name = "ChkPol17"
         Me.ChkPol17.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1540,7 +1542,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol18.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol18.Location = New System.Drawing.Point(771, 411)
+        Me.ChkPol18.Location = New System.Drawing.Point(1027, 411)
         Me.ChkPol18.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol18.Name = "ChkPol18"
         Me.ChkPol18.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1554,7 +1556,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol19.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol19.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol19.Location = New System.Drawing.Point(1027, 411)
+        Me.ChkPol19.Location = New System.Drawing.Point(3, 445)
         Me.ChkPol19.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol19.Name = "ChkPol19"
         Me.ChkPol19.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1568,7 +1570,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol20.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol20.Location = New System.Drawing.Point(3, 445)
+        Me.ChkPol20.Location = New System.Drawing.Point(259, 445)
         Me.ChkPol20.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol20.Name = "ChkPol20"
         Me.ChkPol20.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1582,7 +1584,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol21.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol21.Location = New System.Drawing.Point(259, 445)
+        Me.ChkPol21.Location = New System.Drawing.Point(515, 445)
         Me.ChkPol21.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol21.Name = "ChkPol21"
         Me.ChkPol21.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1596,7 +1598,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol22.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol22.Location = New System.Drawing.Point(515, 445)
+        Me.ChkPol22.Location = New System.Drawing.Point(771, 445)
         Me.ChkPol22.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol22.Name = "ChkPol22"
         Me.ChkPol22.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1610,7 +1612,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol23.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol23.Location = New System.Drawing.Point(771, 445)
+        Me.ChkPol23.Location = New System.Drawing.Point(1027, 445)
         Me.ChkPol23.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol23.Name = "ChkPol23"
         Me.ChkPol23.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1624,7 +1626,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol24.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol24.Location = New System.Drawing.Point(1027, 445)
+        Me.ChkPol24.Location = New System.Drawing.Point(3, 479)
         Me.ChkPol24.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol24.Name = "ChkPol24"
         Me.ChkPol24.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1638,7 +1640,7 @@ Partial Class FrmMainv4
         '
         Me.ChkPol25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChkPol25.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkPol25.Location = New System.Drawing.Point(3, 479)
+        Me.ChkPol25.Location = New System.Drawing.Point(259, 479)
         Me.ChkPol25.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkPol25.Name = "ChkPol25"
         Me.ChkPol25.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1652,7 +1654,7 @@ Partial Class FrmMainv4
         '
         Me.ChkHail0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkHail0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkHail0.Location = New System.Drawing.Point(259, 479)
+        Me.ChkHail0.Location = New System.Drawing.Point(515, 479)
         Me.ChkHail0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkHail0.Name = "ChkHail0"
         Me.ChkHail0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1666,7 +1668,7 @@ Partial Class FrmMainv4
         '
         Me.ChkFire0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ChkFire0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkFire0.Location = New System.Drawing.Point(515, 479)
+        Me.ChkFire0.Location = New System.Drawing.Point(771, 479)
         Me.ChkFire0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkFire0.Name = "ChkFire0"
         Me.ChkFire0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1680,7 +1682,7 @@ Partial Class FrmMainv4
         '
         Me.ChkSol0.BackColor = System.Drawing.Color.MistyRose
         Me.ChkSol0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkSol0.Location = New System.Drawing.Point(771, 479)
+        Me.ChkSol0.Location = New System.Drawing.Point(1027, 479)
         Me.ChkSol0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkSol0.Name = "ChkSol0"
         Me.ChkSol0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1694,7 +1696,7 @@ Partial Class FrmMainv4
         '
         Me.ChkSol1.BackColor = System.Drawing.Color.MistyRose
         Me.ChkSol1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkSol1.Location = New System.Drawing.Point(1027, 479)
+        Me.ChkSol1.Location = New System.Drawing.Point(3, 513)
         Me.ChkSol1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkSol1.Name = "ChkSol1"
         Me.ChkSol1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1708,7 +1710,7 @@ Partial Class FrmMainv4
         '
         Me.ChkSol2.BackColor = System.Drawing.Color.MistyRose
         Me.ChkSol2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkSol2.Location = New System.Drawing.Point(3, 513)
+        Me.ChkSol2.Location = New System.Drawing.Point(259, 513)
         Me.ChkSol2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkSol2.Name = "ChkSol2"
         Me.ChkSol2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1722,7 +1724,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt0.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt0.Location = New System.Drawing.Point(259, 513)
+        Me.ChkMt0.Location = New System.Drawing.Point(515, 513)
         Me.ChkMt0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt0.Name = "ChkMt0"
         Me.ChkMt0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1736,7 +1738,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt1.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt1.Location = New System.Drawing.Point(515, 513)
+        Me.ChkMt1.Location = New System.Drawing.Point(771, 513)
         Me.ChkMt1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt1.Name = "ChkMt1"
         Me.ChkMt1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1750,7 +1752,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt2.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt2.Location = New System.Drawing.Point(771, 513)
+        Me.ChkMt2.Location = New System.Drawing.Point(1027, 513)
         Me.ChkMt2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt2.Name = "ChkMt2"
         Me.ChkMt2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1764,7 +1766,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt3.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt3.Location = New System.Drawing.Point(1027, 513)
+        Me.ChkMt3.Location = New System.Drawing.Point(3, 547)
         Me.ChkMt3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt3.Name = "ChkMt3"
         Me.ChkMt3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1778,7 +1780,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt4.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt4.Location = New System.Drawing.Point(3, 547)
+        Me.ChkMt4.Location = New System.Drawing.Point(259, 547)
         Me.ChkMt4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt4.Name = "ChkMt4"
         Me.ChkMt4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1792,7 +1794,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt5.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt5.Location = New System.Drawing.Point(259, 547)
+        Me.ChkMt5.Location = New System.Drawing.Point(515, 547)
         Me.ChkMt5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt5.Name = "ChkMt5"
         Me.ChkMt5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1806,7 +1808,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt6.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt6.Location = New System.Drawing.Point(515, 547)
+        Me.ChkMt6.Location = New System.Drawing.Point(771, 547)
         Me.ChkMt6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt6.Name = "ChkMt6"
         Me.ChkMt6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1820,7 +1822,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt7.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt7.Location = New System.Drawing.Point(771, 547)
+        Me.ChkMt7.Location = New System.Drawing.Point(1027, 547)
         Me.ChkMt7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt7.Name = "ChkMt7"
         Me.ChkMt7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1834,7 +1836,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt8.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt8.Location = New System.Drawing.Point(1027, 547)
+        Me.ChkMt8.Location = New System.Drawing.Point(3, 581)
         Me.ChkMt8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt8.Name = "ChkMt8"
         Me.ChkMt8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1848,7 +1850,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt9.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt9.Location = New System.Drawing.Point(3, 581)
+        Me.ChkMt9.Location = New System.Drawing.Point(259, 581)
         Me.ChkMt9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt9.Name = "ChkMt9"
         Me.ChkMt9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1862,7 +1864,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt10.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt10.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt10.Location = New System.Drawing.Point(259, 581)
+        Me.ChkMt10.Location = New System.Drawing.Point(515, 581)
         Me.ChkMt10.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt10.Name = "ChkMt10"
         Me.ChkMt10.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1876,7 +1878,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt11.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt11.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt11.Location = New System.Drawing.Point(515, 581)
+        Me.ChkMt11.Location = New System.Drawing.Point(771, 581)
         Me.ChkMt11.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt11.Name = "ChkMt11"
         Me.ChkMt11.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1890,7 +1892,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt12.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt12.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt12.Location = New System.Drawing.Point(771, 581)
+        Me.ChkMt12.Location = New System.Drawing.Point(1027, 581)
         Me.ChkMt12.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt12.Name = "ChkMt12"
         Me.ChkMt12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1904,7 +1906,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt13.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt13.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt13.Location = New System.Drawing.Point(1027, 581)
+        Me.ChkMt13.Location = New System.Drawing.Point(3, 615)
         Me.ChkMt13.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt13.Name = "ChkMt13"
         Me.ChkMt13.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1918,7 +1920,7 @@ Partial Class FrmMainv4
         '
         Me.ChkMt14.BackColor = System.Drawing.Color.Honeydew
         Me.ChkMt14.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkMt14.Location = New System.Drawing.Point(3, 615)
+        Me.ChkMt14.Location = New System.Drawing.Point(259, 615)
         Me.ChkMt14.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkMt14.Name = "ChkMt14"
         Me.ChkMt14.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1932,7 +1934,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand0.BackColor = System.Drawing.Color.Tan
         Me.ChkLand0.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand0.Location = New System.Drawing.Point(259, 615)
+        Me.ChkLand0.Location = New System.Drawing.Point(515, 615)
         Me.ChkLand0.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand0.Name = "ChkLand0"
         Me.ChkLand0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1946,7 +1948,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand1.BackColor = System.Drawing.Color.Tan
         Me.ChkLand1.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand1.Location = New System.Drawing.Point(515, 615)
+        Me.ChkLand1.Location = New System.Drawing.Point(771, 615)
         Me.ChkLand1.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand1.Name = "ChkLand1"
         Me.ChkLand1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1960,7 +1962,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand2.BackColor = System.Drawing.Color.Tan
         Me.ChkLand2.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand2.Location = New System.Drawing.Point(771, 615)
+        Me.ChkLand2.Location = New System.Drawing.Point(1027, 615)
         Me.ChkLand2.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand2.Name = "ChkLand2"
         Me.ChkLand2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1974,7 +1976,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand3.BackColor = System.Drawing.Color.Tan
         Me.ChkLand3.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand3.Location = New System.Drawing.Point(1027, 615)
+        Me.ChkLand3.Location = New System.Drawing.Point(3, 649)
         Me.ChkLand3.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand3.Name = "ChkLand3"
         Me.ChkLand3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -1988,7 +1990,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand4.BackColor = System.Drawing.Color.Tan
         Me.ChkLand4.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand4.Location = New System.Drawing.Point(3, 649)
+        Me.ChkLand4.Location = New System.Drawing.Point(259, 649)
         Me.ChkLand4.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand4.Name = "ChkLand4"
         Me.ChkLand4.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -2002,7 +2004,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand5.BackColor = System.Drawing.Color.Tan
         Me.ChkLand5.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand5.Location = New System.Drawing.Point(259, 649)
+        Me.ChkLand5.Location = New System.Drawing.Point(515, 649)
         Me.ChkLand5.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand5.Name = "ChkLand5"
         Me.ChkLand5.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -2016,7 +2018,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand6.BackColor = System.Drawing.Color.Tan
         Me.ChkLand6.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand6.Location = New System.Drawing.Point(515, 649)
+        Me.ChkLand6.Location = New System.Drawing.Point(771, 649)
         Me.ChkLand6.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand6.Name = "ChkLand6"
         Me.ChkLand6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -2030,7 +2032,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand7.BackColor = System.Drawing.Color.Tan
         Me.ChkLand7.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand7.Location = New System.Drawing.Point(771, 649)
+        Me.ChkLand7.Location = New System.Drawing.Point(1027, 649)
         Me.ChkLand7.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand7.Name = "ChkLand7"
         Me.ChkLand7.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -2044,7 +2046,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand8.BackColor = System.Drawing.Color.Tan
         Me.ChkLand8.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand8.Location = New System.Drawing.Point(1027, 649)
+        Me.ChkLand8.Location = New System.Drawing.Point(3, 683)
         Me.ChkLand8.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand8.Name = "ChkLand8"
         Me.ChkLand8.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -2058,7 +2060,7 @@ Partial Class FrmMainv4
         '
         Me.ChkLand9.BackColor = System.Drawing.Color.Tan
         Me.ChkLand9.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkLand9.Location = New System.Drawing.Point(3, 683)
+        Me.ChkLand9.Location = New System.Drawing.Point(259, 683)
         Me.ChkLand9.MaximumSize = New System.Drawing.Size(250, 28)
         Me.ChkLand9.Name = "ChkLand9"
         Me.ChkLand9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
@@ -2071,7 +2073,7 @@ Partial Class FrmMainv4
         'ChkFld0
         '
         Me.ChkFld0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkFld0.Location = New System.Drawing.Point(259, 683)
+        Me.ChkFld0.Location = New System.Drawing.Point(515, 683)
         Me.ChkFld0.Name = "ChkFld0"
         Me.ChkFld0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkFld0.Size = New System.Drawing.Size(250, 28)
@@ -2083,7 +2085,7 @@ Partial Class FrmMainv4
         'ChkFld1
         '
         Me.ChkFld1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkFld1.Location = New System.Drawing.Point(515, 683)
+        Me.ChkFld1.Location = New System.Drawing.Point(771, 683)
         Me.ChkFld1.Name = "ChkFld1"
         Me.ChkFld1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkFld1.Size = New System.Drawing.Size(250, 28)
@@ -2095,7 +2097,7 @@ Partial Class FrmMainv4
         'ChkLgt0
         '
         Me.ChkLgt0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChkLgt0.Location = New System.Drawing.Point(771, 683)
+        Me.ChkLgt0.Location = New System.Drawing.Point(1027, 683)
         Me.ChkLgt0.Name = "ChkLgt0"
         Me.ChkLgt0.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.ChkLgt0.Size = New System.Drawing.Size(250, 28)
@@ -4129,6 +4131,20 @@ Partial Class FrmMainv4
         '
         Me.TmrSaveImage.Interval = 15000
         '
+        'ChkCore33
+        '
+        Me.ChkCore33.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ChkCore33.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkCore33.Location = New System.Drawing.Point(259, 207)
+        Me.ChkCore33.MaximumSize = New System.Drawing.Size(250, 28)
+        Me.ChkCore33.Name = "ChkCore33"
+        Me.ChkCore33.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.ChkCore33.Size = New System.Drawing.Size(250, 28)
+        Me.ChkCore33.TabIndex = 104
+        Me.ChkCore33.Tag = "90"
+        Me.ChkCore33.Text = "Sleet Accumulation"
+        Me.ChkCore33.UseVisualStyleBackColor = False
+        '
         'FrmMainv4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -4500,4 +4516,5 @@ Partial Class FrmMainv4
     Friend WithEvents ChkCore30 As CheckBox
     Friend WithEvents ChkCore31 As CheckBox
     Friend WithEvents ChkCore32 As CheckBox
+    Friend WithEvents ChkCore33 As CheckBox
 End Class
