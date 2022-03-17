@@ -83,4 +83,12 @@ Friend Module GlobalsV4
 
 #End Region
 
+#Region "Structures"
+
+    Partial Public Class AstroData
+        Public Property Sunrise As String
+        Public Property Sunset As String
+    End Class
+#End Region
+
 End Module

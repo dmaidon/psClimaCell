@@ -4,8 +4,10 @@ Imports System.Net
 Imports System.Security
 Imports System.Text
 Imports System.Text.Json
+Imports System.Web.Script.Serialization
 
 Imports psTomorrowIO.Modules.DayColors
+Imports psTomorrowIO.My
 
 Friend Module TimeLineRoutinesV4
 
@@ -137,6 +139,12 @@ Friend Module TimeLineRoutinesV4
                                         Write1dData(j)
                                         Write1dFullData(j)
                                         If GraphSaved Then FrmMainv4.TmrSaveImage.Start()
+                                        'write astroData.json file for meteoSource
+                                        If $"{tlNfo.WxData.TimeLines(j).StartTime.Day:dddd}" = $"{Now:dddd}" Then
+                                            WriteAstroFile(tlNfo.WxData.TimeLines(j).Intervals(0).Values.Sunrise, tlNfo.WxData.TimeLines(j).Intervals(0).Values.Sunset)
+                                        Else
+                                            WriteAstroFile(tlNfo.WxData.TimeLines(j).Intervals(1).Values.Sunrise, tlNfo.WxData.TimeLines(j).Intervals(1).Values.Sunset)
+                                        End If
                                     Case "current"
                                         FrmMainv4.TC.TabPages.Insert(1, FrmMainv4.TpCurrent)
                                         WriteCurrentData(j)
@@ -202,6 +210,23 @@ Friend Module TimeLineRoutinesV4
             SaveLogs()
         End Try
 
+    End Sub
+
+    Private Sub WriteAstroFile(sr As DateTimeOffset, ss As DateTimeOffset)
+        Try
+            Dim AstroFile As String = Path.Combine(DataDir, "astroData.json")
+            Dim sObj As New AstroData() With {
+           .Sunrise = sr.ToString,
+           .Sunset = ss.ToString
+           }
+            Dim json As String = New JavaScriptSerializer().Serialize(sObj)
+            File.WriteAllText(AstroFile, json)
+            PrintLog($"{AstroFile} written @ {Now:F}{vbLf}")
+        Catch ex As Exception
+            PrintErr(ex.Message, ex.TargetSite.ToString, ex.StackTrace, ex.Source, ex.GetBaseException().ToString())
+        Finally
+            ''
+        End Try
     End Sub
 
     Private Function GetFieldsString() As String
@@ -336,6 +361,12 @@ Friend Module TimeLineRoutinesV4
                             Write1dData(j)
                             Write1dFullData(j)
                             FrmMainv4.TmrSaveImage.Start()
+                            'write astroData.json file for meteoSource
+                            If $"{tlNfo.WxData.TimeLines(j).StartTime.Day:dddd}" = $"{Now:dddd}" Then
+                                WriteAstroFile(tlNfo.WxData.TimeLines(j).Intervals(0).Values.Sunrise, tlNfo.WxData.TimeLines(j).Intervals(0).Values.Sunset)
+                            Else
+                                WriteAstroFile(tlNfo.WxData.TimeLines(j).Intervals(1).Values.Sunrise, tlNfo.WxData.TimeLines(j).Intervals(1).Values.Sunset)
+                            End If
                         Case "current"
                             FrmMainv4.TC.TabPages.Insert(0, FrmMainv4.TpCurrent)
                             WriteCurrentData(j)

@@ -172,7 +172,7 @@ Total memory collected: <%= (mbc - mac).ToString("#,### bytes") %>
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Shared Sub RtbUrls_Clicked(sender As Object, e As LinkClickedEventArgs) Handles RtbLog.LinkClicked, RtbLog.LinkClicked, RtbWxData.LinkClicked
+    Private Shared Sub RtbUrls_Clicked(sender As Object, e As LinkClickedEventArgs) Handles RtbLog.LinkClicked, RtbWxData.LinkClicked
         Try
             Process.Start(e.LinkText)
         Catch ex As Exception When TypeOf ex Is Win32Exception OrElse TypeOf ex Is ObjectDisposedException OrElse TypeOf ex Is FileNotFoundException
